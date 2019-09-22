@@ -1,5 +1,5 @@
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ['./src/app/index.js'],
   output: {
     path: __dirname,
     publicPath: '/',
@@ -20,8 +20,13 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
+    publicPath: '/',
     historyApiFallback: true,
-    contentBase: './',
+    contentBase: './src/app/',
+    host: 'localhost',
+    port: '3000',
+    open: true,
+    liveReload: true,
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
