@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Counter = ({decrement, increment, count }) => (
     <div>
         <h2>Counter</h2>
