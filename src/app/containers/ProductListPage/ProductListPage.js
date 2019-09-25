@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProductDetailsPage from './ProductDetailsPage/ProductDetailsPage'
+import { Link } from 'react-router-dom';
 
 class ProductListPage extends Component {
   constructor(props) {
@@ -14,12 +14,20 @@ class ProductListPage extends Component {
     };
   }
 
+  renderProductList(){
+    return this.state.products.map(({ product, id }) => {
+      return (
+        <div>
+          <li key={id}>
+            <Link to={`/products/${id}`}>{product}</Link>
+          </li>
+        </div>
+      )
+    });
+  }
+
   render() {
-    console.groupCollapsed('ProductListPage');
-    console.log(this.props);
-    console.groupEnd();
-    
-    return <ProductDetailsPage products={this.state.products} />
+    return <ul>{this.renderProductList()}</ul>;
   }
 }
 
