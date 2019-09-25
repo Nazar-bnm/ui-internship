@@ -1,14 +1,11 @@
+/* eslint-disable no-dupe-keys */
 /* eslint-disable no-undef */
 
 const path = require('path');
 const webpack = require('webpack');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 /*
- * SplitChunksPlugin is enabled by default and replaced
- * deprecated CommonsChunkPlugin. It automatically identifies modules which
- * should be splitted of chunk by heuristics using module duplication count and
- * module category (i. e. node_modules). And splits the chunks…
- *
  * It is safe to remove "splitChunks" from the generated configuration
  * and was added as an educational example.
  *
@@ -17,7 +14,7 @@ const webpack = require('webpack');
  */
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const extractCSS = new ExtractTextPlugin('main.min.css');
 /*
  * We've enabled HtmlWebpackPlugin for you! This generates a html
  * page for you when you compile webpack, which will make you start
@@ -28,7 +25,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  */
 
 module.exports = {
-  mode: 'production',
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        extractComments: 'all',
+        uglifyOptions: {
+          warnings: false,
+          parse: {},
+          compress: {},
+          mangle: true,
+          output: null,
+          toplevel: false,
+          nameCache: null,
+          ie8: false,
+          keep_fnames: false,
+        },
+      }),
+    ],
+  },
+  mode: 'development',
   entry: {
     test: './src/app/index.js',
   },
@@ -39,33 +54,34 @@ module.exports = {
 
   plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin(
     {
-      template: path.resolve(__dirname, './src/app/index.html'),
+      template: path.resolve(__dirname, 'src/app/index.html'),
+      inject: 'body',
     }
   )],
 
   module: {
     rules: [
       {
-        test: /.(js|jsx)$/,
-        include: [],
+        test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
-
-        options: {
-          plugins: ['syntax-dynamic-import'],
-
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                modules: false,
-              },
-            ],
-          ],
-        },
+      },
+      {
+        test: /\.(scss)$/,
+        loader:
+          extractCSS.extract([
+            {loader: 'css-loader', options: {sourceMap: true, modules: true}},
+            {loader: 'postcss-loader', options: {sourceMap: true}},
+            {loader: 'sass-loader', options: {sourceMap: true}}]),
       },
     ],
   },
-
+  plugins: [
+    extractCSS,
+  ],
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -83,6 +99,7 @@ module.exports = {
   },
 
   devServer: {
+    publicPath: '/',
     open: true,
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
