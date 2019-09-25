@@ -1,0 +1,79 @@
+@import './reset.scss';
+@import './fonts.scss';
+@import './styles.scss';
+@import './blocks.scss';
+@import './variables.scss';
+@import './mixins';
+@import './gridsystem';
+
+html {
+  font-size: 10px;
+  font-family: 'Nunito-Regular';
+}
+
+.menu {
+  @include flex($justify: space-between);
+
+  color: text-color(menu-block, items);
+
+  &__title {
+    color: text-color(menu-block, title);
+    text-transform: uppercase;
+  }
+}
+
+.nav {
+  background-color: bg-color(nav-block);
+
+  &__title {
+    @include title-font;
+    margin: auto;
+  }
+
+  &__menu {
+    @include flex($justify: space-between);
+    @include title-font;
+    list-style: none;
+  }
+}
+
+.main {
+  background-color: bg-color(main-block);
+}
+
+.footer {
+  background-color: bg-color(footer-block);
+}
+
+.topic {
+  @include flex(column, center, center);
+
+  border: 1px solid red;
+
+  &__title {
+    @include title-font;
+  }
+
+  &__img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: $topic-photo-height;
+    max-width: 100%;
+  }
+}
+
+.new {
+  &__title {
+    @include title-font;
+  }
+}
+
+.collection {
+  @include flex($direction: column, $justify: center, $align: center);
+
+  &__title {
+    @include title-font;
+    font-size: 5rem;
+  }
+}
