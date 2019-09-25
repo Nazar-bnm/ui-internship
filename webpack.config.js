@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -16,7 +16,7 @@ const webpack = require("webpack");
  *
  */
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /*
  * We've enabled HtmlWebpackPlugin for you! This generates a html
@@ -28,18 +28,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
  */
 
 module.exports = {
-  mode: "production",
+  mode: 'production',
   entry: {
-    test: "./src/app/index.js",
+    test: './src/app/index.js',
   },
   output: {
-    filename: "[name].[chunkhash].js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist'),
   },
 
   plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin(
     {
-      template: path.resolve(__dirname, "./src/app/index.html"),
+      template: path.resolve(__dirname, './src/app/index.html'),
     }
   )],
 
@@ -48,14 +48,14 @@ module.exports = {
       {
         test: /.(js|jsx)$/,
         include: [],
-        loader: "babel-loader",
+        loader: 'babel-loader',
 
         options: {
-          plugins: ["syntax-dynamic-import"],
+          plugins: ['syntax-dynamic-import'],
 
           presets: [
             [
-              "@babel/preset-env",
+              '@babel/preset-env',
               {
                 modules: false,
               },
@@ -75,7 +75,7 @@ module.exports = {
         },
       },
 
-      chunks: "async",
+      chunks: 'async',
       minChunks: 1,
       minSize: 30000,
       name: true,
@@ -84,7 +84,7 @@ module.exports = {
 
   devServer: {
     open: true,
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
   },

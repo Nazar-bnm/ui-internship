@@ -11,8 +11,10 @@ module.exports = {
     'Atomics': 'readonly',
     'SharedArrayBuffer': 'readonly',
   },
+  'parser': 'babel-eslint',
   'parserOptions': {
     'ecmaFeatures': {
+      'experimentalObjectRestSpread': true,
       'jsx': true,
     },
     'ecmaVersion': 2018,
@@ -23,7 +25,7 @@ module.exports = {
   ],
   'rules': {
     'semi': ['error', 'always'],
-    'quotes': ['error', 'double'],
-    'indent': ['error', 2]
+    'quotes': ['error', 'single'],
+    'indent': ['error', 2],
   },
 };
