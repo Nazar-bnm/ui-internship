@@ -4,19 +4,16 @@ import Counter from '../components/Counter';
 import { bindActionCreators } from 'redux'; 
 
 const mapStateToProps = (state) => {   
-    return {
-      count: state.reducer.count
-    };
-  }
+  return {
+    count: state.reducer.count
+  };
+}
 
 const mapDispatchToProps = (dispatch) => {
-      return {
-          increment: bindActionCreators(increment, dispatch),
-          decrement: bindActionCreators(decrement, dispatch),
-      }
+  return {
+    increment: bindActionCreators(increment, dispatch),
+    decrement: bindActionCreators(decrement, dispatch),
   }
+}
  
-export const CounterContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
