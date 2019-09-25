@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+
 const path = require("path");
 const webpack = require("webpack");
 
@@ -27,15 +28,20 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
  */
 
 module.exports = {
-  mode: "development",
-  entry: "./src/app/index.js",
-
+  mode: "production",
+  entry: {
+    test: "./src/app/index.js",
+  },
   output: {
     filename: "[name].[chunkhash].js",
     path: path.resolve(__dirname, "dist"),
   },
 
-  plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin()],
+  plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin(
+    {
+      template: path.resolve(__dirname, "./src/app/index.html"),
+    }
+  )],
 
   module: {
     rules: [
@@ -78,5 +84,8 @@ module.exports = {
 
   devServer: {
     open: true,
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000,
   },
 };
