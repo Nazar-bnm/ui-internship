@@ -1,13 +1,13 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable require-jsdoc */
+/* eslint-disable no-unused-vars */
 
-import React, {Component} from 'react';
-import style from '../scss/main.scss';
+import React from 'react';
+import CounterContainer from '../containers/CounterContainer';
 
-export default class App extends Component {
-  render() {
-    return (
-      <h1 style={style} className="test test-route">Hello Interns</h1>
-    );
-  }
+function App() {
+  return (
+    <CounterContainer/>
+  );
 }
+
+export default App;
