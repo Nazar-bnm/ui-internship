@@ -5,7 +5,6 @@ class ProductDetailsPage extends Component {
     super(props);
     const { match: { params } } = this.props;
 
-
     this.state = {
       product: {
         name: params.name,
@@ -19,7 +18,6 @@ class ProductDetailsPage extends Component {
   }
   
   render() {
-    console.log('params', this.props.match);
     return(
       <div>
         <div>{this.state.product.name}</div>

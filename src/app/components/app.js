@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
-import HomePage from '../containers/HomePage/HomePage';
+import HomePage from './HomePage/HomePage';
 import ProductDetailsPage from '../containers/ProductDetailsPage/ProductDetailsPage';
-import ProductListPage from '../containers/ProductListPage/ProductListPage';
+import ProductListPage from './ProductListPage/ProductListPage';
 import NotFoundPage from '../components/NotFoundPage/NotFoundPage'
 
 export default class App extends Component {
