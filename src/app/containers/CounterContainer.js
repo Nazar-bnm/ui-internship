@@ -3,8 +3,7 @@ import { increment, decrement } from '../actions';
 import Counter from '../components/Counter';
 import { bindActionCreators } from 'redux'; 
 
-const mapStateToProps = (state) => {
-    
+const mapStateToProps = (state) => {   
     return {
       count: state.reducer.count
     };
@@ -17,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
       }
   }
  
-  export const CounterContainer = connect(
+export const CounterContainer = connect(
     mapStateToProps,
     mapDispatchToProps
   )(Counter);
