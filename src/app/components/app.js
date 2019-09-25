@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
+import CounterContainer from '../containers/CounterContainer';
 
-export default class App extends Component {
-  render() {
-    return (
-      <h1>Hello Interns</h1>
-    );
-  }
+function App() {
+  return <CounterContainer/>;
 }
+
+export default App;
