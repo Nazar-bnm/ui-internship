@@ -1,0 +1,62 @@
+@import './variables.scss';
+
+$black: #000000;
+$white: #ffffff;
+$silver-chalice: #aaaaaa;
+$mine-shaft: #282828;
+$mercury: #e4e2e1;
+$alto: #d7d5d4;
+$emperor: #4f4f4f;
+$alabaster: #f9f9f9;
+$dove-gray: #666666;
+
+$bg-colors: (
+  main-block: $white,
+  menu-block: $black,
+  nav-block: $white,
+  footer-block: $black,
+);
+
+$text-colors: (
+  menu-block: (
+    title: $white,
+    items: $silver-chalice,
+  ),
+  main-block: (
+    title: $black,
+    item: $mine-shaft,
+    selected: $black,
+    label1: $emperor,
+  ),
+  footer-block: (
+    title: $white,
+    items: $silver-chalice,
+    selected: $white,
+  ),
+);
+
+@function bg-color($type) {
+  @if (map-has-key($bg-colors, $type)) {
+    @return map-get($bg-colors, $type);
+  }
+  @else {
+    @debug $debug-message map-keys($bg-colors);
+    @return null;
+  }
+}
+
+@function text-color($block, $element) {
+  @if (map-has-key($text-colors, $block)) {
+    @if (map-has-key(map-get($text-colors, $block), $element)) {
+      @return map-get(map-get($text-colors, $block), $element);
+    }
+    @else {
+      @debug 'No such element, please use one of list:'map-keys(map-get($text-colors, $block));
+      @return null;
+    }
+  }
+  @else {
+    @debug $debug-message map-keys($text-colors);
+    @return null;
+  }
+}
