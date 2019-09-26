@@ -5,6 +5,7 @@
 @import './variables.scss';
 @import './mixins';
 @import './gridsystem';
+@import './media.scss';
 
 html {
   font-size: 10px;
@@ -47,7 +48,7 @@ html {
 
 .topic {
   @include flex(column, center, center);
-
+  // background-color: bg-color(footer-block);
   border: 1px solid red;
 
   &__title {
@@ -65,7 +66,8 @@ html {
 
 .new {
   &__title {
-    @include title-font;
+   font-family: font(primary-bold);
+   color: text-color(main-block, label1);
   }
 }
 
