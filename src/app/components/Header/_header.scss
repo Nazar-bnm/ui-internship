@@ -1,0 +1,29 @@
+@import "../../scss/global_styles";
+
+.header {
+  .menu {
+    color: text-color(menu-block, items);
+    align-items: center;
+
+    &__title {
+      color: text-color(menu-block, title);
+      font-family: font(primary-light);
+      text-transform: uppercase;
+    }
+  }
+
+  .nav {
+    background-color: bg-color(nav-block);
+
+    &__title {
+      @include title-font;
+      margin: auto;
+    }
+
+    &__menu {
+      @include flex($justify: space-between);
+      @include title-font;
+      list-style: none;
+    }
+  }
+}
