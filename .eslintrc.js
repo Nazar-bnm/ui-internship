@@ -5,7 +5,7 @@ module.exports = {
   },
   'extends': [
     'google',
-    'eslint:recommended',
+    'plugin:react/recommended',
   ],
   'globals': {
     'Atomics': 'readonly',
@@ -22,10 +22,13 @@ module.exports = {
   },
   'plugins': [
     'react',
+    'jsdoc'
   ],
   'rules': {
     'semi': ['error', 'always'],
     'quotes': ['error', 'single'],
     'indent': ['error', 2],
+    'object-curly-spacing': [2, 'always'],
+    'require-jsdoc' : 0
   },
 };
