@@ -28,4 +28,4 @@ class ProductDetailsPage extends Component {
   }
 }
 
-export default ProductDetailsPage
+export default ProductDetailsPage;

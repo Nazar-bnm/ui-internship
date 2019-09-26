@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
+import CounterContainer from '../containers/Counter/CounterContainer';
 import HomePage from './HomePage/HomePage';
 import ProductDetailsPage from '../containers/ProductDetailsPage/ProductDetailsPage';
 import ProductListPage from './ProductListPage/ProductListPage';
-import NotFoundPage from '../components/NotFoundPage/NotFoundPage'
+import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div>
+       <CounterContainer/>
         <ul>
           <li>
             <Link to="/home">Home Page</Link>
@@ -31,3 +33,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;

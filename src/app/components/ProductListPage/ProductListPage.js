@@ -7,7 +7,7 @@ const renderProductList = () => {
     {product: 't-shirt', id: '2'},
     {product: 'pants', id: '3'},
     {product: 'jeans', id: '4'},
-  ]
+  ];
 
   return products.map(({ product, id }) => {
     return (
@@ -17,9 +17,9 @@ const renderProductList = () => {
         </li>
       </div>
     )
-  });
-}
+  })
+};
 
-const ProductListPage = () => <ul>{renderProductList()}</ul>;
+const ProductListPage = () => (<ul>{renderProductList()}</ul>);
 
-export default ProductListPage
+export default ProductListPage;
