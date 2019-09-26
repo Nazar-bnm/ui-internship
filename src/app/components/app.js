@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-       <CounterContainer/>
+        <CounterContainer/>
         <ul>
           <li>
             <Link to="/home">Home Page</Link>
@@ -19,8 +19,8 @@ class App extends Component {
           <li>
             <Link to="/products">Product List Page</Link>
           </li>
-        </ul> 
-        
+        </ul>
+
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/home" component={HomePage} />
