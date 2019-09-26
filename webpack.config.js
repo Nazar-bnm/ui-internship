@@ -1,6 +1,3 @@
-/* eslint-disable no-dupe-keys */
-/* eslint-disable no-undef */
-
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
