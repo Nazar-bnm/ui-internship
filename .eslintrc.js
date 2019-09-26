@@ -29,6 +29,12 @@ module.exports = {
     'quotes': ['error', 'single'],
     'indent': ['error', 2],
     'object-curly-spacing': [2, 'always'],
-    'require-jsdoc' : 0
+    'require-jsdoc' : 0,
+    'max-len': ['error', 120, 2],
   },
+  'settings': {
+    'react': {
+        'version': require('./package.json').dependencies.react,
+    },
+},
 };
