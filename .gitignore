@@ -1,8 +1,10 @@
 /node_modules
-bundle.js
+/dist
 npm-debug.log
 .DS_Store
 
 # IntelliJ
+*.log
+*.log.*
 *.iml
 /.idea
