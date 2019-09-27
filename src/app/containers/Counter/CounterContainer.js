@@ -1,14 +1,7 @@
-<<<<<<< HEAD:src/app/containers/CounterContainer.js
 import { connect } from 'react-redux';
-import { increment, decrement } from '../actions';
-import Counter from '../components/Counter';
-import { bindActionCreators } from 'redux';
-=======
-import { connect }  from 'react-redux';
 import { increment, decrement } from '../../actions';
 import Counter from '../../components/Counter/Counter';
-import { bindActionCreators } from 'redux'; 
->>>>>>> ad871e26a70080ead7260fd3c52f46efbfb84e9e:src/app/containers/Counter/CounterContainer.js
+import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
   return {
