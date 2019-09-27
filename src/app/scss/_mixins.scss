@@ -1,0 +1,83 @@
+@import './variables.scss';
+@import './fonts.scss';
+/* use to create media query with breakpoint from
+   ./variables.sccs $breakpoints: */
+@mixin media-for($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media screen and (max-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  }
+  @else {
+    @debug $debug-message map-keys($breakpoints);
+  }
+}
+
+@mixin flex($direction: null, $justify: null, $align: null, $wrap: wrap) {
+  display: flex;
+
+  @if($direction) {
+    flex-direction: $direction;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin style-reset($appearance: none) {
+  -webkit-appearance: $appearance;
+  @if $appearance == 'button' {
+    cursor: pointer;
+  }
+  border: none;
+  font: inherit;
+  line-height: 3;
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+}
+
+@mixin pseudo-class ($pseudo: after, $content: null) {
+  position: relative;
+
+  &::#{$pseudo} {
+    position: absolute;
+    @if $content {
+      content: $content;
+    }
+    @content;
+  }
+}
+
+@mixin background($url, $size: cover, $position: center, $repeat: no-repeat) {
+  background-image: url(#{$url});
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin pseudo-bg ($url, $pseudo: before, $opacity: null, $z-index: -1, $size: cover, $position: center) {
+  @include pseudo-class(#{$pseudo}, $content: '') {
+    @include background(#{$url}, $size: $size, $position: $position);
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z-index;
+    @if $opacity {
+      opacity: $opacity;
+    }
+  } 
+}
+
+@mixin title-font {
+  font-family: font(secondary);
+  text-transform: uppercase;
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+$debug-message: 'No such key, please use one of list:';
+$topic-photo-height: 300px;
+$slider-height: 300px;
+
+// map of breakpoints according to SRS:
+$breakpoints: (
+  desktop: 1280px,
+  laptop: 1024px,
+  tablet: 768px,
+  mobile-landscape: 480px,
+  mobile-portrait: 320px,
+);
+
+// content width for resposive:
+$content-width: (
+  desktop-large: 1200px,
+  desktop: 1000px,
+  laptop: 720px,
+  tablet : 460px,
+  mobile-landscape: 300px,
+);
+
+$spacings: (
+  small: 5px,
+  default: 15px,
+  large: 50px,
+);
+
+@function spacing ($size) {
+  @if map-has-key($spacings , $size) {
+    @return map-get($spacings, $size);
+  }
+  @else {
+    @debug $debug-message map-keys($spacings);
+    @return null;
+  }
+}

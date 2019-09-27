@@ -1,0 +1,48 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.content {
+  margin: 0 auto;
+  width: map-get($content-width, desktop-large);
+  
+  @include media-for(desktop) {
+    width: map-get($content-width, desktop);
+  }
+
+  @include media-for(laptop) {
+    width: map-get($content-width, laptop);
+  }
+
+  @include media-for(tablet) {
+    width: map-get($content-width, tablet);
+  }
+
+  @include media-for(mobile-landscape) {
+    width: map-get($content-width, mobile-landscape);
+  }
+
+  @include media-for(mobile-portrait) {
+    max-width: map-get($content-width, mobile-portrait);
+  }
+}
+
+.wrapper {
+  width: 100%;
+
+  &._menu {
+    background-color: bg-color(menu-block);
+  }
+
+  &._slider {
+    @include flex;
+    @include pseudo-bg('../img/background/slider.png');
+    @include pseudo-bg (
+      '../img/background/slider-after.png',
+      'after',
+      $size: contain,
+      $position: 25%
+    );
+    
+    height: $slider-height;
+  }
+}
