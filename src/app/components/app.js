@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
-import CounterContainer from '../containers/Counter/CounterContainer';
+import Header from './Header';
 import HomePage from './HomePage/HomePage';
 import ProductDetailsPage from '../containers/ProductDetailsPage/ProductDetailsPage';
 import ProductListPage from './ProductListPage/ProductListPage';
@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CounterContainer/>
+        <Header/>
         <ul>
           <li>
             <Link to="/home">Home Page</Link>

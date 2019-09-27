@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const AccountNavigation = (props) => {
   return (
     <div className={props.grid}>

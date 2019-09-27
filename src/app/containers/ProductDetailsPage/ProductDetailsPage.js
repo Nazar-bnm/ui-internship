@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class ProductDetailsPage extends Component {
   constructor(props) {
@@ -8,17 +8,17 @@ class ProductDetailsPage extends Component {
     this.state = {
       product: {
         name: params.name,
-        id: params.id
-      }
-    }
+        id: params.id,
+      },
+    };
   }
 
   returnBack = () => {
     this.props.history.goBack();
   }
-  
+
   render() {
-    return(
+    return (
       <div>
         <div>{this.state.product.name}</div>
         <div>{this.state.product.id}</div>
