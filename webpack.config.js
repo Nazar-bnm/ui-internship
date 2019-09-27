@@ -1,38 +1,56 @@
-
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: ['./src/app/index.js'],
+  devServer: {
+    historyApiFallback: true,
+  },
+  entry: './src/app/index.js',
   output: {
-    path: path.join(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
-    loaders: [
+    rules: [
       {
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015', 'stage-1']
-        }
-      }
-    ]
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+    ],
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-    publicPath: '/',
-    historyApiFallback: true,
-    contentBase: './src/app/',
-    host: 'localhost',
-    port: '3000',
-    open: true,
-    liveReload: true,
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
-  },
-  devtool: 'source-map',
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/app/index.html',
+      filename: './index.html',
+    }),
+  ],
 };

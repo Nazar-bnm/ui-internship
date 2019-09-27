@@ -1,12 +1,12 @@
 import React from 'react';
-import { Switch } from "react-router-dom";
+import { Switch } from 'react-router-dom';
 
-import CounterContainer from "../../containers/Counter";
-import HomePage from "../HomePage";
-import ProductDetailsPage from "../../containers/ProductDetailsPage";
-import ProductListPage from "../ProductListPage";
-import NotFoundPage from "../NotFoundPage";
-import DefaultLayout from "../DefaultLayout";
+import CounterContainer from '../../containers/Counter';
+import HomePage from '../HomePage';
+import ProductDetailsPage from '../../containers/ProductDetailsPage';
+import ProductListPage from '../ProductListPage';
+import NotFoundPage from '../NotFoundPage';
+import DefaultLayout from '../DefaultLayout';
 
 const Routs = () => (
   <Switch>
@@ -16,12 +16,11 @@ const Routs = () => (
     <DefaultLayout path="/products/:id" component={ProductDetailsPage} />
     <DefaultLayout path="/counter" component={CounterContainer} />
     <DefaultLayout
-      path="/404"
+      to="/404"
       component={NotFoundPage}
       hideFooter
       hideHeader
     />
-    <DefaultLayout to="/404" />
   </Switch>
 );
 

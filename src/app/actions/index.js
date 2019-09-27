@@ -1,13 +1,13 @@
-import { INCREMENT, DECREMENT } from "./actionTypes";
+import { INCREMENT, DECREMENT } from './actionTypes';
 
 export const increment = () => {
   return {
-    type: INCREMENT
+    type: INCREMENT,
   };
 };
 
 export const decrement = () => {
   return {
-    type: DECREMENT
+    type: DECREMENT,
   };
 };

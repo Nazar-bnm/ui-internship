@@ -5,5 +5,7 @@ npm-debug.log
 .DS_Store
 
 # IntelliJ
+*.log
+*.log.*
 *.iml
 /.idea
