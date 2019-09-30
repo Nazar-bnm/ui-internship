@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 class ProductDetailsPage extends Component {
   constructor(props) {
     super(props);
+    const { match: { params } } = this.props;
 
     this.state = {
       product: {
-        name: this.props.name,
-        id: this.props.id,
+        name: params.name,
+        id: params.id,
       },
     };
   }
@@ -30,6 +31,7 @@ class ProductDetailsPage extends Component {
 
 ProductDetailsPage.propTypes = {
   history: PropTypes.object,
+  match: PropTypes.object,
   name: PropTypes.string,
   id: PropTypes.string,
 };
