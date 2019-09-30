@@ -12,12 +12,11 @@
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    "test": "jest --passWithNoTests",
     "test:watch": "npm run test -- --watch",
     "scriptName": "webpack --config etc...",
     "start": "webpack-dev-server --mode development",
-    "scss": "node-sass -w ./src/app/scss/main.scss ./src/app/css/main.min.css --output-style compressed",
-    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "scss": "node-sass -w ./src/scss/main.scss ./src/css/main.min.css --output-style compressed",
+    "lint": "./node_modules/.bin/eslint src/***/**/*.js",
     "tdd": "jest --watch",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
