@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class ProductDetailsPage extends Component {
   constructor(props) {
     super(props);
+
     const { match: { params } } = this.props;
 
     this.state = {
@@ -30,9 +31,13 @@ class ProductDetailsPage extends Component {
 }
 
 ProductDetailsPage.propTypes = {
+  // Routing history for returning back
   history: PropTypes.object,
+  // Route path info
   match: PropTypes.object,
+  // receiwed odject name
   name: PropTypes.string,
+  // receiwed odject id
   id: PropTypes.string,
 };
 
