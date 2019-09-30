@@ -5,10 +5,12 @@ class ProductDetailsPage extends Component {
   constructor(props) {
     super(props);
 
+    const { match: { params } } = this.props;
+
     this.state = {
       product: {
-        name: this.props.name,
-        id: this.props.id,
+        name: params.name,
+        id: params.id,
       },
     };
   }
@@ -29,8 +31,13 @@ class ProductDetailsPage extends Component {
 }
 
 ProductDetailsPage.propTypes = {
+  // Routing history for returning back
   history: PropTypes.object,
+  // Route path info
+  match: PropTypes.object,
+  // receiwed odject name
   name: PropTypes.string,
+  // receiwed odject id
   id: PropTypes.string,
 };
 
