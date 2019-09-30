@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ProductDetailsPage extends Component {
   constructor(props) {
@@ -8,17 +9,17 @@ class ProductDetailsPage extends Component {
     this.state = {
       product: {
         name: params.name,
-        id: params.id
-      }
-    }
+        id: params.id,
+      },
+    };
   }
 
-  returnBack = () => {
-    this.props.history.goBack();
+  returnBack() {
+    return this.props.history.goBack();
   }
-  
+
   render() {
-    return(
+    return (
       <div>
         <div>{this.state.product.name}</div>
         <div>{this.state.product.id}</div>
@@ -27,5 +28,12 @@ class ProductDetailsPage extends Component {
     );
   }
 }
+
+ProductDetailsPage.propTypes = {
+  history: PropTypes.object,
+  match: PropTypes.object,
+  name: PropTypes.string,
+  id: PropTypes.string,
+};
 
 export default ProductDetailsPage;
