@@ -6,12 +6,14 @@ import HomePage from './HomePage/HomePage';
 import ProductDetailsPage from '../containers/ProductDetailsPage/ProductDetailsPage';
 import ProductListPage from './ProductListPage/ProductListPage';
 import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
+import JoinUs from './JoinUs/JoinUs';
 
 class App extends Component {
   render() {
     return (
       <div>
         <CounterContainer/>
+        <JoinUs />
         <ul>
           <li>
             <Link to="/home">Home Page</Link>

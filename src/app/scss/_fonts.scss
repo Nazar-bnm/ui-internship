@@ -14,47 +14,47 @@ $fonts: (
 
 @font-face {
   font-family: 'Nunito-Regular';
-  src: url('../fonts/Nunito/Nunito-Regular.ttf');
+  src: url('/src/app/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Nunito-Bold';
-  src: url('../fonts/Nunito/Nunito-Bold.ttf');
+  src: url('/src/app/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Nunito-Light';
-  src: url('../fonts/Nunito/Nunito-Light.ttf');
+  src: url('/src/app/fonts/Nunito/Nunito-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Black';
-  src: url('../fonts/Playfair_Display/PlayfairDisplay-Black.ttf');
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Black.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-BlackItalic';
-  src: url('../fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf');
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Bold';
-  src: url('../fonts/Playfair_Display/PlayfairDisplay-Bold.ttf');
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-BoldItalic';
-  src: url('../fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf');
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Italic';
-  src: url('../fonts/Playfair_Display/PlayfairDisplay-Italic.ttf');
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Regular';
-  src: url('../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf');
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf') format('truetype');
 }
 
 @function font($type: primary) {
