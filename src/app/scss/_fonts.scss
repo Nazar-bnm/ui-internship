@@ -1,0 +1,69 @@
+@import './variables.scss';
+
+$fonts: (
+  primary: 'Nunito-Regular',
+  primary-bold: 'Nunito-Bold',
+  primary-light: 'Nunito-Light',
+  secondary: 'PlayfairDisplay-Regular',
+  secondary-italic: 'PlayfairDisplay-Italic',
+  secondary-heavy: 'PlayfairDisplay-Black',
+  secondary-bold: 'PlayfairDisplay-Bold',
+  secondary-heavy-italic: 'PlayfairDisplay-BlackItalic',
+  secondary-bold-italic: 'PlayfairDisplay-BoldItalic',
+);
+
+@font-face {
+  font-family: 'Nunito-Regular';
+  src: url('/src/app/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito-Bold';
+  src: url('/src/app/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito-Light';
+  src: url('/src/app/fonts/Nunito/Nunito-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Black';
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-BlackItalic';
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Bold';
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-BoldItalic';
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Italic';
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Regular';
+  src: url('/src/app/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
+@function font($type: primary) {
+  @each $key, $font in $fonts {
+    @if $key == $type {
+      @return $font;
+    }
+  }
+
+  @debug $debug-message map-keys($fonts);
+  @return null;
+}

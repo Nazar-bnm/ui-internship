@@ -1,0 +1,40 @@
+@import "../../scss/global_styles";
+
+.dropdown {
+  @include flex(row, center, center);
+  position: relative;
+  font-family: font(primary-light);
+  color: $silver-chalice;
+  padding: 5px;
+
+  &__items, &[aria-expanded=true] &__items {
+    display: none;
+    list-style: none;
+    background-color: bg-color(secondary);
+
+    &__element {
+      border-bottom: 1px solid $silver-chalice;
+      padding: 5px 5px;
+
+      &:hover {
+        color: $alto;
+      }
+    }
+  }
+
+  &[aria-expanded=true] {
+    .dropdown {
+      &__items {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 100%;
+        left: 0;
+        
+      }
+    }
+  }
+  .icon {
+     margin-top: -5px;
+  }
+}

@@ -6,6 +6,7 @@ import HomePage from './HomePage/HomePage';
 import ProductDetailsPage from '../containers/ProductDetailsPage/ProductDetailsPage';
 import ProductListPage from './ProductListPage/ProductListPage';
 import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
+// import CounterContainer from '../containers/Counter/CounterContainer';
 
 class App extends Component {
   render() {

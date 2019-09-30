@@ -1,0 +1,14 @@
+@import './reset.scss';
+@import './fonts.scss';
+@import './colors.scss';
+@import './blocks.scss';
+@import './variables.scss';
+@import './mixins';
+@import './gridsystem';
+@import './media.scss';
+@import './breakpoints';
+
+html {
+    font-size: 10px;
+    font-family: 'Nunito-Regular';
+  }

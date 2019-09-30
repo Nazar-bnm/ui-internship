@@ -4,11 +4,11 @@ import AccountNavigation from './AccountNavigation';
 
 const PageSettings = () => (
   <div className="content container">
-    <ContentOptions grid="col-3"/>
+    <ContentOptions grid="col-4"/>
     <h3 className="col-3 col-center">
         free shipping on orders above 50$
     </h3>
-    <AccountNavigation grid="col-3"/>
+    <AccountNavigation grid="col-4"/>
   </div>
 );
 
