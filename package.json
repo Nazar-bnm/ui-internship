@@ -20,7 +20,8 @@
     "lint": "./node_modules/.bin/eslint src/**/*.js",
     "tdd": "jest --watch",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "mock:api": "json-server --watch ./src/db.json --port 4000"
   },
   "husky": {
     "hooks": {
@@ -69,6 +70,7 @@
     "axios": "^0.19.0",
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
+    "json-server": "^0.15.1",
     "lodash": "^3.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
