@@ -17,12 +17,11 @@
     }
 
     &-error {
-        @include title-font;
         position: absolute;
-        right: 50px;
+        opacity: 0;
         bottom: 2px;
         font-size: 12px;
-        text-transform: lowercase;
+        font-style: italic;
         color: $red;
     }
 
@@ -70,5 +69,4 @@ i.icon {
     margin: 0;
     height: 100%;
 }
-
 

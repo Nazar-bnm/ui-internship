@@ -7,8 +7,9 @@ class JoinUs extends Component {
     super(props);
     this.state = {
       email: '',
-      warning: '',
-      formError: { email: '' },
+      formError: {
+        email: '',
+      },
       emailValid: false,
       formValid: false,
     };
@@ -29,17 +30,19 @@ class JoinUs extends Component {
     let emailValid = this.state.emailValid;
 
     emailValid = value.match(emailRegEx);
-    fieldValidationError.email;
-    // = emailValid ? '' : ' is invalid';
+    fieldValidationError.email = emailValid ? '' : ' is invalid';
 
     this.setState({ formError: fieldValidationError,
       emailValid: emailValid,
-      warning: 'warning',
     }, this.validateForm);
   }
 
   validateForm() {
     this.setState({ formValid: this.state.emailValid });
+  }
+
+  errorClass(error) {
+    return (error.length === 0 ? '' : 'warning');
   }
 
   render() {
@@ -51,7 +54,7 @@ class JoinUs extends Component {
             <input type="email" required name="email"
               value={this.state.email}
               onChange={(e)=>this.handleInput(e)}
-              className={`email-input ${this.state.warning}`} />
+              className={`email-input ${this.errorClass(this.state.formError.email)}`} />
             <button className="btn" type="submit" disabled={!this.state.formValid}>
               <i className="chevron right icon"></i>
             </button>
