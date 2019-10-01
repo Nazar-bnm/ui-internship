@@ -22,7 +22,7 @@ const options = {
 
 const ContentOptions = (props) => {
   return (
-    <div className={`container ${props.grid}`}>
+    <div className={`container dropdowns`}>
       <Dropdown options={options.company}/>
       <Dropdown options={options.currency}/>
       <Dropdown options={options.language}/>

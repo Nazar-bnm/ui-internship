@@ -1,29 +1,62 @@
 @import "../../scss/global_styles";
 
 .header {
-  .page-settings {
-    color: text-color(menu-block, items);
+  text-transform: uppercase;
+
+  .wrapper {
+    background-color: $black;
+    padding-bottom: 5px;
+
+    .dropdowns {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    
+    .heading {
+      color: $white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .navigation-right {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      color: $silver-chalice;
+    }
+  }
+
+  .heading-search-cart-container {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
 
-    &__title {
-      color: text-color(menu-block, title);
-      font-family: font(primary-light);
-      text-transform: uppercase;
+  .buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    .list-item {
+      margin: 0 5px;
+
+      & > a {
+        color: $black;
+      }
     }
   }
 
-  .nav {
-    background-color: bg-color(nav-block);
-
-    &__title {
-      @include title-font;
-      margin: auto;
-    }
-
-    &__menu {
-      @include flex($justify: space-between);
-      @include title-font;
-      list-style: none;
-    }
+  &__title {
+    margin: 10px;
+    text-align: center;
+    font-family: font(primary);
   }
+
 }

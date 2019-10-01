@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 
 const PageNavigation = (props) => {
   return (
-    <ul className={props.class}>
+    <ul className={'list container'}>
       {props.options.map(({ value, label, link }, i) => (
         <li key={i.toString()}
           value={value}
+          className={'list-item'}
         >
           <Link to={link}>{label}</Link>
         </li>
