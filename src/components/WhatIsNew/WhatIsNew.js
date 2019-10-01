@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HttpService from '../../service/httpService';
+import HttpService from '../../service/HttpService/httpService';
 
 
 class WhatIsNew extends Component {
@@ -7,7 +7,7 @@ class WhatIsNew extends Component {
     items: [],
   }
 
-  test = async () => {
+  async test() {
     const userAPI = new HttpService();
     const response = await userAPI.get('http://localhost:4000/what-is-new');
     this.setState({ items: response.data });

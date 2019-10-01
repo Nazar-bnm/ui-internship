@@ -9,7 +9,7 @@ import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew/WhatIsNew';
 
-const Routs = () => (
+const Routes = () => (
   <Switch>
     <DefaultLayout path="/" exact component={HomePage} />
     <DefaultLayout path="/home" component={HomePage} />
@@ -26,4 +26,4 @@ const Routs = () => (
   </Switch>
 );
 
-export default Routs;
+export default Routes;

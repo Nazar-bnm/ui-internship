@@ -51,7 +51,7 @@ Now if you go to [http://localhost:4000/employees/1](http://localhost:4000/emplo
   "email": "sebastian@codingthesmartway.com"
 }
 ```
-OR if you go to [http://localhost:4000/](http://localhost:4000/), you'll get the page with
+OR if you go to [http://localhost:4000/](http://localhost:4000/), you'll get all available paths
 
 ### Resources
 which will contain all paths:
