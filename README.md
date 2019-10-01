@@ -17,3 +17,7 @@ SASS syntax support;
 Pre-push hooks for runing a unit-tests before every ```git commit``` and ```git push``` commands;
 ESLint is used to prevent JavaScript error;
 React is used for UI;
+
+JSON-server
+simulation REST API with CRUD operations
+See more [here](./JSON-server.md)
