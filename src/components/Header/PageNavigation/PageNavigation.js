@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 const PageNavigation = (props) => {
   return (
     <ul className={props.class}>
-      {props.options.map((option, i) => (
+      {props.options.map(({ value, label, link }, i) => (
         <li key={i.toString()}
-          value={option.value}
+          value={value}
         >
-          {option.label}
+          <Link to={link}>{label}</Link>
         </li>
       ))}
     </ul>

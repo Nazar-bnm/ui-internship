@@ -42,4 +42,3 @@ ProductDetailsPage.propTypes = {
 };
 
 export default ProductDetailsPage;
- 
