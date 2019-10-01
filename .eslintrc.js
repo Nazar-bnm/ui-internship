@@ -31,6 +31,7 @@ module.exports = {
     'object-curly-spacing': [2, 'always'],
     'require-jsdoc' : 0,
     'max-len': ['error', 120, 2],
+    "linebreak-style": 0,
   },
   'settings': {
     'react': {
