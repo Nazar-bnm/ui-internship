@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ErrorBoundary from './ErrorBoundary'
+import ErrorBoundary from './ErrorBoundary';
 
 describe('ErrorBoundary', () => {
   const CustomComponent = () => <div>Component</div>;
@@ -12,7 +12,7 @@ describe('ErrorBoundary', () => {
       </ErrorBoundary>
     );
     expect(wrapped.exists('CustomComponent')).toBe(true);
-  })
+  });
 
   test('lifecycle hook componentDidCatch should have been called', () => {
     const wrapped = shallow(
@@ -27,5 +27,5 @@ describe('ErrorBoundary', () => {
     wrapped.find('CustomComponent').simulateError(error);
     expect(spy).toHaveBeenCalled();
   });
-})
+});
 
