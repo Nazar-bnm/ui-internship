@@ -18,5 +18,25 @@
       "last_name": "Smith",
       "email": "ann@codingthesmartway.com"
     }
+  ],
+  "what-is-new" : [
+    {
+      "id": 1,
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "Black and White",
+      "collection": "spring collection 2016"
+    },
+    {
+      "id": 2,
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "Color Summer",
+      "collection": "spring collection 2016"
+    },
+    {
+      "id": 3,
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "Vintage For Him",
+      "collection": "spring collection 2016"
+    }
   ]
 }

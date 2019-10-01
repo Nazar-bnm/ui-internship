@@ -7,6 +7,7 @@ import ProductDetailsPage from '../../containers/ProductDetailsPage';
 import ProductListPage from '../ProductListPage';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
+import WhatIsNew from '../WhatIsNew/WhatIsNew';
 
 const Routs = () => (
   <Switch>
@@ -15,6 +16,7 @@ const Routs = () => (
     <DefaultLayout path="/products" exact component={ProductListPage} />
     <DefaultLayout path="/products/:id" component={ProductDetailsPage} />
     <DefaultLayout path="/counter" component={CounterContainer} />
+    <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
     <DefaultLayout
       to="/404"
       component={NotFoundPage}
