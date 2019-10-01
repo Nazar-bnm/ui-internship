@@ -1,0 +1,71 @@
+@import '../../scss/global_styles.scss';
+
+.join-us {
+    @include flex($justify: flex-start);
+    position: relative;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 40vw;
+    background-color: $black;
+    padding: 20px;
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-error {
+        position: absolute;
+        opacity: 0;
+        bottom: 2px;
+        font-size: 12px;
+        font-style: italic;
+        color: $red;
+    }
+
+    &-paragraph {
+        margin: 0;
+    }
+}
+
+.title {
+    @include title-font;
+    margin-bottom: 0;
+    color: $white;
+}
+
+.container {
+    position: relative;
+}
+
+.email-input {
+    margin: 0 10px;
+    width: 170px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.btn {
+    @include flex($justify: flex-start, $align: center);
+    position: absolute;
+    right: 25px;
+    border: none;
+    height: 100%;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    color: inherit;
+}
+
+.warning {
+    border: 2px solid $red;
+    border-radius: 2px; 
+}
+
+i.icon {
+    margin: 0;
+    height: 100%;
+}
