@@ -19,7 +19,7 @@ const DefaultLayout = ({ component: Component, hideFooter, hideHeader, ...rest }
 
 DefaultLayout.propTypes = {
   // Component which displayed as main content
-  component: PropTypes.func,
+  component: PropTypes.any,
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
 };
