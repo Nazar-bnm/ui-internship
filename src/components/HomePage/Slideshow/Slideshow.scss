@@ -1,0 +1,29 @@
+@import '../../../scss/global_styles.scss';
+
+.slideshow-container {
+  position: relative;
+  height: 300px;
+}
+
+.arrow-button {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:nth-child(2) {
+    right: 0;
+  }
+}
+
+.slider-pagination {
+  z-index: 2;
+  cursor: pointer;
+  width: 2rem;
+  height: 1rem;
+  border: 1px solid #ccc;
+
+  &--active {
+    background: #000;
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../../scss/global_styles.scss';
+
+.slide {
+  &-info {
+    @include flex($direction: column, $justify: center, $align: center);
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+  background-size: contain;
+    font-family: font(primary-light);
+    height: 100%;
+    padding-left: 20%;
+    width: 100%;
+    text-align: center;
+
+    &-title {
+      text-transform: uppercase;    
+    }
+  
+    &-description {
+      text-transform: capitalize;
+      font-size: 2rem;
+    }
+  }
+
+  &-image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+  opacity: 1;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

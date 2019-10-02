@@ -1,8 +1,9 @@
 import React from 'react';
+import Slideshow from './Slideshow';
 
 const HomePage = () => (
   <div>
-    <h2>HomePage</h2>
+    <Slideshow />
   </div>
 );
 
