@@ -35,9 +35,9 @@
 
   &._slider {
     @include flex;
-    @include pseudo-bg('/src/app/img/background/slider.png');
+    @include pseudo-bg('/src/assets/img/background/slider.png');
     @include pseudo-bg (
-      '/src/app/img/background/slider-after.png',
+      '/src/assets/img/background/slider-after.png',
       'after',
       $size: contain,
       $position: 25%
