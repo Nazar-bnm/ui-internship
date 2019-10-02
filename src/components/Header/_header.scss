@@ -1,29 +1,27 @@
 @import "../../scss/global_styles";
 
 .header {
+  font-size: 1rem;
   text-transform: uppercase;
 
   .wrapper {
     background-color: $black;
     padding-bottom: 5px;
-
-    .dropdowns {
-      width: 100%;
-      justify-content: space-evenly;
-    }
+  }
     
-    .heading {
-      color: $white;
-      font-size: 1.4rem;
-      text-align: center;
-    }
+  .heading {
+    color: $white;
+    margin: 0 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
 
-    .navigation-right {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      color: $silver-chalice;
-    }
+  .navigation-account {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 250px;
+    color: $silver-chalice;
   }
 
   .heading-search-cart-container {
@@ -36,6 +34,10 @@
     display: flex;
     justify-content: space-evenly;
     width: 30%;
+
+    .button {
+      text-transform: uppercase;
+    }
   }
 
   .list {
@@ -58,5 +60,93 @@
     text-align: center;
     font-family: font(primary);
   }
+}
 
+.content {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdowns {
+  margin: 0;
+}
+
+.search-input {
+  height: 20px;
+  width: 230px;
+  margin: 0 10px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: 1.6rem;
+}
+
+.input-wrapper {
+  position: relative;
+  border-right: 1px solid $silver-chalice;
+  border-left: 1px solid $silver-chalice;
+
+  & > i {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    font-size: 1.3em;
+  }
+}
+
+
+@include media-for(mobile-landscape){
+  .header {
+    &__title {
+      width: 100%;
+      margin: 20px 10px;
+      font-size: 3rem;
+      font-family: font(primary-light);
+      font-weight: normal;
+    }
+
+    .dropdowns {
+      padding: 0;
+    }
+
+    .dropdown > i {
+      margin: 0 3px;
+    }
+
+    .dropdown:first-child, .heading {
+      display: none;
+    }
+  
+    .navigation-account {
+      display: none;
+    }
+
+    .cart-btn {
+      position: absolute;
+      top: 5px;
+      right: 20px;
+      color: $white;
+    }
+
+    .heading-search-cart-container {
+      flex-direction: column;
+    }
+
+    .buttons-container {
+      height: 30px;
+      padding-bottom: 10px;
+    }
+
+    .burger-menu-container {
+      display: flex;
+      padding-right: 10px;
+
+      .icon {
+        font-size: 1.7em;
+      }
+    }
+
+    .list {
+      display: none;
+    }
+  }
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const AccountNavigation = (props) => {
   return (
-    <div className="navigation-right">
+    <div className="navigation-account">
       <span>my account</span>
       <span>wish list</span>
       <span>checkout</span>

@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = (props) => {
+const Input = (props) => {
   return (
-    <button className={props.customClass + ' button'}>
+    <div className="input-wrapper">
       {props.icon && <i className={props.icon + ' icon'}></i>}
-      {props.children}
-    </button>
+      <input type="text" placeholder="SEARCH" className={props.customClass + ' input'} />
+    </div>
   );
 };
 
-Button.propTypes = {
+Input.propTypes = {
   icon: PropTypes.string,
   customClass: PropTypes.string,
   children: PropTypes.oneOfType([
@@ -19,4 +19,4 @@ Button.propTypes = {
   ]),
 };
 
-export default Button;
+export default Input;

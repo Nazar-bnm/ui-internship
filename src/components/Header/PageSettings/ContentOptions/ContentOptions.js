@@ -22,10 +22,10 @@ const options = {
 
 const ContentOptions = (props) => {
   return (
-    <div className={`container dropdowns`}>
-      <Dropdown options={options.company}/>
-      <Dropdown options={options.currency}/>
-      <Dropdown options={options.language}/>
+    <div className={'container dropdowns'}>
+      <Dropdown options={options.company} className="dropdown"/>
+      <Dropdown options={options.currency} className="dropdown"/>
+      <Dropdown options={options.language} className="dropdown"/>
     </div>
   );
 };
