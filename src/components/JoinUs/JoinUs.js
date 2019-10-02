@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { JoinUsError } from './JoinUsError';
 import './JoinUs.scss';
 
 class JoinUs extends Component {
@@ -47,7 +46,7 @@ class JoinUs extends Component {
       <form className="join-us">
         <label htmlFor="email" className="title">newsletter</label>
         <div className="join-us-wrapper">
-          <div className="container">
+          <div className="input-wrapper">
             <input type="email" required name="email"
               value={this.state.email}
               onChange={(e)=>this.handleInput(e)}
@@ -57,7 +56,6 @@ class JoinUs extends Component {
             </button>
           </div>
         </div>
-        <JoinUsError formError={this.state.formError} />
       </form>
     );
   }
