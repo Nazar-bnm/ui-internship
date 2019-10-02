@@ -4,11 +4,26 @@
   font-size: 1rem;
   text-transform: uppercase;
 
+  &__title {
+    width: 100%;
+    margin: 20px 10px;
+    font-size: 3rem;
+    font-family: font(primary-light);
+    font-weight: normal;
+    font-family: font(primary);
+    text-align: center;
+  }
+
+  .content {
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .wrapper {
     background-color: $black;
     padding-bottom: 5px;
   }
-    
+
   .heading {
     color: $white;
     margin: 0 10px;
@@ -24,129 +39,145 @@
     color: $silver-chalice;
   }
 
+  .dropdowns {
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown > i {
+    margin: 0 3px;
+  }
+
+  .list, .dropdown:first-child, .heading, .navigation-account {
+    display: none;
+  }
+
+  .cart-btn {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: $white;
+    font-size: 1.6rem;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
   .heading-search-cart-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .search-input {
+    height: 20px;
+    width: 75vw;
+    margin: 0 10px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    border: none;
+    font-size: 1.6rem;
+  }
+
+  .input-wrapper {
+    position: relative;
+    border-right: 1px solid $silver-chalice;
+    border-left: 1px solid $silver-chalice;
+  
+    & > i {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      font-size: 1.3em;
+    }
   }
 
   .buttons-container {
     display: flex;
     justify-content: space-evenly;
     width: 30%;
+    height: 30px;
+    padding-bottom: 10px;
 
     .button {
       text-transform: uppercase;
     }
   }
 
-  .list {
+  .burger-menu-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
+    padding-right: 10px;
 
-    .list-item {
-      margin: 0 5px;
-
-      & > a {
-        color: $black;
-      }
+    .icon {
+      font-size: 1.7em;
     }
   }
-
-  &__title {
-    margin: 10px;
-    text-align: center;
-    font-family: font(primary);
-  }
 }
 
-.content {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.dropdowns {
-  margin: 0;
-}
-
-.search-input {
-  height: 20px;
-  width: 230px;
-  margin: 0 10px;
-  padding-left: 20px;
-  padding-bottom: 5px;
-  font-size: 1.6rem;
-}
-
-.input-wrapper {
-  position: relative;
-  border-right: 1px solid $silver-chalice;
-  border-left: 1px solid $silver-chalice;
-
-  & > i {
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-    font-size: 1.3em;
-  }
-}
-
-
-@include media-for(mobile-landscape){
+@media only screen and (min-width: 480px) {
   .header {
-    &__title {
-      width: 100%;
-      margin: 20px 10px;
-      font-size: 3rem;
-      font-family: font(primary-light);
-      font-weight: normal;
-    }
-
-    .dropdowns {
-      padding: 0;
-    }
-
-    .dropdown > i {
-      margin: 0 3px;
-    }
-
-    .dropdown:first-child, .heading {
-      display: none;
-    }
-  
-    .navigation-account {
-      display: none;
-    }
-
-    .cart-btn {
-      position: absolute;
-      top: 5px;
-      right: 20px;
-      color: $white;
-    }
-
     .heading-search-cart-container {
       flex-direction: column;
     }
 
-    .buttons-container {
-      height: 30px;
-      padding-bottom: 10px;
+    .cart-btn {
+      position: relative;
+      top: 0;
+      right: 0;
+      margin: 0 20px;
+      border: none;
+      color: $black;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    .burger-menu-container {
+      display: none;
     }
 
-    .burger-menu-container {
-      display: flex;
-      padding-right: 10px;
+    .search-input {
+      width: 15vw;
+    }
 
-      .icon {
-        font-size: 1.7em;
-      }
+    .buttons-container {
+      align-items: center;
+      height: 40px;
+      padding: 0;
+    }
+
+    .heading-search-cart-container {
+      flex-direction: row;
     }
 
     .list {
-      display: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      list-style: none;
+      font-size: 1.4rem;
+  
+      .list-item {
+        margin: 0 10px;
+  
+        & > a {
+          color: $black;
+          text-decoration: none;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .dropdown:first-child, .heading, .list,.navigation-account {
+      display: flex;
     }
   }
 }
