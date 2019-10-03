@@ -24,7 +24,7 @@ class JoinUs extends Component {
 
   validateField(value) {
     const emailRegEx = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
-    const fieldValidationError = this.state.formError;
+    const { fieldValidationError } = this.state.formError;
     let emailValid = this.state.emailValid;
 
     emailValid = value.match(emailRegEx);
