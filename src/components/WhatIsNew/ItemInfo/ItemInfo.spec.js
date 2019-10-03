@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ItemInfo from '../ItemInfo';
+import ItemInfo from './ItemInfo';
 
 describe('<ItemInfo />', () => {
   let props;
