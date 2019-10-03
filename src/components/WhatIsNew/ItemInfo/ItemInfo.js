@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ItemInfo.scss';
 
-const ItemInfo = ({ el }) => {
-  const { photo, title, collection, category } = el;
+const ItemInfo = ({ item }) => {
+  const { photo, title, collection, category } = item;
   return (
     <div className="col-4 wrapper-item">
       <div className="wrapper-img">
@@ -19,7 +19,7 @@ const ItemInfo = ({ el }) => {
 };
 
 ItemInfo.propTypes = {
-  el: PropTypes.object,
+  item: PropTypes.object,
 };
 
 export default ItemInfo;
