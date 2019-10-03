@@ -22,7 +22,7 @@ const BurgerMenu = () => {
           </li>
           <li>
             <a className="burger-menu-link" href="#" title="Link">Link</a>
-          </li>     
+          </li>
         </ul>
       </nav>
     </div>

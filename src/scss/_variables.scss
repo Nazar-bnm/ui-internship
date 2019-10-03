@@ -2,24 +2,6 @@ $debug-message: 'No such key, please use one of list:';
 $topic-photo-height: 300px;
 $slider-height: 300px;
 
-// map of breakpoints according to SRS:
-$breakpoints: (
-  desktop: 1280px,
-  laptop: 1024px,
-  tablet: 768px,
-  mobile-landscape: 480px,
-  mobile-portrait: 320px,
-);
-
-// content width for resposive:
-$content-width: (
-  desktop-large: 80%,
-  desktop: 80%,
-  laptop: 90%,
-  tablet : 90%,
-  mobile-landscape: 95%,
-);
-
 $spacings: (
   small: 5px,
   default: 15px,

@@ -18,18 +18,18 @@ export default class HttpService {
   async get(url) {
     try {
       const response = await axios.get(url, this.config);
-      return response.data;
+      return response;
     } catch (error) {
-      return error.response.data;
+      return error.response;
     }
   }
 
   async post(url, data) {
     try {
       const response = await axios.post(url, data, this.config);
-      return response.data;
+      return response;
     } catch (error) {
-      return error.response.data;
+      return error.response;
     }
   }
 
