@@ -12,13 +12,13 @@
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    "test": "jest --passWithNoTests",
-    "test:watch": "npm run test -- --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --collectCoverage=true",
     "scriptName": "webpack --config etc...",
     "start": "webpack-dev-server --mode development",
     "scss": "node-sass -w ./src/scss/main.scss ./src/css/main.min.css --output-style compressed",
     "lint": "./node_modules/.bin/eslint src/***/**/*.js",
-    "tdd": "jest --watch",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "mock:api": "json-server --watch ./src/mockedData/db.json --port 4000"
@@ -45,6 +45,7 @@
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
     "eslint": "^6.4.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-standard-jsx": "^8.1.0",
@@ -84,10 +85,5 @@
     "react-scripts": "^3.1.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
-  },
-  "jest": {
-    "setupFiles": [
-      "<rootDir>/jest.setup.js"
-    ]
   }
 }
