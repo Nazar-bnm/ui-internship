@@ -9,10 +9,8 @@
     cursor: pointer;
     padding: spacing(small);
   }
-  &-text {
-    margin-top: 10px;
-  }
 }
+
 .img {
   display: block;
   width: auto;
@@ -20,9 +18,11 @@
   max-height: $topic-photo-height;
   max-width: 100%;
 }
+
 .category {
   display: none;
 }
+
 .item-title {
   @include title-font;
   font-size: 1.1em;
@@ -30,6 +30,7 @@
   font-weight: 100;
   margin-bottom: 0;
 }
+
 .collection {
   text-transform: uppercase;
   font-size: 0.7em;
@@ -43,6 +44,7 @@
       position: relative;
     }
   }
+
    .category {
     display: block;
     width: 100%;
@@ -62,17 +64,20 @@
     &-img {
       width: 40%;
     }
+
     &-text {
       width: 60%;
       text-align: left;
       padding-left: 15px;
     }
   }
+
   .item-title {
     text-align: left;
     padding-bottom: 5px;
     margin-top: 5px;
   }
+  
   .wrapper-item.col-4 {
     flex-direction: row;
     flex-wrap: nowrap;
