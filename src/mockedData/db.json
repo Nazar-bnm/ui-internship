@@ -58,5 +58,28 @@
       "last_name": "Smith",
       "email": "ann@codingthesmartway.com"
     }
+  ],
+  "most-popular": [
+    {
+      "id": 1,
+      "image": "./assets/img/models-most-popular/model1.jpg",
+      "lable": "new",
+      "title": "Pink leopard dress",
+      "price": "99,50"
+    },
+    {
+      "id": 2,
+      "image": "./assets/img/models-most-popular/model2.jpg",
+      "lable": "sale",
+      "title": "Pleated slip dress",
+      "price": "179.00"
+    },
+    {
+      "id": 3,
+      "image": "./assets/img/models-most-popular/model3.jpg",
+      "lable": "null",
+      "title": "Fit & flare sleeveless dress",
+      "price": "99.00"
+    }
   ]
 }
