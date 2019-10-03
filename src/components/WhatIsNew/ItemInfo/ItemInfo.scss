@@ -9,6 +9,9 @@
     cursor: pointer;
     padding: spacing(small);
   }
+  &-text {
+    margin-top: 10px;
+  }
 }
 .img {
   display: block;
@@ -25,6 +28,7 @@
   font-size: 1.1em;
   margin-top: 10px;
   font-weight: 100;
+  margin-bottom: 0;
 }
 .collection {
   text-transform: uppercase;
