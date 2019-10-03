@@ -1,0 +1,12 @@
+@import '../../scss/global_styles';
+
+.title {
+  @include title-font;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    align-content: center;
+  }
+}

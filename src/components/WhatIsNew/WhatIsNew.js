@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HttpService from '../../service/HttpService/httpService';
-
+import ItemInfo from './ItemInfo/ItemInfo';
+import './WhatIsNew.scss';
 
 class WhatIsNew extends Component {
   state = {
@@ -20,15 +21,14 @@ class WhatIsNew extends Component {
   render() {
     const { items } = this.state;
     const block = items.map((el, index) => (
-      <div key={index}>
-        <img style={{ display: 'block' }} src={el.photo}/>
-        <span>{el.title}</span>
-        <span>{el.collection}</span>
-      </div>
+      <ItemInfo key={index} el={el} />
     ));
     return (
-      <div>
-        {block}
+      <div className="content">
+        <h3 className="title">whats new</h3>
+        <div className="container">
+          {block}
+        </div>
       </div>
     );
   }
