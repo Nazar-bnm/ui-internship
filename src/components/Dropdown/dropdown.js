@@ -17,13 +17,11 @@ class Dropdown extends React.Component {
   selectOption(e) {
     const option = e.target;
     this.setState({
-      selectedID: option.getAttribute(key),
+      selectedID: option.getAttribute('selectednum'),
     });
   }
 
   toggleDropdown(e) {
-    const select = e.currentTarget;
-    console.log(select.getAttribute('aria-expanded'));
     this.setState( {
       expanded: !this.state.expanded,
     });
@@ -45,6 +43,7 @@ class Dropdown extends React.Component {
             <li
               className="dropdown__items__element"
               key={i.toString()}
+              selectednum={i}
               value={opt.value}
               onClick={this.selectOption}
             >

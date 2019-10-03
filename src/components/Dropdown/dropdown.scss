@@ -28,9 +28,10 @@
         display: flex;
         position: absolute;
         flex-direction: column;
-        top: 100%;
+        top: 120%;
         left: 0;
-        
+        background-color: $white;
+        color: $black;
       }
     }
   }

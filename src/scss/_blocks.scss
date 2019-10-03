@@ -1,5 +1,5 @@
 @import './mixins.scss';
-@import './variables.scss';
+@import './breakpoints.scss';
 
 .content {
   margin: 0 auto;
@@ -29,14 +29,8 @@
 .wrapper {
   width: 100%;
 
-  &.color {
-    &-primary {
-      background-color: bg-color(primary);
-    }
-
-    &-secondary {
-      background-color: bg-color(secondary);
-    }
+  &._menu {
+    background-color: bg-color(menu-block);
   }
 
   &._slider {

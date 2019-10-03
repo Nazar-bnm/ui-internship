@@ -5,13 +5,8 @@
   text-transform: uppercase;
 
   &__title {
-    width: 100%;
     margin: 20px 10px;
-    font-size: 3rem;
-    font-family: font(primary-light);
     font-weight: normal;
-    font-family: font(primary);
-    text-align: center;
   }
 
   .content {
@@ -36,7 +31,11 @@
     justify-content: space-between;
     margin: 0;
     width: 250px;
-    color: $silver-chalice;
+
+    & a {
+      color: $silver-chalice;
+      text-decoration: none;
+    }
   }
 
   .dropdowns {
@@ -46,6 +45,7 @@
 
   .dropdown > i {
     margin: 0 3px;
+    height: auto;
   }
 
   .list, .dropdown:first-child, .heading, .navigation-account {
@@ -58,6 +58,8 @@
     top: 5px;
     right: 20px;
     color: $white;
+    background-color: transparent;
+    border-color: transparent;
     font-size: 1.6rem;
 
     &:hover {
@@ -70,14 +72,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    & a {
+      text-decoration: none;
+      width: 100%;
+      font-size: 3rem;
+      font-family: font(primary-light);
+      text-align: center;
+      color: $black;
+    }
+  }
+
+  .burger-list a {
+    font-size: 1.3rem;
   }
 
   .search-input {
     height: 20px;
-    width: 75vw;
+    width: 65vw;
     margin: 0 10px;
-    padding-left: 20px;
-    padding-bottom: 5px;
+    padding-left: 30px;
     border: none;
     font-size: 1.6rem;
   }
@@ -89,9 +103,8 @@
   
     & > i {
       position: absolute;
-      bottom: 5px;
       left: 10px;
-      font-size: 1.3em;
+      font-size: 2rem;
     }
   }
 
@@ -105,16 +118,6 @@
       text-transform: uppercase;
     }
   }
-
-  .burger-menu-container {
-    display: flex;
-    width: 50px;
-    padding-right: 10px;
-
-    .icon {
-      font-size: 1.7em;
-    }
-  }
 }
 
 @media only screen and (min-width: 480px) {
@@ -123,11 +126,16 @@
       flex-direction: column;
     }
 
+    .search-input {
+      width: 55vw;
+    }
+
     .cart-btn {
       position: relative;
       top: 0;
       right: 0;
       margin: 0 20px;
+      width: 100px;
       border: none;
       color: $black;
     }
@@ -136,8 +144,9 @@
 
 @media only screen and (min-width: 768px) {
   .header {
-    .burger-menu-container {
-      display: none;
+    &__title {
+      text-align: normal;
+      padding-left: 35%;
     }
 
     .search-input {
@@ -179,5 +188,9 @@
     .dropdown:first-child, .heading, .list,.navigation-account {
       display: flex;
     }
+  }
+
+  .burger-menu-container {
+    display: none;
   }
 }
