@@ -1,0 +1,23 @@
+@import "../../scss/global_styles";
+
+.product-image-container {
+  display: grid;
+  grid-template-rows: 1fr 0.4fr;
+  grid-template-columns: 1fr;
+  padding: 0 8vw;
+}
+
+.big-image-container {
+  grid-row: 1;
+  display: flex;
+}
+
+.small-images-container {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-image {
+  width: 100%;
+}

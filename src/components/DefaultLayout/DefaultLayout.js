@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import Header from '../Header';
 import Footer from '../Footer';
+import ProductImage from '../ProductImage';
+import { images } from '../../config/productImageMockups';
 
 const DefaultLayout = ({ component: Component, hideFooter, hideHeader, ...rest }) => {
   return (
@@ -11,6 +13,7 @@ const DefaultLayout = ({ component: Component, hideFooter, hideHeader, ...rest }
       <div>
         {!hideHeader && <Header />}
         <Component {...matchProps} />
+        <ProductImage {...images}/>
         {!hideFooter && <Footer />}
       </div>
     )} />
