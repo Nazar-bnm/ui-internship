@@ -27,6 +27,20 @@ class Dropdown extends React.Component {
     });
   }
 
+  renderMenuItems() {
+    return this.state.options.map((opt, i) => (
+      <li
+        className="dropdown__items__element"
+        key={i.toString()}
+        selectednum={i}
+        value={opt.value}
+        onClick={this.selectOption}
+      >
+        {opt.label}
+      </li>
+    ));
+  }
+
   render() {
     const iconName = `caret ${this.state.expanded ? 'up' : 'down'} icon`;
 
@@ -39,17 +53,7 @@ class Dropdown extends React.Component {
           {this.state.options[this.state.selectedID].label}
         </span>
         <ul className="dropdown__items">
-          {this.state.options.map((opt, i) => (
-            <li
-              className="dropdown__items__element"
-              key={i.toString()}
-              selectednum={i}
-              value={opt.value}
-              onClick={this.selectOption}
-            >
-              {opt.label}
-            </li>
-          ))}
+          {this.renderMenuItems()}
         </ul>
         <i className={iconName}></i>
       </div>

@@ -1,6 +1,4 @@
-const navConfig = [
-  /* links should be added after corresponsive
-    pages are implemented */
+export const navConfig = [
   { value: 'women', label: 'women', link: '/404' },
   { value: 'men', label: 'men', link: '/404' },
   { value: 'kids', label: 'kids', link: '/404' },
@@ -10,8 +8,6 @@ const navConfig = [
   { value: 'sale', label: 'sale', link: '/404' },
   { value: 'blog', label: 'blog', link: '/404' },
 ];
-
-export default navConfig;
 
 export const options = {
   currency: [
