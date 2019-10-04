@@ -2,7 +2,7 @@
 
 .product-image-container {
   display: grid;
-  grid-template-rows: 1fr 0.4fr;
+  grid-template-rows: 0fr 0.4fr;
   grid-template-columns: 1fr;
   padding: 0 8vw;
 }
@@ -10,14 +10,35 @@
 .big-image-container {
   grid-row: 1;
   display: flex;
+  position: relative;
 }
 
 .small-images-container {
   grid-row: 2;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.small-image {
+  position: relative;
 }
 
 .product-image {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.image-on-hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(259, 67, 95, 0.7);
+  overflow:hidden;
+  &:hover {
+    opacity: 1;
+  }
 }
