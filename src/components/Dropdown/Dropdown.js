@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './dropdown.scss';
+import './Dropdown.scss';
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -28,29 +28,30 @@ class Dropdown extends React.Component {
   }
 
   renderMenuItems() {
-    return this.state.options.map((opt, i) => (
+    return this.state.options.map(({ value, label }, i) => (
       <li
         className="dropdown__items__element"
-        key={i.toString()}
+        key={value}
         selectednum={i}
-        value={opt.value}
+        value={value}
         onClick={this.selectOption}
       >
-        {opt.label}
+        {label}
       </li>
     ));
   }
 
   render() {
     const iconName = `caret ${this.state.expanded ? 'up' : 'down'} icon`;
+    const { expanded, selectedID } = this.state;
 
     return (
       <div className="dropdown"
         onClick={this.toggleDropdown}
-        aria-expanded={this.state.expanded}
+        aria-expanded={expanded}
       >
         <span className="dropdown__selected">
-          {this.state.options[this.state.selectedID].label}
+          {this.state.options[selectedID].label}
         </span>
         <ul className="dropdown__items">
           {this.renderMenuItems()}

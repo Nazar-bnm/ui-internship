@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const BurgerMenu = ({ menuItemsList }) => {
-  const renderMenu = () => menuItemsList.map((el) => (
-    <Link key={el.itemName} to={'/404'} className="burger-menu-link">
-      <li key={el.itemName} className="burger-list-item">{ el.itemName }</li>
-    </Link>
-  ));
+  const renderMenu = () => menuItemsList.map(({ itemName }) => {
+    return (
+      <Link key={itemName} to={'/404'} className="burger-menu-link">
+        <li key={itemName} className="burger-list-item">{ itemName }</li>
+      </Link>
+    );
+  });
 
   return (
     <div className="burger-menu-container">

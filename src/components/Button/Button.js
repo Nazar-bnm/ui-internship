@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = (props) => {
+const Button = ({ customClass, icon, children }) => {
   return (
-    <button type="submit" className={props.customClass + ' button'}>
-      {props.icon && <i className={props.icon + ' icon'}></i>}
-      {props.children}
+    <button type="submit" className={`${customClass} button`}>
+      {icon && <i className={icon + ' icon'} />}
+      {children}
     </button>
   );
 };
