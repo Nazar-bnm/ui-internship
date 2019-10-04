@@ -1,2 +1,1 @@
-import WhatIsNew from './WhatIsNew';
-export default WhatIsNew;
+export { default } from './WhatIsNew';

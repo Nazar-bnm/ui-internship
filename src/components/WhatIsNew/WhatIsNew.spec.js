@@ -11,6 +11,11 @@ describe('<WhatIsNew />', () => {
     );
   });
 
+  test('renders', () => {
+    wrapper = shallow(<WhatIsNew />);
+    expect(wrapper.exists()).toBe(true);
+  });
+
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });

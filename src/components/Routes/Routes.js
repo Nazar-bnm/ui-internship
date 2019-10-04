@@ -7,7 +7,7 @@ import ProductDetailsPage from '../../containers/ProductDetailsPage';
 import ProductListPage from '../ProductListPage';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
-import WhatIsNew from '../WhatIsNew/WhatIsNew';
+import WhatIsNew from '../WhatIsNew';
 
 const Routes = () => (
   <Switch>

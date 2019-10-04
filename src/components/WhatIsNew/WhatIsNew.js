@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HttpService from '../../service/HttpService/httpService';
-import ItemInfo from './ItemInfo/ItemInfo';
+import ItemInfo from './ItemInfo';
 import './WhatIsNew.scss';
 
 class WhatIsNew extends Component {
@@ -8,14 +8,14 @@ class WhatIsNew extends Component {
     items: [],
   }
 
-  async test() {
+  async downloadProducts() {
     const userAPI = new HttpService();
     const response = await userAPI.get('http://localhost:4000/what-is-new');
     this.setState({ items: response.data });
   }
 
   componentDidMount() {
-    this.test();
+    this.downloadProducts();
   }
 
   render() {

@@ -1,2 +1,1 @@
-import ItemInfo from './ItemInfo';
-export default ItemInfo;
+export { default } from './ItemInfo';
