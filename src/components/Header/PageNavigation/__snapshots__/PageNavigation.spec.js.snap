@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageNavigation /> should match snapshot 1`] = `
+<ul
+  className="list container"
+>
+  <li
+    className="list-item"
+    key="0"
+    value="women"
+  >
+    <Link
+      to="/404"
+    >
+      women
+    </Link>
+  </li>
+  <li
+    className="list-item"
+    key="1"
+    value="men"
+  >
+    <Link
+      to="/404"
+    >
+      men
+    </Link>
+  </li>
+  <li
+    className="list-item"
+    key="2"
+    value="kids"
+  >
+    <Link
+      to="/404"
+    >
+      kids
+    </Link>
+  </li>
+  <li
+    className="list-item"
+    key="3"
+    value="accs"
+  >
+    <Link
+      to="/404"
+    >
+      accessories
+    </Link>
+  </li>
+  <li
+    className="list-item"
+    key="4"
+    value="new"
+  >
+    <Link
+      to="/404"
+    >
+      what's new
+    </Link>
+  </li>
+  <li
+    className="list-item"
+    key="5"
+    value="brands"
+  >
+    <Link
+      to="/404"
+    >
+      brands
+    </Link>
+  </li>
+  <li
+    className="list-item"
+    key="6"
+    value="sale"
+  >
+    <Link
+      to="/404"
+    >
+      sale
+    </Link>
+  </li>
+  <li
+    className="list-item"
+    key="7"
+    value="blog"
+  >
+    <Link
+      to="/404"
+    >
+      blog
+    </Link>
+  </li>
+</ul>
+`;

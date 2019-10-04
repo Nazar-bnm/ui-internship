@@ -1,3 +1,1 @@
-import PageSettings from './PageSettings';
-
-export default PageSettings;
+export { default } from './pageSettings';

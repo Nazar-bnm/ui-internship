@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match snapshot 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="wrapper color-secondary"
+  >
+    <PageSettings />
+  </div>
+  <div
+    className="heading-search-cart-container content"
+  >
+    <Link
+      to="/home"
+    >
+      <h2
+        className="header__title"
+      >
+        The shop
+      </h2>
+    </Link>
+    <div
+      className="buttons-container"
+    >
+      <BurgerMenu
+        menuItemsList={
+          Array [
+            Object {
+              "itemName": "woman",
+            },
+            Object {
+              "itemName": "man",
+            },
+            Object {
+              "itemName": "kids",
+            },
+            Object {
+              "itemName": "accessories",
+            },
+            Object {
+              "itemName": "what's new",
+            },
+            Object {
+              "itemName": "brands",
+            },
+            Object {
+              "itemName": "sale",
+            },
+            Object {
+              "itemName": "blog",
+            },
+          ]
+        }
+      />
+      <Input
+        customClass="search-input"
+        icon="search"
+      >
+        Search
+      </Input>
+      <Link
+        to="/404"
+      >
+        <Button
+          customClass="cart-btn"
+          icon="cart"
+        >
+          Cart (0)
+        </Button>
+      </Link>
+    </div>
+  </div>
+  <PageNavigation
+    options={
+      Array [
+        Object {
+          "label": "women",
+          "link": "/404",
+          "value": "women",
+        },
+        Object {
+          "label": "men",
+          "link": "/404",
+          "value": "men",
+        },
+        Object {
+          "label": "kids",
+          "link": "/404",
+          "value": "kids",
+        },
+        Object {
+          "label": "accessories",
+          "link": "/404",
+          "value": "accs",
+        },
+        Object {
+          "label": "what's new",
+          "link": "/404",
+          "value": "new",
+        },
+        Object {
+          "label": "brands",
+          "link": "/404",
+          "value": "brands",
+        },
+        Object {
+          "label": "sale",
+          "link": "/404",
+          "value": "sale",
+        },
+        Object {
+          "label": "blog",
+          "link": "/404",
+          "value": "blog",
+        },
+      ]
+    }
+  />
+  <div
+    className="wrapper _slider"
+  >
+    Here will be slider
+  </div>
+</header>
+`;

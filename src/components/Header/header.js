@@ -3,9 +3,9 @@ import PageSettings from './PageSettings';
 import Button from '../Button';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
-import navConfig from '../../config/Header';
+import navConfig from '../../config/headerMockups';
 import Input from '../Input';
-import { burgerMenuItemsList } from '../../config/Header';
+import { burgerMenuItemsList } from '../../config/headerMockups';
 import { Link } from 'react-router-dom';
 import './_header.scss';
 

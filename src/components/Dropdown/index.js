@@ -1,2 +1,1 @@
-import Dropdown from './dropdown.js';
-export default Dropdown;
+export { default } from './dropdown';

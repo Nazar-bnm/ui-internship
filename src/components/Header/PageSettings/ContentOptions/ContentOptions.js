@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from '../../../Dropdown';
-import { options } from '../../../../config/Header';
+import { options } from '../../../../config/headerMockups';
 import PropTypes from 'prop-types';
 
 const ContentOptions = (props) => {

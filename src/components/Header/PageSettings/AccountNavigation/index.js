@@ -1,3 +1,1 @@
-import AccountNavigation from './AccountNavigation';
-
-export default AccountNavigation;
+export { default } from './accountNavigation';

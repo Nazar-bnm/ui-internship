@@ -21,7 +21,7 @@ class Dropdown extends React.Component {
     });
   }
 
-  toggleDropdown(e) {
+  toggleDropdown() {
     this.setState( {
       expanded: !this.state.expanded,
     });
