@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Slide.scss';
 import { Link } from 'react-router-dom';
 
-const slide = ({ title, description, imageUrl, bgImage }) => {
+const slide = ({ title, description, imageUrl, bgImage, className, animation }) => {
   const style = {
     backgroundImage: `url(${bgImage})`,
   };
   return (
-    <div className="slide-info  fade" style={style}>
+    <div className={`slide-info ${className} ${animation}`} style={style}>
       <h1 className="slide-info-title ">{title}</h1>
       <p className="slide-info-description">
         {description}

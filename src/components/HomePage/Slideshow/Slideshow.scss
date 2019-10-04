@@ -4,6 +4,8 @@
   position: relative;
   height: 400px;
   z-index: 1;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .arrow-button {
@@ -30,7 +32,7 @@
     position: absolute;
     bottom: 5%;
     right: 50%;
-  z-index: 2;
+    z-index: 2;
     transform: translateX(50%);
   }
 
@@ -43,3 +45,15 @@
     background: $alto;
   }
 };
+
+.slides-container {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  height: 100%;
+}
+
+.transition {
+  transition: transform 0ms ease-out 0.1ms;
+}
+

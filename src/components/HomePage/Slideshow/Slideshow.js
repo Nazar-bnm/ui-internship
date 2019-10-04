@@ -10,22 +10,22 @@ class Slideshow extends Component {
     index: 0,
     isInterval: true,
     isClicked: false,
+    shouldTransition: true,
   };
 
   sliderInterval = null;
 
   nextSlide = () => {
-    this.state.index != slideData.length - 1 ?
-      this.setState({ index: this.state.index + 1 }) :
-      this.setState({ index: 0 });
-  }
+    this.state.index != slideData.length &&
+      this.setState({ index: this.state.index + 1,
+        shouldTransition: true });
+  };
 
   prevSlide = () => {
-    this.state.index != 0 ?
-      this.setState({ index: this.state.index - 1 }) :
-      this.setState({ index: slideData.length - 1 });
-  }
-
+    this.state.index != -1 &&
+      this.setState({ index: this.state.index - 1,
+        shouldTransition: true });
+  };
   changeSlideWithButton = (type) => {
     this.setState({
       isClicked: true,
@@ -38,6 +38,7 @@ class Slideshow extends Component {
     this.setState({
       index: i,
       isClicked: true,
+      shouldTransition: true,
     });
   };
 
@@ -49,7 +50,7 @@ class Slideshow extends Component {
   };
 
   startSlideShow = () => {
-    this.sliderInterval = setInterval(this.nextSlide, 2000);
+    this.sliderInterval = setInterval(this.nextSlide, 4000);
   };
 
   mouseLeft = () => {
@@ -57,6 +58,19 @@ class Slideshow extends Component {
       this.setState({
         isInterval: true,
       });
+  };
+
+  transitionEnd = () => {
+    this.state.index === slideData.length &&
+    this.setState({
+      index: 0,
+      shouldTransition: false,
+    });
+    this.state.index === -1 &&
+    this.setState({
+      index: slideData.length - 1,
+      shouldTransition: false,
+    });
   };
 
   componentDidMount() {
@@ -85,6 +99,39 @@ class Slideshow extends Component {
         onClick={(e) => this.changeSlideWithPagination(e, i)}
       ></div>
     ));
+    const slides = slideData.map((el, i) => (
+      <Slide
+        key={el.id}
+        description={el.description}
+        bgImage={el.img}
+        className={(this.state.index - 1) === i ? 'transform' : ''}
+        animation={i ===(this.state.index - 1) ? 'zoomIn' : ''}
+      />
+    ));
+    const firstSlide = (
+      <Slide
+        key="23"
+        description={slideData[0].description}
+        bgImage={slideData[0].img}
+        className={this.state.showAnimation ? animation : ''}
+      />
+    );
+
+    const lastSlide = (
+      <Slide
+        key="32"
+        description={slideData[slideData.length - 1].description}
+        bgImage={slideData[slideData.length - 1].img}
+        className={this.state.showAnimation ? animation : ''}
+      />
+    );
+
+    const slidesMore = [lastSlide, ...slides, firstSlide];
+    const animation = 'zoomIn';
+    const styleContainer = {
+      transform: `translateX(-${(100 / (slideData.length + 2)) *
+        (this.state.index + 1)}%)`,
+    };
 
     return (
       <div
@@ -92,15 +139,23 @@ class Slideshow extends Component {
         onMouseEnter={this.deleteAutomation}
         onMouseLeave={this.mouseLeft}
       >
-        <ArrowButton type="left" className="arrow-button" onClick={this.changeSlideWithButton.bind(this, 'left')} />
-        <ArrowButton type="right" className="arrow-button" onClick={this.changeSlideWithButton.bind(this, 'right')}/>
-        <Slide
-          key={this.state.index}
-          description={slideData[this.state.index].description}
-          title={slideData[this.state.index].title}
-          imageUrl={slideData[this.state.index].img}
-          bgImage={slideData[this.state.index].img}
+        <ArrowButton
+          type="left"
+          className="arrow-button"
+          onClick={this.changeSlideWithButton.bind(this, 'left')}
         />
+        <ArrowButton
+          type="right"
+          className="arrow-button"
+          onClick={this.changeSlideWithButton.bind(this, 'right')}
+        />
+        <div
+          className={`slides-container ${this.state.shouldTransition ? 'transition' : ''}`}
+          style={styleContainer}
+          onTransitionEnd={this.transitionEnd}
+        >
+          {slidesMore}
+        </div>
         <div className="slider-pagination-container">{pagination}</div>
       </div>
     );
