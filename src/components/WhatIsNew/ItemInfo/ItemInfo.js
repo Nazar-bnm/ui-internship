@@ -5,14 +5,14 @@ import './ItemInfo.scss';
 const ItemInfo = ({ item }) => {
   const { photo, title, collection, category } = item;
   return (
-    <div className="col-4 wrapper-item">
-      <div className="wrapper-img">
-        <img className="img" src={photo}/>
-        <span className="category">shop {category}</span>
+    <div className="col-4 item">
+      <div className="item__img-wrapper">
+        <img className="item__img" src={photo}/>
+        <span className="item__category">shop {category}</span>
       </div>
-      <div className="wrapper-text">
-        <h4 className="item-title">{title}</h4>
-        <span className='collection'>{collection}</span>
+      <div className="item__title-wrapper">
+        <h4 className="item__title">{title}</h4>
+        <span className='item__collection'>{collection}</span>
       </div>
     </div>
   );

@@ -2,83 +2,82 @@
 @import '../../../scss/breakpoints';
 @import '../../../scss/styles';
 
-.wrapper {
-  &-item {
-    @include flex(column, center,center);
-    align-self: flex-start;
-    cursor: pointer;
-    padding: spacing(small);
+.item {
+  @include flex(column, center,center);
+  align-self: flex-start;
+  cursor: pointer;
+  padding: spacing(small);
+
+  &__img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: $topic-photo-height;
+    max-width: 100%;
   }
-}
 
-.img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-height: $topic-photo-height;
-  max-width: 100%;
-}
+  &__category {
+    display: none;
+  }
 
-.category {
-  display: none;
-}
+  &__title {
+    @include title-font;
+    font-size: 1.1em;
+    margin-top: 10px;
+    font-weight: 100;
+    margin-bottom: 0;
+  }
 
-.item-title {
-  @include title-font;
-  font-size: 1.1em;
-  margin-top: 10px;
-  font-weight: 100;
-  margin-bottom: 0;
-}
-
-.collection {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  margin-top: 5px;
-  text-align: center;
+  &__collection {
+    text-transform: uppercase;
+    font-size: 0.7em;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 480px) {
-  .wrapper {
-    &-img {
-      position: relative;
+  .item {
+    &__img {
+      &-wrapper {
+        position: relative;
+      }
+    }
+
+    &__category {
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 15px;
+      background: $pale-white;
+      padding: 5px 15px 5px 0;
+      text-align: end;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      color: $black;
     }
   }
-
-   .category {
-    display: block;
-    width: 100%;
-    position: absolute;
-    bottom: 15px;
-    background: $pale-white;
-    padding: 5px 15px 5px 0;
-    text-align: end;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    color: $black;
-   }
 }
 
 @media screen and (max-width: 480px) {
-  .wrapper {
-    &-img {
+
+  .item {
+    &__img-wrapper {
       width: 40%;
     }
 
-    &-text {
-      width: 60%;
+    &__title {
       text-align: left;
-      padding-left: 15px;
+      padding-bottom: 5px;
+      margin-top: 5px;
+
+      &-wrapper {
+        width: 60%;
+        text-align: left;
+        padding-left: 15px;
+      }
     }
   }
-
-  .item-title {
-    text-align: left;
-    padding-bottom: 5px;
-    margin-top: 5px;
-  }
   
-  .wrapper-item.col-4 {
+  .item.col-4 {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start;

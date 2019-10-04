@@ -20,8 +20,8 @@ class WhatIsNew extends Component {
 
   render() {
     const { items } = this.state;
-    const block = items.map((item, index) => (
-      <ItemInfo key={index} item={item} />
+    const block = items.map((item) => (
+      <ItemInfo key={item.id} item={item} />
     ));
     return (
       <div className="content">
