@@ -3,5 +3,6 @@
 exports[`<Button /> should match snapshot 1`] = `
 <button
   className="undefined button"
+  type="submit"
 />
 `;
