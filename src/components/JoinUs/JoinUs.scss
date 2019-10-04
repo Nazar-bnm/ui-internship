@@ -32,47 +32,47 @@
 }
 
 .title {
-    @include title-font;
-    @include flex($align: center);
-    color: $white;
-    font-size: 0.8rem;
+  @include title-font;
+  @include flex($align: center);
+  color: $white;
+  font-size: 0.8rem;
 }
 
 .input-wrapper {
-    display: flex;
-    height: 33px;
-    position: relative;
+  display: flex;
+  height: 33px;
+  position: relative;
 }
 
 .email-input {
-    margin: 0 10px;
-    width: 250px;
-    padding-left: 5px;
-    padding-right: 25px;
-    outline: none;
-    font-size: 0.7rem;
-}
+  margin: 0 10px;
+  width: 250px;
+  padding-left: 5px;
+  padding-right: 25px;
+  outline: none;
+  font-size: 0.7rem;
+}    
 
 .btn {
-    @include flex($justify: flex-start, $align: center);
-    position: absolute;
-    right: 10px;
-    border: none;
-    height: 100%;
-    background: none;
-    cursor: pointer;
-    padding: 0;
-    outline: none;
-    color: inherit;
+  @include flex($justify: flex-start, $align: center);
+  position: absolute;
+  right: 10px;
+  border: none;
+  height: 100%;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  color: inherit;
 }
 
-.warning {
-    border: 1px solid $red;
-    border-radius: 1px; 
+.success {
+  border: 1px solid green;
+  border-radius: 1px;
 }
 
 i.icon {
-    margin: 0;
-    height: 100%;
-    font-size: 1.6rem;
+  margin: 0;
+  height: 100%;
+  font-size: 1.6rem;
 }

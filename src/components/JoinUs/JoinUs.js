@@ -23,36 +23,25 @@ class JoinUs extends Component {
   }
 
   validateField(value) {
-    const emailRegEx = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
-    const { fieldValidationError } = this.state.formError;
-    let emailValid = this.state.emailValid;
-
-    emailValid = value.match(emailRegEx);
-    fieldValidationError.email;
-    // = emailValid ? '' : ' is invalid';
-
-    this.setState({ formError: fieldValidationError,
-      emailValid: emailValid,
-      warning: 'warning',
-    }, this.validateForm);
-  }
-
-  validateForm() {
-    this.setState({ formValid: this.state.emailValid });
+    const isEmailValid = value.match(emailRegEx);
+    this.setState({ isEmailValid });
   }
 
   render() {
+    const { isEmailValid, email } = this.state;
+
     return (
       <form className="join-us">
-        <label htmlFor="email" className="title">newsletter</label>
+        <label htmlFor="email" className="join-us__title">newsletter</label>
         <div className="join-us-wrapper">
           <div className="input-wrapper">
             <input type="email" required name="email"
-              value={this.state.email}
-              onChange={(e)=>this.handleInput(e)}
-              className={`email-input ${this.state.warning}`} />
-            <button className="btn" type="submit" disabled={!this.state.formValid}>
-              <i className="chevron right icon"></i>
+              value={email}
+              onChange={this.handleInput}
+              className={cx('email-input', { warning: !isEmailValid }, { success: isEmailValid })}
+            />
+            <button className="btn" type="submit">
+              <i className="chevron right icon" />
             </button>
           </div>
         </div>
