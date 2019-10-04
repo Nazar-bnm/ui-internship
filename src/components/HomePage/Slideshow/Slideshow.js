@@ -92,8 +92,8 @@ class Slideshow extends Component {
         onMouseEnter={this.deleteAutomation}
         onMouseLeave={this.mouseLeft}
       >
-        <ArrowButton left className="arrow-button" onClick={this.changeSlideWithButton.bind(this, 'left')} />
-        <ArrowButton right className="arrow-button" onClick={this.changeSlideWithButton.bind(this, 'right')}/>
+        <ArrowButton type="left" className="arrow-button" onClick={this.changeSlideWithButton.bind(this, 'left')} />
+        <ArrowButton type="right" className="arrow-button" onClick={this.changeSlideWithButton.bind(this, 'right')}/>
         <Slide
           key={this.state.index}
           description={slideData[this.state.index].description}
@@ -101,7 +101,7 @@ class Slideshow extends Component {
           imageUrl={slideData[this.state.index].img}
           bgImage={slideData[this.state.index].img}
         />
-        {pagination}
+        <div className="slider-pagination-container">{pagination}</div>
       </div>
     );
   }

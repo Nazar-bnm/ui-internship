@@ -2,14 +2,16 @@
 
 .slideshow-container {
   position: relative;
-  height: 300px;
+  height: 400px;
+  z-index: 1;
 }
 
 .arrow-button {
-  z-index: 100;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 2;
+
 
   &:nth-child(2) {
     right: 0;
@@ -17,13 +19,27 @@
 }
 
 .slider-pagination {
-  z-index: 2;
   cursor: pointer;
-  width: 2rem;
-  height: 1rem;
-  border: 1px solid #ccc;
+  width: 14px;
+  height: 8px;
+  margin-right: 3px;
+  border: 1px solid $alto;
+
+  &-container {
+    @include flex();
+    position: absolute;
+    bottom: 5%;
+    right: 50%;
+  z-index: 2;
+    transform: translateX(50%);
+  }
+
+  &:last-child {
+  margin-right: 0;
+
+  }
 
   &--active {
-    background: #000;
+    background: $alto;
   }
-}
+};

@@ -3,23 +3,38 @@
 .slide {
   &-info {
     @include flex($direction: column, $justify: center, $align: center);
-    position: absolute;
-    z-index: -1;
-    background-repeat: no-repeat;
-  background-size: contain;
     font-family: font(primary-light);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     height: 100%;
-    padding-left: 20%;
     width: 100%;
-    text-align: center;
+    padding-left: 30%;
 
     &-title {
-      text-transform: uppercase;    
+      text-transform: uppercase; 
+      font-family: inherit;
+      font-size: 0.8rem;
+
     }
   
     &-description {
+      font-family: font(secondary);
+      font-size: 2.5rem;
+      line-height: 1;
+      font-variant: small-caps;
+      margin: 0.5rem 0 1.5rem; 
       text-transform: capitalize;
-      font-size: 2rem;
+    }
+
+    &-button {
+      font-family: inherit;
+      font-size: 0.7rem;
+      text-transform: uppercase; 
+      background: $black;
+      color: $white;
+      padding: 5px 10px;
+      border: none;
     }
   }
 

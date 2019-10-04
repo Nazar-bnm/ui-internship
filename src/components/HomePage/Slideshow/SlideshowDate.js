@@ -4,9 +4,9 @@ import img2 from '../../../assets/img/background/slider-after.png';
 export const slideData = [
   {
     img: img,
-    title: 'HELLO 1',
+    title: 'new accessories collection',
     description:
-      'urabitur arcu',
+      'Spring Essentials',
   },
   {
     img: img2,

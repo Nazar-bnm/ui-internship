@@ -8,12 +8,12 @@ const slide = ({ title, description, imageUrl, bgImage }) => {
     backgroundImage: `url(${bgImage})`,
   };
   return (
-    <div className="slide-info" style={style}>
+    <div className="slide-info  fade" style={style}>
       <h1 className="slide-info-title ">{title}</h1>
-      <p className="slide-info-description fade">
+      <p className="slide-info-description">
         {description}
       </p>
-      <button>shop women's accessories</button>
+      <button className="slide-info-button">shop women's accessories</button>
     </div>
   );
 };

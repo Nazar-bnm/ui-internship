@@ -1,25 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import './ArrowButton.scss';
 
 
 const arrowButton = (props) => {
   const {
-    left, right, onClick, className,
+    type, onClick, className,
   } = props;
-  const type = left ? faChevronLeft : right && faChevronRight;
-
   return (
-    <button type="button" onClick={onClick} className={className}>
-      {type && <FontAwesomeIcon icon={type} />}
-    </button>
+    <span onClick={onClick} className={className}>
+      {type && <i className={`angle ${type} icon arrowButton`}></i>}
+    </span>
   );
 };
 
 arrowButton.propTypes = {
-  left: PropTypes.bool,
-  right: PropTypes.bool,
+  type: PropTypes.string,
   onClick: PropTypes.func,
   className: PropTypes.string,
 };

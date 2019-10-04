@@ -1,0 +1,13 @@
+@import '../../../scss/global_styles.scss';
+
+i.arrowButton {
+  color: #fff;
+  background-color: $emperor;
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  opacity: 0.2;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
