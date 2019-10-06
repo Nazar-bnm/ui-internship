@@ -15,8 +15,8 @@ const BurgerMenu = ({ menuItemsList }) => {
   return (
     <div className="burger-menu-container">
       <nav className="burger-menu-navigation-container">
-        <input type="checkbox" id="burgerbutton" />
-        <label htmlFor="burgerbutton" className="burgerimage" title="Navigation">&#x2630;</label>
+        <input type="checkbox" id="burger-button" />
+        <label htmlFor="burger-button" className="burger-image" title="Navigation">&#x2630;</label>
         <ul className="burger-list">
           {renderMenu()}
         </ul>

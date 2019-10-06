@@ -8,12 +8,12 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
     className="burger-menu-navigation-container"
   >
     <input
-      id="burgerbutton"
+      id="burger-button"
       type="checkbox"
     />
     <label
-      className="burgerimage"
-      htmlFor="burgerbutton"
+      className="burger-image"
+      htmlFor="burger-button"
       title="Navigation"
     >
       ☰

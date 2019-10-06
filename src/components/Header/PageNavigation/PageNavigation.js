@@ -8,7 +8,7 @@ const PageNavigation = (props) => {
       {props.options.map(({ value, label, link }, i) => (
         <li key={i.toString()}
           value={value}
-          className={'list-item'}
+          className={'list__item'}
         >
           <Link to={link}>{label}</Link>
         </li>

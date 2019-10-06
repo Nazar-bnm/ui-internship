@@ -9,7 +9,7 @@
   }
 }
 
-#burgerbutton {
+#burger-button {
   display: none;
 
   &:checked~.burger-list {
@@ -19,7 +19,7 @@
     animation-duration: 0.8s;
   }
 
-  &:checked~.burgerimage {
+  &:checked~.burger-image {
     position: absolute;
     left: 10px;
     font-size: 3rem;
@@ -40,7 +40,7 @@
   }
 }
 
-.burgerimage {
+.burger-image {
   margin-top: -10px;
   margin-left: 10px;
   font-size: 2.7rem;
