@@ -2,19 +2,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Slide.scss';
-import { Link } from 'react-router-dom';
 
-const slide = ({ title, description, imageUrl, bgImage, className, animation }) => {
-  const style = {
+const slide = ({ title, description, bgImage, animation, onAnimationEnd, style }) => {
+  const styles = {
     backgroundImage: `url(${bgImage})`,
   };
+
   return (
-    <div className={`slide-info ${className} ${animation}`} style={style}>
-      <h1 className="slide-info-title ">{title}</h1>
-      <p className="slide-info-description">
-        {description}
-      </p>
-      <button className="slide-info-button">shop women's accessories</button>
+    <div style={style}>
+      <div className={`slide-info ${animation}`} style={styles} onAnimationEnd={onAnimationEnd}>
+        <h1 className="slide-info-title ">{title}</h1>
+        <p className="slide-info-description">
+          {description}
+        </p>
+        <button className="slide-info-button">shop women&apos;s accessories</button>
+      </div>
     </div>
   );
 };

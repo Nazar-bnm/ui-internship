@@ -14,7 +14,6 @@
   transform: translateY(-50%);
   z-index: 2;
 
-
   &:nth-child(2) {
     right: 0;
   }
@@ -54,6 +53,10 @@
 }
 
 .transition {
-  transition: transform 0ms ease-out 0.1ms;
+  transition: transform ease-out 0.01ms;
+}
+
+.transform {
+  transform: translateX(100%);
 }
 

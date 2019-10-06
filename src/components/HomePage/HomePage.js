@@ -3,7 +3,7 @@ import Slideshow from './Slideshow';
 
 const HomePage = () => (
   <div>
-    <Slideshow />
+    <Slideshow animation="zoomIn"/>
   </div>
 );
 

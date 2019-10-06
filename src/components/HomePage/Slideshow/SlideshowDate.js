@@ -22,4 +22,16 @@ export const slideData = [
     title: ' 3 HELLO 3',
     description: '3 Vivamus suscipit',
   },
+  {
+    id: 4,
+    img: img,
+    title: ' 3 HELLO 3',
+    description: '4 Vivamus suscipit',
+  },
+  {
+    id: 5,
+    img: img,
+    title: ' 3 HELLO 3',
+    description: '5 Vivamus suscipit',
+  },
 ];
