@@ -5,6 +5,7 @@
   grid-template-rows: 0fr 0.4fr;
   grid-template-columns: 1fr;
   padding: 0 8vw;
+  width: 60vw;
 }
 
 .big-image-container {
@@ -21,6 +22,7 @@
 
 .small-image {
   position: relative;
+  display: flex;
 }
 
 .product-image {
@@ -36,9 +38,14 @@
   right: 0;
   opacity: 0;
   transition: .5s ease;
-  background-color: rgba(259, 67, 95, 0.7);
+  background-color: rgba(244, 162, 54, 0.7);
   overflow:hidden;
+
   &:hover {
     opacity: 1;
   }
+}
+
+.selected {
+  border: 5px solid rgba(244, 162, 54, 1);;
 }

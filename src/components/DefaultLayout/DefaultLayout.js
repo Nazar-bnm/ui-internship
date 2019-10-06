@@ -13,7 +13,7 @@ const DefaultLayout = ({ component: Component, hideFooter, hideHeader, ...rest }
       <div>
         {!hideHeader && <Header />}
         <Component {...matchProps} />
-        <ProductImage {...images}/>
+        <ProductImage imagesArr={ images }/>
         {!hideFooter && <Footer />}
       </div>
     )} />
