@@ -1,71 +1,44 @@
 @import '../../scss/global_styles.scss';
 
 .join-us {
-    @include flex($justify: flex-start);
+  @include flex;
+  
+  &__title {
+    @include title-font;
+    @include flex($align: center);
+    color: $white;
+    font-size: 0.8rem;
+  }
+  
+  &__input-wrapper {
+    display: flex;
+    height: 33px;
     position: relative;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    width: 40vw;
-    background-color: $black;
-    padding: 20px;
-
-    &-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &-error {
-        @include title-font;
-        position: absolute;
-        right: 50px;
-        bottom: 2px;
-        font-size: 12px;
-        text-transform: lowercase;
-        color: $red;
-    }
-
-    &-paragraph {
-        margin: 0;
-    }
+  }
+  
+  &__email-input {
+    margin: 0 10px;
+    width: 250px;
+    padding-left: 5px;
+    padding-right: 25px;
+    outline: none;
+    font-size: 0.7rem;
+  }    
+  
+  &__btn {
+    @include flex($justify: flex-start, $align: center);
+    position: absolute;
+    right: 10px;
+    border: none;
+    height: 100%;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    color: inherit;
+  }
 }
-
-.title {
-  @include title-font;
-  @include flex($align: center);
-  color: $white;
-  font-size: 0.8rem;
-}
-
-.input-wrapper {
-  display: flex;
-  height: 33px;
-  position: relative;
-}
-
-.email-input {
-  margin: 0 10px;
-  width: 250px;
-  padding-left: 5px;
-  padding-right: 25px;
-  outline: none;
-  font-size: 0.7rem;
-}    
-
-.btn {
-  @include flex($justify: flex-start, $align: center);
-  position: absolute;
-  right: 10px;
-  border: none;
-  height: 100%;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  outline: none;
-  color: inherit;
-}
-
+  
 .success {
   border: 1px solid green;
   border-radius: 1px;

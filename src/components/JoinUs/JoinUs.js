@@ -33,14 +33,14 @@ class JoinUs extends Component {
     return (
       <form className="join-us">
         <label htmlFor="email" className="join-us__title">newsletter</label>
-        <div className="join-us-wrapper">
-          <div className="input-wrapper">
+        <div className="join-us__wrapper">
+          <div className="join-us__input-wrapper">
             <input type="email" required name="email"
               value={email}
               onChange={this.handleInput}
-              className={cx('email-input', { warning: !isEmailValid }, { success: isEmailValid })}
+              className={cx('join-us__email-input', { warning: !isEmailValid }, { success: isEmailValid })}
             />
-            <button className="btn" type="submit">
+            <button className="join-us__btn" type="submit">
               <i className="chevron right icon" />
             </button>
           </div>

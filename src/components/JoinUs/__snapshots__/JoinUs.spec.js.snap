@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Rendering without crushing Rendering without crushing 1`] = `
+exports[`Rendering without crushing shold render 1`] = `
 <form
   className="join-us"
 >
@@ -11,13 +11,13 @@ exports[`Rendering without crushing Rendering without crushing 1`] = `
     newsletter
   </label>
   <div
-    className="join-us-wrapper"
+    className="join-us__wrapper"
   >
     <div
-      className="input-wrapper"
+      className="join-us__input-wrapper"
     >
       <input
-        className="email-input warning"
+        className="join-us__email-input warning"
         name="email"
         onChange={[Function]}
         required={true}
@@ -25,7 +25,7 @@ exports[`Rendering without crushing Rendering without crushing 1`] = `
         value=""
       />
       <button
-        className="btn"
+        className="join-us__btn"
         type="submit"
       >
         <i

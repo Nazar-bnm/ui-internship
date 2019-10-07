@@ -10,7 +10,7 @@ describe('Rendering without crushing', () => {
     );
   });
 
-  test('Rendering without crushing', () => {
+  test('shold render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
