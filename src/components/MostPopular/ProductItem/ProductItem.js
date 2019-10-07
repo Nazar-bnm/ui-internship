@@ -8,7 +8,7 @@ const ProductItem = ({ product }) => {
   const { image, label, title, price } = product;
 
   return (
-    <div className="product col-4">
+    <div className="product col-3">
       <div className="product__img-wrapper">
         <div className={cx('product__img-wrapper__flag', { red: (label === 'sale') },
           { black: (label === 'new' ) })}></div>

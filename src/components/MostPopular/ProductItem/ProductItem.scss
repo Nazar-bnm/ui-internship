@@ -29,8 +29,8 @@
     }
 
     &__img {
-      height: 320px;
-      width: 200px;
+      max-height: 320px;
+      max-width: 100%;
     }
   }
 
