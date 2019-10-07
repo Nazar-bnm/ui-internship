@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ItemInfo /> should match snapshot 1`] = `
+<div
+  className="col-4 item"
+>
+  <div
+    className="item__img-wrapper"
+  >
+    <img
+      className="item__img"
+      src="https://www.next.ua/nxtcms/resource/image.jpg"
+    />
+    <span
+      className="item__category"
+    >
+      shop 
+      kids
+    </span>
+  </div>
+  <div
+    className="item__title-wrapper"
+  >
+    <h4
+      className="item__title"
+    >
+      Color Summer
+    </h4>
+    <span
+      className="item__collection"
+    >
+      spring collection 2016
+    </span>
+  </div>
+</div>
+`;
