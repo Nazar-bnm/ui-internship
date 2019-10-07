@@ -8,11 +8,11 @@ import Footer from '../Footer';
 const DefaultLayout = ({ component: Component, hideFooter, hideHeader, ...rest }) => {
   return (
     <Route {...rest} render={(matchProps) => (
-      <div>
+      <>
         {!hideHeader && <Header />}
         <Component {...matchProps} />
         {!hideFooter && <Footer />}
-      </div>
+      </>
     )} />
   );
 };
