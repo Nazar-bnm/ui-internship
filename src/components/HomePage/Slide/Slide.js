@@ -3,19 +3,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Slide.scss';
 
-const slide = ({ title, description, bgImage, animation, onAnimationEnd, style }) => {
-  const styles = {
+const slide = ({ bgImage, animation, onAnimationEnd, style, children }) => {
+  const bgStyle = {
     backgroundImage: `url(${bgImage})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
   };
 
   return (
-    <div style={style}>
-      <div className={`slide-info ${animation}`} style={styles} onAnimationEnd={onAnimationEnd}>
-        <h1 className="slide-info-title ">{title}</h1>
-        <p className="slide-info-description">
-          {description}
-        </p>
-        <button className="slide-info-button">shop women&apos;s accessories</button>
+    <div className={'slide-container'} style={style}>
+      <div className={`slide-info ${animation}`} style = {bgStyle}onAnimationEnd={onAnimationEnd}>
+        {children}
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import ArrowButton from '../ArrowButton';
 import Slide from '../Slide/Slide';
 import './Slideshow.scss';
-import { slideData } from './SlideshowDate';
 import cx from 'classnames';
+import { ANIMATION_NAMES } from '../../../const';
 
 class Slideshow extends Component {
   state = {
@@ -17,29 +17,35 @@ class Slideshow extends Component {
     isTransform: false,
   };
 
-  isAnimationZoom =
-    this.props.animation === 'zoomIn' || this.props.animation === 'zoomOut';
+  isAnimationZoom = () => {
+    const { animation } = this.props;
+    const { ZOOM_IN, ZOOM_OUT } = ANIMATION_NAMES;
+    return animation === ZOOM_IN || animation === ZOOM_OUT;
+  };
 
   sliderInterval = null;
 
   updateIndex = (number, newIndex) => {
-    this.setState((prevState) => {
+    this.setState(({ index }) => {
       return {
-        index: newIndex !== undefined ? newIndex : prevState.index + number,
+        index: newIndex !== undefined ? newIndex : index + number,
         shouldTransition: true,
-        ...(this.isAnimationZoom ?
-          { isTransform: true, prevIndex: prevState.index } :
+        ...(this.isAnimationZoom() ?
+          { isTransform: true, prevIndex: index } :
           {}),
       };
     });
   };
 
   nextSlide = () => {
-    this.state.index != slideData.length && this.updateIndex(1);
+    const { index } = this.state;
+    const { slideData } = this.props;
+    index != slideData.length && this.updateIndex(1);
   };
 
   prevSlide = () => {
-    this.state.index != -1 && this.updateIndex(-1);
+    const { index } = this.state;
+    index != -1 && this.updateIndex(-1);
   };
 
   changeSlideWithButton = (type) => {
@@ -51,8 +57,10 @@ class Slideshow extends Component {
   };
 
   changeSlideWithPagination = (e, i) => {
+    const { index } = this.state;
+
     this.setState({ isClicked: true });
-    i != this.state.index && this.updateIndex('', i);
+    i != index && this.updateIndex('', i);
   };
 
   deleteAutoPlay = () => {
@@ -63,23 +71,27 @@ class Slideshow extends Component {
   };
 
   startSlideShow = () => {
-    this.sliderInterval = setInterval(this.nextSlide, 2000);
+    this.sliderInterval = setInterval(this.nextSlide, 4000);
   };
 
   onMouseLeftHandler = () => {
-    !this.state.isClicked &&
+    const { isClicked } = this.state;
+    !isClicked &&
       this.setState({
         autoPlay: true,
       });
   };
 
   transitionEnd = () => {
-    this.state.index === slideData.length &&
+    const { index } = this.state;
+    const { slideData } = this.props;
+
+    index === slideData.length &&
       this.setState({
         index: 0,
         shouldTransition: false,
       });
-    this.state.index === -1 &&
+    index === -1 &&
       this.setState({
         index: slideData.length - 1,
         shouldTransition: false,
@@ -96,16 +108,21 @@ class Slideshow extends Component {
     this.startSlideShow();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.autoPlay && this.state.autoPlay != prevState.autoPlay) {
+  componentDidUpdate(prevProps, { autoPlay: prevStateAutoPlay }) {
+    const { autoPlay } = this.state;
+
+    if (autoPlay && autoPlay != prevStateAutoPlay) {
       this.startSlideShow();
     }
   }
 
   render() {
-    const getPaginationClassNames = (i) =>
+    const { index, prevIndex, isTransform, shouldTransition } = this.state;
+    const { slideData } = this.props;
+    const { CAROUSEL, FADE } = ANIMATION_NAMES;
+    const getPaginationClassNames = (slideIndex) =>
       cx('slider-pagination', {
-        'slider-pagination--active': this.state.index === i,
+        'slider-pagination--active': index === slideIndex,
       });
     const pagination = slideData.map((el, i) => (
       <div
@@ -117,22 +134,26 @@ class Slideshow extends Component {
 
     const styleSlide = {
       transform: `translateX(${100 *
-        (this.state.index - this.state.prevIndex)}%)`,
+        (index - prevIndex)}%)`,
     };
-
-    const animation = 'zoomIn';
 
     const slides = slideData.map((el, i) => (
       <Slide
         key={el.id}
-        description={el.description}
         bgImage={el.img}
         style={
-          this.state.prevIndex === i && this.state.isTransform ? styleSlide : {}
+          prevIndex === i && isTransform ? styleSlide : {}
         }
-        animation={cx({ [animation]: i === this.state.prevIndex })}
+        animation={cx({
+          [this.props.animation]:
+            this.isAnimationZoom() && i === prevIndex,
+          [FADE]: this.props.animation === FADE && i === index,
+        })}
         onAnimationEnd={this.removeTransform}
-      />
+      >
+        {' '}
+        {el.component}
+      </Slide>
     ));
 
     const {
@@ -142,27 +163,23 @@ class Slideshow extends Component {
     } = slideData;
 
     const firstSlideClone = (
-      <Slide
-        key="firstClone"
-        description={firstCloneData.description}
-        bgImage={firstCloneData.img}
-        animation=""
-      />
+      <Slide key="firstClone" bgImage={firstCloneData.img} animation="">
+        {' '}
+        {firstCloneData.component}
+      </Slide>
     );
 
     const lastSlideClone = (
-      <Slide
-        key="lastClone"
-        description={lastCloneData.description}
-        bgImage={lastCloneData.img}
-        animation=""
-      />
+      <Slide key="lastClone" bgImage={lastCloneData.img} animation="">
+        {' '}
+        {lastCloneData.component}
+      </Slide>
     );
 
     const allSlides = [lastSlideClone, ...slides, firstSlideClone];
     const styleContainer = {
       transform: `translateX(-${(100 / allSlides.length) *
-        (this.state.index + 1)}%)`,
+        (index + 1)}%)`,
     };
 
     return (
@@ -183,7 +200,9 @@ class Slideshow extends Component {
         />
         <div
           className={cx('slides-container', {
-            transition: this.state.shouldTransition,
+            transition: shouldTransition,
+            transitionCarousel:
+              shouldTransition && this.props.animation === CAROUSEL,
           })}
           style={styleContainer}
           onTransitionEnd={this.transitionEnd}
