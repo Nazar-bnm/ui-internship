@@ -1,0 +1,18 @@
+@import "../../scss/global_styles";
+
+.blog-article-preview-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 60vw;
+  height: 250px;
+  background-image: url('https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/raccoon_thumb.ngsversion.1485815402351.adapt.1900.1.JPG');
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+
+  .title-and-text-container {
+    height: 50%;
+    width: 50%;
+    background-color: $white;
+  }
+}
