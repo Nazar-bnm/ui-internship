@@ -1,11 +1,15 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-invalid-this */
 import React, { Component } from 'react';
-import ArrowButton from '../ArrowButton';
-import Slide from '../Slide/Slide';
-import './Slideshow.scss';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { ANIMATION_NAMES } from '../../../const';
+import ArrowButton from './ArrowButton';
+import Slide from './Slide';
+import './Slideshow.scss';
+import { ANIMATION_NAMES, ARROW_BUTTON_TYPES } from '../../../const';
+
+const { CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT } = ANIMATION_NAMES;
+const { LEFT, RIGHT } = ARROW_BUTTON_TYPES;
+const CN = 'slideshow';
 
 class Slideshow extends Component {
   state = {
@@ -19,19 +23,19 @@ class Slideshow extends Component {
 
   isAnimationZoom = () => {
     const { animation } = this.props;
-    const { ZOOM_IN, ZOOM_OUT } = ANIMATION_NAMES;
+
     return animation === ZOOM_IN || animation === ZOOM_OUT;
   };
 
   sliderInterval = null;
 
   updateIndex = (number, newIndex) => {
-    this.setState(({ index }) => {
+    this.setState(({ index: prevIndex }) => {
       return {
-        index: newIndex !== undefined ? newIndex : index + number,
+        index: newIndex !== undefined ? newIndex : prevIndex + number,
         shouldTransition: true,
         ...(this.isAnimationZoom() ?
-          { isTransform: true, prevIndex: index } :
+          { isTransform: true, prevIndex: prevIndex } :
           {}),
       };
     });
@@ -40,20 +44,24 @@ class Slideshow extends Component {
   nextSlide = () => {
     const { index } = this.state;
     const { slideData } = this.props;
+
     index != slideData.length && this.updateIndex(1);
   };
 
   prevSlide = () => {
     const { index } = this.state;
-    index != -1 && this.updateIndex(-1);
+    const indexOfLastCloneSlide = -1;
+
+    index != indexOfLastCloneSlide && this.updateIndex(-1);
   };
 
   changeSlideWithButton = (type) => {
     this.setState({
       isClicked: true,
     });
-    type === 'right' && this.nextSlide();
-    type === 'left' && this.prevSlide();
+
+    type === RIGHT && this.nextSlide();
+    type === LEFT && this.prevSlide();
   };
 
   changeSlideWithPagination = (e, i) => {
@@ -67,6 +75,7 @@ class Slideshow extends Component {
     this.setState({
       autoPlay: false,
     });
+
     clearInterval(this.sliderInterval);
   };
 
@@ -76,6 +85,7 @@ class Slideshow extends Component {
 
   onMouseLeftHandler = () => {
     const { isClicked } = this.state;
+
     !isClicked &&
       this.setState({
         autoPlay: true,
@@ -85,15 +95,20 @@ class Slideshow extends Component {
   transitionEnd = () => {
     const { index } = this.state;
     const { slideData } = this.props;
+    const slideDataLength = slideData.length;
+    const indexOfLastCloneSlide = -1;
+    const indexOfFirstCloneSlide = slideDataLength;
+    const indexOfLastSlide = slideDataLength - 1;
 
-    index === slideData.length &&
+    index === indexOfFirstCloneSlide &&
       this.setState({
         index: 0,
         shouldTransition: false,
       });
-    index === -1 &&
+
+    index === indexOfLastCloneSlide &&
       this.setState({
-        index: slideData.length - 1,
+        index: indexOfLastSlide,
         shouldTransition: false,
       });
   };
@@ -118,11 +133,10 @@ class Slideshow extends Component {
 
   render() {
     const { index, prevIndex, isTransform, shouldTransition } = this.state;
-    const { slideData } = this.props;
-    const { CAROUSEL, FADE } = ANIMATION_NAMES;
+    const { slideData, animation } = this.props;
     const getPaginationClassNames = (slideIndex) =>
-      cx('slider-pagination', {
-        'slider-pagination--active': index === slideIndex,
+      cx(`${CN}-pagination__item`, {
+        [`${CN}-pagination__item--active`]: index === slideIndex,
       });
     const pagination = slideData.map((el, i) => (
       <div
@@ -145,9 +159,9 @@ class Slideshow extends Component {
           prevIndex === i && isTransform ? styleSlide : {}
         }
         animation={cx({
-          [this.props.animation]:
+          [animation]:
             this.isAnimationZoom() && i === prevIndex,
-          [FADE]: this.props.animation === FADE && i === index,
+          [FADE]: animation === FADE && i === index,
         })}
         onAnimationEnd={this.removeTransform}
       >
@@ -163,20 +177,19 @@ class Slideshow extends Component {
     } = slideData;
 
     const firstSlideClone = (
-      <Slide key="firstClone" bgImage={firstCloneData.img} animation="">
-        {' '}
+      <Slide key="firstClone" bgImage={firstCloneData.img}>
         {firstCloneData.component}
       </Slide>
     );
 
     const lastSlideClone = (
-      <Slide key="lastClone" bgImage={lastCloneData.img} animation="">
-        {' '}
+      <Slide key="lastClone" bgImage={lastCloneData.img}>
         {lastCloneData.component}
       </Slide>
     );
 
     const allSlides = [lastSlideClone, ...slides, firstSlideClone];
+
     const styleContainer = {
       transform: `translateX(-${(100 / allSlides.length) *
         (index + 1)}%)`,
@@ -184,35 +197,45 @@ class Slideshow extends Component {
 
     return (
       <div
-        className="slideshow-container"
+        className={`${CN}`}
         onMouseEnter={this.deleteAutoPlay}
         onMouseLeave={this.onMouseLeftHandler}
       >
         <ArrowButton
-          type="left"
-          className="arrow-button"
-          onClick={this.changeSlideWithButton.bind(this, 'left')}
+          type={LEFT}
+          className={`${CN}__arrow-button`}
+          onClick={this.changeSlideWithButton.bind(this, LEFT)}
         />
         <ArrowButton
-          type="right"
-          className="arrow-button"
-          onClick={this.changeSlideWithButton.bind(this, 'right')}
+          type={RIGHT}
+          className={`${CN}__arrow-button`}
+          onClick={this.changeSlideWithButton.bind(this, RIGHT)}
         />
         <div
-          className={cx('slides-container', {
+          className={cx('slides', {
             transition: shouldTransition,
             transitionCarousel:
-              shouldTransition && this.props.animation === CAROUSEL,
+              shouldTransition && animation === CAROUSEL,
           })}
           style={styleContainer}
           onTransitionEnd={this.transitionEnd}
         >
           {allSlides}
         </div>
-        <div className="slider-pagination-container">{pagination}</div>
+        <div className={`${CN}-pagination`}>{pagination}</div>
       </div>
     );
   }
 }
+
+Slideshow.propTypes = {
+  animation: PropTypes.oneOf([CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT]),
+  slideData: PropTypes.array,
+};
+
+Slideshow.defaultProps = {
+  animation: CAROUSEL,
+  slideData: [],
+};
 
 export default Slideshow;

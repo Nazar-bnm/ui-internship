@@ -1,51 +1,50 @@
 @import '../../../scss/global_styles.scss';
 
-.slideshow-container {
+.slideshow {
   position: relative;
   height: 400px;
   z-index: 1;
   width: 100vw;
   overflow: hidden;
-}
 
-.arrow-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
+  &__arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 
-  &:nth-child(2) {
-    right: 0;
+    &:nth-child(2) {
+      right: 0;
+    }
   }
-}
 
-.slider-pagination {
-  cursor: pointer;
-  width: 14px;
-  height: 8px;
-  margin-right: 3px;
-  border: 1px solid $alto;
-
-  &-container {
+  &-pagination {
     @include flex();
     position: absolute;
     bottom: 5%;
     right: 50%;
     z-index: 2;
     transform: translateX(50%);
+
+    &__item {
+      cursor: pointer;
+      width: 14px;
+      height: 8px;
+      margin-right: 3px;
+      border: 1px solid $alto;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &--active {
+        background: $alto;
+      }
+    }
   }
+}
 
-  &:last-child {
-  margin-right: 0;
-
-  }
-
-  &--active {
-    background: $alto;
-  }
-};
-
-.slides-container {
+.slides {
   display: flex;
   position: relative;
   width: fit-content;
@@ -54,7 +53,6 @@
 
 .transition {
   transition: transform ease-in-out 0.01ms;
-  
 }
 
 .transitionCarousel {
@@ -64,4 +62,3 @@
 .transform {
   transform: translateX(100%);
 }
-
