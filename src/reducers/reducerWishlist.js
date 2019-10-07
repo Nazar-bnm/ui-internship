@@ -8,7 +8,8 @@ const initialState = {
 export default function reducerWishlist(state = initialState, action) {
   switch (action.type) {
   case ADD_TO_WISHLIST:
-    return { ...state,
+    return {
+      ...state,
       wishlist: [...state.wishlist, action.payload],
     };
   case REMOVE_FROM_WISHLIST:
