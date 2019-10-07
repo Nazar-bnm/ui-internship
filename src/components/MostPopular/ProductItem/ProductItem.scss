@@ -1,0 +1,31 @@
+@import '../../../scss/global_styles';
+@import '../../../scss/styles';
+
+.product {
+  @include flex(column, center, center);
+
+  &__img-wrapper{
+    &__flag {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 50px 0 0;
+      border-color: #000000 transparent transparent transparent;
+      position: absolute;
+      z-index: 2;
+    }
+
+    &__img {
+      width: 200px;
+      position: relative;
+    }
+  }
+}
+
+.red {
+  border-color: red transparent transparent transparent;
+}
+
+.transparent {
+  border-color: none;
+}

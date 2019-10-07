@@ -19,65 +19,48 @@
       "email": "ann@codingthesmartway.com"
     }
   ],
-  "items": [
+  "what-is-new" : [
     {
       "id": 1,
-      "first_name": "Sebastian",
-      "last_name": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com"
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "Black and White",
+      "collection": "spring collection 2016",
+      "category": "women"
     },
     {
       "id": 2,
-      "first_name": "Steve",
-      "last_name": "Palmer",
-      "email": "steve@codingthesmartway.com"
+      "photo": "https://www.next.ua/nxtcms/resource/image/1233600/portrait_ratio1x1/525/525/69ca86774e073288bc792479650a14cc/Jn/all-baby-girl.jpg",
+      "title": "Color Summer",
+      "collection": "spring collection 2016",
+      "category": "kids"
     },
     {
       "id": 3,
-      "first_name": "Ann",
-      "last_name": "Smith",
-      "email": "ann@codingthesmartway.com"
-    }
-  ],
-  "product": [
-    {
-      "id": 1,
-      "first_name": "Sebastian",
-      "last_name": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com"
-    },
-    {
-      "id": 2,
-      "first_name": "Steve",
-      "last_name": "Palmer",
-      "email": "steve@codingthesmartway.com"
-    },
-    {
-      "id": 3,
-      "first_name": "Ann",
-      "last_name": "Smith",
-      "email": "ann@codingthesmartway.com"
+      "photo": "https://www.next.ua/nxtcms/resource/image/1915752/portrait_ratio1x1/525/525/1cf45576cf1de5e2bab187220d4ebeb0/ds/g83-mb-sh819338-lm-357.jpg",
+      "title": "Vintage For Him",
+      "collection": "spring collection 2016",
+      "category": "men"
     }
   ],
   "most-popular": [
     {
       "id": 1,
-      "image": "./assets/img/models-most-popular/model1.jpg",
-      "lable": "new",
+      "image": "https://i.pinimg.com/originals/c4/cb/dc/c4cbdc90553d99fef7ee9e7edb486403.jpg",
+      "label": "new",
       "title": "Pink leopard dress",
       "price": "99,50"
     },
     {
       "id": 2,
-      "image": "./assets/img/models-most-popular/model2.jpg",
-      "lable": "sale",
+      "image": "https://i.pinimg.com/originals/b2/8c/09/b28c09cf494bc562069deb9f1d944855.jpg",
+      "label": "sale",
       "title": "Pleated slip dress",
       "price": "179.00"
     },
     {
       "id": 3,
-      "image": "./assets/img/models-most-popular/model3.jpg",
-      "lable": "null",
+      "image": "https://i.redd.it/grla2qtpa5721.jpg",
+      "label": "",
       "title": "Fit & flare sleeveless dress",
       "price": "99.00"
     }
