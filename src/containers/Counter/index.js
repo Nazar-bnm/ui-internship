@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { increment, decrement } from '../../actions';
+import { increment, decrement } from '../../actions/actionsCounter';
 import Counter from '../../components/Counter/Counter';
 import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
   return {
-    count: state.reducer.count,
+    count: state.reducerCounter.count,
   };
 };
 
