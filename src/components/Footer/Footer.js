@@ -1,5 +1,4 @@
 import React from 'react';
-import JoinUs from './JoinUs';
 import ContactDetails from './ContactDetails';
 import Linklist from './Linklist';
 import { linkListItems, paymentIcons, linkListItemsTablet } from '../../config/footer';
@@ -88,7 +87,6 @@ const Footer = () => {
       </div>
       <div className={`content ${CN}__info ${CN}__connect`}>
         <div>
-          <JoinUs />
         </div>
         <ContactDetails />
       </div>
