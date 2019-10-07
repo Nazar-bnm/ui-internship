@@ -86,8 +86,9 @@ const Footer = () => {
         ))}
       </div>
       <div className={`content ${CN}__info ${CN}__connect`}>
-        <div>
-        </div>
+        {/* <div>
+          Here should be JoinUs Conponent
+        </div> */}
         <ContactDetails />
       </div>
       <div className={`content ${CN}__info`}>
