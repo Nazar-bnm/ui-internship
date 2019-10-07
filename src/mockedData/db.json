@@ -45,24 +45,24 @@
   "most-popular": [
     {
       "id": 1,
-      "image": "https://i.pinimg.com/originals/c4/cb/dc/c4cbdc90553d99fef7ee9e7edb486403.jpg",
+      "image": "https://i.dailymail.co.uk/1s/2018/12/15/12/7458890-6498875-image-a-2_1544876240893.jpg",
       "label": "new",
-      "title": "Pink leopard dress",
-      "price": "99,50"
+      "title": "Black dress",
+      "price": "99,50$"
     },
     {
       "id": 2,
-      "image": "https://i.pinimg.com/originals/b2/8c/09/b28c09cf494bc562069deb9f1d944855.jpg",
+      "image": "https://i.pinimg.com/564x/99/5d/f3/995df3032c828381332af1dea4e5c590.jpg",
       "label": "sale",
-      "title": "Pleated slip dress",
-      "price": "179.00"
+      "title": "Red evening dress",
+      "price": "179.00$"
     },
     {
       "id": 3,
       "image": "https://i.redd.it/grla2qtpa5721.jpg",
       "label": "",
-      "title": "Fit & flare sleeveless dress",
-      "price": "99.00"
+      "title": "Fit & flare dress",
+      "price": "99.00$"
     }
   ]
 }
