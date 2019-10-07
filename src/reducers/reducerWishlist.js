@@ -13,6 +13,7 @@ export default function reducerWishlist(state = initialState, action) {
     };
   case REMOVE_FROM_WISHLIST:
     return {
+      ...state,
       wishlist: state.wishlist.filter((item) => {
         return item.id !== action.payload.id;
       }),
