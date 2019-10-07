@@ -10,7 +10,7 @@ exports[`<Header /> should match snapshot 1`] = `
     <PageSettings />
   </div>
   <div
-    className="heading-search-cart-container content"
+    className="header__heading-search-cart-container content"
   >
     <Link
       to="/home"
@@ -22,7 +22,7 @@ exports[`<Header /> should match snapshot 1`] = `
       </h2>
     </Link>
     <div
-      className="buttons-container"
+      className="header__buttons-container"
     >
       <BurgerMenu
         menuItemsList={
@@ -55,7 +55,7 @@ exports[`<Header /> should match snapshot 1`] = `
         }
       />
       <Input
-        customClass="search-input"
+        customClass="header__search-input"
         icon="search"
       >
         Search
@@ -64,7 +64,7 @@ exports[`<Header /> should match snapshot 1`] = `
         to="/404"
       >
         <Button
-          customClass="cart-btn"
+          customClass="header__cart-btn"
           icon="cart"
         >
           Cart (0)

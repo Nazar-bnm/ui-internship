@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+export const CN = 'input';
 
 const Input = (props) => {
+  const { icon, customClass } = props;
+
   return (
-    <div className="input-wrapper">
-      {props.icon && <i className={props.icon + ' icon'}></i>}
-      <input type="text" placeholder="SEARCH" className={props.customClass + ' input'} />
+    <div className={cx(CN)}>
+      {icon && <i className={icon + ' icon'}></i>}
+      <input type="text" placeholder="SEARCH" className={customClass} />
     </div>
   );
 };
@@ -13,6 +17,7 @@ const Input = (props) => {
 Input.propTypes = {
   icon: PropTypes.string,
   customClass: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

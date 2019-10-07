@@ -2,10 +2,9 @@
 
 exports[`<Input /> should match snapshot 1`] = `
 <div
-  className="input-wrapper"
+  className="input"
 >
   <input
-    className="undefined input"
     placeholder="SEARCH"
     type="text"
   />

@@ -7,21 +7,23 @@ import Input from '../Input';
 import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
 import { Link } from 'react-router-dom';
 import './Header.scss';
+import cx from 'classnames';
+export const CN = 'header';
 
 const Header = () => (
-  <header className="header">
+  <header className={cx(CN)}>
     <div className="wrapper color-secondary">
       <PageSettings/>
     </div>
-    <div className="heading-search-cart-container content">
+    <div className={`${CN}__heading-search-cart-container content`}>
       <Link to={'/home'}>
-        <h2 className="header__title">The shop</h2>
+        <h2 className={`${CN}__title`}>The shop</h2>
       </Link>
-      <div className="buttons-container">
+      <div className={`${CN}__buttons-container`}>
         <BurgerMenu menuItemsList={burgerMenuItemsList}/>
-        <Input icon="search" customClass="search-input">Search</Input>
+        <Input icon="search" customClass={`${CN}__search-input`}>Search</Input>
         <Link to={'/404'}>
-          <Button icon="cart" customClass="cart-btn">Cart (0)</Button>
+          <Button icon="cart" customClass={`${CN}__cart-btn`}>Cart (0)</Button>
         </Link>
       </div>
     </div>

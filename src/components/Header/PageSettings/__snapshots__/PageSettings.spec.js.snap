@@ -2,11 +2,11 @@
 
 exports[`<PageSettings /> should match snapshot 1`] = `
 <div
-  className="content container"
+  className="page-settings content container"
 >
   <ContentOptions />
   <h3
-    className="heading"
+    className="page-settings__heading heading"
   >
     free shipping on orders above 50$
   </h3>

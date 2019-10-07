@@ -57,7 +57,7 @@
     display: none;
   }
 
-  .cart-btn {
+  &__cart-btn {
     display: flex;
     position: absolute;
     top: 5px;
@@ -72,7 +72,7 @@
     }
   }
 
-  .heading-search-cart-container {
+  &__heading-search-cart-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,7 +92,7 @@
     font-size: 1.3rem;
   }
 
-  .search-input {
+  &__search-input {
     height: 20px;
     width: 65vw;
     margin: 0 10px;
@@ -101,7 +101,7 @@
     font-size: 1.6rem;
   }
 
-  .input-wrapper {
+  .input {
     position: relative;
     border-right: 1px solid $silver-chalice;
     border-left: 1px solid $silver-chalice;
@@ -113,7 +113,7 @@
     }
   }
 
-  .buttons-container {
+  &__buttons-container {
     display: flex;
     justify-content: space-evenly;
     height: 30px;
@@ -127,15 +127,15 @@
 
 @media only screen and (min-width: 480px) {
   .header {
-    .heading-search-cart-container {
+    &__heading-search-cart-container {
       flex-direction: column;
     }
 
-    .search-input {
+    &__search-input {
       width: 55vw;
     }
 
-    .cart-btn {
+    &__cart-btn {
       position: relative;
       top: 0;
       right: 0;
@@ -154,17 +154,17 @@
       padding-left: 35%;
     }
 
-    .search-input {
+    &__search-input {
       width: 15vw;
     }
 
-    .buttons-container {
+    &__buttons-container {
       align-items: center;
       height: 40px;
       padding: 0;
     }
 
-    .heading-search-cart-container {
+    &__heading-search-cart-container {
       flex-direction: row;
     }
 

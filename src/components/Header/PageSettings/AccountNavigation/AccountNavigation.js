@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import cx from 'classnames';
+export const CN = 'navigation-account';
 
 const AccountNavigation = (props) => {
   return (
-    <div className='navigation-account'>
+    <div className={cx(CN)}>
       <Link to={'/404'}>
         <span>my account</span>
       </Link>
@@ -23,6 +25,7 @@ const AccountNavigation = (props) => {
 
 AccountNavigation.propTypes = {
   grid: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default AccountNavigation;

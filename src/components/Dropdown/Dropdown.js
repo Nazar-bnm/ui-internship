@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Dropdown.scss';
+import cx from 'classnames';
+export const CN = 'dropdown';
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -30,7 +32,7 @@ class Dropdown extends React.Component {
   renderMenuItems() {
     return this.state.options.map(({ value, label }, i) => (
       <li
-        className="dropdown__items__element"
+        className={`${CN}__items__element`}
         key={value}
         selectednum={i}
         value={value}
@@ -46,14 +48,14 @@ class Dropdown extends React.Component {
     const { expanded, selectedID } = this.state;
 
     return (
-      <div className="dropdown"
+      <div className={cx(CN)}
         onClick={this.toggleDropdown}
         aria-expanded={expanded}
       >
-        <span className="dropdown__selected">
+        <span className={`${CN}__selected`}>
           {this.state.options[selectedID].label}
         </span>
-        <ul className="dropdown__items">
+        <ul className={`${CN}__items`}>
           {this.renderMenuItems()}
         </ul>
         <i className={iconName}></i>
@@ -65,6 +67,7 @@ class Dropdown extends React.Component {
 Dropdown.propTypes = {
   options: PropTypes.array,
   selected: PropTypes.number,
+  className: PropTypes.string,
 };
 
 export default Dropdown;

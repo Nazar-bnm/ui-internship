@@ -2,116 +2,116 @@
 
 exports[`<BurgerMenu /> should match snapshot 1`] = `
 <div
-  className="burger-menu-container"
+  className="burger-menu"
 >
   <nav
-    className="burger-menu-navigation-container"
+    className="burger-menu__navigation"
   >
     <input
-      id="burger-button"
+      id="burger-menu__button"
       type="checkbox"
     />
     <label
-      className="burger-image"
-      htmlFor="burger-button"
+      className="burger-menu__image"
+      htmlFor="burger-menu__button"
       title="Navigation"
     >
       ☰
     </label>
     <ul
-      className="burger-list"
+      className="burger-menu__list"
     >
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="woman"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="woman"
         >
           woman
         </li>
       </Link>
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="man"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="man"
         >
           man
         </li>
       </Link>
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="kids"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="kids"
         >
           kids
         </li>
       </Link>
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="accessories"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="accessories"
         >
           accessories
         </li>
       </Link>
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="what's new"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="what's new"
         >
           what's new
         </li>
       </Link>
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="brands"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="brands"
         >
           brands
         </li>
       </Link>
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="sale"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="sale"
         >
           sale
         </li>
       </Link>
       <Link
-        className="burger-menu-link"
+        className="burger-menu__link"
         key="blog"
         to="/404"
       >
         <li
-          className="burger-list-item"
+          className="burger-menu__list-item"
           key="blog"
         >
           blog
