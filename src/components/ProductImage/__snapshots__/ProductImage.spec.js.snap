@@ -2,10 +2,10 @@
 
 exports[`<ProductImage /> should match snapshot 1`] = `
 <div
-  className="product-image-container"
+  className="product-image__container"
 >
   <figure
-    className="big-image-container"
+    className="product-image__big-image-container"
     data-src="https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/raccoon_thumb.ngsversion.1485815402351.adapt.1900.1.JPG"
     onClick={[Function]}
   >
@@ -14,52 +14,52 @@ exports[`<ProductImage /> should match snapshot 1`] = `
       src="https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/raccoon_thumb.ngsversion.1485815402351.adapt.1900.1.JPG"
     />
     <div
-      className="image-on-hover"
+      className="product-image__image-on-hover"
     />
   </figure>
   <div
-    className="small-images-container"
+    className="product-image__small-images-container"
   >
     <figure
-      className="small-image"
+      className="product-image__small-image"
       data-src="https://www.nydailynews.com/resizer/57h4sk1Mr8eFVp6LV7LlJ3zBasI=/800x600/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/CVQJPCXX35C5NFMJMPHHC6QKHQ.jpg"
       key="https://www.nydailynews.com/resizer/57h4sk1Mr8eFVp6LV7LlJ3zBasI=/800x600/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/CVQJPCXX35C5NFMJMPHHC6QKHQ.jpg"
       onClick={[Function]}
     >
       <img
-        className="product-image "
+        className="product-image"
         src="https://www.nydailynews.com/resizer/57h4sk1Mr8eFVp6LV7LlJ3zBasI=/800x600/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/CVQJPCXX35C5NFMJMPHHC6QKHQ.jpg"
       />
       <div
-        className="image-on-hover"
+        className="product-image__image-on-hover"
       />
     </figure>
     <figure
-      className="small-image"
+      className="product-image__small-image"
       data-src="https://cdn.mos.cms.futurecdn.net/xCknw5UTKR8rM97eZE7reF-320-80.jpg"
       key="https://cdn.mos.cms.futurecdn.net/xCknw5UTKR8rM97eZE7reF-320-80.jpg"
       onClick={[Function]}
     >
       <img
-        className="product-image "
+        className="product-image"
         src="https://cdn.mos.cms.futurecdn.net/xCknw5UTKR8rM97eZE7reF-320-80.jpg"
       />
       <div
-        className="image-on-hover"
+        className="product-image__image-on-hover"
       />
     </figure>
     <figure
-      className="small-image"
+      className="product-image__small-image"
       data-src="https://curiodyssey.org/wp-content/uploads/bb-plugin/cache/xMammals-Raccoon-square.jpg.pagespeed.ic.W5-0FMTZBa.jpg"
       key="https://curiodyssey.org/wp-content/uploads/bb-plugin/cache/xMammals-Raccoon-square.jpg.pagespeed.ic.W5-0FMTZBa.jpg"
       onClick={[Function]}
     >
       <img
-        className="product-image "
+        className="product-image"
         src="https://curiodyssey.org/wp-content/uploads/bb-plugin/cache/xMammals-Raccoon-square.jpg.pagespeed.ic.W5-0FMTZBa.jpg"
       />
       <div
-        className="image-on-hover"
+        className="product-image__image-on-hover"
       />
     </figure>
   </div>

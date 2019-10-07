@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './ProductImage.scss';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+export const CN = 'product-image';
 
 class ProductImage extends Component {
   constructor(props) {
@@ -23,16 +25,18 @@ class ProductImage extends Component {
     const { imagesArr } = this.props;
     return imagesArr.map((el, index) => {
       if (!index) return null;
-      let isSelected = '';
+      // eslint-disable-next-line no-unused-vars
+      let imageClass = '';
 
       if (selectedImage === el.src) {
-        isSelected = 'selected';
+        imageClass = `${CN}__selected-image`;
       }
+      const isSelected = selectedImage === el.src;
       return (
         // eslint-disable-next-line no-invalid-this
-        <figure key={el.src} data-src={el.src} className="small-image" onClick={this.clickHandler}>
-          <img src={el.src} className={`product-image ${isSelected}`} />
-          <div className="image-on-hover"></div>
+        <figure key={el.src} data-src={el.src} className={`${CN}__small-image`} onClick={this.clickHandler}>
+          <img src={el.src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
+          <div className={`${CN}__image-on-hover`}></div>
         </figure>
       );
     });
@@ -42,19 +46,16 @@ class ProductImage extends Component {
     const { imagesArr } = this.props;
     const { selectedImage } = this.state;
     const bigImageSrc = imagesArr[0].src;
-    let isSelected = '';
-
-    if (selectedImage === bigImageSrc) {
-      isSelected = 'selected';
-    }
+    let imageClass = '';
+    if (selectedImage === bigImageSrc) imageClass = 'product-image__selected-image';
 
     return (
-      <div className="product-image-container">
-        <figure className="big-image-container" onClick={this.clickHandler} data-src={bigImageSrc}>
-          <img src={bigImageSrc} className={`product-image ${isSelected}`} />
-          <div className="image-on-hover"></div>
+      <div className={cx(`${CN}__container`)}>
+        <figure className={`${CN}__big-image-container`} onClick={this.clickHandler} data-src={bigImageSrc}>
+          <img src={bigImageSrc} className={`${CN} ${imageClass}`} />
+          <div className={`${CN}__image-on-hover`}></div>
         </figure>
-        <div className="small-images-container">
+        <div className={`${CN}__small-images-container`}>
           {this.renderSmallImages(selectedImage)}
         </div>
       </div>
@@ -62,9 +63,9 @@ class ProductImage extends Component {
   }
 }
 
-
 ProductImage.propTypes = {
   imagesArr: PropTypes.array,
+  className: PropTypes.string,
 };
 
 export default ProductImage;
