@@ -1,0 +1,12 @@
+@import '../../../scss/global_styles.scss';
+
+.linklist {
+  &__title {
+    @include footer-title;
+  }
+
+  &__text{
+    @include footer-text;
+  }
+}
+
