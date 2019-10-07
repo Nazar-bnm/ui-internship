@@ -15,6 +15,10 @@
     justify-content: space-between;
   }
 
+  .container {
+    flex-direction: row;
+  }
+
   .wrapper {
     background-color: $black;
     padding-bottom: 5px;
@@ -84,7 +88,7 @@
     }
   }
 
-  .burger-list a {
+  .burger-menu__list a {
     font-size: 1.3rem;
   }
 
@@ -191,7 +195,7 @@
     }
   }
 
-  .burger-menu-container {
+  .burger-menu {
     display: none;
   }
 }

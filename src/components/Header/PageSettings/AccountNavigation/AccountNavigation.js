@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AccountNavigation = (props) => {
   return (
-    <div className="navigation-account">
+    <div className='navigation-account'>
       <Link to={'/404'}>
         <span>my account</span>
       </Link>

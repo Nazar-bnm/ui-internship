@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 const ContentOptions = (props) => {
   return (
     <div className={'container dropdowns'}>
-      <Dropdown options={options.company} className="dropdown"/>
-      <Dropdown options={options.currency} className="dropdown"/>
-      <Dropdown options={options.language} className="dropdown"/>
+      <Dropdown options={options.company} />
+      <Dropdown options={options.currency} />
+      <Dropdown options={options.language} />
     </div>
   );
 };

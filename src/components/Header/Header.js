@@ -7,6 +7,7 @@ import Input from '../Input';
 import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
 import { Link } from 'react-router-dom';
 import './Header.scss';
+
 const Header = () => (
   <header className="header">
     <div className="wrapper color-secondary">
