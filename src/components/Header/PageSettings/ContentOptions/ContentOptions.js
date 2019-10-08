@@ -4,11 +4,11 @@ import Dropdown from '../../../Dropdown';
 import { options } from '../../../../config/headerMockups';
 export const CN = 'dropdowns';
 
-const ContentOptions = (props) => {
+const ContentOptions = () => {
   const { company, currency, language } = options;
 
   return (
-    <div className={'container dropdowns'}>
+    <div className={`${CN} container`}>
       <Dropdown options={company} />
       <Dropdown options={currency} />
       <Dropdown options={language} />
@@ -17,7 +17,6 @@ const ContentOptions = (props) => {
 };
 
 ContentOptions.propTypes = {
-  grid: PropTypes.string,
   className: PropTypes.string,
 };
 

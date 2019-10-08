@@ -10,7 +10,7 @@ import './Header.scss';
 import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
 export const CN = 'header';
 
-const Header = () => (
+const Header = () =>
   <header className={cx(CN)}>
     <div className="wrapper color-secondary">
       <PageSettings/>
@@ -29,6 +29,6 @@ const Header = () => (
     </div>
     <PageNavigation options={navConfig} />
     <div className="wrapper _slider">Here will be slider</div>
-  </header>
-);
+  </header>;
+
 export default Header;

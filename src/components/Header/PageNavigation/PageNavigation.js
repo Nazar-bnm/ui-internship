@@ -9,7 +9,7 @@ const PageNavigation = (props) => {
   return (
     <ul className={cx(CN, 'container')}>
       {options.map(({ value, label, link }, i) => (
-        <li key={i.toString()}
+        <li key={value}
           value={value}
           className={`${CN}__item`}
         >
