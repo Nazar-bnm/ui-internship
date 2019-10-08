@@ -1,4 +1,1 @@
-import ProductListPage from './ProductListPage';
-
-export default ProductListPage;
-
+export { default } from './ProductListPage';
