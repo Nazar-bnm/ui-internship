@@ -16,12 +16,10 @@ export default class CookieService {
 
     if (path) {
       cookie += `; path=${path}`;
-      console.log(cookie);
     }
 
     if (domain) {
       cookie += `; domain=${domain}`;
-      console.log(cookie);
     }
 
     document.cookie = cookie;
