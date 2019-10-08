@@ -1,0 +1,17 @@
+@import "../../../scss/global_styles";
+
+.slide {
+  display: inline-block;
+  vertical-align: top;
+  width: 210px;
+  // padding: 5px;
+  white-space: normal;
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.slide:last-child {
+  border-right: none;
+}

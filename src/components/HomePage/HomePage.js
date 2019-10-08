@@ -3,7 +3,7 @@ import Carousel from '../Carousel';
 
 const HomePage = () => (
   <div>
-  <Carousel />
+    <Carousel />
   </div>
 );
 
