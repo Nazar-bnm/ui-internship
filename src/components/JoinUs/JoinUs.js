@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
 import './JoinUs.scss';
+
+const emailRegEx = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
 
 class JoinUs extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      warning: '',
-      formError: { email: '' },
-      emailValid: false,
-      formValid: false,
+      isEmailValid: null,
     };
+
+    this.handleInput = this.handleInput.bind(this);
   }
 
   handleInput(e) {
