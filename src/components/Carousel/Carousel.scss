@@ -4,55 +4,55 @@
   position: relative;
   display: flex;
   margin: 30px;
-}
 
-.carousel__viewport {
-  z-index: 1;
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: auto; 
-  -webkit-overflow-scrolling: touch;
-  // border: 1px solid black;
-  -ms-overflow-style: none;  // IE 10+
-  scrollbar-width: none; // Firefox
-}
+  &__viewport {
+    z-index: 1;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none; // Firefox
+  }
 
-.carousel__viewport::-webkit-scrollbar {
-  display: none;  // Safari and Chrome
-}
+  &__viewport::-webkit-scrollbar {
+    display: none;  // Safari and Chrome
+  }
 
-.carousel__nav {
-  z-index: 3;
-  position: absolute;
-  top: 50px;
-  width: 20px;
-  height: 35px;
-  cursor: pointer;
-  padding: 0;
-  outline: none;
-  opacity: .8;
-  transition: opacity .2s ease-in-out;
-}
+  &__nav {
+    z-index: 3;
+    position: absolute;
+    display: flex;
+    width: 20px;
+    height: 35px;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    background-color: grey;
+    opacity: .8;
+    transition: opacity .2s ease-in-out;
+  }
 
-.carousel__left-nav {
-  left: 0;
-  top: 82px;
-}
+  &__left-nav {
+    left: 5px;
+    top: 150px;
+  }
 
-.carousel__right-nav {
-  right:0;
-  top: 82px;
-}
+  &__right-nav {
+    right: 5px;
+    top: 150px;
+  }
 
-.carousel__nav:hover {
-  opacity: 1;
-}
+  &__nav:hover {
+    opacity: 1;
+  }
 
-.carousel__nav-disabled {
-  z-index: 0;
-  opacity: 0;
-  cursor: default;
-  user-select: none;
-  pointer-events: none;
-  transition: .5;
+  &__nav-disabled {
+    z-index: 0;
+    opacity: 0;
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+    transition: .5;
+  }
 }

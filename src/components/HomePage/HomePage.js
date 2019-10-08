@@ -1,9 +1,10 @@
 import React from 'react';
 import Carousel from '../Carousel';
+import products from '../Carousel/products.json';
 
 const HomePage = () => (
   <div>
-    <Carousel />
+    <Carousel items={products}/>
   </div>
 );
 

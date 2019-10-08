@@ -10,13 +10,9 @@ function scrollTo(params) {
     element.current[scrollDirection] = position;
     if (elapsedTime < duration) {
       window.requestAnimationFrame(animatedScroll.bind(null, elapsedTime));
-      // setTimeout(function() {
-      //   animatedScroll(elapsedTime)
-      // }, increment);
     }
   };
 
-  // animatedScroll(0);
   window.requestAnimationFrame(animatedScroll.bind(null, 0));
 }
 

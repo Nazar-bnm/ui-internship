@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Carousel.scss';
 
-// import data from './data.json';
-import products from './products.json';
 
 import Slide from './Slide';
 import scrollTo from './scrollToAnimate';
@@ -22,6 +20,7 @@ class Carousel extends Component {
       numOfSlidesToScroll: 3,
       allTheWayLeft: false,
       allTheWayRight: false,
+      widthOfSlide: 210,
     };
   }
 
@@ -30,12 +29,20 @@ class Carousel extends Component {
   }
 
   onResize() {
-    if (window.innerWidth < 800) {
-      this.carouselViewport.current.style.background = 'red';
-    } else {
-      this.carouselViewport.current.style.background = 'green';
-    }
+    this.resizeTheCarousel();
     this.checkNumOfSlidesToScroll();
+  }
+
+  resizeTheCarousel() {
+    if (window.innerWidth > 1280) {
+      this.carouselViewport.current.parentElement.style.width = '1050px';
+    } else if (window.innerWidth > 1024) {
+      this.carouselViewport.current.parentElement.style.width = '840px';
+    } else if (window.innerWidth > 768) {
+      this.carouselViewport.current.parentElement.style.width = '630px';
+    } else {
+      this.carouselViewport.current.parentElement.style.width = '420px';
+    }
   }
 
   checkIfSlidesAllTheWayOver() {
@@ -49,9 +56,9 @@ class Carousel extends Component {
 
     const amoutOfScrolled = this.carouselViewport.current.scrollLeft;
     const viewportLength = this.carouselViewport.current.clientWidth;
+
     const totalCarouselWidth = this.carouselViewport.current.scrollWidth;
     let allTheWayRight = false;
-    console.log('scrolling', totalCarouselWidth, amoutOfScrolled + viewportLength, viewportLength);
     (amoutOfScrolled + viewportLength === totalCarouselWidth) && (allTheWayRight = true);
     (this.state.allTheWayLeft !== allTheWayLeft || this.state.allTheWayRight !== allTheWayRight) &&
       this.setState({
@@ -61,9 +68,7 @@ class Carousel extends Component {
   }
 
   componentDidMount() {
-    if (window.innerWidth < 800) {
-      this.carouselViewport.current.style.background = 'red';
-    }
+    this.resizeTheCarousel();
     this.checkNumOfSlidesToScroll();
     this.checkIfSlidesAllTheWayOver();
     window.addEventListener('resize', this.onResize);
@@ -89,14 +94,14 @@ class Carousel extends Component {
 
     const carouselViewport = this.carouselViewport.current;
     const numOfSlidesToScroll = this.state.numOfSlidesToScroll;
-    const widthOfSlide = 210;
+    const widthOfSlide = this.state.widthOfSlide;
     let newPos = 0;
     clickedBtn === 'left' ?
       (newPos = carouselViewport.scrollLeft - (numOfSlidesToScroll * widthOfSlide)) :
       (newPos = carouselViewport.scrollLeft + (numOfSlidesToScroll * widthOfSlide));
-    console.log('handleclick', this.carouselViewport);
     const timeToMoveOneSlide = 200;
     const totalTimetoMove = (numOfSlidesToScroll * timeToMoveOneSlide);
+
     scrollTo({
       element: this.carouselViewport,
       to: newPos,
@@ -106,12 +111,14 @@ class Carousel extends Component {
   }
 
   renderSlides() {
-    return products.map((state) =>
+    const { items } = this.props;
+
+    return items.map((state) =>
       <Slide
-        image= {state.images[0].url[0]}
+        image = {state.images[0].url[0]}
         name = {state.productName}
         category = {state.category}
-        key = {state.abbreviation}
+        key = {state.productName}
       />
     );
   }
@@ -132,10 +139,9 @@ class Carousel extends Component {
       [`${CN}__right-nav`]: true,
       [`${CN}__nav-disabled`]: allTheWayRight,
     }, navClasses);
-    console.log('render', this.carouselViewport);
 
     return (
-      <div className = {cx(CN)}>
+      <div className = {CN}>
         <button
           onClick={this.handleClick}
           className={ leftNavClasses }
@@ -158,53 +164,11 @@ class Carousel extends Component {
       </div>
     );
   }
-/*
-  render() {
-    const {
-      allTheWayLeft,
-      allTheWayRight
-    } = this.state;
-    const navClasses = classNames({
-      'carousel-nav': true
-    });
-    const leftNavClasses = classNames({
-      'carousel-left-nav': true,
-      'carousel-nav-disabled': allTheWayLeft
-    }, navClasses);
-    const rightNavClasses = classNames({
-      'carousel-right-nav': true,
-      'carousel-nav-disabled': allTheWayRight
-    }, navClasses);
-    return (
-      <div className="carousel-container">
-        <button
-          onClick={this.handleClick}
-          className={ leftNavClasses }
-        >
-         <i className="chevron left icon"></i>
-        </button>
-        <div
-          className="carousel-viewport"
-          ref="carouselViewport"
-          onScroll = { this.onScroll }
-        >
-         {this.renderSlides()}
-        </div>
-        <button
-          className={ rightNavClasses }
-          onClick={this.handleClick}
-        >
-          <i className="chevron right icon"></i>
-        </button>
-      </div>
-    )
-  }
-
-  */
 }
 
 Carousel.propTypes = {
   className: PropTypes.string,
+  items: PropTypes.array,
 };
 
 export default Carousel;
