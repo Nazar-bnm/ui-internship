@@ -53,7 +53,10 @@
     height: auto;
   }
 
-  .list, .dropdown:first-child, .heading, .navigation-account {
+  .list, 
+  .dropdown:first-child, 
+  .heading, 
+  .navigation-account {
     display: none;
   }
 

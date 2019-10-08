@@ -1,8 +1,8 @@
 import React from 'react';
-import './BurgerMenu.scss';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
+import './BurgerMenu.scss';
 
 export const CN = 'burger-menu';
 

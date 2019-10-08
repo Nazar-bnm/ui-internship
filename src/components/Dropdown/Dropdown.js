@@ -1,7 +1,7 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import './Dropdown.scss';
-import cx from 'classnames';
 export const CN = 'dropdown';
 
 class Dropdown extends React.Component {
@@ -30,7 +30,8 @@ class Dropdown extends React.Component {
   }
 
   renderMenuItems() {
-    return this.state.options.map(({ value, label }, i) => (
+    const { options } = this.state;
+    return options.map(({ value, label }, i) => (
       <li
         className={`${CN}__items__element`}
         key={value}
@@ -44,8 +45,8 @@ class Dropdown extends React.Component {
   }
 
   render() {
+    const { expanded, selectedID, options } = this.state;
     const iconName = `caret ${this.state.expanded ? 'up' : 'down'} icon`;
-    const { expanded, selectedID } = this.state;
 
     return (
       <div className={cx(CN)}
@@ -53,7 +54,7 @@ class Dropdown extends React.Component {
         aria-expanded={expanded}
       >
         <span className={`${CN}__selected`}>
-          {this.state.options[selectedID].label}
+          {options[selectedID].label}
         </span>
         <ul className={`${CN}__items`}>
           {this.renderMenuItems()}
@@ -68,6 +69,14 @@ Dropdown.propTypes = {
   options: PropTypes.array,
   selected: PropTypes.number,
   className: PropTypes.string,
+};
+
+Dropdown.defaultProps = {
+  currency: [
+    { value: 'USD', label: 'USD' },
+    { value: 'EURO', label: 'EURO' },
+    { value: 'UAH', label: 'UAH' },
+  ],
 };
 
 export default Dropdown;

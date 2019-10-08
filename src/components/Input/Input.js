@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 export const CN = 'input';
 
 const Input = (props) => {

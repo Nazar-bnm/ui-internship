@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Dropdown from '../../../Dropdown';
 import { options } from '../../../../config/headerMockups';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
 export const CN = 'dropdowns';
 
 const ContentOptions = (props) => {
+  const { company, currency, language } = options;
+
   return (
-    <div className={cx(CN, 'container')}>
-      <Dropdown options={options.company} />
-      <Dropdown options={options.currency} />
-      <Dropdown options={options.language} />
+    <div className={'container dropdowns'}>
+      <Dropdown options={company} />
+      <Dropdown options={currency} />
+      <Dropdown options={language} />
     </div>
   );
 };
