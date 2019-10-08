@@ -1,0 +1,9 @@
+@import '../../scss/global_styles';
+@import '../../scss/styles';
+
+.wrapper {
+  &__container {
+    @include flex(row, center, center);
+  }
+}
+

@@ -18,6 +18,9 @@ const Header = () => {
         <li>
           <Link to="/WhatIsNew">WhatIsNew</Link>
         </li>
+        <li>
+          <Link to="/MostPopular">MostPopular</Link>
+        </li>
       </ul>
     </div>
   );

@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import HttpService from '../../service/HttpService/httpService';
-import ProductItem from './ProductItem';
+import ProductItem from './ProductItem/ProductItem';
+import './MostPopular.scss';
 
 class MostPopular extends Component {
   state = {
     products: [],
+  }
+
+  componentDidMount() {
+    this.downloadProducts();
   }
 
   async downloadProducts() {
@@ -13,19 +18,16 @@ class MostPopular extends Component {
     this.setState({ products: response.data });
   }
 
-  componentDidMount() {
-    this.downloadProducts();
-  }
-
   render() {
     const { products } = this.state;
     const block = products.map((product) => (
       <ProductItem key={product.id} product={product} />
     ));
+
     return (
       <div className="wrapper">
-        <h1 className="title">Most Popular</h1>
-        <div className="container">
+        <h1 className="wrapper__title">Most Popular</h1>
+        <div className="wrapper__container">
           {block}
         </div>
       </div>
