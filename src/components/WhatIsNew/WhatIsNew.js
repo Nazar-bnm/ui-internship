@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HttpService from '../../service/httpService';
+import HttpService from '../../service/HttpService/httpService';
 import ItemInfo from './ItemInfo';
 import './WhatIsNew.scss';
 
