@@ -31,6 +31,7 @@ class Dropdown extends React.Component {
 
   renderMenuItems() {
     const { options } = this.state;
+
     return options.map(({ value, label }, i) => (
       <li
         className={`${CN}__items__element`}
@@ -46,7 +47,7 @@ class Dropdown extends React.Component {
 
   render() {
     const { expanded, selectedID, options } = this.state;
-    const iconName = `caret ${this.state.expanded ? 'up' : 'down'} icon`;
+    const iconName = `caret ${expanded ? 'up' : 'down'} icon`;
 
     return (
       <div className={cx(CN)}
@@ -59,7 +60,7 @@ class Dropdown extends React.Component {
         <ul className={`${CN}__items`}>
           {this.renderMenuItems()}
         </ul>
-        <i className={iconName}></i>
+        <i className={iconName} />
       </div>
     );
   };

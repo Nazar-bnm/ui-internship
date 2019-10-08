@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ customClass, icon, children, onClickFunction }) => {
-  return (
-    <button type="submit" className={`${customClass} button`} onClick = {onClickFunction}>
-      {icon && <i className={icon + ' icon'} />}
-      {children}
-    </button>
-  );
-};
+const Button = ({ customClass, icon, children, onClickFunction }) =>
+  <button type="submit" className={`${customClass} button`} onClick = {onClickFunction}>
+    {icon && <i className={`${icon} icon`} />}
+    {children}
+  </button>;
 
 Button.propTypes = {
   icon: PropTypes.string,

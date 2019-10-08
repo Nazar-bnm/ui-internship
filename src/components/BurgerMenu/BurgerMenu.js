@@ -7,9 +7,9 @@ import './BurgerMenu.scss';
 export const CN = 'burger-menu';
 
 const BurgerMenu = ({ menuItemsList }) => {
-  const renderMenu = () => menuItemsList.map(({ itemName }) => {
+  const renderMenu = () => menuItemsList.map(({ itemName, url }) => {
     return (
-      <Link key={itemName} to={'/404'} className={`${CN}__link`}>
+      <Link key={itemName} to={url} className={`${CN}__link`}>
         <li key={itemName} className={`${CN}__list-item`}>{ itemName }</li>
       </Link>
     );
@@ -29,7 +29,10 @@ const BurgerMenu = ({ menuItemsList }) => {
 };
 
 BurgerMenu.propTypes = {
-  menuItemsList: PropTypes.array,
+  menuItemsList: PropTypes.arrayOf(PropTypes.shape({
+    itemName: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  })).isRequired,
   className: PropTypes.string,
 };
 

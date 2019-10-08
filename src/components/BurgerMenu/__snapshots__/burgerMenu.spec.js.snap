@@ -24,7 +24,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="woman"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"
@@ -36,7 +36,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="man"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"
@@ -48,7 +48,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="kids"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"
@@ -60,7 +60,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="accessories"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"
@@ -72,7 +72,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="what's new"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"
@@ -84,7 +84,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="brands"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"
@@ -96,7 +96,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="sale"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"
@@ -108,7 +108,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       <Link
         className="burger-menu__link"
         key="blog"
-        to="/404"
+        to="404"
       >
         <li
           className="burger-menu__list-item"

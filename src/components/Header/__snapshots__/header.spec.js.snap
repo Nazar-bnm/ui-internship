@@ -29,27 +29,35 @@ exports[`<Header /> should match snapshot 1`] = `
           Array [
             Object {
               "itemName": "woman",
+              "url": "404",
             },
             Object {
               "itemName": "man",
+              "url": "404",
             },
             Object {
               "itemName": "kids",
+              "url": "404",
             },
             Object {
               "itemName": "accessories",
+              "url": "404",
             },
             Object {
               "itemName": "what's new",
+              "url": "404",
             },
             Object {
               "itemName": "brands",
+              "url": "404",
             },
             Object {
               "itemName": "sale",
+              "url": "404",
             },
             Object {
               "itemName": "blog",
+              "url": "404",
             },
           ]
         }

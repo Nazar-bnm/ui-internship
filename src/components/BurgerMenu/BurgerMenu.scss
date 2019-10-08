@@ -1,86 +1,88 @@
 @import "../../scss/global_styles";
 
-@keyframes open {
-  from {
-      left: -100vw;
+.burger-menu {
+  @keyframes open {
+    from {
+        left: -100vw;
+    }
+    to {
+        left: 0;
+    }
   }
-  to {
-      left: 0;
+
+  #burger-menu__button {
+    display: none;
+
+    &:checked~.burger-menu__list {
+      display: flex;
+      flex-direction: column;
+      animation-name: open;
+      animation-duration: 0.8s;
+    }
+
+    &:checked~.burger-menu__image {
+      position: absolute;
+      left: 10px;
+      font-size: 3rem;
+      cursor: pointer;
+      transition: transform 0.8s ease; 
+      transform: rotate(360deg);
+    }
   }
-}
 
-#burger-menu__button {
-  display: none;
-
-  &:checked~.burger-menu__list {
+  & {
+    display: none;
     display: flex;
-    flex-direction: column;
-    animation-name: open;
-    animation-duration: 0.8s;
+    width: 50px;
+    padding-right: 10px;
+
+    .icon {
+      font-size: 1.7em;
+    }
   }
 
-  &:checked~.burger-menu__image {
-    position: absolute;
-    left: 10px;
-    font-size: 3rem;
+  &__image {
+    margin-top: -10px;
+    margin-left: 10px;
+    font-size: 2.7rem;
     cursor: pointer;
     transition: transform 0.8s ease; 
-    transform: rotate(360deg);
   }
-}
 
-.burger-menu {
-  display: none;
-  display: flex;
-  width: 50px;
-  padding-right: 10px;
-
-  .icon {
-    font-size: 1.7em;
+  &__list {
+    display: none;
+    position: relative;
+    top: 35px;
+    padding: 0;
+    list-style: none;
   }
-}
 
-.burger-menu__image {
-  margin-top: -10px;
-  margin-left: 10px;
-  font-size: 2.7rem;
-  cursor: pointer;
-  transition: transform 0.8s ease; 
-}
+  &__navigation {
+    display: flex;
+    height: 30px;
+    z-index: 100;
+  }
 
-.burger-menu__list {
-  display: none;
-  position: relative;
-  top: 35px;
-  padding: 0;
-  list-style: none;
-}
+  &__list-item {
+    display: block;
+    width: auto;
+  }
 
-.burger-menu__navigation {
-  display: flex;
-  height: 30px;
-  z-index: 100;
-}
+  &__link {
+    font-size: 1.3rem;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: $black;
+    display: block;
+    padding: 15px;
+    height: 50px;
+    transition: background 0.5s ease;
+    box-sizing: border-box;
+    border-bottom: 1px solid $alto;
 
-.burger-menu__list-item {
-  display: block;
-  width: auto;
-}
-
-.burger-menu__link {
-  font-size: 1.3rem;
-  text-decoration: none;
-  background-color: #ffffff;
-  color: $black;
-  display: block;
-  padding: 15px;
-  height: 50px;
-  transition: background 0.5s ease;
-  box-sizing: border-box;
-  border-bottom: 1px solid $alto;
-
-  &:hover {
-    background-color: $alto;
-    color: $mine-shaft;
+    &:hover {
+      background-color: $alto;
+      color: $mine-shaft;
+    }
   }
 }

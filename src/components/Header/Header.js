@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import cx from 'classnames';
 import PageSettings from './PageSettings';
 import Button from '../Button';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
-import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
-import { Link } from 'react-router-dom';
 import './Header.scss';
-import cx from 'classnames';
+import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
 export const CN = 'header';
 
 const Header = () => (
