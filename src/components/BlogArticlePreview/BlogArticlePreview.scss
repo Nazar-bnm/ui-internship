@@ -4,31 +4,30 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 60vw;
+  max-width: 450px;
   height: 300px;
-  background-image: url('https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/raccoon_thumb.ngsversion.1485815402351.adapt.1900.1.JPG');
   background-size: 60% 100%;
   background-repeat: no-repeat;
-  text-transform: uppercase;
   font-family: font(primary-light);
+  text-transform: uppercase;
 
   &__content {
-    height: 50%;
-    width: 60%;
-    background-color: $white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    height: 50%;
+    width: 60%;
+    background-color: $white;
   }
 
   &__heading {
     margin: 10px 0;
-    
+    font-size: 1.3rem;
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }

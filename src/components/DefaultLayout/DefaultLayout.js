@@ -3,18 +3,16 @@ import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Header from '../Header';
-import BlogArticlePreview from '../BlogArticlePreview/BlogArticlePreview';
 import Footer from '../Footer';
 
 const DefaultLayout = ({ component: Component, hideFooter, hideHeader, ...rest }) => {
   return (
     <Route {...rest} render={(matchProps) => (
-      <div>
+      <>
         {!hideHeader && <Header />}
         <Component {...matchProps} />
-        <BlogArticlePreview />
         {!hideFooter && <Footer />}
-      </div>
+      </>
     )} />
   );
 };

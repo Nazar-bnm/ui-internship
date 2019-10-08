@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlogArticlePreview /> should match snapshot 1`] = `
+<div
+  className="article-preview"
+  style={
+    Object {
+      "backgroundImage": "url(src/assets/img/content/new2.png)",
+    }
+  }
+>
+  <div
+    className="article-preview__content"
+  >
+    <h2
+      className="article-preview__heading"
+    >
+      Raccoons are fun and fashionable
+    </h2>
+    <p
+      className="article-preview__text"
+    >
+      Raccoons are fun and fashionable, they like to eat vinegrapes
+    </p>
+  </div>
+</div>
+`;

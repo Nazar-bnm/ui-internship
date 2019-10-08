@@ -4,12 +4,17 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 export const CN = 'article-preview';
 
-const BlogArticlePreview = () => {
+const BlogArticlePreview = (props) => {
+  const { imageSrc, heading, text } = props;
+  const backgroundImageURL = {
+    backgroundImage: `url(${imageSrc})`,
+  };
+
   return (
-    <div className={cx(CN)}>
+    <div className={cx(CN)} style={backgroundImageURL}>
       <div className={`${CN}__content`}>
-        <h2 className={`${CN}__heading`}>best summer trends</h2>
-        <p className={`${CN}__text`}>we know what you need this summer. most fashion looks</p>
+        <h2 className={`${CN}__heading`}>{heading}</h2>
+        <p className={`${CN}__text`}>{text}</p>
       </div>
     </div>
   );
@@ -17,6 +22,16 @@ const BlogArticlePreview = () => {
 
 BlogArticlePreview.propTypes = {
   className: PropTypes.string,
+  imageSrc: PropTypes.string,
+  heading: PropTypes.string,
+  text: PropTypes.string,
 };
+
+BlogArticlePreview.defaultProps =
+  {
+    imageSrc: 'src/assets/img/content/new2.png',
+    heading: 'Raccoons are fun and fashionable',
+    text: 'Raccoons are fun and fashionable, they like to eat vinegrapes',
+  };
 
 export default BlogArticlePreview;
