@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering without crushing shold render 1`] = `
+<form
+  className="join-us"
+>
+  <label
+    className="join-us__title"
+    htmlFor="email"
+  >
+    newsletter
+  </label>
+  <div
+    className="join-us__wrapper"
+  >
+    <div
+      className="join-us__input-wrapper"
+    >
+      <input
+        className="join-us__email-input warning"
+        name="email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+        value=""
+      />
+      <button
+        className="join-us__btn"
+        type="submit"
+      >
+        <i
+          className="chevron right icon"
+        />
+      </button>
+    </div>
+  </div>
+</form>
+`;
