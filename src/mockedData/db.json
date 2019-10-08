@@ -1,24 +1,4 @@
 {
-  "employees": [
-    {
-      "id": 1,
-      "first_name": "Sebastian",
-      "last_name": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com"
-    },
-    {
-      "id": 2,
-      "first_name": "Steve",
-      "last_name": "Palmer",
-      "email": "steve@codingthesmartway.com"
-    },
-    {
-      "id": 3,
-      "first_name": "Ann",
-      "last_name": "Smith",
-      "email": "ann@codingthesmartway.com"
-    }
-  ],
   "what-is-new" : [
     {
       "id": 1,
@@ -41,7 +21,30 @@
       "collection": "spring collection 2016",
       "category": "men"
     }
-  ], "something": [
-    {}, {}, {}
+  ], "brands": [
+    {
+      "id": "EmporioArmani",
+      "photo" : "https://a.lmcdn.ru/files/cms/tilda/698445/images/tild6265-3136-4531-a536-363034616533__emporio-armani-logo-.png"
+    }, 
+    {
+      "id": "CalvinClein",
+      "photo": "http://pluspng.com/img-png/calvin-klein-logo-png-calvin-klein-logo-2118.png"
+    }, 
+    {
+      "id": "DonnaKaran",
+      "photo": "https://i.pinimg.com/originals/f8/85/16/f88516df678feb360f8658cb9e58251e.png"
+    },
+    {
+      "id": "Baldinini",
+      "photo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Baldinini_logo.svg/1280px-Baldinini_logo.svg.png"
+    },
+    {
+      "id": "Dior",
+      "photo": "https://img.pngio.com/christian-dior-se-chanel-logo-parfums-christian-dior-brand-dior-png-900_600.jpg"
+    },
+    {
+      "id": "Dolce&Gabanna",
+      "photo": "https://cdn.freebiesupply.com/logos/large/2x/dolce-gabbana-logo-png-transparent.png"
+    }
   ]
 }
