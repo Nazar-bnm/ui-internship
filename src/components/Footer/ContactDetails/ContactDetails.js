@@ -5,23 +5,23 @@ import './ContactDetails.scss';
 
 const CN = 'contact-block';
 
-function ContactDetails() {
+const ContactDetails = () => {
   return (
     <div className={`${CN}`}>
       <div className={`${CN}__title`}>
         <h4>Connect us</h4>
       </div>
-      <div className={`${CN}__icons`}>
+      <ul className={`${CN}__icons`}>
         {icons.map(({ name, link }) => (
-          <div key={name} className={`${CN}__item`}>
+          <li key={name} className={`${CN}__item`}>
             <a href={link} target="blank">
               <i className={`${name} icon large`}></i>
             </a>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
-}
+};
 
 export default ContactDetails;

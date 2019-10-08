@@ -82,14 +82,14 @@
   text-align: center;
 }
 
-@mixin footer-title {
+@mixin title-sections {
   @include title-font; 
   text-align: left;
   color: $white;
   font-size: 0.9rem;
 }
 
-@mixin footer-text {
+@mixin text-sections {
   color: $silver-chalice;
   font-size: 0.6rem;
   text-transform: uppercase;

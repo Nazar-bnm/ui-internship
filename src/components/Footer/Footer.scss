@@ -18,11 +18,11 @@
   }
 
   &__title {
-    @include footer-title;
+    @include title-sections;
   }
 
   &__text {
-    @include footer-text;
+    @include text-sections;
   }
 
   &__section {

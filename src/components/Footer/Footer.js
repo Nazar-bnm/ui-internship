@@ -11,6 +11,52 @@ export const CN = 'footer';
 const Footer = () => {
   const { guide, help } = linkListItems;
 
+  const renderIconsList = () => {
+    return (
+      <ul className="container">
+        {paymentIcons.map(({ name, link }) => (
+          <li key={name}> <a href={link}>
+            <i className={`${name} icon big`}></i>
+          </a> </li>
+        ))}
+      </ul>
+    );
+  };
+
+  const renderTabletLinks = () => {
+    return (
+      <ul className={`${CN}__section content ${CN}-tablet`}>
+        {linkListItemsTablet.map(({ link, title }) => (
+          <li key={title} className={`${CN}-tablet__link`}><a href={link} >
+            <h4 className={`${CN}__text`}>{title}</h4>
+          </a></li>
+        ))}
+      </ul>
+    );
+  };
+
+  const renderBlog = () => {
+    return ( <div className={`${CN}__section col-6`}>
+      <h3 className={`${CN}__title`}>Twitter</h3>
+      <p className={`${CN}__text`}>
+      check out the new upcoming phone !! #Valentine’s Day #Australia
+        <a
+          className={`${CN}__text ${CN}__link`}
+          href="http://t.co/StOrIs63bd">
+        http://t.co/wRye6rBElN
+        </a> - 7 hours ago </p>
+      <p className={`${CN}__text`}>
+      your solution partner:
+        <a className={`${CN}__text ${CN}__link`}
+          href="http://t.co/StOrIs63bd">
+        http://t.co/StOrIs63bd
+        </a>
+      #IT #websitedevlopment - 8 hours ago
+      </p>
+    </div>
+    );
+  };
+
   return (
     <div className={cx(CN)}>
       <div className={`container content ${CN}__desktop`}>
@@ -22,24 +68,7 @@ const Footer = () => {
             <div className={`${CN}__section col-3`}>
               <Linklist links={help} />
             </div>
-            <div className={`${CN}__section col-6`}>
-              <h3 className={`${CN}__title`}>Twitter</h3>
-              <p className={`${CN}__text`}>
-                check out the new upcoming phone !! #Valentine’s Day #Australia
-                <a
-                  className={`${CN}__text ${CN}__link`}
-                  href="http://t.co/StOrIs63bd">
-                  http://t.co/wRye6rBElN
-                </a> - 7 hours ago </p>
-              <p className={`${CN}__text`}>
-                your solution partner:
-                <a className={`${CN}__text ${CN}__link`}
-                  href="http://t.co/StOrIs63bd">
-                  http://t.co/StOrIs63bd
-                </a>
-                #IT #websitedevlopment - 8 hours ago
-              </p>
-            </div>
+            {renderBlog()}
           </div>
           <div className="container">
             <div className={`${CN}__section col-5`}>
@@ -78,13 +107,7 @@ const Footer = () => {
           </img>
         </div>
       </div>
-      <div className={`${CN}__section content ${CN}-tablet`}>
-        {linkListItemsTablet.map(({ link, title }) => (
-          <div key={title} className={`${CN}-tablet__link`}><a href={link} >
-            <h4 className={`${CN}__text`}>{title}</h4>
-          </a></div>
-        ))}
-      </div>
+      {renderTabletLinks()}
       <div className={`content ${CN}__info ${CN}__connect`}>
         {/* <div>
           Here should be JoinUs Conponent
@@ -98,13 +121,7 @@ const Footer = () => {
           </h4>
         </div>
         <div className="col-right">
-          <div>
-            {paymentIcons.map(({ name, link }) => (
-              <a href={link} key={name}>
-                <i className={`${name} icon big`}></i>
-              </a>
-            ))}
-          </div>
+          {renderIconsList()}
         </div>
       </div>
     </div>

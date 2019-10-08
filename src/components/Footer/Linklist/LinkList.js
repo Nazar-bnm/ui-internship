@@ -7,14 +7,14 @@ const Linklist = ({ links }) => {
   const { heading, data } = links;
 
   return (
-    <div>
+    <nav>
       <h3 className="linklist__title">{heading}</h3>
       {data.map(({ link, title }) => (
         <a href={link} key={title}>
           <h4 className="linklist__text">{title}</h4>
         </a>
       ))}
-    </div>
+    </nav>
   );
 };
 
