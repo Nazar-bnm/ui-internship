@@ -54,6 +54,10 @@
     }
   }
 
+  &__payment {
+    @include flex();
+  }
+
   &__connect {
     @include flex($justify: space-between);
     border-top: 1px solid $white;
@@ -77,6 +81,10 @@
       display: none;
     }
 
+    .contact-block__title {
+      display: none;
+    }
+
     &__desktop {
       display: none;
     }
@@ -84,7 +92,7 @@
     &__info {
       @include flex($wrap: wrap, $justify: center);
     }
-
+    
     &-tablet {
       @include flex($justify: center);
 

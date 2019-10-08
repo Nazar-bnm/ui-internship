@@ -2,6 +2,7 @@ import React from 'react';
 import ContactDetails from './ContactDetails';
 import Linklist from './Linklist';
 import { linkListItems, paymentIcons, linkListItemsTablet } from '../../config/footer';
+import JoinUs from '../JoinUs';
 import cx from 'classnames';
 
 import './Footer.scss';
@@ -13,7 +14,7 @@ const Footer = () => {
 
   const renderIconsList = () => {
     return (
-      <ul className="container">
+      <ul className={`${CN}__payment`}>
         {paymentIcons.map(({ name, link }) => (
           <li key={name}> <a href={link}>
             <i className={`${name} icon big`}></i>
@@ -109,9 +110,7 @@ const Footer = () => {
       </div>
       {renderTabletLinks()}
       <div className={`content ${CN}__info ${CN}__connect`}>
-        {/* <div>
-          Here should be JoinUs Conponent
-        </div> */}
+        <JoinUs />
         <ContactDetails />
       </div>
       <div className={`content ${CN}__info`}>
