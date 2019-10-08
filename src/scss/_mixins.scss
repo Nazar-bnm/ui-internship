@@ -81,3 +81,19 @@
   text-transform: uppercase;
   text-align: center;
 }
+
+@mixin title-sections {
+  @include title-font; 
+  text-align: left;
+  color: $white;
+  font-size: 0.9rem;
+}
+
+@mixin text-sections {
+  color: $silver-chalice;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-family: font(primary-light);
+  line-height: 1.2rem;
+  text-decoration: none;
+}

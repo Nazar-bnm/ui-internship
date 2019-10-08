@@ -1,0 +1,116 @@
+@import '../../scss/global_styles';
+
+.footer {
+  background-color: $black;
+  padding-top: 30px;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__link {
+    margin: 0 3px;
+    text-decoration: underline;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__title {
+    @include title-sections;
+  }
+
+  &__text {
+    @include text-sections;
+  }
+
+  &__section {
+    padding: 10px 5px 10px 0;
+
+    h4:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+  }
+
+  &__info {
+    @include flex($align: center);
+    padding: 10px 0;
+
+    .icon.big {
+      color: $emperor;
+      margin: 0 5px;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &__payment {
+    @include flex();
+  }
+
+  &__connect {
+    @include flex($justify: space-between);
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+    
+    .footer__title {
+      margin: 0;
+    }
+  }
+
+  &-tablet {
+    display: none;
+  }
+}
+
+@include media-for(tablet) {
+  .footer {
+    padding: 0;
+
+    .container {
+      display: none;
+    }
+
+    .contact-block__title {
+      display: none;
+    }
+
+    &__desktop {
+      display: none;
+    }
+
+    &__info {
+      @include flex($wrap: wrap, $justify: center);
+    }
+    
+    &-tablet {
+      @include flex($justify: center);
+
+      &__link { 
+        @include flex($align: center);
+        height: 11px;
+        padding: 0 10px;
+        border-right: 1px solid $white;
+        margin: 10px 0;
+
+        &:last-child {
+          border: 1px solid $black;
+        }
+
+        h4 {
+          line-height: 0;
+        }
+      }
+    }
+  }
+}
