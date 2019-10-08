@@ -14,23 +14,25 @@
   &__big-image-container {
     grid-row: 1;
     display: flex;
+    justify-content: center;
     position: relative;
+    margin: 0 10px;
   }
 
   &__small-images-container {
     grid-row: 2;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+    display: flex;
+    justify-content: center;
   }
 
   &__small-image {
     position: relative;
     display: flex;
+    margin: 0 10px;
   }
 
   & {
+    min-width: 100px;
     max-width: 100%;
     height: auto;
   }
