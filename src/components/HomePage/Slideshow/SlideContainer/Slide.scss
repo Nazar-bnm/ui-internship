@@ -13,29 +13,7 @@
     font-family: font(primary-light);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-
-    &-title {
-      text-transform: uppercase; 
-      font: 0.8rem inherit;
-    }
-  
-    &-description {
-      margin: 0.5rem 0 1.5rem; 
-      font: 2.5rem font(secondary);
-      line-height: 1;
-      font-variant: small-caps;
-      text-transform: capitalize;
-    }
-
-    &-button {
-      border: none;
-      padding: 5px 10px;
-      font: 0.7rem inherit;
-      text-transform: uppercase; 
-      background: $black;
-      color: $white;
-    }
+    background-position: center top;
   }
 }
 
@@ -46,14 +24,14 @@
 }
 
 .zoom-in {
-  animation: 2s linear  forwards zoom-in;
+  animation: 1s linear  forwards zoom-in;
   opacity: 1;
   transform: scale(1);
 
 }
 
 .zoom-out {
-  animation: 2s linear  forwards zoom-out;
+  animation: 1s linear  forwards zoom-out;
   opacity: 1;
   transform: scale(1);
 
@@ -65,13 +43,15 @@
 }
 
 @keyframes zoom-in {
-  0% {transform: scale(1); opacity: 1;}
+  0% {transform: scale(1); opacity: 0.5;}
   100% {transform: scale(0.1); opacity: 0 ;}
 }
 
 
 @keyframes zoom-out {
-  0% {transform: scale(1); opacity: 1;}
+  0% {transform: scale(1); opacity: 0.5;}
   100% {transform: scale(1.5); opacity: 0 ;}
 }
+
+
 

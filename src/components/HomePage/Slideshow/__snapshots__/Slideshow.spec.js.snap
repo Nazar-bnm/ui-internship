@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
+<div
+  className="slideshow"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <arrowButton
+    className="slideshow__arrow-button"
+    onClick={[Function]}
+    type="left"
+  />
+  <arrowButton
+    className="slideshow__arrow-button"
+    onClick={[Function]}
+    type="right"
+  />
+  <div
+    className="slides transition transitionCarousel"
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "transform": "translateX(-16.666666666666668%)",
+      }
+    }
+  >
+    <slide
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="lastClone"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+      <div>
+        <h1
+          className="slide-info-title "
+        >
+          new collection
+        </h1>
+        <p
+          className="slide-info-description"
+        >
+          a new wave
+        </p>
+        <button
+          className="slide-info-button"
+        >
+          find a perfect outfit
+        </button>
+      </div>
+    </slide>
+    <slide
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="1"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <div>
+        <h1
+          className="slide-info-title "
+        >
+          new collection
+        </h1>
+        <p
+          className="slide-info-description"
+        >
+          Special autumn edition
+        </p>
+        <button
+          className="slide-info-button"
+        >
+          discover the editorial
+        </button>
+      </div>
+    </slide>
+    <slide
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="2"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <div>
+        <h1
+          className="slide-info-title "
+        >
+          new collection
+        </h1>
+        <p
+          className="slide-info-description"
+        >
+          a long journey
+        </p>
+        <button
+          className="slide-info-button"
+        >
+          find a perfect outfit
+        </button>
+      </div>
+    </slide>
+    <slide
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="3"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <div>
+        <h1
+          className="slide-info-title "
+        >
+          sales
+        </h1>
+        <p
+          className="slide-info-description"
+        >
+          want a new look ?
+        </p>
+        <button
+          className="slide-info-button"
+        >
+          start shopping now
+        </button>
+      </div>
+    </slide>
+    <slide
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="4"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <div>
+        <h1
+          className="slide-info-title "
+        >
+          new collection
+        </h1>
+        <p
+          className="slide-info-description"
+        >
+          a new wave
+        </p>
+        <button
+          className="slide-info-button"
+        >
+          find a perfect outfit
+        </button>
+      </div>
+    </slide>
+    <slide
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="firstClone"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+      <div>
+        <h1
+          className="slide-info-title "
+        >
+          new collection
+        </h1>
+        <p
+          className="slide-info-description"
+        >
+          Special autumn edition
+        </p>
+        <button
+          className="slide-info-button"
+        >
+          discover the editorial
+        </button>
+      </div>
+    </slide>
+  </div>
+  <div
+    className="slideshow-pagination"
+  >
+    <div
+      className="slideshow-pagination__item slideshow-pagination__item--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="slideshow-pagination__item"
+      key="1"
+      onClick={[Function]}
+    />
+    <div
+      className="slideshow-pagination__item"
+      key="2"
+      onClick={[Function]}
+    />
+    <div
+      className="slideshow-pagination__item"
+      key="3"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

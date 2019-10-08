@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import ArrowButton from './ArrowButton';
-import Slide from './Slide';
+import Slide from './SlideContainer';
 import './Slideshow.scss';
 import { ANIMATION_NAMES, ARROW_BUTTON_TYPES } from '../../../const';
 

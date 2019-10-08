@@ -1,69 +1,58 @@
 import React from 'react';
-import img from '../../../assets/img/background/slider.png';
-import img2 from '../../../assets/img/background/slider-after.png';
+import girlInOveralls from '../../../assets/img/background/girl-in-overalls.jpg';
+import girlOnBoat from '../../../assets/img/background/girl-on-boat.jpg';
+import girls from '../../../assets/img/background/girls.jpg';
+import manInCoat from '../../../assets/img/background/men-in-coat.jpg';
 
 export const slideData = [
   {
     id: 1,
-    img: img,
+    img: girlInOveralls,
     component: (
       <div>
-        <h1 className="slide-info-title ">1 Hello</h1>
-        <p className="slide-info-description">1 How are you ?</p>
+        <h1 className="slide-info-title ">new collection</h1>
+        <p className="slide-info-description">Special autumn edition</p>
         <button className="slide-info-button">
-          shop women&apos;s accessories
+          discover the editorial
         </button>
       </div>
     ),
   },
   {
     id: 2,
-    img: img2,
+    img: girlOnBoat,
     component: (
       <div>
-        <h1 className="slide-info-title ">2 Hello</h1>
-        <p className="slide-info-description">2 How are you ?</p>
+        <h1 className="slide-info-title ">new collection</h1>
+        <p className="slide-info-description">a long journey</p>
         <button className="slide-info-button">
-          shop women&apos;s accessories
+          find a perfect outfit
         </button>
       </div>
     ),
   },
   {
     id: 3,
-    img: img,
+    img: girls,
     component: (
       <div>
-        <h1 className="slide-info-title ">3 Hello</h1>
-        <p className="slide-info-description">3 How are you ?</p>
+        <h1 className="slide-info-title ">sales</h1>
+        <p className="slide-info-description">want a new look ?</p>
         <button className="slide-info-button">
-          shop women&apos;s accessories
+          start shopping now
         </button>
       </div>
     ),
   },
   {
     id: 4,
-    img: img,
+    img: manInCoat,
     component: (
       <div>
-        <h1 className="slide-info-title ">4 Hello</h1>
-        <p className="slide-info-description">4 How are you ?</p>
+        <h1 className="slide-info-title ">new collection</h1>
+        <p className="slide-info-description">a new wave</p>
         <button className="slide-info-button">
-          shop women&apos;s accessories
-        </button>
-      </div>
-    ),
-  },
-  {
-    id: 5,
-    img: img,
-    component: (
-      <div>
-        <h1 className="slide-info-title ">5 Hello</h1>
-        <p className="slide-info-description">5 How are you ?</p>
-        <button className="slide-info-button">
-          shop women&apos;s accessories
+        find a perfect outfit
         </button>
       </div>
     ),

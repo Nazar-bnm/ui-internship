@@ -1,0 +1,26 @@
+@import '../../../scss/global_styles';
+
+.slide-info {
+    &-title {
+      text-transform: uppercase; 
+      font: 0.8rem font(primary-light);
+    }
+  
+    &-description {
+      margin: 0.5rem 0 1.5rem; 
+      font: 2.5rem font(secondary);
+      line-height: 1;
+      font-variant: small-caps;
+      text-transform: capitalize;
+    }
+  
+    &-button {
+      border: none;
+      border-radius: 2px;
+      padding: 10px 15px;
+      font: 0.7rem inherit;
+      text-transform: uppercase; 
+      background: $black;
+      color: $white;
+    }
+  }
