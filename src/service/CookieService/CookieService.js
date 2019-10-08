@@ -1,16 +1,20 @@
+export const getExpirationDate = (days) => {
+  const timeStamp = days*24*60*60*1000;
+  const date = new Date();
+
+  date.setTime(date.getTime() + (timeStamp));
+  return date.toGMTString();
+};
+
 export default class CookieService {
   // If you set the number of days to 0 the cookie is trashed when the user closes the browser.
   // If you set the days to a negative number the cookie is trashed immediately.
-  setCookie(name, value, daysToLive, path, domain) {
-    const timeStamp = daysToLive*24*60*60*1000;
+  static setCookie(name, value, daysToLive, path, domain) {
     let cookie = `${name}=${value}`;
     let expires = '';
 
     if (daysToLive) {
-      const date = new Date();
-
-      date.setTime(date.getTime() + (timeStamp));
-      expires = `; expires=${date.toGMTString()}`;
+      expires = `; expires=${getExpirationDate(daysToLive)}`;
       cookie += expires;
     };
 
@@ -30,7 +34,7 @@ export default class CookieService {
   // which might upset the rest of your function)
   // let x = getCookie('bbbdggs');
   // if (x) { do something with x }
-  getCookie(name) {
+  static getCookie(name) {
     const cookieName = name + '=';
     const cookieNameLength = cookieName.length;
     const cookiesArray = document.cookie.split(';');
@@ -51,7 +55,7 @@ export default class CookieService {
     return null;
   };
 
-  deleteCookie(name) {
-    this.setCookie(name, '', -1);
+  static deleteCookie(name) {
+    CookieService.setCookie(name, '', -1);
   }
 }
