@@ -3,6 +3,8 @@ import HttpService from '../../service/HttpService/httpService';
 import ProductItem from './ProductItem/ProductItem';
 import './MostPopular.scss';
 
+const urlBase = 'http://localhost:4000/most-popular';
+
 class MostPopular extends Component {
   state = {
     products: [],
@@ -14,21 +16,23 @@ class MostPopular extends Component {
 
   async downloadProducts() {
     const userApi = new HttpService();
-    const response = await userApi.get('http://localhost:4000/most-popular');
+    const response = await userApi.get(urlBase);
     this.setState({ products: response.data });
   }
 
-  render() {
+  renderProducts() {
     const { products } = this.state;
-    const block = products.map((product) => (
+    return products.map((product) => (
       <ProductItem key={product.id} product={product} />
     ));
+  }
 
+  render() {
     return (
       <div className="wrapper">
         <h1 className="wrapper__title">Most Popular</h1>
         <div className="wrapper__container">
-          {block}
+          {this.renderProducts()}
         </div>
       </div>
     );

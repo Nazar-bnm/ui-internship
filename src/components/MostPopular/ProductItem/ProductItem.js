@@ -10,8 +10,10 @@ const ProductItem = ({ product }) => {
   return (
     <div className={`${CN} col-4`}>
       <div className={`${CN}__img-wrapper`}>
-        <div className={cx(`${CN}__img-wrapper__flag`, { red: (label === 'sale') },
-          { black: (label === 'new' ) })}></div>
+        <div
+          className={cx(`${CN}__img-wrapper__flag`, { red: (label === 'sale') },
+            { black: (label === 'new' ) })}
+        />
         <div className={`${CN}__img-wrapper__labels`}>{label}</div>
         <img className={`${CN}__img-wrapper__img`} src={image}/>
       </div>
