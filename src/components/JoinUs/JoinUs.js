@@ -15,16 +15,16 @@ class JoinUs extends Component {
 
   handleInput(e) {
     e.preventDefault();
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState({ [name]: value }, () => {
-      this.validateField(value);
+    const { value } = e.target;
+
+    this.setState({
+      email: value,
+      isEmailValid: this.validateField(value),
     });
   }
 
   validateField(value) {
-    const isEmailValid = value.match(emailRegEx);
-    this.setState({ isEmailValid });
+    return value && value.match(emailRegEx);
   }
 
   render() {
