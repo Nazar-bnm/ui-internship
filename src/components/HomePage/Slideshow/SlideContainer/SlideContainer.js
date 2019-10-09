@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import './Slide.scss';
+import './SlideContainer.scss';
 
-const slide = ({ bgImage, animation, onAnimationEnd, style, children }) => {
+const SlideContainer = ({ bgImage, animation, onAnimationEnd, style, children }) => {
   const bgStyle = {
     backgroundImage: `url(${bgImage})`,
   };
@@ -19,7 +19,7 @@ const slide = ({ bgImage, animation, onAnimationEnd, style, children }) => {
   );
 };
 
-slide.propTypes = {
+SlideContainer.propTypes = {
   bgImage: PropTypes.string,
   animation: PropTypes.string,
   onAnimationEnd: PropTypes.func,
@@ -27,7 +27,7 @@ slide.propTypes = {
   children: PropTypes.node,
 };
 
-slide.defaultProps = {
+SlideContainer.defaultProps = {
   bgImage: '',
   animation: '',
   onAnimationEnd: () => {},
@@ -35,4 +35,4 @@ slide.defaultProps = {
   children: PropTypes.node,
 };
 
-export default slide;
+export default SlideContainer;

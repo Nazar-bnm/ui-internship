@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Slide /> should make a snapshot of Slide component 1`] = `
+<div
+  className="slide-info"
+>
+  <h1
+    className="slide-info-title"
+  >
+    new collection
+  </h1>
+  <p
+    className="slide-info-description"
+  >
+    Special autumn edition
+  </p>
+  <button
+    className="slide-info-button"
+  >
+    discover the editorial
+  </button>
+</div>
+`;

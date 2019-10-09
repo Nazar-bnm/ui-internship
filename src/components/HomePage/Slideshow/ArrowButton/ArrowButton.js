@@ -8,7 +8,7 @@ const { LEFT, RIGHT } = ARROW_BUTTON_TYPES;
 
 const arrowButton = ({ type, onClick, className }) => (
   <span onClick={onClick} className={className}>
-    {type && <i className={cx('angle', [type], 'icon', 'arrow-button__icon')}></i>}
+    <i className={cx('angle', [type], 'icon', 'arrow-button__icon')} />
   </span>
 );
 
@@ -19,9 +19,9 @@ arrowButton.propTypes = {
 };
 
 arrowButton.defaultProps = {
-  type: PropTypes.string,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
+  type: '',
+  onClick: () => {},
+  className: '',
 };
 
 export default arrowButton;

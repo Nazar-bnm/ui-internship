@@ -1,14 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Slideshow from './Slideshow';
-import { slideData } from './SlideshowDate';
+import { slideshowData } from './SlideshowDate';
+import { ANIMATION_NAMES } from '../../../const';
 
-const slideDataLength = slideData.length;
+const CN = 'slideshow-slides';
+const { CAROUSEL } = ANIMATION_NAMES;
+const slideDataLength = slideshowData.length;
 
 describe('<Slideshow />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Slideshow animation="carousel" slideData={slideData} />);
+    wrapper = shallow(<Slideshow animation={CAROUSEL} slideData={slideshowData} />);
   });
 
   it('should render component <Slideshow />', () => {
@@ -58,14 +61,14 @@ describe('<Slideshow />', () => {
   it('should increase index of state by 1 when click right arrow,'+
   'but after slideDataLength clicks and when transition ends index should be again equal to 0', () => {
     wrapper.find('[type="right"]').simulate('click');
-    wrapper.find('.slides').simulate('transitionend');
+    wrapper.find(`.${CN}`).simulate('transitionend');
     expect(wrapper.state().index).toBe(1);
     wrapper.find('[type="right"]').simulate('click');
     expect(wrapper.state().index).toBe(2);
     wrapper.find('[type="right"]').simulate('click');
     wrapper.find('[type="right"]').simulate('click');
     wrapper.find('[type="right"]').simulate('click');
-    wrapper.find('.slides').simulate('transitionend');
+    wrapper.find(`.${CN}`).simulate('transitionend');
     expect(wrapper.state().index).toBe(0);
   });
 
@@ -74,7 +77,7 @@ describe('<Slideshow />', () => {
   () => {
     wrapper.find('[type="left"]').simulate('click');
     expect(wrapper.state().index).toBe(-1);
-    wrapper.find('.slides').simulate('transitionend');
+    wrapper.find(`.${CN}`).simulate('transitionend');
     expect(wrapper.state().index).toBe(slideDataLength - 1);
     wrapper.find('[type="left"]').simulate('click');
     expect(wrapper.state().index).toBe(slideDataLength - 2);
@@ -86,7 +89,7 @@ describe('<Slideshow />', () => {
   });
 
   it('should set transform when index changes and remove when animation ends', () => {
-    wrapper = shallow(<Slideshow animation="zoom-in" slideData={slideData} />);
+    wrapper = shallow(<Slideshow animation="zoom-in" slideData={slideshowData} />);
     let index = 3;
     wrapper.find('.slideshow-pagination__item').at(index).simulate('click');
     expect(wrapper.state().isTransform).toBe(true);

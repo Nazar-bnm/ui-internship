@@ -212,7 +212,7 @@ class Slideshow extends Component {
           onClick={this.changeSlideWithButton.bind(this, RIGHT)}
         />
         <div
-          className={cx('slides', {
+          className={cx(`${CN}-slides`, {
             transition: shouldTransition,
             transitionCarousel:
               shouldTransition && animation === CAROUSEL,

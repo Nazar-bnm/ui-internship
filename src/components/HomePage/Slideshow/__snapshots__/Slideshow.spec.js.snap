@@ -17,7 +17,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
     type="right"
   />
   <div
-    className="slides transition transitionCarousel"
+    className="slideshow-slides transition transitionCarousel"
     onTransitionEnd={[Function]}
     style={
       Object {
@@ -25,7 +25,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       }
     }
   >
-    <slide
+    <SlideContainer
       animation=""
       bgImage={
         Object {
@@ -36,25 +36,9 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       onAnimationEnd={[Function]}
       style={Object {}}
     >
-      <div>
-        <h1
-          className="slide-info-title "
-        >
-          new collection
-        </h1>
-        <p
-          className="slide-info-description"
-        >
-          a new wave
-        </p>
-        <button
-          className="slide-info-button"
-        >
-          find a perfect outfit
-        </button>
-      </div>
-    </slide>
-    <slide
+      <Component />
+    </SlideContainer>
+    <SlideContainer
       animation=""
       bgImage={
         Object {
@@ -66,25 +50,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       style={Object {}}
     >
        
-      <div>
-        <h1
-          className="slide-info-title "
-        >
-          new collection
-        </h1>
-        <p
-          className="slide-info-description"
-        >
-          Special autumn edition
-        </p>
-        <button
-          className="slide-info-button"
-        >
-          discover the editorial
-        </button>
-      </div>
-    </slide>
-    <slide
+    </SlideContainer>
+    <SlideContainer
       animation=""
       bgImage={
         Object {
@@ -96,25 +63,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       style={Object {}}
     >
        
-      <div>
-        <h1
-          className="slide-info-title "
-        >
-          new collection
-        </h1>
-        <p
-          className="slide-info-description"
-        >
-          a long journey
-        </p>
-        <button
-          className="slide-info-button"
-        >
-          find a perfect outfit
-        </button>
-      </div>
-    </slide>
-    <slide
+    </SlideContainer>
+    <SlideContainer
       animation=""
       bgImage={
         Object {
@@ -126,25 +76,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       style={Object {}}
     >
        
-      <div>
-        <h1
-          className="slide-info-title "
-        >
-          sales
-        </h1>
-        <p
-          className="slide-info-description"
-        >
-          want a new look ?
-        </p>
-        <button
-          className="slide-info-button"
-        >
-          start shopping now
-        </button>
-      </div>
-    </slide>
-    <slide
+    </SlideContainer>
+    <SlideContainer
       animation=""
       bgImage={
         Object {
@@ -156,25 +89,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       style={Object {}}
     >
        
-      <div>
-        <h1
-          className="slide-info-title "
-        >
-          new collection
-        </h1>
-        <p
-          className="slide-info-description"
-        >
-          a new wave
-        </p>
-        <button
-          className="slide-info-button"
-        >
-          find a perfect outfit
-        </button>
-      </div>
-    </slide>
-    <slide
+    </SlideContainer>
+    <SlideContainer
       animation=""
       bgImage={
         Object {
@@ -185,24 +101,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       onAnimationEnd={[Function]}
       style={Object {}}
     >
-      <div>
-        <h1
-          className="slide-info-title "
-        >
-          new collection
-        </h1>
-        <p
-          className="slide-info-description"
-        >
-          Special autumn edition
-        </p>
-        <button
-          className="slide-info-button"
-        >
-          discover the editorial
-        </button>
-      </div>
-    </slide>
+      <Component />
+    </SlideContainer>
   </div>
   <div
     className="slideshow-pagination"

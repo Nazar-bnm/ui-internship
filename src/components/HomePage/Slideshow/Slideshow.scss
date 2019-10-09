@@ -2,36 +2,44 @@
 
 .slideshow {
   position: relative;
-  height: 500px;
   z-index: 1;
-  width: 100vw;
   overflow: hidden;
+  height: 500px;
+  width: 100vw;
 
   &__arrow-button {
     position: absolute;
+    z-index: 2;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2;
 
     &:nth-child(2) {
       right: 0;
     }
   }
 
+  &-slides {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    height: 100%;
+  }
+
   &-pagination {
     @include flex();
     position: absolute;
+    z-index: 2;
     bottom: 5%;
     right: 50%;
-    z-index: 2;
     transform: translateX(50%);
 
     &__item {
-      cursor: pointer;
+      transition: transform 100ms linear;
+      margin-right: 3px;
       width: 14px;
       height: 8px;
-      margin-right: 3px;
       border: 1px solid $alto;
+      cursor: pointer;
 
       &:last-child {
         margin-right: 0;
@@ -40,25 +48,28 @@
       &--active {
         background: $alto;
       }
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
+  }
+
+  .transition {
+    transition: transform ease-in-out 0.01ms;
+  }
+
+  .transitionCarousel {
+    transition: transform 1.5s ease-in-out;
   }
 }
 
-.slides {
-  display: flex;
-  position: relative;
-  width: fit-content;
-  height: 100%;
-}
+@include media-for(mobile-landscape) {
+  .slideshow {
+    height: 400px;
 
-.transition {
-  transition: transform ease-in-out 0.01ms;
-}
-
-.transitionCarousel {
-  transition: transform 1.5s ease-in-out;
-}
-
-.transform {
-  transform: translateX(100%);
+    &-description {
+      font-size: 1.5rem;
+    }
+  }
 }
