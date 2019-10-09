@@ -1,9 +1,23 @@
 @import '../../scss/global_styles';
 
-.brandsList {
+.brandItem {
   width: 100%;
 }
 
-.brandItem {
+.brandItemPhoto {
   width: 100%;
+}
+
+.brandsList {
+  display: flex;
+  list-style: none;
+}
+
+.container {
+  margin-bottom: 50px;
+}
+
+.line {
+  width: 100%;
+  border: 0.5px solid #ddd;
 }
