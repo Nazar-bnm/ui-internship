@@ -1,11 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ProductImage from './ProductImage';
+import { defaultImages } from '../../constants';
 
-const image1URL = 'src/assets/img/content/new1.png';
-const image2URL = 'src/assets/img/content/new1.png';
-const image3URL = 'src/assets/img/content/new1.png';
-const image4URL = 'src/assets/img/content/new1.png';
+const { image1URL, image2URL, image3URL, image4URL } = defaultImages;
 
 describe('<ProductImage />', () => {
   let props;

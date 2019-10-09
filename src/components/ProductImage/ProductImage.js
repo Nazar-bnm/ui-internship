@@ -25,24 +25,21 @@ class ProductImage extends Component {
     const { imagesArr } = this.props;
     if (selectedImage === '') {
       return imagesArr[0].src;
-    } else {
-      return selectedImage;
     }
+    return selectedImage;
   }
 
   renderSmallImages = (selectedImage) => {
     const { imagesArr } = this.props;
-    return imagesArr.map((el, index) => {
+    return imagesArr.map((el) => {
+      const { src } = el;
       // eslint-disable-next-line no-unused-vars
-      let imageClass = '';
+      let imageClass = selectedImage === src ? imageClass = `${CN}__selected-image` : '';
+      const isSelected = selectedImage === src;
 
-      if (selectedImage === el.src) {
-        imageClass = `${CN}__selected-image`;
-      }
-      const isSelected = selectedImage === el.src;
       return (
-        <figure key={el.src} data-src={el.src} className={`${CN}__small-image`} onClick={this.clickHandler}>
-          <img src={el.src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
+        <figure key={src} data-src={src} className={`${CN}__small-image`} onClick={this.clickHandler}>
+          <img src={src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
           <div className={`${CN}__image-on-hover`}></div>
         </figure>
       );
