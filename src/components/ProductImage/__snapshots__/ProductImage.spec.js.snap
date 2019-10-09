@@ -6,11 +6,10 @@ exports[`<ProductImage /> should match snapshot 1`] = `
 >
   <figure
     className="product-image__big-image-container"
-    data-src="src/assets/img/content/new1.png"
     onClick={[Function]}
   >
     <img
-      className="product-image "
+      className="product-image"
       src="src/assets/img/content/new1.png"
     />
   </figure>
@@ -19,7 +18,6 @@ exports[`<ProductImage /> should match snapshot 1`] = `
   >
     <figure
       className="product-image__small-image"
-      data-src="src/assets/img/content/new1.png"
       key="src/assets/img/content/new1.png"
       onClick={[Function]}
     >
@@ -33,7 +31,6 @@ exports[`<ProductImage /> should match snapshot 1`] = `
     </figure>
     <figure
       className="product-image__small-image"
-      data-src="src/assets/img/content/new1.png"
       key="src/assets/img/content/new1.png"
       onClick={[Function]}
     >
@@ -47,7 +44,6 @@ exports[`<ProductImage /> should match snapshot 1`] = `
     </figure>
     <figure
       className="product-image__small-image"
-      data-src="src/assets/img/content/new1.png"
       key="src/assets/img/content/new1.png"
       onClick={[Function]}
     >
@@ -61,7 +57,6 @@ exports[`<ProductImage /> should match snapshot 1`] = `
     </figure>
     <figure
       className="product-image__small-image"
-      data-src="src/assets/img/content/new1.png"
       key="src/assets/img/content/new1.png"
       onClick={[Function]}
     >
