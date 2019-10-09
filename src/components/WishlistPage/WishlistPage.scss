@@ -1,0 +1,14 @@
+@import '../../scss/global_styles';
+
+.wishlist {
+  @include flex($justify: space-around);
+  box-shadow: 0 0 3px $mercury;
+  padding: 10px;
+
+  &__title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 10;
+    text-align: center;
+  }
+}

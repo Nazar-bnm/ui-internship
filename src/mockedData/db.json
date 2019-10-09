@@ -19,7 +19,7 @@
       "email": "ann@codingthesmartway.com"
     }
   ],
-  "what-is-new" : [
+  "what-is-new": [
     {
       "id": 1,
       "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
@@ -41,7 +41,29 @@
       "collection": "spring collection 2016",
       "category": "men"
     }
-  ], "something": [
-    {}, {}, {}
+  ],
+  "something": [{}, {}, {}],
+  "wishlist": [
+    {
+      "id": 1,
+      "photo": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5685/614/900/5685614900_1_1_16.jpg?t=1570214503646&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+      "title": "Vintage For Her",
+      "collection": "spring collection 2016",
+      "category": "woman"
+    },
+    {
+      "id": 2,
+      "photo": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/6677/619/594/6677619594_2_6_16.jpg?t=1570437488265&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+      "title": "Vintage For Her",
+      "collection": "spring collection 2016",
+      "category": "woman"
+    },
+    {
+      "id": 3,
+      "photo": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5038/545/800/5038545800_1_1_16.jpg?t=1569943856172&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+      "title": "Vintage For Her",
+      "collection": "spring collection 2016",
+      "category": "woman"
+    }
   ]
 }

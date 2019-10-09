@@ -8,6 +8,7 @@ import ProductListPage from '../ProductListPage';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
+import WishlistPage from '../WishlistPage';
 
 const Routes = () => (
   <Switch>
@@ -17,6 +18,7 @@ const Routes = () => (
     <DefaultLayout path="/products/:id" component={ProductDetailsPage} />
     <DefaultLayout path="/counter" component={CounterContainer} />
     <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
+    <DefaultLayout path="/wishlist" component={WishlistPage} />
     <DefaultLayout
       to="/404"
       component={NotFoundPage}

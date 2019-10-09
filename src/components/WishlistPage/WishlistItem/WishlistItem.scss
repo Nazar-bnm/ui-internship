@@ -1,0 +1,23 @@
+@import '../../../scss/global_styles';
+
+.wishlist-item {
+  width: 30%;
+  box-shadow: 0 0 3px $mercury;
+  padding: 20px;
+  
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__button {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+  }
+
+  &:hover {
+    box-shadow: 5px 10px 10px $silver-chalice;
+  }
+
+}
