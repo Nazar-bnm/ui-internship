@@ -1,4 +1,4 @@
-@import '../../../scss/global_styles.scss';
+@import "../../../scss/global_styles.scss";
 
 .contact-block {
   @include flex($justify: space-between);
@@ -27,5 +27,13 @@
   .icon.large {
     margin: 3px 2px;
     color: $black;
+  }
+}
+
+@include media-for(mobile-landscape) {
+  .contact-block {
+    &__icons {
+      margin-top: 10px;
+    }
   }
 }
