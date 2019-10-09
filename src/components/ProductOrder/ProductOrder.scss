@@ -1,0 +1,13 @@
+@import '../../scss/global_styles';
+
+.product-order {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  height: 400px;
+
+  &__heading {
+    font-size: 2rem;
+    font-family: font(secondary);
+  }
+}
