@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactDetails from './ContactDetails';
 import Linklist from './Linklist';
-import { linkListItems, paymentIcons, linkListItemsTablet } from '../../config/footer';
+import { linkListItems, paymentIcons, linkListItemsTablet } from '../../config/Footer';
 import JoinUs from '../JoinUs';
 import cx from 'classnames';
 

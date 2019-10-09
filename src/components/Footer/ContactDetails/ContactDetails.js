@@ -1,5 +1,5 @@
 import React from 'react';
-import { icons } from '../../../config/footer';
+import { icons } from '../../../config/Footer';
 
 import './ContactDetails.scss';
 

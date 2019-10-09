@@ -13,8 +13,7 @@ class ProductImage extends Component {
     };
   }
 
-  clickHandler = (e) => {
-    const selectedImage = e.currentTarget.dataset.src;
+  clickHandler = (selectedImage) => {
     this.setState({
       selectedImage,
     });
@@ -33,12 +32,10 @@ class ProductImage extends Component {
     const { imagesArr } = this.props;
     return imagesArr.map((el) => {
       const { src } = el;
-      // eslint-disable-next-line no-unused-vars
-      let imageClass = selectedImage === src ? imageClass = `${CN}__selected-image` : '';
       const isSelected = selectedImage === src;
 
       return (
-        <figure key={src} data-src={src} className={`${CN}__small-image`} onClick={this.clickHandler}>
+        <figure key={src} className={`${CN}__small-image`} onClick={() => this.clickHandler(src)}>
           <img src={src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
           <div className={`${CN}__image-on-hover`}></div>
         </figure>
@@ -48,12 +45,11 @@ class ProductImage extends Component {
 
   render() {
     const { selectedImage } = this.state;
-    const imageClass = '';
 
     return (
       <div className={cx(`${CN}__container`)}>
-        <figure className={`${CN}__big-image-container`} onClick={this.clickHandler} data-src={this.renderBigImage()}>
-          <img src={this.renderBigImage()} className={`${CN} ${imageClass}`} />
+        <figure className={`${CN}__big-image-container`} onClick={() => this.clickHandler(this.renderBigImage())}>
+          <img src={this.renderBigImage()} className={CN} />
         </figure>
         <div className={`${CN}__small-images-container`}>
           {this.renderSmallImages(selectedImage)}
