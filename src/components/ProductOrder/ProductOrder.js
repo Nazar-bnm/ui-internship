@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Dropdown from '../Dropdown';
+import Button from '../Button';
 import './ProductOrder.scss';
 export const CN = 'product-order';
+
+const handleClick = () => {
+  console.log('enot!');
+  return 1;
+};
 
 const ProductOrder = (props) => {
   const { itemName, description, price, sizes, colors, quantity } = props;
@@ -12,9 +18,15 @@ const ProductOrder = (props) => {
       <h2 className={`${CN}__heading`}>{itemName}</h2>
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
-      <Dropdown options={sizes} />
-      <Dropdown options={colors} />
-      <Dropdown options={quantity} />
+      <div className={`${CN}__dropdowns-wrapper`}>
+        <Dropdown options={sizes} />
+        <Dropdown options={colors} />
+        <Dropdown options={quantity} />
+      </div>
+      <div className={`${CN}__buttons-wrapper`}>
+        <Button customClass={`${CN}__cart-btn`} icon="" onClickFunction={handleClick}>add to cart</Button>
+        <Button customClass={`${CN}__wishlist-btn`} icon=""onClickFunction={handleClick}>wishlist</Button>
+      </div>
     </div>);
 };
 
@@ -22,7 +34,7 @@ ProductOrder.propTypes = {
   itemName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  quantity: PropTypes.string.isRequired,
+  quantity: PropTypes.array.isRequired,
   sizes: PropTypes.array.isRequired,
   colors: PropTypes.array.isRequired,
 };
