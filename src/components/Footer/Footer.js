@@ -38,7 +38,7 @@ const Footer = () => {
 
   const renderBlog = () => {
     return ( <div className={`${CN}__section col-6`}>
-      <h3 className={`${CN}__title`}>Twitter</h3>
+      <h3 className={`${CN}__title ${CN}__title--main`}>Twitter</h3>
       <p className={`${CN}__text`}>
       check out the new upcoming phone !! #Valentine’s Day #Australia
         <a
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
           <div className="container">
             <div className={`${CN}__section col-5`}>
-              <h3 className={`${CN}__title`}>About us</h3>
+              <h3 className={`${CN}__title ${CN}__title--main`}>About us</h3>
               <p className={`${CN}__text`}>
                 One could refuse to pay expensive translators, the European
                 languages are members of the same family. Their separate
@@ -90,7 +90,7 @@ const Footer = () => {
                   </img>
                 </div>
                 <div className="col-6 col-center">
-                  <h3 className={`${CN}__title`}>Store location</h3>
+                  <h3 className={`${CN}__title ${CN}__title--main`}>Store location</h3>
                   <p className={`${CN}__text`}>
                     Company ltd.co 234 Fake address name, Fake city name,
                     Country 01234 (000) 123 456 xxx
@@ -101,7 +101,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={`${CN}__section col-3`}>
-          <h3 className={`${CN}__title`}>Facebook</h3>
+          <h3 className={`${CN}__title ${CN}__title--main`}>Facebook</h3>
           <img
             className={`${CN}__image`}
             src="src/assets/img/content/facebook.png">
