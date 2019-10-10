@@ -39,10 +39,6 @@
       }
     }
   }
-
-  .shippingInfo__list {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -59,23 +55,6 @@
           display: none;
         }
       }
-    }
-  }
-
-  .shippingInfo__list {
-    &-item {
-      flex-direction: column;
-    }
-  }
-
-  .shippingInfo__item-text {
-    &__wrapper {
-      margin-left: 0;
-      padding-top: 7px;
-    }
-
-    &__title {
-      font-size: 0.8em;
     }
   }
 }
