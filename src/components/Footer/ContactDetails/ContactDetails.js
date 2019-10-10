@@ -1,5 +1,5 @@
 import React from 'react';
-import { icons } from '../../../config/footer';
+import config from '../../../../config';
 
 import './ContactDetails.scss';
 
@@ -12,7 +12,7 @@ const ContactDetails = () => {
         <h4>Connect us</h4>
       </div>
       <ul className={`${CN}__icons`}>
-        {icons.map(({ name, link }) => (
+        {config.icons.map(({ name, link }) => (
           <li key={name} className={`${CN}__item`}>
             <a href={link} target="blank">
               <i className={`${name} icon large`}></i>

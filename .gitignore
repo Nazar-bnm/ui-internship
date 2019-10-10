@@ -4,7 +4,6 @@
 bundle.js
 npm-debug.log
 .DS_Store
-.env
 
 # IntelliJ
 *.log

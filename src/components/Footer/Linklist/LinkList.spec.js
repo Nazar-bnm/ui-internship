@@ -1,15 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import LinkList from './LinkList';
-import { linkListItems } from '../../../config/footer';
+import config from '../../../../config';
 
 describe('<LinkList />', () => {
+  const { linkListItems } = config;
+  const { guide } = linkListItems;
+
   let props;
   let wrapper;
 
   beforeEach(() => {
     props = {
-      links: linkListItems.guide,
+      links: guide,
     };
 
     wrapper = shallow(
