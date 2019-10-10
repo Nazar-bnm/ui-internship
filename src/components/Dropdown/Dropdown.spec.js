@@ -1,22 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import LinkList from './LinkList';
-import config from '../../../../config';
+import Dropdown from './Dropdown';
 
-describe('<LinkList />', () => {
-  const { linkListItems } = config;
-  const { guide } = linkListItems;
-
+describe('<Dropdown />', () => {
   let props;
   let wrapper;
 
   beforeEach(() => {
     props = {
-      links: guide,
+      options: [{ value: 'USD', label: 'USD' },
+        { value: 'EURO', label: 'EURO' },
+        { value: 'UAH', label: 'UAH' }],
     };
 
     wrapper = shallow(
-      <LinkList {...props} />
+      <Dropdown {...props} />
     );
   });
   test('should match snapshot', () => {

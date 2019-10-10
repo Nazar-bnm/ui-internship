@@ -29,3 +29,11 @@
     color: $black;
   }
 }
+
+@include media-for(mobile-landscape) {
+  .contact-block {
+    &__icons {
+      margin-top: 10px;
+    }
+  }
+}
