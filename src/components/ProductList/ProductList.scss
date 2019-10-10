@@ -1,0 +1,51 @@
+@import '../../scss/global_styles';
+
+.product-list {
+  @include flex($direction: column, $justify: space-between, $wrap: nowrap);
+  width: 100%;
+  height: 500px;
+  padding: 20px 2vw;
+  background-color: pink;
+
+  &__filter-wrapper-top, &__filter-wrapper-bottom {
+    @include flex($align: center);
+    width: 100%;
+    background-color: lightgreen;
+  }
+
+  &__filter-wrapper-bottom {
+    &__dropdowns {
+      @include flex($align: center, $justify: space-evenly);
+      width: 70%;
+    }
+  }
+
+  &__list-items-container {
+    width: 100%;
+    height: 200px;
+    background-color:lightsalmon;
+  }
+
+  &__dropdowns-labels {
+    color: $dove-gray;
+    font-size: 0.8rem;
+    font-family: font(primary-bold);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__dropdowns-labels-wrapper {
+    @include flex($align: center, $wrap: nowrap);
+    margin: 0 10px;
+  }
+
+  .dropdown {
+    @include flex($align: baseline);
+    color: $dove-gray;
+    font-size: 0.8rem;
+
+    &__items__element, .dropdown[aria-expanded=true] .dropdown__items__element {
+      z-index: 1;
+    }
+  }
+}
