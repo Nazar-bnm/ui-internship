@@ -111,7 +111,7 @@ const Footer = () => {
       {renderTabletLinks()}
       <div className={`content ${CN}__info ${CN}__connect`}>
         <JoinUs />
-        <ContactDetails />
+        <ContactDetails title="Connect us"/>
       </div>
       <div className={`content ${CN}__info`}>
         <div className="col-6">

@@ -1,7 +1,8 @@
 import React from 'react';
+import Accordion from '../Accordion';
 
 const MainPage = () => (
-  <h2>MainPage</h2>
+  <Accordion />
 );
 
 export default MainPage;

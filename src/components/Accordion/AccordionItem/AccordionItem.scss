@@ -1,0 +1,22 @@
+@import '../../../scss/global_styles';
+
+.accordion-item {
+  width: 300px;
+  font-family: font(secondary);
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: font(secondary);
+    text-transform: uppercase;
+    border-top: 1px solid $silver-chalice;
+  }
+
+  &-description {
+    height: 0;
+    transform: scale(0);
+
+
+  }
+}
