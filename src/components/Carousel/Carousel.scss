@@ -28,19 +28,21 @@
     cursor: pointer;
     padding: 0;
     outline: none;
-    background-color: grey;
+    border: none;
+    background: none;
+    // background-color: grey;
     opacity: .8;
     transition: opacity .2s ease-in-out;
   }
 
   &__left-nav {
     left: 5px;
-    top: 150px;
+    top: 140px;
   }
 
   &__right-nav {
     right: 5px;
-    top: 150px;
+    top: 140px;
   }
 
   &__nav:hover {
@@ -54,5 +56,9 @@
     user-select: none;
     pointer-events: none;
     transition: .5;
+  }
+
+  i.icon {
+    font-size: 1.5rem;
   }
 }

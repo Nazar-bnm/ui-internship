@@ -2,16 +2,30 @@
 
 .slide {
   display: inline-block;
+  text-align: center;
   vertical-align: top;
   width: 210px;
   padding: 5px;
   white-space: normal;
+  color: $black;
 
   &__image {
     width: 100%;
   }
+
+  &__product-name{
+    @include title-sections;
+    color: $black;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.7rem;
+  }
+
+  &__category {
+    @include text-sections;
+    font-size: 0.5rem;
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
 }
 
-.slide:last-child {
-  border-right: none;
-}
