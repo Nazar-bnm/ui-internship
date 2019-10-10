@@ -12,7 +12,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
   <p
     className="product-order__description"
   >
-    A dress is a garment traditionally worn by women or girls consisting of a skirt with an attached bodice.
+    The best pink dress on the market, new collection!
   </p>
   <span
     className="product-order__price"
