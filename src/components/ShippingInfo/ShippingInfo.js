@@ -1,17 +1,14 @@
 import React from 'react';
-
 import cx from 'classnames';
+
+import config from '../../../config';
 
 import './ShippingInfo.scss';
 
 export const CN = 'shippingInfo';
+const { shippingData } = config;
 
 const ShippingInfo = () => {
-  const shippingData = [
-    { number: 1, title: 'free shipping', description: 'on all orders over 50$' },
-    { number: 2, title: 'money back guarantee', description: 'on all orders' },
-    { number: 3, title: 'worldwide delivery', description: 'to over 80 countries' },
-  ];
   const shippingInfo = shippingData.map((elem) => (
     <li key={elem.number} className={`${CN}__list-item`}>
       <span className={`${CN}__item-number`}>0{elem.number}.</span>
@@ -23,7 +20,7 @@ const ShippingInfo = () => {
   ));
 
   return (
-    <div className='content container'>
+    <div className={`content container ${cx(CN)}`}>
       <hr className={`${cx(CN)}__line`}/>
       <ul className={`${cx(CN)}__list`}>
         {shippingInfo}

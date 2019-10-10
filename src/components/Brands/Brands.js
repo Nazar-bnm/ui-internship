@@ -6,7 +6,7 @@ import HttpService from '../../service/HttpService/httpService';
 import './Brands.scss';
 
 export const CN = 'brand';
-const api = 'http://localhost:4000/brands';
+
 
 class BrandsAndShippingInfo extends Component {
   state = {
@@ -17,7 +17,7 @@ class BrandsAndShippingInfo extends Component {
     const userAPI = new HttpService();
 
     try {
-      const response = await userAPI.get(api);
+      const response = await userAPI.get(`${process.env.BASE_URL}/brands`);
       if (response && response.data) {
         this.setState({ brandsList: response.data });
       }

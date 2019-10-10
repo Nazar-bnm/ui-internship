@@ -5,7 +5,6 @@ import axios from 'axios';
 import { mount } from 'enzyme';
 import Brands from './Brands';
 
-const api = 'http://localhost:4000/brands';
 const mockData = [
   {
     'id': 'Boss',
@@ -40,7 +39,7 @@ describe('<Brands />', () => {
     wrapper = mount(<Brands />);
     const mock = new MockAdapter(axios);
 
-    mock.onGet(api).reply(200, mockData);
+    mock.onGet(`${process.env.BASE_URL}/brands`).reply(200, mockData);
   });
 
   test('should check `componentDidMount()`', () => {
