@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductOrder /> should match snapshot 1`] = `
+<div
+  className="product-order"
+>
+  <h2
+    className="product-order__heading"
+  >
+    Detailed swing dress
+  </h2>
+  <p
+    className="product-order__description"
+  >
+    A dress is a garment traditionally worn by women or girls consisting of a skirt with an attached bodice.
+  </p>
+  <span
+    className="product-order__price"
+  >
+    $1,999.00
+  </span>
+  <div
+    className="product-order__dropdowns-wrapper"
+  >
+    <Dropdown
+      currency={
+        Array [
+          Object {
+            "label": "USD",
+            "value": "USD",
+          },
+          Object {
+            "label": "EURO",
+            "value": "EURO",
+          },
+          Object {
+            "label": "UAH",
+            "value": "UAH",
+          },
+        ]
+      }
+      options={
+        Array [
+          Object {
+            "label": "size:",
+            "value": "size:",
+          },
+          Object {
+            "label": "s",
+            "value": "s",
+          },
+          Object {
+            "label": "m",
+            "value": "m",
+          },
+          Object {
+            "label": "l",
+            "value": "l",
+          },
+          Object {
+            "label": "xl",
+            "value": "xl",
+          },
+        ]
+      }
+    />
+    <Dropdown
+      currency={
+        Array [
+          Object {
+            "label": "USD",
+            "value": "USD",
+          },
+          Object {
+            "label": "EURO",
+            "value": "EURO",
+          },
+          Object {
+            "label": "UAH",
+            "value": "UAH",
+          },
+        ]
+      }
+      options={
+        Array [
+          Object {
+            "label": "color:",
+            "value": "color:",
+          },
+          Object {
+            "label": "white",
+            "value": "white",
+          },
+          Object {
+            "label": "pink",
+            "value": "pink",
+          },
+          Object {
+            "label": "black",
+            "value": "black",
+          },
+        ]
+      }
+    />
+    <Dropdown
+      currency={
+        Array [
+          Object {
+            "label": "USD",
+            "value": "USD",
+          },
+          Object {
+            "label": "EURO",
+            "value": "EURO",
+          },
+          Object {
+            "label": "UAH",
+            "value": "UAH",
+          },
+        ]
+      }
+      options={
+        Array [
+          Object {
+            "label": "qty:",
+            "value": "qty:",
+          },
+          Object {
+            "label": "1",
+            "value": "1",
+          },
+          Object {
+            "label": "2",
+            "value": "2",
+          },
+          Object {
+            "label": "3",
+            "value": "3",
+          },
+          Object {
+            "label": "4",
+            "value": "4",
+          },
+          Object {
+            "label": "5",
+            "value": "5",
+          },
+          Object {
+            "label": "6",
+            "value": "6",
+          },
+          Object {
+            "label": "7",
+            "value": "7",
+          },
+          Object {
+            "label": "8",
+            "value": "8",
+          },
+          Object {
+            "label": "9",
+            "value": "9",
+          },
+          Object {
+            "label": "10",
+            "value": "10",
+          },
+        ]
+      }
+    />
+  </div>
+  <div
+    className="product-order__buttons-wrapper"
+  >
+    <Link
+      to="/404"
+    >
+      <Button
+        customClass="product-order__cart-btn"
+      >
+        add to cart
+      </Button>
+    </Link>
+    <Link
+      to="/404"
+    >
+      <Button
+        customClass="product-order__wishlist-btn"
+        icon="heart"
+      >
+        wishlist
+      </Button>
+    </Link>
+  </div>
+</div>
+`;
