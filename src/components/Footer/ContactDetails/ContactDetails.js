@@ -6,13 +6,14 @@ import './ContactDetails.scss';
 const CN = 'contact-block';
 
 const ContactDetails = () => {
+  const { icons } = config;
   return (
     <div className={`${CN}`}>
       <div className={`${CN}__title`}>
         <h4>Connect us</h4>
       </div>
       <ul className={`${CN}__icons`}>
-        {config.icons.map(({ name, link }) => (
+        {icons.map(({ name, link }) => (
           <li key={name} className={`${CN}__item`}>
             <a href={link} target="blank">
               <i className={`${name} icon large`}></i>
