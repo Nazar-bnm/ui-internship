@@ -1,0 +1,39 @@
+@import '../../../scss/global_styles.scss';
+
+.contact-block {
+  @include flex($justify: space-between);
+
+  &__title {
+    @include flex($align: center);
+    @include title-sections;
+  }
+
+  &__icons {
+    @include flex($justify: center);
+    padding-left: 3px;
+  }
+
+  &__item {
+    border-radius: 50%;
+    margin: 6px;
+    background-color: $emperor;
+    list-style: none;
+
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+  .icon.large {
+    margin: 3px 2px;
+    color: $black;
+  }
+}
+
+@include media-for(mobile-landscape) {
+  .contact-block {
+    &__icons {
+      margin-top: 10px;
+    }
+  }
+}

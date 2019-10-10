@@ -11,13 +11,19 @@ class MostPopular extends Component {
   }
 
   componentDidMount() {
-    this.downloadProducts();
+    this.getProducts();
   }
 
-  async downloadProducts() {
+  async getProducts() {
     const userApi = new HttpService();
-    const response = await userApi.get(urlBase);
-    this.setState({ products: response.data });
+    try {
+      const response = await userApi.get(urlBase);
+      if (response && response.data) {
+        this.setState({ products: response.data });
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   renderProducts() {

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> should match snapshot 1`] = `
+<div
+  aria-expanded={false}
+  className="dropdown"
+  onClick={[Function]}
+>
+  <span
+    className="dropdown__selected"
+  >
+    USD
+  </span>
+  <ul
+    className="dropdown__items"
+  >
+    <li
+      className="dropdown__items__element"
+      key="USD"
+      onClick={[Function]}
+      selectednum={0}
+      value="USD"
+    >
+      USD
+    </li>
+    <li
+      className="dropdown__items__element"
+      key="EURO"
+      onClick={[Function]}
+      selectednum={1}
+      value="EURO"
+    >
+      EURO
+    </li>
+    <li
+      className="dropdown__items__element"
+      key="UAH"
+      onClick={[Function]}
+      selectednum={2}
+      value="UAH"
+    >
+      UAH
+    </li>
+  </ul>
+  <i
+    className="caret down icon"
+  />
+</div>
+`;

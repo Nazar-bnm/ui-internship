@@ -34,8 +34,7 @@
     }
 
     &__img {
-      max-height: 320px;
-
+      max-height: 410px;
 
       &--hovered {
         height: 200px;
@@ -87,3 +86,6 @@
   }
 }
 
+@media (max-width: 800px) {
+  
+}

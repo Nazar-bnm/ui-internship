@@ -4,10 +4,8 @@
   @include flex;
   
   &__title {
-    @include title-font;
     @include flex($align: center);
-    color: $white;
-    font-size: 0.8rem;
+    @include title-sections;
   }
   
   &__input-wrapper {
@@ -18,9 +16,9 @@
   
   &__email-input {
     margin: 0 10px;
-    width: 250px;
+    width: 190px;
     padding-left: 5px;
-    padding-right: 25px;
+    padding-right:15px;
     outline: none;
     font-size: 0.7rem;
   }    
@@ -37,15 +35,27 @@
     outline: none;
     color: inherit;
   }
-}
+
+  .success {
+    border: 1px solid green;
+    border-radius: 1px;
+  }
   
-.success {
-  border: 1px solid green;
-  border-radius: 1px;
+  i.icon {
+    margin: 0;
+    height: 100%;
+    font-size: 1.6rem;
+  }
 }
 
-i.icon {
-  margin: 0;
-  height: 100%;
-  font-size: 1.6rem;
+@include media-for(mobile-portrait) {
+  .join-us {
+    &__title {
+      display: none;
+    }
+
+    &__email-input{
+      width: 250px;
+    }
+  }
 }

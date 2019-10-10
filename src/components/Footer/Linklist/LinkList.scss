@@ -1,0 +1,13 @@
+@import '../../../scss/global_styles.scss';
+
+.linklist {
+  &__title {
+    @include title-sections;
+    margin-bottom: 10px;
+  }
+
+  &__text{
+    @include text-sections;
+  }
+}
+
