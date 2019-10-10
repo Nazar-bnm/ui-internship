@@ -9,8 +9,8 @@ const AccountNavigation = (props) =>
     <Link to={'/404'}>
       <span>my account</span>
     </Link>
-    <Link to={'/404'}>
-      <span>wish list</span>
+    <Link to={'/wishlist'}>
+      <span>wishlist</span>
     </Link>
     <Link to={'/404'}>
       <span>checkout</span>
