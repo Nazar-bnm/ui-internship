@@ -10,7 +10,7 @@ exports[`<ProductImage /> should match snapshot 1`] = `
   >
     <img
       className="product-image"
-      src="src/assets/img/content/new1.png"
+      src="src/assets/img/content/new4.png"
     />
   </figure>
   <div
@@ -18,12 +18,12 @@ exports[`<ProductImage /> should match snapshot 1`] = `
   >
     <figure
       className="product-image__small-image"
-      key="src/assets/img/content/new1.png"
+      key="src/assets/img/content/new4.png"
       onClick={[Function]}
     >
       <img
         className="product-image"
-        src="src/assets/img/content/new1.png"
+        src="src/assets/img/content/new4.png"
       />
       <div
         className="product-image__image-on-hover"
@@ -31,12 +31,12 @@ exports[`<ProductImage /> should match snapshot 1`] = `
     </figure>
     <figure
       className="product-image__small-image"
-      key="src/assets/img/content/new1.png"
+      key="src/assets/img/content/new2.png"
       onClick={[Function]}
     >
       <img
         className="product-image"
-        src="src/assets/img/content/new1.png"
+        src="src/assets/img/content/new2.png"
       />
       <div
         className="product-image__image-on-hover"
@@ -44,12 +44,12 @@ exports[`<ProductImage /> should match snapshot 1`] = `
     </figure>
     <figure
       className="product-image__small-image"
-      key="src/assets/img/content/new1.png"
+      key="src/assets/img/content/new3.png"
       onClick={[Function]}
     >
       <img
         className="product-image"
-        src="src/assets/img/content/new1.png"
+        src="src/assets/img/content/new3.png"
       />
       <div
         className="product-image__image-on-hover"

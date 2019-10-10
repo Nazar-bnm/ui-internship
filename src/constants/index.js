@@ -1,6 +1,6 @@
-export const defaultImages = {
-  image1URL: 'src/assets/img/content/new1.png',
-  image2URL: 'src/assets/img/content/new1.png',
-  image3URL: 'src/assets/img/content/new1.png',
-  image4URL: 'src/assets/img/content/new1.png',
-};
+export const defaultImages = [
+  { src: 'src/assets/img/content/new4.png' },
+  { src: 'src/assets/img/content/new2.png' },
+  { src: 'src/assets/img/content/new3.png' },
+  { src: 'src/assets/img/content/new1.png' },
+];

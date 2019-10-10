@@ -1,8 +1,9 @@
 /* eslint-disable no-invalid-this */
 import React, { Component } from 'react';
-import './ProductImage.scss';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import './ProductImage.scss';
+
 export const CN = 'product-image';
 
 class ProductImage extends Component {
@@ -61,18 +62,13 @@ class ProductImage extends Component {
 
 ProductImage.propTypes = {
   imagesArr: PropTypes.arrayOf(PropTypes.shape({
-    src: PropTypes.string.isRequired,
-  })).isRequired,
+    src: PropTypes.string,
+  })),
   className: PropTypes.string,
 };
 
 ProductImage.defaultProps = {
-  imagesArr: [
-    { src: 'src/assets/img/content/new1.png' },
-    { src: 'src/assets/img/content/new2.png' },
-    { src: 'src/assets/img/content/new3.png' },
-    { src: 'src/assets/img/content/new4.png' },
-  ],
+  imagesArr: [],
 };
 
 export default ProductImage;
