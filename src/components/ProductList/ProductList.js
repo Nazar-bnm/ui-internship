@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 import Dropdown from '../Dropdown';
 import { options } from '../../config/headerMockups';
 import './ProductList.scss';
