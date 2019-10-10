@@ -126,10 +126,5 @@ exports[`<Header /> should match snapshot 1`] = `
       ]
     }
   />
-  <div
-    className="wrapper _slider"
-  >
-    Here will be slider
-  </div>
 </header>
 `;
