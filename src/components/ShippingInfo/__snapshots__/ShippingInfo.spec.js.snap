@@ -2,7 +2,7 @@
 
 exports[`<ShippingInfo /> should match snapshot 1`] = `
 <div
-  className="content container"
+  className="content container shippingInfo"
 >
   <hr
     className="shippingInfo__line"

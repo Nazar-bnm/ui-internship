@@ -7,7 +7,6 @@ import './Brands.scss';
 
 export const CN = 'brand';
 
-
 class BrandsAndShippingInfo extends Component {
   state = {
     brandsList: [],
