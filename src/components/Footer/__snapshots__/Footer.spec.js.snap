@@ -1,0 +1,339 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should match snapshot 1`] = `
+<div
+  className="footer"
+>
+  <div
+    className="container content footer__desktop"
+  >
+    <div
+      className="col-9"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="footer__section col-3"
+        >
+          <Linklist
+            links={
+              Object {
+                "data": Array [
+                  Object {
+                    "link": "#",
+                    "title": "About G-Star Raw",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Corporate Responsibility",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Press Room",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Careers",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "G-Star Retailers",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Open a G-Star Store",
+                  },
+                ],
+                "heading": "Shopping guide",
+              }
+            }
+          />
+        </div>
+        <div
+          className="footer__section col-3"
+        >
+          <Linklist
+            links={
+              Object {
+                "data": Array [
+                  Object {
+                    "link": "#",
+                    "title": "FAQ",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Contact",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Privacy Policy",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Terms & Conditions",
+                  },
+                  Object {
+                    "link": "#",
+                    "title": "Disclaimer",
+                  },
+                ],
+                "heading": "Help & Info",
+              }
+            }
+          />
+        </div>
+        <div
+          className="footer__section col-6"
+        >
+          <h3
+            className="footer__title"
+          >
+            Twitter
+          </h3>
+          <p
+            className="footer__text"
+          >
+            check out the new upcoming phone !! #Valentine’s Day #Australia
+            <a
+              className="footer__text footer__link"
+              href="http://t.co/StOrIs63bd"
+            >
+              http://t.co/wRye6rBElN
+            </a>
+             - 7 hours ago 
+          </p>
+          <p
+            className="footer__text"
+          >
+            your solution partner:
+            <a
+              className="footer__text footer__link"
+              href="http://t.co/StOrIs63bd"
+            >
+              http://t.co/StOrIs63bd
+            </a>
+            #IT #websitedevlopment - 8 hours ago
+          </p>
+        </div>
+      </div>
+      <div
+        className="container"
+      >
+        <div
+          className="footer__section col-5"
+        >
+          <h3
+            className="footer__title"
+          >
+            About us
+          </h3>
+          <p
+            className="footer__text"
+          >
+            One could refuse to pay expensive translators, the European languages are members of the same family. Their separate existence is a myth. Uses read more
+          </p>
+        </div>
+        <div
+          className="footer__section col-6 col-right"
+        >
+          <div
+            className="container"
+          >
+            <div
+              className="col-5"
+            >
+              <img
+                alt="google map"
+                className="footer__image"
+                src="src/assets/img/content/map.png"
+              />
+            </div>
+            <div
+              className="col-6 col-center"
+            >
+              <h3
+                className="footer__title"
+              >
+                Store location
+              </h3>
+              <p
+                className="footer__text"
+              >
+                Company ltd.co 234 Fake address name, Fake city name, Country 01234 (000) 123 456 xxx
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="footer__section col-3"
+    >
+      <h3
+        className="footer__title"
+      >
+        Facebook
+      </h3>
+      <img
+        className="footer__image"
+        src="src/assets/img/content/facebook.png"
+      />
+    </div>
+  </div>
+  <ul
+    className="footer__section content footer-tablet"
+  >
+    <li
+      className="footer-tablet__link"
+      key="About G-Star Raw"
+    >
+      <a
+        href="#"
+      >
+        <h4
+          className="footer__text"
+        >
+          About G-Star Raw
+        </h4>
+      </a>
+    </li>
+    <li
+      className="footer-tablet__link"
+      key="G-Star Retailers"
+    >
+      <a
+        href="#"
+      >
+        <h4
+          className="footer__text"
+        >
+          G-Star Retailers
+        </h4>
+      </a>
+    </li>
+    <li
+      className="footer-tablet__link"
+      key="FAQ"
+    >
+      <a
+        href="#"
+      >
+        <h4
+          className="footer__text"
+        >
+          FAQ
+        </h4>
+      </a>
+    </li>
+    <li
+      className="footer-tablet__link"
+      key="Contact"
+    >
+      <a
+        href="#"
+      >
+        <h4
+          className="footer__text"
+        >
+          Contact
+        </h4>
+      </a>
+    </li>
+    <li
+      className="footer-tablet__link"
+      key="Privacy Policy"
+    >
+      <a
+        href="#"
+      >
+        <h4
+          className="footer__text"
+        >
+          Privacy Policy
+        </h4>
+      </a>
+    </li>
+    <li
+      className="footer-tablet__link"
+      key="Terms & Conditions"
+    >
+      <a
+        href="#"
+      >
+        <h4
+          className="footer__text"
+        >
+          Terms & Conditions
+        </h4>
+      </a>
+    </li>
+  </ul>
+  <div
+    className="content footer__info footer__connect"
+  >
+    <JoinUs />
+    <ContactDetails />
+  </div>
+  <div
+    className="content footer__info"
+  >
+    <div
+      className="col-6"
+    >
+      <h4
+        className="footer__text"
+      >
+        © 2016 The shop. All rights reserved.
+      </h4>
+    </div>
+    <div
+      className="col-right"
+    >
+      <ul
+        className="footer__payment"
+      >
+        <li
+          key="cc paypal"
+        >
+           
+          <a
+            href="#"
+          >
+            <i
+              className="cc paypal icon big"
+            />
+          </a>
+           
+        </li>
+        <li
+          key="cc visa"
+        >
+           
+          <a
+            href="#"
+          >
+            <i
+              className="cc visa icon big"
+            />
+          </a>
+           
+        </li>
+        <li
+          key="cc mastercard"
+        >
+           
+          <a
+            href="#"
+          >
+            <i
+              className="cc mastercard icon big"
+            />
+          </a>
+           
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

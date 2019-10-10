@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContactDetails /> should match snapshot 1`] = `
+<div
+  className="contact-block"
+>
+  <div
+    className="contact-block__title"
+  >
+    <h4>
+      Connect us
+    </h4>
+  </div>
+  <ul
+    className="contact-block__icons"
+  >
+    <li
+      className="contact-block__item"
+      key="twitter"
+    >
+      <a
+        href="https://twitter.com/griddynamics"
+        target="blank"
+      >
+        <i
+          className="twitter icon large"
+        />
+      </a>
+    </li>
+    <li
+      className="contact-block__item"
+      key="mail"
+    >
+      <a
+        href="mailto:khrystynavaskovych@gmail.com"
+        target="blank"
+      >
+        <i
+          className="mail icon large"
+        />
+      </a>
+    </li>
+    <li
+      className="contact-block__item"
+      key="facebook"
+    >
+      <a
+        href="https://www.facebook.com/griddynamics"
+        target="blank"
+      >
+        <i
+          className="facebook icon large"
+        />
+      </a>
+    </li>
+    <li
+      className="contact-block__item"
+      key="linkedin"
+    >
+      <a
+        href="https://www.linkedin.com/company/grid-dynamics/"
+        target="blank"
+      >
+        <i
+          className="linkedin icon large"
+        />
+      </a>
+    </li>
+    <li
+      className="contact-block__item"
+      key="instagram"
+    >
+      <a
+        href="https://www.instagram.com/griddynamics_ua/"
+        target="blank"
+      >
+        <i
+          className="instagram icon large"
+        />
+      </a>
+    </li>
+    <li
+      className="contact-block__item"
+      key="google plus g"
+    >
+      <a
+        href="https://plus.google.com/115302417170674279390"
+        target="blank"
+      >
+        <i
+          className="google plus g icon large"
+        />
+      </a>
+    </li>
+  </ul>
+</div>
+`;

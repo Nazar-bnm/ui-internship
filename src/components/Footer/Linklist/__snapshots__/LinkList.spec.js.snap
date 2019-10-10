@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LinkList /> should match snapshot 1`] = `
+<nav>
+  <h3
+    className="linklist__title"
+  >
+    Shopping guide
+  </h3>
+  <a
+    href="#"
+    key="About G-Star Raw"
+  >
+    <h4
+      className="linklist__text"
+    >
+      About G-Star Raw
+    </h4>
+  </a>
+  <a
+    href="#"
+    key="Corporate Responsibility"
+  >
+    <h4
+      className="linklist__text"
+    >
+      Corporate Responsibility
+    </h4>
+  </a>
+  <a
+    href="#"
+    key="Press Room"
+  >
+    <h4
+      className="linklist__text"
+    >
+      Press Room
+    </h4>
+  </a>
+  <a
+    href="#"
+    key="Careers"
+  >
+    <h4
+      className="linklist__text"
+    >
+      Careers
+    </h4>
+  </a>
+  <a
+    href="#"
+    key="G-Star Retailers"
+  >
+    <h4
+      className="linklist__text"
+    >
+      G-Star Retailers
+    </h4>
+  </a>
+  <a
+    href="#"
+    key="Open a G-Star Store"
+  >
+    <h4
+      className="linklist__text"
+    >
+      Open a G-Star Store
+    </h4>
+  </a>
+</nav>
+`;
