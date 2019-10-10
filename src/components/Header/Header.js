@@ -28,7 +28,6 @@ const Header = () =>
       </div>
     </div>
     <PageNavigation options={navConfig} />
-    <div className="wrapper _slider">Here will be slider</div>
   </header>;
 
 export default Header;
