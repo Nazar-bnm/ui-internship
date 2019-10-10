@@ -1,0 +1,70 @@
+@import '../../scss/global_styles';
+
+.shippingInfo {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 30px 0;
+    width: 80%;
+
+    &-item {
+      display: flex;
+      width: 30%;
+    }
+  }
+
+  &__item {
+    &-number {
+      font-family: font(secondary);
+      font-size: 1.4em;
+    }
+
+    &-text {
+      &__wrapper {
+        text-transform: uppercase;
+        margin-left: 10px;
+      }
+
+      &__title {
+        font-weight: 300;
+        margin-bottom: 3px;
+      }
+
+      &__description {
+        font-family: font(primary);
+        font-size: 0.6em;
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    border: 0.5px solid $alto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .shippingInfo__list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .shippingInfo__list {
+    &-item {
+      flex-direction: column;
+    }
+  }
+
+  .shippingInfo__item-text {
+    &__wrapper {
+      margin-left: 0;
+      padding-top: 7px;
+    }
+
+    &__title {
+      font-size: 0.8em;
+    }
+  }
+}

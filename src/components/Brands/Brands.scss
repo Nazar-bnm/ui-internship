@@ -1,0 +1,85 @@
+@import '../../scss/global_styles';
+
+.brand {
+  &__list {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &-item {
+      cursor: pointer;
+      padding: 0 17px;
+    }
+
+    &-photo {
+      width: 100%;
+      transition: all .3s ease-in-out;
+      filter: opacity(.3);
+    
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.container {
+  justify-content: center;
+}
+
+.width {
+  width: 35%;
+}
+
+@media screen and (max-width: 768px) {
+  .brand {
+    &__list {
+      &-item {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .shippingInfo__list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brand {
+    .col-2 {
+      width: 35%;
+    }
+
+    &__list {
+      justify-content: space-around;
+
+      &-item {
+        &:nth-of-type(1n+3) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .shippingInfo__list {
+    &-item {
+      flex-direction: column;
+    }
+  }
+
+  .shippingInfo__item-text {
+    &__wrapper {
+      margin-left: 0;
+      padding-top: 7px;
+    }
+
+    &__title {
+      font-size: 0.8em;
+    }
+  }
+}
