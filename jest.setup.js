@@ -13,6 +13,6 @@ Object.defineProperty(window.document, 'cookie', {
       set: function _set(v) {
         _value = v;
       },
-    }
-  }
+    };
+  },
 });
