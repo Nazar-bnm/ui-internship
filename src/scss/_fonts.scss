@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './breakpoints.scss';
 
 $fonts: (
   primary: 'Nunito-Regular',
@@ -14,47 +14,47 @@ $fonts: (
 
 @font-face {
   font-family: 'Nunito-Regular';
-  src: url('/src/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+  src: url('/src/assets/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Nunito-Bold';
-  src: url('/src/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+  src: url('/src/assets/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Nunito-Light';
-  src: url('/src/fonts/Nunito/Nunito-Light.ttf') format('truetype');
+  src: url('/src/assets/fonts/Nunito/Nunito-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Black';
-  src: url('/src/fonts/Playfair_Display/PlayfairDisplay-Black.ttf') format('truetype');
+  src: url('/src/assets/fonts/Playfair_Display/PlayfairDisplay-Black.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-BlackItalic';
-  src: url('/src/fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf') format('truetype');
+  src: url('/src/assets/fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Bold';
-  src: url('/src/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf') format('truetype');
+  src: url('/src/assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-BoldItalic';
-  src: url('/src/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+  src: url('/src/assets/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Italic';
-  src: url('/src/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype');
+  src: url('/src/assets/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Regular';
-  src: url('/src/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf') format('truetype');
+  src: url('/src/assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf') format('truetype');
 }
 
 @function font($type: primary) {

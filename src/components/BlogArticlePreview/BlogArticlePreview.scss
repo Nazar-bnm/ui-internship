@@ -1,0 +1,33 @@
+@import "../../scss/global_styles";
+
+.article-preview {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  max-width: 450px;
+  height: 300px;
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  font-family: font(primary-light);
+  text-transform: uppercase;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 50%;
+    width: 60%;
+    background-color: $white;
+  }
+
+  &__heading {
+    margin: 10px 0;
+    font-size: 1.3rem;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+  }
+}

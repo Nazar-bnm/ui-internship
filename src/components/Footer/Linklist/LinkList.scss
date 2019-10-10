@@ -3,6 +3,7 @@
 .linklist {
   &__title {
     @include title-sections;
+    margin-bottom: 10px;
   }
 
   &__text{
