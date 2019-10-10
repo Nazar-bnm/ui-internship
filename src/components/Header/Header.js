@@ -18,9 +18,6 @@ const Header = () => {
         <li>
           <Link to="/WhatIsNew">WhatIsNew</Link>
         </li>
-        <li>
-          <Link to="/BrandsAndShippingInfo">Brands</Link>
-        </li>
       </ul>
     </div>
   );

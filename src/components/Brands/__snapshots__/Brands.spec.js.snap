@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Brands /> should match snapshot 1`] = `
+<div
+  className="content"
+>
+  <h3
+    className="title"
+  >
+    Top Brands
+  </h3>
+  <div
+    className="container brand"
+  >
+    <ul
+      className="brand__list"
+    />
+    <hr
+      className="line"
+    />
+    <ul
+      className="shippingInfo__list"
+    >
+      <li
+        className="shippingInfo__list-item"
+        key="1"
+      >
+        <span
+          className="shippingInfo__item-number"
+        >
+          0
+          1
+          .
+        </span>
+        <div
+          className="shippingInfo__item-text__wrapper"
+        >
+          <h5
+            className="shippingInfo__item-text__title"
+          >
+            free shipping
+          </h5>
+          <h6
+            className="shippingInfo__item-text__description"
+          >
+            on all orders over 50$
+          </h6>
+        </div>
+      </li>
+      <li
+        className="shippingInfo__list-item"
+        key="2"
+      >
+        <span
+          className="shippingInfo__item-number"
+        >
+          0
+          2
+          .
+        </span>
+        <div
+          className="shippingInfo__item-text__wrapper"
+        >
+          <h5
+            className="shippingInfo__item-text__title"
+          >
+            money back guarantee
+          </h5>
+          <h6
+            className="shippingInfo__item-text__description"
+          >
+            on all orders
+          </h6>
+        </div>
+      </li>
+      <li
+        className="shippingInfo__list-item"
+        key="3"
+      >
+        <span
+          className="shippingInfo__item-number"
+        >
+          0
+          3
+          .
+        </span>
+        <div
+          className="shippingInfo__item-text__wrapper"
+        >
+          <h5
+            className="shippingInfo__item-text__title"
+          >
+            worldwide delivery
+          </h5>
+          <h6
+            className="shippingInfo__item-text__description"
+          >
+            to over 80 countries
+          </h6>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

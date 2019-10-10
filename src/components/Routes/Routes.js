@@ -8,7 +8,7 @@ import ProductListPage from '../ProductListPage';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
-import BrandsAndShippingInfo from '../Brands/Brands';
+import BrandsAndShippingInfo from '../Brands';
 
 const Routes = () => (
   <Switch>

@@ -26,12 +26,11 @@ class BrandsAndShippingInfo extends Component {
       { number: 1, title: 'free shipping', description: 'on all orders over 50$' },
       { number: 2, title: 'money back guarantee', description: 'on all orders' },
       { number: 3, title: 'worldwide delivery', description: 'to over 80 countries' },
-
     ];
     const { brandsList } = this.state;
     const brands = brandsList.map((brand) => (
       <li key={brand.id} className="col-2 brand__list-item">
-        <img src={brand.photo} className="brand__list-photo"></img>
+        <img src={brand.photo} className="brand__list-photo"/>
       </li>
     ));
     const shippingInfo = shippingData.map((elem) => (
