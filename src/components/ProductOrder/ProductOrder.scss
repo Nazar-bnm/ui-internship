@@ -1,0 +1,90 @@
+@import '../../scss/global_styles';
+
+.product-order {
+  @include flex($direction: column);
+  max-width: 300px;
+  padding: 20px;
+
+  &__heading {
+    margin: 10px 0;
+    font-size: 2rem;
+    font-family: font(secondary);
+    text-transform: uppercase;
+  }
+
+  &__description {
+    padding: 5px 0;
+    color: $dove-gray;
+    font-size: 1rem;
+    font-family: font(primary-light);
+  }
+
+  &__price {
+    margin: 10px 0;
+    font-size: 2rem;
+    font-family: font(primary-light);
+  }
+
+  &__dropdowns-wrapper {
+    @include flex($direction: column, $justify: space-between, $wrap: nowrap);
+    height: 150px;
+    margin: 20px 0;
+  }
+
+  .dropdown {
+    @include flex($justify: space-between, $wrap: nowrap);
+    padding: 10px 20px;
+    border: 1px solid $mercury;
+    border-radius: 20px;
+    background-color: $alabaster;
+    color: $black;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    outline: none;
+  }
+
+  &__buttons-wrapper {
+    @include flex($justify: space-between, $wrap: nowrap);
+  }
+
+  &__cart-btn, &__wishlist-btn {
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid $mercury;
+    background-color: transparent;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $white;
+      border: 1px solid $black;
+      background-color: $black;
+    }
+
+    .icon {
+      height: auto;
+      margin-right: 5px;
+      font-size: 0.7rem;
+    }
+  }
+
+  .dropdown[aria-expanded=true] 
+  .dropdown__items {
+    @include flex($direction: row, $justify: space-evenly, $align: center, $wrap: nowrap);
+    top: 100%;
+    right: 0;
+    height: 45px;
+    border: 1px solid $mercury;
+    z-index: 1;
+
+    &__element {
+      border-bottom: transparent;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $dove-gray;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
