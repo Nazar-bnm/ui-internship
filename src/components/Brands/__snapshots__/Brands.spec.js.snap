@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Brands /> should match snapshot 1`] = `
+<BrandsAndShippingInfo>
+  <div
+    className="content"
+  >
+    <h3
+      className="title"
+    >
+      Top Brands
+    </h3>
+    <div
+      className="container brand"
+    >
+      <ul
+        className="brand__list"
+      />
+    </div>
+  </div>
+</BrandsAndShippingInfo>
+`;
