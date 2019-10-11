@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
-import HttpService from '../../service/HttpService/httpService';
+import propTypes from 'prop-types';
 
 import './WishlistPage.scss';
 import WishlistItem from './WishlistItem';
@@ -8,39 +8,43 @@ import WishlistItem from './WishlistItem';
 const CN = 'wishlist';
 
 class WishlistPage extends Component {
-  state = {
-    items: [],
-  }
+  renderProduct(item, action) {
+    return (
+      <WishlistItem key={item.id} item={item} action={action}/>
+    );
+  };
 
-  async getProducts() {
-    const userAPI = new HttpService();
-    const response = await userAPI.get('http://localhost:4000/wishlist');
-    this.setState({ items: response.data });
-    console.log(this.state.items);
-  }
-
-  componentDidMount() {
-    this.getProducts();
+  renderNoWishlistItems() {
+    return (
+      <div className={`${cx(CN)} ${CN}__empty-page`}>
+        <h2 className={`${CN}__subtitle`}>No items in your wishlist!</h2>
+        <img className={`${CN}__image col-6 col-center"`}
+          alt="no cart items"
+          src="src/assets/img/content/img-no-cartitems.png"/>
+      </div>
+    );
   }
 
   render() {
-    const { items } = this.state;
-    console.log(items);
-    const itemsBlock = items.map((item) => {
-      return <WishlistItem key={item.id} item={item} />;
-    });
-
+    console.log(this.props);
+    const { wishlist, removeFromWishlist } = this.props;
     return (
       <div>
         <div className={`${cx(CN)} content`}>
           <h1 className={`${CN}__title`}>Wishlist</h1>
         </div>
         <div className={`${cx(CN)} content`}>
-          {itemsBlock}
+          {wishlist.length ? wishlist.map((item) => this.renderProduct(item, removeFromWishlist)) :
+            this.renderNoWishlistItems()}
         </div>
       </div>
     );
   };
 }
+
+WishlistPage.propTypes = {
+  wishlist: propTypes.array,
+  removeFromWishlist: propTypes.func,
+};
 
 export default WishlistPage;
