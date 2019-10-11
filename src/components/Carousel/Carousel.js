@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 
 import PropTypes from 'prop-types';
-import scrollTo from './scrollToAnimate';
+import scrollTo from '../../helpers';
 
 import './Carousel.scss';
 export const CN = 'carousel';
@@ -65,14 +65,14 @@ class Carousel extends Component {
   }
 
   checkIfSlidesAllTheWayOver() {
+    const { scrollLeft, clientWidth, scrollWidth } = this.carouselViewport.current;
     // if scrollLeft == 0
     // hide left button
-    const allTHeWayLeftValue = (this.carouselViewport.current.scrollLeft === 0);
+    const allTHeWayLeftValue = (scrollLeft === 0);
 
     // if scrollLeft + viewPortOffset.length === whole viewPort length
     // 9 cards - each 120px: 9 * 210all === whole viewPort length
     // hide the rightScrollButton
-    const { scrollLeft, clientWidth, scrollWidth } = this.carouselViewport.current;
     const allTheWayRightValue = ((scrollLeft + clientWidth) === scrollWidth);
     const { allTheWayLeft, allTheWayRight } = this.state;
 
@@ -93,9 +93,10 @@ class Carousel extends Component {
     const clickedBtn = (e.currentTarget.classList.contains(`${CN}__left-nav`)) ? 'left' :'right';
     const { numOfSlidesToScroll, widthOfSlide } = this.state;
     const carouselViewport = this.carouselViewport.current;
+    const step = numOfSlidesToScroll * widthOfSlide;
     const newPos = clickedBtn === 'left' ?
-      (carouselViewport.scrollLeft - (numOfSlidesToScroll * widthOfSlide)) :
-      (carouselViewport.scrollLeft + (numOfSlidesToScroll * widthOfSlide));
+      (carouselViewport.scrollLeft - (step)) :
+      (carouselViewport.scrollLeft + (step));
     const timeToMoveOneSlide = 200;
     const totalTimetoMove = (numOfSlidesToScroll * timeToMoveOneSlide);
 
@@ -112,9 +113,7 @@ class Carousel extends Component {
   render() {
     const { children } = this.props;
     const { allTheWayLeft, allTheWayRight } = this.state;
-    const navClasses = cx({
-      [`${CN}__nav`]: true,
-    });
+    const navClasses = cx({ [`${CN}__nav`]: true });
     const leftNavClasses = cx({
       [`${CN}__left-nav`]: true,
       [`${CN}__nav-disabled`]: allTheWayLeft,
@@ -125,25 +124,25 @@ class Carousel extends Component {
     }, navClasses);
 
     return (
-      <div className = {`${CN} content`}>
+      <div className = { `${CN} content` }>
         <button
-          onClick={this.handleClick}
-          className={ leftNavClasses }
+          onClick = { this.handleClick }
+          className = { leftNavClasses }
         >
-          <i className={`${CN}__arrow-button chevron left icon`} />
+          <i className = { `${CN}__arrow-button chevron left icon` } />
         </button>
         <div
-          className={`${CN}__viewport`}
-          ref={this.carouselViewport}
+          className = { `${CN}__viewport` }
+          ref = { this.carouselViewport }
           onScroll = { this.onScroll }
         >
-          {children}
+          { children }
         </div>
         <button
-          className={ rightNavClasses }
-          onClick={this.handleClick}
+          className = { rightNavClasses }
+          onClick = { this.handleClick }
         >
-          <i className = {`${CN}__arrow-button chevron right icon`} />
+          <i className = { `${CN}__arrow-button chevron right icon` } />
         </button>
       </div>
     );

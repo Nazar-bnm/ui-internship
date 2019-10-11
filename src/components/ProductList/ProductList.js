@@ -18,17 +18,17 @@ class ProductList extends Component {
 
     const listOfProducts =
     productList &&
-    productList.map( ({ productName, category, images }) => (
+    productList.map(({ productName, category, images }) => (
       <Slide
-        image = {images[0].url[0]}
-        name = {productName}
-        category = {category}
-        key = {productName}
+        image = { images[0].url[0] }
+        name = { productName }
+        category = { category }
+        key = { productName }
       />
     ));
 
     return (
-      <div className = {`${CN} content`}>
+      <div className = { `${CN} content` }>
         <Carousel items = { productList }>
           { listOfProducts }
         </Carousel>
