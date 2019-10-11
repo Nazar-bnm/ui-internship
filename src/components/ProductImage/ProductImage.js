@@ -14,13 +14,13 @@ class ProductImage extends Component {
     };
   }
 
-  clickHandler = (selectedImage) => {
+  clickHandler(selectedImage) {
     this.setState({
       selectedImage,
     });
   }
 
-  renderBigImage = () => {
+  renderBigImage() {
     const { selectedImage } = this.state;
     const { imagesArr } = this.props;
     if (selectedImage === '') {
@@ -30,7 +30,7 @@ class ProductImage extends Component {
     return selectedImage;
   }
 
-  renderSmallImages = (selectedImage) => {
+  renderSmallImages(selectedImage) {
     const { imagesArr } = this.props;
 
     return imagesArr.map((el) => {
