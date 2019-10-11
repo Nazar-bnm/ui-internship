@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 
 import PropTypes from 'prop-types';
-import scrollTo from '../../helpers/carouselHelpers';
+import { scrollTo } from '../../helpers';
 
 import './Carousel.scss';
 export const CN = 'carousel';

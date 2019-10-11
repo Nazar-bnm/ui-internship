@@ -1,3 +1,3 @@
-import carouselHelpers from './helpers';
+import scrollTo from './carouselHelpers';
 
-export default carouselHelpers;
+export { scrollTo };
