@@ -22,6 +22,8 @@ const Routes = () => (
       component={NotFoundPage}
       hideFooter
       hideHeader
+      hideBrands
+      hideShippingInfo
     />
   </Switch>
 );
