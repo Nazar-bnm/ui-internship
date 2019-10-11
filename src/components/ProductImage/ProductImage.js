@@ -26,11 +26,13 @@ class ProductImage extends Component {
     if (selectedImage === '') {
       return imagesArr[0].src;
     }
+
     return selectedImage;
   }
 
   renderSmallImages = (selectedImage) => {
     const { imagesArr } = this.props;
+
     return imagesArr.map((el) => {
       const { src } = el;
       const isSelected = selectedImage === src;
