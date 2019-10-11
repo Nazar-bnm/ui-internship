@@ -4,11 +4,10 @@ import ProductOrder from './ProductOrder';
 import { productOrderParameters } from '../../config/ProductOrderMockups';
 
 describe('<ProductOrder />', () => {
-  const wrapper = shallow(
-    <ProductOrder {...productOrderParameters} />
-  );
-
   test('should match snapshot', () => {
+    const wrapper = shallow(
+      <ProductOrder {...productOrderParameters} />
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });
