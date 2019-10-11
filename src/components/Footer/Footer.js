@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactDetails from './ContactDetails';
 import Linklist from './Linklist';
-import { linkListItems, paymentIcons, linkListItemsTablet } from '../../config/footer';
+import config from '../../../config';
 import JoinUs from '../JoinUs';
 import cx from 'classnames';
 
@@ -10,6 +10,7 @@ import './Footer.scss';
 export const CN = 'footer';
 
 const Footer = () => {
+  const { linkListItems, paymentIcons, linkListItemsTablet } = config;
   const { guide, help } = linkListItems;
 
   const renderIconsList = () => {
