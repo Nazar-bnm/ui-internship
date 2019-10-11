@@ -16,7 +16,7 @@
   }
 
   .container {
-    flex-direction: row;
+    @include flex($direction: row);
   }
 
   .wrapper {
@@ -27,13 +27,16 @@
   .heading {
     color: $white;
     margin: 0 10px;
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-align: center;
   }
 
+  .page-settings {
+    font-size: 0.7rem;
+  }
+
   .navigation-account {
-    display: flex;
-    justify-content: space-between;
+    @include flex($justify: space-between);
     margin: 0;
     width: 250px;
 
@@ -51,6 +54,7 @@
   .dropdown > i {
     margin: 0 3px;
     height: auto;
+    font-size: 1rem;  
   }
 
   .list, 
@@ -61,30 +65,32 @@
   }
 
   &__cart-btn {
-    display: flex;
+    @include flex($align: center);
     position: absolute;
-    top: 5px;
+    top: 0;
     right: 20px;
     color: $white;
     background-color: transparent;
     border-color: transparent;
-    font-size: 1.6rem;
+    font-size: 0.7rem;
 
     &:hover {
       transform: scale(1.1);
     }
+
+    i.icon.cart:before {
+      margin-left: -10px;
+      font-size: 1.3rem;
+    }
   }
 
   &__heading-search-cart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    @include flex($direction: column, $align: center, $justify: space-between, $wrap: nowrap);
 
     & a {
       text-decoration: none;
       width: 100%;
-      font-size: 3rem;
+      font-size: 2rem;
       font-family: font(primary-light);
       text-align: center;
       color: $black;
@@ -92,7 +98,7 @@
   }
 
   .burger-menu__list a {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
 
   &__search-input {
@@ -101,7 +107,7 @@
     margin: 0 10px;
     padding-left: 30px;
     border: none;
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 
   .input {
@@ -112,13 +118,12 @@
     & > i {
       position: absolute;
       left: 10px;
-      font-size: 2rem;
+      font-size: 1.2rem;
     }
   }
 
   &__buttons-container {
-    display: flex;
-    justify-content: space-evenly;
+    @include flex($justify: space-evenly, $wrap: nowrap);
     height: 30px;
     padding-bottom: 10px;
 
@@ -131,7 +136,7 @@
 @media only screen and (min-width: 480px) {
   .header {
     &__heading-search-cart-container {
-      flex-direction: column;
+      @include flex($direction: column, $wrap: nowrap);
     }
 
     &__search-input {
@@ -146,6 +151,7 @@
       width: 100px;
       border: none;
       color: $black;
+      font-size: 1rem;
     }
   }
 }
@@ -168,16 +174,14 @@
     }
 
     &__heading-search-cart-container {
-      flex-direction: row;
+      @include flex($direction: row, $wrap: nowrap);
     }
 
     .list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex($justify: center, $align: center);
       padding: 15px;
       list-style: none;
-      font-size: 1.4rem;
+      font-size: 1rem;
   
       .list__item {
         margin: 0 10px;
@@ -194,11 +198,23 @@
     }
 
     .dropdown:first-child, .heading, .list,.navigation-account {
-      display: flex;
+      @include flex();
+    }
+
+    .page-settings {
+      font-size: 0.5rem;
     }
   }
 
   .burger-menu {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  .header {
+    .page-settings {
+      font-size: 0.7rem;
+    }
   }
 }
