@@ -8,8 +8,9 @@
     position: relative;
 
     &--hovered {
-      height: 306px;
+      height: 300px;
       padding: 50px;
+      transition: 700ms;
     }
 
     &__flag {
@@ -17,7 +18,7 @@
       height: 0;
       border-style: solid;
       border-width: 60px 60px 0 0;
-      border-color: transparent transparent transparent transparent;
+      border-color: transparent;
       position: absolute;
       z-index: 2;
     }
@@ -34,7 +35,7 @@
     }
 
     &__img {
-      max-height: 410px;
+      max-height: 400px;
 
       &--hovered {
         height: 200px;
@@ -60,6 +61,7 @@
       
       .icon:hover {
         color: #ff692b;
+        transition: 0.3s;
       }
     }
 
@@ -77,15 +79,11 @@
     }
   }
   
-  .red {
+  .sale{
     border-color: #c31326 transparent transparent transparent;
   }
   
-  .black {
+  .new {
     border-color: #000000 transparent transparent transparent;
   }
-}
-
-@media (max-width: 800px) {
-  
 }

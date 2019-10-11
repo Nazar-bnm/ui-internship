@@ -48,21 +48,24 @@
       "image": "https://i.dailymail.co.uk/1s/2018/12/15/12/7458890-6498875-image-a-2_1544876240893.jpg",
       "label": "new",
       "title": "Black dress",
-      "price": "99,50$"
+      "price": "99,50$",
+      "sizes": "S - M - L"
     },
     {
       "id": 2,
       "image": "https://i.pinimg.com/564x/99/5d/f3/995df3032c828381332af1dea4e5c590.jpg",
       "label": "sale",
       "title": "Red evening dress",
-      "price": "179.00$"
+      "price": "179.00$",
+      "sizes": "S - M - L"
     },
     {
       "id": 3,
       "image": "https://i.redd.it/grla2qtpa5721.jpg",
       "label": "",
       "title": "Fit & flare dress",
-      "price": "99.00$"
+      "price": "99.00$",
+      "sizes": "S - M - L"
     }
   ]
 }
