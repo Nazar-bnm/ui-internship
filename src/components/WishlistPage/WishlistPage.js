@@ -10,9 +10,9 @@ import './WishlistPage.scss';
 const CN = 'wishlist';
 
 class WishlistPage extends Component {
-  renderProduct(item, action) {
+  renderProduct(item, removeFromWishlist) {
     return (
-      <WishlistItem key={item.id} item={item} action={action}/>
+      <WishlistItem key={item.id} item={item} removeFromWishlist={removeFromWishlist}/>
     );
   };
 
