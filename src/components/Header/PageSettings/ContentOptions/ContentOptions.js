@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from '../../../Dropdown';
-import { options } from '../../../../config/headerMockups';
+import config from '../../../../../config';
 export const CN = 'dropdowns';
 
 const ContentOptions = () => {
+  const { options } = config;
   const { company, currency, language } = options;
 
   return (
