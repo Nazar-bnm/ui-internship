@@ -17,6 +17,7 @@ export const dropdownsForItemListPage = {
     { value: '12', label: '12' },
   ],
 };
+
 export const defaultImages = [
   { src: 'src/assets/img/content/new4.png' },
   { src: 'src/assets/img/content/new2.png' },

@@ -1,0 +1,6 @@
+@import '../../../scss/global_styles';
+
+.items-container {
+  @include flex($justify: space-evenly);
+  width: 100%;
+}

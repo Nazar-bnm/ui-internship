@@ -17,9 +17,22 @@ class Dropdown extends React.Component {
   }
 
   selectOption(e) {
+    const { options } = this.state;
+    const { changeItemsOnPageNum, sortByPrice } = this.props;
     const option = e.target;
+    const selectedID = option.getAttribute('selectednum');
+    const selectedLabel = options[selectedID].label;
+
+    if (changeItemsOnPageNum) {
+      changeItemsOnPageNum(selectedLabel);
+    }
+
+    if (sortByPrice) {
+      sortByPrice(+selectedID);
+    }
+
     this.setState({
-      selectedID: option.getAttribute('selectednum'),
+      selectedID,
     });
   }
 
@@ -70,6 +83,8 @@ Dropdown.propTypes = {
   options: PropTypes.array,
   selected: PropTypes.number,
   className: PropTypes.string,
+  changeItemsOnPageNum: PropTypes.func,
+  sortByPrice: PropTypes.func,
 };
 
 Dropdown.defaultProps = {

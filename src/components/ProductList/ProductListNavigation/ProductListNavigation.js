@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import Dropdown from '../../Dropdown';
 import { CN } from '../ProductList';
 
-const ProductListNavigation = ({ priceOrder, positionOrder, itemNameOrder, itemsOnPage }) => {
+// REWRITE THIS TO LOOP!!!
+
+const ProductListNavigation = ({ priceOrder, positionOrder, itemNameOrder, itemsOnPage, changeItemsOnPageNum, sortByPrice }) => {
   return (
     <div>
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>price</span>
-        <Dropdown options={priceOrder} />
+        <Dropdown options={priceOrder} sortByPrice={sortByPrice}/>
       </div>
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>position</span>
@@ -20,7 +22,7 @@ const ProductListNavigation = ({ priceOrder, positionOrder, itemNameOrder, items
       </div>
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>items on page</span>
-        <Dropdown options={itemsOnPage} />
+        <Dropdown options={itemsOnPage} changeItemsOnPageNum={changeItemsOnPageNum}/>
       </div>
     </div>
   );
@@ -31,6 +33,8 @@ ProductListNavigation.propTypes = {
   positionOrder: PropTypes.array,
   itemNameOrder: PropTypes.array,
   itemsOnPage: PropTypes.array,
+  changeItemsOnPageNum: PropTypes.func,
+  sortByPrice: PropTypes.func,
 };
 
 ProductListNavigation.defaultProps = {
@@ -38,6 +42,7 @@ ProductListNavigation.defaultProps = {
   positionOrder: [],
   itemNameOrder: [],
   itemsOnPage: [],
+  changeItemsOnPageNum: null,
 };
 
 export default ProductListNavigation;
