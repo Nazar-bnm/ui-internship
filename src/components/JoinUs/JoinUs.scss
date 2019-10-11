@@ -16,7 +16,7 @@
   
   &__email-input {
     margin: 0 10px;
-    width: 195px;
+    width: 190px;
     padding-left: 5px;
     padding-right:15px;
     outline: none;
@@ -35,15 +35,27 @@
     outline: none;
     color: inherit;
   }
-}
+
+  .success {
+    border: 1px solid green;
+    border-radius: 1px;
+  }
   
-.success {
-  border: 1px solid green;
-  border-radius: 1px;
+  i.icon {
+    margin: 0;
+    height: 100%;
+    font-size: 1.6rem;
+  }
 }
 
-i.icon {
-  margin: 0;
-  height: 100%;
-  font-size: 1.6rem;
+@include media-for(mobile-portrait) {
+  .join-us {
+    &__title {
+      display: none;
+    }
+
+    &__email-input{
+      width: 250px;
+    }
+  }
 }

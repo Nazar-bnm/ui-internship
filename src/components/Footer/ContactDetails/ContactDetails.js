@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { icons } from '../../../config/footer';
+import config from '../../../../config';
 
 import './ContactDetails.scss';
 
 const CN = 'contact-block';
 
 const ContactDetails = ({ title }) => {
+  const { icons } = config;
   return (
     <div className={`${CN}`}>
       <div className={`${CN}__title`}>

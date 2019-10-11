@@ -5,10 +5,9 @@
 @import './variables.scss';
 @import './mixins';
 @import './gridsystem';
-@import './media.scss';
 @import './breakpoints';
 
 html {
     font-size: 16px;
-    font-family: 'Nunito-Regular';
+    font-family: font(secondary);
   }

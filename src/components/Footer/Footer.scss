@@ -19,6 +19,10 @@
 
   &__title {
     @include title-sections;
+
+    &--main {
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
