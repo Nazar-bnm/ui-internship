@@ -29,6 +29,7 @@ class WishlistPage extends Component {
 
   render() {
     const { wishlist, removeFromWishlist } = this.props;
+
     return (
       <div>
         <div className={`${cx(CN)} content`}>
