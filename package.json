@@ -21,7 +21,7 @@
     "lint": "./node_modules/.bin/eslint src/***/**/*.js",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "mock:api": "json-server --watch ./src/mockedData/db.json --port 4000"
+    "mock:api": "json-server --watch ./src/mockedDataAPI/db.json --port 4000"
   },
   "husky": {
     "hooks": {
@@ -40,6 +40,7 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@webpack-cli/init": "^0.2.2",
+    "axios-mock-adapter": "^1.17.0",
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0",
     "css-loader": "^3.2.0",
@@ -54,7 +55,9 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.5",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "jest-transform-stub": "^2.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
@@ -83,6 +86,7 @@
     "react-router": "^5.1.0",
     "react-router-dom": "^5.1.0",
     "react-scripts": "^3.1.2",
+    "react-transition-group": "^4.3.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "rest": "^2.0.0"
