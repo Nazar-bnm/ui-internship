@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductImage /> should match snapshot 1`] = `
+<div
+  className="product-image__container"
+>
+  <figure
+    className="product-image__big-image-container"
+    onClick={[Function]}
+  >
+    <img
+      className="product-image"
+      src="src/assets/img/content/new4.png"
+    />
+  </figure>
+  <div
+    className="product-image__small-images-container"
+  >
+    <figure
+      className="product-image__small-image"
+      key="src/assets/img/content/new4.png"
+      onClick={[Function]}
+    >
+      <img
+        className="product-image"
+        src="src/assets/img/content/new4.png"
+      />
+      <div
+        className="product-image__image-on-hover"
+      />
+    </figure>
+    <figure
+      className="product-image__small-image"
+      key="src/assets/img/content/new2.png"
+      onClick={[Function]}
+    >
+      <img
+        className="product-image"
+        src="src/assets/img/content/new2.png"
+      />
+      <div
+        className="product-image__image-on-hover"
+      />
+    </figure>
+    <figure
+      className="product-image__small-image"
+      key="src/assets/img/content/new3.png"
+      onClick={[Function]}
+    >
+      <img
+        className="product-image"
+        src="src/assets/img/content/new3.png"
+      />
+      <div
+        className="product-image__image-on-hover"
+      />
+    </figure>
+    <figure
+      className="product-image__small-image"
+      key="src/assets/img/content/new1.png"
+      onClick={[Function]}
+    >
+      <img
+        className="product-image"
+        src="src/assets/img/content/new1.png"
+      />
+      <div
+        className="product-image__image-on-hover"
+      />
+    </figure>
+  </div>
+</div>
+`;
