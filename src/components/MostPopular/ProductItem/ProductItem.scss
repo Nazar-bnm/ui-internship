@@ -1,0 +1,89 @@
+@import '../../../scss/global_styles';
+@import '../../../scss/styles';
+
+.product {
+  @include flex(column, center, center);
+
+  &__img-wrapper {
+    position: relative;
+
+    &--hovered {
+      height: 300px;
+      padding: 50px;
+      transition: 700ms;
+    }
+
+    &__flag {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 60px 60px 0 0;
+      border-color: transparent;
+      position: absolute;
+      z-index: 2;
+    }
+
+    &__labels {
+      font-family: font(secondary);
+      font-size: 0.8rem;
+      position: absolute;
+      z-index: 3;
+      top: 10px;
+      left: 3px;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    &__img {
+      max-height: 400px;
+
+      &--hovered {
+        height: 200px;
+      }
+    }
+  }
+  
+  &__title-wrapper {
+    @include flex(column, center, center);
+       
+    .sizes {
+      margin: 20px;
+    }
+
+    .icons {
+      border-top: 3px solid whitesmoke;
+
+      .icon {
+        font-size: 1.5rem;
+        justify-content: center;
+        margin: 20px;
+      }
+      
+      .icon:hover {
+        color: #ff692b;
+        transition: 0.3s;
+      }
+    }
+
+    &__title {
+      font-family: font(secondary);
+
+      &--hovered {
+        color: #ff692b;
+      }
+    }
+
+    &__price {
+      font-family: font(secondary-italic);
+      text-align: center;
+    }
+  }
+  
+  .sale{
+    border-color: #c31326 transparent transparent transparent;
+  }
+  
+  .new {
+    border-color: #000000 transparent transparent transparent;
+  }
+}
