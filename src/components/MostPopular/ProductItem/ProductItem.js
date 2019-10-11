@@ -60,12 +60,13 @@ const ProductItem = ({ product }) => {
 };
 
 ProductItem.propTypes = {
-  product: PropTypes.object,
-  image: PropTypes.string,
-  label: PropTypes.string,
-  title: PropTypes.string,
-  price: PropTypes.string,
-  sizes: PropTypes.string,
+  product: PropTypes.shape({
+    image: PropTypes.string,
+    label: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.string,
+    sizes: PropTypes.string,
+  }),
 };
 
 export default ProductItem;
