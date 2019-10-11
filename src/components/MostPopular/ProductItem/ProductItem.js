@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import './ProductItem.scss';
 import cx from 'classnames';
+
+import './ProductItem.scss';
 
 const CN = 'product';
 const ProductItem = ({ product }) => {
@@ -60,6 +61,11 @@ const ProductItem = ({ product }) => {
 
 ProductItem.propTypes = {
   product: PropTypes.object,
+  image: PropTypes.string,
+  label: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.string,
+  sizes: PropTypes.string,
 };
 
 export default ProductItem;

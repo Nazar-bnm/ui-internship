@@ -28,6 +28,7 @@ class MostPopular extends Component {
 
   renderProducts() {
     const { products } = this.state;
+
     return products.map((product) => (
       <ProductItem key={product.id} product={product} />
     ));
