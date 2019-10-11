@@ -1,28 +1,38 @@
 import React from 'react';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 import './AccordionItem.scss';
 
 const CN = 'accordion-item';
 
-const accordionItem = ({ type, onClick, hide, className }) => {
+const accordionItem = ({ hide, onClick, title, description }) => {
   return (
     <div className={CN}>
-      <div className={`${CN}-header`}>
-        <h4>accordion-item</h4>
-        <span onClick={onClick}>
-          <i className={cx('angle', type, 'icon')} />
-        </span>
+      <div className={cx(`${CN}-header`, { [`${CN}-header--active`]: !hide })} onClick={onClick}>
+        <h4>{title}</h4>
+        <i className={cx('caret', 'right', 'icon', { [`${CN}-down`]: !hide } )} />
       </div>
-      <div className={cx(`${CN}-description`, className)}>
+      <div className={cx({ [`${CN}-hide`]: hide, [`${CN}-show`]: !hide })}>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A quasi
-          blanditiis quis hic! A, vero facilis ratione molestiae provident
-          reiciendis perspiciatis culpa, cum neque architecto velit, dolore
-          dolorum consequuntur ducimus.
+          {description}
         </p>
       </div>
     </div>
   );
+};
+
+accordionItem.propTypes = {
+  hide: PropTypes.bool,
+  onClick: PropTypes.func,
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
+
+accordionItem.defaultProps = {
+  hide: true,
+  onClick: () => {},
+  title: '',
+  description: '',
 };
 
 export default accordionItem;

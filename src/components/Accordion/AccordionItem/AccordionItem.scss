@@ -1,22 +1,78 @@
 @import '../../../scss/global_styles';
 
 .accordion-item {
-  width: 300px;
   font-family: font(secondary);
 
   &-header {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: font(secondary);
+    font: 0.9rem font(secondary);
     text-transform: uppercase;
     border-top: 1px solid $silver-chalice;
+    padding: 1rem 0;
+    transition: color linear 0.5s;
+
+
+    &:hover,
+    &:active,
+    &--active {
+      color: $silver-chalice;
+    }
   }
 
-  &-description {
+  i.icon {
+    transition: transform linear 0.5s;
+    margin: 0;
+  }
+
+  &-down {
+    transform: rotate(90deg) !important;
+    transition: all linear 0.5s;
+  }
+
+  &-hide {
+    overflow-y: scroll;
     height: 0;
-    transform: scale(0);
-
-
+    transition: all linear 0.5s;
   }
+
+  &-show {
+    transition: all linear 0.5s;
+    height: 100px;
+    overflow-y: scroll;
+  }
+
+    &-show,
+    &-hide {
+&::-webkit-scrollbar {
+	width: 5px;
+
+}
+
+
+/**  STYLE 11 */
+&::-webkit-scrollbar-track {
+  border-radius: 10px;
+  border: 1px solid $silver-chalice;
+  background-color: $silver-chalice;
+}
+
+&::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $white;
+  border: 1px solid $silver-chalice;
+}
+
+&::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+&::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+  }
+
+  
 }
