@@ -44,6 +44,7 @@
     font-size: 0.8rem;
 
     &__items__element, .dropdown[aria-expanded=true] .dropdown__items__element {
+      background-color: $white;
       z-index: 1;
     }
   }
