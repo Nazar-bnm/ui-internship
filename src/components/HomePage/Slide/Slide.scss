@@ -1,0 +1,54 @@
+@import '../../../scss/global_styles';
+
+.slide-info {
+  width: 44%;
+  padding: 1rem;
+  background-color: $pale-grey;
+  text-align: center;
+
+  &-title {
+    font: 0.8rem font(primary-light);
+    text-transform: uppercase;
+  }
+
+  &-description {
+    margin: 0.5rem 0 1.5rem;
+    font: 2.5rem font(secondary);
+    font-variant: small-caps;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  &-button {
+    transition: transform 0.5s linear;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 15px;
+    background: $black;
+    cursor: pointer;
+    font: 0.7rem font(primary-light);
+    text-transform: uppercase;
+    color: $white;
+
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@include media-for(tablet) {
+  .slide-info {
+    width: 70%;
+  }
+}
+
+@include media-for(mobile-landscape) {
+  .slide-info {
+    width: 80%;
+
+    &-description {
+      font-size: 1.5rem;
+    }
+  }
+}

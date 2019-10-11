@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
+<div
+  className="slideshow"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <arrowButton
+    className="slideshow__arrow-button"
+    onClick={[Function]}
+    type="left"
+  />
+  <arrowButton
+    className="slideshow__arrow-button"
+    onClick={[Function]}
+    type="right"
+  />
+  <div
+    className="slideshow-slides transition transitionCarousel"
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "transform": "translateX(-16.666666666666668%)",
+      }
+    }
+  >
+    <SlideContainer
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="lastClone"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+      <Slide
+        buttonName="find a perfect outfit"
+        className=""
+        description="a new wave"
+        title="new collection"
+      />
+    </SlideContainer>
+    <SlideContainer
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="1"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <Slide
+        buttonName="discover the editorial"
+        className=""
+        description="Special autumn edition"
+        title="new collection"
+      />
+    </SlideContainer>
+    <SlideContainer
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="2"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <Slide
+        buttonName="find a perfect outfit"
+        className=""
+        description="a long journey"
+        title="new collection"
+      />
+    </SlideContainer>
+    <SlideContainer
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="3"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <Slide
+        buttonName="start shopping now"
+        className=""
+        description="a new look"
+        title="sales"
+      />
+    </SlideContainer>
+    <SlideContainer
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="4"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+       
+      <Slide
+        buttonName="find a perfect outfit"
+        className=""
+        description="a new wave"
+        title="new collection"
+      />
+    </SlideContainer>
+    <SlideContainer
+      animation=""
+      bgImage={
+        Object {
+          "process": [Function],
+        }
+      }
+      key="firstClone"
+      onAnimationEnd={[Function]}
+      style={Object {}}
+    >
+      <Slide
+        buttonName="discover the editorial"
+        className=""
+        description="Special autumn edition"
+        title="new collection"
+      />
+    </SlideContainer>
+  </div>
+  <div
+    className="slideshow-pagination"
+  >
+    <div
+      className="slideshow-pagination__item slideshow-pagination__item--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="slideshow-pagination__item"
+      key="1"
+      onClick={[Function]}
+    />
+    <div
+      className="slideshow-pagination__item"
+      key="2"
+      onClick={[Function]}
+    />
+    <div
+      className="slideshow-pagination__item"
+      key="3"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

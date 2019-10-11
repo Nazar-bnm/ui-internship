@@ -1,0 +1,18 @@
+@import '../../../../scss/global_styles';
+
+i.arrow-button__icon {
+  opacity: 0.4;
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: $emperor;
+  cursor: pointer;
+  font-size: 2rem;
+  color: $alto;
+  
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
+}
