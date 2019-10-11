@@ -32,12 +32,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .brand {
-    &__list {
-      &-item {
-        padding: 0 10px;
-      }
-    }
+  .brand__list-item {
+    padding: 0 10px;
   }
 }
 

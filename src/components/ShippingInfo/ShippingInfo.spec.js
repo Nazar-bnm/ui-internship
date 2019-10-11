@@ -11,11 +11,6 @@ describe('<ShippingInfo />', () => {
     );
   });
 
-  test('renders', () => {
-    wrapper = shallow(<ShippingInfo />);
-    expect(wrapper.exists()).toBe(true);
-  });
-
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
