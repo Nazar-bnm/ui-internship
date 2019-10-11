@@ -9,6 +9,7 @@ import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
 import WishListPageContainer from '../WishlistPage/WishlistPageContainer';
+import MostPopular from '../MostPopular';
 
 const Routes = () => (
   <Switch>
@@ -19,11 +20,14 @@ const Routes = () => (
     <DefaultLayout path="/counter" component={CounterContainer} />
     <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
     <DefaultLayout path="/wishlist" component={WishListPageContainer} />
+    <DefaultLayout path="/MostPopular" component={MostPopular} />
     <DefaultLayout
       to="/404"
       component={NotFoundPage}
       hideFooter
       hideHeader
+      hideBrands
+      hideShippingInfo
     />
   </Switch>
 );

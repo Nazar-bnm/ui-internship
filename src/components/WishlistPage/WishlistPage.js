@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import propTypes from 'prop-types';
 
@@ -6,17 +6,16 @@ import WishlistItem from './WishlistItem';
 
 import './WishlistPage.scss';
 
-
 const CN = 'wishlist';
 
-class WishlistPage extends Component {
-  renderProduct(item, removeFromWishlist) {
+const WishlistPage =({ wishlist, removeFromWishlist }) => {
+  const renderProduct = (item, removeFromWishlist) => {
     return (
       <WishlistItem key={item.id} item={item} removeFromWishlist={removeFromWishlist}/>
     );
   };
 
-  renderNoWishlistItems() {
+  const renderNoWishlistItems = () => {
     return (
       <div className={`${cx(CN)} ${CN}__empty-page`}>
         <h2 className={`${CN}__subtitle`}>No items in your wishlist!</h2>
@@ -25,24 +24,20 @@ class WishlistPage extends Component {
           src="src/assets/img/content/img-no-cartitems.png"/>
       </div>
     );
-  }
-
-  render() {
-    const { wishlist, removeFromWishlist } = this.props;
-
-    return (
-      <div>
-        <div className={`${cx(CN)} content`}>
-          <h1 className={`${CN}__title`}>Wishlist</h1>
-        </div>
-        <div className={`${cx(CN)} content`}>
-          {wishlist.length ? wishlist.map((item) => this.renderProduct(item, removeFromWishlist)) :
-            this.renderNoWishlistItems()}
-        </div>
-      </div>
-    );
   };
-}
+
+  return (
+    <div>
+      <div className={`${cx(CN)} content`}>
+        <h1 className={`${CN}__title`}>Wishlist</h1>
+      </div>
+      <div className={`${cx(CN)} content`}>
+        {wishlist.length ? wishlist.map((item) => renderProduct(item, removeFromWishlist)) :
+          renderNoWishlistItems()}
+      </div>
+    </div>
+  );
+};
 
 WishlistPage.propTypes = {
   wishlist: propTypes.array,
