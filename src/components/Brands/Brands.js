@@ -29,20 +29,23 @@ class BrandsAndShippingInfo extends Component {
     this.downloadBrands();
   }
 
-  render() {
-    const { brandsList } = this.state;
-    const brands = brandsList.map((brand) => (
+  renderBrands(brands) {
+    return brands.map((brand) => (
       <li key={brand.id} className={`col-2 ${CN}__list-item`}>
         <img src={brand.photo} className={`${CN}__list-photo`}/>
       </li>
     ));
+  }
+
+  render() {
+    const { brandsList } = this.state;
 
     return (
       <div className="content">
         <h3 className="title">Top Brands</h3>
         <div className={`container ${cx(CN)}`}>
           <ul className={`${CN}__list`}>
-            {brands}
+            {this.renderBrands(brandsList)}
           </ul>
         </div>
       </div>

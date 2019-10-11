@@ -9,12 +9,12 @@ import './ShippingInfo.scss';
 export const CN = 'shippingInfo';
 
 const ShippingInfo = () => {
-  const shippingInfo = shippingData.map((elem) => (
-    <li key={elem.number} className={`${CN}__list-item`}>
-      <span className={`${CN}__item-number`}>0{elem.number}.</span>
+  const shippingInfo = shippingData.map( ({ number, title, description }) => (
+    <li key={number} className={`${CN}__list-item`}>
+      <span className={`${CN}__item-number`}>0{number}.</span>
       <div className={`${CN}__item-text__wrapper`}>
-        <h5 className={`${CN}__item-text__title`}>{elem.title}</h5>
-        <h6 className={`${CN}__item-text__description`}>{elem.description}</h6>
+        <h5 className={`${CN}__item-text__title`}>{title}</h5>
+        <h6 className={`${CN}__item-text__description`}>{description}</h6>
       </div>
     </li>
   ));
