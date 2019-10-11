@@ -10,12 +10,11 @@ const accordionItem = ({ hide, onClick, title, description }) => {
     <div className={CN}>
       <div className={cx(`${CN}-header`, { [`${CN}-header--active`]: !hide })} onClick={onClick}>
         <h4>{title}</h4>
-        <i className={cx('caret', 'right', 'icon', { [`${CN}-down`]: !hide } )} />
+        <i className={cx('caret', 'right', 'icon', { [`${CN}__icon-down`]: !hide })} />
       </div>
-      <div className={cx({ [`${CN}-hide`]: hide, [`${CN}-show`]: !hide })}>
-        <p>
-          {description}
-        </p>
+
+      <div className={cx({ [`${CN}--hide`]: hide, [`${CN}--show`]: !hide })}>
+        <p>{description}</p>
       </div>
     </div>
   );

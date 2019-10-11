@@ -1,28 +1,10 @@
 /* eslint-disable no-invalid-this */
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ContactDetails from '../Footer/ContactDetails';
 import './Accordion.scss';
 import AccordionItem from './AccordionItem';
-
-const accordionItemsData = [
-  {
-    id: 1,
-    title: 'description',
-    description:
-      ' Architecto, earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!',
-  },
-  {
-    id: 2,
-    title: 'additional info',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vel sit possimus laborum error eius ',
-  },
-  {
-    id: 3,
-    title: 'tags',
-    description: 'Earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!',
-  },
-];
 
 const CN = 'accordion';
 
@@ -34,6 +16,7 @@ class Accordion extends Component {
 
   clickHandler = (index) => {
     const { currentIndex } = this.state;
+
     index === currentIndex ?
       this.setState(({ hide }) => {
         return { hide: !hide };
@@ -43,9 +26,12 @@ class Accordion extends Component {
         currentIndex: index,
       });
   };
+
   render() {
     const { hide, currentIndex } = this.state;
-    const accordionItems = accordionItemsData.map(({ id, title, description }, index) => (
+    const { data } = this.props;
+
+    const accordionItems = data.map(({ id, title, description }, index) => (
       <AccordionItem
         key={id}
         title={title}
@@ -54,6 +40,7 @@ class Accordion extends Component {
         onClick={() => this.clickHandler(index)}
       />
     ));
+
     return (
       <div className={CN}>
         {accordionItems}
@@ -62,5 +49,13 @@ class Accordion extends Component {
     );
   }
 }
+
+Accordion.propTypes = {
+  data: PropTypes.array,
+};
+
+Accordion.defaultProps = {
+  data: {},
+};
 
 export default Accordion;

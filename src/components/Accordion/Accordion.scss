@@ -9,12 +9,12 @@
 		&__title {
 			color: $black;
 		}
-
+		
 		&__item {
+			transition: background-color linear 0.5s;
+			padding: 3px;
 			background-color: $black;
 			color: $white;
-			padding: 3px;
-			transition: background-color linear 0.5s;
 
 			&:hover,
 			&:active {
@@ -27,8 +27,8 @@
 		}
 
 		i.icon {
-			color: $white;
 			font-size: 1rem;
+			color: $white;
 		}
 	}
 }

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AccordionItem /> should match snapshot <AccordionItem /> 1`] = `
+<div
+  className="accordion-item"
+>
+  <div
+    className="accordion-item-header"
+    onClick={[Function]}
+  >
+    <h4>
+      hello
+    </h4>
+    <i
+      className="caret right icon"
+    />
+  </div>
+  <div
+    className="accordion-item--hide"
+  >
+    <p>
+      Architecto, earum temporibus quidem ex eaque unde harum sit, deleniti tempore
+    </p>
+  </div>
+</div>
+`;
