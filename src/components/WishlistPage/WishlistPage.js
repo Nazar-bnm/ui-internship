@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import propTypes from 'prop-types';
 
-import './WishlistPage.scss';
 import WishlistItem from './WishlistItem';
+
+import './WishlistPage.scss';
+
 
 const CN = 'wishlist';
 
@@ -26,7 +28,6 @@ class WishlistPage extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { wishlist, removeFromWishlist } = this.props;
     return (
       <div>

@@ -13,7 +13,6 @@ class WishlistItem extends Component {
   };
 
   render() {
-    console.log(this.props);
     const { item } = this.props;
     const { photo, title, collection, category } = item;
     return (

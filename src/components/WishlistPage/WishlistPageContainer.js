@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import WishlistPage from './WishlistPage';
+
 import * as actions from '../../actions/actionsWishlist';
+import WishlistPage from './WishlistPage';
 
 function mapStateToProps(state) {
   return { wishlist: state.reducerWishlist.wishlist };
