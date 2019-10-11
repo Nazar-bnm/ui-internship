@@ -1,9 +1,9 @@
 import React from 'react';
-import MainPage from '../MainPage';
+import ProductList from '../ProductList';
+
 const HomePage = () => (
   <div>
-    <MainPage />
-    <h2>HomePage</h2>
+    <ProductList />
   </div>
 );
 

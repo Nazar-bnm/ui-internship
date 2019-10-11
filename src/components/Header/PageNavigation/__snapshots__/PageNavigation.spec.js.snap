@@ -6,7 +6,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
 >
   <li
     className="list__item"
-    key="0"
+    key="women"
     value="women"
   >
     <Link
@@ -17,7 +17,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
   </li>
   <li
     className="list__item"
-    key="1"
+    key="men"
     value="men"
   >
     <Link
@@ -28,7 +28,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
   </li>
   <li
     className="list__item"
-    key="2"
+    key="kids"
     value="kids"
   >
     <Link
@@ -39,7 +39,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
   </li>
   <li
     className="list__item"
-    key="3"
+    key="accs"
     value="accs"
   >
     <Link
@@ -50,7 +50,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
   </li>
   <li
     className="list__item"
-    key="4"
+    key="new"
     value="new"
   >
     <Link
@@ -61,7 +61,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
   </li>
   <li
     className="list__item"
-    key="5"
+    key="brands"
     value="brands"
   >
     <Link
@@ -72,7 +72,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
   </li>
   <li
     className="list__item"
-    key="6"
+    key="sale"
     value="sale"
   >
     <Link
@@ -83,7 +83,7 @@ exports[`<PageNavigation /> should match snapshot 1`] = `
   </li>
   <li
     className="list__item"
-    key="7"
+    key="blog"
     value="blog"
   >
     <Link
