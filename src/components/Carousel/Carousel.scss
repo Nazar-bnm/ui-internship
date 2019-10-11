@@ -1,0 +1,66 @@
+@import "../../scss/global_styles";
+
+.carousel {
+  position: relative;
+  display: flex;
+  margin: 30px;
+  width: fit-content;
+
+  &__viewport {
+    z-index: 1;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto; 
+    width: fit-content;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none; // Firefox
+  }
+
+  &__viewport::-webkit-scrollbar {
+    display: none;  // Safari and Chrome
+  }
+
+  &__nav {
+    z-index: 3;
+    position: absolute;
+    display: flex;
+    width: 20px;
+    height: 35px;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    // background-color: grey;
+    opacity: .8;
+    transition: opacity .2s ease-in-out;
+  }
+
+  &__left-nav {
+    left: 5px;
+    top: 40%;
+  }
+
+  &__right-nav {
+    right: 5px;
+    top: 40%;
+  }
+
+  &__nav:hover {
+    opacity: 1;
+  }
+
+  &__nav-disabled {
+    z-index: 0;
+    opacity: 0;
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+    transition: .5;
+  }
+
+  i.icon {
+    font-size: 1.5rem;
+  }
+}
