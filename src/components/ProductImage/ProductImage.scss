@@ -1,0 +1,59 @@
+@import "../../scss/global_styles";
+
+.product-image {
+  &__container {
+    display: grid;
+    grid-template-rows: 0fr 0.4fr;
+    grid-template-columns: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding: 0 8vw;
+    width: 60vw;
+  }
+
+  &__big-image-container {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 10px;
+  }
+
+  &__small-images-container {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__small-image {
+    position: relative;
+    display: flex;
+    margin: 0 10px;
+  }
+
+  & {
+    min-width: 100px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__image-on-hover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(244, 162, 54, 0.7);
+    overflow:hidden;
+  
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__selected-image {
+    border: 5px solid rgba(244, 162, 54, 1);;
+  }
+}
