@@ -2,7 +2,6 @@
 
 .product-list {
   @include flex($direction: column, $justify: space-between, $wrap: nowrap);
-  width: 100%;
   height: 500px;
   padding: 20px 2vw;
   background-color: pink;
