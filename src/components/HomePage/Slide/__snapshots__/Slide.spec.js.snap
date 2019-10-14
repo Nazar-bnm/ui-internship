@@ -5,17 +5,17 @@ exports[`<Slide /> should make a snapshot of Slide component 1`] = `
   className="slide-info"
 >
   <h1
-    className="slide-info-title"
+    className="slide-info__title"
   >
     new collection
   </h1>
   <p
-    className="slide-info-description"
+    className="slide-info__description"
   >
     Special autumn edition
   </p>
   <button
-    className="slide-info-button"
+    className="slide-info__button"
   >
     discover the editorial
   </button>

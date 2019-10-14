@@ -2,11 +2,15 @@
 
 exports[`<SlideContainer /> should make a snapshot of SlideContainer component 1`] = `
 <div
-  className="slide-container"
-  style={Object {}}
+  className="slide__container"
+  style={
+    Object {
+      "transform": "none",
+    }
+  }
 >
   <div
-    className="slide-wrapper some animation name"
+    className="slide__wrapper some animation name"
     onAnimationEnd={[Function]}
     style={
       Object {

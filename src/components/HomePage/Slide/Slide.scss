@@ -6,12 +6,12 @@
   background-color: $pale-grey;
   text-align: center;
 
-  &-title {
+  &__title {
     font: 0.8rem font(primary-light);
     text-transform: uppercase;
   }
 
-  &-description {
+  &__description {
     margin: 0.5rem 0 1.5rem;
     font: 2.5rem font(secondary);
     font-variant: small-caps;
@@ -19,7 +19,7 @@
     text-transform: capitalize;
   }
 
-  &-button {
+  &__button {
     transition: transform 0.5s linear;
     border: none;
     border-radius: 2px;
@@ -47,7 +47,7 @@
   .slide-info {
     width: 80%;
 
-    &-description {
+    &__description {
       font-size: 1.5rem;
     }
   }

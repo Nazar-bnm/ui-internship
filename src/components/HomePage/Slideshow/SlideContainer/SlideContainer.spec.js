@@ -25,7 +25,7 @@ describe('<SlideContainer />', () => {
       </SlideContainer>,
     );
     wrapper
-      .find('.slide-wrapper')
+      .find('.slide__wrapper')
       .first()
       .simulate('animationend');
     expect(mockedAnimationEndHandler.mock.calls.length).toBe(1);

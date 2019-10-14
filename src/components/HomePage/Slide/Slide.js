@@ -5,17 +5,15 @@ import './Slide.scss';
 
 const CN = 'slide-info';
 
-const Slide = ({ title, description, buttonName, className }) => {
-  return (
-    <div className={cx(CN, className)}>
-      <h1 className={`${CN}-title`} >{title}</h1>
-      <p className={`${CN}-description`}>{description}</p>
-      <button className={`${CN}-button`}>
-        {buttonName}
-      </button>
-    </div>
-  );
-};
+const Slide = ({ title, description, buttonName, className }) => (
+  <div className={cx(CN, className)}>
+    <h1 className={`${CN}__title`} >{title}</h1>
+    <p className={`${CN}__description`}>{description}</p>
+    <button className={`${CN}__button`}>
+      {buttonName}
+    </button>
+  </div>
+);
 
 Slide.propTypes = {
   title: PropTypes.string,

@@ -1,12 +1,12 @@
 @import '../../../../scss/global_styles';
 
 .slide {
-  &-container {
+  &__container {
     width: 100vw;
     height: 100%;
   }
 
-  &-wrapper {
+  &__wrapper {
     @include flex($direction: column, $justify: center, $align: center);
     width: 100%;
     height: 100%;
@@ -72,7 +72,7 @@
 
 @include media-for(mobile-landscape) {
   .slide {
-    &-wrapper {
+    &__wrapper {
       background-position: 60% top;
     }
   }

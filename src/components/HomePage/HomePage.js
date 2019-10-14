@@ -4,27 +4,27 @@ import Slide from './Slide';
 import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
 import { slideshowData } from './Slideshow/SlideshowDate';
 
-const slidesData = [];
+const HomePage = () => {
+  const slidesData = slideshowData.map((el) => {
+    return {
+      id: el.id,
+      img: el.img,
+      component: (
+        <Slide
+          title={el.title}
+          description={el.description}
+          buttonName={el.buttonName}
+        />
+      ),
+    };
+  });
 
-slideshowData.forEach((el, index) => {
-  slidesData[index] = {
-    id: el.id,
-    img: el.img,
-    component: (
-      <Slide
-        title={el.title}
-        description={el.description}
-        buttonName={el.buttonName}
-      />
-    ),
-  };
-});
-
-const HomePage = () => (
-  <div>
-    <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
-  </div>
-);
+  return (
+    <div>
+      <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
+    </div>
+  );
+};
 
 export default HomePage;
 

@@ -34,7 +34,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       }
       key="lastClone"
       onAnimationEnd={[Function]}
-      style={Object {}}
+      transform="none"
     >
       <Slide
         buttonName="find a perfect outfit"
@@ -52,9 +52,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       }
       key="1"
       onAnimationEnd={[Function]}
-      style={Object {}}
+      transform="none"
     >
-       
       <Slide
         buttonName="discover the editorial"
         className=""
@@ -71,9 +70,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       }
       key="2"
       onAnimationEnd={[Function]}
-      style={Object {}}
+      transform="none"
     >
-       
       <Slide
         buttonName="find a perfect outfit"
         className=""
@@ -90,9 +88,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       }
       key="3"
       onAnimationEnd={[Function]}
-      style={Object {}}
+      transform="none"
     >
-       
       <Slide
         buttonName="start shopping now"
         className=""
@@ -109,9 +106,8 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       }
       key="4"
       onAnimationEnd={[Function]}
-      style={Object {}}
+      transform="none"
     >
-       
       <Slide
         buttonName="find a perfect outfit"
         className=""
@@ -128,7 +124,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
       }
       key="firstClone"
       onAnimationEnd={[Function]}
-      style={Object {}}
+      transform="none"
     >
       <Slide
         buttonName="discover the editorial"
@@ -143,11 +139,6 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
   >
     <div
       className="slideshow-pagination__item slideshow-pagination__item--active"
-      key="0"
-      onClick={[Function]}
-    />
-    <div
-      className="slideshow-pagination__item"
       key="1"
       onClick={[Function]}
     />
@@ -159,6 +150,11 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
     <div
       className="slideshow-pagination__item"
       key="3"
+      onClick={[Function]}
+    />
+    <div
+      className="slideshow-pagination__item"
+      key="4"
       onClick={[Function]}
     />
   </div>

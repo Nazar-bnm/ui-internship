@@ -1,11 +1,10 @@
-/* eslint-disable no-invalid-this */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import ArrowButton from './ArrowButton';
 import Slide from './SlideContainer';
-import './Slideshow.scss';
 import { ANIMATION_NAMES, ARROW_BUTTON_TYPES } from '../../../constants/SlideshowConst';
+import './Slideshow.scss';
 
 const { CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT } = ANIMATION_NAMES;
 const { LEFT, RIGHT } = ARROW_BUTTON_TYPES;
@@ -21,15 +20,28 @@ class Slideshow extends Component {
     isTransform: false,
   };
 
-  isAnimationZoom = () => {
+  sliderInterval = null;
+
+  componentDidMount() {
+    this.startSlideShow();
+  }
+
+  componentDidUpdate(prevProps, { autoPlay: prevStateAutoPlay }) {
+    const { autoPlay } = this.state;
+
+    if (autoPlay && autoPlay !== prevStateAutoPlay) {
+      this.startSlideShow();
+    }
+  }
+
+  isAnimationZoom() {
     const { animation } = this.props;
 
     return animation === ZOOM_IN || animation === ZOOM_OUT;
   };
 
-  sliderInterval = null;
 
-  updateIndex = (number, newIndex) => {
+  updateIndex(number, newIndex) {
     this.setState(({ index: prevIndex }) => {
       return {
         index: newIndex !== undefined ? newIndex : prevIndex + number,
@@ -41,21 +53,21 @@ class Slideshow extends Component {
     });
   };
 
-  nextSlide = () => {
+  nextSlide() {
     const { index } = this.state;
     const { slideData } = this.props;
 
-    index != slideData.length && this.updateIndex(1);
+    index !== slideData.length && this.updateIndex(1);
   };
 
-  prevSlide = () => {
+  prevSlide() {
     const { index } = this.state;
     const indexOfLastCloneSlide = -1;
 
-    index != indexOfLastCloneSlide && this.updateIndex(-1);
+    index !== indexOfLastCloneSlide && this.updateIndex(-1);
   };
 
-  changeSlideWithButton = (type) => {
+  changeSlideWithButton(type) {
     this.setState({
       isClicked: true,
     });
@@ -64,14 +76,14 @@ class Slideshow extends Component {
     type === LEFT && this.prevSlide();
   };
 
-  changeSlideWithPagination = (e, i) => {
+  changeSlideWithPagination(e, i) {
     const { index } = this.state;
 
     this.setState({ isClicked: true });
-    i != index && this.updateIndex('', i);
+    i !== index && this.updateIndex('', i);
   };
 
-  deleteAutoPlay = () => {
+  deleteAutoPlay() {
     this.setState({
       autoPlay: false,
     });
@@ -79,11 +91,11 @@ class Slideshow extends Component {
     clearInterval(this.sliderInterval);
   };
 
-  startSlideShow = () => {
-    this.sliderInterval = setInterval(this.nextSlide, 4000);
+  startSlideShow() {
+    this.sliderInterval = setInterval(this.nextSlide.bind(this), 4000);
   };
 
-  onMouseLeftHandler = () => {
+  onMouseLeftHandler() {
     const { isClicked } = this.state;
 
     !isClicked &&
@@ -92,15 +104,14 @@ class Slideshow extends Component {
       });
   };
 
-  transitionEnd = () => {
+  transitionEnd() {
     const { index } = this.state;
     const { slideData } = this.props;
     const slideDataLength = slideData.length;
     const indexOfLastCloneSlide = -1;
-    const indexOfFirstCloneSlide = slideDataLength;
     const indexOfLastSlide = slideDataLength - 1;
 
-    index === indexOfFirstCloneSlide &&
+    index === slideDataLength &&
       this.setState({
         index: 0,
         shouldTransition: false,
@@ -113,62 +124,31 @@ class Slideshow extends Component {
       });
   };
 
-  removeTransform = () => {
+  removeTransform() {
     this.setState({
       isTransform: false,
     });
   };
 
-  componentDidMount() {
-    this.startSlideShow();
-  }
+  renderPagination() {
+    const { index } = this.state;
+    const { slideData } = this.props;
 
-  componentDidUpdate(prevProps, { autoPlay: prevStateAutoPlay }) {
-    const { autoPlay } = this.state;
-
-    if (autoPlay && autoPlay != prevStateAutoPlay) {
-      this.startSlideShow();
-    }
-  }
-
-  render() {
-    const { index, prevIndex, isTransform, shouldTransition } = this.state;
-    const { slideData, animation } = this.props;
-    const getPaginationClassNames = (slideIndex) =>
-      cx(`${CN}-pagination__item`, {
-        [`${CN}-pagination__item--active`]: index === slideIndex,
-      });
-    const pagination = slideData.map((el, i) => (
+    return slideData.map((el, dataIndex) => (
       <div
-        key={i}
-        className={getPaginationClassNames(i)}
-        onClick={(e) => this.changeSlideWithPagination(e, i)}
+        key={el.id}
+        className={cx(`${CN}-pagination__item`, {
+          [`${CN}-pagination__item--active`]: index === dataIndex,
+        })}
+        onClick={(e) => this.changeSlideWithPagination(e, dataIndex)}
       ></div>
     ));
+  };
 
-    const styleSlide = {
-      transform: `translateX(${100 *
-        (index - prevIndex)}%)`,
-    };
-
-    const slides = slideData.map((el, i) => (
-      <Slide
-        key={el.id}
-        bgImage={el.img}
-        style={
-          prevIndex === i && isTransform ? styleSlide : {}
-        }
-        animation={cx({
-          [animation]:
-            this.isAnimationZoom() && i === prevIndex,
-          [FADE]: animation === FADE && i === index,
-        })}
-        onAnimationEnd={this.removeTransform}
-      >
-        {' '}
-        {el.component}
-      </Slide>
-    ));
+  renderSlides() {
+    const { index, prevIndex, isTransform } = this.state;
+    const { slideData, animation } = this.props;
+    const transformSlide = `translateX(${100 *(index - prevIndex)}%)`;
 
     const {
       0: firstCloneData,
@@ -176,30 +156,49 @@ class Slideshow extends Component {
       [length - 1]: lastCloneData,
     } = slideData;
 
-    const firstSlideClone = (
-      <Slide key="firstClone" bgImage={firstCloneData.img}>
-        {firstCloneData.component}
-      </Slide>
-    );
+    const slides = slideData.map((el, i) => (
+      <Slide
+        key={el.id}
+        bgImage={el.img}
+        transform={
+          prevIndex === i && isTransform ? transformSlide : 'none'
+        }
+        animation={cx({
+          [animation]:
+            this.isAnimationZoom() && i === prevIndex,
+          [FADE]: animation === FADE && i === index,
+        })}
+        onAnimationEnd={this.removeTransform.bind(this)}
+      >
+        {el.component}
+      </Slide>));
 
-    const lastSlideClone = (
+    return [
       <Slide key="lastClone" bgImage={lastCloneData.img}>
         {lastCloneData.component}
-      </Slide>
-    );
+      </Slide>,
+      ...slides,
+      <Slide key="firstClone" bgImage={firstCloneData.img}>
+        {firstCloneData.component}
+      </Slide>,
+    ];
+  }
 
-    const allSlides = [lastSlideClone, ...slides, firstSlideClone];
+  render() {
+    const { index, shouldTransition } = this.state;
+    const { animation } = this.props;
+    const slides = this.renderSlides();
 
     const styleContainer = {
-      transform: `translateX(-${(100 / allSlides.length) *
+      transform: `translateX(-${(100 / slides.length) *
         (index + 1)}%)`,
     };
 
     return (
       <div
         className={`${CN}`}
-        onMouseEnter={this.deleteAutoPlay}
-        onMouseLeave={this.onMouseLeftHandler}
+        onMouseEnter={this.deleteAutoPlay.bind(this)}
+        onMouseLeave={this.onMouseLeftHandler.bind(this)}
       >
         <ArrowButton
           type={LEFT}
@@ -218,11 +217,11 @@ class Slideshow extends Component {
               shouldTransition && animation === CAROUSEL,
           })}
           style={styleContainer}
-          onTransitionEnd={this.transitionEnd}
+          onTransitionEnd={this.transitionEnd.bind(this)}
         >
-          {allSlides}
+          {slides}
         </div>
-        <div className={`${CN}-pagination`}>{pagination}</div>
+        <div className={`${CN}-pagination`}>{this.renderPagination()}</div>
       </div>
     );
   }
@@ -230,7 +229,12 @@ class Slideshow extends Component {
 
 Slideshow.propTypes = {
   animation: PropTypes.oneOf([CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT]),
-  slideData: PropTypes.array,
+  slideData: PropTypes.arrayOf(PropTypes.shape( {
+    id: PropTypes.oneOfType([PropTypes.string,
+      PropTypes.number]),
+    img: PropTypes.string,
+    component: PropTypes.element,
+  })),
 };
 
 Slideshow.defaultProps = {
