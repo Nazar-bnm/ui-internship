@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductList from '../ProductList';
 import Slideshow from './Slideshow';
 import Slide from './Slide';
 import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
@@ -22,6 +23,7 @@ const HomePage = () => {
   return (
     <div>
       <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
+      <ProductList />
     </div>
   );
 };

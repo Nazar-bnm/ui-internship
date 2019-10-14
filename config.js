@@ -83,4 +83,9 @@ export default {
     { itemName: 'sale', url: '404' },
     { itemName: 'blog', url: '404' },
   ],
+  shippingData: [
+    { number: 1, title: 'free shipping', description: 'on all orders over 50$' },
+    { number: 2, title: 'money back guarantee', description: 'on all orders' },
+    { number: 3, title: 'worldwide delivery', description: 'to over 80 countries' },
+  ],
 };

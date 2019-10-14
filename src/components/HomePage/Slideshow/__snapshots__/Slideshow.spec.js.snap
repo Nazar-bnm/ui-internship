@@ -27,11 +27,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
   >
     <SlideContainer
       animation=""
-      bgImage={
-        Object {
-          "process": [Function],
-        }
-      }
+      bgImage=""
       key="lastClone"
       onAnimationEnd={[Function]}
       transform="none"
@@ -45,11 +41,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
     </SlideContainer>
     <SlideContainer
       animation=""
-      bgImage={
-        Object {
-          "process": [Function],
-        }
-      }
+      bgImage=""
       key="1"
       onAnimationEnd={[Function]}
       transform="none"
@@ -63,11 +55,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
     </SlideContainer>
     <SlideContainer
       animation=""
-      bgImage={
-        Object {
-          "process": [Function],
-        }
-      }
+      bgImage=""
       key="2"
       onAnimationEnd={[Function]}
       transform="none"
@@ -81,11 +69,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
     </SlideContainer>
     <SlideContainer
       animation=""
-      bgImage={
-        Object {
-          "process": [Function],
-        }
-      }
+      bgImage=""
       key="3"
       onAnimationEnd={[Function]}
       transform="none"
@@ -99,11 +83,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
     </SlideContainer>
     <SlideContainer
       animation=""
-      bgImage={
-        Object {
-          "process": [Function],
-        }
-      }
+      bgImage=""
       key="4"
       onAnimationEnd={[Function]}
       transform="none"
@@ -117,11 +97,7 @@ exports[`<Slideshow /> should render component <Slideshow /> 1`] = `
     </SlideContainer>
     <SlideContainer
       animation=""
-      bgImage={
-        Object {
-          "process": [Function],
-        }
-      }
+      bgImage=""
       key="firstClone"
       onAnimationEnd={[Function]}
       transform="none"
