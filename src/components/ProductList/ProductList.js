@@ -2,7 +2,6 @@
 import React from 'react';
 import ProductListNavigation from './ProductListNavigation';
 import ItemsList from './ItemsList';
-import PageSwitcher from './PageSwitcher';
 import { dropdownsForItemListPage } from '../../constants';
 import './ProductList.scss';
 
@@ -58,7 +57,6 @@ class ProductList extends React.Component {
             changeSortingOrder={this.changeSortingOrder}
             ascendingOrder={ascendingOrder}
           />
-          <PageSwitcher chosenItemsOnPage={this.state.chosenItemsOnPage}/>
         </div>
       </div>
     );
