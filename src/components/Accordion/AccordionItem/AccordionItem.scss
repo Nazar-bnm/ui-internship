@@ -4,7 +4,7 @@
   font-family: font(secondary);
   margin-bottom: 1rem;
 
-  &-header {
+  &__header {
     transition: color linear 0.5s;
     display: flex;
     justify-content: space-between;
@@ -20,41 +20,42 @@
     &--active {
       color: $silver-chalice;
     }
-  }
 
-  i.icon {
-    transition: transform linear 0.5s;
-    margin: 0;
+    i.icon {
+      transition: transform linear 0.5s;
+      margin: 0;
 
-    &-down {
-      transition: all linear 0.5s;
-      transform: rotate(90deg) !important;
+      &--down {
+        transform: rotate(90deg);
+      }
     }
   }
 
-  &--hide,
-  &--show {
-    overflow-y: scroll;
-    transition: height linear 0.5s;
-    height: 0;
+  &__description {
+    &--hide,
+    &--show {
+      overflow-y: scroll;
+      transition: height linear 0.5s;
+      height: 0;
 
-    &::-webkit-scrollbar {
-      width: 5px;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 1px solid $silver-chalice;
+        background-color: $silver-chalice;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $white;
+      }
     }
 
-    &::-webkit-scrollbar-track,
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      border: 1px solid $silver-chalice;
-      background-color: $silver-chalice;
+    &--show {
+      height: 100px;
     }
-
-    &::-webkit-scrollbar-thumb {
-        background: $white; 
-    }
-  }
-
-  &--show {
-    height: 100px;
   }
 }

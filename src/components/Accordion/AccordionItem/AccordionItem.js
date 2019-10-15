@@ -5,33 +5,43 @@ import './AccordionItem.scss';
 
 const CN = 'accordion-item';
 
-const accordionItem = ({ hide, onClick, title, description }) => {
+const AccordionItem = ({ hide, onClick, title, description }) => {
   return (
     <div className={CN}>
-      <div className={cx(`${CN}-header`, { [`${CN}-header--active`]: !hide })} onClick={onClick}>
+      <div
+        className={cx(`${CN}__header`, { [`${CN}__header--active`]: !hide })}
+        onClick={onClick}
+      >
         <h4>{title}</h4>
-        <i className={cx('caret', 'right', 'icon', { [`${CN}__icon-down`]: !hide })} />
+        <i
+          className={cx('caret', 'right', 'icon', { 'icon--down': !hide })}
+        />
       </div>
 
-      <div className={cx({ [`${CN}--hide`]: hide, [`${CN}--show`]: !hide })}>
-        <p>{description}</p>
+      <div
+        className={cx({
+          [`${CN}__description--hide`]: hide,
+          [`${CN}__description--show`]: !hide,
+        })}
+      >
+        {description}
       </div>
     </div>
   );
 };
 
-accordionItem.propTypes = {
+AccordionItem.propTypes = {
   hide: PropTypes.bool,
   onClick: PropTypes.func,
   title: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
-accordionItem.defaultProps = {
+AccordionItem.defaultProps = {
   hide: true,
   onClick: () => {},
   title: '',
   description: '',
 };
 
-export default accordionItem;
+export default AccordionItem;

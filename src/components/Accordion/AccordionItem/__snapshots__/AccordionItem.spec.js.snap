@@ -5,7 +5,7 @@ exports[`<AccordionItem /> should match snapshot <AccordionItem /> 1`] = `
   className="accordion-item"
 >
   <div
-    className="accordion-item-header"
+    className="accordion-item__header"
     onClick={[Function]}
   >
     <h4>
@@ -16,11 +16,9 @@ exports[`<AccordionItem /> should match snapshot <AccordionItem /> 1`] = `
     />
   </div>
   <div
-    className="accordion-item--hide"
+    className="accordion-item__description--hide"
   >
-    <p>
-      Architecto, earum temporibus quidem ex eaque unde harum sit, deleniti tempore
-    </p>
+    Architecto, earum temporibus quidem ex eaque unde harum sit, deleniti tempore
   </div>
 </div>
 `;

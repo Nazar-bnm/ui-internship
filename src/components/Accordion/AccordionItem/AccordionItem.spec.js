@@ -24,7 +24,7 @@ describe('<AccordionItem />', () => {
     const mockClickHandler = jest.fn();
 
     wrapper = shallow(<AccordionItem {...props} onClick={mockClickHandler}/>);
-    wrapper.find('.accordion-item-header').first().simulate('click');
+    wrapper.find('.accordion-item__header').first().simulate('click');
 
     expect(mockClickHandler.mock.calls.length).toBe(1);
   });

@@ -4,22 +4,28 @@ exports[`<Accordion /> should match snapshot <Accordion /> 1`] = `
 <div
   className="accordion"
 >
-  <accordionItem
-    description=" Architecto, earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!Architecto, earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
+  <AccordionItem
+    description=" Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
     hide={true}
     key="1"
     onClick={[Function]}
     title="description"
   />
-  <accordionItem
-    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vel sit possimus laborum error eius. Maxime vel sit possimus laborum error eius. Earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque! "
+  <AccordionItem
+    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Maxime vel sit possimus laborum error eius. Maxime vel sit possimus laborum error eius. 
+      Earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
     hide={true}
     key="2"
     onClick={[Function]}
     title="additional info"
   />
-  <accordionItem
-    description="Earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!Earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
+  <AccordionItem
+    description="Earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Earum temporibus quidem ex 
+      eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
     hide={true}
     key="3"
     onClick={[Function]}

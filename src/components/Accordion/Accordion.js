@@ -1,10 +1,8 @@
-/* eslint-disable no-invalid-this */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ContactDetails from '../Footer/ContactDetails';
-import './Accordion.scss';
 import AccordionItem from './AccordionItem';
+import './Accordion.scss';
 
 const CN = 'accordion';
 
@@ -14,7 +12,7 @@ class Accordion extends Component {
     currentIndex: null,
   };
 
-  clickHandler = (index) => {
+  clickHandler(index) {
     const { currentIndex } = this.state;
 
     index === currentIndex ?
@@ -25,7 +23,7 @@ class Accordion extends Component {
         hide: false,
         currentIndex: index,
       });
-  };
+  }
 
   render() {
     const { hide, currentIndex } = this.state;
@@ -37,7 +35,7 @@ class Accordion extends Component {
         title={title}
         description={description}
         hide={index !== currentIndex || (index === currentIndex && hide)}
-        onClick={() => this.clickHandler(index)}
+        onClick={this.clickHandler.bind(this, index)}
       />
     ));
 
@@ -51,7 +49,13 @@ class Accordion extends Component {
 }
 
 Accordion.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.number, PropTypes.number]),
+      title: PropTypes.string,
+      description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    }),
+  ),
 };
 
 Accordion.defaultProps = {

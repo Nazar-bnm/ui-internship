@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from '../Accordion';
-import { accordionItemsData } from '../Accordion/AccordionData';
+import { accordionItemsData } from '../../config/accordion';
 
 const MainPage = () => (
   <Accordion data={accordionItemsData}/>
