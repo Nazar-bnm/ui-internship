@@ -3,30 +3,25 @@
 .product-list {
   @include flex($direction: column, $justify: space-between);
   padding: 20px 2vw;
-  background-color: pink;
 
-  &__filter-wrapper-top, &__filter-wrapper-bottom {
+  &__filter-wrapper {
     @include flex($align: center);
     width: 100%;
-    background-color: lightgreen;
-  }
-
-  &__filter-wrapper-bottom {
-    &__dropdowns {
-      @include flex($align: center, $justify: space-evenly);
-      width: 70%;
-    }
+    margin: 10px 0;
   }
 
   &__list-items-container {
     @include flex();
     width: 100%;
-    background-color:lightsalmon;
+  }
+
+  &__dropdowns-wrapper {
+    @include flex();
   }
 
   &__dropdowns-labels {
     color: $dove-gray;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-family: font(primary-bold);
     font-weight: bold;
     text-transform: uppercase;
@@ -39,12 +34,24 @@
 
   .dropdown {
     @include flex($align: baseline);
+    margin: 0 10px;
+    border: 1px solid $silver-chalice;
     color: $dove-gray;
     font-size: 0.8rem;
 
     &__items__element, .dropdown[aria-expanded=true] .dropdown__items__element {
       background-color: $white;
       z-index: 1;
+    }
+  }
+
+  &__arrow-btn {
+    background-color: transparent;
+    border: none;
+
+    & i {
+      margin: 0 5px;
+      color: $silver-chalice;
     }
   }
 }

@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
-export const itemsList = [
+export const itemsArray = [
   {
     id: 1,
     photo: 'https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg',
-    title: 'A',
+    title: 'bA',
     collection: 'spring collection 2016',
     category: 'women',
     price: 1,
@@ -11,7 +11,7 @@ export const itemsList = [
   {
     id: 2,
     photo: 'https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg',
-    title: 'B',
+    title: 'aB',
     collection: 'spring collection 2016',
     category: 'women',
     price: 2,
@@ -19,7 +19,7 @@ export const itemsList = [
   {
     id: 3,
     photo: 'https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg',
-    title: 'C',
+    title: 'aC',
     collection: 'spring collection 2016',
     category: 'women',
     price: 3,
@@ -67,7 +67,7 @@ export const itemsList = [
   {
     id: 9,
     photo: 'https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg',
-    title: 'K',
+    title: 'aaK',
     collection: 'spring collection 2016',
     category: 'women',
     price: 9,
@@ -75,7 +75,7 @@ export const itemsList = [
   {
     id: 10,
     photo: 'https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg',
-    title: 'L',
+    title: 'AL',
     collection: 'spring collection 2016',
     category: 'women',
     price: 10,

@@ -1,3 +1,4 @@
+/* eslint-disable no-invalid-this */
 import React from 'react';
 import ProductListNavigation from './ProductListNavigation/ProductListNavigation';
 import ItemsList from './ItemsList';
@@ -11,50 +12,65 @@ class ProductList extends React.Component {
     super(props);
     this.state = {
       chosenItemsOnPage: 6,
-      descendingPriceOrder: true,
+      ascendingOrder: true,
+      orderType: '',
     };
   }
 
   changeItemsOnPageNum = (chosenItemsOnPage) => {
-    // eslint-disable-next-line no-invalid-this
     this.setState({
       chosenItemsOnPage,
     });
   }
 
-  sortByPrice = (orderType) => {
-    // eslint-disable-next-line no-invalid-this
+  sortItems = (orderType) => {
     this.setState({
-      descendingPriceOrder: !!orderType,
+      orderType,
     });
   }
 
+  changeSortingOrder = () => {
+    this.state.ascendingOrder ? this.setState({ ascendingOrder: false }) : this.setState({ ascendingOrder: true });
+  }
+
   render() {
-    const { priceOrder, positionOrder, itemNameOrder, itemsOnPage } = dropdownsForItemListPage;
-    const { chosenItemsOnPage, descendingPriceOrder } = this.state;
+    const { priceOrder, positionOrder, itemNameOrder, itemsOnPage, sortBy } = dropdownsForItemListPage;
+    const { chosenItemsOnPage, ascendingOrder, orderType } = this.state;
 
     return (
       <div className={`${CN} content`}>
-        <div className={`${CN}__filter-wrapper-top`}>
+        <div className={`${CN}__filter-wrapper`}>
           <ProductListNavigation
             priceOrder={priceOrder}
             positionOrder={positionOrder}
             itemNameOrder={itemNameOrder}
             itemsOnPage={itemsOnPage}
             changeItemsOnPageNum={this.changeItemsOnPageNum}
-            sortByPrice={this.sortByPrice}/>
+            sortBy={sortBy}
+            sortItems={this.sortItems}
+            changeSortingOrder={this.changeSortingOrder}
+            ascendingOrder={ascendingOrder}
+          />
         </div>
         <div className={`${CN}__list-items-container`}>
-          <ItemsList itemsOnPage={chosenItemsOnPage} descendingPriceOrder={descendingPriceOrder}/>
+          <ItemsList
+            itemsOnPage={chosenItemsOnPage}
+            ascendingOrder={ascendingOrder}
+            orderType={orderType}
+          />
         </div>
-        <div className={`${CN}__filter-wrapper-top`}>
+        <div className={`${CN}__filter-wrapper`}>
           <ProductListNavigation
             priceOrder={priceOrder}
             positionOrder={positionOrder}
             itemNameOrder={itemNameOrder}
             itemsOnPage={itemsOnPage}
             changeItemsOnPageNum={this.changeItemsOnPageNum}
-            sortByPrice={this.sortByPrice}/>
+            sortBy={sortBy}
+            sortItems={this.sortItems}
+            changeSortingOrder={this.changeSortingOrder}
+            ascendingOrder={ascendingOrder}
+          />
           <div className={`${CN}__page-switcher`}>1 2 3 4 5 ... 10</div>
         </div>
       </div>
