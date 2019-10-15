@@ -5,7 +5,7 @@
   padding: 20px 2vw;
 
   &__filter-wrapper {
-    @include flex($align: center);
+    @include flex($align: center, $justify: space-between);
     width: 100%;
     margin: 10px 0;
   }
@@ -29,7 +29,7 @@
 
   &__dropdowns-labels-wrapper {
     @include flex($align: center, $wrap: nowrap);
-    margin: 0 10px;
+    margin: 5px 10px;
   }
 
   .dropdown {

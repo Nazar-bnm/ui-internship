@@ -7,11 +7,12 @@ import './ItemsList.scss';
 const CN = 'items-container';
 
 const getItems = ({ itemsOnPage, ascendingOrder, orderType }) => {
-  const itemsToRender = itemsArray.slice(0, itemsOnPage);
+  const itemsToRender = [...itemsArray];
 
   const sortByItemName = (prevEl, nextEl) => {
     const prevName = prevEl.title.toUpperCase();
     const nextName = nextEl.title.toUpperCase();
+
     if (ascendingOrder) {
       return (prevName < nextName) ? -1 : (prevName > nextName) ? 1 : 0;
     } else {
@@ -31,13 +32,15 @@ const getItems = ({ itemsOnPage, ascendingOrder, orderType }) => {
     });
     break;
   case 'Position':
-    itemsToRender.reverse();
+    if (!ascendingOrder) {
+      itemsToRender.reverse();
+    }
     break;
   default:
     break;
   }
 
-  return itemsToRender.map((el) => {
+  return itemsToRender.slice(0, itemsOnPage).map((el) => {
     return (
       <ProductItem key={el.title} item={el} />
     );
@@ -45,9 +48,7 @@ const getItems = ({ itemsOnPage, ascendingOrder, orderType }) => {
 };
 
 const ItemsList = (props) => (
-  <div className={CN}>
-    { getItems(props) }
-  </div>
+  <div className={CN}>{ getItems(props) }</div>
 );
 
 ItemsList.propTypes = {

@@ -4,18 +4,12 @@ import Dropdown from '../../Dropdown';
 import Button from '../../Button';
 import { CN } from '../ProductList';
 
-const ProductListNavigation = ({
-  itemsOnPage,
-  changeItemsOnPageNum,
-  sortBy,
-  sortItems,
-  changeSortingOrder,
-  ascendingOrder }) => {
+const ProductListNavigation = ({ itemsOnPage, changeItemsOnPageNum, sortBy, changeSortingOrder, ascendingOrder }) => {
   return (
     <div className={`${CN}__dropdowns-wrapper`}>
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>sort by</span>
-        <Dropdown options={sortBy} sortItems={sortItems}/>
+        <Dropdown options={sortBy}/>
         <Button
           customClass={`${CN}__arrow-btn`}
           onClickFunction={changeSortingOrder}
@@ -33,7 +27,6 @@ ProductListNavigation.propTypes = {
   itemsOnPage: PropTypes.array,
   changeItemsOnPageNum: PropTypes.func,
   sortBy: PropTypes.array,
-  sortItems: PropTypes.func,
   changeSortingOrder: PropTypes.func,
   ascendingOrder: PropTypes.bool,
 };
