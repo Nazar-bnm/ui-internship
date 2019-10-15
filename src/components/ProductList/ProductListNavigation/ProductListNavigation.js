@@ -2,14 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from '../../Dropdown';
 import Button from '../../Button';
+import { dropdownsForItemListPage } from '../../../constants';
 import { CN } from '../ProductList';
 
-const ProductListNavigation = ({ itemsOnPage, changeItemsOnPageNum, sortBy, changeSortingOrder, ascendingOrder }) => {
+const { itemsOnPage, sortBy } = dropdownsForItemListPage;
+
+const ProductListNavigation = ({ changeItemsOnPageNum, changeSortingOrder, ascendingOrder, changeOrderType }) => {
   return (
     <div className={`${CN}__dropdowns-wrapper`}>
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>sort by</span>
-        <Dropdown options={sortBy}/>
+        <Dropdown
+          options={sortBy}
+          changeItemsOnPageNum={changeItemsOnPageNum}
+          changeOrderType={changeOrderType}
+        />
         <Button
           customClass={`${CN}__arrow-btn`}
           onClickFunction={changeSortingOrder}
@@ -17,23 +24,25 @@ const ProductListNavigation = ({ itemsOnPage, changeItemsOnPageNum, sortBy, chan
       </div>
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>items on page</span>
-        <Dropdown options={itemsOnPage} changeItemsOnPageNum={changeItemsOnPageNum}/>
+        <Dropdown
+          options={itemsOnPage}
+          changeItemsOnPageNum={changeItemsOnPageNum}
+          changeOrderType={changeOrderType}
+        />
       </div>
     </div>
   );
 };
 
 ProductListNavigation.propTypes = {
-  itemsOnPage: PropTypes.array,
-  changeItemsOnPageNum: PropTypes.func,
-  sortBy: PropTypes.array,
-  changeSortingOrder: PropTypes.func,
+  changeItemsOnPageNum: PropTypes.func.isRequired,
+  changeSortingOrder: PropTypes.func.isRequired,
   ascendingOrder: PropTypes.bool,
+  changeOrderType: PropTypes.func.isRequired,
 };
 
 ProductListNavigation.defaultProps = {
-  itemsOnPage: [],
-  changeItemsOnPageNum: null,
+  ascendingOrder: true,
 };
 
 export default ProductListNavigation;
