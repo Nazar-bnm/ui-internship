@@ -1,0 +1,15 @@
+@import '../../scss/global_styles';
+@import '../../scss/styles';
+
+
+.wrapper {
+  &__title {
+    h3 {
+      font-family: font(primary);
+    }
+  }
+
+  &__container {
+    @include flex(row, center, center);
+  }
+}
