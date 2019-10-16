@@ -1,4 +1,3 @@
-/* eslint-disable no-invalid-this */
 import React from 'react';
 import ProductListNavigation from '../../containers/ProductListNavigation';
 import ItemsList from '../../containers/ItemsList';

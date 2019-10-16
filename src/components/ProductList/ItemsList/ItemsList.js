@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductItem from '../ProductItem/ProductItem';
+// import ItemInfo from '../../WhatIsNew/ItemInfo';
 import { itemsArray } from '../productItems';
 import './ItemsList.scss';
 
@@ -43,6 +44,7 @@ const getItems = ({ itemsOnPage, ascendingOrder, orderType }) => {
   return itemsToRender.slice(0, itemsOnPage).map((el) => {
     return (
       <ProductItem key={el.title} item={el} />
+      // <ItemInfo key={el.title} item={el} />
     );
   });
 };

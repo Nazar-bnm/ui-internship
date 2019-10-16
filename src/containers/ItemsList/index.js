@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+// import HttpService from '../../service/HttpService/httpService';
 import ItemsList from '../../components/ProductList/ItemsList';
 
 const mapStateToProps = (state) => {
