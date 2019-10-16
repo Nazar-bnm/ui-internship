@@ -8,31 +8,32 @@ exports[`<Accordion /> should match snapshot <Accordion /> 1`] = `
     description=" Architecto, earum temporibus quidem ex eaque unde harum sit, 
       deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
       quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
+    height="100px"
     hide={true}
     key="1"
     onClick={[Function]}
+    scroll={false}
     title="description"
   />
   <AccordionItem
     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Maxime vel sit possimus laborum error eius. Maxime vel sit possimus laborum error eius. 
-      Earum temporibus quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
+      "
+    height="100px"
     hide={true}
     key="2"
     onClick={[Function]}
+    scroll={false}
     title="additional info"
   />
   <AccordionItem
     description="Earum temporibus quidem ex eaque unde harum sit, 
-      deleniti tempore laboriosam neque cumque!Earum temporibus quidem ex 
-      eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
+      "
+    height="100px"
     hide={true}
     key="3"
     onClick={[Function]}
+    scroll={false}
     title="tags"
-  />
-  <ContactDetails
-    title="share"
   />
 </div>
 `;

@@ -7,7 +7,7 @@ describe('<Accordion />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Accordion data={accordionItemsData} />);
+    wrapper = shallow(<Accordion data={accordionItemsData} heightItem="100px" />);
   });
 
   it('should match snapshot <Accordion />', () => {
@@ -19,12 +19,12 @@ describe('<Accordion />', () => {
       .find('[hide]')
       .first()
       .simulate('click');
-    expect(wrapper.state().hide).toBe(false);
+    expect(wrapper.state().hide[0]).toBe(false);
     wrapper
       .find('[hide]')
       .first()
       .simulate('click');
-    expect(wrapper.state().hide).toBe(true);
+    expect(wrapper.state().hide[0]).toBe(true);
   });
 
   it('should the rest Accordion Item have prop hide equal to "true" when click on one accordion item ', () => {
@@ -47,5 +47,21 @@ describe('<Accordion />', () => {
           .prop('hide'),
       ).toBe(true);
     };
+  });
+
+  it('should hide props to be equal false for all AccordionItem', () => {
+    wrapper = shallow(<Accordion data={accordionItemsData} open showAll/>);
+    expect(
+      wrapper
+        .find('[hide]')
+        .at(0)
+        .prop('hide'),
+    ).toBe(false);
+    expect(
+      wrapper
+        .find('[hide]')
+        .at(1)
+        .prop('hide'),
+    ).toBe(false);
   });
 });

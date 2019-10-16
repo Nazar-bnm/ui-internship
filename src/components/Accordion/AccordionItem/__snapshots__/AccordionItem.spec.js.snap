@@ -16,7 +16,8 @@ exports[`<AccordionItem /> should match snapshot <AccordionItem /> 1`] = `
     />
   </div>
   <div
-    className="accordion-item__description--hide"
+    className="accordion-item__description accordion-item__description--hide"
+    style={Object {}}
   >
     Architecto, earum temporibus quidem ex eaque unde harum sit, deleniti tempore
   </div>

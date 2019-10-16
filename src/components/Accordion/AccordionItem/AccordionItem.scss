@@ -2,7 +2,6 @@
 
 .accordion-item {
   font-family: font(secondary);
-  margin-bottom: 1rem;
 
   &__header {
     transition: color linear 0.5s;
@@ -10,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid $silver-chalice;
-    padding-top: 1rem;
+    padding: 1rem 0;
     cursor: pointer;
     font: 0.9rem font(secondary);
     text-transform: uppercase;
@@ -34,28 +33,32 @@
   &__description {
     &--hide,
     &--show {
-      overflow-y: scroll;
+      overflow-y: hidden;
       transition: height linear 0.5s;
       height: 0;
-
-      &::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      &::-webkit-scrollbar-track,
-      &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        border: 1px solid $silver-chalice;
-        background-color: $silver-chalice;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: $white;
-      }
     }
 
     &--show {
       height: 100px;
+    }
+  }
+
+  .scroll {
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      border: 1px solid $silver-chalice;
+      background-color: $silver-chalice;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $white;
     }
   }
 }

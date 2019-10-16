@@ -5,7 +5,18 @@ import './AccordionItem.scss';
 
 const CN = 'accordion-item';
 
-const AccordionItem = ({ hide, onClick, title, description }) => {
+const AccordionItem = ({
+  hide,
+  onClick,
+  title,
+  description,
+  height,
+  scroll,
+}) => {
+  const heightStyle = {
+    height: height,
+  };
+
   return (
     <div className={CN}>
       <div
@@ -13,16 +24,16 @@ const AccordionItem = ({ hide, onClick, title, description }) => {
         onClick={onClick}
       >
         <h4>{title}</h4>
-        <i
-          className={cx('caret', 'right', 'icon', { 'icon--down': !hide })}
-        />
+        <i className={cx('caret', 'right', 'icon', { 'icon--down': !hide })} />
       </div>
 
       <div
-        className={cx({
+        className={cx([`${CN}__description`], {
           [`${CN}__description--hide`]: hide,
           [`${CN}__description--show`]: !hide,
+          scroll: scroll,
         })}
+        style={!hide ? heightStyle : {}}
       >
         {description}
       </div>
@@ -35,6 +46,8 @@ AccordionItem.propTypes = {
   onClick: PropTypes.func,
   title: PropTypes.string,
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  height: PropTypes.string,
+  scroll: PropTypes.bool,
 };
 
 AccordionItem.defaultProps = {
@@ -42,6 +55,8 @@ AccordionItem.defaultProps = {
   onClick: () => {},
   title: '',
   description: '',
+  height: '',
+  scroll: false,
 };
 
 export default AccordionItem;

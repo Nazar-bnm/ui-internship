@@ -1,9 +1,8 @@
 import React from 'react';
-import Accordion from '../Accordion';
-import { accordionItemsData } from '../../config/accordion';
+import AccordionPDP from '../AccordeonPDP';
 
 const MainPage = () => (
-  <Accordion data={accordionItemsData}/>
+  <AccordionPDP />
 );
 
 export default MainPage;
