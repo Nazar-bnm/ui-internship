@@ -6,7 +6,7 @@ exports[`<AccordionItem /> should match snapshot <AccordionItem /> 1`] = `
 >
   <div
     className="accordion-item__header"
-    onClick={[Function]}
+    onClick={[MockFunction]}
   >
     <h4>
       hello

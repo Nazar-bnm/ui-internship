@@ -43,16 +43,15 @@ const AccordionItem = ({
 
 AccordionItem.propTypes = {
   hide: PropTypes.bool,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   title: PropTypes.string,
-  description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   height: PropTypes.string,
   scroll: PropTypes.bool,
 };
 
 AccordionItem.defaultProps = {
   hide: true,
-  onClick: () => {},
   title: '',
   description: '',
   height: '',

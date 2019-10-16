@@ -32,7 +32,7 @@ exports[`<AccordionPDP /> should match snapshot <AccordionPDP /> 1`] = `
     heightItem="100px"
     open={false}
     scroll={false}
-    showAll={false}
+    showAll={true}
   />
   <ContactDetails
     title="share"

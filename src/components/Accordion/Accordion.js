@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import AccordionItem from './AccordionItem';
-import './Accordion.scss';
 
 const CN = 'accordion';
 
 class Accordion extends Component {
-  state = {
-    hide: [],
-    currentIndex: null,
-  };
+  constructor(props) {
+    super(props);
+    this.clickHandler = this.clickHandler.bind(this);
+    this.state = {
+      hide: [],
+      currentIndex: null,
+    };
+  }
+
 
   componentDidMount() {
     const { data, open } = this.props;
@@ -44,7 +48,7 @@ class Accordion extends Component {
         title={title}
         description={description}
         hide={hide[index]}
-        onClick={this.clickHandler.bind(this, index)}
+        onClick={() => this.clickHandler(index)}
         height = {heightItem}
         scroll={scroll}
       />
@@ -61,9 +65,9 @@ class Accordion extends Component {
 Accordion.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.number, PropTypes.number]),
+      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
       title: PropTypes.string,
-      description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+      description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     }),
   ),
   showAll: PropTypes.bool,
