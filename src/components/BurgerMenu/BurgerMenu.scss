@@ -23,7 +23,7 @@
     &:checked~.burger-menu__image {
       position: absolute;
       left: 10px;
-      font-size: 3rem;
+      font-size: 2rem;
       cursor: pointer;
       transition: transform 0.8s ease; 
       transform: rotate(360deg);
@@ -44,7 +44,7 @@
   &__image {
     margin-top: -10px;
     margin-left: 10px;
-    font-size: 2.7rem;
+    font-size: 1.7rem;
     cursor: pointer;
     transition: transform 0.8s ease; 
   }
@@ -69,7 +69,7 @@
   }
 
   &__link {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     text-decoration: none;
     background-color: #ffffff;
     color: $black;

@@ -17,10 +17,21 @@ class Dropdown extends React.Component {
   }
 
   selectOption(e) {
+    const { options } = this.state;
+    const { changeItemsOnPageNum, changeOrderType } = this.props;
     const option = e.target;
+    const selectedID = option.getAttribute('selectednum');
+    const selectedLabel = options[selectedID].label;
+
     this.setState({
-      selectedID: option.getAttribute('selectednum'),
+      selectedID,
     });
+
+    if (!isNaN(Number(selectedLabel))) {
+      return changeItemsOnPageNum(selectedLabel);
+    } else {
+      changeOrderType(selectedLabel);
+    }
   }
 
   toggleDropdown() {
@@ -70,6 +81,8 @@ Dropdown.propTypes = {
   options: PropTypes.array,
   selected: PropTypes.number,
   className: PropTypes.string,
+  changeItemsOnPageNum: PropTypes.func,
+  changeOrderType: PropTypes.func,
 };
 
 Dropdown.defaultProps = {
