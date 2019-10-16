@@ -16,8 +16,13 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
-  icon: PropTypes.string.isRequired,
-  customClass: PropTypes.string.isRequired
+  icon: PropTypes.string,
+  customClass: PropTypes.string
+};
+
+Input.defaultProps = {
+  icon: '',
+  customClass: ''
 };
 
 export default Input;

@@ -15,13 +15,20 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-  icon: PropTypes.string.isRequired,
-  customClass: PropTypes.string.isRequired,
-  onClickFunction: PropTypes.func.isRequired,
+  icon: PropTypes.string,
+  customClass: PropTypes.string,
+  onClickFunction: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]).isRequired
+  ])
+};
+
+Button.defaultProps = {
+  icon: null,
+  customClass: null,
+  onClickFunction: null,
+  children: []
 };
 
 export default Button;
