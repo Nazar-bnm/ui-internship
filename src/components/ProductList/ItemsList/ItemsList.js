@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProductItem from '../ProductItem/ProductItem';
-// import ItemInfo from '../../WhatIsNew/ItemInfo';
-import { itemsArray } from '../productItems';
+import ItemInfo from '../../WhatIsNew/ItemInfo';
+import HttpService from '../../../service/HttpService/httpService';
 import './ItemsList.scss';
 
 const CN = 'items-container';
+const userAPI = new HttpService();
 
-const getItems = ({ itemsOnPage, ascendingOrder, orderType }) => {
-  const itemsToRender = [...itemsArray];
+const getItems = ({ itemsOnPage, ascendingOrder, orderType, itemList, error }) => {
+  if (error) return <div>{error.message}</div>;
+  const itemsToRender = [...itemList];
 
   const sortByItemName = (prevEl, nextEl) => {
     const prevName = prevEl.title.toUpperCase();
@@ -43,19 +44,42 @@ const getItems = ({ itemsOnPage, ascendingOrder, orderType }) => {
 
   return itemsToRender.slice(0, itemsOnPage).map((el) => {
     return (
-      <ProductItem key={el.title} item={el} />
-      // <ItemInfo key={el.title} item={el} />
+      <ItemInfo key={el.title} item={el} />
     );
   });
 };
 
-const ItemsList = (props) => (
-  <div className={CN}>{ getItems(props) }</div>
-);
+class ItemsList extends React.Component {
+  componentDidMount() {
+    this.getListItems();
+  }
+
+  async getListItems() {
+    const { onGetProductsSuccess, onGetProductsError } = this.props;
+
+    try {
+      const response = await userAPI.get(`${process.env.BASE_URL}/product-list`);
+      if (response.status === 404) {
+        throw Error(response.statusText);
+      }
+      onGetProductsSuccess(response.data);
+    } catch (error) {
+      onGetProductsError(error);
+    }
+  }
+
+  render() {
+    return (
+      <div className={CN}>{ getItems(this.props) }</div>
+    );
+  }
+}
 
 ItemsList.propTypes = {
   itemsOnPage: PropTypes.number,
   ascendingOrder: PropTypes.bool,
+  onGetProductsSuccess: PropTypes.func,
+  onGetProductsError: PropTypes.func,
 };
 
 ItemsList.defaultProps = {

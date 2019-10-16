@@ -1,4 +1,10 @@
-import { CHANGE_ITEMS_NUMBER_ON_PAGE, CHANGE_SORTING_ORDER, CHANGE_ORDER_TYPE } from '../constants/actionTypes';
+import {
+  CHANGE_ITEMS_NUMBER_ON_PAGE,
+  CHANGE_SORTING_ORDER,
+  CHANGE_ORDER_TYPE,
+  GET_PRODUCTS_SUCCESS,
+  GET_PRODUCTS_ERROR,
+} from '../constants/actionTypes';
 
 export function changeSortingOrder() {
   return {
@@ -19,3 +25,18 @@ export function changeitemsNumberOnPage(payload) {
     payload,
   };
 };
+
+export function getProductsSuccess(products) {
+  return {
+    type: GET_PRODUCTS_SUCCESS,
+    products,
+  };
+};
+
+export function getProductsError(error) {
+  return {
+    type: GET_PRODUCTS_ERROR,
+    error,
+  };
+};
+
