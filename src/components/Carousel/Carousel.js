@@ -57,8 +57,10 @@ class Carousel extends Component {
       carouselWidth = `${widthOfSlide * 4}px`;
     } else if (window.innerWidth > 768) {
       carouselWidth = `${widthOfSlide * 3}px`;
-    } else {
+    } else if (window.innerWidth > 480) {
       carouselWidth = `${widthOfSlide * 2}px`;
+    } else {
+      carouselWidth = `${widthOfSlide * 1}px`;
     }
 
     this.carouselViewport.current.parentElement.style.width = carouselWidth;
@@ -84,7 +86,7 @@ class Carousel extends Component {
   }
 
   checkNumOfSlidesToScroll() {
-    const numOfSlidesToScroll = window.innerWidth <= 900 ? 2 : 4;
+    const numOfSlidesToScroll = window.innerWidth <= 1024 ? 2 : 4;
     this.state.numOfSlidesToScroll !== numOfSlidesToScroll &&
     this.setState({ numOfSlidesToScroll });
   }

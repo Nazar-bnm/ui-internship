@@ -26,7 +26,7 @@ class ProductList extends Component {
         key = { productName }
       />
     ));
-
+      
     return (
       <div className = { `${CN} content` }>
         <Carousel items = { productList }>

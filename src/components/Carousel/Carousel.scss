@@ -64,3 +64,11 @@
     font-size: 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .carousel {
+    &__nav {
+      display: none;
+    }
+  }
+}
