@@ -2,12 +2,13 @@ import React from 'react';
 import './BlogArticlePreview.scss';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 export const CN = 'article-preview';
 
 const BlogArticlePreview = (props) => {
   const { imageSrc, heading, text } = props;
   const backgroundImageURL = {
-    backgroundImage: `url(${imageSrc})`,
+    backgroundImage: `url(${imageSrc})`
   };
 
   return (
@@ -21,17 +22,15 @@ const BlogArticlePreview = (props) => {
 };
 
 BlogArticlePreview.propTypes = {
-  className: PropTypes.string,
   imageSrc: PropTypes.string,
   heading: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.string
 };
 
-BlogArticlePreview.defaultProps =
-  {
-    imageSrc: 'src/assets/img/content/new2.png',
-    heading: 'Raccoons are fun and fashionable',
-    text: 'Raccoons are fun and fashionable, they like to eat vinegrapes',
-  };
+BlogArticlePreview.defaultProps = {
+  imageSrc: 'src/assets/img/content/new2.png',
+  heading: 'Raccoons are fun and fashionable',
+  text: 'Raccoons are fun and fashionable, they like to eat vinegrapes'
+};
 
 export default BlogArticlePreview;

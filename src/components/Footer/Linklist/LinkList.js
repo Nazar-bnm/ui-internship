@@ -19,7 +19,7 @@ const Linklist = ({ links }) => {
 };
 
 Linklist.propTypes = {
-  links: PropTypes.object,
+  links: PropTypes.object.isRequired
 };
 
 export default Linklist;

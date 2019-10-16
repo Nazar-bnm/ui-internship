@@ -9,7 +9,7 @@ class JoinUs extends Component {
     super(props);
     this.state = {
       email: '',
-      isEmailValid: null,
+      isEmailValid: null
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -21,7 +21,7 @@ class JoinUs extends Component {
 
     this.setState({
       email: value,
-      isEmailValid: this.validateField(value),
+      isEmailValid: this.validateField(value)
     });
   }
 
@@ -37,7 +37,10 @@ class JoinUs extends Component {
         <label htmlFor="email" className="join-us__title">newsletter</label>
         <div className="join-us__wrapper">
           <div className="join-us__input-wrapper">
-            <input type="email" required name="email"
+            <input
+              type="email"
+              required
+              name="email"
               value={email}
               onChange={this.handleInput}
               className={cx('join-us__email-input', { warning: !isEmailValid }, { success: isEmailValid })}

@@ -1,7 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 import './Dropdown.scss';
+
 export const CN = 'dropdown';
 
 class Dropdown extends React.Component {
@@ -10,7 +12,7 @@ class Dropdown extends React.Component {
     this.state = {
       expanded: false,
       selectedID: 0,
-      options: props.options,
+      options: props.options
     };
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.selectOption = this.selectOption.bind(this);
@@ -19,13 +21,14 @@ class Dropdown extends React.Component {
   selectOption(e) {
     const option = e.target;
     this.setState({
-      selectedID: option.getAttribute('selectednum'),
+      selectedID: option.getAttribute('selectednum')
     });
   }
 
   toggleDropdown() {
-    this.setState( {
-      expanded: !this.state.expanded,
+    const { expanded } = this.state;
+    this.setState({
+      expanded: !expanded
     });
   }
 
@@ -33,7 +36,7 @@ class Dropdown extends React.Component {
     const { options } = this.state;
 
     return options.map(({ value, label }, i) => (
-      <li
+      <div
         className={`${CN}__items__element`}
         key={value}
         selectednum={i}
@@ -41,7 +44,7 @@ class Dropdown extends React.Component {
         onClick={this.selectOption}
       >
         {label}
-      </li>
+      </div>
     ));
   }
 
@@ -50,7 +53,8 @@ class Dropdown extends React.Component {
     const iconName = `caret ${expanded ? 'up' : 'down'} icon`;
 
     return (
-      <div className={cx(CN)}
+      <div
+        className={cx(CN)}
         onClick={this.toggleDropdown}
         aria-expanded={expanded}
       >
@@ -63,21 +67,11 @@ class Dropdown extends React.Component {
         <i className={iconName} />
       </div>
     );
-  };
-};
+  }
+}
 
 Dropdown.propTypes = {
-  options: PropTypes.array,
-  selected: PropTypes.number,
-  className: PropTypes.string,
-};
-
-Dropdown.defaultProps = {
-  currency: [
-    { value: 'USD', label: 'USD' },
-    { value: 'EURO', label: 'EURO' },
-    { value: 'UAH', label: 'UAH' },
-  ],
+  options: PropTypes.array.isRequired
 };
 
 export default Dropdown;

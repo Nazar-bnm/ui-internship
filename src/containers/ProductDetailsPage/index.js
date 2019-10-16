@@ -10,21 +10,29 @@ class ProductDetailsPage extends Component {
     this.state = {
       product: {
         name: params.name,
-        id: params.id,
-      },
+        id: params.id
+      }
     };
   }
 
   returnBack() {
-    return this.props.history.goBack();
+    const { history } = this.props;
+    return history.goBack();
   }
 
   render() {
+    const { product } = this.state;
+    const { id, name } = product;
     return (
       <div>
-        <div>{this.state.product.name}</div>
-        <div>{this.state.product.id}</div>
-        <button onClick={() => this.returnBack()}>Go Back</button>
+        <div>{name}</div>
+        <div>{id}</div>
+        <button
+          type="button"
+          onClick={() => this.returnBack()}
+        >
+          Go Back
+        </button>
       </div>
     );
   }
@@ -32,13 +40,13 @@ class ProductDetailsPage extends Component {
 
 ProductDetailsPage.propTypes = {
   // Routing history for returning back
-  history: PropTypes.object,
+  history: PropTypes.object.isRequired,
   // Route path info
-  match: PropTypes.object,
+  match: PropTypes.object.isRequired,
   // receiwed odject name
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   // receiwed odject id
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired
 };
 
 export default ProductDetailsPage;

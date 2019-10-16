@@ -7,13 +7,11 @@ import './BurgerMenu.scss';
 export const CN = 'burger-menu';
 
 const BurgerMenu = ({ menuItemsList }) => {
-  const renderMenu = () => menuItemsList.map(({ itemName, url }) => {
-    return (
-      <Link key={itemName} to={url} className={`${CN}__link`}>
-        <li key={itemName} className={`${CN}__list-item`}>{ itemName }</li>
-      </Link>
-    );
-  });
+  const renderMenu = () => menuItemsList.map(({ itemName, url }) => (
+    <Link key={itemName} to={url} className={`${CN}__link`}>
+      <li key={itemName} className={`${CN}__list-item`}>{ itemName }</li>
+    </Link>
+  ));
 
   return (
     <div className={cx(CN)}>
@@ -31,9 +29,8 @@ const BurgerMenu = ({ menuItemsList }) => {
 BurgerMenu.propTypes = {
   menuItemsList: PropTypes.arrayOf(PropTypes.shape({
     itemName: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-  })).isRequired,
-  className: PropTypes.string,
+    url: PropTypes.string.isRequired
+  })).isRequired
 };
 
 export default BurgerMenu;

@@ -1,4 +1,3 @@
-/* eslint-disable no-invalid-this */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -10,13 +9,13 @@ class ProductImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedImage: '',
+      selectedImage: ''
     };
   }
 
   clickHandler(selectedImage) {
     this.setState({
-      selectedImage,
+      selectedImage
     });
   }
 
@@ -38,10 +37,14 @@ class ProductImage extends Component {
       const isSelected = selectedImage === src;
 
       return (
-        <figure key={src} className={`${CN}__small-image`} onClick={() => this.clickHandler(src)}>
-          <img src={src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
-          <div className={`${CN}__image-on-hover`}></div>
-        </figure>
+        <div
+          key={src}
+          className={`${CN}__small-image`}
+          onClick={() => this.clickHandler(src)}
+        >
+          <img alt="product" src={src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
+          <div className={`${CN}__image-on-hover`} />
+        </div>
       );
     });
   }
@@ -51,9 +54,13 @@ class ProductImage extends Component {
 
     return (
       <div className={cx(`${CN}__container`)}>
-        <figure className={`${CN}__big-image-container`} onClick={() => this.clickHandler(this.renderBigImage())}>
-          <img src={this.renderBigImage()} className={CN} />
-        </figure>
+        <div className={`${CN}__big-image-container`} onClick={() => this.clickHandler(this.renderBigImage())}>
+          <img
+            alt="product"
+            src={this.renderBigImage()}
+            className={CN}
+          />
+        </div>
         <div className={`${CN}__small-images-container`}>
           {this.renderSmallImages(selectedImage)}
         </div>
@@ -64,13 +71,12 @@ class ProductImage extends Component {
 
 ProductImage.propTypes = {
   imagesArr: PropTypes.arrayOf(PropTypes.shape({
-    src: PropTypes.string,
-  })),
-  className: PropTypes.string,
+    src: PropTypes.string
+  }))
 };
 
 ProductImage.defaultProps = {
-  imagesArr: [],
+  imagesArr: []
 };
 
 export default ProductImage;

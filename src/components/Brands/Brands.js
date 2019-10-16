@@ -8,9 +8,16 @@ import './Brands.scss';
 export const CN = 'brand';
 
 class BrandsAndShippingInfo extends Component {
-  state = {
-    brandsList: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      brandsList: []
+    };
+  }
+
+  componentDidMount() {
+    this.downloadBrands();
+  }
 
   async downloadBrands() {
     const userAPI = new HttpService();
@@ -21,18 +28,14 @@ class BrandsAndShippingInfo extends Component {
         this.setState({ brandsList: response.data });
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }
 
-  componentDidMount() {
-    this.downloadBrands();
-  }
-
   renderBrands(brands) {
-    return brands.map((brand) => (
-      <li key={brand.id} className={`col-2 ${CN}__list-item`}>
-        <img src={brand.photo} className={`${CN}__list-photo`}/>
+    return brands.map(({ id, photo }) => (
+      <li key={id} className={`col-2 ${CN}__list-item`}>
+        <img alt="brand logo" src={photo} className={`${CN}__list-photo`} />
       </li>
     ));
   }

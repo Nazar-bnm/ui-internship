@@ -16,7 +16,7 @@ const ContactDetails = () => {
         {icons.map(({ name, link }) => (
           <li key={name} className={`${CN}__item`}>
             <a href={link} target="blank">
-              <i className={`${name} icon large`}></i>
+              <i className={`${name} icon large`} />
             </a>
           </li>
         ))}

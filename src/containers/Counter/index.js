@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
-import { increment, decrement } from '../../actions/actionsCounter';
-import Counter from '../../components/Counter/Counter';
 import { bindActionCreators } from 'redux';
 
-const mapStateToProps = (state) => {
-  return {
-    count: state.reducerCounter.count,
-  };
-};
+import { increment, decrement } from '../../actions/actionsCounter';
+import Counter from '../../components/Counter/Counter';
 
-const mapDispatchToProps = (dispatch) => {
+function mapStateToProps(state) {
+  return {
+    count: state.reducerCounter.count
+  };
+}
+
+function mapDispatchToProps(dispatch) {
   return {
     increment: bindActionCreators(increment, dispatch),
-    decrement: bindActionCreators(decrement, dispatch),
+    decrement: bindActionCreators(decrement, dispatch)
   };
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

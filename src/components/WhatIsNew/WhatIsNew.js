@@ -4,18 +4,21 @@ import ItemInfo from './ItemInfo';
 import './WhatIsNew.scss';
 
 class WhatIsNew extends Component {
-  state = {
-    items: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: []
+    };
+  }
+
+  componentDidMount() {
+    this.downloadProducts();
   }
 
   async downloadProducts() {
     const userAPI = new HttpService();
     const response = await userAPI.get('http://localhost:4000/what-is-new');
     this.setState({ items: response.data });
-  }
-
-  componentDidMount() {
-    this.downloadProducts();
   }
 
   render() {

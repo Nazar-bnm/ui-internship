@@ -11,28 +11,29 @@ const DefaultLayout = ({
   hideFooter,
   hideHeader,
   hideBrands,
-  hideShippingInfo, ...rest
-}) => {
-  return (
-    <Route {...rest} render={(matchProps) => (
+  hideShippingInfo
+}) => (
+  <Route
+    render={() => (
       <>
         {!hideHeader && <Header />}
-        <Component {...matchProps} />
+        <Component />
         {!hideBrands && <Brands />}
         {!hideShippingInfo && <ShippingInfo />}
         {!hideFooter && <Footer />}
       </>
-    )} />
-  );
-};
+    )}
+  />
+);
+
 
 DefaultLayout.propTypes = {
   // Component which displayed as main content
-  component: PropTypes.any,
-  hideFooter: PropTypes.bool,
-  hideHeader: PropTypes.bool,
-  hideBrands: PropTypes.bool,
-  hideShippingInfo: PropTypes.bool,
+  component: PropTypes.any.isRequired,
+  hideFooter: PropTypes.bool.isRequired,
+  hideHeader: PropTypes.bool.isRequired,
+  hideBrands: PropTypes.bool.isRequired,
+  hideShippingInfo: PropTypes.bool.isRequired
 };
 
 export default DefaultLayout;

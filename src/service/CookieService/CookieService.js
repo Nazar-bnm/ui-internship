@@ -1,5 +1,5 @@
 export const getExpirationDate = (days) => {
-  const timeStamp = days*24*60*60*1000;
+  const timeStamp = days * 24 * 60 * 60 * 1000;
   const date = new Date();
 
   date.setTime(date.getTime() + (timeStamp));
@@ -16,7 +16,7 @@ export default class CookieService {
     if (daysToLive) {
       expires = `; expires=${getExpirationDate(daysToLive)}`;
       cookie += expires;
-    };
+    }
 
     if (path) {
       cookie += `; path=${path}`;
@@ -27,7 +27,7 @@ export default class CookieService {
     }
 
     document.cookie = cookie;
-  };
+  }
 
   // Before using this function check if value exist
   // (if the cookie does not exist the variable becomes null,
@@ -35,25 +35,25 @@ export default class CookieService {
   // let x = getCookie('bbbdggs');
   // if (x) { do something with x }
   static getCookie(name) {
-    const cookieName = name + '=';
+    const cookieName = `${name} =`;
     const cookieNameLength = cookieName.length;
     const cookiesArray = document.cookie.split(';');
 
-    for (let i=0; i < cookiesArray.length; i++) {
-      const cookieToCheck = cookiesArray[i];
+    for (let i = 0; i < cookiesArray.length; i++) {
+      let cookieToCheck = cookiesArray[i];
       const cookieLength = cookieToCheck.length;
 
-      while (cookieToCheck.charAt(0)==' ') {
+      while (cookieToCheck.charAt(0) === ' ') {
         cookieToCheck = cookieToCheck.slice(1, cookieLength);
       }
 
-      if (cookieToCheck.indexOf(cookieName) == 0) {
+      if (cookieToCheck.indexOf(cookieName) === 0) {
         return cookieToCheck.slice(cookieNameLength, cookieLength);
       }
     }
 
     return null;
-  };
+  }
 
   static deleteCookie(name) {
     CookieService.setCookie(name, '', -1);

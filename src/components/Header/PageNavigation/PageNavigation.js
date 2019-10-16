@@ -2,14 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 export const CN = 'list';
 
 const PageNavigation = (props) => {
   const { options } = props;
   return (
     <ul className={cx(CN, 'container')}>
-      {options.map(({ value, label, link }, i) => (
-        <li key={value}
+      {options.map(({ value, label, link }) => (
+        <li
+          key={value}
           value={value}
           className={`${CN}__item`}
         >
@@ -21,9 +23,7 @@ const PageNavigation = (props) => {
 };
 
 PageNavigation.propTypes = {
-  class: PropTypes.string,
-  options: PropTypes.array,
-  className: PropTypes.string,
+  options: PropTypes.array.isRequired
 };
 
 export default PageNavigation;

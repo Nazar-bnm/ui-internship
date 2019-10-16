@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './components/app';
 import { Provider } from 'react-redux';
+
+import App from './components/app';
 import store from './store';
 
 const app = (
@@ -15,4 +16,5 @@ const app = (
 
 ReactDOM.render(
   app,
-  document.querySelector('#root'));
+  document.querySelector('#root')
+);

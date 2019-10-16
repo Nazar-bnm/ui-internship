@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import PropTypes from 'prop-types';
 import Slide from '../Carousel/Slide';
 import Carousel from '../Carousel';
 import products from '../Carousel/products.json';
@@ -16,33 +15,24 @@ class ProductList extends Component {
   render() {
     const { productList } = this.state;
 
-    const listOfProducts =
-    productList &&
-    productList.map(({ productName, category, images }) => (
+    const listOfProducts = productList
+    && productList.map(({ productName, category, images }) => (
       <Slide
-        image = { images[0].url[0] }
-        name = { productName }
-        category = { category }
-        key = { productName }
+        image={images[0].url[0]}
+        name={productName}
+        category={category}
+        key={productName}
       />
     ));
 
     return (
-      <div className = { `${CN} content` }>
-        <Carousel items = { productList }>
+      <div className={`${CN} content`}>
+        <Carousel items={productList}>
           { listOfProducts }
         </Carousel>
       </div>
     );
   }
 }
-
-ProductList.propTypes = {
-  className: PropTypes.string,
-  image: PropTypes.string,
-  name: PropTypes.string,
-  category: PropTypes.string,
-  url: PropTypes.string,
-};
 
 export default ProductList;

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -7,14 +7,20 @@ import './ProductItem.scss';
 const CN = 'product';
 const ProductItem = ({ product }) => {
   const [isHovered, setHovered] = useState(false);
-  const { image, label, title, price, sizes } = product;
+  const {
+    image,
+    label,
+    title,
+    price,
+    sizes
+  } = product;
 
-  const renderView = (isHovered) => (
-    <Fragment>
+  const renderView = () => (
+    <>
       <div className={cx(`${CN}__img-wrapper`, { [`${CN}__img-wrapper--hovered`]: isHovered })}>
         {!isHovered && (
           <>
-            <div className={cx(`${CN}__img-wrapper__flag`, label)}/>
+            <div className={cx(`${CN}__img-wrapper__flag`, label)} />
             <div className={`${CN}__img-wrapper__labels`}>{label}</div>
           </>
         )}
@@ -22,6 +28,7 @@ const ProductItem = ({ product }) => {
         <img
           className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
           src={image}
+          alt="product"
         />
       </div>
 
@@ -33,7 +40,10 @@ const ProductItem = ({ product }) => {
         {!isHovered && <h3 className={`${CN}__title-wrapper__price`}>{price}</h3>}
         {isHovered && (
           <>
-            <span className='sizes'>Sizes: {sizes}</span>
+            <span className="sizes">
+              Sizes:
+              {sizes}
+            </span>
             <div className={`{${CN}__title-wrapper icons`}>
               <i className="eye icon" />
               <i className="cart plus icon" />
@@ -42,7 +52,7 @@ const ProductItem = ({ product }) => {
           </>
         )}
       </div>
-    </Fragment>
+    </>
   );
 
   const handleMouseEnter = () => setHovered(true);
@@ -54,19 +64,19 @@ const ProductItem = ({ product }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {renderView(isHovered)}
+      {renderView()}
     </div>
   );
 };
 
 ProductItem.propTypes = {
   product: PropTypes.shape({
-    image: PropTypes.string,
-    label: PropTypes.string,
-    title: PropTypes.string,
-    price: PropTypes.string,
-    sizes: PropTypes.string,
-  }),
+    image: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    sizes: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default ProductItem;
