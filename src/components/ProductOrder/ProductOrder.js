@@ -8,7 +8,7 @@ import './ProductOrder.scss';
 export const CN = 'product-order';
 
 const ProductOrder = ({ itemName, description, price, sizes, colors, quantity }) => (
-  <div className={CN}>
+  <div className={`${CN} content`}>
     <h2 className={`${CN}__heading`}>{itemName}</h2>
     <p className={`${CN}__description`}>{description}</p>
     <span className={`${CN}__price`}>{price}</span>

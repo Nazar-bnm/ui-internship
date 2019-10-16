@@ -3,7 +3,7 @@ import { Switch } from 'react-router-dom';
 
 import CounterContainer from '../../containers/Counter';
 import HomePage from '../HomePage';
-import ProductDetailsPage from '../../containers/ProductDetailsPage';
+import ProductDetailsPageContainer from '../../containers/ProductDetailsPageContainer';
 import ProductListPage from '../ProductListPage';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
@@ -15,7 +15,7 @@ const Routes = () => (
     <DefaultLayout path="/" exact component={HomePage} />
     <DefaultLayout path="/home" component={HomePage} />
     <DefaultLayout path="/products" exact component={ProductListPage} />
-    <DefaultLayout path="/products/:id" component={ProductDetailsPage} />
+    <DefaultLayout path="/product-details" component={ProductDetailsPageContainer} />
     <DefaultLayout path="/counter" component={CounterContainer} />
     <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
     <DefaultLayout path="/MostPopular" component={MostPopular} />

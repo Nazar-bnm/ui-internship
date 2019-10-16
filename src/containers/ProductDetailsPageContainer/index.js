@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ProductDetailsPage from '../../components/ProductDetailsPage';
 
-class ProductDetailsPage extends Component {
+class ProductDetailsPageContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -20,17 +21,21 @@ class ProductDetailsPage extends Component {
   }
 
   render() {
+    const productName = this.state.product.name;
+    const productId = this.state.product.id;
+
     return (
       <div>
-        <div>{this.state.product.name}</div>
-        <div>{this.state.product.id}</div>
+        <div>{productName}</div>
+        <div>{productId}</div>
         <button onClick={() => this.returnBack()}>Go Back</button>
+        <ProductDetailsPage />
       </div>
     );
   }
 }
 
-ProductDetailsPage.propTypes = {
+ProductDetailsPageContainer.propTypes = {
   // Routing history for returning back
   history: PropTypes.object,
   // Route path info
@@ -41,4 +46,4 @@ ProductDetailsPage.propTypes = {
   id: PropTypes.string,
 };
 
-export default ProductDetailsPage;
+export default ProductDetailsPageContainer;

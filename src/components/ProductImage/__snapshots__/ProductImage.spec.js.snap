@@ -2,7 +2,7 @@
 
 exports[`<ProductImage /> should match snapshot 1`] = `
 <div
-  className="product-image__container"
+  className="product-image__container content"
 >
   <figure
     className="product-image__big-image-container"
@@ -50,19 +50,6 @@ exports[`<ProductImage /> should match snapshot 1`] = `
       <img
         className="product-image"
         src="src/assets/img/content/new3.png"
-      />
-      <div
-        className="product-image__image-on-hover"
-      />
-    </figure>
-    <figure
-      className="product-image__small-image"
-      key="src/assets/img/content/new1.png"
-      onClick={[Function]}
-    >
-      <img
-        className="product-image"
-        src="src/assets/img/content/new1.png"
       />
       <div
         className="product-image__image-on-hover"
