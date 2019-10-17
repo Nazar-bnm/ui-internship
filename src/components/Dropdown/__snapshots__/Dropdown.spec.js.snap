@@ -15,31 +15,43 @@ exports[`<Dropdown /> should match snapshot 1`] = `
     className="dropdown__items"
   >
     <li
-      className="dropdown__items__element"
       key="USD"
-      onClick={[Function]}
-      selectednum={0}
       value="USD"
     >
-      USD
+      <button
+        className="dropdown__items__element"
+        onClick={[Function]}
+        selectednum={0}
+        type="button"
+      >
+        USD
+      </button>
     </li>
     <li
-      className="dropdown__items__element"
       key="EURO"
-      onClick={[Function]}
-      selectednum={1}
       value="EURO"
     >
-      EURO
+      <button
+        className="dropdown__items__element"
+        onClick={[Function]}
+        selectednum={1}
+        type="button"
+      >
+        EURO
+      </button>
     </li>
     <li
-      className="dropdown__items__element"
       key="UAH"
-      onClick={[Function]}
-      selectednum={2}
       value="UAH"
     >
-      UAH
+      <button
+        className="dropdown__items__element"
+        onClick={[Function]}
+        selectednum={2}
+        type="button"
+      >
+        UAH
+      </button>
     </li>
   </ul>
   <i

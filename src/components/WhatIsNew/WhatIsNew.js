@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
+
 import HttpService from '../../service/HttpService/httpService';
 import ItemInfo from './ItemInfo';
+
 import './WhatIsNew.scss';
 
 class WhatIsNew extends Component {
-  state = {
-    items: [],
-  }
+  constructor(props) {
+    super(props);
 
-  async downloadProducts() {
-    const userAPI = new HttpService();
-    const response = await userAPI.get('http://localhost:4000/what-is-new');
-    this.setState({ items: response.data });
+    this.state = {
+      items: []
+    };
   }
 
   componentDidMount() {
-    this.downloadProducts();
+    this.getProducts();
+  }
+
+  async getProducts() {
+    const userAPI = new HttpService();
+    try {
+      const response = await userAPI.get(`${process.env.BASE_URL}/what-is-new`);
+      if (response && response.data) {
+        this.setState({ items: response.data });
+      }
+    } catch (error) {
+      throw (new Error());
+    }
   }
 
   render() {
@@ -23,6 +35,7 @@ class WhatIsNew extends Component {
     const block = items.map((item) => (
       <ItemInfo key={item.id} item={item} />
     ));
+
     return (
       <div className="content">
         <h3 className="title">whats new</h3>

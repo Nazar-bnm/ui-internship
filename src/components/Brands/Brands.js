@@ -8,11 +8,19 @@ import './Brands.scss';
 export const CN = 'brand';
 
 class BrandsAndShippingInfo extends Component {
-  state = {
-    brandsList: [],
-  };
+  constructor(props) {
+    super(props);
 
-  async downloadBrands() {
+    this.state = {
+      brandsList: []
+    };
+  }
+
+  componentDidMount() {
+    this.getBrandsImages();
+  }
+
+  async getBrandsImages() {
     const userAPI = new HttpService();
 
     try {
@@ -21,18 +29,14 @@ class BrandsAndShippingInfo extends Component {
         this.setState({ brandsList: response.data });
       }
     } catch (error) {
-      console.error(error);
+      throw (new Error());
     }
   }
 
-  componentDidMount() {
-    this.downloadBrands();
-  }
-
   renderBrands(brands) {
-    return brands.map((brand) => (
-      <li key={brand.id} className={`col-2 ${CN}__list-item`}>
-        <img src={brand.photo} className={`${CN}__list-photo`}/>
+    return brands.map(({ id, image }) => (
+      <li key={id} className={`col-2 ${CN}__list-item`}>
+        <img className={`${CN}__list-photo`} alt="brand logo" src={image} />
       </li>
     ));
   }
