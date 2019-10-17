@@ -23,9 +23,7 @@ describe('<AccordionItem />', () => {
   });
 
   it('should invoke function mockClickHandler when event on click occurs', () => {
-    wrapper = shallow(<AccordionItem {...props}/>);
     wrapper.find('.accordion-item__header').first().simulate('click');
-
     expect(mockClickHandler.mock.calls.length).toBe(1);
   });
 });

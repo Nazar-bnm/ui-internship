@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Accordion from './Accordion';
-import { accordionItemsData } from '../../config/accordion';
+import { accordionItemsData } from '../AccordionPDP/DataItemProps';
 
 describe('<Accordion />', () => {
   let wrapper;
@@ -26,12 +26,10 @@ describe('<Accordion />', () => {
   });
 
   it('should the rest Accordion Item have prop hide equal to "true"', () => {
-    () => {
-      accordionItems.first().simulate('click');
-      expect(wrapper.find('[hide]').first.prop('hide')).toBe(false);
-      expect(accordionItems.at(1).prop('hide')).toBe(true);
-      expect(accordionItems.at(2).prop('hide')).toBe(true);
-    };
+    accordionItems.first().simulate('click');
+    expect(wrapper.find('[hide]').first().prop('hide')).toBe(false);
+    expect(wrapper.find('[hide]').at(1).prop('hide')).toBe(true);
+    expect(wrapper.find('[hide]').at(2).prop('hide')).toBe(true);
   });
 
   it('should hide props to be equal false for all AccordionItem', () => {

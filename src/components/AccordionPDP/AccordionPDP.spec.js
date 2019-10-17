@@ -3,13 +3,9 @@ import { shallow } from 'enzyme';
 import AccordionPDP from './AccordionPDP';
 
 describe('<AccordionPDP />', () => {
-  let wrapper;
+  it('should match snapshot', () => {
+    const wrapper = shallow(<AccordionPDP />);
 
-  beforeEach(() => {
-    wrapper = shallow(<AccordionPDP />);
-  });
-
-  it('should match snapshot <AccordionPDP />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });

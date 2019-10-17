@@ -8,6 +8,7 @@ const CN = 'accordion';
 class Accordion extends Component {
   constructor(props) {
     super(props);
+
     this.clickHandler = this.clickHandler.bind(this);
     this.state = {
       hide: [],
@@ -15,10 +16,10 @@ class Accordion extends Component {
     };
   }
 
-
   componentDidMount() {
     const { data, open } = this.props;
     const hide = data.map((el) => !open);
+
     this.setState({ hide: hide });
   }
 
@@ -62,14 +63,14 @@ class Accordion extends Component {
   }
 }
 
+const DataItemProps = PropTypes.shape({
+  title: PropTypes.string,
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+});
+
 Accordion.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      title: PropTypes.string,
-      description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    }),
-  ),
+  data: PropTypes.arrayOf(DataItemProps),
   showAll: PropTypes.bool,
   open: PropTypes.bool,
   scroll: PropTypes.bool,

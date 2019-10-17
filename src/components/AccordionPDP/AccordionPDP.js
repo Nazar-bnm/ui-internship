@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from '../Accordion';
 import ContactDetails from '../Footer/ContactDetails';
-import { accordionItemsData } from '../../config/accordion';
+import { accordionItemsData } from './DataItemProps';
 import './AccordionPDP.scss';
 
 const CN = 'AccordionPDP';

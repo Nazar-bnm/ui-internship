@@ -1,5 +1,5 @@
 import React from 'react';
-import AccordionPDP from '../AccordeonPDP';
+import AccordionPDP from '../AccordionPDP';
 
 const MainPage = () => (
   <AccordionPDP />
