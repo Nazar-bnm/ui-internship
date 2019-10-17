@@ -4,5 +4,5 @@ import reducerWishlist from './reducerWishlist';
 
 export default combineReducers({
   reducerCounter,
-  reducerWishlist,
+  reducerWishlist
 });

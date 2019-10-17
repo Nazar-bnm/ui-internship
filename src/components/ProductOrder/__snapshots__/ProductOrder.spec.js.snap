@@ -23,22 +23,6 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     className="product-order__dropdowns-wrapper"
   >
     <Dropdown
-      currency={
-        Array [
-          Object {
-            "label": "USD",
-            "value": "USD",
-          },
-          Object {
-            "label": "EURO",
-            "value": "EURO",
-          },
-          Object {
-            "label": "UAH",
-            "value": "UAH",
-          },
-        ]
-      }
       options={
         Array [
           Object {
@@ -65,22 +49,6 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
       }
     />
     <Dropdown
-      currency={
-        Array [
-          Object {
-            "label": "USD",
-            "value": "USD",
-          },
-          Object {
-            "label": "EURO",
-            "value": "EURO",
-          },
-          Object {
-            "label": "UAH",
-            "value": "UAH",
-          },
-        ]
-      }
       options={
         Array [
           Object {
@@ -103,22 +71,6 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
       }
     />
     <Dropdown
-      currency={
-        Array [
-          Object {
-            "label": "USD",
-            "value": "USD",
-          },
-          Object {
-            "label": "EURO",
-            "value": "EURO",
-          },
-          Object {
-            "label": "UAH",
-            "value": "UAH",
-          },
-        ]
-      }
       options={
         Array [
           Object {
@@ -173,20 +125,23 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     className="product-order__buttons-wrapper"
   >
     <Link
-      to="/404"
+      to="/not_found"
     >
       <Button
         customClass="product-order__cart-btn"
+        icon={null}
+        onClickFunction={null}
       >
         add to cart
       </Button>
     </Link>
     <Link
-      to="/404"
+      to="/not_found"
     >
       <Button
         customClass="product-order__wishlist-btn"
         icon="heart"
+        onClickFunction={null}
       >
         wishlist
       </Button>
