@@ -19,9 +19,9 @@ describe('<Brands />', () => {
 
   test('should check `componentDidMount()`', () => {
     const instance = wrapper.instance();
-    jest.spyOn(instance, 'downloadBrands');
+    jest.spyOn(instance, 'getBrandsImages');
     instance.componentDidMount();
-    expect(instance.downloadBrands).toHaveBeenCalledTimes(1);
+    expect(instance.getBrandsImages).toHaveBeenCalledTimes(1);
   });
 
   test('should match snapshot', () => {

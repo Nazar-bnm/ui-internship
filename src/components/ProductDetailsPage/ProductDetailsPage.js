@@ -9,8 +9,8 @@ export const CN = 'product-details';
 
 const ProductDetailsPage = () => (
   <div className={`${CN} content`}>
-    <ProductImage imagesArr={defaultImages}/>
-    <ProductOrder {...productOrderParameters}/>
+    <ProductImage imagesArr={defaultImages} />
+    <ProductOrder {...productOrderParameters} />
   </div>
 );
 

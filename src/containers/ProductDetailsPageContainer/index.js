@@ -1,34 +1,43 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Button from '../../components/Button';
 import ProductDetailsPage from '../../components/ProductDetailsPage';
 
 class ProductDetailsPageContainer extends Component {
   constructor(props) {
     super(props);
-
     const { match: { params } } = this.props;
 
     this.state = {
       product: {
         name: params.name,
-        id: params.id,
-      },
+        id: params.id
+      }
     };
+    this.returnBack = this.returnBack.bind(this);
   }
 
   returnBack() {
-    return this.props.history.goBack();
+    const { history } = this.props;
+    history.goBack();
   }
 
   render() {
-    const productName = this.state.product.name;
-    const productId = this.state.product.id;
+    const { product } = this.state;
+    const productName = product.name;
+    const productId = product.id;
 
     return (
       <div>
         <div>{productName}</div>
         <div>{productId}</div>
-        <button onClick={() => this.returnBack()}>Go Back</button>
+        <Button
+          customClass="go-back-btn"
+          icon="arrow left"
+          onClickFunction={this.returnBack}
+        >
+          Go Back
+        </Button>
         <ProductDetailsPage />
       </div>
     );
@@ -36,14 +45,17 @@ class ProductDetailsPageContainer extends Component {
 }
 
 ProductDetailsPageContainer.propTypes = {
-  // Routing history for returning back
   history: PropTypes.object,
-  // Route path info
   match: PropTypes.object,
-  // receiwed odject name
   name: PropTypes.string,
-  // receiwed odject id
-  id: PropTypes.string,
+  id: PropTypes.string
+};
+
+ProductDetailsPageContainer.defaultProps = {
+  history: {},
+  match: {},
+  name: '',
+  id: ''
 };
 
 export default ProductDetailsPageContainer;

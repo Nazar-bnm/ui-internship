@@ -5,7 +5,8 @@
   "env": {
     "es6": true,
     "node": true,
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
@@ -17,10 +18,9 @@
     "no-unused-expressions":["error", {"allowShortCircuit": true}],
     "max-len": "off",
     "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "react/prefer-stateless-function": "off",
-    "react/jsx-sort-props": [1, {"callbacksLast": true}],
-    "react/sort-prop-types":[1, {"callbacksLast": true}],
     "no-underscore-dangle": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
@@ -34,6 +34,7 @@
     "array-callback-return": "off",
     "consistent-return": "off",
     "jsx-a11y/label-has-for": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}]
   }
 }
