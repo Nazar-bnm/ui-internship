@@ -39,6 +39,7 @@
   }
 
   &__image-on-hover {
+    width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -48,6 +49,8 @@
     transition: .5s ease;
     background-color: rgba(244, 162, 54, 0.7);
     overflow: hidden;
+    border: none;
+    outline: none;
   
     &:hover {
       opacity: 1;

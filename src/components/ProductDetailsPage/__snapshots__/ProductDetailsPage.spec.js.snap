@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetailsPage /> should match snapshot 1`] = `
+<div
+  className="product-details content"
+>
+  <ProductImage
+    imagesArr={
+      Array [
+        Object {
+          "src": "src/assets/img/content/new4.png",
+        },
+        Object {
+          "src": "src/assets/img/content/new2.png",
+        },
+        Object {
+          "src": "src/assets/img/content/new3.png",
+        },
+      ]
+    }
+  />
+  <ProductOrder
+    colors={
+      Array [
+        Object {
+          "label": "color:",
+          "value": "color:",
+        },
+        Object {
+          "label": "white",
+          "value": "white",
+        },
+        Object {
+          "label": "pink",
+          "value": "pink",
+        },
+        Object {
+          "label": "black",
+          "value": "black",
+        },
+      ]
+    }
+    description="The best pink dress on the market, new collection!"
+    itemName="Detailed swing dress"
+    price="$1,999.00"
+    quantity={
+      Array [
+        Object {
+          "label": "qty:",
+          "value": "qty:",
+        },
+        Object {
+          "label": "1",
+          "value": "1",
+        },
+        Object {
+          "label": "2",
+          "value": "2",
+        },
+        Object {
+          "label": "3",
+          "value": "3",
+        },
+        Object {
+          "label": "4",
+          "value": "4",
+        },
+        Object {
+          "label": "5",
+          "value": "5",
+        },
+        Object {
+          "label": "6",
+          "value": "6",
+        },
+        Object {
+          "label": "7",
+          "value": "7",
+        },
+        Object {
+          "label": "8",
+          "value": "8",
+        },
+        Object {
+          "label": "9",
+          "value": "9",
+        },
+        Object {
+          "label": "10",
+          "value": "10",
+        },
+      ]
+    }
+    sizes={
+      Array [
+        Object {
+          "label": "size:",
+          "value": "size:",
+        },
+        Object {
+          "label": "s",
+          "value": "s",
+        },
+        Object {
+          "label": "m",
+          "value": "m",
+        },
+        Object {
+          "label": "l",
+          "value": "l",
+        },
+        Object {
+          "label": "xl",
+          "value": "xl",
+        },
+      ]
+    }
+  />
+</div>
+`;

@@ -25,7 +25,9 @@ class ProductImage extends Component {
     return selectedImage;
   }
 
-  clickHandler(selectedImage) {
+  clickHandler = (event) => {
+    const selectedImage = event.target.dataset.src;
+
     this.setState({
       selectedImage
     });
@@ -42,14 +44,19 @@ class ProductImage extends Component {
         <div
           className={`${CN}__small-image`}
           key={src}
-          onClick={() => this.clickHandler(src)}
         >
           <img
             className={cx(CN, { 'product-image__selected-image': isSelected })}
             alt="product"
             src={src}
           />
-          <div className={`${CN}__image-on-hover`} />
+          <button
+            className={`${CN}__image-on-hover`}
+            data-src={src}
+            onClick={this.clickHandler}
+            type="submit"
+            label="x"
+          />
         </div>
       );
     });
@@ -60,17 +67,16 @@ class ProductImage extends Component {
 
     return (
       <div className={cx(`${CN}__container content`)}>
-        <button
+        <div
           className={`${CN}__big-image-container`}
           type="submit"
-          onClick={() => this.clickHandler(this.getBigImageSrc())}
         >
           <img
             alt="product"
             className={CN}
             src={this.getBigImageSrc()}
           />
-        </button>
+        </div>
         <div className={`${CN}__small-images-container`}>
           {this.renderSmallImages(selectedImage)}
         </div>
