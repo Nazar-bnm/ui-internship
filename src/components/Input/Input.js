@@ -6,7 +6,7 @@ export const CN = 'input';
 
 const Input = ({ icon, customClass }) => (
   <div className={cx(CN)}>
-    {icon && <i className={`${icon} + icon`} />}
+    {icon && <i className={`${icon} icon`} />}
     <input className={customClass} type="text" placeholder="SEARCH" />
   </div>
 );

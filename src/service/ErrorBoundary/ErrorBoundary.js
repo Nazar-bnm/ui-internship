@@ -23,7 +23,7 @@ class ErrorBoundary extends Component {
     const { children } = this.props;
 
     if (hasError) {
-      return <div>{ errorMessage }</div>;
+      return <div>{errorMessage}</div>;
     }
     return children;
   }

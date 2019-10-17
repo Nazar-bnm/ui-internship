@@ -45,9 +45,9 @@ class ProductImage extends Component {
           onClick={() => this.clickHandler(src)}
         >
           <img
+            className={cx(CN, { 'product-image__selected-image': isSelected })}
             alt="product"
             src={src}
-            className={cx(CN, { 'product-image__selected-image': isSelected })}
           />
           <div className={`${CN}__image-on-hover`} />
         </div>

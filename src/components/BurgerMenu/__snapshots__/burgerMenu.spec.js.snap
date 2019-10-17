@@ -27,7 +27,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           woman
         </Link>
@@ -38,7 +38,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           man
         </Link>
@@ -49,7 +49,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           kids
         </Link>
@@ -60,7 +60,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           accessories
         </Link>
@@ -71,7 +71,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           what's new
         </Link>
@@ -82,7 +82,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           brands
         </Link>
@@ -93,7 +93,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           sale
         </Link>
@@ -104,7 +104,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="404"
+          to="not_found"
         >
           blog
         </Link>
