@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import './SlideContainer.scss';
+
+const CN = 'slide';
 
 const SlideContainer = ({ bgImage, animation, onAnimationEnd, transform, children }) => {
   const bgStyle = {
@@ -11,8 +14,6 @@ const SlideContainer = ({ bgImage, animation, onAnimationEnd, transform, childre
   const transformStyle = {
     transform: transform,
   };
-
-  const CN = 'slide';
 
   return (
     <div className={`${CN}__container`} style={transformStyle}>
@@ -36,7 +37,7 @@ SlideContainer.defaultProps = {
   animation: '',
   onAnimationEnd: () => {},
   transform: 'none',
-  children: PropTypes.node,
+  children: null,
 };
 
 export default SlideContainer;

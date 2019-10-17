@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ProductList from '../ProductList';
 import Slideshow from './Slideshow';
 import Slide from './Slide';

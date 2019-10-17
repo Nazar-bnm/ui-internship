@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import ArrowButton from './ArrowButton';
 import Slide from './SlideContainer';
 import { ANIMATION_NAMES, ARROW_BUTTON_TYPES } from '../../../constants/SlideshowConst';
+
 import './Slideshow.scss';
 
 const { CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT } = ANIMATION_NAMES;
@@ -11,18 +13,29 @@ const { LEFT, RIGHT } = ARROW_BUTTON_TYPES;
 const CN = 'slideshow';
 
 class Slideshow extends Component {
-  state = {
-    index: 0,
-    prevIndex: null,
-    autoPlay: true,
-    isClicked: false,
-    shouldTransition: true,
-    isTransform: false,
-  };
+  constructor(props) {
+    super(props);
 
-  sliderInterval = null;
+    this.state = {
+      index: 0,
+      prevIndex: null,
+      autoPlay: true,
+      isClicked: false,
+      shouldTransition: true,
+      isTransform: false,
+    };
+
+    this.sliderInterval = null;
+    this.nextSlide = this.nextSlide.bind(this);
+    this.transitionEnd = this.transitionEnd.bind(this);
+    this.removeTransform = this.removeTransform.bind(this);
+    this.deleteAutoPlay = this.deleteAutoPlay.bind(this);
+    this.onMouseLeftHandler = this.onMouseLeftHandler.bind(this);
+    this.changeSlideWithButton = this.changeSlideWithButton.bind(this);
+  }
 
   componentDidMount() {
+    console.log('hello');
     this.startSlideShow();
   }
 
@@ -92,7 +105,7 @@ class Slideshow extends Component {
   };
 
   startSlideShow() {
-    this.sliderInterval = setInterval(this.nextSlide.bind(this), 4000);
+    this.sliderInterval = setInterval(this.nextSlide, 4000);
   };
 
   onMouseLeftHandler() {
@@ -168,7 +181,7 @@ class Slideshow extends Component {
             this.isAnimationZoom() && i === prevIndex,
           [FADE]: animation === FADE && i === index,
         })}
-        onAnimationEnd={this.removeTransform.bind(this)}
+        onAnimationEnd={this.removeTransform}
       >
         {el.component}
       </Slide>));
@@ -197,18 +210,18 @@ class Slideshow extends Component {
     return (
       <div
         className={`${CN}`}
-        onMouseEnter={this.deleteAutoPlay.bind(this)}
-        onMouseLeave={this.onMouseLeftHandler.bind(this)}
+        onMouseEnter={this.deleteAutoPlay}
+        onMouseLeave={this.onMouseLeftHandler}
       >
         <ArrowButton
           type={LEFT}
           className={`${CN}__arrow-button`}
-          onClick={this.changeSlideWithButton.bind(this, LEFT)}
+          onClick={() => this.changeSlideWithButton(LEFT)}
         />
         <ArrowButton
           type={RIGHT}
           className={`${CN}__arrow-button`}
-          onClick={this.changeSlideWithButton.bind(this, RIGHT)}
+          onClick={() => this.changeSlideWithButton(RIGHT)}
         />
         <div
           className={cx(`${CN}-slides`, {
@@ -217,7 +230,7 @@ class Slideshow extends Component {
               shouldTransition && animation === CAROUSEL,
           })}
           style={styleContainer}
-          onTransitionEnd={this.transitionEnd.bind(this)}
+          onTransitionEnd={this.transitionEnd}
         >
           {slides}
         </div>
@@ -227,14 +240,16 @@ class Slideshow extends Component {
   }
 }
 
+const dataItemProps = PropTypes.shape( {
+  id: PropTypes.oneOfType([PropTypes.string,
+    PropTypes.number]),
+  img: PropTypes.string,
+  component: PropTypes.element,
+});
+
 Slideshow.propTypes = {
   animation: PropTypes.oneOf([CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT]),
-  slideData: PropTypes.arrayOf(PropTypes.shape( {
-    id: PropTypes.oneOfType([PropTypes.string,
-      PropTypes.number]),
-    img: PropTypes.string,
-    component: PropTypes.element,
-  })),
+  slideData: PropTypes.arrayOf(dataItemProps),
 };
 
 Slideshow.defaultProps = {

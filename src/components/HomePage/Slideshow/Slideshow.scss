@@ -67,9 +67,5 @@
 @include media-for(mobile-landscape) {
   .slideshow {
     height: 400px;
-
-    &-description {
-      font-size: 1.5rem;
-    }
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import ArrowButton from './ArrowButton';
 import { ARROW_BUTTON_TYPES } from '../../../../constants/SlideshowConst';
 

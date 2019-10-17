@@ -1,9 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import SlideContainer from './SlideContainer';
 
 describe('<SlideContainer />', () => {
   const CustomComponent = () => <div>Component</div>;
+
   it('should make a snapshot of SlideContainer component', () => {
     const wrapper = shallow(
       <SlideContainer
@@ -14,6 +16,7 @@ describe('<SlideContainer />', () => {
         <CustomComponent />
       </SlideContainer>,
     );
+
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -24,6 +27,7 @@ describe('<SlideContainer />', () => {
         <CustomComponent />
       </SlideContainer>,
     );
+
     wrapper
       .find('.slide__wrapper')
       .first()
