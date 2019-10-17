@@ -6,16 +6,16 @@ export const CN = 'navigation-account';
 
 const AccountNavigation = () => (
   <div className={cx(CN)}>
-    <Link to="/404">
+    <Link to="/not_found">
       <span>my account</span>
     </Link>
-    <Link to="/404">
+    <Link to="/not_found">
       <span>wish list</span>
     </Link>
-    <Link to="/404">
+    <Link to="/not_found">
       <span>checkout</span>
     </Link>
-    <Link to="/404">
+    <Link to="/not_found">
       <span>log in</span>
     </Link>
   </div>

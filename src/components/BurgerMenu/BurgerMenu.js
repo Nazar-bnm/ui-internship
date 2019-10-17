@@ -2,22 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 import './BurgerMenu.scss';
 
 export const CN = 'burger-menu';
 
 const BurgerMenu = ({ menuItemsList }) => {
   const renderMenu = () => menuItemsList.map(({ itemName, url }) => (
-    <Link key={itemName} to={url} className={`${CN}__link`}>
-      <li key={itemName} className={`${CN}__list-item`}>{ itemName }</li>
-    </Link>
+    <li key={itemName} className={`${CN}__list-item`}>
+      <Link to={url} className={`${CN}__link`}>
+        {itemName}
+      </Link>
+    </li>
   ));
 
   return (
     <div className={cx(CN)}>
       <nav className={`${CN}__navigation`}>
         <input type="checkbox" id={`${CN}__button`} />
-        <label htmlFor={`${CN}__button`} className={`${CN}__image`} title="Navigation">&#x2630;</label>
+        <label className={`${CN}__image`} htmlFor={`${CN}__button`} title="Navigation">&#x2630;</label>
         <ul className={`${CN}__list`}>
           {renderMenu()}
         </ul>

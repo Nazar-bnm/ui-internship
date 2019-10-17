@@ -7,6 +7,7 @@ const CN = 'contact-block';
 
 const ContactDetails = () => {
   const { icons } = config;
+
   return (
     <div className={`${CN}`}>
       <div className={`${CN}__title`}>

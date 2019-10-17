@@ -7,6 +7,7 @@ export const CN = 'list';
 
 const PageNavigation = (props) => {
   const { options } = props;
+
   return (
     <ul className={cx(CN, 'container')}>
       {options.map(({ value, label, link }) => (

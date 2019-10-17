@@ -1,10 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
-import './ShippingInfo.scss';
+
 import config from '../../../config';
 
-const { shippingData } = config;
+import './ShippingInfo.scss';
 
+const { shippingData } = config;
 export const CN = 'shippingInfo';
 
 const ShippingInfo = () => {

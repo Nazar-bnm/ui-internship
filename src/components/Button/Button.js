@@ -7,7 +7,11 @@ const Button = (props) => {
   } = props;
 
   return (
-    <button type="submit" className={`${customClass} button`} onClick={onClickFunction}>
+    <button
+      className={`${customClass} button`}
+      type="button"
+      onClick={onClickFunction}
+    >
       {icon && <i className={`${icon} icon`} />}
       {children}
     </button>

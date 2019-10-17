@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import './ProductImage.scss';
 
 export const CN = 'product-image';
@@ -8,6 +9,7 @@ export const CN = 'product-image';
 class ProductImage extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       selectedImage: ''
     };
@@ -38,11 +40,15 @@ class ProductImage extends Component {
 
       return (
         <div
-          key={src}
           className={`${CN}__small-image`}
+          key={src}
           onClick={() => this.clickHandler(src)}
         >
-          <img alt="product" src={src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
+          <img
+            alt="product"
+            src={src}
+            className={cx(CN, { 'product-image__selected-image': isSelected })}
+          />
           <div className={`${CN}__image-on-hover`} />
         </div>
       );
@@ -56,9 +62,9 @@ class ProductImage extends Component {
       <div className={cx(`${CN}__container`)}>
         <div className={`${CN}__big-image-container`} onClick={() => this.clickHandler(this.renderBigImage())}>
           <img
+            className={CN}
             alt="product"
             src={this.renderBigImage()}
-            className={CN}
           />
         </div>
         <div className={`${CN}__small-images-container`}>

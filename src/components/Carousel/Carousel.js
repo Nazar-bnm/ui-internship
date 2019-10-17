@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
-
 import PropTypes from 'prop-types';
+
 import { scrollTo } from '../../helpers';
 
 import './Carousel.scss';
@@ -11,6 +11,7 @@ export const CN = 'carousel';
 class Carousel extends Component {
   constructor(props) {
     super(props);
+
     this.carouselViewport = React.createRef();
     this.handleClick = this.handleClick.bind(this);
     this.onResize = this.onResize.bind(this);
@@ -25,9 +26,8 @@ class Carousel extends Component {
   componentDidMount() {
     const { scrollWidth } = this.carouselViewport.current;
     const { children } = this.props;
-    const { length } = children;
 
-    this.setState({ widthOfSlide: scrollWidth / length },
+    this.setState({ widthOfSlide: scrollWidth / children.length },
       () => {
         this.resizeTheCarousel();
         this.checkNumOfSlidesToScroll();
@@ -88,8 +88,8 @@ class Carousel extends Component {
   checkNumOfSlidesToScroll() {
     const numOfSlidesToScroll = window.innerWidth <= 900 ? 2 : 4;
     const { numOfSlidesToScroll: numOfSlides } = this.state;
-    numOfSlides !== numOfSlidesToScroll
-    && this.setState({ numOfSlidesToScroll });
+
+    numOfSlides !== numOfSlidesToScroll && this.setState({ numOfSlidesToScroll });
   }
 
   handleClick(e) {
@@ -127,9 +127,9 @@ class Carousel extends Component {
     return (
       <div className={`${CN} content`}>
         <button
+          className={leftNavClasses}
           type="button"
           onClick={this.handleClick}
-          className={leftNavClasses}
         >
           <i className={`${CN}__arrow-button chevron left icon`} />
         </button>
@@ -138,7 +138,7 @@ class Carousel extends Component {
           ref={this.carouselViewport}
           onScroll={this.onScroll}
         >
-          { children }
+          {children}
         </div>
         <button
           type="button"

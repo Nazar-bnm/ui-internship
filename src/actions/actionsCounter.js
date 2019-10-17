@@ -1,13 +1,5 @@
 import { INCREMENT, DECREMENT } from '../constants/actionTypes';
 
-export function increment() {
-  return {
-    type: INCREMENT
-  };
-}
+export const increment = () => ({ type: INCREMENT });
 
-export function decrement() {
-  return {
-    type: DECREMENT
-  };
-}
+export const decrement = () => ({ type: DECREMENT });

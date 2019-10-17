@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import Dropdown from '../Dropdown';
 import Button from '../Button';
+
 import './ProductOrder.scss';
 
 export const CN = 'product-order';
@@ -27,10 +29,10 @@ const ProductOrder = (props) => {
         <Dropdown options={quantity} />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
-        <Link to="/404">
+        <Link to="/not_found">
           <Button customClass={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
-        <Link to="/404">
+        <Link to="/not_found">
           <Button customClass={`${CN}__wishlist-btn`} icon="heart">wishlist</Button>
         </Link>
       </div>

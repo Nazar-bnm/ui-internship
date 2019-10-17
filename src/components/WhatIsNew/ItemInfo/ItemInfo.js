@@ -9,10 +9,11 @@ const ItemInfo = ({ item }) => {
     collection,
     category
   } = item;
+
   return (
     <div className="col-4 item">
       <div className="item__img-wrapper">
-        <img alt={title} className="item__img" src={photo} />
+        <img className="item__img" alt={title} src={photo} />
         <span className="item__category">
           shop
           {category}

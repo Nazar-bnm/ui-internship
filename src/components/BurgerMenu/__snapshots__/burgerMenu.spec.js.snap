@@ -21,102 +21,94 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
     <ul
       className="burger-menu__list"
     >
-      <Link
-        className="burger-menu__link"
+      <li
+        className="burger-menu__list-item"
         key="woman"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="woman"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           woman
-        </li>
-      </Link>
-      <Link
-        className="burger-menu__link"
+        </Link>
+      </li>
+      <li
+        className="burger-menu__list-item"
         key="man"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="man"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           man
-        </li>
-      </Link>
-      <Link
-        className="burger-menu__link"
+        </Link>
+      </li>
+      <li
+        className="burger-menu__list-item"
         key="kids"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="kids"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           kids
-        </li>
-      </Link>
-      <Link
-        className="burger-menu__link"
+        </Link>
+      </li>
+      <li
+        className="burger-menu__list-item"
         key="accessories"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="accessories"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           accessories
-        </li>
-      </Link>
-      <Link
-        className="burger-menu__link"
+        </Link>
+      </li>
+      <li
+        className="burger-menu__list-item"
         key="what's new"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="what's new"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           what's new
-        </li>
-      </Link>
-      <Link
-        className="burger-menu__link"
+        </Link>
+      </li>
+      <li
+        className="burger-menu__list-item"
         key="brands"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="brands"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           brands
-        </li>
-      </Link>
-      <Link
-        className="burger-menu__link"
+        </Link>
+      </li>
+      <li
+        className="burger-menu__list-item"
         key="sale"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="sale"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           sale
-        </li>
-      </Link>
-      <Link
-        className="burger-menu__link"
+        </Link>
+      </li>
+      <li
+        className="burger-menu__list-item"
         key="blog"
-        to="404"
       >
-        <li
-          className="burger-menu__list-item"
-          key="blog"
+        <Link
+          className="burger-menu__link"
+          to="404"
         >
           blog
-        </li>
-      </Link>
+        </Link>
+      </li>
     </ul>
   </nav>
 </div>

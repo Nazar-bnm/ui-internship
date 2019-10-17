@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -6,9 +6,10 @@ import './Dropdown.scss';
 
 export const CN = 'dropdown';
 
-class Dropdown extends React.Component {
+class Dropdown extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       expanded: false,
       selectedID: 0,
@@ -19,14 +20,16 @@ class Dropdown extends React.Component {
   }
 
   selectOption(e) {
-    const option = e.target;
+    const chosenOption = e.target.getAttribute('selectednum');
+
     this.setState({
-      selectedID: option.getAttribute('selectednum')
+      selectedID: chosenOption
     });
   }
 
   toggleDropdown() {
     const { expanded } = this.state;
+
     this.setState({
       expanded: !expanded
     });
@@ -36,15 +39,19 @@ class Dropdown extends React.Component {
     const { options } = this.state;
 
     return options.map(({ value, label }, i) => (
-      <div
-        className={`${CN}__items__element`}
+      <li
         key={value}
-        selectednum={i}
         value={value}
-        onClick={this.selectOption}
       >
-        {label}
-      </div>
+        <button
+          className={`${CN}__items__element`}
+          type="button"
+          selectednum={i}
+          onClick={this.selectOption}
+        >
+          {label}
+        </button>
+      </li>
     ));
   }
 

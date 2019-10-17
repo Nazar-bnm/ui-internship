@@ -1,9 +1,8 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-import './Slide.scss';
-
 import cx from 'classnames';
+import PropTypes from 'prop-types';
+
+import './Slide.scss';
 
 export const CN = 'slide';
 

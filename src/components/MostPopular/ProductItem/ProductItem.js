@@ -5,6 +5,7 @@ import cx from 'classnames';
 import './ProductItem.scss';
 
 const CN = 'product';
+
 const ProductItem = ({ product }) => {
   const [isHovered, setHovered] = useState(false);
   const {

@@ -1,7 +1,8 @@
 import React from 'react';
-import './BlogArticlePreview.scss';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
+import './BlogArticlePreview.scss';
 
 export const CN = 'article-preview';
 

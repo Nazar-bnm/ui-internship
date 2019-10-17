@@ -10,16 +10,17 @@ export const CN = 'brand';
 class BrandsAndShippingInfo extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       brandsList: []
     };
   }
 
   componentDidMount() {
-    this.downloadBrands();
+    this.getBrandsImages();
   }
 
-  async downloadBrands() {
+  async getBrandsImages() {
     const userAPI = new HttpService();
 
     try {
@@ -28,14 +29,14 @@ class BrandsAndShippingInfo extends Component {
         this.setState({ brandsList: response.data });
       }
     } catch (error) {
-      // console.error(error);
+      throw (new Error());
     }
   }
 
   renderBrands(brands) {
-    return brands.map(({ id, photo }) => (
+    return brands.map(({ id, image }) => (
       <li key={id} className={`col-2 ${CN}__list-item`}>
-        <img alt="brand logo" src={photo} className={`${CN}__list-photo`} />
+        <img className={`${CN}__list-photo`} alt="brand logo" src={image} />
       </li>
     ));
   }

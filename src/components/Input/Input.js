@@ -4,16 +4,12 @@ import PropTypes from 'prop-types';
 
 export const CN = 'input';
 
-const Input = (props) => {
-  const { icon, customClass } = props;
-
-  return (
-    <div className={cx(CN)}>
-      {icon && <i className={`${icon} + icon`} />}
-      <input type="text" placeholder="SEARCH" className={customClass} />
-    </div>
-  );
-};
+const Input = ({ icon, customClass }) => (
+  <div className={cx(CN)}>
+    {icon && <i className={`${icon} + icon`} />}
+    <input className={customClass} type="text" placeholder="SEARCH" />
+  </div>
+);
 
 Input.propTypes = {
   icon: PropTypes.string,
