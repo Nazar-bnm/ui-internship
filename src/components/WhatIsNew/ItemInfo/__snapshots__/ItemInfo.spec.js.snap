@@ -8,13 +8,14 @@ exports[`<ItemInfo /> should match snapshot 1`] = `
     className="item__img-wrapper"
   >
     <img
+      alt="Color Summer"
       className="item__img"
       src="https://www.next.ua/nxtcms/resource/image.jpg"
     />
     <span
       className="item__category"
     >
-      shop 
+      shop
       kids
     </span>
   </div>

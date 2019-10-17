@@ -1,27 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
+
 export const CN = 'navigation-account';
 
-const AccountNavigation = (props) =>
+const AccountNavigation = () => (
   <div className={cx(CN)}>
-    <Link to={'/404'}>
+    <Link to="/not_found">
       <span>my account</span>
     </Link>
-    <Link to={'/404'}>
+    <Link to="/not_found">
       <span>wish list</span>
     </Link>
-    <Link to={'/404'}>
+    <Link to="/not_found">
       <span>checkout</span>
     </Link>
-    <Link to={'/404'}>
+    <Link to="/not_found">
       <span>log in</span>
     </Link>
-  </div>;
-
-AccountNavigation.propTypes = {
-  className: PropTypes.string,
-};
+  </div>
+);
 
 export default AccountNavigation;

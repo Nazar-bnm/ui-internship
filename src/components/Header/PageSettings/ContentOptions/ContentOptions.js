@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import Dropdown from '../../../Dropdown';
 import config from '../../../../../config';
+
 export const CN = 'dropdowns';
 
 const ContentOptions = () => {
@@ -15,10 +16,6 @@ const ContentOptions = () => {
       <Dropdown options={language} />
     </div>
   );
-};
-
-ContentOptions.propTypes = {
-  className: PropTypes.string,
 };
 
 export default ContentOptions;
