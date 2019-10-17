@@ -6,13 +6,13 @@ import './WishlistItem.scss';
 
 const CN = 'wishlist-item';
 
-const WishlistItem = ({ item, removeFromWishlist }) => {
+const WishlistItem = ({ className, item, removeFromWishlist }) => {
   const {
     image, title, collection, category
   } = item;
 
   return (
-    <div className={`${cx(CN)}`}>
+    <div className={`${cx(CN, className)}`}>
       <img className={`${CN}__image`} src={image} alt={title} />
       <h3 className={`${CN}__title`}>{title}</h3>
       <h4 className={`${CN}__subtitle`}>{collection}</h4>
@@ -40,7 +40,12 @@ WishlistItem.propTypes = {
     collection: propTypes.string,
     category: propTypes.string
   }).isRequired,
-  removeFromWishlist: propTypes.func.isRequired
+  removeFromWishlist: propTypes.func.isRequired,
+  className: propTypes.string
+};
+
+WishlistItem.defaultProps = {
+  className: ''
 };
 
 export default WishlistItem;

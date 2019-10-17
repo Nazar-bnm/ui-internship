@@ -21,7 +21,7 @@ const WishlistPage = ({ wishlist, removeFromWishlist }) => {
   );
 
   return (
-    <div>
+    <>
       <div className={`${CN} content`}>
         <h1 className={`${CN}__title`}>Wishlist</h1>
       </div>
@@ -35,7 +35,7 @@ const WishlistPage = ({ wishlist, removeFromWishlist }) => {
         )))
           : renderNoWishlistItems()}
       </div>
-    </div>
+    </>
   );
 };
 
