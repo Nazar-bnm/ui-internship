@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 const Button = (props) => {
   const {
-    className, icon, children, onClickFunction
+    className, icon, children, onClick
   } = props;
 
   const CN = 'button';
@@ -13,7 +13,7 @@ const Button = (props) => {
     <button
       className={`${cx(CN, className)} `}
       type="button"
-      onClick={onClickFunction}
+      onClick={onClick}
     >
       {icon && <i className={`${icon} icon`} />}
       {children}
@@ -24,7 +24,7 @@ const Button = (props) => {
 Button.propTypes = {
   icon: PropTypes.string,
   className: PropTypes.string,
-  onClickFunction: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node

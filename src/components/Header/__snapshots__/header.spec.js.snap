@@ -63,8 +63,9 @@ exports[`<Header /> should match snapshot 1`] = `
         }
       />
       <Input
-        customClass="header__search-input"
+        className="header__search-input"
         icon="search"
+        placeholder="SEARCH"
       >
         Search
       </Input>
@@ -72,9 +73,9 @@ exports[`<Header /> should match snapshot 1`] = `
         to="/404"
       >
         <Button
-          className=""
-          customClass="header__cart-btn"
+          className="header__cart-btn"
           icon="cart"
+          onClick={[Function]}
         >
           Cart (0)
         </Button>
