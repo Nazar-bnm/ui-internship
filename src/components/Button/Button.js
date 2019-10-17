@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 const Button = (props) => {
   const {
-    customClass, icon, children, onClickFunction
+    className, icon, children, onClickFunction
   } = props;
+
+  const CN = 'button';
 
   return (
     <button
-      className={`${customClass} button`}
+      className={`${cx(CN, className)} `}
       type="button"
       onClick={onClickFunction}
     >
@@ -20,8 +23,8 @@ const Button = (props) => {
 
 Button.propTypes = {
   icon: PropTypes.string,
-  customClass: PropTypes.string,
-  onClickFunction: PropTypes.func,
+  className: PropTypes.string,
+  onClickFunction: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -30,8 +33,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   icon: null,
-  customClass: null,
-  onClickFunction: null,
+  className: '',
   children: []
 };
 
