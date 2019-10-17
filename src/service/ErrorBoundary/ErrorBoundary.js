@@ -29,7 +29,6 @@ class ErrorBoundary extends Component {
   }
 }
 
-
 ErrorBoundary.propTypes = {
   children: PropTypes.any.isRequired
 };
