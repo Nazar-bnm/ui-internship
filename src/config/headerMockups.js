@@ -1,12 +1,12 @@
 export const navConfig = [
-  { value: 'women', label: 'women', link: '/404' },
-  { value: 'men', label: 'men', link: '/404' },
-  { value: 'kids', label: 'kids', link: '/404' },
-  { value: 'accs', label: 'accessories', link: '/404' },
-  { value: 'new', label: 'what\'s new', link: '/404' },
-  { value: 'brands', label: 'brands', link: '/404' },
-  { value: 'sale', label: 'sale', link: '/404' },
-  { value: 'blog', label: 'blog', link: '/404' },
+  { value: 'women', label: 'women', link: '/not_found' },
+  { value: 'men', label: 'men', link: '/not_found' },
+  { value: 'kids', label: 'kids', link: '/not_found' },
+  { value: 'accs', label: 'accessories', link: '/not_found' },
+  { value: 'new', label: 'what\'s new', link: '/not_found' },
+  { value: 'brands', label: 'brands', link: '/not_found' },
+  { value: 'sale', label: 'sale', link: '/not_found' },
+  { value: 'blog', label: 'blog', link: '/not_found' },
 ];
 
 export const options = {

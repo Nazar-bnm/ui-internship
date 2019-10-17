@@ -5,17 +5,17 @@ const Counter = ({ decrement, increment, count }) => (
   <div>
     <h2>Counter</h2>
     <div>
-      <button onClick={decrement}>-</button>
+      <button type="button" onClick={decrement}>-</button>
       <span>{count}</span>
-      <button onClick={increment}>+</button>
+      <button type="button" onClick={increment}>+</button>
     </div>
   </div>
 );
 
-Counter.propTypes= {
-  count: PropTypes.number,
-  decrement: PropTypes.func,
-  increment: PropTypes.func,
+Counter.propTypes = {
+  count: PropTypes.number.isRequired,
+  decrement: PropTypes.func.isRequired,
+  increment: PropTypes.func.isRequired
 };
 
 export default Counter;

@@ -5,6 +5,7 @@ exports[`<Input /> should match snapshot 1`] = `
   className="input"
 >
   <input
+    className=""
     placeholder="SEARCH"
     type="text"
   />

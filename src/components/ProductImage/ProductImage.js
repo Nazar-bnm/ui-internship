@@ -1,7 +1,7 @@
-/* eslint-disable no-invalid-this */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import './ProductImage.scss';
 
 export const CN = 'product-image';
@@ -9,14 +9,15 @@ export const CN = 'product-image';
 class ProductImage extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      selectedImage: '',
+      selectedImage: ''
     };
   }
 
   clickHandler(selectedImage) {
     this.setState({
-      selectedImage,
+      selectedImage
     });
   }
 
@@ -38,10 +39,18 @@ class ProductImage extends Component {
       const isSelected = selectedImage === src;
 
       return (
-        <figure key={src} className={`${CN}__small-image`} onClick={() => this.clickHandler(src)}>
-          <img src={src} className={cx(CN, { 'product-image__selected-image': isSelected })} />
-          <div className={`${CN}__image-on-hover`}></div>
-        </figure>
+        <div
+          className={`${CN}__small-image`}
+          key={src}
+          onClick={() => this.clickHandler(src)}
+        >
+          <img
+            className={cx(CN, { 'product-image__selected-image': isSelected })}
+            alt="product"
+            src={src}
+          />
+          <div className={`${CN}__image-on-hover`} />
+        </div>
       );
     });
   }
@@ -51,9 +60,13 @@ class ProductImage extends Component {
 
     return (
       <div className={cx(`${CN}__container`)}>
-        <figure className={`${CN}__big-image-container`} onClick={() => this.clickHandler(this.renderBigImage())}>
-          <img src={this.renderBigImage()} className={CN} />
-        </figure>
+        <div className={`${CN}__big-image-container`} onClick={() => this.clickHandler(this.renderBigImage())}>
+          <img
+            className={CN}
+            alt="product"
+            src={this.renderBigImage()}
+          />
+        </div>
         <div className={`${CN}__small-images-container`}>
           {this.renderSmallImages(selectedImage)}
         </div>
@@ -64,13 +77,12 @@ class ProductImage extends Component {
 
 ProductImage.propTypes = {
   imagesArr: PropTypes.arrayOf(PropTypes.shape({
-    src: PropTypes.string,
-  })),
-  className: PropTypes.string,
+    src: PropTypes.string
+  }))
 };
 
 ProductImage.defaultProps = {
-  imagesArr: [],
+  imagesArr: []
 };
 
 export default ProductImage;

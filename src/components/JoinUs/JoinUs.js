@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+
 import './JoinUs.scss';
 
 const emailRegEx = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
@@ -7,9 +8,10 @@ const emailRegEx = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-
 class JoinUs extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: '',
-      isEmailValid: null,
+      isEmailValid: null
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -21,7 +23,7 @@ class JoinUs extends Component {
 
     this.setState({
       email: value,
-      isEmailValid: this.validateField(value),
+      isEmailValid: this.validateField(value)
     });
   }
 
@@ -37,10 +39,13 @@ class JoinUs extends Component {
         <label htmlFor="email" className="join-us__title">newsletter</label>
         <div className="join-us__wrapper">
           <div className="join-us__input-wrapper">
-            <input type="email" required name="email"
+            <input
+              className={cx('join-us__email-input', { warning: !isEmailValid }, { success: isEmailValid })}
+              type="email"
+              required
+              name="email"
               value={email}
               onChange={this.handleInput}
-              className={cx('join-us__email-input', { warning: !isEmailValid }, { success: isEmailValid })}
             />
             <button className="join-us__btn" type="submit">
               <i className="chevron right icon" />
