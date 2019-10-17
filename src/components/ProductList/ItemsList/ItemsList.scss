@@ -3,4 +3,11 @@
 .items-container {
   @include flex();
   width: 100%;
+
+  &__error-container {
+    width: 100%;
+    padding: 30px 10px;
+    text-align: center;
+    color: red;
+  }
 }

@@ -1,21 +1,21 @@
 {
   "what-is-new" : [
     {
-      "id": 1,
+      "id": "1",
       "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
       "title": "Black and White",
       "collection": "spring collection 2016",
       "category": "women"
     },
     {
-      "id": 2,
+      "id": "2",
       "photo": "https://www.next.ua/nxtcms/resource/image/1233600/portrait_ratio1x1/525/525/69ca86774e073288bc792479650a14cc/Jn/all-baby-girl.jpg",
       "title": "Color Summer",
       "collection": "spring collection 2016",
       "category": "kids"
     },
     {
-      "id": 3,
+      "id": "3",
       "photo": "https://www.next.ua/nxtcms/resource/image/1915752/portrait_ratio1x1/525/525/1cf45576cf1de5e2bab187220d4ebeb0/ds/g83-mb-sh819338-lm-357.jpg",
       "title": "Vintage For Him",
       "collection": "spring collection 2016",
@@ -24,7 +24,7 @@
   ],
   "most-popular": [
     {
-      "id": 1,
+      "id": "1",
       "image": "https://i.dailymail.co.uk/1s/2018/12/15/12/7458890-6498875-image-a-2_1544876240893.jpg",
       "label": "new",
       "title": "Black dress",
@@ -32,7 +32,7 @@
       "sizes": "S - M - L"
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "https://i.pinimg.com/564x/99/5d/f3/995df3032c828381332af1dea4e5c590.jpg",
       "label": "sale",
       "title": "Red evening dress",
@@ -40,7 +40,7 @@
       "sizes": "S - M - L"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "https://i.redd.it/grla2qtpa5721.jpg",
       "label": "",
       "title": "Fit & flare dress",
@@ -72,6 +72,128 @@
     {
       "id": "Gucci2",
       "photo" : "https://myrealdomain.com/images/gucci-logo-png-1.png"
+    }
+  ],
+  "product-list": [
+    {
+      "id": "1",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "bA",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "1"
+    },
+    {
+      "id": "2",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "aB",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "2"
+    },
+    {
+      "id": "3",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "aC",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "3"
+    },
+    {
+      "id": "4",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "D",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "4"
+    },
+    {
+      "id": "5",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "E",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "5"
+    },
+    {
+      "id": "6",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "H",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "6"
+    },
+    {
+      "id": "7",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "I",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "7"
+    },
+    {
+      "id": "8",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "J",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "8"
+    },
+    {
+      "id": "9",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "aaK",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "9"
+    },
+    {
+      "id": "10",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "AL",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "10"
+    },
+    {
+      "id": "11",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "M",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "11"
+    },
+    {
+      "id": "12",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "N",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "12"
+    },
+    {
+      "id": "13",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "O",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "13"
+    },
+    {
+      "id": "14",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "P",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "14"
+    },
+    {
+      "id": "15",
+      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "title": "R",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "price": "15"
     }
   ]
 }

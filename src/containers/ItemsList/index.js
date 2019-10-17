@@ -1,13 +1,18 @@
 import { connect } from 'react-redux';
-// import HttpService from '../../service/HttpService/httpService';
 import ItemsList from '../../components/ProductList/ItemsList';
+import { getProductsSuccess, getProductsError } from '../../actions/actionsProductList';
 
-const mapStateToProps = (state) => {
-  return {
-    ascendingOrder: state.reducerProductList.ascendingOrder,
-    orderType: state.reducerProductList.orderType,
-    itemsOnPage: Number(state.reducerProductList.chosenItemsOnPage),
-  };
-};
+const mapStateToProps = (state) => ({
+  ascendingOrder: state.reducerProductList.ascendingOrder,
+  orderType: state.reducerProductList.orderType,
+  itemsOnPage: Number(state.reducerProductList.chosenItemsOnPage),
+  itemList: state.reducerProductList.itemList,
+  error: state.reducerProductList.error
+});
 
-export default connect(mapStateToProps)(ItemsList);
+const mapDispatchToProps = (dispatch) => ({
+  onGetProductsSuccess: (products) => dispatch(getProductsSuccess(products)),
+  onGetProductsError: (error) => dispatch(getProductsError(error))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsList);

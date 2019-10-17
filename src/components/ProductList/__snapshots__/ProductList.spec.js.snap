@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductList /> should match snapshot 1`] = `
+<div
+  className="product-list content"
+>
+  <div
+    className="product-list__filter-wrapper"
+  >
+    <React.Memo />
+  </div>
+  <div
+    className="product-list__items-list-container"
+  >
+    <React.Memo />
+  </div>
+  <div
+    className="product-list__filter-wrapper"
+  >
+    <React.Memo />
+  </div>
+</div>
+`;
