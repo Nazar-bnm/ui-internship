@@ -6,18 +6,30 @@ import './SlideContainer.scss';
 
 const CN = 'slide';
 
-const SlideContainer = ({ bgImage, animation, onAnimationEnd, transform, children }) => {
+const SlideContainer = (props) => {
+  const {
+    bgImage,
+    animation,
+    onAnimationEnd,
+    transform,
+    children
+  } = props;
+
   const bgStyle = {
-    backgroundImage: `url(${bgImage})`,
+    backgroundImage: `url(${bgImage})`
   };
 
   const transformStyle = {
-    transform: transform,
+    transform
   };
 
   return (
     <div className={`${CN}__container`} style={transformStyle}>
-      <div className={cx(`${CN}__wrapper`, animation)} style = {bgStyle} onAnimationEnd={onAnimationEnd}>
+      <div
+        className={cx(`${CN}__wrapper`, animation)}
+        style={bgStyle}
+        onAnimationEnd={onAnimationEnd}
+      >
         {children}
       </div>
     </div>
@@ -29,7 +41,7 @@ SlideContainer.propTypes = {
   animation: PropTypes.string,
   onAnimationEnd: PropTypes.func,
   transform: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 SlideContainer.defaultProps = {
@@ -37,7 +49,7 @@ SlideContainer.defaultProps = {
   animation: '',
   onAnimationEnd: () => {},
   transform: 'none',
-  children: null,
+  children: null
 };
 
 export default SlideContainer;

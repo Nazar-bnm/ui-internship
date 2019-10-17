@@ -8,7 +8,12 @@ import { ANIMATION_NAMES, ARROW_BUTTON_TYPES } from '../../../constants/Slidesho
 
 import './Slideshow.scss';
 
-const { CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT } = ANIMATION_NAMES;
+const {
+  CAROUSEL,
+  FADE,
+  ZOOM_IN,
+  ZOOM_OUT
+} = ANIMATION_NAMES;
 const { LEFT, RIGHT } = ARROW_BUTTON_TYPES;
 const CN = 'slideshow';
 
@@ -22,7 +27,7 @@ class Slideshow extends Component {
       autoPlay: true,
       isClicked: false,
       shouldTransition: true,
-      isTransform: false,
+      isTransform: false
     };
 
     this.sliderInterval = null;
@@ -35,7 +40,6 @@ class Slideshow extends Component {
   }
 
   componentDidMount() {
-    console.log('hello');
     this.startSlideShow();
   }
 
@@ -47,75 +51,73 @@ class Slideshow extends Component {
     }
   }
 
+  onMouseLeftHandler() {
+    const { isClicked } = this.state;
+
+    !isClicked
+      && this.setState({
+        autoPlay: true
+      });
+  }
+
   isAnimationZoom() {
     const { animation } = this.props;
 
     return animation === ZOOM_IN || animation === ZOOM_OUT;
-  };
+  }
 
 
   updateIndex(number, newIndex) {
-    this.setState(({ index: prevIndex }) => {
-      return {
-        index: newIndex !== undefined ? newIndex : prevIndex + number,
-        shouldTransition: true,
-        ...(this.isAnimationZoom() ?
-          { isTransform: true, prevIndex: prevIndex } :
-          {}),
-      };
-    });
-  };
+    this.setState(({ index: prevIndex }) => ({
+      index: newIndex !== undefined ? newIndex : prevIndex + number,
+      shouldTransition: true,
+      ...(this.isAnimationZoom()
+        ? { isTransform: true, prevIndex }
+        : {})
+    }));
+  }
 
   nextSlide() {
     const { index } = this.state;
     const { slideData } = this.props;
 
     index !== slideData.length && this.updateIndex(1);
-  };
+  }
 
   prevSlide() {
     const { index } = this.state;
     const indexOfLastCloneSlide = -1;
 
     index !== indexOfLastCloneSlide && this.updateIndex(-1);
-  };
+  }
 
   changeSlideWithButton(type) {
     this.setState({
-      isClicked: true,
+      isClicked: true
     });
 
     type === RIGHT && this.nextSlide();
     type === LEFT && this.prevSlide();
-  };
+  }
 
   changeSlideWithPagination(e, i) {
     const { index } = this.state;
 
     this.setState({ isClicked: true });
     i !== index && this.updateIndex('', i);
-  };
+  }
 
   deleteAutoPlay() {
     this.setState({
-      autoPlay: false,
+      autoPlay: false
     });
 
     clearInterval(this.sliderInterval);
-  };
+  }
 
   startSlideShow() {
     this.sliderInterval = setInterval(this.nextSlide, 4000);
-  };
-
-  onMouseLeftHandler() {
-    const { isClicked } = this.state;
-
-    !isClicked &&
-      this.setState({
-        autoPlay: true,
-      });
-  };
+  }
 
   transitionEnd() {
     const { index } = this.state;
@@ -124,24 +126,24 @@ class Slideshow extends Component {
     const indexOfLastCloneSlide = -1;
     const indexOfLastSlide = slideDataLength - 1;
 
-    index === slideDataLength &&
-      this.setState({
+    index === slideDataLength
+      && this.setState({
         index: 0,
-        shouldTransition: false,
+        shouldTransition: false
       });
 
-    index === indexOfLastCloneSlide &&
-      this.setState({
+    index === indexOfLastCloneSlide
+      && this.setState({
         index: indexOfLastSlide,
-        shouldTransition: false,
+        shouldTransition: false
       });
-  };
+  }
 
   removeTransform() {
     this.setState({
-      isTransform: false,
+      isTransform: false
     });
-  };
+  }
 
   renderPagination() {
     const { index } = this.state;
@@ -151,22 +153,22 @@ class Slideshow extends Component {
       <div
         key={el.id}
         className={cx(`${CN}-pagination__item`, {
-          [`${CN}-pagination__item--active`]: index === dataIndex,
+          [`${CN}-pagination__item--active`]: index === dataIndex
         })}
         onClick={(e) => this.changeSlideWithPagination(e, dataIndex)}
-      ></div>
+      />
     ));
-  };
+  }
 
   renderSlides() {
     const { index, prevIndex, isTransform } = this.state;
     const { slideData, animation } = this.props;
-    const transformSlide = `translateX(${100 *(index - prevIndex)}%)`;
+    const transformSlide = `translateX(${100 * (index - prevIndex)}%)`;
 
     const {
       0: firstCloneData,
       length,
-      [length - 1]: lastCloneData,
+      [length - 1]: lastCloneData
     } = slideData;
 
     const slides = slideData.map((el, i) => (
@@ -179,12 +181,13 @@ class Slideshow extends Component {
         animation={cx({
           [animation]:
             this.isAnimationZoom() && i === prevIndex,
-          [FADE]: animation === FADE && i === index,
+          [FADE]: animation === FADE && i === index
         })}
         onAnimationEnd={this.removeTransform}
       >
         {el.component}
-      </Slide>));
+      </Slide>
+    ));
 
     return [
       <Slide key="lastClone" bgImage={lastCloneData.img}>
@@ -193,23 +196,23 @@ class Slideshow extends Component {
       ...slides,
       <Slide key="firstClone" bgImage={firstCloneData.img}>
         {firstCloneData.component}
-      </Slide>,
+      </Slide>
     ];
   }
 
   render() {
     const { index, shouldTransition } = this.state;
-    const { animation } = this.props;
+    const { className, animation } = this.props;
     const slides = this.renderSlides();
 
     const styleContainer = {
-      transform: `translateX(-${(100 / slides.length) *
-        (index + 1)}%)`,
+      transform: `translateX(-${(100 / slides.length)
+        * (index + 1)}%)`
     };
 
     return (
       <div
-        className={`${CN}`}
+        className={cx(`${CN}`, className)}
         onMouseEnter={this.deleteAutoPlay}
         onMouseLeave={this.onMouseLeftHandler}
       >
@@ -227,7 +230,7 @@ class Slideshow extends Component {
           className={cx(`${CN}-slides`, {
             transition: shouldTransition,
             transitionCarousel:
-              shouldTransition && animation === CAROUSEL,
+              shouldTransition && animation === CAROUSEL
           })}
           style={styleContainer}
           onTransitionEnd={this.transitionEnd}
@@ -240,21 +243,23 @@ class Slideshow extends Component {
   }
 }
 
-const dataItemProps = PropTypes.shape( {
+const dataItemProps = PropTypes.shape({
   id: PropTypes.oneOfType([PropTypes.string,
     PropTypes.number]),
   img: PropTypes.string,
-  component: PropTypes.element,
+  component: PropTypes.element
 });
 
 Slideshow.propTypes = {
+  className: PropTypes.string,
   animation: PropTypes.oneOf([CAROUSEL, FADE, ZOOM_IN, ZOOM_OUT]),
-  slideData: PropTypes.arrayOf(dataItemProps),
+  slideData: PropTypes.arrayOf(dataItemProps)
 };
 
 Slideshow.defaultProps = {
+  className: '',
   animation: CAROUSEL,
-  slideData: [],
+  slideData: []
 };
 
 export default Slideshow;

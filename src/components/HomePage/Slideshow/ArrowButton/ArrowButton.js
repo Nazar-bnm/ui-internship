@@ -18,13 +18,13 @@ const arrowButton = ({ type, onClick, className }) => (
 arrowButton.propTypes = {
   type: PropTypes.oneOf([LEFT, RIGHT]),
   onClick: PropTypes.func,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 arrowButton.defaultProps = {
   type: '',
   onClick: () => {},
-  className: '',
+  className: ''
 };
 
 export default arrowButton;

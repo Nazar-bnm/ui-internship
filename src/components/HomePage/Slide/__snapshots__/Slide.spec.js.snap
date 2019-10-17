@@ -14,10 +14,13 @@ exports[`<Slide /> should make a snapshot of Slide component 1`] = `
   >
     Special autumn edition
   </p>
-  <button
+  <Button
     className="slide-info__button"
+    customClass={null}
+    icon={null}
+    onClickFunction={null}
   >
     discover the editorial
-  </button>
+  </Button>
 </div>
 `;

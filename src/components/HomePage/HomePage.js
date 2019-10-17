@@ -7,19 +7,17 @@ import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
 import { slideshowData } from './Slideshow/SlideshowDate';
 
 const HomePage = () => {
-  const slidesData = slideshowData.map((el) => {
-    return {
-      id: el.id,
-      img: el.img,
-      component: (
-        <Slide
-          title={el.title}
-          description={el.description}
-          buttonName={el.buttonName}
-        />
-      ),
-    };
-  });
+  const slidesData = slideshowData.map((el) => ({
+    id: el.id,
+    img: el.img,
+    component: (
+      <Slide
+        title={el.title}
+        description={el.description}
+        buttonName={el.buttonName}
+      />
+    )
+  }));
 
   return (
     <div>
@@ -30,4 +28,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
