@@ -1,42 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 import './Dropdown.scss';
+
 export const CN = 'dropdown';
 
-class Dropdown extends React.Component {
+class Dropdown extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       expanded: false,
       selectedID: 0,
-      options: props.options,
+      options: props.options
     };
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.selectOption = this.selectOption.bind(this);
   }
 
   selectOption(e) {
-    const { options } = this.state;
-    const { changeItemsOnPageNum, changeOrderType } = this.props;
-    const option = e.target;
-    const selectedID = option.getAttribute('selectednum');
-    const selectedLabel = options[selectedID].label;
+    const chosenOption = e.target.getAttribute('selectednum');
 
     this.setState({
-      selectedID,
+      selectedID: chosenOption
     });
-
-    if (!isNaN(Number(selectedLabel))) {
-      return changeItemsOnPageNum(selectedLabel);
-    } else {
-      changeOrderType(selectedLabel);
-    }
   }
 
   toggleDropdown() {
-    this.setState( {
-      expanded: !this.state.expanded,
+    const { expanded } = this.state;
+
+    this.setState({
+      expanded: !expanded
     });
   }
 
@@ -45,13 +40,17 @@ class Dropdown extends React.Component {
 
     return options.map(({ value, label }, i) => (
       <li
-        className={`${CN}__items__element`}
         key={value}
-        selectednum={i}
         value={value}
-        onClick={this.selectOption}
       >
-        {label}
+        <button
+          className={`${CN}__items__element`}
+          type="button"
+          selectednum={i}
+          onClick={this.selectOption}
+        >
+          {label}
+        </button>
       </li>
     ));
   }
@@ -61,7 +60,8 @@ class Dropdown extends React.Component {
     const iconName = `caret ${expanded ? 'up' : 'down'} icon`;
 
     return (
-      <div className={cx(CN)}
+      <div
+        className={cx(CN)}
         onClick={this.toggleDropdown}
         aria-expanded={expanded}
       >
@@ -74,23 +74,11 @@ class Dropdown extends React.Component {
         <i className={iconName} />
       </div>
     );
-  };
-};
+  }
+}
 
 Dropdown.propTypes = {
-  options: PropTypes.array,
-  selected: PropTypes.number,
-  className: PropTypes.string,
-  changeItemsOnPageNum: PropTypes.func,
-  changeOrderType: PropTypes.func,
-};
-
-Dropdown.defaultProps = {
-  currency: [
-    { value: 'USD', label: 'USD' },
-    { value: 'EURO', label: 'EURO' },
-    { value: 'UAH', label: 'UAH' },
-  ],
+  options: PropTypes.array.isRequired
 };
 
 export default Dropdown;

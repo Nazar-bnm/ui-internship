@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import ItemsList from '../../components/ProductList/ItemsList';
-import { getProductsSuccess, getProductsError } from '../../actions/actionsProductList';
+import ItemsList from './ItemsList';
+import { getProductsSuccess, getProductsError } from '../../../actions/actionsProductList';
 
 const mapStateToProps = (state) => ({
   ascendingOrder: state.reducerProductList.ascendingOrder,

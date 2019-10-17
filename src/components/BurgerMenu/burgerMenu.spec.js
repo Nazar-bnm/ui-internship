@@ -9,14 +9,14 @@ describe('<BurgerMenu />', () => {
   beforeEach(() => {
     props = {
       menuItemsList: [
-        { itemName: 'woman', url: '404' },
-        { itemName: 'man', url: '404' },
-        { itemName: 'kids', url: '404' },
-        { itemName: 'accessories', url: '404' },
-        { itemName: 'what\'s new', url: '404' },
-        { itemName: 'brands', url: '404' },
-        { itemName: 'sale', url: '404' },
-        { itemName: 'blog', url: '404' },
+        { itemName: 'woman', url: 'not_found' },
+        { itemName: 'man', url: 'not_found' },
+        { itemName: 'kids', url: 'not_found' },
+        { itemName: 'accessories', url: 'not_found' },
+        { itemName: 'what\'s new', url: 'not_found' },
+        { itemName: 'brands', url: 'not_found' },
+        { itemName: 'sale', url: 'not_found' },
+        { itemName: 'blog', url: 'not_found' },
       ],
     };
 

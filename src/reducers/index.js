@@ -6,5 +6,5 @@ import reducerProductList from './reducerProductList';
 export default combineReducers({
   reducerCounter,
   reducerWishlist,
-  reducerProductList,
+  reducerProductList
 });

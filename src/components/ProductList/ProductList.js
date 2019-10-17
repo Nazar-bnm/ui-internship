@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductListNavigation from '../../containers/ProductListNavigation';
-import ItemsList from '../../containers/ItemsList';
+import ProductListNavigationContainer from './ProductListNavigation/ProductListNavigationContainer';
+import ItemsListContainer from './ItemsList/ItemsListContainer';
 import './ProductList.scss';
 
 export const CN = 'product-list';
@@ -8,13 +8,13 @@ export const CN = 'product-list';
 const ProductList = () => (
   <div className={`${CN} content`}>
     <div className={`${CN}__filter-wrapper`}>
-      <ProductListNavigation />
+      <ProductListNavigationContainer />
     </div>
     <div className={`${CN}__items-list-container`}>
-      <ItemsList />
+      <ItemsListContainer />
     </div>
     <div className={`${CN}__filter-wrapper`}>
-      <ProductListNavigation />
+      <ProductListNavigationContainer />
     </div>
   </div>
 );

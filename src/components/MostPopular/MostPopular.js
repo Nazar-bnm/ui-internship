@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+
 import HttpService from '../../service/HttpService/httpService';
 import ProductItem from './ProductItem/ProductItem';
+
 import './MostPopular.scss';
 
 const urlBase = 'http://localhost:4000/most-popular';
 
 class MostPopular extends Component {
-  state = {
-    products: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: []
+    };
   }
 
   componentDidMount() {
@@ -22,7 +27,7 @@ class MostPopular extends Component {
         this.setState({ products: response.data });
       }
     } catch (error) {
-      console.error(error);
+      throw (new Error());
     }
   }
 

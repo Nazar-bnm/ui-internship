@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Dropdown from '../../Dropdown';
 import Button from '../../Button';
 import { dropdownsForItemListPage } from '../../../constants';
-import { CN } from '../ProductList';
+
+export const CN = 'product-list';
 
 const { itemsOnPage, sortBy } = dropdownsForItemListPage;
 
