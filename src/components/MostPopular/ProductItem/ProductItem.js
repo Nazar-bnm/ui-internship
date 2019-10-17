@@ -9,11 +9,7 @@ const CN = 'product';
 const ProductItem = ({ product }) => {
   const [isHovered, setHovered] = useState(false);
   const {
-    image,
-    label,
-    title,
-    price,
-    sizes
+    image, label, title, price, sizes
   } = product;
 
   const renderView = () => (
@@ -27,9 +23,9 @@ const ProductItem = ({ product }) => {
         )}
 
         <img
+          alt="product"
           className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
           src={image}
-          alt="product"
         />
       </div>
 
@@ -42,7 +38,8 @@ const ProductItem = ({ product }) => {
         {isHovered && (
           <>
             <span className="sizes">
-              Sizes:
+            Sizes:
+              {' '}
               {sizes}
             </span>
             <div className={`{${CN}__title-wrapper icons`}>
@@ -71,13 +68,14 @@ const ProductItem = ({ product }) => {
 };
 
 ProductItem.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   product: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    sizes: PropTypes.string.isRequired
-  }).isRequired
+    image: PropTypes.string,
+    label: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.string,
+    sizes: PropTypes.string
+  })
 };
 
 export default ProductItem;
