@@ -14,11 +14,11 @@ const Routes = () => (
   <Switch>
     <DefaultLayout path="/" exact component={HomePage} />
     <DefaultLayout path="/home" component={HomePage} />
-    <DefaultLayout path="/products" exact component={ProductListPage} />
     <DefaultLayout path="/products/:id" component={ProductDetailsPage} />
     <DefaultLayout path="/counter" component={CounterContainer} />
     <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
     <DefaultLayout path="/MostPopular" component={MostPopular} />
+    <DefaultLayout path="/:category" component={ProductListPage} />
     <DefaultLayout
       to="/404"
       component={NotFoundPage}

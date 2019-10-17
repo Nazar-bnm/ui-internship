@@ -1,25 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+// import { createBrowserHistory } from 'history';
 
-const renderProductList = () => {
-  const products = [
-    { product: 'dress', id: '1' },
-    { product: 't-shirt', id: '2' },
-    { product: 'pants', id: '3' },
-    { product: 'jeans', id: '4' },
-  ];
+// const history = createBrowserHistory();
 
-  return products.map(({ product, id }) => {
+class ProductListPage extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('props', props.match.url);
+  }
+
+  render() {
     return (
-      <div key={id}>
-        <li>
-          <Link to={`/products/${id}`}>{product}</Link>
-        </li>
+      <div>
+        something
       </div>
     );
-  });
-};
-
-const ProductListPage = () => (<ul>{renderProductList()}</ul>);
-
+  }
+}
 export default ProductListPage;

@@ -7,7 +7,10 @@ import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
 import './Header.scss';
-import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
+
+import config from '../../../config';
+const { burgerMenuItemsList, navConfig } = config;
+
 export const CN = 'header';
 
 const Header = () =>
