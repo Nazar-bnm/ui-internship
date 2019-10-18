@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const defaultConfig = {
   headers: {
-    'X-Custom-Header': 'foobar',
-  },
+    'X-Custom-Header': 'foobar'
+  }
 };
 
 export default class HttpService {
@@ -50,6 +50,4 @@ export default class HttpService {
       return error.response.data;
     }
   }
-};
-
-
+}

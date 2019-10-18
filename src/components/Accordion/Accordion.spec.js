@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Accordion from './Accordion';
-import { accordionItemsData } from '../AccordionPDP/DataItemProps';
+import { accordionItemsData } from '../AccordionPDP/dataItems';
 
 describe('<Accordion />', () => {
   let wrapper;

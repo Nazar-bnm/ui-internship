@@ -2,31 +2,35 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class ErrorBoundary extends Component {
-  state = {
-    hasError: false,
-    errorMessage: '',
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hasError: false,
+      errorMessage: ''
+    };
+  }
 
   componentDidCatch(error) {
     this.setState({
       hasError: true,
-      errorMessage: error,
+      errorMessage: error
     });
-  };
+  }
 
   render() {
     const { hasError, errorMessage } = this.state;
     const { children } = this.props;
+
     if (hasError) {
-      return <div>{ errorMessage }</div>;
-    } else {
-      return children;
+      return <div>{errorMessage}</div>;
     }
+    return children;
   }
 }
 
 ErrorBoundary.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired
 };
 
 export default ErrorBoundary;

@@ -74,6 +74,7 @@ exports[`<Header /> should match snapshot 1`] = `
         <Button
           customClass="header__cart-btn"
           icon="cart"
+          onClickFunction={null}
         >
           Cart (0)
         </Button>
@@ -85,42 +86,42 @@ exports[`<Header /> should match snapshot 1`] = `
       Array [
         Object {
           "label": "women",
-          "link": "/404",
+          "link": "/not_found",
           "value": "women",
         },
         Object {
           "label": "men",
-          "link": "/404",
+          "link": "/not_found",
           "value": "men",
         },
         Object {
           "label": "kids",
-          "link": "/404",
+          "link": "/not_found",
           "value": "kids",
         },
         Object {
           "label": "accessories",
-          "link": "/404",
+          "link": "/not_found",
           "value": "accs",
         },
         Object {
           "label": "what's new",
-          "link": "/404",
+          "link": "/not_found",
           "value": "new",
         },
         Object {
           "label": "brands",
-          "link": "/404",
+          "link": "/not_found",
           "value": "brands",
         },
         Object {
           "label": "sale",
-          "link": "/404",
+          "link": "/not_found",
           "value": "sale",
         },
         Object {
           "label": "blog",
-          "link": "/404",
+          "link": "/not_found",
           "value": "blog",
         },
       ]

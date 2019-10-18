@@ -11,16 +11,15 @@ class Accordion extends Component {
 
     this.clickHandler = this.clickHandler.bind(this);
     this.state = {
-      hide: [],
-      currentIndex: null,
+      hide: []
     };
   }
 
   componentDidMount() {
     const { data, open } = this.props;
-    const hide = data.map((el) => !open);
+    const hide = data.map(() => !open);
 
-    this.setState({ hide: hide });
+    this.setState({ hide });
   }
 
   clickHandler(index) {
@@ -31,17 +30,17 @@ class Accordion extends Component {
     hideCopy[index] = !hideCopy[index];
 
     if (!showAll) {
-      hideCopy = hideCopy.map((el, currentIndex) =>
-        index === currentIndex ? el : true,
-      );
+      hideCopy = hideCopy.map((el, indexOfEl) => (index === indexOfEl ? el : true),);
     }
 
-    this.setState({ hide: hideCopy, currentIndex: index });
+    this.setState({ hide: hideCopy });
   }
 
   render() {
     const { hide } = this.state;
-    const { data, heightItem, scroll, className } = this.props;
+    const {
+      data, heightItem, scroll, className
+    } = this.props;
 
     const accordionItems = data.map(({ id, title, description }, index) => (
       <AccordionItem
@@ -50,7 +49,7 @@ class Accordion extends Component {
         description={description}
         hide={hide[index]}
         onClick={() => this.clickHandler(index)}
-        height = {heightItem}
+        height={heightItem}
         scroll={scroll}
       />
     ));
@@ -66,7 +65,7 @@ class Accordion extends Component {
 const DataItemProps = PropTypes.shape({
   title: PropTypes.string,
   id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 });
 
 Accordion.propTypes = {
@@ -75,7 +74,7 @@ Accordion.propTypes = {
   open: PropTypes.bool,
   scroll: PropTypes.bool,
   heightItem: PropTypes.string,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 Accordion.defaultProps = {
@@ -84,7 +83,7 @@ Accordion.defaultProps = {
   open: false,
   scroll: false,
   heightItem: '',
-  className: '',
+  className: ''
 };
 
 export default Accordion;

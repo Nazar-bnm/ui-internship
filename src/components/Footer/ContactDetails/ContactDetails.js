@@ -8,6 +8,7 @@ const CN = 'contact-block';
 
 const ContactDetails = ({ title }) => {
   const { icons } = config;
+
   return (
     <div className={`${CN}`}>
       <div className={`${CN}__title`}>
@@ -17,7 +18,7 @@ const ContactDetails = ({ title }) => {
         {icons.map(({ name, link }) => (
           <li key={name} className={`${CN}__item`}>
             <a href={link} target="blank">
-              <i className={`${name} icon large`}></i>
+              <i className={`${name} icon large`} />
             </a>
           </li>
         ))}
@@ -27,11 +28,11 @@ const ContactDetails = ({ title }) => {
 };
 
 ContactDetails.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 ContactDetails.defaultProps = {
-  title: '',
+  title: ''
 };
 
 export default ContactDetails;

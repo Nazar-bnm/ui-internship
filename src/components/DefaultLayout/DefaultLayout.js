@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
@@ -11,20 +12,20 @@ const DefaultLayout = ({
   hideFooter,
   hideHeader,
   hideBrands,
-  hideShippingInfo, ...rest
-}) => {
-  return (
-    <Route {...rest} render={(matchProps) => (
+  hideShippingInfo
+}) => (
+  <Route
+    render={() => (
       <>
         {!hideHeader && <Header />}
-        <Component {...matchProps} />
+        <Component />
         {!hideBrands && <Brands />}
         {!hideShippingInfo && <ShippingInfo />}
         {!hideFooter && <Footer />}
       </>
-    )} />
-  );
-};
+    )}
+  />
+);
 
 DefaultLayout.propTypes = {
   // Component which displayed as main content
@@ -32,7 +33,15 @@ DefaultLayout.propTypes = {
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
   hideBrands: PropTypes.bool,
-  hideShippingInfo: PropTypes.bool,
+  hideShippingInfo: PropTypes.bool
+};
+
+DefaultLayout.defaultProps = {
+  component: null,
+  hideFooter: false,
+  hideHeader: false,
+  hideBrands: false,
+  hideShippingInfo: false
 };
 
 export default DefaultLayout;

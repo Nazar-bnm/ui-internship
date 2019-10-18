@@ -11,10 +11,10 @@ const AccordionItem = ({
   title,
   description,
   height,
-  scroll,
+  scroll
 }) => {
   const heightStyle = {
-    height: height,
+    height
   };
 
   return (
@@ -31,7 +31,7 @@ const AccordionItem = ({
         className={cx([`${CN}__description`], {
           [`${CN}__description--hide`]: hide,
           [`${CN}__description--show`]: !hide,
-          scroll: scroll,
+          scroll
         })}
         style={!hide ? heightStyle : {}}
       >
@@ -47,7 +47,7 @@ AccordionItem.propTypes = {
   title: PropTypes.string,
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   height: PropTypes.string,
-  scroll: PropTypes.bool,
+  scroll: PropTypes.bool
 };
 
 AccordionItem.defaultProps = {
@@ -55,7 +55,7 @@ AccordionItem.defaultProps = {
   title: '',
   description: '',
   height: '',
-  scroll: false,
+  scroll: false
 };
 
 export default AccordionItem;

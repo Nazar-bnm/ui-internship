@@ -1,9 +1,10 @@
 import React from 'react';
+import cx from 'classnames';
+
 import ContactDetails from './ContactDetails';
 import Linklist from './Linklist';
 import config from '../../../config';
 import JoinUs from '../JoinUs';
-import cx from 'classnames';
 
 import './Footer.scss';
 
@@ -13,51 +14,55 @@ const Footer = () => {
   const { linkListItems, paymentIcons, linkListItemsTablet } = config;
   const { guide, help } = linkListItems;
 
-  const renderIconsList = () => {
-    return (
-      <ul className={`${CN}__payment`}>
-        {paymentIcons.map(({ name, link }) => (
-          <li key={name}> <a href={link}>
-            <i className={`${name} icon big`}></i>
-          </a> </li>
-        ))}
-      </ul>
-    );
-  };
+  const renderIconsList = () => (
+    <ul className={`${CN}__payment`}>
+      {paymentIcons.map(({ name, link }) => (
+        <li key={name}>
+          <a href={link}>
+            <i className={`${name} icon big`} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 
-  const renderTabletLinks = () => {
-    return (
-      <ul className={`${CN}__section content ${CN}-tablet`}>
-        {linkListItemsTablet.map(({ link, title }) => (
-          <li key={title} className={`${CN}-tablet__link`}><a href={link} >
+  const renderTabletLinks = () => (
+    <ul className={`${CN}__section content ${CN}-tablet`}>
+      {linkListItemsTablet.map(({ link, title }) => (
+        <li key={title} className={`${CN}-tablet__link`}>
+          <a href={link}>
             <h4 className={`${CN}__text`}>{title}</h4>
-          </a></li>
-        ))}
-      </ul>
-    );
-  };
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 
-  const renderBlog = () => {
-    return ( <div className={`${CN}__section col-6`}>
+  const renderBlog = () => (
+    <div className={`${CN}__section col-6`}>
       <h3 className={`${CN}__title ${CN}__title--main`}>Twitter</h3>
       <p className={`${CN}__text`}>
       check out the new upcoming phone !! #Valentine’s Day #Australia
         <a
           className={`${CN}__text ${CN}__link`}
-          href="http://t.co/StOrIs63bd">
+          href="http://t.co/StOrIs63bd"
+        >
         http://t.co/wRye6rBElN
-        </a> - 7 hours ago </p>
+        </a>
+          - 7 hours ago
+      </p>
       <p className={`${CN}__text`}>
       your solution partner:
-        <a className={`${CN}__text ${CN}__link`}
-          href="http://t.co/StOrIs63bd">
+        <a
+          className={`${CN}__text ${CN}__link`}
+          href="http://t.co/StOrIs63bd"
+        >
         http://t.co/StOrIs63bd
         </a>
       #IT #websitedevlopment - 8 hours ago
       </p>
     </div>
-    );
-  };
+  );
 
   return (
     <div className={cx(CN)}>
@@ -87,8 +92,8 @@ const Footer = () => {
                   <img
                     className={`${CN}__image`}
                     src="src/assets/img/content/map.png"
-                    alt="google map">
-                  </img>
+                    alt="google map"
+                  />
                 </div>
                 <div className="col-6 col-center">
                   <h3 className={`${CN}__title ${CN}__title--main`}>Store location</h3>
@@ -104,15 +109,16 @@ const Footer = () => {
         <div className={`${CN}__section col-3`}>
           <h3 className={`${CN}__title ${CN}__title--main`}>Facebook</h3>
           <img
+            alt="facebook window"
             className={`${CN}__image`}
-            src="src/assets/img/content/facebook.png">
-          </img>
+            src="src/assets/img/content/facebook.png"
+          />
         </div>
       </div>
       {renderTabletLinks()}
       <div className={`content ${CN}__info ${CN}__connect`}>
         <JoinUs />
-        <ContactDetails title="Connect us"/>
+        <ContactDetails title="Connect us" />
       </div>
       <div className={`content ${CN}__info`}>
         <div className="col-6">
