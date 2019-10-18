@@ -6,6 +6,7 @@ import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
 import MostPopular from '../MostPopular';
+import Cart from '../CartPage';
 
 const Routes = () => (
   <Switch>
@@ -13,6 +14,7 @@ const Routes = () => (
     <DefaultLayout path="/home" component={HomePage} />
     <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
     <DefaultLayout path="/MostPopular" component={MostPopular} />
+    <DefaultLayout path="/Cart" component={Cart} />
     <DefaultLayout
       to="/not_found"
       component={NotFoundPage}
