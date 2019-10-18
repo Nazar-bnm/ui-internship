@@ -6,5 +6,4 @@ const HomePage = () => (
     <ProductList />
   </div>
 );
-
 export default HomePage;
