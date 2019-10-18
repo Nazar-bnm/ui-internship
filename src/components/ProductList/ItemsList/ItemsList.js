@@ -38,6 +38,7 @@ class ItemsList extends React.Component {
         </div>
       );
     }
+
     const itemsToRender = [...itemList];
 
     const sortByItemName = (prevEl, nextEl) => {

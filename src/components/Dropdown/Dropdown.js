@@ -20,11 +20,21 @@ class Dropdown extends Component {
   }
 
   selectOption(e) {
+    const { options } = this.state;
+    const { changeItemsOnPageNum, changeOrderType } = this.props;
+    const option = e.target;
+    const selectedID = option.getAttribute('selectednum');
+    const selectedLabel = options[selectedID].label;
     const chosenOption = e.target.getAttribute('selectednum');
 
     this.setState({
       selectedID: chosenOption
     });
+
+    if (!Number.isNaN(Number(selectedLabel))) {
+      return changeItemsOnPageNum(selectedLabel);
+    }
+    changeOrderType(selectedLabel);
   }
 
   toggleDropdown() {
@@ -78,7 +88,14 @@ class Dropdown extends Component {
 }
 
 Dropdown.propTypes = {
-  options: PropTypes.array.isRequired
+  options: PropTypes.array.isRequired,
+  changeItemsOnPageNum: PropTypes.func,
+  changeOrderType: PropTypes.func
+};
+
+Dropdown.defaultProps = {
+  changeItemsOnPageNum: () => {},
+  changeOrderType: () => {}
 };
 
 export default Dropdown;
