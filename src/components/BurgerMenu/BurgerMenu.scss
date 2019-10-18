@@ -1,49 +1,43 @@
 @import '../../scss/global_styles';
 
 .burger-menu {
+  display: flex;
+  width: 50px;
+  padding-right: 10px;
+
   @keyframes open {
     from {
-        left: -100vw;
+      left: -80vw;
     }
     to {
-        left: 0;
+      left: 0;
     }
+  }
+
+  .icon {
+    font-size: 1.7rem;
   }
 
   #burger-menu__button {
     display: none;
 
     &:checked~.burger-menu__list {
-      display: flex;
-      flex-direction: column;
+      @include flex();
       animation-name: open;
       animation-duration: 0.8s;
     }
 
     &:checked~.burger-menu__image {
       position: absolute;
-      left: 10px;
-      font-size: 2rem;
       cursor: pointer;
-      transition: transform 0.8s ease; 
+      transition: transform 0.8s ease-in; 
       transform: rotate(360deg);
-    }
-  }
-
-  & {
-    display: none;
-    display: flex;
-    width: 50px;
-    padding-right: 10px;
-
-    .icon {
-      font-size: 1.7em;
     }
   }
 
   &__image {
     margin-top: -10px;
-    margin-left: 10px;
+    margin-left: 15px;
     font-size: 1.7rem;
     cursor: pointer;
     transition: transform 0.8s ease; 
@@ -52,7 +46,7 @@
   &__list {
     display: none;
     position: relative;
-    top: 35px;
+    top: 45px;
     padding: 0;
     list-style: none;
   }
@@ -71,7 +65,7 @@
   &__link {
     font-size: 0.9rem;
     text-decoration: none;
-    background-color: #ffffff;
+    background-color: $white;
     color: $black;
     display: block;
     padding: 15px;

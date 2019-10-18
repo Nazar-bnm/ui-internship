@@ -1,7 +1,14 @@
 @import '../../scss/global_styles';
 
-.title {
-  @include title-font;
+.whatIsNew {
+  &__title {
+    @include title-font;
+    padding: 30px 0;
+  }
+
+  &__wrapper {
+    @include flex($justify: center);
+  }
 }
 
 @media screen and (max-width: 480px) {

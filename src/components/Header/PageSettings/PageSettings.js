@@ -10,7 +10,7 @@ const PageSettings = () => (
   <div className={cx(CN, 'content container')}>
     <ContentOptions />
     <h3 className={`${CN}__heading heading`}>
-        free shipping on orders above 50$
+      free shipping on orders above 50$
     </h3>
     <AccountNavigation />
   </div>

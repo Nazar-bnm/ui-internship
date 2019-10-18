@@ -1,15 +1,32 @@
 @import '../../scss/global_styles';
 @import '../../scss/styles';
 
-
 .wrapper {
-  &__title {
-    h3 {
-      font-family: font(primary);
-    }
+  .title {
+    @include title-font;
+    text-align: left;
+    padding-bottom: 30px;
+
   }
 
   &__container {
     @include flex(row, center, center);
+    width: 100%;
+    align-items: flex-start;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    .title {
+      text-align: center;
+    }
+
+    &__container {
+      @include flex($align: flex-start);
+      width: 100%;
+      align-items: flex-start;
+    }
+  }
+  
 }

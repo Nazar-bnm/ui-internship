@@ -21,14 +21,14 @@ const Header = () => (
       <PageSettings />
     </div>
     <div className={`${CN}__heading-search-cart-container content`}>
-      <Link to="/home">
+      <Link to="/home" className={`${CN}__title-wrapper`}>
         <h2 className={`${CN}__title`}>The shop</h2>
       </Link>
       <div className={`${CN}__buttons-container`}>
         <BurgerMenu menuItemsList={burgerMenuItemsList} />
-        <Input icon="search" customClass={`${CN}__search-input`}>Search</Input>
+        <Input icon="search" placeholder="SEARCH" className={`${CN}__search-input`}>Search</Input>
         <Link to="/404">
-          <Button icon="cart" customClass={`${CN}__cart-btn`}>Cart (0)</Button>
+          <Button onClick={() => {}} icon="cart" className={`${CN}__cart-btn`}>Cart (0)</Button>
         </Link>
       </div>
     </div>

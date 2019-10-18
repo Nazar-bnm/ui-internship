@@ -1,14 +1,19 @@
 @import '../../scss/global_styles';
 
+
+
 .brand {
+  &__title {
+    @include title-font;
+    margin-top: 50px;
+    text-align: center;
+  }
+
   &__list {
-    display: flex;
+    @include flex($align: center, $justify: space-between);
     list-style: none;
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 
     &-item {
       cursor: pointer;
@@ -19,7 +24,7 @@
       width: 100%;
       transition: all .3s ease-in-out;
       filter: opacity(.3);
-    
+
       &:hover {
         transform: scale(1.2);
       }
@@ -30,14 +35,13 @@
     justify-content: center;
   }
 }
-
-@media screen and (max-width: 768px) {
+@include media-for(tablet) {
   .brand__list-item {
     padding: 0 10px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@include media-for(mobile-landscape) {
   .brand {
     .col-2 {
       width: 35%;

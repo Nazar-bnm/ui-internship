@@ -46,7 +46,7 @@ class BrandsAndShippingInfo extends Component {
 
     return (
       <div className="content">
-        <h3 className="title">Top Brands</h3>
+        <h3 className={`${CN}__title`}>Top Brands</h3>
         <div className={`container ${cx(CN)}`}>
           <ul className={`${CN}__list`}>
             {this.renderBrands(brandsList)}

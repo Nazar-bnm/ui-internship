@@ -1,9 +1,19 @@
 import React from 'react';
-import ProductList from '../ProductList';
+
+import WhatIsNew from '../WhatIsNew';
+import BlogArticlePreview from '../BlogArticlePreview';
+
+import './HomePage.scss';
 
 const HomePage = () => (
   <div>
-    <ProductList />
+    <WhatIsNew />
+    <div className="container content mainPage">
+      <div className="mainPage__popular" />
+      <div className="mainPage__blog">
+        <BlogArticlePreview />
+      </div>
+    </div>
   </div>
 );
 
