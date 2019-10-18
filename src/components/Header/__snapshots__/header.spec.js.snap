@@ -33,11 +33,11 @@ exports[`<Header /> should match snapshot 1`] = `
             },
             Object {
               "itemName": "man",
-              "url": "404",
+              "url": "men",
             },
             Object {
               "itemName": "kids",
-              "url": "404",
+              "url": "kids",
             },
             Object {
               "itemName": "accessories",

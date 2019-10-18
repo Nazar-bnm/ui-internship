@@ -1,0 +1,19 @@
+@import '../../scss/global_styles';
+
+.plp {
+  width: 100%;
+
+  &__filter {
+    width: 30%;
+  }
+
+  &__list {
+    &-wrapper {
+      width: 70%;
+    }
+
+    &-title {
+      text-align: left;
+    }
+  }
+}
