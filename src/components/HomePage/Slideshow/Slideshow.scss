@@ -1,0 +1,71 @@
+@import '../../../scss/global_styles.scss';
+
+.slideshow {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 500px;
+  width: 100%;
+
+  &__arrow-button {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:nth-child(2) {
+      right: 0;
+    }
+  }
+
+  &-slides {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    height: 100%;
+  }
+
+  &-pagination {
+    @include flex();
+    position: absolute;
+    z-index: 2;
+    bottom: 5%;
+    right: 50%;
+    transform: translateX(50%);
+
+    &__item {
+      transition: transform 100ms linear;
+      margin-right: 3px;
+      width: 14px;
+      height: 8px;
+      border: 1px solid $alto;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &--active {
+        background: $alto;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .transition {
+    transition: transform ease-in-out 0.01ms;
+  }
+
+  .transitionCarousel {
+    transition: transform 1.5s ease-in-out;
+  }
+}
+
+@include media-for(mobile-landscape) {
+  .slideshow {
+    height: 400px;
+  }
+}
