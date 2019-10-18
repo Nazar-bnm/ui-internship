@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import * as actions from '../../actions/actionsWishlist';
 import MostPopular from './MostPopular';
+import { addToWishlist, removeFromWishlist } from '../../actions/actionsWishlist';
 
-function mapStateToProps(state) {
-  return { wishlist: state.reducerWishlist.wishlist };
-}
+const mapStateToProps = (state) => ({ wishlist: state.reducerWishlist.wishlist });
 
-export default connect(mapStateToProps, actions)(MostPopular);
+const mapDispatchToProps = (dispatch) => ({
+  addToWishlist: bindActionCreators(addToWishlist, dispatch),
+  removeFromWishlist: bindActionCreators(removeFromWishlist, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MostPopular);
