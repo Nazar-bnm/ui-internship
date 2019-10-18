@@ -44,12 +44,12 @@
     }
 
     &[aria-expanded=true] {
-      z-index: 2;
+      z-index: 3;
     }
 
     &__items__element, &[aria-expanded=true] {
       background-color: $white;
-      z-index: 1;
+      z-index: 4;
     }
   }
 
@@ -60,6 +60,28 @@
     & i {
       margin: 0 5px;
       color: $silver-chalice;
+    }
+  }
+
+  .product {
+    padding: 10px;
+
+    &__img-wrapper__img {
+      max-width: 250px;
+    }
+
+    &__img-wrapper--hovered {
+      padding: 30px;
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .product-list {
+    .product {
+      &__img-wrapper__img {
+        max-width: 200px;
+      }
     }
   }
 }

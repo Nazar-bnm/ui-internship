@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ItemInfo from '../../WhatIsNew/ItemInfo';
+import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
 import './ItemsList.scss';
 
@@ -69,7 +69,7 @@ class ItemsList extends React.Component {
     }
 
     return itemsToRender.slice(0, itemsOnPage).map((el) => (
-      <ItemInfo item={el} key={el.title} />
+      <ProductItem product={el} key={el.title} />
     ));
   }
 

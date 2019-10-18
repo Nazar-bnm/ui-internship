@@ -77,123 +77,153 @@
   "product-list": [
     {
       "id": "1",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Beautiful pink dress",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg",
+      "title": "Awesome dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "1"
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "199"
     },
     {
       "id": "2",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Awesome t-shirt",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg",
+      "title": "Beautiful dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "2"
+      "label": "new",
+      "sizes":" S - M - L",
+      "price": "299"
     },
     {
       "id": "3",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "New socks",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg",
+      "title": "Amazing dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "3"
+      "label": "",
+      "sizes":" M - L",
+      "price": "399"
     },
     {
       "id": "4",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Sweetshot",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060672.jpg",
+      "title": "Spring dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "4"
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "499"
     },
     {
       "id": "5",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Green socks",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2063582.jpg",
+      "title": "Autumn dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "5"
+      "label": "new",
+      "sizes":" S - M - L",
+      "price": "599"
     },
     {
       "id": "6",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Short black dress",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060681.jpg",
+      "title": "Comfortable dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "6"
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "699"
     },
     {
       "id": "7",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "The yellow jacket",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2056801.jpg",
+      "title": "Soft dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "7"
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "799"
     },
     {
       "id": "8",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Green hat",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060677.jpg",
+      "title": "Light dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "8"
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "899"
     },
     {
       "id": "9",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Shoes",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2054736.jpg",
+      "title": "Comfy dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "9"
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "999"
     },
     {
       "id": "10",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Boots",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2057906.jpg",
+      "title": "Ideal dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "10"
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "1099"
     },
     {
       "id": "11",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033752.jpg",
       "title": "Better dress than your sister has",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "11"
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "1199"
     },
     {
       "id": "12",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2052923.jpg",
       "title": "New dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "12"
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "1299"
     },
     {
       "id": "13",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Old red socks",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2052929.jpg",
+      "title": "Old dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "13"
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "1399"
     },
     {
       "id": "14",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Your boyfriend's t-shirt",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_1979902.jpg",
+      "title": "Fairy dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "14"
+      "label": "sale",
+      "sizes":" S - M - L - XL",
+      "price": "1499"
     },
     {
       "id": "15",
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
-      "title": "Favourite pair of socks",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_1987665.jpg",
+      "title": "Nice dress",
       "collection": "spring collection 2016",
       "category": "women",
-      "price": "15"
+      "label": "",
+      "sizes":" S - M",
+      "price": "1599"
     }
   ]
 }

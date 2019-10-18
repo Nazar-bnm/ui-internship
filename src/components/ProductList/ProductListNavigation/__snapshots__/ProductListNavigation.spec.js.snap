@@ -1,23 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should receive the state from the store 1`] = `
-<ItemsList
-  ascendingOrder={true}
-  error={null}
-  itemList={Array []}
-  itemsOnPage={6}
-  onGetProductsError={[Function]}
-  onGetProductsSuccess={[Function]}
-  orderType="Position"
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
-/>
+exports[`<ProductListNavigation /> should match snapshot 1`] = `
+<div
+  className="product-list__dropdowns-wrapper"
+>
+  <div
+    className="product-list__dropdowns-labels-wrapper"
+  >
+    <span
+      className="product-list__dropdowns-labels"
+    >
+      sort by
+    </span>
+    <Dropdown
+      changeItemsOnPageNum={[MockFunction]}
+      changeOrderType={[MockFunction]}
+      options={
+        Array [
+          Object {
+            "label": "Position",
+            "value": "Position",
+          },
+          Object {
+            "label": "Price",
+            "value": "Price",
+          },
+          Object {
+            "label": "Name",
+            "value": "Name",
+          },
+        ]
+      }
+    />
+    <Button
+      customClass="product-list__arrow-btn"
+      icon="arrow down"
+      onClickFunction={[MockFunction]}
+    />
+  </div>
+  <div
+    className="product-list__dropdowns-labels-wrapper"
+  >
+    <span
+      className="product-list__dropdowns-labels"
+    >
+      items on page
+    </span>
+    <Dropdown
+      changeItemsOnPageNum={[MockFunction]}
+      changeOrderType={[MockFunction]}
+      options={
+        Array [
+          Object {
+            "label": "6",
+            "value": "6",
+          },
+          Object {
+            "label": "9",
+            "value": "9",
+          },
+          Object {
+            "label": "12",
+            "value": "12",
+          },
+        ]
+      }
+    />
+  </div>
+</div>
 `;
