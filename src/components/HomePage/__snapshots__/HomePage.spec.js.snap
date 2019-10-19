@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should match snapshot 1`] = `
+<div>
+  <Slideshow
+    animation="zoom-in"
+    className=""
+    slideData={
+      Array [
+        Object {
+          "component": <Slide
+            buttonName="discover the editorial"
+            className=""
+            description="Special autumn edition"
+            title="new collection"
+          />,
+          "id": 1,
+          "img": "",
+        },
+        Object {
+          "component": <Slide
+            buttonName="find a perfect outfit"
+            className=""
+            description="a long journey"
+            title="new collection"
+          />,
+          "id": 2,
+          "img": "",
+        },
+        Object {
+          "component": <Slide
+            buttonName="start shopping now"
+            className=""
+            description="a new look"
+            title="sales"
+          />,
+          "id": 3,
+          "img": "",
+        },
+        Object {
+          "component": <Slide
+            buttonName="find a perfect outfit"
+            className=""
+            description="a new wave"
+            title="new collection"
+          />,
+          "id": 4,
+          "img": "",
+        },
+      ]
+    }
+  />
+  <ProductList />
+</div>
+`;

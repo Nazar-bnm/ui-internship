@@ -15,10 +15,10 @@ class WhatIsNew extends Component {
   }
 
   componentDidMount() {
-    this.getProducts();
+    this.getImages();
   }
 
-  async getProducts() {
+  async getImages() {
     const userAPI = new HttpService();
     try {
       const response = await userAPI.get(`${process.env.BASE_URL}/what-is-new`);

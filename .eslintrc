@@ -34,6 +34,7 @@
     "consistent-return": "off",
     "jsx-a11y/label-has-for": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}]
+    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}],
+    "linebreak-style": 0
   }
 }

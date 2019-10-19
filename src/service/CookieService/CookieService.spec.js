@@ -18,4 +18,9 @@ describe('CookieService', () => {
     CookieService.setCookie(cookieName, cookieValue, daysToLive, path, domain);
     expect(document.cookie).toBe(myCookie);
   });
+
+  it('getCookie works', () => {
+    CookieService.getCookie(cookieName);
+    // expect(document.cookie).toBe(cookieName);cookieName
+  })
 });

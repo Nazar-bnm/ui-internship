@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundPage /> should match snapshot 1`] = `
+<Switch>
+  <DefaultLayout
+    component={[Function]}
+    exact={true}
+    hideBrands={false}
+    hideFooter={false}
+    hideHeader={false}
+    hideShippingInfo={false}
+    path="/"
+  />
+  <DefaultLayout
+    component={[Function]}
+    hideBrands={false}
+    hideFooter={false}
+    hideHeader={false}
+    hideShippingInfo={false}
+    path="/home"
+  />
+  <DefaultLayout
+    component={[Function]}
+    hideBrands={false}
+    hideFooter={false}
+    hideHeader={false}
+    hideShippingInfo={false}
+    path="/WhatIsNew"
+  />
+  <DefaultLayout
+    component={[Function]}
+    hideBrands={false}
+    hideFooter={false}
+    hideHeader={false}
+    hideShippingInfo={false}
+    path="/MostPopular"
+  />
+  <DefaultLayout
+    component={[Function]}
+    hideBrands={true}
+    hideFooter={true}
+    hideHeader={true}
+    hideShippingInfo={true}
+    to="/not_found"
+  />
+</Switch>
+`;
