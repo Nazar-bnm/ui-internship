@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArrowButton /> should make a snapshot of ArrowButton component 1`] = `
+<span
+  className=""
+  onClick={[Function]}
+>
+  <i
+    className="angle left icon arrow-button__icon"
+  />
+</span>
+`;
