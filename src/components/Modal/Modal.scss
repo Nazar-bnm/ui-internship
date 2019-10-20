@@ -1,0 +1,61 @@
+@import '../../scss/global_styles';
+
+.modal {
+  @include flex($justify: center, $align: center);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: $black, $alpha: 0.5);
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
+
+  &--hide {
+    display: none;
+    opacity: 0;
+    transition: opacity 2000ms ease-in-out;
+  }
+
+  &__window {
+    position: relative;
+    height: 400px;
+    width: 700px;
+    padding: 0 3rem;
+    background: $white;
+  }
+
+  &__close-button,
+  i.icon {
+    transition: all linear 200ms;
+  }  
+
+  &__close-button {
+    @include flex($justify: center, $align: center);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid $silver-chalice;
+
+    &:hover {
+      border-color:$dove-gray;
+      i.icon {
+        color: $dove-gray;
+      }
+    }
+  }
+
+  i.icon {
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: $silver-chalice;
+    
+  }
+}
+
+.remove-scroll {
+  overflow: hidden;
+}
