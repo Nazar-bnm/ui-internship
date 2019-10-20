@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
+import mockedData from '../../../mockedDataForTests';
+
 import './ItemsList.scss';
 
 const CN = 'items-container';
 const userAPI = new HttpService();
+const { mockedProductList } = mockedData;
 
 class ItemsList extends React.Component {
   componentDidMount() {
@@ -13,10 +17,10 @@ class ItemsList extends React.Component {
   }
 
   async getListItems() {
-    const { onGetProductsSuccess, onGetProductsError } = this.props;
+    const { onGetProductsSuccess, onGetProductsError, categoryName } = this.props;
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL}/product-list`);
+      const response = await userAPI.get(`${process.env.BASE_URL}/${categoryName}`);
       if (response.status === 404) {
         throw Error(response.statusText);
       }
@@ -75,21 +79,25 @@ class ItemsList extends React.Component {
 
   render() {
     return (
-      <div className={CN}>{ this.getItems() }</div>
+      <div className={CN}>{this.getItems()}</div>
     );
   }
 }
 
 ItemsList.propTypes = {
   ascendingOrder: PropTypes.bool,
+  categoryName: PropTypes.string,
+  itemList: PropTypes.array,
   itemsOnPage: PropTypes.number,
   onGetProductsError: PropTypes.func,
   onGetProductsSuccess: PropTypes.func
 };
 
 ItemsList.defaultProps = {
-  itemsOnPage: 6,
   ascendingOrder: true,
+  categoryName: 'product-list',
+  itemList: mockedProductList,
+  itemsOnPage: 6,
   onGetProductsError: null,
   onGetProductsSuccess: null
 };

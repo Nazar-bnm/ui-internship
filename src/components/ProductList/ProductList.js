@@ -1,6 +1,8 @@
 import React from 'react';
+
 import ProductListNavigationContainer from './ProductListNavigation/ProductListNavigationContainer';
 import ItemsListContainer from './ItemsList/ItemsListContainer';
+
 import './ProductList.scss';
 
 export const CN = 'product-list';

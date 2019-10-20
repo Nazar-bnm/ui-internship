@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
+
 import ItemsList from './ItemsList';
 import { getProductsSuccess, getProductsError } from '../../../actions/actionsProductList';
 
 const mapStateToProps = (state) => ({
   ascendingOrder: state.reducerProductList.ascendingOrder,
-  orderType: state.reducerProductList.orderType,
+  error: state.reducerProductList.error,
   itemsOnPage: Number(state.reducerProductList.chosenItemsOnPage),
   itemList: state.reducerProductList.itemList,
-  error: state.reducerProductList.error
+  orderType: state.reducerProductList.orderType
 });
 
 const mapDispatchToProps = (dispatch) => ({

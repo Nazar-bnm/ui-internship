@@ -3,6 +3,7 @@
 exports[`should receive the state from the store 1`] = `
 <ItemsList
   ascendingOrder={true}
+  categoryName="product-list"
   error={null}
   itemList={Array []}
   itemsOnPage={6}

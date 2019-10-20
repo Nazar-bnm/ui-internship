@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import ProductListNavigation from './ProductListNavigation';
 import { changeSortingOrder, changeOrderType, changeitemsNumberOnPage } from '../../../actions/actionsProductList';
 

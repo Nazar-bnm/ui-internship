@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Dropdown from '../../Dropdown';
 import Button from '../../Button';
 import { dropdownsForItemListPage } from '../../../constants';
@@ -12,6 +13,7 @@ const ProductListNavigation = (props) => {
   const {
     changeItemsOnPageNum, changeSortingOrder, ascendingOrder, changeOrderType
   } = props;
+
   return (
     <div className={`${CN}__dropdowns-wrapper`}>
       <div className={`${CN}__dropdowns-labels-wrapper`}>

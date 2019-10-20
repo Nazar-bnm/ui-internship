@@ -1,25 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import ProductListNavigation from './ProductListNavigation';
-import { JestEnvironment } from '@jest/environment';
 
 describe('<ProductListNavigation />', () => {
-  let props;
-  let wrapper;
-
-  beforeEach(() => {
-    props = {
-      changeItemsOnPageNum: jest.fn(),
-      changeSortingOrder: jest.fn(),
+  test('should match snapshot', () => {
+    let props = {
       ascendingOrder: true,
+      changeItemsOnPageNum: jest.fn(),
       changeOrderType: jest.fn(),
+      changeSortingOrder: jest.fn(),
     };
-
-    wrapper = shallow(
+    let wrapper = shallow(
       <ProductListNavigation {...props} />
     );
-  });
-  test('should match snapshot', () => {
+
     expect(wrapper).toMatchSnapshot();
   });
 });
