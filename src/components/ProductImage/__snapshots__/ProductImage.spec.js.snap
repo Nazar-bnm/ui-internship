@@ -29,7 +29,7 @@ exports[`<ProductImage /> should match snapshot 1`] = `
       <button
         className="product-image__image-on-hover"
         data-src="src/assets/img/content/new4.png"
-        label="x"
+        label="clickable image"
         onClick={[Function]}
         type="submit"
       />
@@ -46,7 +46,7 @@ exports[`<ProductImage /> should match snapshot 1`] = `
       <button
         className="product-image__image-on-hover"
         data-src="src/assets/img/content/new2.png"
-        label="x"
+        label="clickable image"
         onClick={[Function]}
         type="submit"
       />
@@ -63,7 +63,7 @@ exports[`<ProductImage /> should match snapshot 1`] = `
       <button
         className="product-image__image-on-hover"
         data-src="src/assets/img/content/new3.png"
-        label="x"
+        label="clickable image"
         onClick={[Function]}
         type="submit"
       />

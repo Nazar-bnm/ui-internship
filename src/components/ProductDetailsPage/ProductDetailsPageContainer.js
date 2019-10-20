@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../../components/Button';
-import ProductDetailsPage from '../../components/ProductDetailsPage';
+
+import Button from '../Button';
+import ProductDetailsPage from './ProductDetailsPage';
 
 class ProductDetailsPageContainer extends Component {
   constructor(props) {
@@ -14,12 +15,20 @@ class ProductDetailsPageContainer extends Component {
         id: params.id
       }
     };
-    this.returnBack = this.returnBack.bind(this);
   }
 
-  returnBack() {
+  renderGoBackBtn = () => {
     const { history } = this.props;
-    history.goBack();
+
+    return (
+      <Button
+        customClass="go-back-btn"
+        icon="arrow left"
+        onClickFunction={history.goBack}
+      >
+      Go Back
+      </Button>
+    );
   }
 
   render() {
@@ -31,13 +40,7 @@ class ProductDetailsPageContainer extends Component {
       <div>
         <div>{productName}</div>
         <div>{productId}</div>
-        <Button
-          customClass="go-back-btn"
-          icon="arrow left"
-          onClickFunction={this.returnBack}
-        >
-          Go Back
-        </Button>
+        {this.renderGoBackBtn()}
         <ProductDetailsPage />
       </div>
     );

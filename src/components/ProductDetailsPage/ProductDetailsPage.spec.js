@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import ProductDetailsPage from './ProductDetailsPage';
 
 describe('<ProductDetailsPage />', () => {

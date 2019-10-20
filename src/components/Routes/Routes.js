@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 
 import HomePage from '../HomePage';
-import ProductDetailsPageContainer from '../../containers/ProductDetailsPageContainer';
+import ProductDetailsPageContainer from '../ProductDetailsPage/ProductDetailsPageContainer';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';

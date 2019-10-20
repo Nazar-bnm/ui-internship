@@ -1,6 +1,12 @@
 @import "../../scss/global_styles";
 
 .product-image {
+  & {
+    min-width: 50px;
+    max-width: 100%;
+    height: auto;
+  }
+
   &__container {
     @include flex();
     padding: 0;
@@ -9,8 +15,8 @@
 
   &__big-image-container {
     @include flex($justify: center);
-    width: 100%;
     position: relative;
+    width: 100%;
 
     & img {
       width: 100%;
@@ -32,24 +38,18 @@
     }
   }
 
-  & {
-    min-width: 50px;
-    max-width: 100%;
-    height: auto;
-  }
-
   &__image-on-hover {
-    width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    background-color: rgba(244, 162, 54, 0.7);
+    border: none;
+    overflow: hidden;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(244, 162, 54, 0.7);
-    overflow: hidden;
-    border: none;
     outline: none;
   
     &:hover {

@@ -25,8 +25,8 @@ class ProductImage extends Component {
     return selectedImage;
   }
 
-  clickHandler = (event) => {
-    const selectedImage = event.target.dataset.src;
+  clickHandler = ({ target }) => {
+    const selectedImage = target.dataset.src;
 
     this.setState({
       selectedImage
@@ -55,7 +55,7 @@ class ProductImage extends Component {
             data-src={src}
             onClick={this.clickHandler}
             type="submit"
-            label="x"
+            label="clickable image"
           />
         </div>
       );
