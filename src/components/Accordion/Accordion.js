@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import AccordionItem from './AccordionItem';
 
 const CN = 'accordion';
@@ -11,43 +12,49 @@ class Accordion extends Component {
 
     this.clickHandler = this.clickHandler.bind(this);
     this.state = {
-      hide: []
+      data: this.dataMapper(props.data)
     };
   }
 
-  componentDidMount() {
-    const { data, open } = this.props;
-    const hide = data.map(() => !open);
+  updateData = (dataItem, updatedIsHidden) => ({ ...dataItem, isHidden: updatedIsHidden })
 
-    this.setState({ hide });
+  dataMapper(array) {
+    const { open } = this.props;
+
+    return array.map((element) => ({ ...element, isHidden: !open }));
   }
 
   clickHandler(index) {
-    const { hide } = this.state;
+    const { data } = this.state;
     const { showAll } = this.props;
-    let hideCopy = [...hide];
 
-    hideCopy[index] = !hideCopy[index];
+    const updatedData = data.map((dataOfItem, indexOfItem) => {
+      const { isHidden } = dataOfItem;
 
-    if (!showAll) {
-      hideCopy = hideCopy.map((el, indexOfEl) => (index === indexOfEl ? el : true),);
-    }
+      if (index === indexOfItem) {
+        return this.updateData(dataOfItem, !isHidden);
+      }
 
-    this.setState({ hide: hideCopy });
+      return showAll ? dataOfItem : this.updateData(dataOfItem, true);
+    });
+
+    this.setState({
+      data: updatedData
+    });
   }
 
   render() {
-    const { hide } = this.state;
-    const {
-      data, heightItem, scroll, className
-    } = this.props;
+    const { data } = this.state;
+    const { heightItem, scroll, className } = this.props;
 
-    const accordionItems = data.map(({ id, title, description }, index) => (
+    const accordionItems = data.map(({
+      id, title, description, isHidden
+    }, index) => (
       <AccordionItem
         key={id}
         title={title}
         description={description}
-        hide={hide[index]}
+        hide={isHidden}
         onClick={() => this.clickHandler(index)}
         height={heightItem}
         scroll={scroll}
