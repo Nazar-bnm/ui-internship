@@ -5,9 +5,13 @@ import './Modal.scss';
 
 const CN = 'modal';
 
-const Modal = ({
-  show, children, hideModal, className
-}) => {
+const Modal = (props) => {
+  const {
+    show,
+    children,
+    hideModal,
+    className
+  } = props;
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -41,7 +45,7 @@ const Modal = ({
       onClick={hideModalOnBackdrop}
       onKeyDown={hideModalOnEscape}
     >
-      <div className={cx(`${CN}__window`, className)}>
+      <div className={cx(`${CN}__window`, className, { [`${CN}__window--animation`]: show })}>
         {children}
         <span
           className={`${CN}__close-button`}

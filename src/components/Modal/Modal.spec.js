@@ -23,7 +23,6 @@ describe('<Modal />', () => {
 
   it('should set body class "remove-scroll" and be on focus mode when prop show is true', () => {
     wrapper = mount(<Modal {...props}>{children}</Modal>);
-
     expect(document.body.classList.contains('remove-scroll')).toBeTruthy();
     expect(wrapper.is(':focus')).toBeTruthy();
   });
@@ -38,7 +37,6 @@ describe('<Modal />', () => {
     };
 
     wrapper.simulate('click', mockEvent);
-
     expect(mockFunc).toHaveBeenCalledTimes(1);
   });
 
@@ -53,15 +51,9 @@ describe('<Modal />', () => {
     expect(mockFunc).toHaveBeenCalledTimes(1);
   });
 
-  it('should call mockFunc on close icon', () => {
-    wrapper.find('.modal__close-button').simulate('click');
-    expect(mockFunc).toHaveBeenCalledTimes(2);
-  })
-
   it('should not set body class "remove-scroll" when prop show is false', () => {
     props.show = false;
     wrapper = mount(<Modal {...props}>{children}</Modal>);
-
     expect(document.body.classList.contains('remove-scroll')).toBeFalsy();
   });
 });
