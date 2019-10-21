@@ -5,7 +5,6 @@ import Slideshow from './Slideshow';
 import Slide from './Slide';
 import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
 import { slideshowData } from './Slideshow/SlideshowDate';
-import TestModal from '../Modal/testButton';
 
 const HomePage = () => {
   const slidesData = slideshowData.map((el) => ({
@@ -22,7 +21,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <TestModal />
       <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
       <ProductList />
     </div>
