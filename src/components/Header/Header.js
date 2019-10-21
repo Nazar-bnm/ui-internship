@@ -8,6 +8,7 @@ import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
 import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
+import {  } from '../../reducers/reducerCart';
 
 import './Header.scss';
 
@@ -28,7 +29,7 @@ const Header = () => (
         <BurgerMenu menuItemsList={burgerMenuItemsList} />
         <Input icon="search" customClass={`${CN}__search-input`}>Search</Input>
         <Link to="/404">
-          <Button icon="cart" customClass={`${CN}__cart-btn`}>Cart (0)</Button>
+          <Button icon="cart" customClass={`${CN}__cart-btn`}>Cart ({})</Button>
         </Link>
       </div>
     </div>

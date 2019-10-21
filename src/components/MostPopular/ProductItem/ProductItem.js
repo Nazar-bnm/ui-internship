@@ -6,11 +6,20 @@ import './ProductItem.scss';
 
 const CN = 'product';
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, addToCart }) => {
   const [isHovered, setHovered] = useState(false);
   const {
-    image, label, title, price, sizes
+    id,
+    image,
+    label,
+    title,
+    price,
+    sizes
   } = product;
+
+  const handleClick = () => {
+    addToCart(product);
+  };
 
   const renderView = () => (
     <>
@@ -44,7 +53,8 @@ const ProductItem = ({ product }) => {
             </span>
             <div className={`{${CN}__title-wrapper icons`}>
               <i className="eye icon" />
-              <i className="cart plus icon" />
+              {/* <i className="cart plus icon" /> */}
+              <i className="cart plus icon" onClick={handleClick} />
               <i className="heart outline icon" />
             </div>
           </>

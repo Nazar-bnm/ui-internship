@@ -1,8 +1,9 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/actionTypes';
 
 const initState = {
-  addedToCart: [],
-  total: 0
+  cartItems: [
+    { jj: 333 }, { jjj: 3204239 }, { j: 222 }
+  ]
 };
 
 const reducerCart = (state = initState, action) => {
@@ -10,12 +11,12 @@ const reducerCart = (state = initState, action) => {
     case ADD_TO_CART:
       return {
         ...state,
-        addedToCart: [...state.addedToCart, action.payload]
+        cart: [...state.cart, action.payload]
       };
     case REMOVE_FROM_CART:
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload.id)
+        cart: state.cart.filter((product) => product.id !== action.payload.id)
       };
     default:
       return state;

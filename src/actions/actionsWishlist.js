@@ -5,7 +5,7 @@ export const addToWishlist = (product) => ({
   payload: product
 });
 
-export const removeFromWishlist = (product) => ({
+export const removeFromWishlist = (id) => ({
   type: REMOVE_FROM_WISHLIST,
-  payload: product
+  payload: id
 });
