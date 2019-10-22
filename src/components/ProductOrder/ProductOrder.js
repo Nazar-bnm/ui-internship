@@ -13,13 +13,14 @@ const ProductOrder = (props) => {
   const {
     itemName,
     description,
-    price, sizes,
+    price,
+    sizes,
     colors,
     quantity
   } = props;
 
   return (
-    <div className={CN}>
+    <div className={`${CN} content`}>
       <h2 className={`${CN}__heading`}>{itemName}</h2>
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
@@ -33,7 +34,12 @@ const ProductOrder = (props) => {
           <Button customClass={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
         <Link to="/not_found">
-          <Button customClass={`${CN}__wishlist-btn`} icon="heart">wishlist</Button>
+          <Button
+            customClass={`${CN}__wishlist-btn`}
+            icon="heart"
+          >
+          wishlist
+          </Button>
         </Link>
       </div>
     </div>
