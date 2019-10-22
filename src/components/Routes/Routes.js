@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 
 import HomePage from '../HomePage';
+import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageWrapper';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
@@ -12,6 +13,7 @@ const Routes = () => (
   <Switch>
     <DefaultLayout path="/" exact component={HomePage} />
     <DefaultLayout path="/home" component={HomePage} />
+    <DefaultLayout path="/product-details" component={ProductDetailsPageWrapper} />
     <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
     <DefaultLayout path="/MostPopular" component={MostPopular} />
     <DefaultLayout path="/:category" component={ProductListPage} />

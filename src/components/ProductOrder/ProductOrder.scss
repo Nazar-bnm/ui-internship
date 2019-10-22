@@ -2,12 +2,12 @@
 
 .product-order {
   @include flex($direction: column);
-  max-width: 300px;
-  padding: 20px;
+  min-width: 250px;
+  max-width: 350px;
 
   &__heading {
     margin: 10px 0;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: font(secondary);
     text-transform: uppercase;
   }
@@ -15,13 +15,13 @@
   &__description {
     padding: 5px 0;
     color: $dove-gray;
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-family: font(primary-light);
   }
 
   &__price {
     margin: 10px 0;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: font(primary-light);
   }
 
@@ -38,7 +38,7 @@
     border-radius: 20px;
     background-color: $alabaster;
     color: $black;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     outline: none;
   }
@@ -78,7 +78,7 @@
 
     &__element {
       border-bottom: transparent;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
 
       &:hover {
