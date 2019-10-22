@@ -59,7 +59,7 @@
   }
 
   &__payment {
-    @include flex();
+    @include flex;
   }
 
   &__connect {

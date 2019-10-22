@@ -15,26 +15,28 @@ class ProductImage extends Component {
     };
   }
 
-  clickHandler(selectedImage) {
-    this.setState({
-      selectedImage
-    });
-  }
-
-  renderBigImage() {
+  getBigImageSrc() {
     const { selectedImage } = this.state;
-    const { imagesArr } = this.props;
+    const { images } = this.props;
     if (selectedImage === '') {
-      return imagesArr[0].src;
+      return images[0].src;
     }
 
     return selectedImage;
   }
 
-  renderSmallImages(selectedImage) {
-    const { imagesArr } = this.props;
+  clickHandler = ({ target }) => {
+    const selectedImage = target.dataset.src;
 
-    return imagesArr.map((el) => {
+    this.setState({
+      selectedImage
+    });
+  }
+
+  renderSmallImages(selectedImage) {
+    const { images } = this.props;
+
+    return images.map((el) => {
       const { src } = el;
       const isSelected = selectedImage === src;
 
@@ -42,14 +44,19 @@ class ProductImage extends Component {
         <div
           className={`${CN}__small-image`}
           key={src}
-          onClick={() => this.clickHandler(src)}
         >
           <img
             className={cx(CN, { 'product-image__selected-image': isSelected })}
             alt="product"
             src={src}
           />
-          <div className={`${CN}__image-on-hover`} />
+          <button
+            className={`${CN}__image-on-hover`}
+            data-src={src}
+            onClick={this.clickHandler}
+            type="submit"
+            label="clickable image"
+          />
         </div>
       );
     });
@@ -59,12 +66,15 @@ class ProductImage extends Component {
     const { selectedImage } = this.state;
 
     return (
-      <div className={cx(`${CN}__container`)}>
-        <div className={`${CN}__big-image-container`} onClick={() => this.clickHandler(this.renderBigImage())}>
+      <div className={cx(`${CN}__container content`)}>
+        <div
+          className={`${CN}__big-image-container`}
+          type="submit"
+        >
           <img
-            className={CN}
             alt="product"
-            src={this.renderBigImage()}
+            className={CN}
+            src={this.getBigImageSrc()}
           />
         </div>
         <div className={`${CN}__small-images-container`}>
@@ -76,13 +86,13 @@ class ProductImage extends Component {
 }
 
 ProductImage.propTypes = {
-  imagesArr: PropTypes.arrayOf(PropTypes.shape({
+  images: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string
   }))
 };
 
 ProductImage.defaultProps = {
-  imagesArr: []
+  images: []
 };
 
 export default ProductImage;
