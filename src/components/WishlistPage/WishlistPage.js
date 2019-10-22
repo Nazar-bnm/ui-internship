@@ -8,9 +8,9 @@ import './WishlistPage.scss';
 
 const CN = 'wishlist';
 
-const WishlistPage = ({ wishlist, removeFromWishlist }) => {
+const WishlistPage = ({ wishlist, removeFromWishlist, className }) => {
   const renderNoWishlistItems = () => (
-    <div className={`${cx(CN)} ${CN}__empty-page`}>
+    <div className={`${CN} ${CN}__empty-page`}>
       <h2 className={`${CN}__subtitle`}>No items in your wishlist!</h2>
       <img
         className={`${CN}__image col-6 col-center"`}
@@ -21,7 +21,7 @@ const WishlistPage = ({ wishlist, removeFromWishlist }) => {
   );
 
   return (
-    <>
+    <div className={cx(CN, className)}>
       <div className={`${CN} content`}>
         <h1 className={`${CN}__title`}>Wishlist</h1>
       </div>
@@ -35,16 +35,18 @@ const WishlistPage = ({ wishlist, removeFromWishlist }) => {
         )))
           : renderNoWishlistItems()}
       </div>
-    </>
+    </div>
   );
 };
 
 WishlistPage.propTypes = {
   wishlist: PropTypes.array,
-  removeFromWishlist: PropTypes.func.isRequired
+  removeFromWishlist: PropTypes.func.isRequired,
+  className: PropTypes.string
 };
 
 WishlistPage.defaultProps = {
+  className: '',
   wishlist: []
 };
 

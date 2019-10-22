@@ -1,1 +1,1 @@
-export { default } from './WishlistPage';
+export { default } from './WishlistPageContainer';
