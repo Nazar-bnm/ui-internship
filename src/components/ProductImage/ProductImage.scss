@@ -1,11 +1,9 @@
 @import '../../scss/global_styles';
 
 .product-image {
-  & {
     min-width: 50px;
     max-width: 100%;
     height: auto;
-  }
 
   &__container {
     @include flex;
