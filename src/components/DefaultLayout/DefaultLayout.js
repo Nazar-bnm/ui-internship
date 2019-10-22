@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
@@ -12,13 +11,14 @@ const DefaultLayout = ({
   hideFooter,
   hideHeader,
   hideBrands,
-  hideShippingInfo
+  hideShippingInfo, ...rest
 }) => (
   <Route
-    render={() => (
+    {...rest}
+    render={(matchProps) => (
       <>
         {!hideHeader && <Header />}
-        <Component />
+        <Component {...matchProps} />
         {!hideBrands && <Brands />}
         {!hideShippingInfo && <ShippingInfo />}
         {!hideFooter && <Footer />}
@@ -43,5 +43,4 @@ DefaultLayout.defaultProps = {
   hideBrands: false,
   hideShippingInfo: false
 };
-
 export default DefaultLayout;
