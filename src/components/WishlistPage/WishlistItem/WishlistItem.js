@@ -18,8 +18,8 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
       <h4 className={`${CN}__subtitle`}>{collection}</h4>
       <h4 className={`${CN}__subtitle`}>{category}</h4>
       <button type="button" className={`${CN}__button`}>
-        <div className="col-2"><i className="cart small icon" /></div>
-        <div className="col-8 col-right"><h4>Add to cart</h4></div>
+        <i className="cart small icon col-2" />
+        <h4 className="col-8 col-right">Add to cart</h4>
       </button>
       <button
         type="button"
