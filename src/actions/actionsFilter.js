@@ -1,4 +1,3 @@
-import { CHECK_CHECKBOX, UNCHECK_CHECKBOX } from '../constants/actionTypes';
+import { CHECK_CHECKBOX } from '../constants/actionTypes';
 
-export const checkCheckbox = (category) => ({ type: CHECK_CHECKBOX, payload: category });
-export const uncheckCheckbox = (category) => ({ type: UNCHECK_CHECKBOX, payload: category });
+export const checkCheckbox = (category, id, clicked) => ({ type: CHECK_CHECKBOX, payload: { category, id, clicked } });

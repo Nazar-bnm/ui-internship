@@ -1,30 +1,21 @@
 import React from 'react';
 
 import config from '../../../../config';
-import CheckBox from '../CheckBox';
+import CheckBoxListContainer from '../CheckBoxList/CheckBoxListContainer';
 
 import './Filters.scss';
 
 const Filters = ({ category }) => {
-  const gender = config[category][0];
-  const categories = Object.keys(gender);
-
-  // const handleCheckBox = (e, field, value) => {
-  //   if (e.target.checked) {
-  //     redux.checkCheckbox(field, value);
-  //   } else {
-  //     redux.uncheckCheckbox(field, value);
-  //   }
-  // }
-
-  const categoriesToDisplay = categories.map((key) => (
-    <div key={key} className="category">
-      <div>{key}</div>
-      <CheckBox
-        items={gender[key]}
+  const gender = config[category];
+  const categoriesNamesList = Object.keys(gender);
+  const categoriesToDisplay = categoriesNamesList.map((kategoryName) => (
+    <div key={kategoryName} className="category">
+      <div>{kategoryName}</div>
+      <CheckBoxListContainer
+        itemsList={gender[kategoryName]}
+        category={kategoryName}
       />
     </div>
-
   ));
 
   return (

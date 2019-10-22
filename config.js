@@ -88,142 +88,138 @@ export default {
     { number: 2, title: 'money back guarantee', description: 'on all orders' },
     { number: 3, title: 'worldwide delivery', description: 'to over 80 countries' }
   ],
-  women: [
-    {
-      bottoms: [
-        { item: 'jeans', id: 'jeans' },
-        { item: 'pants', id: 'pants' },
-        { item: 'shorts', id: 'shorts' },
-        { item: 'skirts', id: 'skirts' },
-        { item: 'dresses', id: 'dresses' }
-      ],
-      tops: [
-        { item: 'jackets and coats', id: 'jackets and coats' },
-        { item: 'shirts', id: 'shirts' },
-        { item: 't-shirts', id: 't-shirts' },
-        { item: 'knitwear', id: 'knitwear' },
-        { item: 'sweats', id: 'sweats' }
-      ],
-      sizes: [
-        { item: 'xs', id: 'xs' },
-        { item: 's', id: 's' },
-        { item: 'm', id: 'm' },
-        { item: 'l', id: 'l' },
-        { item: 'xl', id: 'xl' },
-        { item: 'xxl', id: 'xxl' }
-      ],
-      colors: [
-        { item: 'beige', id: 'beige' },
-        { item: 'black', id: 'black' },
-        { item: 'blue', id: 'blue' },
-        { item: 'brown', id: 'brown' },
-        { item: 'cream', id: 'cream' },
-        { item: 'gold', id: 'gold' },
-        { item: 'green', id: 'green' },
-        { item: 'grey', id: 'grey' },
-        { item: 'navy', id: 'navy' },
-        { item: 'orange', id: 'orange' },
-        { item: 'pink', id: 'pink' },
-        { item: 'purple', id: 'purple' }
-      ],
-      brands: [
-        { item: 'boss', id: 'boss' },
-        { item: 'gucci', id: 'gucci' },
-        { item: 'baldinini', id: 'baldinini' },
-        { item: 'dior', id: 'dior' },
-        { item: 'donna karan', id: 'donna karan' }
-      ]
-    }
-  ],
-  men: [
-    {
-      bottoms: [
-        { item: 'jeans', id: 'jeans' },
-        { item: 'pants', id: 'pants' },
-        { item: 'shorts', id: 'shorts' },
-        { item: 'skirts', id: 'skirts' }
-      ],
-      tops: [
-        { item: 'jackets and coats', id: 'jackets and coats' },
-        { item: 'shirts', id: 'shirts' },
-        { item: 't-shirts', id: 't-shirts' },
-        { item: 'knitwear', id: 'knitwear' },
-        { item: 'sweats', id: 'sweats' }
-      ],
-      sizes: [
-        { item: 'xs', id: 'xs' },
-        { item: 's', id: 's' },
-        { item: 'm', id: 'm' },
-        { item: 'l', id: 'l' },
-        { item: 'xl', id: 'xl' },
-        { item: 'xxl', id: 'xxl' }
-      ],
-      colors: [
-        { item: 'beige', id: 'beige' },
-        { item: 'black', id: 'black' },
-        { item: 'blue', id: 'blue' },
-        { item: 'brown', id: 'brown' },
-        { item: 'cream', id: 'cream' },
-        { item: 'gold', id: 'gold' },
-        { item: 'green', id: 'green' },
-        { item: 'grey', id: 'grey' },
-        { item: 'navy', id: 'navy' },
-        { item: 'orange', id: 'orange' },
-        { item: 'pink', id: 'pink' },
-        { item: 'purple', id: 'purple' }
-      ],
-      brands: [
-        { item: 'boss', id: 'boss' },
-        { item: 'gucci', id: 'gucci' },
-        { item: 'baldinini', id: 'baldinini' },
-        { item: 'dior', id: 'dior' },
-        { item: 'donna karan', id: 'donna karan' }
-      ]
-    }
-  ],
-  kids: [
-    {
-      bottoms: [
-        { item: 'jeans', id: 'jeans' },
-        { item: 'pants', id: 'pants' },
-        { item: 'dresses', id: 'dresses' }
-      ],
-      tops: [
-        { item: 'jackets and coats', id: 'jackets and coats' },
-        { item: 'shirts', id: 'shirts' },
-        { item: 't-shirts', id: 't-shirts' },
-        { item: 'knitwear', id: 'knitwear' },
-        { item: 'sweats', id: 'sweats' }
-      ],
-      sizes: [
-        { item: 'xs', id: 'xs' },
-        { item: 's', id: 's' },
-        { item: 'm', id: 'm' },
-        { item: 'l', id: 'l' },
-        { item: 'xl', id: 'xl' },
-        { item: 'xxl', id: 'xxl' }
-      ],
-      colors: [
-        { item: 'beige', id: 'beige' },
-        { item: 'black', id: 'black' },
-        { item: 'blue', id: 'blue' },
-        { item: 'brown', id: 'brown' },
-        { item: 'cream', id: 'cream' },
-        { item: 'gold', id: 'gold' },
-        { item: 'green', id: 'green' },
-        { item: 'grey', id: 'grey' },
-        { item: 'navy', id: 'navy' },
-        { item: 'orange', id: 'orange' },
-        { item: 'pink', id: 'pink' },
-        { item: 'purple', id: 'purple' }
-      ],
-      brands: [
-        { item: 'boss', id: 'boss' },
-        { item: 'gucci', id: 'gucci' },
-        { item: 'baldinini', id: 'baldinini' },
-        { item: 'dior', id: 'dior' },
-        { item: 'donna karan', id: 'donna karan' }
-      ]
-    }
-  ]
+  women: {
+    bottoms: [
+      { item: 'jeans' },
+      { item: 'pants' },
+      { item: 'shorts' },
+      { item: 'skirts' },
+      { item: 'dresses' }
+    ],
+    tops: [
+      { item: 'jackets and coats' },
+      { item: 'shirts' },
+      { item: 't-shirts' },
+      { item: 'knitwear' },
+      { item: 'sweats' }
+    ],
+    sizes: [
+      { item: 'xs' },
+      { item: 's' },
+      { item: 'm' },
+      { item: 'l' },
+      { item: 'xl' },
+      { item: 'xxl' }
+    ],
+    colors: [
+      { item: 'beige' },
+      { item: 'black' },
+      { item: 'blue' },
+      { item: 'brown' },
+      { item: 'cream' },
+      { item: 'gold' },
+      { item: 'green' },
+      { item: 'grey' },
+      { item: 'navy' },
+      { item: 'orange' },
+      { item: 'pink' },
+      { item: 'purple' }
+    ],
+    brands: [
+      { item: 'boss' },
+      { item: 'gucci' },
+      { item: 'baldinini' },
+      { item: 'dior' },
+      { item: 'donna karan' }
+    ]
+  },
+
+  men: {
+    bottoms: [
+      { item: 'jeans' },
+      { item: 'pants' },
+      { item: 'shorts' },
+      { item: 'skirts' }
+    ],
+    tops: [
+      { item: 'jackets and coats' },
+      { item: 'shirts' },
+      { item: 't-shirts' },
+      { item: 'knitwear' },
+      { item: 'sweats' }
+    ],
+    sizes: [
+      { item: 'xs' },
+      { item: 's' },
+      { item: 'm' },
+      { item: 'l' },
+      { item: 'xl' },
+      { item: 'xxl' }
+    ],
+    colors: [
+      { item: 'beige' },
+      { item: 'black' },
+      { item: 'blue' },
+      { item: 'brown' },
+      { item: 'cream' },
+      { item: 'gold' },
+      { item: 'green' },
+      { item: 'grey' },
+      { item: 'navy' },
+      { item: 'orange' },
+      { item: 'pink' },
+      { item: 'purple' }
+    ],
+    brands: [
+      { item: 'boss' },
+      { item: 'gucci' },
+      { item: 'baldinini' },
+      { item: 'dior' },
+      { item: 'donna karan' }
+    ]
+  },
+
+  kids: {
+    bottoms: [
+      { item: 'jeans' },
+      { item: 'pants' },
+      { item: 'dresses' }
+    ],
+    tops: [
+      { item: 'jackets and coats' },
+      { item: 'shirts' },
+      { item: 't-shirts' },
+      { item: 'knitwear' },
+      { item: 'sweats' }
+    ],
+    sizes: [
+      { item: 'xs' },
+      { item: 's' },
+      { item: 'm' },
+      { item: 'l' },
+      { item: 'xl' },
+      { item: 'xxl' }
+    ],
+    colors: [
+      { item: 'beige' },
+      { item: 'black' },
+      { item: 'blue' },
+      { item: 'brown' },
+      { item: 'cream' },
+      { item: 'gold' },
+      { item: 'green' },
+      { item: 'grey' },
+      { item: 'navy' },
+      { item: 'orange' },
+      { item: 'pink' },
+      { item: 'purple' }
+    ],
+    brands: [
+      { item: 'boss' },
+      { item: 'gucci' },
+      { item: 'baldinini' },
+      { item: 'dior' },
+      { item: 'donna karan' }
+    ]
+  }
 };

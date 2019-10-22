@@ -6,8 +6,8 @@ import './ProductListPage.scss';
 
 class ProductListPage extends Component {
   getCategory() {
-    // eslint-disable-next-line react/destructuring-assignment
-    let category = this.props.match.url;
+    const { match } = this.props;
+    let category = match.url;
 
     if (category.charAt(0) === '/') {
       category = category.slice(1);
