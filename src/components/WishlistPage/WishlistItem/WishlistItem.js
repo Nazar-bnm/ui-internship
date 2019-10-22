@@ -8,9 +8,8 @@ const CN = 'wishlist-item';
 
 const WishlistItem = ({ className, item, removeFromWishlist }) => {
   const {
-    image, title, collection, category
+    id, image, title, collection, category
   } = item;
-
   return (
     <div className={`${cx(CN, className)}`}>
       <img className={`${CN}__image`} src={image} alt={title} />
@@ -22,12 +21,12 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
         <h4 className="col-8 col-right">Add to cart</h4>
       </button>
       <button
-        type="button"
         className={`${CN}__button ${CN}__button--remove`}
-        onClick={() => removeFromWishlist(item)}
+        type="button"
+        onClick={() => removeFromWishlist(id)}
       >
-        <div className="col-2"><i className="icon trash alternate small" /></div>
-        <div className="col-8 col-right"><h4>Remove from wishlist</h4></div>
+        <i className="icon trash alternate small col-2" />
+        <h4 className="col-8 col-right">Remove from wishlist</h4>
       </button>
     </div>
   );

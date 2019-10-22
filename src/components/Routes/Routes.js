@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
-import HomePage from '../HomePage';
+import HomePageContainer from '../HomePage/HomePageContainer';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
@@ -10,8 +10,8 @@ import MostPopular from '../MostPopular';
 
 const Routes = () => (
   <Switch>
-    <DefaultLayout path="/" exact component={HomePage} />
-    <DefaultLayout path="/home" component={HomePage} />
+    <DefaultLayout path="/" exact component={HomePageContainer} />
+    <DefaultLayout path="/home" component={HomePageContainer} />
     <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
     <DefaultLayout path="/wishlist" component={WishListPageContainer} />
     <DefaultLayout path="/MostPopular" component={MostPopular} />
