@@ -13,7 +13,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
         "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg",
         "label": "sale",
         "price": "199",
-        "sizes": "S - M - L",
+        "sizes": "[S, M, L]",
         "title": "Awesome dress",
       },
       Object {
@@ -23,7 +23,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
         "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg",
         "label": "new",
         "price": "299",
-        "sizes": "S - M - L",
+        "sizes": "[S, M, L]",
         "title": "Beautiful dress",
       },
       Object {
@@ -33,7 +33,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
         "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg",
         "label": "",
         "price": "399",
-        "sizes": "M - L",
+        "sizes": "[M, L]",
         "title": "Amazing dress",
       },
     ]
@@ -55,7 +55,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg",
           "label": "sale",
           "price": "199",
-          "sizes": "S - M - L",
+          "sizes": "[S, M, L]",
           "title": "Awesome dress",
         }
       }
@@ -108,7 +108,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg",
           "label": "new",
           "price": "299",
-          "sizes": "S - M - L",
+          "sizes": "[S, M, L]",
           "title": "Beautiful dress",
         }
       }
@@ -161,7 +161,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg",
           "label": "",
           "price": "399",
-          "sizes": "M - L",
+          "sizes": "[M, L]",
           "title": "Amazing dress",
         }
       }

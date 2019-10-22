@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import ItemsList from './ItemsList';
 import { getProductsSuccess, getProductsError } from '../../../actions/actionsProductList';
@@ -10,10 +11,9 @@ const mapStateToProps = (state) => ({
   itemList: state.reducerProductList.itemList,
   orderType: state.reducerProductList.orderType
 });
-
 const mapDispatchToProps = (dispatch) => ({
-  onGetProductsSuccess: (products) => dispatch(getProductsSuccess(products)),
-  onGetProductsError: (error) => dispatch(getProductsError(error))
+  onGetProductsSuccess: bindActionCreators(getProductsSuccess, dispatch),
+  onGetProductsError: bindActionCreators(getProductsError, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemsList);

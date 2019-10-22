@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ProductListNavigationContainer from './ProductListNavigation/ProductListNavigationContainer';
-import ItemsListContainer from './ItemsList/ItemsListContainer';
+import ProductListNavigationContainer from './ProductListNavigation';
+import ItemsListContainer from './ItemsList';
 
 import './ProductList.scss';
 

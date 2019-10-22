@@ -1,1 +1,1 @@
-export { default } from './ProductListNavigation';
+export { default } from './ProductListNavigationContainer';

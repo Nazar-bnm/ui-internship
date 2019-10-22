@@ -33,7 +33,7 @@ export const mockedProductList = [
     collection: 'spring collection 2016',
     category: 'women',
     label: 'sale',
-    sizes: 'S - M - L',
+    sizes: '[S, M, L]',
     price: '199'
   },
   {
@@ -43,7 +43,7 @@ export const mockedProductList = [
     collection: 'spring collection 2016',
     category: 'women',
     label: 'new',
-    sizes: 'S - M - L',
+    sizes: '[S, M, L]',
     price: '299'
   },
   {
@@ -53,7 +53,7 @@ export const mockedProductList = [
     collection: 'spring collection 2016',
     category: 'women',
     label: '',
-    sizes: 'M - L',
+    sizes: '[M, L]',
     price: '399'
   }
 ];

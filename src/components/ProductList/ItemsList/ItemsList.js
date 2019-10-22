@@ -12,6 +12,12 @@ const userAPI = new HttpService();
 const { mockedProductList } = mockedData;
 
 class ItemsList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.sortByItemName = this.sortByItemName.bind(this);
+  }
+
   componentDidMount() {
     this.getListItems();
   }
@@ -45,23 +51,12 @@ class ItemsList extends React.Component {
 
     const itemsToRender = [...itemList];
 
-    const sortByItemName = (prevEl, nextEl) => {
-      const prevName = prevEl.title.toUpperCase();
-      const nextName = nextEl.title.toUpperCase();
-      const isPrevLetterBigger = (prevName > nextName) ? 1 : 0;
-
-      if (ascendingOrder) {
-        return (prevName < nextName) ? -1 : isPrevLetterBigger;
-      }
-      return (prevName < nextName) ? isPrevLetterBigger : -1;
-    };
-
     switch (orderType) {
       case 'Price':
-        itemsToRender.sort((prevEl, nextEl) => (ascendingOrder ? prevEl.price - nextEl.price : nextEl.price - prevEl.price));
+        itemsToRender.sort((prevEl, nextEl) => this.sortByPrice(prevEl, nextEl));
         break;
       case 'Name':
-        itemsToRender.sort((prevEl, nextEl) => sortByItemName(prevEl, nextEl));
+        itemsToRender.sort((prevEl, nextEl) => this.sortByItemName(prevEl, nextEl));
         break;
       case 'Position':
         if (!ascendingOrder) {
@@ -75,6 +70,24 @@ class ItemsList extends React.Component {
     return itemsToRender.slice(0, itemsOnPage).map((el) => (
       <ProductItem product={el} key={el.title} />
     ));
+  }
+
+  sortByItemName = (prevEl, nextEl) => {
+    const { ascendingOrder } = this.props;
+    const prevName = prevEl.title.toUpperCase();
+    const nextName = nextEl.title.toUpperCase();
+    const isPrevLetterBigger = (prevName > nextName) ? 1 : 0;
+
+    if (ascendingOrder) {
+      return (prevName < nextName) ? -1 : isPrevLetterBigger;
+    }
+    return (prevName < nextName) ? isPrevLetterBigger : -1;
+  }
+
+  sortByPrice = (prevEl, nextEl) => {
+    const { ascendingOrder } = this.props;
+
+    return (ascendingOrder ? prevEl.price - nextEl.price : nextEl.price - prevEl.price);
   }
 
   render() {

@@ -5,10 +5,7 @@ import ProductList from './ProductList';
 
 describe('<ProductList />', () => {
   test('should match snapshot', () => {
-    let wrapper = shallow(
-      <ProductList />
-    );
-
+    const wrapper = shallow(<ProductList />);
     expect(wrapper).toMatchSnapshot();
   });
 });
