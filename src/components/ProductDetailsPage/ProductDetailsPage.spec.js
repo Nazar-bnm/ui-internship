@@ -5,9 +5,7 @@ import ProductDetailsPage from './ProductDetailsPage';
 
 describe('<ProductDetailsPage />', () => {
   test('should match snapshot', () => {
-    const wrapper = shallow(
-      <ProductDetailsPage />
-    );
+    const wrapper = shallow(<ProductDetailsPage />);
     expect(wrapper).toMatchSnapshot();
   });
 });

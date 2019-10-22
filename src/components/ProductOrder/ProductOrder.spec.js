@@ -5,9 +5,7 @@ import { productOrderParameters } from '../../config/ProductOrderMockups';
 
 describe('<ProductOrder />', () => {
   test('should match snapshot', () => {
-    const wrapper = shallow(
-      <ProductOrder {...productOrderParameters} />
-    );
+    const wrapper = shallow(<ProductOrder {...productOrderParameters} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -5,7 +5,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
   className="product-details content"
 >
   <ProductImage
-    imagesArr={
+    images={
       Array [
         Object {
           "src": "src/assets/img/content/new4.png",

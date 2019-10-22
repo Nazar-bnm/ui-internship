@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import ProductDetailsPage from './ProductDetailsPage';
 
-class ProductDetailsPageContainer extends Component {
+class ProductDetailsPageWrapper extends Component {
   constructor(props) {
     super(props);
     const { match: { params } } = this.props;
@@ -38,8 +38,8 @@ class ProductDetailsPageContainer extends Component {
 
     return (
       <div>
-        <div>{productName}</div>
-        <div>{productId}</div>
+        {productName}
+        {productId}
         {this.renderGoBackBtn()}
         <ProductDetailsPage />
       </div>
@@ -47,18 +47,17 @@ class ProductDetailsPageContainer extends Component {
   }
 }
 
-ProductDetailsPageContainer.propTypes = {
-  history: PropTypes.object,
+ProductDetailsPageWrapper.propTypes = {
+  history: PropTypes.object.isRequired,
   match: PropTypes.object,
   name: PropTypes.string,
   id: PropTypes.string
 };
 
-ProductDetailsPageContainer.defaultProps = {
-  history: {},
+ProductDetailsPageWrapper.defaultProps = {
   match: {},
   name: '',
   id: ''
 };
 
-export default ProductDetailsPageContainer;
+export default ProductDetailsPageWrapper;

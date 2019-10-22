@@ -17,9 +17,9 @@ class ProductImage extends Component {
 
   getBigImageSrc() {
     const { selectedImage } = this.state;
-    const { imagesArr } = this.props;
+    const { images } = this.props;
     if (selectedImage === '') {
-      return imagesArr[0].src;
+      return images[0].src;
     }
 
     return selectedImage;
@@ -34,9 +34,9 @@ class ProductImage extends Component {
   }
 
   renderSmallImages(selectedImage) {
-    const { imagesArr } = this.props;
+    const { images } = this.props;
 
-    return imagesArr.map((el) => {
+    return images.map((el) => {
       const { src } = el;
       const isSelected = selectedImage === src;
 
@@ -86,13 +86,13 @@ class ProductImage extends Component {
 }
 
 ProductImage.propTypes = {
-  imagesArr: PropTypes.arrayOf(PropTypes.shape({
+  images: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string
   }))
 };
 
 ProductImage.defaultProps = {
-  imagesArr: []
+  images: []
 };
 
 export default ProductImage;
