@@ -20,22 +20,16 @@ const errorMessage = 'Error happened';
 const store = configureMockStore({reducerProductList: initialState});
 
 it('should receive the state from the store', () => {
-  const wrapper = shallow(
-      <ItemListContainer store={store} />
-  ).dive();
+  const wrapper = shallow(<ItemListContainer store={store} />).dive();
   expect(toJson(wrapper)).toMatchSnapshot();  
 });
 
 it('should path the proper array of products to the action', () => {
-  const wrapper = shallow(
-    <ItemListContainer store={store} />
-  ).dive();
+  const wrapper = shallow(<ItemListContainer store={store} />).dive();
   expect(wrapper.props().onGetProductsSuccess(products).products).toBe(products);
 });
 
 it('should path an error message to the action', () => {
-  const wrapper = shallow(
-    <ItemListContainer store={store} />
-  ).dive();
+  const wrapper = shallow(<ItemListContainer store={store} />).dive();
   expect(wrapper.props().onGetProductsError(errorMessage).error).toBe(errorMessage);
 });

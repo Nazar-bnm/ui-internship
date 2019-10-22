@@ -7,8 +7,8 @@ import ItemsList from './ItemsList';
 import mockedData from '../../../mockedDataForTests';
 
 describe('<ItemsList />', () => {
-  let wrapper;
   const { mockedProductList } = mockedData;
+  let wrapper;
 
   beforeEach(() => {
     const mock = new MockAdapter(axios);
