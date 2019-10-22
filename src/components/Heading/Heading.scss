@@ -2,7 +2,7 @@
 
 .heading {
   &__wrapper {
-    @include flex();
+    @include flex;
     align-content: center;
     position: relative;
     width: 100%;

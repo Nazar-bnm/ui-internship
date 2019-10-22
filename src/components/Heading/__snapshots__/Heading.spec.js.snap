@@ -10,7 +10,7 @@ exports[`<Heading /> should match snapshot 1`] = `
   <div
     className="heading__title center"
   >
-    Default heading
+    Default title
   </div>
 </div>
 `;

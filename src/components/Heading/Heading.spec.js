@@ -5,9 +5,7 @@ import Heading from './Heading';
 
 describe('<Heading />', () => {
   test('should match snapshot', () => {
-    let wrapper = shallow(
-      <Heading />
-    );
+    const wrapper = shallow(<Heading title="Default title" position="center" />);
     expect(wrapper).toMatchSnapshot();
   });
 });
