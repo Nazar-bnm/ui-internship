@@ -6,9 +6,13 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
+import Notifications from '../Notifications';
+
+import './DefaultLayout.scss';
 
 const DefaultLayout = ({
   component: Component,
+  // notifications: Notifications,
   hideFooter,
   hideHeader,
   hideBrands,
@@ -18,6 +22,7 @@ const DefaultLayout = ({
     render={() => (
       <>
         {!hideHeader && <Header />}
+        <Notifications />
         <Component />
         {!hideBrands && <Brands />}
         {!hideShippingInfo && <ShippingInfo />}
@@ -29,6 +34,7 @@ const DefaultLayout = ({
 
 DefaultLayout.propTypes = {
   // Component which displayed as main content
+  // Notifications: PropTypes.any,
   component: PropTypes.any,
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
