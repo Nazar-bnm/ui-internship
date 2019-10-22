@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AccordionPDP /> should match snapshot 1`] = `
+<div
+  className="AccordionPDP"
+>
+  <Accordion
+    className=""
+    data={
+      Array [
+        Object {
+          "description": " Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!",
+          "id": 1,
+          "title": "description",
+        },
+        Object {
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      ",
+          "id": 2,
+          "title": "additional info",
+        },
+        Object {
+          "description": "Earum temporibus quidem ex eaque unde harum sit, 
+      ",
+          "id": 3,
+          "title": "tags",
+        },
+      ]
+    }
+    heightItem="100px"
+    open={false}
+    scroll={false}
+    showAll={false}
+  />
+  <ContactDetails
+    title="share"
+  />
+</div>
+`;
