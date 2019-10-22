@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
 
 import Filter from './Filters';
 
 import './ProductListPage.scss';
+
+export const CN = 'plp';
 
 class ProductListPage extends Component {
   getCategory() {
@@ -19,13 +22,13 @@ class ProductListPage extends Component {
   render() {
     return (
       <div className="content">
-        <div className="container plp">
-          <div className="plp__filter">
+        <div className={`container ${cx(CN)}`}>
+          <div className={`${CN}__filter`}>
             <Filter category={this.getCategory()} />
             {this.category}
           </div>
-          <div className="plp__list-wrapper">
-            <h3 className="title plp__list-title">{this.getCategory()}</h3>
+          <div className={`${CN}__list-wrapper`}>
+            <h3 className={`title ${CN}__list-title`}>{this.getCategory()}</h3>
           here will be products
           </div>
         </div>

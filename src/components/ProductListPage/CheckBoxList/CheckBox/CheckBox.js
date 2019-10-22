@@ -29,7 +29,6 @@ class CheckBox extends Component {
 
     return (
       <div>
-        <span />
         <input
           type="checkbox"
           id={itemName}

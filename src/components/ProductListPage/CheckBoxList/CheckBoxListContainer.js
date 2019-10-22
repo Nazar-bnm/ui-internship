@@ -12,6 +12,7 @@ const mapStateToProps = ({ reducerFilter }) => ({
   colors: reducerFilter.colors,
   brandes: reducerFilter.brandes
 });
+
 const mapDispatchToProps = (dispatch) => ({
   checkCheckbox: bindActionCreators(checkCheckbox, dispatch)
 });
