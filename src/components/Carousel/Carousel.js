@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
+import { debounce } from 'lodash';
 import { scrollTo } from '../../helpers';
-
 import './Carousel.scss';
 
+const sizeValues = {
+  desktop: 3,
+  tablet: 2,
+  mobile: 1
+};
 
 export const CN = 'carousel';
 
@@ -17,9 +22,10 @@ class Carousel extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.onResize = this.onResize.bind(this);
     this.onScroll = this.onScroll.bind(this);
+    this.resizeTheCarousel = debounce(this.resizeTheCarousel, 500);
     this.countTheSlideWidth = this.countTheSlideWidth.bind(this);
     this.state = {
-      numOfSlidesToScroll: 3,
+      numOfSlidesToScroll: 2,
       allTheWayLeft: false,
       allTheWayRight: false,
       slidesCount: this.getSlidesCount()
@@ -27,8 +33,8 @@ class Carousel extends Component {
   }
 
   componentDidMount() {
-    this.resizeTheCarousel();
     window.addEventListener('resize', this.onResize);
+    this.resizeTheCarousel();
     this.checkNumOfSlidesToScroll();
     this.checkIfSlidesAllTheWayOver();
   }
@@ -48,12 +54,6 @@ class Carousel extends Component {
   }
 
   getSlidesCount = () => {
-    const sizeValues = {
-      desktop: 3,
-      tablet: 2,
-      mobile: 1
-    };
-
     let count;
 
     if (window.innerWidth >= 1024) {
@@ -95,24 +95,25 @@ class Carousel extends Component {
     const allTheWayRightValue = scrollLeft + clientWidth === scrollWidth;
     const { allTheWayLeft, allTheWayRight } = this.state;
 
-    (allTheWayLeft !== allTHeWayLeftValue
-      || allTheWayRight !== allTheWayRightValue)
-      && this.setState({
+    if (allTheWayLeft !== allTHeWayLeftValue
+      || allTheWayRight !== allTheWayRightValue) {
+      this.setState({
         allTheWayLeft: allTHeWayLeftValue,
         allTheWayRight: allTheWayRightValue
       });
+    }
   }
 
   checkNumOfSlidesToScroll() {
-    const numOfSlidesToScroll = window.innerWidth <= 900 ? 1 : 2;
+    const numOfSlidesToScroll = window.innerWidth <= 1024 ? 1 : 2;
     const { numOfSlidesToScroll: numOfSlides } = this.state;
 
     numOfSlides !== numOfSlidesToScroll
       && this.setState({ numOfSlidesToScroll });
   }
 
-  handleClick(e) {
-    const clickedBtn = e.currentTarget.classList.contains(`${CN}__left-nav`)
+  handleClick({ currentTarget }) {
+    const clickedBtn = currentTarget.classList.contains(`${CN}__left-nav`)
       ? 'left'
       : 'right';
     const { numOfSlidesToScroll, widthOfSlide } = this.state;
@@ -133,14 +134,15 @@ class Carousel extends Component {
   }
 
   renderChildren() {
-    const { children, items } = this.props;
+    const { children } = this.props;
     const { widthOfSlide } = this.state;
-    const style = { maxWidth: `${widthOfSlide}px` };
-    const listOfChildren = [...children];
+    const style = { maxWidth: widthOfSlide };
+    const cloner = (child) => React.cloneElement(child);
+    const listOfItems = children.map(cloner);
 
-    return listOfChildren.map((item, i) => (
+    return listOfItems.map((item) => (
       <div
-        key={items[i].id}
+        key={item.id}
         className={`${CN}__child`}
         style={style}
       >
@@ -149,23 +151,22 @@ class Carousel extends Component {
     ));
   }
 
-
   render() {
     const { allTheWayLeft, allTheWayRight } = this.state;
-    const navClasses = cx({ [`${CN}__nav`]: true });
+    const navClasses = cx(`${CN}__nav`);
     const leftNavClasses = cx(
+      navClasses,
+      `${CN}__left-nav`,
       {
-        [`${CN}__left-nav`]: true,
         [`${CN}__nav-disabled`]: allTheWayLeft
-      },
-      navClasses
+      }
     );
     const rightNavClasses = cx(
+      `${CN}__right-nav`,
+      navClasses,
       {
-        [`${CN}__right-nav`]: true,
         [`${CN}__nav-disabled`]: allTheWayRight
-      },
-      navClasses
+      }
     );
 
     return (
