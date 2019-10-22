@@ -18,7 +18,7 @@ const ProductItem = ({ product, addToCart }) => {
   } = product;
 
   const handleClick = () => {
-    addToCart(product);
+    addToCart(id);
   };
 
   const renderView = () => (
@@ -53,7 +53,6 @@ const ProductItem = ({ product, addToCart }) => {
             </span>
             <div className={`{${CN}__title-wrapper icons`}>
               <i className="eye icon" />
-              {/* <i className="cart plus icon" /> */}
               <i className="cart plus icon" onClick={handleClick} />
               <i className="heart outline icon" />
             </div>
@@ -78,14 +77,13 @@ const ProductItem = ({ product, addToCart }) => {
 };
 
 ProductItem.propTypes = {
-  // eslint-disable-next-line react/require-default-props
   product: PropTypes.shape({
-    image: PropTypes.string,
-    label: PropTypes.string,
-    title: PropTypes.string,
-    price: PropTypes.string,
-    sizes: PropTypes.string
-  })
+    image: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    sizes: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default ProductItem;

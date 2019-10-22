@@ -1,23 +1,8 @@
-import { connect } from 'react-redux';
-import React from 'react';
-import { bindActionCreators } from 'redux';
+// import React from 'react';
 
-import { addToCart, removeFromCart } from '../../actions/actionsCart';
+// const CartPage = (props) => {
+//   console.log(props);
+//   return <div>Hello</div>;
+// };
 
-// const mapStateToProps = ({ reducerCart }) => ({
-//   cart: reducerCart.cart
-// });
-
-// const mapDispatchToProps = (dispatch) => ({
-//   addToWishlist: bindActionCreators(addToCart, dispatch),
-//   removeFromWishlist: bindActionCreators(removeFromCart, dispatch)
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
-
-const CartPage = (props) => {
- console.log(props);
-  return <div>Hello</div>;
-};
-
-export default CartPage;
+// export default CartPage;

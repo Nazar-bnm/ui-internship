@@ -5,7 +5,7 @@ import { addToCart, removeFromCart } from '../../actions/actionsCart';
 import CartPage from './CartPage';
 
 const mapStateToProps = ({ reducerCart }) => ({
-  cart: reducerCart.cart
+  cartItems: reducerCart.cartItems
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -13,4 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
   removeFromCart: bindActionCreators(removeFromCart, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CartPage);

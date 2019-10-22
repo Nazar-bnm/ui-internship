@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import HttpService from '../../service/HttpService/httpService';
-import ProductItem from './ProductItem/ProductItem';
+import ProductItem from './ProductItem/ProductItemContainer';
 
 import './MostPopular.scss';
 
