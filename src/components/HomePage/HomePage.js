@@ -5,6 +5,7 @@ import Slideshow from './Slideshow';
 import Slide from './Slide';
 import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
 import { slideshowData } from './Slideshow/SlideshowDate';
+import Preloader from '../Preloader';
 
 const HomePage = () => {
   const slidesData = slideshowData.map((el) => ({
@@ -23,6 +24,7 @@ const HomePage = () => {
     <div>
       <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
       <ProductList />
+      <Preloader />
     </div>
   );
 };
