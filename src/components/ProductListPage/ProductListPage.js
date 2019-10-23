@@ -21,8 +21,8 @@ class ProductListPage extends Component {
 
   render() {
     return (
-      <div className="content">
-        <div className={`container ${cx(CN)}`}>
+      <div className={`content ${cx(CN)}`}>
+        <div className={`container ${CN}__wrapper`}>
           <div className={`${CN}__filter`}>
             <Filter category={this.getCategory()} />
             {this.category}

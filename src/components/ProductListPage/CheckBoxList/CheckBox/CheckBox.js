@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class CheckBox extends Component {
   constructor(props) {
     super(props);
-
-    this.itemName = props.itemName;
-    this.checkCheckbox = props.checkCheckbox;
-    this.category = props.category;
 
     this.state = {
       clicked: false
@@ -15,8 +12,12 @@ class CheckBox extends Component {
 
   handleCheckboxChange = () => {
     const {
-      category, itemName, checkCheckbox, state: { clicked }
-    } = this;
+      category,
+      itemName,
+      checkCheckbox
+    } = this.props;
+
+    const { clicked } = this.state;
 
     this.setState({ clicked: !clicked }, () => {
       const { clicked: lastClicked } = this.state;
@@ -25,19 +26,29 @@ class CheckBox extends Component {
   }
 
   render() {
-    const { itemName, handleCheckboxChange } = this;
+    const { itemName } = this.props;
 
     return (
       <div>
         <input
           type="checkbox"
           id={itemName}
-          onChange={handleCheckboxChange}
+          onChange={this.handleCheckboxChange}
         />
         <label htmlFor={itemName}>{itemName}</label>
       </div>
     );
   }
 }
+
+CheckBox.propTypes = {
+  category: PropTypes.string.isRequired,
+  itemName: PropTypes.string.isRequired,
+  checkCheckbox: PropTypes.func
+};
+
+CheckBox.defaultProps = {
+  checkCheckbox: false
+};
 
 export default CheckBox;
