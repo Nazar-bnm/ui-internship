@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -34,6 +38,7 @@ class DefaultLayout extends Component {
       hideHeader,
       hideBrands,
       hideShippingInfo,
+      location,
       ...rest
     } = this.props;
 
@@ -41,13 +46,21 @@ class DefaultLayout extends Component {
       <Route
         {...rest}
         render={(matchProps) => (
-          <>
-            {!hideHeader && <Header />}
-            <Page {...matchProps} />
-            {!hideBrands && <Brands />}
-            {!hideShippingInfo && <ShippingInfo />}
-            {!hideFooter && <Footer />}
-          </>
+          <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              timeout={300}
+              classNames="fade"
+            >
+              <>
+                {!hideHeader && <Header />}
+                <Page {...matchProps} />
+                {!hideBrands && <Brands />}
+                {!hideShippingInfo && <ShippingInfo />}
+                {!hideFooter && <Footer />}
+              </>
+            </CSSTransition>
+          </TransitionGroup>
         )}
       />
     );
@@ -59,6 +72,7 @@ DefaultLayout.propTypes = {
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
   hideBrands: PropTypes.bool,
+  location: PropTypes.any.isRequired,
   hideShippingInfo: PropTypes.bool
 };
 
