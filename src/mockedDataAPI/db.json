@@ -1,21 +1,21 @@
 {
   "what-is-new" : [
     {
-      "id": 1,
+      "id": "1",
       "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
       "title": "Black and White",
       "collection": "spring collection 2016",
       "category": "women"
     },
     {
-      "id": 2,
+      "id": "2",
       "photo": "https://www.next.ua/nxtcms/resource/image/1233600/portrait_ratio1x1/525/525/69ca86774e073288bc792479650a14cc/Jn/all-baby-girl.jpg",
       "title": "Color Summer",
       "collection": "spring collection 2016",
       "category": "kids"
     },
     {
-      "id": 3,
+      "id": "3",
       "photo": "https://www.next.ua/nxtcms/resource/image/1915752/portrait_ratio1x1/525/525/1cf45576cf1de5e2bab187220d4ebeb0/ds/g83-mb-sh819338-lm-357.jpg",
       "title": "Vintage For Him",
       "collection": "spring collection 2016",
@@ -24,7 +24,7 @@
   ],
   "most-popular": [
     {
-      "id": 1,
+      "id": "1",
       "image": "https://i.dailymail.co.uk/1s/2018/12/15/12/7458890-6498875-image-a-2_1544876240893.jpg",
       "label": "new",
       "title": "Black dress",
@@ -32,7 +32,7 @@
       "sizes": "S - M - L"
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "https://i.pinimg.com/564x/99/5d/f3/995df3032c828381332af1dea4e5c590.jpg",
       "label": "sale",
       "title": "Red evening dress",
@@ -40,7 +40,7 @@
       "sizes": "S - M - L"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "https://i.redd.it/grla2qtpa5721.jpg",
       "label": "",
       "title": "Fit & flare dress",
@@ -72,6 +72,158 @@
     {
       "id": "Gucci2",
       "image" : "https://myrealdomain.com/images/gucci-logo-png-1.png"
+    }
+  ],
+  "product-list": [
+    {
+      "id": "1",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg",
+      "title": "Awesome dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "199"
+    },
+    {
+      "id": "2",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg",
+      "title": "Beautiful dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "new",
+      "sizes":" S - M - L",
+      "price": "299"
+    },
+    {
+      "id": "3",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg",
+      "title": "Amazing dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" M - L",
+      "price": "399"
+    },
+    {
+      "id": "4",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060672.jpg",
+      "title": "Spring dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "499"
+    },
+    {
+      "id": "5",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2063582.jpg",
+      "title": "Autumn dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "new",
+      "sizes":" S - M - L",
+      "price": "599"
+    },
+    {
+      "id": "6",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060681.jpg",
+      "title": "Comfortable dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "699"
+    },
+    {
+      "id": "7",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2056801.jpg",
+      "title": "Soft dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "799"
+    },
+    {
+      "id": "8",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060677.jpg",
+      "title": "Light dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "899"
+    },
+    {
+      "id": "9",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2054736.jpg",
+      "title": "Comfy dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "999"
+    },
+    {
+      "id": "10",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2057906.jpg",
+      "title": "Ideal dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "1099"
+    },
+    {
+      "id": "11",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033752.jpg",
+      "title": "Better dress than your sister has",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "1199"
+    },
+    {
+      "id": "12",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2052923.jpg",
+      "title": "New dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "1299"
+    },
+    {
+      "id": "13",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2052929.jpg",
+      "title": "Old dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "1399"
+    },
+    {
+      "id": "14",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_1979902.jpg",
+      "title": "Fairy dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L - XL",
+      "price": "1499"
+    },
+    {
+      "id": "15",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_1987665.jpg",
+      "title": "Nice dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M",
+      "price": "1599"
     }
   ]
 }
