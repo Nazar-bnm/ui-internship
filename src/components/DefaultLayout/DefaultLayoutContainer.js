@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { getProductsError, getProducts, getProductsPending } from '../../reducers/reducerAPIcall';
 import fetchProductsAction from '../../actions/fetchProducts';
 
-import HomePage from './HomePage';
+import DefaultLayout from './DefaultLayout';
 
 const mapStateToProps = (state) => ({
   error: getProductsError(state),
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage);
+)(DefaultLayout);
