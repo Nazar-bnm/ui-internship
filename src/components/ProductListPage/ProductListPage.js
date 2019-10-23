@@ -5,7 +5,7 @@ import Filter from './Filters';
 
 import './ProductListPage.scss';
 
-export const CN = 'plp';
+export const CN = 'productListPage';
 
 class ProductListPage extends Component {
   getCategory() {

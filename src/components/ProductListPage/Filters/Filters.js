@@ -8,12 +8,12 @@ import './Filters.scss';
 const Filters = ({ category }) => {
   const gender = config[category];
   const categoriesNamesList = Object.keys(gender);
-  const categoriesToDisplay = categoriesNamesList.map((kategoryName) => (
-    <div key={kategoryName} className="category">
-      <div>{kategoryName}</div>
+  const categoriesToDisplay = categoriesNamesList.map((categoryName) => (
+    <div key={categoryName} className="category">
+      <div>{categoryName}</div>
       <CheckBoxListContainer
-        itemsList={gender[kategoryName]}
-        category={kategoryName}
+        itemsList={gender[categoryName]}
+        category={categoryName}
       />
     </div>
   ));
