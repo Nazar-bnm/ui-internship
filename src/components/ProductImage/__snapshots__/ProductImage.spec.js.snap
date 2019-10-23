@@ -2,7 +2,7 @@
 
 exports[`<ProductImage /> should match snapshot 1`] = `
 <div
-  className="product-image__container content"
+  className="product-image__container"
 >
   <div
     className="product-image__big-image-container"
