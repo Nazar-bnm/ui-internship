@@ -22,7 +22,6 @@ const Filters = ({ category }) => {
         />
       }]}
     />
-
   ));
 
   return (
