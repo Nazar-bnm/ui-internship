@@ -24,11 +24,7 @@ const CheckBoxList = ({ itemsList, category, checkCheckbox }) => {
 CheckBoxList.propTypes = {
   itemsList: PropTypes.array.isRequired,
   category: PropTypes.string.isRequired,
-  checkCheckbox: PropTypes.func
-};
-
-CheckBoxList.defaultProps = {
-  checkCheckbox: false
+  checkCheckbox: PropTypes.func.isRequired
 };
 
 export default CheckBoxList;

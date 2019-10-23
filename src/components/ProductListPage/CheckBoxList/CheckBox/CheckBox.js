@@ -12,9 +12,7 @@ class CheckBox extends Component {
 
   handleCheckboxChange = () => {
     const {
-      category,
-      itemName,
-      checkCheckbox
+      category, itemName, checkCheckbox
     } = this.props;
 
     const { clicked } = this.state;
@@ -44,11 +42,7 @@ class CheckBox extends Component {
 CheckBox.propTypes = {
   category: PropTypes.string.isRequired,
   itemName: PropTypes.string.isRequired,
-  checkCheckbox: PropTypes.func
-};
-
-CheckBox.defaultProps = {
-  checkCheckbox: false
+  checkCheckbox: PropTypes.isRequired
 };
 
 export default CheckBox;
