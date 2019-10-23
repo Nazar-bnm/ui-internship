@@ -137,10 +137,8 @@ class Carousel extends Component {
     const { children } = this.props;
     const { widthOfSlide } = this.state;
     const style = { maxWidth: widthOfSlide };
-    const cloner = (child) => React.cloneElement(child);
-    const listOfItems = children.map(cloner);
 
-    return listOfItems.map((item) => (
+    return children.map((item) => (
       <div
         key={item.id}
         className={`${CN}__child`}
