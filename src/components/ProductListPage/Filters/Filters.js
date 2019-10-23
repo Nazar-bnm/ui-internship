@@ -11,6 +11,7 @@ const Filters = ({ category }) => {
   const categoriesNamesList = Object.keys(gender);
   const categoriesToDisplay = categoriesNamesList.map((categoryName) => (
     <Accordeon
+      key={categoryName}
       heightItem="auto"
       open
       data={[{

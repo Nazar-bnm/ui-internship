@@ -27,14 +27,14 @@ class CheckBox extends Component {
     const { itemName } = this.props;
 
     return (
-      <div>
+      <li>
         <input
           type="checkbox"
           id={itemName}
           onChange={this.handleCheckboxChange}
         />
         <label htmlFor={itemName}>{itemName}</label>
-      </div>
+      </li>
     );
   }
 }
@@ -42,7 +42,7 @@ class CheckBox extends Component {
 CheckBox.propTypes = {
   category: PropTypes.string.isRequired,
   itemName: PropTypes.string.isRequired,
-  checkCheckbox: PropTypes.isRequired
+  checkCheckbox: PropTypes.func.isRequired
 };
 
 export default CheckBox;

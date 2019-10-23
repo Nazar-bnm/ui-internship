@@ -1,1 +1,1 @@
-export { default } from './CheckBoxList';
+export { default } from './CheckBoxListContainer';

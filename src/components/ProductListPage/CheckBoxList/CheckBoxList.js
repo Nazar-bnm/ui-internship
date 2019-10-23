@@ -5,13 +5,13 @@ import CheckBox from './CheckBox';
 
 const CheckBoxList = ({ itemsList, category, checkCheckbox }) => {
   const renderCheckboxes = itemsList.map(({ item }) => (
-    <li key={item}>
+    <div key={item}>
       <CheckBox
         itemName={item}
         checkCheckbox={checkCheckbox}
         category={category}
       />
-    </li>
+    </div>
   ));
 
   return (

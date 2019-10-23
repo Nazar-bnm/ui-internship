@@ -6,7 +6,7 @@ const initialState = {
   size: [],
   price: [],
   colors: [],
-  brandes: []
+  brands: []
 };
 
 function deleteItem(array, id) {
@@ -27,6 +27,7 @@ export default function reducerFilter(state = initialState, { type, payload }) {
         };
       }
       return {
+        ...state,
         [payload.category]: deleteItem(state[payload.category], payload.id)
       };
     }
