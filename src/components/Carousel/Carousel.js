@@ -95,10 +95,14 @@ class Carousel extends Component {
     const allTheWayRightValue = scrollLeft + clientWidth === scrollWidth;
     const { allTheWayLeft, allTheWayRight } = this.state;
 
-    if (allTheWayLeft !== allTHeWayLeftValue
-      || allTheWayRight !== allTheWayRightValue) {
+    if (allTheWayLeft !== allTHeWayLeftValue) {
       this.setState({
-        allTheWayLeft: allTHeWayLeftValue,
+        allTheWayLeft: allTHeWayLeftValue
+      });
+    }
+
+    if (allTheWayRight !== allTheWayRightValue) {
+      this.setState({
         allTheWayRight: allTheWayRightValue
       });
     }
