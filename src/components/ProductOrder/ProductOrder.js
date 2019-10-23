@@ -20,7 +20,7 @@ const ProductOrder = (props) => {
   } = props;
 
   return (
-    <div className={`${CN} content`}>
+    <div className={`${CN}`}>
       <h2 className={`${CN}__heading`}>{itemName}</h2>
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
