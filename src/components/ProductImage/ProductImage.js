@@ -66,7 +66,7 @@ class ProductImage extends Component {
     const { selectedImage } = this.state;
 
     return (
-      <div className={cx(`${CN}__container content`)}>
+      <div className={cx(`${CN}__container`)}>
         <div
           className={`${CN}__big-image-container`}
           type="submit"
