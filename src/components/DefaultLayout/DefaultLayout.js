@@ -1,6 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group';
+
 import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
@@ -8,6 +13,7 @@ import ShippingInfo from '../ShippingInfo';
 
 const DefaultLayout = ({
   component: Component,
+  location,
   hideFooter,
   hideHeader,
   hideBrands,
@@ -16,13 +22,21 @@ const DefaultLayout = ({
   <Route
     {...rest}
     render={(matchProps) => (
-      <>
-        {!hideHeader && <Header />}
-        <Component {...matchProps} />
-        {!hideBrands && <Brands />}
-        {!hideShippingInfo && <ShippingInfo />}
-        {!hideFooter && <Footer />}
-      </>
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          timeout={300}
+          classNames="fade"
+        >
+          <>
+            {!hideHeader && <Header />}
+            <Component {...matchProps} />
+            {!hideBrands && <Brands />}
+            {!hideShippingInfo && <ShippingInfo />}
+            {!hideFooter && <Footer />}
+          </>
+        </CSSTransition>
+      </TransitionGroup>
     )}
   />
 );
