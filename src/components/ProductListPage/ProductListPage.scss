@@ -1,22 +1,62 @@
 @import '../../scss/global_styles';
 
 .productListPage {
-  &__wrapper {
+  &__gridWrapper {
+    display: grid;
     width: 100%;
-    justify-content: space-between;
+    height: 100%;
+    grid-gap: 30px;
+    grid-template-areas: "filters poster"
+    "filters items"
+    "filters items";
+    grid-template-columns: 247px 1fr;
+    grid-template-rows: 400px 1fr 2fr;
   }
 
   &__filter {
-    width: 30%;
+    grid-area: filters;
   }
 
-  &__list {
+  &__poster {
+    grid-area: poster;
+
     &-wrapper {
-      width: 65%;
+      margin-top: 10px;
+      width: 100%;
     }
 
-    &-title {
-      text-align: left;
+    &-img {
+      width: 100%;
+      height: -webkit-fill-available;
+    }
+  }
+
+  &__productList {
+    grid-area: items;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .productListPage {
+    &__gridWrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__filter {
+      order: 2;
+    }
+
+    &__poster {
+      order: 1;
+
+      &-img {
+        height: auto;
+      }
+    }
+
+    &__productList {
+      order: 3
     }
   }
 }

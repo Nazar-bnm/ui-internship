@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 
 import Filter from './Filters';
+import ProductList from '../ProductList';
+import Heading from '../Heading/Heading';
 
 import './ProductListPage.scss';
 
@@ -13,14 +15,23 @@ class ProductListPage extends Component {
 
     return (
       <div className={`content ${cx(CN)}`}>
-        <div className={`container ${CN}__wrapper`}>
+        <div className={`${cx(CN)}__gridWrapper`}>
           <div className={`${CN}__filter`}>
             <Filter category={category} />
             {this.category}
           </div>
-          <div className={`${CN}__list-wrapper`}>
-            <h3 className={`title ${CN}__list-title`}>{category}</h3>
-          here will be products
+          <div className={`${CN}__poster`}>
+            <Heading title={category} />
+            <div className={`${CN}__poster-wrapper container`}>
+              <img
+                className={`${CN}__poster-img`}
+                src={`src/assets/img/productListPage/${category}.jpg`}
+                alt="women"
+              />
+            </div>
+          </div>
+          <div className={`${CN}__productList`}>
+            <ProductList />
           </div>
         </div>
       </div>
