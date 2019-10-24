@@ -5,9 +5,15 @@
   width: 100%;
   padding-top: 50px;
 
-  .heading__wrapper {
-    margin: 20px;
-    font-size: 1.1rem;
+  .heading {
+    &__wrapper{
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    &__line {
+      height: 1px;
+    } 
   }
 
   &__popular {
@@ -26,7 +32,7 @@
   .mainPage {
 
     .heading__wrapper {
-      margin: 10px;
+      margin: 10px 0;
       font-size: 1.1rem;
     }
 

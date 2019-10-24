@@ -2,12 +2,6 @@
 @import '../../scss/styles';
 
 .wrapper {
-  .title {
-    @include title-font;
-    text-align: left;
-    padding-bottom: 30px;
-  }
-
   &__container {
     @include flex(row, center, center);
     width: 100%;
