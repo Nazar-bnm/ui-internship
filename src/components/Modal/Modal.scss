@@ -10,7 +10,7 @@
   background-color: rgba($color: $black, $alpha: 0.5);
   outline: none;
 
-  &--hide {
+  &--transition {
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: scale(0);
     background-color: inherit;
@@ -22,10 +22,7 @@
     height: 400px;
     padding: 0 3rem;
     background: $white;
-
-    &--animation {
-      animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
+    animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
 
   &__close-button,

@@ -1,59 +1,63 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Modal from './Modal';
 
 describe('<Modal />', () => {
-  const mockFunc = jest.fn();
   const children = <div>Children</div>;
-  let wrapper;
-
-  let props = {
-    show: true,
-    hideModal: mockFunc,
+ let mockEvent = {
+    target: {
+      classList: {
+        contains: () => 'modal',
+      }
+    }
   };
 
+  let mockFunc;
+  let wrapper;
+  let props;
+
   beforeEach(() => {
-    wrapper = shallow(<Modal {...props}>{children}</Modal>);
+     mockFunc = jest.fn();
+
+     props = {
+      removeModal: mockFunc,
+    };
+
+    wrapper = mount(<Modal {...props}>{children}</Modal>);
   });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should set body class "remove-scroll" and be on focus mode when prop show is true', () => {
-    wrapper = mount(<Modal {...props}>{children}</Modal>);
+  it('should set body class "remove-scroll" and be on focus mode when component is mounted', () => {
     expect(document.body.classList.contains('remove-scroll')).toBeTruthy();
     expect(wrapper.is(':focus')).toBeTruthy();
   });
 
-  it('should call mockFunc on click', () => {
-    const mockEvent = {
-      target: {
-        classList: {
-          contains: () => 'modal'
-        },
-      },
-    };
-
-    wrapper.simulate('click', mockEvent);
+  it('should call mockFunc on transitionEnd', () => {
+    wrapper.simulate('transitionEnd', mockEvent);
     expect(mockFunc).toHaveBeenCalledTimes(1);
   });
 
-  it('should call mockFunc on escape button', () => {
-    const mockEvent = {
-      target: {
+  it('expect state property isTransition is "true" onClick', () => {
+    expect(wrapper.state().isTransition).toBeFalsy();
+    wrapper.simulate('click', mockEvent);
+    expect(wrapper.state().isTransition).toBeTruthy();
+  });
+
+  it('expect state property isTransition is "true" on escape button', () => {
+    mockEvent = {
         keyCode: 27
-      },
     };
 
     wrapper.simulate('keyDown', mockEvent);
-    expect(mockFunc).toHaveBeenCalledTimes(1);
+    expect(wrapper.state().isTransition).toBeTruthy();
   });
 
-  it('should not set body class "remove-scroll" when prop show is false', () => {
-    props.show = false;
-    wrapper = mount(<Modal {...props}>{children}</Modal>);
+  it('should remove body class "remove-scroll"', () => {
+    wrapper.unmount();
     expect(document.body.classList.contains('remove-scroll')).toBeFalsy();
   });
 });

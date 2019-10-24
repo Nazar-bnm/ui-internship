@@ -15,7 +15,7 @@ class TestModal extends Component {
     });
   };
 
-  hideModal = () => {
+  removeModal = () => {
     this.setState({
       show: false
     });
@@ -28,9 +28,11 @@ class TestModal extends Component {
         <button type="button" onClick={this.showModal}>
           show modal
         </button>
-        <Modal show={show} hideModal={this.hideModal}>
-          <p>Hello</p>
-        </Modal>
+        {show && (
+          <Modal removeModal={this.removeModal.bind(this)}>
+            <p>Hello</p>
+          </Modal>
+        )}
       </>
     );
   }
