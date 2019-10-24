@@ -6,8 +6,8 @@
   padding-top: 50px;
 
   .heading__wrapper {
-    margin: 20px 0 50px;
-    font-size: 1.2rem;
+    margin: 20px;
+    font-size: 1.1rem;
   }
 
   &__popular {
@@ -24,6 +24,12 @@
 
 @include media-for(tablet) {
   .mainPage {
+
+    .heading__wrapper {
+      margin: 10px;
+      font-size: 1.1rem;
+    }
+
     &__popular {
       width: 100%;
     }

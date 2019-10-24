@@ -58,7 +58,7 @@
     }
   }
   &__title-wrapper.icons{
-    @include flex($direction: row, $justify: space-around);
+    @include flex($direction: row, $justify: space-evenly);
     width: 100%;
   }
 
@@ -110,10 +110,6 @@
   .new {
     border-color: $black transparent transparent transparent;
   }
-}
-
-@include media-for(laptop){
-  .product {}
 }
 
 @media screen and (max-width: 768px) {

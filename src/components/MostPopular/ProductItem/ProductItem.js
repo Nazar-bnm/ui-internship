@@ -5,6 +5,7 @@ import cx from 'classnames';
 import './ProductItem.scss';
 
 const CN = 'product';
+
 const ProductItem = ({
   product, wishlist, addToWishlist, removeFromWishlist
 }) => {
@@ -64,12 +65,10 @@ const ProductItem = ({
         {isHovered && (
           <>
             <span className={`${CN}__title-wrapper`}>
-              Sizes:
-              {sizes}
+              {`Sizes: ${sizes}`}
             </span>
             <div className={`${CN}__title-wrapper icons`}>
               <i className="eye icon" />
-              <i className="cart plus icon" />
               <div>{renderButton(product)}</div>
             </div>
           </>

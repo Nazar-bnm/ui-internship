@@ -6,7 +6,6 @@
     @include title-font;
     text-align: left;
     padding-bottom: 30px;
-
   }
 
   &__container {
@@ -16,7 +15,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@include media-for(mobile-landscape) {
   .wrapper {
     .title {
       text-align: center;
