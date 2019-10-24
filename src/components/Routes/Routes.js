@@ -11,7 +11,7 @@ import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
 import MostPopular from '../MostPopular';
-import CartPageContainer from '../CartPage/CartPageContainer';
+import CartPage from '../CartPage';
 
 import './Routes.scss';
 
@@ -28,7 +28,7 @@ const Routes = () => (
           <DefaultLayout path="/home" component={HomePage} />
           <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
-          <DefaultLayout path="/cart" component={CartPageContainer} />
+          <DefaultLayout path="/cart" component={CartPage} />
           <DefaultLayout path="/:id" exact component={ProductDetailsPageWrapper} />
           <DefaultLayout
             to="/not_found"

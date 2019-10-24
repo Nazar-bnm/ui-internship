@@ -6,7 +6,7 @@ import {
   TransitionGroup
 } from 'react-transition-group';
 
-import HeaderContainer from '../Header/HeaderContainer';
+import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
@@ -29,7 +29,7 @@ const DefaultLayout = ({
           classNames="fade"
         >
           <>
-            {!hideHeader && <HeaderContainer />}
+            {!hideHeader && <Header />}
             <Component {...matchProps} />
             {!hideBrands && <Brands />}
             {!hideShippingInfo && <ShippingInfo />}
