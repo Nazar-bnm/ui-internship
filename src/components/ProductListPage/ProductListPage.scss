@@ -10,11 +10,12 @@
     "filters items"
     "filters items";
     grid-template-columns: 247px 1fr;
-    grid-template-rows: 400px 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
 
   &__filter {
     grid-area: filters;
+    
   }
 
   &__poster {
@@ -27,7 +28,7 @@
 
     &-img {
       width: 100%;
-      height: -webkit-fill-available;
+      // height: -webkit-fill-available;
     }
   }
 
@@ -57,6 +58,14 @@
 
     &__productList {
       order: 3
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .productListPage {
+    &__gridWrapper {
+     
     }
   }
 }
