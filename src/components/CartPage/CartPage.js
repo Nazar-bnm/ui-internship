@@ -85,7 +85,11 @@ const CartPage = (props) => {
           Scoring a good fashion deal is as exhilarating as winning the lottery!
           Try out your luck!
           </h2>
-          <div className={`col-6 col-center ${CN}__pseudo-button`}>Continue shopping</div>
+          <div
+            className={`col-6 col-center ${CN}__pseudo-button`}
+          >
+            Continue shopping
+          </div>
         </div>
       </Link>
 
