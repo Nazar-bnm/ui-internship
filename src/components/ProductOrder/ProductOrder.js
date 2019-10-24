@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Dropdown from '../Dropdown';
-import Button from '../Button';
+import Dropdown from '../shared/Dropdown';
+import Button from '../shared/Button';
 
 import './ProductOrder.scss';
 
@@ -20,7 +20,7 @@ const ProductOrder = (props) => {
   } = props;
 
   return (
-    <div className={`${CN} content`}>
+    <div className={`${CN}`}>
       <h2 className={`${CN}__heading`}>{itemName}</h2>
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>

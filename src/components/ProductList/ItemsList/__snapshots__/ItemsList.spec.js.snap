@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ItemsList /> should match snapshot 1`] = `
+<ItemsList
+  ascendingOrder={true}
+  categoryName="product-list"
+  itemList={
+    Array [
+      Object {
+        "category": "women",
+        "collection": "spring collection 2016",
+        "id": "1",
+        "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg",
+        "label": "sale",
+        "price": "199",
+        "sizes": "[S, M, L]",
+        "title": "Awesome dress",
+      },
+      Object {
+        "category": "women",
+        "collection": "spring collection 2016",
+        "id": "2",
+        "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg",
+        "label": "new",
+        "price": "299",
+        "sizes": "[S, M, L]",
+        "title": "Beautiful dress",
+      },
+      Object {
+        "category": "women",
+        "collection": "spring collection 2016",
+        "id": "3",
+        "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg",
+        "label": "",
+        "price": "399",
+        "sizes": "[M, L]",
+        "title": "Amazing dress",
+      },
+    ]
+  }
+  itemsOnPage={6}
+  onGetProductsError={null}
+  onGetProductsSuccess={null}
+>
+  <div
+    className="items-container"
+  >
+    <ProductItem
+      key="Awesome dress"
+      product={
+        Object {
+          "category": "women",
+          "collection": "spring collection 2016",
+          "id": "1",
+          "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg",
+          "label": "sale",
+          "price": "199",
+          "sizes": "[S, M, L]",
+          "title": "Awesome dress",
+        }
+      }
+    >
+      <div
+        className="product col-xs-12 col-sm-6 col-md-4"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="product__img-wrapper"
+        >
+          <div
+            className="product__img-wrapper__flag sale"
+          />
+          <div
+            className="product__img-wrapper__labels"
+          >
+            sale
+          </div>
+          <img
+            alt="product"
+            className="product__img-wrapper__img"
+            src="https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg"
+          />
+        </div>
+        <div
+          className="product__title-wrapper"
+        >
+          <h2
+            className="product__title-wrapper__title"
+          >
+            Awesome dress
+          </h2>
+          <h3
+            className="product__title-wrapper__price"
+          >
+            199
+          </h3>
+        </div>
+      </div>
+    </ProductItem>
+    <ProductItem
+      key="Beautiful dress"
+      product={
+        Object {
+          "category": "women",
+          "collection": "spring collection 2016",
+          "id": "2",
+          "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg",
+          "label": "new",
+          "price": "299",
+          "sizes": "[S, M, L]",
+          "title": "Beautiful dress",
+        }
+      }
+    >
+      <div
+        className="product col-xs-12 col-sm-6 col-md-4"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="product__img-wrapper"
+        >
+          <div
+            className="product__img-wrapper__flag new"
+          />
+          <div
+            className="product__img-wrapper__labels"
+          >
+            new
+          </div>
+          <img
+            alt="product"
+            className="product__img-wrapper__img"
+            src="https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg"
+          />
+        </div>
+        <div
+          className="product__title-wrapper"
+        >
+          <h2
+            className="product__title-wrapper__title"
+          >
+            Beautiful dress
+          </h2>
+          <h3
+            className="product__title-wrapper__price"
+          >
+            299
+          </h3>
+        </div>
+      </div>
+    </ProductItem>
+    <ProductItem
+      key="Amazing dress"
+      product={
+        Object {
+          "category": "women",
+          "collection": "spring collection 2016",
+          "id": "3",
+          "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg",
+          "label": "",
+          "price": "399",
+          "sizes": "[M, L]",
+          "title": "Amazing dress",
+        }
+      }
+    >
+      <div
+        className="product col-xs-12 col-sm-6 col-md-4"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="product__img-wrapper"
+        >
+          <div
+            className="product__img-wrapper__flag"
+          />
+          <div
+            className="product__img-wrapper__labels"
+          />
+          <img
+            alt="product"
+            className="product__img-wrapper__img"
+            src="https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg"
+          />
+        </div>
+        <div
+          className="product__title-wrapper"
+        >
+          <h2
+            className="product__title-wrapper__title"
+          >
+            Amazing dress
+          </h2>
+          <h3
+            className="product__title-wrapper__price"
+          >
+            399
+          </h3>
+        </div>
+      </div>
+    </ProductItem>
+  </div>
+</ItemsList>
+`;
