@@ -229,7 +229,7 @@
     }
 
     .dropdown:first-child, .heading, .list,.navigation-account {
-      @include flex();
+      @include flex;
     }
 
     .page-settings {

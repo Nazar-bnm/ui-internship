@@ -1,43 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Slide from '../Carousel/Slide';
-import Carousel from '../Carousel';
-import products from '../Carousel/products.json';
+import ProductListNavigationContainer from './ProductListNavigation';
+import ItemsListContainer from './ItemsList';
 
-export const CN = 'ProductList';
+import './ProductList.scss';
 
-class ProductList extends Component {
-  constructor(props) {
-    super(props);
+export const CN = 'product-list';
 
-    this.state = { productList: [...products] };
-  }
-
-  render() {
-    const { productList } = this.state;
-
-    const listOfProducts = productList
-    && productList.map(({ productName, category, images }) => {
-      const mainProductImage = images[0].url[0];
-
-      return (
-        <Slide
-          key={productName}
-          image={mainProductImage}
-          name={productName}
-          category={category}
-        />
-      );
-    });
-
-    return (
-      <div className={`${CN} content`}>
-        <Carousel items={productList}>
-          {listOfProducts}
-        </Carousel>
-      </div>
-    );
-  }
-}
+const ProductList = () => (
+  <div className={`${CN} content`}>
+    <div className={`${CN}__filter-wrapper`}>
+      <ProductListNavigationContainer />
+    </div>
+    <div className={`${CN}__items-list-container`}>
+      <ItemsListContainer />
+    </div>
+    <div className={`${CN}__filter-wrapper`}>
+      <ProductListNavigationContainer />
+    </div>
+  </div>
+);
 
 export default ProductList;

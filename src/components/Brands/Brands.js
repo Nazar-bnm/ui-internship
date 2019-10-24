@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 
 import HttpService from '../../service/HttpService/httpService';
+import Heading from '../Heading';
 
 import './Brands.scss';
 
@@ -45,8 +46,8 @@ class BrandsAndShippingInfo extends Component {
     const { brandsList } = this.state;
 
     return (
-      <div className="content">
-        <h3 className={`${CN}__title`}>Top Brands</h3>
+      <div className={`content ${cx(CN)}`}>
+        <Heading title="Brands" position="center" />
         <div className={`container ${cx(CN)}`}>
           <ul className={`${CN}__list`}>
             {this.renderBrands(brandsList)}

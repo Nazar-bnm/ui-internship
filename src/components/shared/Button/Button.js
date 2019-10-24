@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import './Button.scss';
+
 const Button = (props) => {
   const {
     className, icon, children, onClick

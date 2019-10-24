@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import MostPopular from './MostPopular';
 import { addToWishlist, removeFromWishlist } from '../../actions/actionsWishlist';
 
-const mapStateToProps = (state) => ({ wishlist: state.reducerWishlist.wishlist });
+const mapStateToProps = ({ reducerWishlist }) => ({ wishlist: reducerWishlist.wishlist });
 
 const mapDispatchToProps = (dispatch) => ({
   addToWishlist: bindActionCreators(addToWishlist, dispatch),

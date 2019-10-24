@@ -1,4 +1,4 @@
-@import "../../scss/global_styles";
+@import '../../../scss/global_styles';
 
 .dropdown {
   @include flex(row, center, center);
@@ -18,8 +18,8 @@
       width: 100%;
       padding: 5px;
       background: none;
-        color: inherit;
-        cursor: pointer;
+	    color: inherit;
+	    cursor: pointer;
       font: inherit;
       text-align: start;
       outline: inherit;

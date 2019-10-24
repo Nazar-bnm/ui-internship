@@ -32,9 +32,9 @@
     outline: none;
     border: none;
     background: none;
-    // background-color: grey;
     opacity: .8;
     transition: opacity .2s ease-in-out;
+    color: $white;
   }
 
   &__left-nav {
@@ -60,7 +60,21 @@
     transition: .5;
   }
 
+  &__child {
+    display: inline-block;
+    width: 100%;
+  }
+
   i.icon {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+
+    &__nav {
+      display: none;
+    }
   }
 }

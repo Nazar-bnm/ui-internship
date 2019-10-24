@@ -6,7 +6,7 @@ exports[`<ProductImage /> should match snapshot 1`] = `
 >
   <div
     className="product-image__big-image-container"
-    onClick={[Function]}
+    type="submit"
   >
     <img
       alt="product"
@@ -20,57 +20,52 @@ exports[`<ProductImage /> should match snapshot 1`] = `
     <div
       className="product-image__small-image"
       key="src/assets/img/content/new4.png"
-      onClick={[Function]}
     >
       <img
         alt="product"
         className="product-image"
         src="src/assets/img/content/new4.png"
       />
-      <div
+      <button
         className="product-image__image-on-hover"
+        data-src="src/assets/img/content/new4.png"
+        label="clickable image"
+        onClick={[Function]}
+        type="submit"
       />
     </div>
     <div
       className="product-image__small-image"
       key="src/assets/img/content/new2.png"
-      onClick={[Function]}
     >
       <img
         alt="product"
         className="product-image"
         src="src/assets/img/content/new2.png"
       />
-      <div
+      <button
         className="product-image__image-on-hover"
+        data-src="src/assets/img/content/new2.png"
+        label="clickable image"
+        onClick={[Function]}
+        type="submit"
       />
     </div>
     <div
       className="product-image__small-image"
       key="src/assets/img/content/new3.png"
-      onClick={[Function]}
     >
       <img
         alt="product"
         className="product-image"
         src="src/assets/img/content/new3.png"
       />
-      <div
+      <button
         className="product-image__image-on-hover"
-      />
-    </div>
-    <div
-      className="product-image__small-image"
-      key="src/assets/img/content/new1.png"
-      onClick={[Function]}
-    >
-      <img
-        alt="product"
-        className="product-image"
-        src="src/assets/img/content/new1.png"
-      />
-      <div
-        className="product-image__image-on-hover"
+        data-src="src/assets/img/content/new3.png"
+        label="clickable image"
+        onClick={[Function]}
+        type="submit"
       />
     </div>
   </div>

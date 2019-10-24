@@ -20,19 +20,24 @@ class Dropdown extends Component {
   }
 
   selectOption(e) {
+    const { options } = this.state;
+    const { changeItemsOnPageNum, changeOrderType } = this.props;
+    const selectedID = e.target.getAttribute('selectednum');
+    const selectedLabel = options[selectedID].label;
     const chosenOption = e.target.getAttribute('selectednum');
 
     this.setState({
       selectedID: chosenOption
     });
+    // The following 'if' statement checks if the 'selectedLabel' value is a number when converted into number. This is usefull in cases when the 'selectedLabel' value is a string (it converts into NaN).
+    if (!Number.isNaN(Number(selectedLabel))) {
+      return changeItemsOnPageNum(selectedLabel);
+    }
+    changeOrderType(selectedLabel);
   }
 
   toggleDropdown() {
-    const { expanded } = this.state;
-
-    this.setState({
-      expanded: !expanded
-    });
+    this.setState((prevState) => ({ expanded: !prevState.expanded }));
   }
 
   renderMenuItems() {
@@ -78,7 +83,14 @@ class Dropdown extends Component {
 }
 
 Dropdown.propTypes = {
-  options: PropTypes.array.isRequired
+  options: PropTypes.array.isRequired,
+  changeItemsOnPageNum: PropTypes.func,
+  changeOrderType: PropTypes.func
+};
+
+Dropdown.defaultProps = {
+  changeItemsOnPageNum: () => {},
+  changeOrderType: () => {}
 };
 
 export default Dropdown;

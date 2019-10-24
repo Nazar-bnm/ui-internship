@@ -5,13 +5,18 @@
   width: 100%;
   padding-top: 50px;
 
+  .heading__wrapper {
+    margin: 20px 0 50px;
+    font-size: 1.2rem;
+  }
+
   &__popular {
-    width: 70%;
+    width: 68%;
   }
 
   &__blog {
     height: 50%;
-    width: 28%;
+    width: 30%;
     border: 1px solid $mercury;
     padding: 20px 23px;
   }

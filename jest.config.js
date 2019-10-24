@@ -6,7 +6,7 @@ module.exports = {
     '.+\\.(css|styl|less|sass|scss|png|jpg)$': 'jest-transform-stub',
   },
   'setupFiles': ['<rootDir>/.jest/enzyme.setup.js'],
-  'collectCoverageFrom': ['<rootDir>/src/**/*.{js,jsx}'],
+  'collectCoverageFrom': ['<rootDir>/src/**/*.js'],
   'snapshotSerializers': ['enzyme-to-json/serializer'],
   'moduleNameMapper': { '^.+\\.(css|less|scss)$': 'identity-obj-proxy' },
 };
