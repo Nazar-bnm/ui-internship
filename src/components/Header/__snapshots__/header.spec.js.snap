@@ -13,6 +13,7 @@ exports[`<Header /> should match snapshot 1`] = `
     className="header__heading-search-cart-container content"
   >
     <Link
+      className="header__title-wrapper"
       to="/home"
     >
       <h2
@@ -63,8 +64,9 @@ exports[`<Header /> should match snapshot 1`] = `
         }
       />
       <Input
-        customClass="header__search-input"
+        className="header__search-input"
         icon="search"
+        placeholder="SEARCH"
       >
         Search
       </Input>
@@ -72,9 +74,9 @@ exports[`<Header /> should match snapshot 1`] = `
         to="/404"
       >
         <Button
-          customClass="header__cart-btn"
+          className="header__cart-btn"
           icon="cart"
-          onClickFunction={null}
+          onClick={[Function]}
         >
           Cart (0)
         </Button>

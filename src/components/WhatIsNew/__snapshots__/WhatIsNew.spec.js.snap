@@ -2,15 +2,15 @@
 
 exports[`<WhatIsNew /> should match snapshot 1`] = `
 <div
-  className="content"
+  className="content whatIsNew"
 >
-  <h3
-    className="title"
-  >
-    whats new
-  </h3>
+  <Heading
+    className="whatIsNew__title"
+    position="center"
+    title="What is new?"
+  />
   <div
-    className="container"
+    className="container whatIsNew__wrapper"
   />
 </div>
 `;
