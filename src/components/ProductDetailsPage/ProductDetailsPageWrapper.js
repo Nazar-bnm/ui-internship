@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
+import Button from '../shared/Button';
 import ProductDetailsPage from './ProductDetailsPage';
 
 class ProductDetailsPageWrapper extends Component {
