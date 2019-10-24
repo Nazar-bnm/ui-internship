@@ -1,0 +1,39 @@
+@import '../../../scss/global_styles';
+
+.notifications {
+  // background-color: #444;
+  color: $white;
+  padding: 16px;
+  position: fixed;
+  top: 95px;
+  right: 20px;
+  z-index: 999;
+  opacity: .7;
+  transition: top .5s ease;
+
+  
+
+  &.change {
+    background-color: #444;
+  }
+
+  &.info {
+    background-color: #3498db;
+  }
+
+  &.success {
+    background-color: #2ecc71;
+  }
+
+  &.warning {
+    background-color: #e67e22;
+  }
+
+  &.error {
+    background-color: #e74c3c;
+  }
+
+  &.custom {
+    background-color: purple;
+  }
+}

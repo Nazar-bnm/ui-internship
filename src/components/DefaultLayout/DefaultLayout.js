@@ -6,7 +6,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
-import Notifications from '../Notifications';
+import Notifications from '../Shared/Notifications';
 
 import './DefaultLayout.scss';
 
@@ -22,7 +22,11 @@ const DefaultLayout = ({
     render={() => (
       <>
         {!hideHeader && <Header />}
-        <Notifications />
+        <Notifications
+          type="success"
+          showCloseButton={() => { }}
+          onRequestHide={() => { }}
+        />
         <Component />
         {!hideBrands && <Brands />}
         {!hideShippingInfo && <ShippingInfo />}
