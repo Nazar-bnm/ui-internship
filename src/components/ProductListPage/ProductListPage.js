@@ -11,6 +11,7 @@ export const CN = 'productListPage';
 
 class ProductListPage extends Component {
   render() {
+    // console.log(this.props);
     const { match: { params: { category } } } = this.props;
 
     return (

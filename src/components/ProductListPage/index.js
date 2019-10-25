@@ -1,1 +1,1 @@
-export { default } from './ProductListPage';
+export { default } from './ProductListPageContainer';
