@@ -10,6 +10,7 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
   const {
     id, image, title, collection, category
   } = item;
+
   return (
     <div className={`${cx(CN, className)}`}>
       <img className={`${CN}__image`} src={image} alt={title} />

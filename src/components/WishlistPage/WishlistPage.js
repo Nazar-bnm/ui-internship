@@ -8,9 +8,11 @@ import './WishlistPage.scss';
 
 const CN = 'wishlist';
 
-const WishlistPage = ({
-  wishlist, products, removeFromWishlist, className
-}) => {
+const WishlistPage = (props) => {
+  const {
+    wishlist, products, removeFromWishlist, className
+  } = props;
+
   const renderNoWishlistItems = () => (
     <div className={`${CN} ${CN}__empty-page`}>
       <h2 className={`${CN}__subtitle`}>No items in your wishlist!</h2>
