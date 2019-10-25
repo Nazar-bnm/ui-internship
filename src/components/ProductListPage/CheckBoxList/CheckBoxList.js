@@ -5,13 +5,12 @@ import CheckBox from '../../Shared/CheckBox';
 
 const CheckBoxList = ({ itemsList, category, checkCheckbox }) => {
   const renderCheckboxes = itemsList.map(({ item }) => (
-    <div key={item}>
-      <CheckBox
-        itemName={item}
-        checkCheckbox={checkCheckbox}
-        category={category}
-      />
-    </div>
+    <CheckBox
+      key={item}
+      itemName={item}
+      checkCheckbox={checkCheckbox}
+      category={category}
+    />
   ));
 
   return (

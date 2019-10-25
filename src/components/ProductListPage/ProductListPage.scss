@@ -1,6 +1,19 @@
 @import '../../scss/global_styles';
 
 .productListPage {
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid $mercury;
+    margin-bottom: 30px;
+    padding-top: 5px;
+
+    & > * {
+      color: $silver-chalice;
+      font-size: 0.8em;
+    }
+  }
+
   &__gridWrapper {
     display: grid;
     width: 100%;
@@ -15,7 +28,6 @@
 
   &__filter {
     grid-area: filters;
-    
   }
 
   &__poster {
@@ -24,11 +36,10 @@
     &-wrapper {
       margin-top: 10px;
       width: 100%;
-    }
-
-    &-img {
-      width: 100%;
-      // height: -webkit-fill-available;
+      background-position: top;
+      background-size: cover;
+      backgroundRepeat: no-repeat;
+      height: 100%;
     }
   }
 
@@ -51,21 +62,13 @@
     &__poster {
       order: 1;
 
-      &-img {
-        height: auto;
+      &-wrapper {
+        height: 40vh;
       }
     }
 
     &__productList {
       order: 3
-    }
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .productListPage {
-    &__gridWrapper {
-     
     }
   }
 }

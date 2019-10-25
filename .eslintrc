@@ -36,5 +36,6 @@
     "jsx-a11y/label-has-associated-control": "off",
     "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}],
     "react/jsx-props-no-spreading": "off",
+    "linebreak-style": 0
   }
 }

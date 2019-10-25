@@ -1,5 +1,11 @@
-@import 'src/scss/global_styles';
+@import '../../../scss/global_styles';
 
-.category {
-  margin-bottom: 30px;
+.filter {
+  &__box {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+  }
 }

@@ -34,9 +34,12 @@ class Filters extends Component {
     const { width } = this.state;
     const renderAccordion = (categoryName, index) => {
       const open = index === 0 && width <= tabletBreakpoint;
+      const style = open ? { borderRadius: '10px' } : '';
 
       return (
         <Accordion
+          className="filter__box"
+          style={style}
           key={categoryName}
           heightItem="auto"
           open={open}

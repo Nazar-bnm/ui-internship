@@ -15,20 +15,23 @@ class ProductListPage extends Component {
 
     return (
       <div className={`content ${cx(CN)}`}>
+        <div className={`${CN}__line`}>
+          <div> Home</div>
+          <div>&#10094; Return to previous page</div>
+        </div>
         <div className={`${cx(CN)}__gridWrapper`}>
           <div className={`${CN}__filter`}>
             <Filter category={category} />
             {this.category}
           </div>
           <div className={`${CN}__poster`}>
-            <Heading title={category} />
-            <div className={`${CN}__poster-wrapper container`}>
-              <img
-                className={`${CN}__poster-img`}
-                src={`src/assets/img/productListPage/${category}.jpg`}
-                alt="women"
-              />
-            </div>
+            <Heading className={`${CN}__title`} title={category} />
+            <div
+              className={`${CN}__poster-wrapper container`}
+              style={{
+                backgroundImage: `url(src/assets/img/productListPage/${category}.jpg)`
+              }}
+            />
           </div>
           <div className={`${CN}__productList`}>
             <ProductList />

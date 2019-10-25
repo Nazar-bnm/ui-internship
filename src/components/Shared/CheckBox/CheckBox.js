@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './CheckBox.scss';
+
 class CheckBox extends Component {
   constructor(props) {
     super(props);
@@ -21,14 +23,15 @@ class CheckBox extends Component {
       const { clicked: lastClicked } = this.state;
       checkCheckbox(category, itemName, lastClicked);
     });
-  }
+  };
 
   render() {
     const { itemName } = this.props;
 
     return (
-      <li>
+      <li className="checkbox__name">
         <input
+          className="checkbox"
           type="checkbox"
           id={itemName}
           onChange={this.handleCheckboxChange}
