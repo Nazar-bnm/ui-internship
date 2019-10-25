@@ -38,13 +38,23 @@
       width: 100%;
       background-position: top;
       background-size: cover;
-      backgroundRepeat: no-repeat;
+      background-repeat: no-repeat;
       height: 100%;
     }
   }
 
   &__productList {
     grid-area: items;
+  }
+
+  .accordion-item__header {
+    border: none;
+  }
+
+  .heading__title {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-left: 0;
   }
 }
 
