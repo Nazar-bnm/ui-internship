@@ -16,8 +16,17 @@ const ProductOrder = (props) => {
     price,
     sizes,
     colors,
-    quantity
+    quantity,
+    addToCart,
+    id
   } = props;
+
+  const params = {
+    ID: id,
+    quantity: 2,
+    color: 'white',
+    size: 'M'
+  };
 
   return (
     <div className={`${CN}`}>
@@ -25,14 +34,21 @@ const ProductOrder = (props) => {
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
       <div className={`${CN}__dropdowns-wrapper`}>
-        <Dropdown options={sizes} />
-        <Dropdown options={colors} />
-        <Dropdown options={quantity} />
+        <Dropdown options={sizes} mainLabel="size:" />
+        <Dropdown options={colors} mainLabel="color:" />
+        <Dropdown options={quantity} mainLabel="qty:" />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
-        <Link to="/not_found">
-          <Button customClass={`${CN}__cart-btn`}>add to cart</Button>
-        </Link>
+        {/* <Link to="/not_found"> */}
+        <button
+          onClick={() => addToCart(params)}
+          type="button"
+          className={`${CN}__cart-btn`}
+        >
+add to cart
+
+        </button>
+        {/* </Link> */}
         <Link to="/not_found">
           <Button
             customClass={`${CN}__wishlist-btn`}

@@ -12,28 +12,47 @@ class Dropdown extends Component {
 
     this.state = {
       expanded: false,
-      selectedID: 0,
+      selectedID: props.mainLabel ? null : 0,
       options: props.options
     };
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.selectOption = this.selectOption.bind(this);
   }
 
+  getLabel() {
+    const { mainLabel } = this.props;
+    const { selectedID, options } = this.state;
+
+    return (options[selectedID] && options[selectedID].label) || mainLabel;
+  }
+
   selectOption(e) {
+    // console.log(e.target);
+
+    const { mainLabel } = this.props;
     const { options } = this.state;
     const { changeItemsOnPageNum, changeOrderType } = this.props;
     const selectedID = e.target.getAttribute('selectednum');
     const selectedLabel = options[selectedID].label;
     const chosenOption = e.target.getAttribute('selectednum');
-
+    
     this.setState({
       selectedID: chosenOption
     });
+    // console.log('qty', selectedLabel);
+
     // The following 'if' statement checks if the 'selectedLabel' value is a number when converted into number. This is usefull in cases when the 'selectedLabel' value is a string (it converts into NaN).
     if (!Number.isNaN(Number(selectedLabel))) {
+      console.log('qty:', selectedLabel);
       return changeItemsOnPageNum(selectedLabel);
     }
     changeOrderType(selectedLabel);
+    if (options[0].label === 'size:') {
+      console.log('size:', selectedLabel);
+    }
+    if (options[0].label === 'color:') {
+      console.log('color:', selectedLabel);
+    }
   }
 
   toggleDropdown() {
@@ -52,7 +71,7 @@ class Dropdown extends Component {
           className={`${CN}__items__element`}
           type="button"
           selectednum={i}
-          onClick={this.selectOption}
+          onClick={(e) => this.selectOption(e)}
         >
           {label}
         </button>
@@ -60,9 +79,12 @@ class Dropdown extends Component {
     ));
   }
 
+
   render() {
-    const { expanded, selectedID, options } = this.state;
+    const { expanded } = this.state;
     const iconName = `caret ${expanded ? 'up' : 'down'} icon`;
+    const { options, selectedID } = this.state;
+    // console.log(options[selectedID]);
 
     return (
       <div
@@ -71,7 +93,7 @@ class Dropdown extends Component {
         aria-expanded={expanded}
       >
         <span className={`${CN}__selected`}>
-          {options[selectedID].label}
+          {this.getLabel()}
         </span>
         <ul className={`${CN}__items`}>
           {this.renderMenuItems()}

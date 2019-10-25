@@ -12,11 +12,11 @@ import './ProductDetailsPage.scss';
 
 export const CN = 'product-details';
 
-const ProductDetailsPage = () => (
+const ProductDetailsPage = ({ id }) => (
   <div className={`${CN} content`}>
     <ProductImage images={defaultImages} />
     <div className={`${CN}-right-aside`}>
-      <ProductOrder {...productOrderParameters} />
+      <ProductOrder {...productOrderParameters} id={id} />
       <div className={`${CN}-right-aside-accordion`}>
         <Accordion data={accordionItemsData} heightItem="100px" className={`${CN}__accordion`} />
         <ContactDetails title="share" />

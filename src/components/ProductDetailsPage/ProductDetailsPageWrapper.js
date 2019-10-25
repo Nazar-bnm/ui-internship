@@ -34,14 +34,15 @@ class ProductDetailsPageWrapper extends Component {
   render() {
     const { product } = this.state;
     const productName = product.name;
-    const productId = product.id;
+    // const productId = product.id;
+    const productId = 2;
 
     return (
       <div>
         {productName}
         {productId}
         {this.renderGoBackBtn()}
-        <ProductDetailsPage />
+        <ProductDetailsPage id={productId} />
       </div>
     );
   }
