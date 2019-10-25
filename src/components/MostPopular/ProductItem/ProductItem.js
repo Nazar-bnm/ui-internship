@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import QuickView from '../../QuickView';
+
 import './ProductItem.scss';
 
 const CN = 'product';
@@ -46,7 +48,7 @@ const ProductItem = ({ product }) => {
               {sizes}
             </span>
             <div className={`{${CN}__title-wrapper icons`}>
-              <i className="eye icon" />
+              <QuickView product={{ id: 10 }} />
               <i className="cart plus icon" />
               <i className="heart outline icon" />
             </div>

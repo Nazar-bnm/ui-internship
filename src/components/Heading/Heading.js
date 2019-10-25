@@ -5,6 +5,7 @@ import './Heading.scss';
 
 const CN = 'heading';
 const posEnum = {
+  left: 'left',
   right: 'right',
   center: 'center'
 };

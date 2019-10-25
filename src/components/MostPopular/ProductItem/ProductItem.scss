@@ -42,10 +42,10 @@
       }
     }
   }
-  
+
   &__title-wrapper {
     @include flex(column, center, center);
-       
+
     .sizes {
       margin: 20px;
     }
@@ -53,15 +53,16 @@
     .icons {
       border-top: 3px solid whitesmoke;
 
-      .icon {
+      & > .icon,
+      .quick-view-button__icon {
         font-size: 1.5rem;
         justify-content: center;
         margin: 20px;
-      }
-      
-      .icon:hover {
-        color: #ff692b;
-        transition: 0.3s;
+        
+        &:hover {
+          color: #ff692b;
+          transition: 0.3s;
+        }
       }
     }
 
@@ -78,11 +79,11 @@
       text-align: center;
     }
   }
-  
-  .sale{
+
+  .sale {
     border-color: #c31326 transparent transparent transparent;
   }
-  
+
   .new {
     border-color: #000000 transparent transparent transparent;
   }
