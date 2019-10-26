@@ -11,7 +11,14 @@ const { itemsOnPage, sortBy } = dropdownsForItemListPage;
 
 const ProductListNavigation = (props) => {
   const {
-    changeItemsOnPageNum, changeSortingOrder, ascendingOrder, changeOrderType
+    changeItemsOnPageNum,
+    changeSortingOrder,
+    ascendingOrder,
+    changeOrderType,
+    changeDropdownSortingSelectedID,
+    dropdownSortingSelectedID,
+    changeDropdownItemsNumberSelectedID,
+    dropdownItemsNumberSelectedID
   } = props;
 
   return (
@@ -22,6 +29,8 @@ const ProductListNavigation = (props) => {
           changeItemsOnPageNum={changeItemsOnPageNum}
           changeOrderType={changeOrderType}
           options={sortBy}
+          changeDropdownSortingSelectedID={changeDropdownSortingSelectedID}
+          dropdownSortingSelectedID={dropdownSortingSelectedID}
         />
         <Button
           customClass={`${CN}__arrow-btn`}
@@ -35,6 +44,8 @@ const ProductListNavigation = (props) => {
           changeItemsOnPageNum={changeItemsOnPageNum}
           changeOrderType={changeOrderType}
           options={itemsOnPage}
+          changeDropdownSortingSelectedID={changeDropdownItemsNumberSelectedID}
+          dropdownSortingSelectedID={dropdownItemsNumberSelectedID}
         />
       </div>
     </div>
