@@ -60,7 +60,6 @@ export default function reducerProductList(state = initialState, action) {
         dropdownSortingSelectedID: action.dropdownSortingSelectedID
       };
     case CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID:
-      console.log('mira oroleva')
       return {
         ...state,
         dropdownItemsNumberSelectedID: action.dropdownItemsNumberSelectedID
