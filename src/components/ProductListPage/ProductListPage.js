@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import Filter from './Filters';
@@ -11,8 +12,8 @@ export const CN = 'productListPage';
 
 class ProductListPage extends Component {
   render() {
-    // console.log(this.props);
-    const { match: { params: { category } } } = this.props;
+    const { match: { params: { category } }, resetState } = this.props;
+    resetState();
 
     return (
       <div className={`content ${cx(CN)}`}>
@@ -43,4 +44,11 @@ class ProductListPage extends Component {
   }
 }
 
+ProductListPage.propTypes = {
+  category: PropTypes.string
+};
+
+ProductListPage.defaultProps = {
+  category: 'women'
+};
 export default ProductListPage;

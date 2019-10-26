@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CheckBox from '../../Shared/CheckBox';
+import CheckBox from '../../shared/CheckBox';
 
 const CheckBoxList = ({ itemsList, category, checkCheckbox }) => {
   const renderCheckboxes = itemsList.map(({ item }) => (
@@ -14,7 +14,7 @@ const CheckBoxList = ({ itemsList, category, checkCheckbox }) => {
   ));
 
   return (
-    <ul>
+    <ul className="checkBoxList">
       {renderCheckboxes}
     </ul>
   );

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import cx from 'classnames';
 
 import PageSettings from './PageSettings';
-import Button from '../Shared/Button';
+import Button from '../shared/Button';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';

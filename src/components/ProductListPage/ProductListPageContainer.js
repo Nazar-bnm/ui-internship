@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { nullState } from '../../actions/actionsFilter';
+import { resetState } from '../../actions/actionsFilter';
 import ProductListPage from './ProductListPage';
 
 const mapStateToProps = ({ reducerFilter }) => ({
@@ -14,7 +14,7 @@ const mapStateToProps = ({ reducerFilter }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  nullState: bindActionCreators(nullState, dispatch)
+  resetState: bindActionCreators(resetState, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductListPage);

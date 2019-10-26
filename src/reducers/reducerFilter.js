@@ -1,4 +1,4 @@
-import { CHECK_CHECKBOX, NULL_STATE_ON_PAGE_CHANGE } from '../constants/actionTypes';
+import { CHECK_CHECKBOX, RESET_FILTERS } from '../constants/actionTypes';
 
 const initialState = {
   bottoms: [],
@@ -31,7 +31,7 @@ export default function reducerFilter(state = initialState, { type, payload }) {
         [payload.category]: deleteItem(state[payload.category], payload.id)
       };
     }
-    case NULL_STATE_ON_PAGE_CHANGE: {
+    case RESET_FILTERS: {
       return {
       };
     }

@@ -19,9 +19,7 @@ const HomePage = () => {
   }));
 
   return (
-    <div>
-      <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
-    </div>
+    <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
   );
 };
 

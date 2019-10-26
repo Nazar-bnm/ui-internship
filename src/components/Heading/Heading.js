@@ -6,7 +6,8 @@ import './Heading.scss';
 const CN = 'heading';
 const posEnum = {
   right: 'right',
-  center: 'center'
+  center: 'center',
+  left: 'left'
 };
 
 const Heading = ({ title, position }) => (
