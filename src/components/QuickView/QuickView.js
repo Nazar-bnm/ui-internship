@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import Modal from "../Modal";
-import ProductImage from "../ProductImage";
-import ProductOrder from "../ProductOrder";
-import Heading from "../Heading";
-import { defaultImages } from "../../constants";
-import { productOrderParameters } from "../../config/ProductOrderMockups";
+import Modal from '../Modal';
+import ProductImage from '../ProductImage';
+import ProductOrder from '../ProductOrder';
+import Heading from '../Heading';
+import { defaultImages } from '../../constants';
+import { productOrderParameters } from '../../config/ProductOrderMockups';
 
-import "./QuickView.scss";
+import './QuickView.scss';
 
-const CN = "quick-view";
+const CN = 'quick-view';
 
 class QuickView extends Component {
   constructor(props) {
