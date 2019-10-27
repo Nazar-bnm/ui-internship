@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<QuickView /> should match shapshot <QuickView /> 1`] = `
+<Fragment>
+  <i
+    className="eye icon quick-view__icon"
+    onClick={[Function]}
+  />
+</Fragment>
+`;

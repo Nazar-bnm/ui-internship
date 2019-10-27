@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
-import Modal from '../Modal';
-import ProductImage from '../ProductImage';
-import ProductOrder from '../ProductOrder';
-import Heading from '../Heading';
-import { defaultImages } from '../../constants';
-import { productOrderParameters } from '../../config/ProductOrderMockups';
+import Modal from "../Modal";
+import ProductImage from "../ProductImage";
+import ProductOrder from "../ProductOrder";
+import Heading from "../Heading";
+import { defaultImages } from "../../constants";
+import { productOrderParameters } from "../../config/ProductOrderMockups";
 
-import './QuickView.scss';
+import "./QuickView.scss";
 
-const CN = 'quick-view';
+const CN = "quick-view";
 
 class QuickView extends Component {
   constructor(props) {
@@ -18,6 +18,8 @@ class QuickView extends Component {
     this.state = {
       show: false
     };
+
+    this.removeModal = this.removeModal.bind(this);
   }
 
   showModal = () => {
@@ -40,15 +42,9 @@ class QuickView extends Component {
 
     return (
       <>
-        <button
-          type="button"
-          onClick={this.showModal}
-          className={`${CN}-button`}
-        >
-          <i className={`eye icon ${CN}-button__icon`} />
-        </button>
+        <i className={`eye icon ${CN}__icon`} onClick={this.showModal} />
         {show && (
-          <Modal className={CN} removeModal={this.removeModal.bind(this)}>
+          <Modal className={CN} removeModal={this.removeModal}>
             <Heading title="Quick view" />
             <div className={`${CN}-content`}>
               <ProductImage images={defaultImages} />
