@@ -29,7 +29,8 @@
       "label": "new",
       "title": "Black dress",
       "price": "99,50$",
-      "sizes": "S - M - L"
+      "sizes": "S - M - L",
+      "collection": "Summer 2011"
     },
     {
       "id": "2",
@@ -37,7 +38,8 @@
       "label": "sale",
       "title": "Red evening dress",
       "price": "179.00$",
-      "sizes": "S - M - L"
+      "sizes": "S - M - L",
+      "collection": "Summer 2011"
     },
     {
       "id": "3",
@@ -45,7 +47,8 @@
       "label": "",
       "title": "Fit & flare dress",
       "price": "99.00$",
-      "sizes": "S - M - L"
+      "sizes": "S - M - L",
+      "collection": "Summer 2011"
     }
     ],
     "brands": [
@@ -73,6 +76,37 @@
       "id": "Gucci2",
       "image" : "https://myrealdomain.com/images/gucci-logo-png-1.png"
     }
+  ],
+  "products": [
+    {
+    "id": 1,
+    "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5641/537/741/01/5641537741_1_1_16.jpg?t=1570214060653&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+    "label": "new",
+    "title": "Black dress",
+    "price": "99,50$",
+    "sizes": "S - M - L",
+    "collection": "Summer 2011",
+    "category": "women"
+    }, 
+    {
+    "id": 2,
+    "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5641/537/741/01/5641537741_2_3_16.jpg?t=1570214060653&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+    "label": "new",
+    "title": "Black dress",
+    "price": "99,50$",
+    "sizes": "S - M - L",
+    "collection": "Summer 2011",
+    "category": "women"
+    },
+    {
+    "id": 3,
+    "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5641/537/741/01/5641537741_6_1_16.jpg?t=1570214060653&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+    "label": "new",
+    "title": "Black dress",
+    "price": "99,50$",
+    "sizes": "S - M - L",
+    "collection": "Summer 2011",
+    "category": "women"}
   ],
   "product-list": [
     {
