@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -71,7 +72,7 @@ class Carousel extends Component {
   countTheSlideWidth() {
     const { parentElement } = this.carouselViewport.current;
     const { type } = this.props;
-    let { clientHeight: clientLength } = parentElement;
+    let { scrollWidth: clientLength } = parentElement;
 
     type === 'vertical' && ({ clientHeight: clientLength } = parentElement);
     const { slidesCount } = this.state;
@@ -122,7 +123,6 @@ class Carousel extends Component {
   }
 
   handleClick(type, e) {
-    console.log(this.state, '-type   ', e.currentTarget, '-e');
     const clickedBtn = e.currentTarget.classList.contains(`${CN}__left-nav`)
       ? 'left'
       : 'right';

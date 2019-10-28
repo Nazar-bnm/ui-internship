@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-import Slide from '../Carousel-vertical/Slide';
-import Carousel from '../Carousel-vertical';
-import products from '../Carousel-vertical/products.json';
+import Slide from '../Carousel/Slide';
+import Carousel from '../Carousel';
+import products from '../Carousel/products.json';
 
 export const CN = 'ProductList';
 
 const sizeValues = {
-  desktop: 6,
-  tablet: 3,
-  mobile: 3
+  desktop: 3,
+  tablet: 2,
+  mobile: 1
 };
 
 class ProductList extends Component {
@@ -20,7 +20,6 @@ class ProductList extends Component {
   }
 
   render() {
-    console.log(this.state);
     const { productList } = this.state;
 
     const listOfProducts = productList
@@ -38,13 +37,37 @@ class ProductList extends Component {
     });
 
     return (
-      <div className={`${CN} content`}>
-        <Carousel items={productList} type="vertical" visibleNumOfSlides={sizeValues}>
+      <div style={{ height: '500px' }} className={`${CN} content`}>
+        <Carousel visibleNumOfSlides={sizeValues}>
           {listOfProducts}
         </Carousel>
       </div>
     );
   }
 }
+// =======
+// import React from 'react';
+
+// import ProductListNavigationContainer from './ProductListNavigation';
+// import ItemsListContainer from './ItemsList';
+
+// import './ProductList.scss';
+
+// export const CN = 'product-list';
+
+// const ProductList = () => (
+//   <div className={`${CN} content`}>
+//     <div className={`${CN}__filter-wrapper`}>
+//       <ProductListNavigationContainer />
+//     </div>
+//     <div className={`${CN}__items-list-container`}>
+//       <ItemsListContainer />
+//     </div>
+//     <div className={`${CN}__filter-wrapper`}>
+//       <ProductListNavigationContainer />
+//     </div>
+//   </div>
+// );
+// >>>>>>> ce3aef5d34750bfaecf382ab0da1c42627a98a2b
 
 export default ProductList;

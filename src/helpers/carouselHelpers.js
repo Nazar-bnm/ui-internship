@@ -15,14 +15,16 @@ function scrollTo(params) {
     duration,
     scrollDirection
   } = params;
-  const start = element.current[scrollDirection];
+  const start = element.current.parentElement[scrollDirection];
   const change = to - start;
   const increment = (500 / 50);
 
   const animatedScroll = (time) => {
     const elapsedTime = time + increment;
+
     const position = easeInOut(elapsedTime, start, change, duration);
-    element.current[scrollDirection] = position;
+    element.current.parentElement[scrollDirection] = position;
+
 
     if (elapsedTime < duration) {
       window.requestAnimationFrame(animatedScroll.bind(null, elapsedTime));
