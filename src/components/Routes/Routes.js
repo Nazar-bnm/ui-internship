@@ -10,7 +10,7 @@ import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageW
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
-import WishListPage from '../WishlistPage/WishlistPage';
+import WishListPage from '../WishlistPage';
 import MostPopular from '../MostPopular';
 import Cart from '../CartPage';
 

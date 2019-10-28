@@ -24,24 +24,28 @@ const WishlistPage = (props) => {
     </div>
   );
 
+  const renderWishlistPage = () => (
+    wishlist.length ? (products.map((item) => {
+      if (wishlist.includes(item.id)) {
+        return (
+          <WishlistItem
+            key={item.id}
+            item={item}
+            removeFromWishlist={removeFromWishlist}
+          />
+        );
+      }
+    }))
+      : renderNoWishlistItems()
+  );
+
   return (
     <div className={cx(CN, className)}>
       <div className={`${CN} content`}>
         <h1 className={`${CN}__title`}>Wishlist</h1>
       </div>
       <div className={`${CN} content`}>
-        {wishlist.length ? (products.map((item) => {
-          if (wishlist.includes(item.id)) {
-            return (
-              <WishlistItem
-                key={item.id}
-                item={item}
-                removeFromWishlist={removeFromWishlist}
-              />
-            );
-          }
-        }))
-          : renderNoWishlistItems()}
+        {renderWishlistPage()}
       </div>
     </div>
   );

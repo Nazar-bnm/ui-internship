@@ -6,7 +6,7 @@ import {
   TransitionGroup
 } from 'react-transition-group';
 
-import Header from '../Header/HeaderContainer';
+import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
@@ -22,13 +22,12 @@ class DefaultLayout extends Component {
 
   componentDidMount() {
     const { fetchProducts } = this.props;
-    fetchProducts(category);
+    fetchProducts && fetchProducts(category);
   }
 
   shouldComponentRender() {
     const { pending } = this.props;
-    if (pending === false) return false;
-    return true;
+    return pending;
   }
 
   render() {
