@@ -37,7 +37,7 @@ class ProductListPage extends Component {
     const { resetCheckboxes } = this.state;
 
     return (
-      <div className={`content ${cx(CN)}`}>
+      <div className={cx(CN, 'content')}>
         <div className={`${CN}__line`}>
           <div>Home</div>
           <div>&#10094; Return to previous page</div>
