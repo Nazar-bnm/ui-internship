@@ -1,11 +1,7 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/actionTypes';
+import { INCREMENT_QUANTITY, DECREMENT_QUANTITY, REMOVE_ITEM_FROM_CART } from '../constants/actionTypes';
 
-export const addToCart = (id) => ({
-  type: ADD_TO_CART,
-  payload: id
-});
+export const incrementQuantity = (userCart) => ({ type: INCREMENT_QUANTITY, payload: userCart });
 
-export const removeFromCart = (id) => ({
-  type: REMOVE_FROM_CART,
-  payload: id
-});
+export const decrementQuantity = (userCart) => ({ type: DECREMENT_QUANTITY, payload: userCart });
+
+export const removeItemFromCart = (userCart) => ({ type: REMOVE_ITEM_FROM_CART, payload: userCart });

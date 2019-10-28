@@ -64,23 +64,22 @@ exports[`<Header /> should match snapshot 1`] = `
         }
       />
       <Input
-        className="header__search-input"
+        className=""
+        customClass="header__search-input"
         icon="search"
-        placeholder="SEARCH"
+        placeholder=""
       >
         Search
       </Input>
       <Link
-        to="/404"
+        to="/cart"
       >
         <Button
           className=""
           customClass="header__cart-btn"
           icon="cart"
         >
-          Cart (
-          5
-          )
+          Cart (0)
         </Button>
       </Link>
     </div>

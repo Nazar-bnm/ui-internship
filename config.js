@@ -221,5 +221,8 @@ export default {
       { item: 'dior' },
       { item: 'donna karan' }
     ]
-  }
+  },
+  cartTableHeadings: [
+    'product', 'price', 'quantity', 'amount'
+  ]
 };

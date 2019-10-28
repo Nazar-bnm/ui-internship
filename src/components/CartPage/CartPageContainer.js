@@ -1,19 +1,17 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addToCart, removeFromCart } from '../../actions/actionsCart';
+import { incrementQuantity, decrementQuantity, removeItemFromCart } from '../../actions/actionsCart';
 import CartPage from './CartPage';
 
 const mapStateToProps = ({ reducerCart }) => ({
-  cartItems: reducerCart.cartItems
+  userCart: reducerCart.userCart
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addToCart: bindActionCreators(addToCart, dispatch),
-  removeFromCart: bindActionCreators(removeFromCart, dispatch)
+  incrementQuantity: bindActionCreators(incrementQuantity, dispatch),
+  decrementQuantity: bindActionCreators(decrementQuantity, dispatch),
+  removeItemFromCart: bindActionCreators(removeItemFromCart, dispatch)
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CartPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CartPage);

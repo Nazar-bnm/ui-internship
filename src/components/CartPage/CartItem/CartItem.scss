@@ -1,0 +1,154 @@
+@import '../../../scss/global_styles';
+
+.cart-item {
+  background-color: $alabaster;
+  font-family: font(primary-light);
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 5px solid $white;
+
+  td {
+    border-image-width: 0;
+  }
+
+  &__description {
+    @include flex($justify: center);
+    position: relative;
+  }
+
+  &__title {
+    font-family: font(primary-bold);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    padding: 0 10px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    position: relative;
+
+    .cart-item__button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: none;
+      background: $alabaster;
+    }
+  }
+
+  &__quantity {
+    width: 20px;
+    text-align: center;
+  }
+
+  &__edit {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__column {
+    padding: 15px 0px 15px 10px;
+    
+    &:nth-child(1) {
+      width: 50%;
+    }
+  }
+
+  &__edit {
+    color: $black;
+
+    &:hover {
+      transform: scale(1.1);
+      font-family: font(primary-bold);
+    }
+  }
+
+  &__counter {
+    @include flex;
+  }
+
+  &__button {
+    @include flex($align: center, $justify: center); 
+    width: 26px;
+    height: 25px;
+    margin: 0px 10px;
+    font-size: 1.2rem;
+    color: $dove-gray;
+    text-align: center;
+    padding-top:2px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      color: $mine-shaft;
+    }
+    
+    i.icon {
+      margin: 0;
+    }
+  }
+  button:disabled,
+  button[disabled]{
+  opacity: 0.3;
+} 
+}
+
+@include media-for(laptop) {
+  .cart-item {
+    font-size: 0.8rem;
+
+    &__text {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@include media-for(tablet) {
+  .cart-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    &__counter {
+      flex-wrap: nowrap;
+    }
+
+    &__button {
+      margin: 0;
+    }
+
+    &__column:nth-child(1) {
+      width: 100%;
+      padding: 10px;
+    }
+
+    &__text {
+      margin-left: 10px;
+    }
+}
+}
+
+@include media-for(mobile-landscape) {
+  .cart-item {
+    &__title {
+      margin-bottom: 0px;
+    }
+
+    &__edit {
+      bottom: -25px;
+    }
+
+    &__description {
+      img {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+
+    &__text.col-8 {
+      width: 100%;
+      margin: 0px;
+    }
+  }
+}
