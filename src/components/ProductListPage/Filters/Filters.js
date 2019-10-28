@@ -1,12 +1,12 @@
 import React from 'react';
 
 import config from '../../../../config';
-import CheckBoxListContainer from '../CheckBoxList/CheckBoxListContainer';
+import CheckBoxListContainer from '../CheckBoxList';
 import Accordion from '../../Accordion';
 
 import './Filters.scss';
 
-const Filters = ({ category }) => {
+const Filters = ({ category, resetCheckboxes }) => {
   const TABLET_BREAKPOINT = 800;
   const gender = config[category];
   const screenWidth = document.body.clientWidth;
@@ -17,6 +17,8 @@ const Filters = ({ category }) => {
     const open = index === 0 && screenWidth <= TABLET_BREAKPOINT;
     const isFiltersShown = open || screenWidth > TABLET_BREAKPOINT;
 
+    console.log(resetCheckboxes, 'dasdasda#$#$')
+
     return (
       <Accordion
         className="filter__box"
@@ -26,10 +28,11 @@ const Filters = ({ category }) => {
         data={[{
           title: categoryName,
           id: categoryName,
-          description: <CheckBoxListContainer
+          description:( <CheckBoxListContainer
             itemsList={gender[categoryName]}
             category={categoryName}
-          />
+            resetCheckboxes={resetCheckboxes}
+          />)
         }]}
       />
     );

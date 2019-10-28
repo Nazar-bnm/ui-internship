@@ -12,6 +12,18 @@ class CheckBox extends Component {
     };
   }
 
+  // componentDidUpdate(nextProps) {
+  //   const { resetCheckboxes } = this.props;
+  //   // console.log(resetCheckboxes, '______resetCheckboxes');
+  //   // console.log(nextProps.resetCheckboxes, 'nextProps______resetCheckboxes');
+  //   if (nextProps.resetCheckboxes !== resetCheckboxes) {
+  //     this.setState({
+  //       clicked: resetCheckboxes
+  //     });
+  //   }
+  // }
+
+
   handleCheckboxChange = () => {
     const {
       category, itemName, checkCheckbox
@@ -25,12 +37,21 @@ class CheckBox extends Component {
     });
   };
 
+  static getDerivedStateFromProps(props) {
+    return props.resetCheckboxes && {clicked: false} || null;
+  }
+
   render() {
     const { itemName } = this.props;
+    const { clicked } = this.state;
+
+    console.log(this.props, 'dsadsadas')
+
 
     return (
       <li className="checkbox__name">
         <input
+          checked={clicked}
           className="checkbox"
           type="checkbox"
           id={itemName}
