@@ -21,7 +21,11 @@ class Dropdown extends Component {
 
   selectOption(e) {
     const { options } = this.state;
-    const { changeItemsOnPageNum, changeOrderType } = this.props;
+    const {
+      changeItemsOnPageNum,
+      changeOrderType,
+      changeDropdownSortingSelectedID
+    } = this.props;
     const selectedID = e.target.getAttribute('selectednum');
     const selectedLabel = options[selectedID].label;
     const chosenOption = e.target.getAttribute('selectednum');
@@ -29,7 +33,9 @@ class Dropdown extends Component {
     this.setState({
       selectedID: chosenOption
     });
-    // The following 'if' statement checks if the 'selectedLabel' value is a number when converted into number. This is usefull in cases when the 'selectedLabel' value is a string (it converts into NaN).
+    changeDropdownSortingSelectedID && changeDropdownSortingSelectedID(chosenOption);
+    // The following 'if' statement checks if the 'selectedLabel' value is a number when converted into number.
+    // This is usefull in cases when the 'selectedLabel' value is a string (it converts into NaN).
     if (!Number.isNaN(Number(selectedLabel))) {
       return changeItemsOnPageNum(selectedLabel);
     }
@@ -62,6 +68,7 @@ class Dropdown extends Component {
 
   render() {
     const { expanded, selectedID, options } = this.state;
+    const { dropdownSortingSelectedID = selectedID } = this.props;
     const iconName = `caret ${expanded ? 'up' : 'down'} icon`;
 
     return (
@@ -71,7 +78,7 @@ class Dropdown extends Component {
         aria-expanded={expanded}
       >
         <span className={`${CN}__selected`}>
-          {options[selectedID].label}
+          {options[dropdownSortingSelectedID].label}
         </span>
         <ul className={`${CN}__items`}>
           {this.renderMenuItems()}

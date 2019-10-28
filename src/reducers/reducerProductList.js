@@ -3,15 +3,27 @@ import {
   CHANGE_SORTING_ORDER,
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR
+  GET_PRODUCTS_ERROR,
+  CHANGE_DROPDOWN_SELECTED_ID,
+  CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID
 } from '../constants/actionTypes';
+
+let numberOfItemsToRender = 6;
+
+if (window.innerWidth <= 480) {
+  numberOfItemsToRender = 4;
+} else if (window.innerWidth <= 768) {
+  numberOfItemsToRender = 3;
+}
 
 const initialState = {
   ascendingOrder: true,
   orderType: 'Position',
-  chosenItemsOnPage: 6,
+  chosenItemsOnPage: numberOfItemsToRender,
   itemList: [],
-  error: null
+  error: null,
+  dropdownSortingSelectedID: 0,
+  dropdownItemsNumberSelectedID: 0
 };
 
 export default function reducerProductList(state = initialState, action) {
@@ -41,6 +53,16 @@ export default function reducerProductList(state = initialState, action) {
       return {
         ...state,
         error: action.error
+      };
+    case CHANGE_DROPDOWN_SELECTED_ID:
+      return {
+        ...state,
+        dropdownSortingSelectedID: action.dropdownSortingSelectedID
+      };
+    case CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID:
+      return {
+        ...state,
+        dropdownItemsNumberSelectedID: action.dropdownItemsNumberSelectedID
       };
     default:
       return state;
