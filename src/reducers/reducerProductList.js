@@ -3,9 +3,7 @@ import {
   CHANGE_SORTING_ORDER,
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR,
-  CHANGE_DROPDOWN_SELECTED_ID,
-  CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID
+  GET_PRODUCTS_ERROR
 } from '../constants/actionTypes';
 
 let numberOfItemsToRender = 6;
@@ -53,16 +51,6 @@ export default function reducerProductList(state = initialState, action) {
       return {
         ...state,
         error: action.error
-      };
-    case CHANGE_DROPDOWN_SELECTED_ID:
-      return {
-        ...state,
-        dropdownSortingSelectedID: action.dropdownSortingSelectedID
-      };
-    case CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID:
-      return {
-        ...state,
-        dropdownItemsNumberSelectedID: action.dropdownItemsNumberSelectedID
       };
     default:
       return state;

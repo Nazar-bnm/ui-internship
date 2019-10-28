@@ -23,8 +23,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     className="product-order__dropdowns-wrapper"
   >
     <Dropdown
-      changeItemsOnPageNum={[Function]}
-      changeOrderType={[Function]}
+      className=""
       options={
         Array [
           Object {
@@ -49,10 +48,11 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      placeholder=""
+      value=""
     />
     <Dropdown
-      changeItemsOnPageNum={[Function]}
-      changeOrderType={[Function]}
+      className=""
       options={
         Array [
           Object {
@@ -73,10 +73,11 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      placeholder=""
+      value=""
     />
     <Dropdown
-      changeItemsOnPageNum={[Function]}
-      changeOrderType={[Function]}
+      className=""
       options={
         Array [
           Object {
@@ -125,6 +126,8 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      placeholder=""
+      value=""
     />
   </div>
   <div

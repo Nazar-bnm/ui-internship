@@ -3,9 +3,7 @@ import {
   CHANGE_SORTING_ORDER,
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR,
-  CHANGE_DROPDOWN_SELECTED_ID,
-  CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID
+  GET_PRODUCTS_ERROR
 } from '../constants/actionTypes';
 
 export function changeSortingOrder() {
@@ -39,19 +37,5 @@ export function getProductsError(error) {
   return {
     type: GET_PRODUCTS_ERROR,
     error
-  };
-}
-
-export function changeDropdownSortingSelectedID(dropdownSortingSelectedID) {
-  return {
-    type: CHANGE_DROPDOWN_SELECTED_ID,
-    dropdownSortingSelectedID
-  };
-}
-
-export function changeDropdownItemsNumberSelectedID(dropdownItemsNumberSelectedID) {
-  return {
-    type: CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID,
-    dropdownItemsNumberSelectedID
   };
 }

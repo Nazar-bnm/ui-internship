@@ -4,23 +4,17 @@ import ProductListNavigation from './ProductListNavigation';
 import {
   changeSortingOrder,
   changeOrderType,
-  changeitemsNumberOnPage,
-  changeDropdownSortingSelectedID,
-  changeDropdownItemsNumberSelectedID
+  changeitemsNumberOnPage
 } from '../../../actions/actionsProductList';
 
 const mapStateToProps = (state) => ({
-  ascendingOrder: state.reducerProductList.ascendingOrder,
-  dropdownSortingSelectedID: state.reducerProductList.dropdownSortingSelectedID,
-  dropdownItemsNumberSelectedID: state.reducerProductList.dropdownItemsNumberSelectedID
+  ascendingOrder: state.reducerProductList.ascendingOrder
 });
 
 const mapDispatchToProps = (dispatch) => ({
   changeSortingOrder: () => dispatch(changeSortingOrder()),
   changeOrderType: (orderType) => dispatch(changeOrderType({ orderType })),
-  changeItemsOnPageNum: (chosenItemsOnPage) => dispatch(changeitemsNumberOnPage({ chosenItemsOnPage })),
-  changeDropdownSortingSelectedID: (dropdownSortingSelectedID) => dispatch(changeDropdownSortingSelectedID(dropdownSortingSelectedID)),
-  changeDropdownItemsNumberSelectedID: (dropdownItemsNumberSelectedID) => dispatch(changeDropdownItemsNumberSelectedID(dropdownItemsNumberSelectedID))
+  changeItemsOnPageNum: (chosenItemsOnPage) => dispatch(changeitemsNumberOnPage({ chosenItemsOnPage }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductListNavigation);

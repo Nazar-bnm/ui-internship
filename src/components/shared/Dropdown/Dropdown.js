@@ -6,59 +6,67 @@ import './Dropdown.scss';
 
 export const CN = 'dropdown';
 
-class Dropdown extends Component {
+export default class Dropdown extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       expanded: false,
-      selectedID: 0,
-      options: props.options
+      selectedItem: null
     };
+
     this.toggleDropdown = this.toggleDropdown.bind(this);
-    this.selectOption = this.selectOption.bind(this);
+    this.renderLabel = this.renderLabel.bind(this);
+    this.renderMenuItems = this.renderMenuItems.bind(this);
   }
 
-  selectOption(e) {
-    const { options } = this.state;
-    const {
-      changeItemsOnPageNum,
-      changeOrderType,
-      changeDropdownSortingSelectedID
-    } = this.props;
-    const selectedID = e.target.getAttribute('selectednum');
-    const selectedLabel = options[selectedID].label;
-    const chosenOption = e.target.getAttribute('selectednum');
-
-    this.setState({
-      selectedID: chosenOption
-    });
-    changeDropdownSortingSelectedID && changeDropdownSortingSelectedID(chosenOption);
-    // The following 'if' statement checks if the 'selectedLabel' value is a number when converted into number.
-    // This is usefull in cases when the 'selectedLabel' value is a string (it converts into NaN).
-    if (!Number.isNaN(Number(selectedLabel))) {
-      return changeItemsOnPageNum(selectedLabel);
+  static getDerivedStateFromProps(props) {
+    if (props.dropdownSelectedID) {
+      return { selectedItem: props.dropdownSelectedID };
     }
-    changeOrderType(selectedLabel);
+
+    return null;
   }
 
   toggleDropdown() {
     this.setState((prevState) => ({ expanded: !prevState.expanded }));
   }
 
-  renderMenuItems() {
-    const { options } = this.state;
+  selectOption(selectedItem) {
+    const { onDropdownChange } = this.props;
 
-    return options.map(({ value, label }, i) => (
+    this.setState({ selectedItem });
+    onDropdownChange(selectedItem);
+  }
+
+  renderLabel() {
+    const {
+      menuOptions,
+      value,
+      placeholder
+    } = this.props;
+    const { selectedItem } = this.state;
+    const labelTest = menuOptions && menuOptions.find((item) => item.value === selectedItem);
+    const label = (labelTest && labelTest.label) || value || placeholder;
+
+    return label;
+  }
+
+  renderMenuItems() {
+    const { menuOptions } = this.props;
+    if (!menuOptions) {
+      return null;
+    }
+
+    return menuOptions.map(({ value, label }, i) => (
       <li
         key={value}
-        value={value}
       >
         <button
           className={`${CN}__items__element`}
           type="button"
           selectednum={i}
-          onClick={this.selectOption}
+          onClick={() => this.selectOption(value)}
         >
           {label}
         </button>
@@ -67,18 +75,18 @@ class Dropdown extends Component {
   }
 
   render() {
-    const { expanded, selectedID, options } = this.state;
-    const { dropdownSortingSelectedID = selectedID } = this.props;
+    const { className } = this.props;
+    const { expanded } = this.state;
     const iconName = `caret ${expanded ? 'up' : 'down'} icon`;
 
     return (
       <div
-        className={cx(CN)}
+        className={cx(CN, className)}
         onClick={this.toggleDropdown}
         aria-expanded={expanded}
       >
         <span className={`${CN}__selected`}>
-          {options[dropdownSortingSelectedID].label}
+          {this.renderLabel()}
         </span>
         <ul className={`${CN}__items`}>
           {this.renderMenuItems()}
@@ -88,16 +96,51 @@ class Dropdown extends Component {
     );
   }
 }
-
 Dropdown.propTypes = {
-  options: PropTypes.array.isRequired,
-  changeItemsOnPageNum: PropTypes.func,
-  changeOrderType: PropTypes.func
+  /**
+  * className - component's class name.
+  */
+  className: PropTypes.string,
+  /**
+  * menuOptions - the array of dropdown options.
+  */
+  // menuOptions: PropTypes.arrayOf(PropTypes.shape({
+  //   label: PropTypes.oneOfType([
+  //     PropTypes.string,
+  //     PropTypes.node
+  //   ]).isRequired,
+  //   value: PropTypes.string.isRequired,
+  //   selected: PropTypes.bool,
+  //   disabled: PropTypes.bool
+  // })).isRequired,
+  /**
+  * placeholder - the placeholder of the dropdown
+  */
+  placeholder: PropTypes.string,
+  /**
+  * The value of the dropdown.
+  * A default value can be provided which corresponds to the value of an included pal-dropdown-item.
+  */
+  value: PropTypes.string
+  /**
+  * disabled - indicator if dropdown is disabled or not
+  */
+  // disabled: PropTypes.bool,
+  /**
+  * opened - indicator whether the dropdown is opened or closed.
+  * Can be used to open dropdown by default.
+  */
+  // opened: PropTypes.bool
+  /**
+  * onDropdownChange - emitted when a dropdown option has been selected.
+  * event.detail will contain the selected value
+  */
+  // onDropdownChange: PropTypes.func.isRequired
 };
-
 Dropdown.defaultProps = {
-  changeItemsOnPageNum: () => {},
-  changeOrderType: () => {}
+  className: '',
+  placeholder: '',
+  value: ''
+  // disabled: false,
+  // opened: false
 };
-
-export default Dropdown;
