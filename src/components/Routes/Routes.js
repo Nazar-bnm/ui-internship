@@ -10,6 +10,7 @@ import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageW
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
+import WishListPage from '../WishlistPage';
 import MostPopular from '../MostPopular';
 import CartPage from '../CartPage';
 
@@ -23,10 +24,11 @@ const Routes = () => (
         timeout={2000}
         classNames="fade"
       >
-        <Switch location={location}>
+        <Switch>
           <DefaultLayout path="/" exact component={HomePage} />
           <DefaultLayout path="/home" component={HomePage} />
           <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
+          <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
           <DefaultLayout path="/cart" component={CartPage} />
           <DefaultLayout path="/products" exact component={ProductDetailsPageWrapper} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
@@ -11,36 +11,60 @@ import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
 
-const DefaultLayout = ({
-  component: Component,
-  location,
-  hideFooter,
-  hideHeader,
-  hideBrands,
-  hideShippingInfo, ...rest
-}) => (
-  <Route
-    {...rest}
-    render={(matchProps) => (
-      <TransitionGroup>
-        <CSSTransition
-          key={location.key}
-          timeout={300}
-          classNames="fade"
-        >
-          <>
-            {!hideHeader && <Header />}
-            <Component {...matchProps} />
-            {!hideBrands && <Brands />}
-            {!hideShippingInfo && <ShippingInfo />}
-            {!hideFooter && <Footer />}
-          </>
-        </CSSTransition>
-      </TransitionGroup>
-    )}
-  />
-);
+const category = 'products';
 
+class DefaultLayout extends Component {
+  constructor(props) {
+    super(props);
+
+    this.shouldComponentRender = this.shouldComponentRender.bind(this);
+  }
+
+  componentDidMount() {
+    const { fetchProducts } = this.props;
+    fetchProducts && fetchProducts(category);
+  }
+
+  shouldComponentRender() {
+    const { pending } = this.props;
+    return pending;
+  }
+
+  render() {
+    const {
+      component: Page,
+      hideFooter,
+      hideHeader,
+      hideBrands,
+      hideShippingInfo,
+      location,
+      ...rest
+    } = this.props;
+
+    return (
+      <Route
+        {...rest}
+        render={(matchProps) => (
+          <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              timeout={300}
+              classNames="fade"
+            >
+              <>
+                {!hideHeader && <Header />}
+                <Page {...matchProps} />
+                {!hideBrands && <Brands />}
+                {!hideShippingInfo && <ShippingInfo />}
+                {!hideFooter && <Footer />}
+              </>
+            </CSSTransition>
+          </TransitionGroup>
+        )}
+      />
+    );
+  }
+}
 DefaultLayout.propTypes = {
   // Component which displayed as main content
   location: PropTypes.any.isRequired,
@@ -48,6 +72,7 @@ DefaultLayout.propTypes = {
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
   hideBrands: PropTypes.bool,
+  location: PropTypes.any.isRequired,
   hideShippingInfo: PropTypes.bool
 };
 

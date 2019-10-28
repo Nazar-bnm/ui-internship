@@ -43,8 +43,8 @@ const CartPage = (props) => {
 
   const isItemInCart = (item) => userCart.find((cartItem) => item.id === cartItem.id);
 
-  const findItemPrice = (id) => products.find((item) => item.id === id).price;
-  const countTotal = userCart.reduce((acc, nextValue) => (acc + findItemPrice(nextValue.id) * nextValue.quantity), 0);
+  const itemPrice = (id) => products.find((item) => item.id === id).price;
+  const countTotal = userCart.reduce((acc, nextValue) => (acc + itemPrice(nextValue.id) * nextValue.quantity), 0);
 
   const renderProduct = (item) => (
     <CartItem
