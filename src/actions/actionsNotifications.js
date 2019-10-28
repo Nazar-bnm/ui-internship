@@ -12,13 +12,6 @@ export const isHideNotification = () => ({
   type: NOTIFICATION_HIDE
 });
 
-// const showMessage = (payload) => (dispatch) => {
-//   dispatch(isShowNotification(payload));
-//   setTimeout(() => {
-//     dispatch(isHideNotification());
-//   }, 4000);
-// };
-
 const showMessage = (payload) => (dispatch) => {
   dispatch(isShowNotification(payload));
   setTimeout(() => {

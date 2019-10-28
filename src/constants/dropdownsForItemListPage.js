@@ -10,5 +10,3 @@ export const dropdownsForItemListPage = {
     { value: 'Name', label: 'Name' }
   ]
 };
-
-// export default dropdownsForItemListPage;

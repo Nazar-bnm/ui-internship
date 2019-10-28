@@ -26,7 +26,7 @@ class Notifications extends Component {
     ) : null);
 
     return currentTitle;
-  };
+  }
 
   render() {
     const {
@@ -66,9 +66,9 @@ Notifications.propTypes = {
 };
 
 Notifications.defaultProps = {
-  type: NOTIFICATION_TYPES.SUCCESS,
-  title: 'Success',
-  message: 'Item is added to cart'
+  type: NOTIFICATION_TYPES.INFO,
+  title: 'Info',
+  message: 'Information is processing'
 };
 
 export default Notifications;

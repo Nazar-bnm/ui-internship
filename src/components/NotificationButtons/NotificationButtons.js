@@ -1,11 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-
 import './NotificationButtons.scss';
 
 export const CN = 'notification-buttons';
-
 
 const NotificationButtons = (props) => {
   const { showMessage } = props;
