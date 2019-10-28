@@ -6,7 +6,6 @@ import CheckBox from '../../shared/CheckBox';
 const CheckBoxList = ({
   itemsList, category, checkCheckbox, resetCheckboxes
 }) => {
-
   const renderCheckboxes = itemsList.map(({ item }) => (
     <CheckBox
       key={item}

@@ -17,8 +17,6 @@ const Filters = ({ category, resetCheckboxes }) => {
     const open = index === 0 && screenWidth <= TABLET_BREAKPOINT;
     const isFiltersShown = open || screenWidth > TABLET_BREAKPOINT;
 
-    console.log(resetCheckboxes, 'dasdasda#$#$')
-
     return (
       <Accordion
         className="filter__box"
@@ -28,7 +26,7 @@ const Filters = ({ category, resetCheckboxes }) => {
         data={[{
           title: categoryName,
           id: categoryName,
-          description:( <CheckBoxListContainer
+          description: (<CheckBoxListContainer
             itemsList={gender[categoryName]}
             category={categoryName}
             resetCheckboxes={resetCheckboxes}

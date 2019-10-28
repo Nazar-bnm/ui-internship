@@ -21,21 +21,21 @@ class ProductListPage extends Component {
     };
   }
 
+  componentWillUnmount() {
+    const { resetState } = this.props;
+
+    resetState && resetState();
+  }
+
   resetFilters = (resetFunc) => {
     // this.setState({ resetCheckboxes: true }, () => {
     //   const { resetCheckboxes: reseted } = this.state;
     //   console.log(reseted, 'resetCheckboxes');
     // });
 
-    this.setState({resetCheckboxes: true});
+    this.setState({ resetCheckboxes: true });
     resetFunc();
   };
-
-  componentWillUnmount() {
-    const { resetState } = this.props;
-
-    resetState && resetState()
-  }
 
   render() {
     const { match: { params: { category } }, resetState } = this.props;

@@ -23,6 +23,10 @@ class CheckBox extends Component {
   //   }
   // }
 
+  // static getDerivedStateFromProps(props) {
+  //   const x = props.resetCheckboxes && { clicked: false };
+  //   return x || null;
+  // }
 
   handleCheckboxChange = () => {
     const {
@@ -37,16 +41,9 @@ class CheckBox extends Component {
     });
   };
 
-  static getDerivedStateFromProps(props) {
-    return props.resetCheckboxes && {clicked: false} || null;
-  }
-
   render() {
     const { itemName } = this.props;
     const { clicked } = this.state;
-
-    console.log(this.props, 'dsadsadas')
-
 
     return (
       <li className="checkbox__name">

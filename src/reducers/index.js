@@ -3,6 +3,7 @@ import { reducerWishlist } from './reducerWishlist';
 import { productsReducer } from './reducerAPIcall';
 import reducerFilter from './reducerFilter';
 import reducerProductList from './reducerProductList';
+import reducerNotifications from './reducerNotifications';
 import reducerCart from './reducerCart';
 
 export const getCartReducer = (state) => state.reducerCart;
@@ -12,5 +13,6 @@ export default combineReducers({
   productsReducer,
   reducerProductList,
   reducerFilter,
-  reducerCart
+  reducerCart,
+  reducerNotifications
 });
