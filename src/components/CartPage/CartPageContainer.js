@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { incrementQuantity, decrementQuantity, removeItemFromCart } from '../../actions/actionsCart';
+import { changeQuantity, removeItemFromCart } from '../../actions/actionsCart';
 import CartPage from './CartPage';
 
 const mapStateToProps = ({ reducerCart }) => ({
@@ -9,8 +9,7 @@ const mapStateToProps = ({ reducerCart }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  incrementQuantity: bindActionCreators(incrementQuantity, dispatch),
-  decrementQuantity: bindActionCreators(decrementQuantity, dispatch),
+  changeQuantity: bindActionCreators(changeQuantity, dispatch),
   removeItemFromCart: bindActionCreators(removeItemFromCart, dispatch)
 });
 

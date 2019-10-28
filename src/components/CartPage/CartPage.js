@@ -12,7 +12,7 @@ const CN = 'cart-page';
 
 const CartPage = (props) => {
   const {
-    className, incrementQuantity, decrementQuantity, removeItemFromCart, userCart
+    className, changeQuantity, removeItemFromCart, userCart
   } = props;
   const { cartTableHeadings } = config;
   const products = [
@@ -41,17 +41,16 @@ const CartPage = (props) => {
   const deliveryCost = 35;
   const voucher = 5;
 
-  const checkIfExists = (item) => userCart.find((cartItem) => item.id === cartItem.id);
+  const isItemInCart = (item) => userCart.find((cartItem) => item.id === cartItem.id);
+
   const findItemPrice = (id) => products.find((item) => item.id === id).price;
   const countTotal = userCart.reduce((acc, nextValue) => (acc + findItemPrice(nextValue.id) * nextValue.quantity), 0);
-  const renderTableHeader = () => cartTableHeadings.map((heading) => <th key={heading}>{heading}</th>);
 
   const renderProduct = (item) => (
     <CartItem
       key={item.title}
       item={item}
-      increment={incrementQuantity}
-      decrement={decrementQuantity}
+      changeQuantity={changeQuantity}
       userCart={userCart}
       removeItemFromCart={removeItemFromCart}
     />
@@ -60,8 +59,12 @@ const CartPage = (props) => {
   const renderTable = () => (
     <table className={`${CN}__table content`}>
       <tbody>
-        <tr className={`${CN}__heading`}>{renderTableHeader()}</tr>
-        {products.map((item) => checkIfExists(item) && renderProduct(item))}
+        <tr className={`${CN}__heading`}>
+          {cartTableHeadings.map((heading) => (
+            <th key={heading}>{heading}</th>
+          ))}
+        </tr>
+        {products.map((item) => isItemInCart(item) && renderProduct(item))}
       </tbody>
     </table>
   );
@@ -82,8 +85,7 @@ const CartPage = (props) => {
       <Link className={`${CN}__link`} to="/products">
         <div className={`${CN}__offer`}>
           <h2>
-          Scoring a good fashion deal is as exhilarating as winning the lottery!
-          Try out your luck!
+          Scoring a good fashion deal is as exhilarating as winning the lottery! Try out your luck!
           </h2>
           <div
             className={`col-6 col-center ${CN}__pseudo-button`}
@@ -97,7 +99,7 @@ const CartPage = (props) => {
         <h1 className={`${CN}__title`}>Cart</h1>
       </div>
       <div className={`${CN} content`}>
-        {userCart.length ? renderTable(userCart)
+        {userCart.length ? renderTable()
           : renderNoItemsInCart()}
       </div>
       <div className={`${CN}__checkout content`}>

@@ -9,39 +9,29 @@ const CN = 'cart-item';
 
 const CartItem = (props) => {
   const {
-    item, increment, decrement, userCart, removeItemFromCart, className
+    item, changeQuantity, userCart, removeItemFromCart, className
   } = props;
   const {
     id, title, image, price, inventory
   } = item;
-  const userCartNew = [...userCart];
   const userCartItem = userCart.find((cartItem) => cartItem.id === id);
   const { quantity, color, size } = userCartItem;
+  const inc = 1;
+  const dec = -1;
 
-  const onIncrement = () => {
+  let userCartNew = [...userCart];
+
+  const changeAmount = (gap) => {
     userCart.map((product, index) => {
       if (product.id === id) {
-        userCartNew[index].quantity += 1;
+        userCartNew[index].quantity += gap;
       }
     });
-    increment(userCartNew);
-  };
-
-  const onDecrement = () => {
-    userCart.map((product, index) => {
-      if (product.id === id) {
-        userCartNew[index].quantity -= 1;
-      }
-    });
-    decrement(userCartNew);
+    changeQuantity(userCartNew);
   };
 
   const onRemoveFromCart = () => {
-    userCart.map((product, index) => {
-      if (product.id === id) {
-        userCartNew.splice(index, 1);
-      }
-    });
+    userCartNew = userCart.filter((product) => product.id !== id);
     removeItemFromCart(userCartNew);
   };
 
@@ -78,7 +68,7 @@ const CartItem = (props) => {
       <button
         className={`${CN}__button`}
         type="button"
-        onClick={(quantity === 1) ? () => onRemoveFromCart() : () => onDecrement()}
+        onClick={(quantity === 1) ? () => onRemoveFromCart() : () => changeAmount(dec)}
       >
         <i className="small minus icon" />
       </button>
@@ -86,7 +76,7 @@ const CartItem = (props) => {
       <button
         className={`${CN}__button`}
         type="button"
-        onClick={() => onIncrement()}
+        onClick={() => changeAmount(inc)}
         disabled={quantity === inventory}
       >
         <i className="small plus icon" />
@@ -95,7 +85,7 @@ const CartItem = (props) => {
   );
 
   return (
-    <tr className={`${cx(CN, className)}`} key={title}>
+    <tr className={cx(CN, className)} key={title}>
       <td className={`${CN}__column`}>{renderProductDescription()}</td>
       <td className={`${CN}__column`}>{`$${price}`}</td>
       <td className={`${CN}__column`}>{renderCounter()}</td>
@@ -106,8 +96,7 @@ const CartItem = (props) => {
 
 CartItem.propTypes = {
   className: PropTypes.string,
-  increment: PropTypes.func.isRequired,
-  decrement: PropTypes.func.isRequired,
+  changeQuantity: PropTypes.func.isRequired,
   removeItemFromCart: PropTypes.func.isRequired,
   userCart: PropTypes.array
 };

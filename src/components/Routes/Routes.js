@@ -29,7 +29,7 @@ const Routes = () => (
           <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
           <DefaultLayout path="/cart" component={CartPage} />
-          <DefaultLayout path="/:id" exact component={ProductDetailsPageWrapper} />
+          <DefaultLayout path="/products" exact component={ProductDetailsPageWrapper} />
           <DefaultLayout
             to="/not_found"
             component={NotFoundPage}

@@ -43,6 +43,7 @@ const DefaultLayout = ({
 
 DefaultLayout.propTypes = {
   // Component which displayed as main content
+  location: PropTypes.any.isRequired,
   component: PropTypes.any,
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,

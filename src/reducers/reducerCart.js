@@ -1,4 +1,4 @@
-import { INCREMENT_QUANTITY, DECREMENT_QUANTITY, REMOVE_ITEM_FROM_CART } from '../constants/actionTypes';
+import { CHANGE_QUANTITY, REMOVE_ITEM_FROM_CART } from '../constants/actionTypes';
 
 const initialState = {
   userCart: [{
@@ -14,13 +14,7 @@ const initialState = {
 
 export default function reducerCounter(state = initialState, { type, payload }) {
   switch (type) {
-    case INCREMENT_QUANTITY:
-      return {
-        ...state,
-        userCart: payload
-      };
-
-    case DECREMENT_QUANTITY:
+    case CHANGE_QUANTITY:
       return {
         ...state,
         userCart: payload
