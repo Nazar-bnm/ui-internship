@@ -32,7 +32,10 @@ export default function reducerFilter(state = initialState, { type, payload }) {
       };
     }
     case RESET_FILTERS: {
+      state = initialState;
+
       return {
+        ...state
       };
     }
     default:
