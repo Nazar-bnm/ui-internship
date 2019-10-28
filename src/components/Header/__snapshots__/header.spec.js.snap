@@ -71,7 +71,7 @@ exports[`<Header /> should match snapshot 1`] = `
         Search
       </Input>
       <Link
-        to="/404"
+        to="/cart"
       >
         <Button
           className="header__cart-btn"

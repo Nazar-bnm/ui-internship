@@ -26,7 +26,7 @@ class ItemsList extends React.Component {
     const { onGetProductsSuccess, onGetProductsError, categoryName } = this.props;
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL}/${categoryName}`);
+      const response = await userAPI.get(`${process.env.BASE_URL1}/${categoryName}`);
       if (response.status === 404) {
         throw Error(response.statusText);
       }
@@ -108,7 +108,7 @@ ItemsList.propTypes = {
 
 ItemsList.defaultProps = {
   ascendingOrder: true,
-  categoryName: 'product-list',
+  categoryName: 'products',
   itemList: mockedProductList,
   itemsOnPage: 6,
   onGetProductsError: null,

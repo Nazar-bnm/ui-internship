@@ -144,7 +144,7 @@ class Carousel extends Component {
 
     return children.map((item) => (
       <div
-        key={item.id}
+        key={item.key}
         className={`${CN}__child`}
         style={style}
       >
