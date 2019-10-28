@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import reducerCounter from './reducerCounter';
-import reducerWishlist from './reducerWishlist';
+import { reducerWishlist } from './reducerWishlist';
+import { productsReducer } from './reducerAPIcall';
 import reducerProductList from './reducerProductList';
 import { reducerAddToCart } from './reducerAddToCart';
 
 export default combineReducers({
-  reducerCounter,
   reducerWishlist,
   reducerProductList,
-  reducerAddToCart
+  reducerAddToCart,
+  productsReducer
 });

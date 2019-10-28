@@ -10,6 +10,7 @@ import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageW
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
+import WishListPage from '../WishlistPage';
 import MostPopular from '../MostPopular';
 
 import './Routes.scss';
@@ -22,11 +23,12 @@ const Routes = () => (
         timeout={2000}
         classNames="fade"
       >
-        <Switch location={location}>
+        <Switch>
           <DefaultLayout path="/" exact component={HomePage} />
           <DefaultLayout path="/home" component={HomePage} />
           <DefaultLayout path="/product-details" component={ProductDetailsPageWrapper} />
           <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
+          <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
           <DefaultLayout
             to="/not_found"

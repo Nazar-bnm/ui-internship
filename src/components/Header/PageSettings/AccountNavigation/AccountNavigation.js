@@ -9,8 +9,8 @@ const AccountNavigation = () => (
     <Link to="/not_found">
       <span>my account</span>
     </Link>
-    <Link to="/not_found">
-      <span>wish list</span>
+    <Link to="/wishlist">
+      <span>wishlist</span>
     </Link>
     <Link to="/not_found">
       <span>checkout</span>
