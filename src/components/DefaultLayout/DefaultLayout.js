@@ -1,44 +1,57 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group';
 
 import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
-import Notifications from '../Shared/Notifications';
+import Notifications from '../shared/Notifications';
+import NotificationButtons from '../NotificationButtons';
+
 
 import './DefaultLayout.scss';
 
 const DefaultLayout = ({
   component: Component,
-  // notifications: Notifications,
+  location,
   hideFooter,
   hideHeader,
   hideBrands,
-  hideShippingInfo
+  hideShippingInfo, ...rest
 }) => (
   <Route
-    render={() => (
-      <>
-        {!hideHeader && <Header />}
-        <Notifications
-          type="success"
-          showCloseButton={() => { }}
-          onRequestHide={() => { }}
-        />
-        <Component />
-        {!hideBrands && <Brands />}
-        {!hideShippingInfo && <ShippingInfo />}
-        {!hideFooter && <Footer />}
-      </>
+    {...rest}
+    render={(matchProps) => (
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          timeout={300}
+          classNames="fade"
+        >
+          <>
+            {!hideHeader && <Header />}
+            <Notifications
+              type
+            />
+            <NotificationButtons />
+            <Component {...matchProps} />
+            {!hideBrands && <Brands />}
+            {!hideShippingInfo && <ShippingInfo />}
+            {!hideFooter && <Footer />}
+          </>
+        </CSSTransition>
+      </TransitionGroup>
     )}
   />
 );
 
 DefaultLayout.propTypes = {
   // Component which displayed as main content
-  // Notifications: PropTypes.any,
   component: PropTypes.any,
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
@@ -53,5 +66,4 @@ DefaultLayout.defaultProps = {
   hideBrands: false,
   hideShippingInfo: false
 };
-
 export default DefaultLayout;

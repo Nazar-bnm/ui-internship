@@ -1,4 +1,4 @@
-export const TYPES = {
+export const NOTIFICATION_TYPES = {
   CHANGE: 'change',
   INFO: 'info',
   SUCCESS: 'success',

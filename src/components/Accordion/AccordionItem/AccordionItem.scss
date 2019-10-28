@@ -1,0 +1,64 @@
+@import '../../../scss/global_styles';
+
+.accordion-item {
+  font-family: font(secondary);
+
+  &__header {
+    transition: color linear 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $silver-chalice;
+    padding: 1rem 0;
+    cursor: pointer;
+    font: 0.9rem font(secondary);
+    text-transform: uppercase;
+
+    &:hover,
+    &:active,
+    &--active {
+      color: $silver-chalice;
+    }
+
+    i.icon {
+      transition: transform linear 0.5s;
+      margin: 0;
+
+      &--down {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__description {
+    &--hide,
+    &--show {
+      overflow-y: hidden;
+      transition: height linear 0.5s;
+      height: 0;
+    }
+
+    &--show {
+      height: 100px;
+    }
+  }
+
+  .scroll {
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      border: 1px solid $silver-chalice;
+      background-color: $silver-chalice;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $white;
+    }
+  }
+}

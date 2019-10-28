@@ -7,9 +7,7 @@ exports[`<ContactDetails /> should match snapshot 1`] = `
   <div
     className="contact-block__title"
   >
-    <h4>
-      Connect us
-    </h4>
+    <h4 />
   </div>
   <ul
     className="contact-block__icons"

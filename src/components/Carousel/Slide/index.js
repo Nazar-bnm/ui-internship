@@ -1,3 +1,1 @@
-import Slide from './Slide';
-
-export default Slide;
+export { default } from './Slide';

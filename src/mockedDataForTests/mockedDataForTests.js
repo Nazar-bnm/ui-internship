@@ -24,3 +24,36 @@ export const mockedBrands = [
     photo: 'https://myrealdomain.com/images/gucci-logo-png-1.png'
   }
 ];
+
+export const mockedProductList = [
+  {
+    id: '1',
+    image: 'https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg',
+    title: 'Awesome dress',
+    collection: 'spring collection 2016',
+    category: 'women',
+    label: 'sale',
+    sizes: '[S, M, L]',
+    price: '199'
+  },
+  {
+    id: '2',
+    image: 'https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg',
+    title: 'Beautiful dress',
+    collection: 'spring collection 2016',
+    category: 'women',
+    label: 'new',
+    sizes: '[S, M, L]',
+    price: '299'
+  },
+  {
+    id: '3',
+    image: 'https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg',
+    title: 'Amazing dress',
+    collection: 'spring collection 2016',
+    category: 'women',
+    label: '',
+    sizes: '[M, L]',
+    price: '399'
+  }
+];

@@ -1,0 +1,38 @@
+@import '../../scss/global_styles';
+
+.AccordionPDP {
+  width: 300px;
+
+  .contact-block {
+    border-top: 1px solid $silver-chalice;
+
+    &__title {
+      color: $black;
+    }
+
+    &__item {
+      transition: background-color linear 0.5s;
+      padding: 3px;
+      background-color: $black;
+      color: $white;
+
+      &:hover,
+      &:active {
+        background-color: $silver-chalice;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    i.icon {
+      font-size: 1rem;
+      color: $white;
+    }
+  }
+
+  .accordion-item__description {
+    font-size: 0.9rem;
+  }
+}
