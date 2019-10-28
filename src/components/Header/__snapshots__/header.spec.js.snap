@@ -76,7 +76,9 @@ exports[`<Header /> should match snapshot 1`] = `
           icon="cart"
           onClickFunction={null}
         >
-          Cart (0)
+          Cart (
+          5
+          )
         </Button>
       </Link>
     </div>

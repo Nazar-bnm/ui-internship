@@ -1,7 +1,7 @@
 import React from 'react';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import ItemsList from './ItemsList';
 import mockedData from '../../../mockedDataForTests';
@@ -13,7 +13,7 @@ describe('<ItemsList />', () => {
   beforeEach(() => {
     const mock = new MockAdapter(axios);
 
-    wrapper = mount(<ItemsList />);
+    wrapper = shallow(<ItemsList />);
     mock.onGet(`${process.env.BASE_URL}/product-list`).reply(200, mockedProductList);
   });
 

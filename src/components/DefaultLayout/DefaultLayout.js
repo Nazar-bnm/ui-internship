@@ -6,7 +6,7 @@ import {
   TransitionGroup
 } from 'react-transition-group';
 
-import Header from '../Header';
+import Header from '../Header/HeaderContainer';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';

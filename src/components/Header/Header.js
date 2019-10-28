@@ -13,7 +13,7 @@ import './Header.scss';
 
 export const CN = 'header';
 
-const Header = () => (
+const Header = ({ cartItems }) => (
   <header className={cx(CN)}>
     <div
       className="wrapper color-secondary"
@@ -28,7 +28,11 @@ const Header = () => (
         <BurgerMenu menuItemsList={burgerMenuItemsList} />
         <Input icon="search" customClass={`${CN}__search-input`}>Search</Input>
         <Link to="/404">
-          <Button icon="cart" customClass={`${CN}__cart-btn`}>Cart (0)</Button>
+          <Button icon="cart" customClass={`${CN}__cart-btn`}>
+          Cart (
+            {cartItems.length}
+          )
+          </Button>
         </Link>
       </div>
     </div>
