@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { getProductsError, getProducts, getProductsPending } from '../../reducers/reducerAPIcall';
 import fetchProductsAction from '../../actions/fetchProducts';
-
 import DefaultLayout from './DefaultLayout';
 
 const mapStateToProps = (state) => ({

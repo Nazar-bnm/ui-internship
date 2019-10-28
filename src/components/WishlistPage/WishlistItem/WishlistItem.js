@@ -12,7 +12,7 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
   } = item;
 
   return (
-    <div className={`${cx(CN, className)}`}>
+    <div className={cx(CN, className)}>
       <img className={`${CN}__image`} src={image} alt={title} />
       <h3 className={`${CN}__title`}>{title}</h3>
       <h4 className={`${CN}__subtitle`}>{collection}</h4>
