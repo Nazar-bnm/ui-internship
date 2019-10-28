@@ -8,11 +8,10 @@ import Button from '../shared/Button';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
-import config from '../../../config';
+import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
 
 import './Header.scss';
 
-const { burgerMenuItemsList, navConfig } = config;
 export const CN = 'header';
 
 const Header = ({ userCart }) => (
@@ -28,11 +27,9 @@ const Header = ({ userCart }) => (
       </Link>
       <div className={`${CN}__buttons-container`}>
         <BurgerMenu menuItemsList={burgerMenuItemsList} />
-        <Input icon="search" customClass={`${CN}__search-input`}>Search</Input>
-        <Link to="/cart">
-          <Button icon="cart" customClass={`${CN}__cart-btn`}>
-            {`Cart (${userCart.length})`}
-          </Button>
+        <Input icon="search" placeholder="SEARCH" className={`${CN}__search-input`}>Search</Input>
+        <Link to="/404">
+          <Button onClick={() => {}} icon="cart" className={`${CN}__cart-btn`}>{`Cart (${userCart.length})`}</Button>
         </Link>
       </div>
     </div>

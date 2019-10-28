@@ -29,16 +29,16 @@ exports[`<Header /> should match snapshot 1`] = `
         menuItemsList={
           Array [
             Object {
-              "itemName": "women",
-              "url": "women",
+              "itemName": "woman",
+              "url": "404",
             },
             Object {
               "itemName": "man",
-              "url": "men",
+              "url": "404",
             },
             Object {
               "itemName": "kids",
-              "url": "kids",
+              "url": "404",
             },
             Object {
               "itemName": "accessories",
@@ -64,20 +64,19 @@ exports[`<Header /> should match snapshot 1`] = `
         }
       />
       <Input
-        className=""
-        customClass="header__search-input"
+        className="header__search-input"
         icon="search"
-        placeholder=""
+        placeholder="SEARCH"
       >
         Search
       </Input>
       <Link
-        to="/cart"
+        to="/404"
       >
         <Button
-          className=""
-          customClass="header__cart-btn"
+          className="header__cart-btn"
           icon="cart"
+          onClick={[Function]}
         >
           Cart (0)
         </Button>
@@ -94,37 +93,37 @@ exports[`<Header /> should match snapshot 1`] = `
         },
         Object {
           "label": "men",
-          "link": "/men",
+          "link": "/not_found",
           "value": "men",
         },
         Object {
           "label": "kids",
-          "link": "/kids",
+          "link": "/not_found",
           "value": "kids",
         },
         Object {
           "label": "accessories",
-          "link": "/404",
+          "link": "/not_found",
           "value": "accs",
         },
         Object {
           "label": "what's new",
-          "link": "/404",
+          "link": "/not_found",
           "value": "new",
         },
         Object {
           "label": "brands",
-          "link": "/404",
+          "link": "/not_found",
           "value": "brands",
         },
         Object {
           "label": "sale",
-          "link": "/404",
+          "link": "/not_found",
           "value": "sale",
         },
         Object {
           "label": "blog",
-          "link": "/404",
+          "link": "/not_found",
           "value": "blog",
         },
       ]

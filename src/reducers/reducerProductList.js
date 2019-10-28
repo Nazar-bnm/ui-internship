@@ -3,7 +3,9 @@ import {
   CHANGE_SORTING_ORDER,
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR
+  GET_PRODUCTS_ERROR,
+  CHANGE_DROPDOWN_SELECTED_ID,
+  CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID
 } from '../constants/actionTypes';
 
 const mobileScreen = 480;
@@ -23,7 +25,9 @@ const initialState = {
   orderType: 'Position',
   chosenItemsOnPage: numberOfItemsToRender,
   itemList: [],
-  error: null
+  error: null,
+  dropdownSortingSelectedID: 0,
+  dropdownItemsNumberSelectedID: 0
 };
 
 export default function reducerProductList(state = initialState, action) {
@@ -53,6 +57,16 @@ export default function reducerProductList(state = initialState, action) {
       return {
         ...state,
         error: action.error
+      };
+    case CHANGE_DROPDOWN_SELECTED_ID:
+      return {
+        ...state,
+        dropdownSortingSelectedID: action.dropdownSortingSelectedID
+      };
+    case CHANGE_DROPDOWN_ITEMS_NUMBER_SELECTED_ID:
+      return {
+        ...state,
+        dropdownItemsNumberSelectedID: action.dropdownItemsNumberSelectedID
       };
     default:
       return state;
