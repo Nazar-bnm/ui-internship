@@ -72,7 +72,6 @@ DefaultLayout.propTypes = {
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
   hideBrands: PropTypes.bool,
-  location: PropTypes.any.isRequired,
   hideShippingInfo: PropTypes.bool
 };
 
