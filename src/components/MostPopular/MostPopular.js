@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 
 import HttpService from '../../service/HttpService/httpService';
-import ProductItem from './ProductItem/ProductItemContainer';
+import ProductItem from './ProductItem/ProductItem';
+import Carousel from '../Carousel';
 
 import './MostPopular.scss';
-
-const urlBase = 'http://localhost:4000/most-popular';
 
 class MostPopular extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class MostPopular extends Component {
   async getProducts() {
     const userApi = new HttpService();
     try {
-      const response = await userApi.get(urlBase);
+      const response = await userApi.get(`${process.env.BASE_URL}/most-popular`);
       if (response && response.data) {
         this.setState({ products: response.data });
       }
@@ -31,24 +31,34 @@ class MostPopular extends Component {
     }
   }
 
-  renderProducts() {
-    const { products } = this.state;
-
-    return products.map((product) => (
-      <ProductItem key={product.id} product={product} />
-    ));
-  }
-
   render() {
-    return (
-      <div className="wrapper">
-        <h1 className="wrapper__title">Most Popular</h1>
-        <div className="wrapper__container">
-          {this.renderProducts()}
-        </div>
-      </div>
-    );
+    const { products } = this.state;
+    const prodList = products.map((product) => {
+      const { addToWishlist, removeFromWishlist, wishlist } = this.props;
+      return (
+        <ProductItem
+          key={product.id}
+          product={product}
+          addToWishlist={addToWishlist}
+          removeFromWishlist={removeFromWishlist}
+          wishlist={wishlist}
+        />
+      );
+    });
+
+    return prodList.length
+      && (
+        <Carousel items={products}>
+          {prodList}
+        </Carousel>
+      );
   }
 }
+
+MostPopular.propTypes = {
+  addToWishlist: propTypes.func.isRequired,
+  removeFromWishlist: propTypes.func.isRequired,
+  wishlist: propTypes.array.isRequired
+};
 
 export default MostPopular;

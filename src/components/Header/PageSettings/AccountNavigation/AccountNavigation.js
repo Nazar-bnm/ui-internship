@@ -10,7 +10,7 @@ const AccountNavigation = () => (
       <span>my account</span>
     </Link>
     <Link to="/wishlist">
-      <span>wishlist</span>
+      <span>wish list</span>
     </Link>
     <Link to="/cart">
       <span>cart</span>
