@@ -21,31 +21,25 @@ class ProductListPage extends Component {
     };
   }
 
-  resetFilters = (resetFunc) => {
-    // this.setState({ resetCheckboxes: true }, () => {
-    //   const { resetCheckboxes: reseted } = this.state;
-    //   console.log(reseted, 'resetCheckboxes');
-    // });
-
-    this.setState({resetCheckboxes: true});
-    resetFunc();
-  };
-
   componentWillUnmount() {
     const { resetState } = this.props;
 
-    resetState && resetState()
+    resetState && resetState();
   }
+
+  resetFilters = (resetFunc) => {
+    this.setState({ resetCheckboxes: true });
+    resetFunc();
+  };
 
   render() {
     const { match: { params: { category } }, resetState } = this.props;
     const { resetCheckboxes } = this.state;
-    // resetState();
 
     return (
       <div className={`content ${cx(CN)}`}>
         <div className={`${CN}__line`}>
-          <div> Home</div>
+          <div>Home</div>
           <div>&#10094; Return to previous page</div>
         </div>
         <div className={`${cx(CN)}__gridWrapper`}>
@@ -69,7 +63,6 @@ class ProductListPage extends Component {
               <Heading title={category} />
               <span className={`${CN}__heading-itemsLeft`}>557 items</span>
             </div>
-
             <CollectionPoster category={category} />
           </div>
           <div className={`${CN}__productList`}>
@@ -88,4 +81,5 @@ ProductListPage.propTypes = {
 ProductListPage.defaultProps = {
   category: 'women'
 };
+
 export default ProductListPage;
