@@ -25,6 +25,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     <Dropdown
       changeItemsOnPageNum={[Function]}
       changeOrderType={[Function]}
+      mainLabel="size:"
       options={
         Array [
           Object {
@@ -53,6 +54,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     <Dropdown
       changeItemsOnPageNum={[Function]}
       changeOrderType={[Function]}
+      mainLabel="color:"
       options={
         Array [
           Object {
@@ -77,6 +79,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     <Dropdown
       changeItemsOnPageNum={[Function]}
       changeOrderType={[Function]}
+      mainLabel="qty:"
       options={
         Array [
           Object {
@@ -130,17 +133,13 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
   <div
     className="product-order__buttons-wrapper"
   >
-    <Link
-      to="/not_found"
+    <button
+      className="product-order__cart-btn"
+      onClick={[Function]}
+      type="button"
     >
-      <Button
-        customClass="product-order__cart-btn"
-        icon={null}
-        onClickFunction={null}
-      >
-        add to cart
-      </Button>
-    </Link>
+      add to cart
+    </button>
     <Link
       to="/not_found"
     >

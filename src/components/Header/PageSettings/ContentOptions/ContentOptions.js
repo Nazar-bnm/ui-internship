@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Dropdown from '../../../shared/Dropdown';
 import config from '../../../../../config';
-import Dropdowns from '../../../shared/Dropdowns';
+import Dropdown from '../../../shared/Dropdown';
 
 export const CN = 'dropdowns';
 
@@ -12,10 +11,21 @@ const ContentOptions = () => {
 
   return (
     <div className={`${CN} container`}>
-      <Dropdown options={company} />
-      <Dropdown options={currency} />
-      <Dropdown options={language} />
-      <Dropdowns menuOptions={language} placeholder={language[0].label} />
+      <Dropdown
+        menuOptions={company}
+        placeholder={company[0].label}
+        onDropdownChange={() => {}}
+      />
+      <Dropdown
+        menuOptions={currency}
+        placeholder={currency[0].label}
+        onDropdownChange={() => {}}
+      />
+      <Dropdown
+        menuOptions={language}
+        placeholder={language[0].label}
+        onDropdownChange={() => {}}
+      />
     </div>
   );
 };

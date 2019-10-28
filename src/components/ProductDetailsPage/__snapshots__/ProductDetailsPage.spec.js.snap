@@ -22,7 +22,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
   <div
     className="product-details-right-aside"
   >
-    <ProductOrder
+    <Connect(ProductOrder)
       colors={
         Array [
           Object {

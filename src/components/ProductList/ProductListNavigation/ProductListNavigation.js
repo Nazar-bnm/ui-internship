@@ -21,7 +21,8 @@ const ProductListNavigation = (props) => {
         <Dropdown
           changeItemsOnPageNum={changeItemsOnPageNum}
           changeOrderType={changeOrderType}
-          options={sortBy}
+          menuOptions={sortBy}
+          onDropdownChange={() => {}}
         />
         <Button
           customClass={`${CN}__arrow-btn`}
@@ -34,7 +35,8 @@ const ProductListNavigation = (props) => {
         <Dropdown
           changeItemsOnPageNum={changeItemsOnPageNum}
           changeOrderType={changeOrderType}
-          options={itemsOnPage}
+          menuOptions={itemsOnPage}
+          onDropdownChange={() => {}}
         />
       </div>
     </div>

@@ -21,9 +21,13 @@ const ProductOrder = (props) => {
     id
   } = props;
 
+  const [placeholderSize, ...otherSizes] = sizes;
+  const [placeholderColor, ...otherColors] = colors;
+  const [placeholderQuantity, ...rest] = quantity;
+
   const params = {
     ID: id,
-    quantity: 2,
+    quantity: 1,
     color: 'white',
     size: 'M'
   };
@@ -34,21 +38,33 @@ const ProductOrder = (props) => {
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
       <div className={`${CN}__dropdowns-wrapper`}>
-        <Dropdown options={sizes} mainLabel="size:" />
-        <Dropdown options={colors} mainLabel="color:" />
-        <Dropdown options={quantity} mainLabel="qty:" />
+        <Dropdown
+          menuOptions={otherSizes}
+          mainLabel="size:"
+          placeholder={placeholderSize.value}
+          onDropdownChange={() => {}}
+        />
+        <Dropdown
+          menuOptions={otherColors}
+          mainLabel="color:"
+          placeholder={placeholderColor.value}
+          onDropdownChange={() => {}}
+        />
+        <Dropdown
+          menuOptions={rest}
+          mainLabel="qty:"
+          placeholder={placeholderQuantity.value}
+          onDropdownChange={() => {}}
+        />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
-        {/* <Link to="/not_found"> */}
         <button
           onClick={() => addToCart(params)}
           type="button"
           className={`${CN}__cart-btn`}
         >
-add to cart
-
+        add to cart
         </button>
-        {/* </Link> */}
         <Link to="/not_found">
           <Button
             customClass={`${CN}__wishlist-btn`}
