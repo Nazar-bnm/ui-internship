@@ -1,4 +1,6 @@
 import React from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 import WhatIsNew from '../WhatIsNew';
 import BlogArticlePreview from '../BlogArticlePreview';
@@ -11,7 +13,9 @@ import { slideshowData } from './Slideshow/SlideshowDate';
 
 import './HomePage.scss';
 
-const HomePage = () => {
+const CN = 'homepage';
+
+const HomePage = ({ className }) => {
   const slidesData = slideshowData.map((el) => ({
     id: el.id,
     img: el.img,
@@ -25,7 +29,7 @@ const HomePage = () => {
   }));
 
   return (
-    <div>
+    <div className={cx(CN, className)}>
       <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
       <div>
         <WhatIsNew />
@@ -41,6 +45,14 @@ const HomePage = () => {
       </div>
     </div>
   );
+};
+
+HomePage.propTypes = {
+  className: PropTypes.string
+};
+
+HomePage.defaultProps = {
+  className: ''
 };
 
 export default HomePage;

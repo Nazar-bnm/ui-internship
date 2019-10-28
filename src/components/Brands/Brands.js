@@ -46,7 +46,7 @@ class BrandsAndShippingInfo extends Component {
     const { brandsList } = this.state;
 
     return (
-      <div className={`content ${cx(CN)}`}>
+      <div className={cx('content', CN)}>
         <Heading title="Brands" position="center" />
         <div className={`container ${cx(CN)}`}>
           <ul className={`${CN}__list`}>

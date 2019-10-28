@@ -9,6 +9,7 @@ import HomePage from '../HomePage';
 import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageWrapper';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
+import WishListPage from '../WishlistPage';
 
 import './Routes.scss';
 
@@ -20,10 +21,11 @@ const Routes = () => (
         timeout={2000}
         classNames="fade"
       >
-        <Switch location={location}>
+        <Switch>
           <DefaultLayout path="/" exact component={HomePage} />
           <DefaultLayout path="/home" component={HomePage} />
           <DefaultLayout path="/product-details" component={ProductDetailsPageWrapper} />
+          <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout
             to="/not_found"
             component={NotFoundPage}

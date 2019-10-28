@@ -13,7 +13,7 @@ const Button = (props) => {
 
   return (
     <button
-      className={`${cx(CN, className)} `}
+      className={cx(CN, className)}
       type="button"
       onClick={onClick}
     >

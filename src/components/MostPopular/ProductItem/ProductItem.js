@@ -7,25 +7,22 @@ import './ProductItem.scss';
 const CN = 'product';
 
 const ProductItem = ({
-  product, wishlist, addToWishlist, removeFromWishlist
+  item, wishlist, addToWishlist, removeFromWishlist
 }) => {
   const [isHovered, setHovered] = useState(false);
   const {
-    image, label, title, price, sizes
-  } = product;
-
-  const handleRemove = (item) => () => removeFromWishlist(item);
-  const handleAdd = (item) => () => addToWishlist(item);
+    id, image, label, title, price, sizes
+  } = item;
 
   const renderButton = () => {
-    const isInWishlist = wishlist && wishlist.find((item) => item.id === product.id);
+    const isInWishlist = wishlist && wishlist.find((wishedItemId) => id === wishedItemId);
 
     if (isInWishlist) {
       return (
         <button
           type="button"
           className="product__button"
-          onClick={handleRemove(product)}
+          onClick={() => removeFromWishlist(id)}
         >
           <i className="icon heart red large" />
         </button>
@@ -36,7 +33,7 @@ const ProductItem = ({
       <button
         type="button"
         className="product__button"
-        onClick={handleAdd(product)}
+        onClick={() => addToWishlist(id)}
       >
         <i className="icon heart outline large" />
       </button>
@@ -69,7 +66,7 @@ const ProductItem = ({
             </span>
             <div className={`${CN}__title-wrapper icons`}>
               <i className="eye icon" />
-              <div>{renderButton(product)}</div>
+              <div>{renderButton()}</div>
             </div>
           </>
         )}
@@ -92,7 +89,7 @@ const ProductItem = ({
 };
 
 ProductItem.propTypes = {
-  product: PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.number,
     image: PropTypes.string,
     label: PropTypes.string,
