@@ -82,4 +82,5 @@ DefaultLayout.defaultProps = {
   hideBrands: false,
   hideShippingInfo: false
 };
+
 export default DefaultLayout;

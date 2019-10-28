@@ -259,5 +259,10 @@
       "sizes":" S - M",
       "price": "1599"
     }
+  ],
+  "newCollectionTopics": [
+    {"women" : ["warm autumn", "new autumn women's sweater collection 2019"]},
+    {"men" : ["warm autumn", "new autumn women's sweater collection 2019"]},
+    {"kids" : ["warm autumn", "new autumn kid's collection 2019"]}
   ]
 }
