@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
+import reducerFilter from './reducerFilter';
 import { reducerWishlist } from './reducerWishlist';
 import { productsReducer } from './reducerAPIcall';
-import reducerFilter from './reducerFilter';
 import reducerProductList from './reducerProductList';
 import reducerNotifications from './reducerNotifications';
 import reducerCart from './reducerCart';

@@ -5,12 +5,13 @@ import { checkCheckbox } from '../../../actions/actionsFilter';
 import CheckBoxList from './CheckBoxList';
 
 const mapStateToProps = ({ reducerFilter }) => ({
-  bottom: reducerFilter.bottom,
+  bottoms: reducerFilter.bottoms,
   tops: reducerFilter.tops,
-  size: reducerFilter.size,
+  sizes: reducerFilter.sizes,
   price: reducerFilter.price,
   colors: reducerFilter.colors,
-  brands: reducerFilter.brands
+  brands: reducerFilter.brands,
+  isReseted: reducerFilter.isReseted
 });
 
 const mapDispatchToProps = (dispatch) => ({
