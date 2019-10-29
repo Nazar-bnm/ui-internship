@@ -10,7 +10,7 @@ exports[`<Modal /> should match the snapshot 1`] = `
     onClick={[Function]}
     onKeyDown={[Function]}
     onTransitionEnd={[Function]}
-    tabIndex="-1"
+    tabIndex={-1}
   >
     <div
       className="modal__window"
@@ -20,10 +20,9 @@ exports[`<Modal /> should match the snapshot 1`] = `
       </div>
       <span
         className="modal__close-button"
-        label="closer"
         onClick={[Function]}
         role="button"
-        tabIndex="0"
+        tabIndex={0}
       >
         <i
           className="close icon"
