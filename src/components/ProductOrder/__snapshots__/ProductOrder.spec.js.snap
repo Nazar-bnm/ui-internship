@@ -23,15 +23,10 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     className="product-order__dropdowns-wrapper"
   >
     <Dropdown
-      changeItemsOnPageNum={[Function]}
-      changeOrderType={[Function]}
+      className=""
       mainLabel="size:"
-      options={
+      menuOptions={
         Array [
-          Object {
-            "label": "size:",
-            "value": "size:",
-          },
           Object {
             "label": "s",
             "value": "s",
@@ -50,17 +45,15 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
+      placeholder="size:"
+      value=""
     />
     <Dropdown
-      changeItemsOnPageNum={[Function]}
-      changeOrderType={[Function]}
+      className=""
       mainLabel="color:"
-      options={
+      menuOptions={
         Array [
-          Object {
-            "label": "color:",
-            "value": "color:",
-          },
           Object {
             "label": "white",
             "value": "white",
@@ -75,17 +68,15 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
+      placeholder="color:"
+      value=""
     />
     <Dropdown
-      changeItemsOnPageNum={[Function]}
-      changeOrderType={[Function]}
+      className=""
       mainLabel="qty:"
-      options={
+      menuOptions={
         Array [
-          Object {
-            "label": "qty:",
-            "value": "qty:",
-          },
           Object {
             "label": "1",
             "value": "1",
@@ -128,6 +119,9 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
+      placeholder="qty:"
+      value=""
     />
   </div>
   <div

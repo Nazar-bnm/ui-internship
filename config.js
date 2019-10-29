@@ -47,9 +47,9 @@ export default {
     { title: 'Terms & Conditions', link: '#' }
   ],
   navConfig: [
-    { value: 'women', label: 'women', link: '/404' },
-    { value: 'men', label: 'men', link: '/404' },
-    { value: 'kids', label: 'kids', link: '/404' },
+    { value: 'women', label: 'women', link: '/women' },
+    { value: 'men', label: 'men', link: '/men' },
+    { value: 'kids', label: 'kids', link: '/kids' },
     { value: 'accs', label: 'accessories', link: '/404' },
     { value: 'new', label: 'what\'s new', link: '/404' },
     { value: 'brands', label: 'brands', link: '/404' },
@@ -74,9 +74,9 @@ export default {
     ]
   },
   burgerMenuItemsList: [
-    { itemName: 'woman', url: '404' },
-    { itemName: 'man', url: '404' },
-    { itemName: 'kids', url: '404' },
+    { itemName: 'women', url: 'women' },
+    { itemName: 'man', url: 'men' },
+    { itemName: 'kids', url: 'kids' },
     { itemName: 'accessories', url: '404' },
     { itemName: 'what\'s new', url: '404' },
     { itemName: 'brands', url: '404' },
@@ -87,5 +87,139 @@ export default {
     { number: 1, title: 'free shipping', description: 'on all orders over 50$' },
     { number: 2, title: 'money back guarantee', description: 'on all orders' },
     { number: 3, title: 'worldwide delivery', description: 'to over 80 countries' }
-  ]
+  ],
+  women: {
+    bottoms: [
+      { item: 'jeans' },
+      { item: 'pants' },
+      { item: 'shorts' },
+      { item: 'skirts' },
+      { item: 'dresses' }
+    ],
+    tops: [
+      { item: 'jackets and coats' },
+      { item: 'shirts' },
+      { item: 't-shirts' },
+      { item: 'knitwear' },
+      { item: 'sweats' }
+    ],
+    sizes: [
+      { item: 'xs' },
+      { item: 's' },
+      { item: 'm' },
+      { item: 'l' },
+      { item: 'xl' },
+      { item: 'xxl' }
+    ],
+    colors: [
+      { item: 'beige' },
+      { item: 'black' },
+      { item: 'blue' },
+      { item: 'brown' },
+      { item: 'cream' },
+      { item: 'gold' },
+      { item: 'green' },
+      { item: 'grey' },
+      { item: 'navy' },
+      { item: 'orange' },
+      { item: 'pink' },
+      { item: 'purple' }
+    ],
+    brands: [
+      { item: 'boss' },
+      { item: 'gucci' },
+      { item: 'baldinini' },
+      { item: 'dior' },
+      { item: 'donna karan' }
+    ]
+  },
+
+  men: {
+    bottoms: [
+      { item: 'jeans' },
+      { item: 'pants' },
+      { item: 'shorts' },
+      { item: 'skirts' }
+    ],
+    tops: [
+      { item: 'jackets and coats' },
+      { item: 'shirts' },
+      { item: 't-shirts' },
+      { item: 'knitwear' },
+      { item: 'sweats' }
+    ],
+    sizes: [
+      { item: 'xs' },
+      { item: 's' },
+      { item: 'm' },
+      { item: 'l' },
+      { item: 'xl' },
+      { item: 'xxl' }
+    ],
+    colors: [
+      { item: 'beige' },
+      { item: 'black' },
+      { item: 'blue' },
+      { item: 'brown' },
+      { item: 'cream' },
+      { item: 'gold' },
+      { item: 'green' },
+      { item: 'grey' },
+      { item: 'navy' },
+      { item: 'orange' },
+      { item: 'pink' },
+      { item: 'purple' }
+    ],
+    brands: [
+      { item: 'boss' },
+      { item: 'gucci' },
+      { item: 'baldinini' },
+      { item: 'dior' },
+      { item: 'donna karan' }
+    ]
+  },
+
+  kids: {
+    bottoms: [
+      { item: 'jeans' },
+      { item: 'pants' },
+      { item: 'dresses' }
+    ],
+    tops: [
+      { item: 'jackets and coats' },
+      { item: 'shirts' },
+      { item: 't-shirts' },
+      { item: 'knitwear' },
+      { item: 'sweats' }
+    ],
+    sizes: [
+      { item: 'xs' },
+      { item: 's' },
+      { item: 'm' },
+      { item: 'l' },
+      { item: 'xl' },
+      { item: 'xxl' }
+    ],
+    colors: [
+      { item: 'beige' },
+      { item: 'black' },
+      { item: 'blue' },
+      { item: 'brown' },
+      { item: 'cream' },
+      { item: 'gold' },
+      { item: 'green' },
+      { item: 'grey' },
+      { item: 'navy' },
+      { item: 'orange' },
+      { item: 'pink' },
+      { item: 'purple' }
+    ],
+    brands: [
+      { item: 'boss' },
+      { item: 'gucci' },
+      { item: 'baldinini' },
+      { item: 'dior' },
+      { item: 'donna karan' }
+    ]
+  }
 };

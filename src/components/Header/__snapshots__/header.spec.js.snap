@@ -28,16 +28,16 @@ exports[`<Header /> should match snapshot 1`] = `
         menuItemsList={
           Array [
             Object {
-              "itemName": "woman",
-              "url": "404",
+              "itemName": "women",
+              "url": "women",
             },
             Object {
               "itemName": "man",
-              "url": "404",
+              "url": "men",
             },
             Object {
               "itemName": "kids",
-              "url": "404",
+              "url": "kids",
             },
             Object {
               "itemName": "accessories",
@@ -86,42 +86,42 @@ exports[`<Header /> should match snapshot 1`] = `
       Array [
         Object {
           "label": "women",
-          "link": "/not_found",
+          "link": "/women",
           "value": "women",
         },
         Object {
           "label": "men",
-          "link": "/not_found",
+          "link": "/men",
           "value": "men",
         },
         Object {
           "label": "kids",
-          "link": "/not_found",
+          "link": "/kids",
           "value": "kids",
         },
         Object {
           "label": "accessories",
-          "link": "/not_found",
+          "link": "/404",
           "value": "accs",
         },
         Object {
           "label": "what's new",
-          "link": "/not_found",
+          "link": "/404",
           "value": "new",
         },
         Object {
           "label": "brands",
-          "link": "/not_found",
+          "link": "/404",
           "value": "brands",
         },
         Object {
           "label": "sale",
-          "link": "/not_found",
+          "link": "/404",
           "value": "sale",
         },
         Object {
           "label": "blog",
-          "link": "/not_found",
+          "link": "/404",
           "value": "blog",
         },
       ]

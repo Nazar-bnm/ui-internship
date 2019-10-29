@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import cx from 'classnames';
 
 import './ProductItem.scss';
 
 const CN = 'product';
 
-const ProductItem = ({ product }) => {
+const ProductItem = (props) => {
+  const { product } = props;
   const [isHovered, setHovered] = useState(false);
   const {
+    id,
     image,
     label,
     title,
     price,
     sizes
   } = product;
+
 
   const renderView = () => (
     <>
@@ -26,17 +30,21 @@ const ProductItem = ({ product }) => {
           </>
         )}
 
-        <img
-          className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
-          src={image}
-          alt="product"
-        />
+        <Link to={`/product-details/${id}`}>
+          <img
+            className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
+            src={image}
+            alt="product"
+          />
+        </Link>
       </div>
 
       <div className={cx(`${CN}__title-wrapper`, { [`${CN}__title-wrapper__title`]: isHovered })}>
-        <h2 className={cx(`${CN}__title-wrapper__title`, { [`${CN}__title-wrapper__title--hovered`]: isHovered })}>
-          {title}
-        </h2>
+        <Link to={`/product-details/${id}`}>
+          <h2 className={cx(`${CN}__title-wrapper__title`, { [`${CN}__title-wrapper__title--hovered`]: isHovered })}>
+            {title}
+          </h2>
+        </Link>
 
         {!isHovered && <h3 className={`${CN}__title-wrapper__price`}>{price}</h3>}
         {isHovered && (
@@ -47,7 +55,6 @@ const ProductItem = ({ product }) => {
             </span>
             <div className={`{${CN}__title-wrapper icons`}>
               <i className="eye icon" />
-              <i className="cart plus icon" />
               <i className="heart outline icon" />
             </div>
           </>

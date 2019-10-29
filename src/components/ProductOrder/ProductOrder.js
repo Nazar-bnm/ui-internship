@@ -13,24 +13,26 @@ export const CN = 'product-order';
 export default class ProductOrder extends Component {
   constructor(props) {
     super(props);
+    const { id } = this.props;
+
     this.state = {
-      // id: id.props,
+      id,
       size: null,
       quantity: 1,
       color: null
     };
 
-    this.createParams = this.createParams.bind(this);
+    // this.createParams = this.createParams.bind(this);
     this.handleSizeChange = this.handleSizeChange.bind(this);
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
   }
 
-  createParams(curSize, curQuantity, curColor) {
-    return {
-      size: curSize, quantity: curQuantity, color: curColor
-    };
-  }
+  // createParams(curSize, curQuantity, curColor) {
+  //   return {
+  //     size: curSize, quantity: curQuantity, color: curColor
+  //   };
+  // }
 
   handleSizeChange(item) {
     this.setState({ size: item });

@@ -45,7 +45,11 @@
   
   &__title-wrapper {
     @include flex(column, center, center);
-       
+    a {
+      text-decoration: none;
+      color: inherit;
+    }   
+
     .sizes {
       margin: 20px;
     }
