@@ -71,15 +71,18 @@ exports[`<Header /> should match snapshot 1`] = `
         Search
       </Input>
       <Link
-        to="/404"
+        to="/cart"
       >
-        <Button
+        <div
           className="header__cart-btn"
-          icon="cart"
-          onClick={[Function]}
         >
-          Cart (0)
-        </Button>
+          <i
+            className="icon cart"
+          />
+          <p>
+            Cart (0)
+          </p>
+        </div>
       </Link>
     </div>
   </div>

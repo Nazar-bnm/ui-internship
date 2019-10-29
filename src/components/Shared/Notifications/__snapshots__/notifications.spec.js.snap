@@ -8,7 +8,7 @@ exports[`<Notifications /> should match snapshot 1`] = `
 >
   <div>
     <h4
-      className="title"
+      className="notifications__title"
     >
       Info
     </h4>
