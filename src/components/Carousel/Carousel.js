@@ -172,7 +172,7 @@ class Carousel extends Component {
     );
 
     return (
-      <div className={`${CN} content`}>
+      <div className={`${CN} content content__mobile-width`}>
         <button
           className={leftNavClasses}
           type="button"
