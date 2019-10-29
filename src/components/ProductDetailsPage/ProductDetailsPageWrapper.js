@@ -35,7 +35,8 @@ class ProductDetailsPageWrapper extends Component {
     const { product } = this.state;
     const productName = product.name;
     // const productId = product.id;
-    const productId = 2;
+    const productId = product.id;
+    console.log(this.props);
 
     return (
       <div>
