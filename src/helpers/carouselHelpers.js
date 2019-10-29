@@ -15,7 +15,7 @@ function scrollTo(params) {
     duration,
     scrollDirection
   } = params;
-  const start = element.current.parentElement[scrollDirection];
+  const start = element.current[scrollDirection];
   const change = to - start;
   const increment = (500 / 50);
 
@@ -23,7 +23,7 @@ function scrollTo(params) {
     const elapsedTime = time + increment;
 
     const position = easeInOut(elapsedTime, start, change, duration);
-    element.current.parentElement[scrollDirection] = position;
+    element.current[scrollDirection] = position;
 
 
     if (elapsedTime < duration) {
