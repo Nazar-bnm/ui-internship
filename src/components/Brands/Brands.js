@@ -25,7 +25,7 @@ class BrandsAndShippingInfo extends Component {
     const userAPI = new HttpService();
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL}/brands`);
+      const response = await userAPI.get(`${process.env.BASE_URL1}/brands`);
       if (response && response.data) {
         this.setState({ brandsList: response.data });
       }

@@ -139,7 +139,6 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
       <Button
         className="product-order__cart-btn"
         icon={null}
-        onClick={[Function]}
       >
         add to cart
       </Button>
