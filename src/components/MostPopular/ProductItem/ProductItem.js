@@ -65,14 +65,17 @@ const ProductItem = (props) => {
 
 
   if (!images[0]) {
-    images[0] = 'wjeans-4-4';
+    images[0] = 'wjeans-4-1';
+    images[1] = 'wjeans-4-2';
+    images[2] = 'wjeans-4-3';
+    images[3] = 'wjeans-4-4';
   }
 
   const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
   const defaultImages = [
     { src: `${process.env.IMAGE_URL}/${images[0].claudinaryId}` },
-    { src: `${process.env.IMAGE_URL}/${images[0].claudinaryId}` },
-    { src: `${process.env.IMAGE_URL}/${images[0].claudinaryId}` }
+    { src: `${process.env.IMAGE_URL}/${images[1].claudinaryId}` },
+    { src: `${process.env.IMAGE_URL}/${images[2].claudinaryId}` }
   ];
 
   const renderButton = () => {
