@@ -11,20 +11,20 @@ const ProductItem = ({
 }) => {
   const [isHovered, setHovered] = useState(false);
   const {
-    id, images, label, title, price, sizes
+    _id, images, label, title, price, sizes
   } = item;
 
   const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
 
   const renderButton = () => {
-    const isInWishlist = wishlist && wishlist.find((wishedItemId) => id === wishedItemId);
+    const isInWishlist = wishlist && wishlist.find((wishedItemId) => _id === wishedItemId);
 
     if (isInWishlist) {
       return (
         <button
           type="button"
           className="product__button"
-          onClick={() => removeFromWishlist(id)}
+          onClick={() => removeFromWishlist(_id)}
         >
           <i className="icon heart red large" />
         </button>
@@ -35,7 +35,7 @@ const ProductItem = ({
       <button
         type="button"
         className="product__button"
-        onClick={() => addToWishlist(id)}
+        onClick={() => addToWishlist(_id)}
       >
         <i className="icon heart outline large" />
       </button>
@@ -92,7 +92,7 @@ const ProductItem = ({
 
 const ItemShape = PropTypes.shape({
   id: PropTypes.number,
-  image: PropTypes.string,
+  images: PropTypes.array,
   label: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,

@@ -8,12 +8,14 @@ const CN = 'wishlist-item';
 
 const WishlistItem = ({ className, item, removeFromWishlist }) => {
   const {
-    id, image, title, collection, category
+    _id, images, title, collection, category
   } = item;
+
+  const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
 
   return (
     <div className={cx(CN, className)}>
-      <img className={`${CN}__image`} src={image} alt={title} />
+      <img className={`${CN}__image`} src={imageSrc} alt={title} />
       <h3 className={`${CN}__title`}>{title}</h3>
       <h4 className={`${CN}__subtitle`}>{collection}</h4>
       <h4 className={`${CN}__subtitle`}>{category}</h4>
@@ -24,7 +26,7 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
       <button
         className={`${CN}__button ${CN}__button--remove`}
         type="button"
-        onClick={() => removeFromWishlist(id)}
+        onClick={() => removeFromWishlist(_id)}
       >
         <i className="icon trash alternate small col-2" />
         <h4 className="col-8 col-right">Remove from wishlist</h4>

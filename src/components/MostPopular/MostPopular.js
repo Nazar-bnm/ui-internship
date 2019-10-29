@@ -16,9 +16,6 @@ const MostPopular = (props) => {
       key={product.id}
       item={product}
       products={products}
-      // addToWishlist={addToWishlist}
-      // removeFromWishlist={removeFromWishlist}
-      // wishlist={wishlist}
     />
   ));
 

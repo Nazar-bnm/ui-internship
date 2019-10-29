@@ -59,7 +59,7 @@ class DefaultLayout extends Component {
                 {!hideHeader && <Header />}
                 <Notifications type />
                 <Page {...matchProps} />
-                {!hideBrands && <Brands />}
+                {!hideBrands && <Brands category="brands" />}
                 {!hideShippingInfo && <ShippingInfo />}
                 {!hideFooter && <Footer />}
               </>

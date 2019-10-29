@@ -5,7 +5,7 @@ import cx from 'classnames';
 import Filter from './Filters';
 import ProductList from '../ProductList';
 import Heading from '../Heading/Heading';
-import Button from '../Shared/Button';
+import Button from '../shared/Button';
 import CollectionPoster from '../CollectionPoster';
 
 import './ProductListPage.scss';

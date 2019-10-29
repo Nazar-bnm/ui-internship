@@ -36,7 +36,7 @@ class ProductList extends React.Component {
     } = this.state;
 
     return (
-      <div className={`${CN} content`}>
+      <div className={`${CN}`}>
         <div className={`${CN}__filter-wrapper`}>
           <ProductListNavigationContainer
             dropdownSortingSelectedID={dropdownSortingSelectedID}
