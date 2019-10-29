@@ -8,8 +8,36 @@ import './CartItem.scss';
 const CN = 'cart-item';
 
 const CartItem = (props) => {
+  const notificationTypeEnum = {
+    infoRemovedFromCartNotif: {
+      title: 'info',
+      message: 'The item is removed from the cart',
+      type: 'info'
+    },
+    addedItemNotif: {
+      title: 'success',
+      message: 'Added one more item',
+      type: 'success'
+    },
+    decreasedItemNotif: {
+      title: 'success',
+      message: 'The quantaty of items was decreased',
+      type: 'success'
+    },
+    itWasLastItemNotif: {
+      title: 'warning',
+      message: 'It was last item in the store',
+      type: 'warning'
+    },
+    thereIsNoItemsLeftNotif: {
+      title: 'error',
+      message: 'Sorry, the there is no such product items left',
+      type: 'error'
+    }
+  };
+
   const {
-    item, changeQuantity, userCart, removeItemFromCart, className
+    item, changeQuantity, userCart, removeItemFromCart, className, showMessage
   } = props;
   const {
     id, title, image, price, inventory
@@ -21,6 +49,12 @@ const CartItem = (props) => {
 
   let userCartNew = [...userCart];
 
+  const audio = new Audio('src/assets/sounds/notification-sound.mp3');
+
+  const playAudio = () => {
+    audio.play();
+  };
+
   const changeAmount = (gap) => {
     userCart.map((product, index) => {
       if (product.id === id) {
@@ -28,11 +62,17 @@ const CartItem = (props) => {
       }
     });
     changeQuantity(userCartNew);
+    if (gap === 1) {
+      showMessage(notificationTypeEnum.addedItemNotif);
+      playAudio();
+    }
   };
 
   const onRemoveFromCart = () => {
     userCartNew = userCart.filter((product) => product.id !== id);
     removeItemFromCart(userCartNew);
+    showMessage(notificationTypeEnum.infoRemovedFromCartNotif);
+    playAudio();
   };
 
   const renderProductDescription = () => (

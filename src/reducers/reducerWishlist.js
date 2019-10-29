@@ -4,7 +4,7 @@ const initialState = {
   wishlist: []
 };
 
-export const reducerWishlist = (state = initialState, { type, payload }) => {
+export default function reducerWishlist(state = initialState, { type, payload }) {
   switch (type) {
     case ADD_TO_WISHLIST:
       return {
@@ -19,4 +19,4 @@ export const reducerWishlist = (state = initialState, { type, payload }) => {
     default:
       return state;
   }
-};
+}
