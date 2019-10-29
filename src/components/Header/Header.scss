@@ -80,7 +80,7 @@
       color: $silver-chalice;
     }
     &-btn {
-      @include flex($align: center);
+      @include flex;
       position: absolute;
       top: 8px;
       right: 20px;
