@@ -14,6 +14,10 @@ const ProductItem = ({
     _id, images, label, title, price, sizes
   } = item;
 
+  if (!images[0]) {
+    images[0] = 'wjeans-4-4';
+  }
+
   const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
 
   const renderButton = () => {
@@ -103,11 +107,13 @@ ProductItem.propTypes = {
   item: ItemShape.isRequired,
   wishlist: PropTypes.array,
   addToWishlist: PropTypes.func.isRequired,
-  removeFromWishlist: PropTypes.func.isRequired
+  removeFromWishlist: PropTypes.func.isRequired,
+  images: PropTypes.array
 };
 
 ProductItem.defaultProps = {
-  wishlist: []
+  wishlist: [],
+  images: ['wjeans-4-4']
 };
 
 export default ProductItem;
