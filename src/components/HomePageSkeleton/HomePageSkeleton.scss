@@ -1,0 +1,198 @@
+@import '../../scss/global_styles';
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(165, 165, 165, 0.15);
+  }
+
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+
+  100% {
+    background-color: rgba(165, 165, 165, 0.15);
+  }
+}
+
+.skeleton {
+  background-color: $alabaster;
+
+  &__heading {
+    height: 35px;
+    border-bottom: 5px solid white;
+  }
+
+  &__item {
+    background-color: $alto;
+    height: 50%;
+    animation: pulse 1s infinite ease-in-out;
+  }
+
+  .content {
+    @include flex;
+    height: 100%;
+  }
+
+  &__dropdowns {
+    @include flex($justify: flex-start, $align: center);
+    height: 100%;
+
+    .skeleton__item {
+      width: 20%;
+      margin-right: 5px;
+    }
+  }
+
+  &__shipping {
+    @include flex($justify: center, $align: center);
+    height: 100%;
+
+    .skeleton__item {
+      width: 70%;
+    }
+  }
+
+  &__links {
+    @include flex($justify: flex-end, $align: center);
+
+    .skeleton__item {
+      width: 17%;
+      margin-left: 5px;
+    }
+  }
+
+  &__navigation {
+    position: relative;
+    height: 120px;
+
+    .content {
+      @include flex($justify: flex-end, $align: center);
+      position: relative;
+
+      .skeleton__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 25%;
+        height: 60px;
+        background-color: $alto;
+        animation: pulse 1s infinite ease-in-out;
+      }
+    }
+
+    .skeleton__icon {
+      background-color: $alto;
+      margin-left: 6px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      animation: pulse 1s infinite ease-in-out;
+    }
+
+    .skeleton__item {
+      width: 80px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  }
+
+  &__menu {
+    height: 30px;
+
+    .content {
+      @include flex($justify: center);
+    }
+
+    .skeleton__item {
+      width: 7%;
+      height: 60%;
+      margin: 0 3px;
+    }
+  }
+
+  &__slideshow {
+    @include flex($direction: column, $justify: center, $align: center);
+    height: 560px;
+    width: 100%;
+    border-top: 5px solid white;
+
+    .skeleton__item:nth-child(odd) {
+      height: 20px;
+      width: 150px;
+    }
+
+    .skeleton__item:nth-child(even) {
+      height: 50px;
+      width: 45%;
+      margin: 30px 0;
+    }
+  }
+}
+
+@include media-for(tablet) {
+  .skeleton {
+    &__links,
+    &__shipping {
+      display: none;
+    }
+
+    &__dropdowns {
+      .skeleton__item {
+        width: 25%;
+
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__navigation {
+      height: 150px;
+
+      .content {
+        @include flex($justify: space-between, $align: flex-end);
+
+        .skeleton__title {
+          width: 40%;
+          top: 40%;
+        }
+
+        .container {
+          margin: 10px 30px;
+        }
+      }
+    }
+  }
+}
+
+@include media-for(mobile-landscape) {
+  .skeleton {
+    &__dropdowns {
+      .skeleton__item {
+        width: 45%
+      }
+    }
+
+    &__navigation {
+      .content {
+        .container {
+          @include flex($direction: row);
+          margin: 5px 30px;
+
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+
+        .skeleton__item {
+          width: 120px;
+        }
+      }
+    }
+  }
+}
