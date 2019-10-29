@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Dropdown from '../../../shared/Dropdown';
+import Dropdown from '../../../Shared/Dropdown';
 import config from '../../../../../config';
 
 export const CN = 'dropdowns';
