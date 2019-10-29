@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+
 import HttpService from '../../service/HttpService/httpService';
 
 import './BlogArticlePreview.scss';
@@ -57,9 +60,10 @@ class BlogArticlePreview extends Component {
 
   render() {
     const { blogsList } = this.state;
+    const { className } = this.props;
 
     return (
-      <div>
+      <div className={cx(CN, className)}>
         <h3 className="heading">from our blog</h3>
         <div className="blog__wrapper">
           {this.renderBrands(blogsList)}
@@ -75,4 +79,11 @@ class BlogArticlePreview extends Component {
   }
 }
 
+BlogArticlePreview.propTypes = {
+  className: PropTypes.string
+};
+
+BlogArticlePreview.defaultProps = {
+  className: ''
+};
 export default BlogArticlePreview;
