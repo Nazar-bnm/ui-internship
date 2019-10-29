@@ -137,7 +137,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     className="product-order__buttons-wrapper"
   >
     <Link
-      to="/not_found"
+      to="/cart"
     >
       <Button
         className="product-order__cart-btn"
@@ -148,7 +148,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
       </Button>
     </Link>
     <Link
-      to="/not_found"
+      to="/wishlist"
     >
       <Button
         className=""

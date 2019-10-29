@@ -17,9 +17,10 @@ const ProductOrder = (props) => {
     sizes,
     colors,
     quantity,
-    handleClick,
-    addToWishlist
+    onClickAddToCart,
+    onClickAddToWishlist
   } = props;
+
 
   return (
     <div className={`${CN}`}>
@@ -32,19 +33,19 @@ const ProductOrder = (props) => {
         <Dropdown menuOptions={quantity} placeholder="qty:" />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
-        <Link to="/not_found">
-          <Button onClick={handleClick()} className={`${CN}__cart-btn`}>add to cart</Button>
+        <Link to="/cart">
+          <Button onClick={onClickAddToCart} className={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
-        <Link to="/not_found">
+        <Link to="/wishlist">
           <Button
             customClass={`${CN}__wishlist-btn`}
             icon="heart"
-            // add needed ID HERE! //
-            // onClick={addToWishlist()}
+            onClick={onClickAddToWishlist}
           >
           wishlist
           </Button>
         </Link>
+
       </div>
     </div>
   );
@@ -56,8 +57,7 @@ ProductOrder.propTypes = {
   price: PropTypes.string,
   quantity: PropTypes.array,
   sizes: PropTypes.array,
-  colors: PropTypes.array,
-  handleClick: PropTypes.func
+  colors: PropTypes.array
 };
 
 ProductOrder.defaultProps = {
@@ -66,8 +66,7 @@ ProductOrder.defaultProps = {
   price: '',
   quantity: [],
   sizes: [],
-  colors: [],
-  handleClick: () => {}
+  colors: []
 };
 
 export default ProductOrder;

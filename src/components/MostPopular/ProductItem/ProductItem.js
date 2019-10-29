@@ -6,7 +6,7 @@ import Modal from '../../Modal';
 import ProductImage from '../../ProductImage';
 import ProductOrder from '../../ProductOrder';
 import Heading from '../../Heading';
-import { defaultImages } from '../../../constants';
+// import { defaultImages } from '../../../constants';
 import { productOrderParameters } from '../../../config/ProductOrderMockups';
 
 import './ProductItem.scss';
@@ -48,6 +48,9 @@ const ProductItem = (props) => {
     setHovered(false);
   };
 
+  const handleMouseEnter = () => setHovered(true);
+  const handleMouseLeave = () => !isShowedModal && setHovered(false);
+
   const addToWishlistWithNotif = () => {
     addToWishlist(_id);
     showMessage(notificationTypeEnum.addedItemNotif);
@@ -66,6 +69,11 @@ const ProductItem = (props) => {
   }
 
   const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
+  const defaultImages = [
+    { src: `${process.env.IMAGE_URL}/${images[0].claudinaryId}` },
+    { src: `${process.env.IMAGE_URL}/${images[0].claudinaryId}` },
+    { src: `${process.env.IMAGE_URL}/${images[0].claudinaryId}` }
+  ];
 
   const renderButton = () => {
     const isInWishlist = wishlist && wishlist.find((wishedItemId) => _id === wishedItemId);
@@ -125,9 +133,9 @@ const ProductItem = (props) => {
                   <div className={`${CN}-quick-view-content`}>
                     <ProductImage images={defaultImages} />
                     <div className={`${CN}-quick-view-content__wrapper`}>
-                      <ProductOrder {...productOrderParameters} />
+                      <ProductOrder {...productOrderParameters} onClickAddToWishlist={() => addToWishlistWithNotif(_id)} />
                       <NavLink
-                        to={`/product-page/${_id}`}
+                        to={`/product-details/${_id}`}
                         className={`${CN}-quick-view-content__link`}
                       >
                   See more details
@@ -143,9 +151,6 @@ const ProductItem = (props) => {
       </div>
     </>
   );
-
-  const handleMouseEnter = () => setHovered(true);
-  const handleMouseLeave = () => setHovered(false);
 
   return (
     <div
