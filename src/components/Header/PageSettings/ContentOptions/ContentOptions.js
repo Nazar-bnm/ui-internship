@@ -11,9 +11,9 @@ const ContentOptions = () => {
 
   return (
     <div className={`${CN} container`}>
-      <Dropdown options={company} />
-      <Dropdown options={currency} />
-      <Dropdown options={language} />
+      <Dropdown menuOptions={company} placeholder={company[0].label} />
+      <Dropdown menuOptions={currency} placeholder={currency[0].label} />
+      <Dropdown menuOptions={language} placeholder={language[0].label} />
     </div>
   );
 };

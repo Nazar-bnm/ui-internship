@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 
 import ProductListNavigation from './ProductListNavigation';
-import { changeSortingOrder, changeOrderType, changeitemsNumberOnPage } from '../../../actions/actionsProductList';
+import {
+  changeSortingOrder,
+  changeOrderType,
+  changeitemsNumberOnPage
+} from '../../../actions/actionsProductList';
 
 const mapStateToProps = (state) => ({
   ascendingOrder: state.reducerProductList.ascendingOrder

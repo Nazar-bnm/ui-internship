@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Dropdown from '../../shared/Dropdown';
 import Button from '../../shared/Button';
+import Dropdown from '../../shared/Dropdown';
 import { dropdownsForItemListPage } from '../../../constants';
 
 export const CN = 'product-list';
@@ -11,17 +11,35 @@ const { itemsOnPage, sortBy } = dropdownsForItemListPage;
 
 const ProductListNavigation = (props) => {
   const {
-    changeItemsOnPageNum, changeSortingOrder, ascendingOrder, changeOrderType
+    changeItemsOnPageNum,
+    changeOrderType,
+    changeSortingOrder,
+    ascendingOrder,
+    dropdownItemsNumberSelectedID,
+    dropdownSortingSelectedID,
+    changeSortingSelectedID,
+    changeItemsNumberSelectedID
   } = props;
+
+  const handleChangeItemsOnPageNum = (selectedItem) => {
+    changeItemsOnPageNum(selectedItem);
+    changeItemsNumberSelectedID(selectedItem);
+  };
+
+  const handleChangeSortingOrder = (selectedItem) => {
+    changeOrderType(selectedItem);
+    changeSortingSelectedID(selectedItem);
+  };
 
   return (
     <div className={`${CN}__dropdowns-wrapper`}>
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>sort by</span>
         <Dropdown
-          changeItemsOnPageNum={changeItemsOnPageNum}
-          changeOrderType={changeOrderType}
-          options={sortBy}
+          onDropdownChange={handleChangeSortingOrder}
+          menuOptions={sortBy}
+          dropdownSelectedID={dropdownSortingSelectedID}
+          value={sortBy[0].value}
         />
         <Button
           customClass={`${CN}__arrow-btn`}
@@ -32,9 +50,10 @@ const ProductListNavigation = (props) => {
       <div className={`${CN}__dropdowns-labels-wrapper`}>
         <span className={`${CN}__dropdowns-labels`}>items on page</span>
         <Dropdown
-          changeItemsOnPageNum={changeItemsOnPageNum}
-          changeOrderType={changeOrderType}
-          options={itemsOnPage}
+          onDropdownChange={handleChangeItemsOnPageNum}
+          menuOptions={itemsOnPage}
+          dropdownSelectedID={dropdownItemsNumberSelectedID}
+          value={itemsOnPage[0].value}
         />
       </div>
     </div>
