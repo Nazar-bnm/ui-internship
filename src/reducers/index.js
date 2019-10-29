@@ -3,10 +3,12 @@ import reducerFilter from './reducerFilter';
 import { reducerWishlist } from './reducerWishlist';
 import { productsReducer } from './reducerAPIcall';
 import reducerProductList from './reducerProductList';
+import reducerNotifications from './reducerNotifications';
 
 export default combineReducers({
   reducerWishlist,
-  reducerFilter,
+  reducerProductList,
+  reducerNotifications,
   productsReducer,
-  reducerProductList
+  reducerFilter
 });
