@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import QuickView from '../../QuickView';
+
 import './ProductItem.scss';
 
 const CN = 'product';
@@ -47,8 +49,8 @@ const ProductItem = ({
         <div className={`${CN}__img-wrapper__labels`}>{label}</div>
 
         <img
-          alt="product"
           className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
+          alt="product"
           src={image}
         />
       </div>
@@ -65,7 +67,7 @@ const ProductItem = ({
               {`Sizes: ${sizes}`}
             </span>
             <div className={`${CN}__title-wrapper icons`}>
-              <i className="eye icon" />
+              <QuickView product={{ id: 10 }} />
               <div>{renderButton()}</div>
             </div>
           </>

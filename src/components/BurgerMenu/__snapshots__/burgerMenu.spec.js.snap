@@ -27,7 +27,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="not_found"
+          to="woman"
         >
           woman
         </Link>
@@ -38,7 +38,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="not_found"
+          to="man"
         >
           man
         </Link>
@@ -49,7 +49,7 @@ exports[`<BurgerMenu /> should match snapshot 1`] = `
       >
         <Link
           className="burger-menu__link"
-          to="not_found"
+          to="kids"
         >
           kids
         </Link>

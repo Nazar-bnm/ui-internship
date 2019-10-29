@@ -1,0 +1,115 @@
+@import "../../scss/global_styles";
+
+.quick-view {
+  max-height: 60vh;
+  max-width: 80vw;
+  padding: 1rem 3.5rem 1.5rem;
+
+  .heading {
+    &__wrapper {
+      margin-bottom: 1rem;
+      height: 2rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-evenly;
+    height: 90%;
+
+    .product-order {
+      display: block;
+      width: 100%;
+    }
+
+    .product-image {
+      height: 100%;
+
+      &__container {
+        flex-wrap: nowrap;
+        margin-top: 8px;
+        max-width: 40%;
+        padding-right: 1rem;
+      }
+
+      &__big-image-container {
+        width: fit-content;
+        max-height: 70%;
+      }
+
+      &__small-images-container {
+        max-height: 30%;
+      }
+
+      &__small-image {
+        height: 100%;
+      }
+    }
+
+    &__wrapper {
+      height: 100%;
+    }
+
+    .product-order {
+      &__heading {
+        font-size: 1.5rem;
+        margin-top: 0;
+      }
+
+      &__dropdowns-wrapper {
+        height: 7rem;
+      }
+
+      .dropdown {
+        height: 2rem;
+      }
+    }
+
+    &__link {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 8px;
+      margin-left: auto;
+      color: $orange;
+
+      &:active,
+      &:hover {
+        color: $dove-gray;
+      }
+    }
+
+    .button {
+      cursor: pointer;
+      width: 120px;
+      color: $white;
+      background-color: $black;
+
+      &:hover {
+        color: $black;
+        background-color: $white;
+      }
+    }
+  }
+}
+
+@include media-for(tablet) {
+  .quick-view {
+    &-content {
+      display: flex;
+      height: 90%;
+
+      .heading__title {
+        font-size: 5rem;
+      }
+
+      .product-order__heading {
+        font-size: 1rem;
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -28,9 +28,9 @@ export const options = {
 };
 
 export const burgerMenuItemsList = [
-  { itemName: 'woman', url: '404' },
-  { itemName: 'man', url: '404' },
-  { itemName: 'kids', url: '404' },
+  { itemName: 'woman', url: 'woman' },
+  { itemName: 'man', url: 'man' },
+  { itemName: 'kids', url: 'kids' },
   { itemName: 'accessories', url: '404' },
   { itemName: 'what\'s new', url: '404' },
   { itemName: 'brands', url: '404' },

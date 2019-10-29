@@ -5,12 +5,14 @@
   position: relative;
   padding: 5px;
   font-family: font(primary-light);
+  font-size: 0.7rem;
   color: $silver-chalice;
 
   &__items, &[aria-expanded=true] &__items {
     display: none;
     background-color: bg-color(secondary);
     list-style: none;
+    z-index: 3;
 
     &__element {
       border: none;

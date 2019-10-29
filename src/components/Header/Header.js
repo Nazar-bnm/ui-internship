@@ -30,7 +30,7 @@ const Header = ({ userCart }) => (
         <Link to="/404">
           <div className={`${CN}__cart-btn`}>
             <i className="icon cart" />
-            <p>{`Cart ${userCart.length}`}</p>
+            <p className={`${CN}__cart-name`}>{`Cart ${userCart.length}`}</p>
           </div>
         </Link>
       </div>

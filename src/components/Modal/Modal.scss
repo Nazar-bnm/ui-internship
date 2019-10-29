@@ -5,8 +5,9 @@
   position: fixed;
   z-index: 100;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  left: 0;
+  bottom: 0;
   background-color: rgba($color: $black, $alpha: 0.5);
   outline: none;
 
@@ -41,7 +42,7 @@
 
     &:hover {
       border-color: $dove-gray;
-  
+
       i.icon {
         color: $dove-gray;
       }
@@ -49,7 +50,7 @@
   }
 
   i.icon {
-    margin: 0.5rem;
+    margin: 0;
     font-size: 0.8rem;
     cursor: pointer;
     color: $silver-chalice;
@@ -68,4 +69,3 @@
 .remove-scroll {
   overflow: hidden;
 }
-

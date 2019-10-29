@@ -30,15 +30,15 @@ exports[`<Header /> should match snapshot 1`] = `
           Array [
             Object {
               "itemName": "woman",
-              "url": "404",
+              "url": "woman",
             },
             Object {
               "itemName": "man",
-              "url": "404",
+              "url": "man",
             },
             Object {
               "itemName": "kids",
-              "url": "404",
+              "url": "kids",
             },
             Object {
               "itemName": "accessories",
@@ -79,7 +79,9 @@ exports[`<Header /> should match snapshot 1`] = `
           <i
             className="icon cart"
           />
-          <p>
+          <p
+            className="header__cart-name"
+          >
             Cart 0
           </p>
         </div>

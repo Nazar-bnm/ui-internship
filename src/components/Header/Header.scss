@@ -1,120 +1,105 @@
 @import '../../scss/global_styles';
-
 .header {
   font-size: 1rem;
   text-transform: uppercase;
-
   i.icon {
     color: $black;
   }
-
   i.icon.caret.down:before, i.icon.caret.up:before {
     color: $white;
   }
-
   .header__cart-btn i.icon.cart:before {
     font-size: 1rem;
   }
-
   &__search-input, &__cart-btn {
     font-size: 1rem;
   }  
-
   &__title {
     margin: 20px 10px;
     font-weight: normal;
     font-family: font(secondary);
   }
-
   &__title-wrapper {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
   }
-
   .content {
     align-items: center;
     justify-content: space-between;
   }
-
   .container {
     @include flex($direction: row);
   }
-
   .wrapper {
     background-color: $black;
     padding-bottom: 5px;
   }
-
   .heading {
     color: $white;
     margin: 0 10px;
     font-size: 0.7rem;
     text-align: center;
   }
-
   .page-settings {
     font-size: 1rem;
   }
-
   .navigation-account {
     @include flex($justify: space-between);
     margin: 0;
     width: 250px;
+    font-size: 0.7rem;
 
     & a {
       font-family: font(primary-light);
       color: $silver-chalice;
       text-decoration: none;
-
       &:hover {
         color: $white;
         text-decoration: underline;
       }
     }
   }
-
   .dropdowns {
     padding: 0;
     margin: 0;
   }
-
   .dropdown > i {
     margin: 0 3px;
     height: auto;
     font-size: 1rem;  
   }
-
   .list, 
   .dropdown:first-child, 
   .heading, 
   .navigation-account {
     display: none;
   }
-
-  &__cart-btn {
-    @include flex($align: center);
-    position: absolute;
-    top: 8px;
-    right: 20px;
-    color: $white;
-    background-color: transparent;
-    border-color: transparent;
-    font-size: 0.7rem;
-
-    &:hover {
-      transform: scale(1.1);
+  &__cart {
+    &-name {
+      color: $silver-chalice;
     }
-
-    i.icon.cart:before {
-      margin-left: -10px;
-      font-size: 1.3rem;
+    &-btn {
+      @include flex($align: center);
+      position: absolute;
+      top: 8px;
+      right: 20px;
+      color: $white;
+      background-color: transparent;
+      border-color: transparent;
+      font-size: 0.8rem;
+      &:hover {
+        transform: scale(1.1);
+      }
+      i.icon.cart:before {
+        margin-left: -10px;
+        font-size: 1.3rem;
+        color: $white;
+      }
     }
   }
-
   &__heading-search-cart-container {
     @include flex($direction: column, $align: center, $justify: space-between, $wrap: nowrap);
-
     & a {
       text-decoration: none;
       width: 100%;
@@ -124,11 +109,9 @@
       color: $black;
     }
   }
-
   .burger-menu__list a {
     font-size: 0.8rem;
   }
-
   &__search-input {
     height: 20px;
     width: 65vw;
@@ -137,7 +120,6 @@
     border: none;
     font-size: 1rem;
   }
-
   .input {
     position: relative;
     border-right: 1px solid $silver-chalice;
@@ -149,61 +131,60 @@
       font-size: 1.2rem;
     }
   }
-
   &__buttons-container {
     @include flex($justify: space-evenly, $wrap: nowrap);
     height: 30px;
     padding-bottom: 10px;
     font-size: 0.7rem;
-
     .button {
       text-transform: uppercase;
     }
   }
 }
-
 @media only screen and (min-width: 480px) {
   .header {
     &__heading-search-cart-container {
       @include flex($direction: column, $wrap: nowrap);
     }
-
     &__search-input, &__cart-btn {
       font-size: 0.7rem;
     }  
-
     &__search-input {
       width: 55vw;
     }
-
-    &__cart-btn {
-      position: relative;
-      top: 0;
-      right: 0;
-      margin: 0 0px 0 20px;
-      width: 90px;
-      border: none;
-      color: $black;
+    &__cart {
+      &-name {
+        color: $black;
+      }
+  
+      &-btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0 0px 0 20px;
+        width: 90px;
+        border: none;
+        color: $black;
+        i.icon.cart:before {
+          color: $black;
+        }
+      }
     }
   }
 }
-
 @media only screen and (min-width: 768px) {
   .header {
     &__search-input {
       width: 90px;
     }
-
     &__buttons-container {
       align-items: center;
       height: 40px;
       padding: 0;
     }
-
     &__heading-search-cart-container {
       @include flex($direction: row, $wrap: nowrap);
     }
-
     .list {
       @include flex($justify: center, $align: center);
       padding: 15px;
@@ -212,7 +193,6 @@
   
       .list__item {
         margin: 0 10px;
-
         &:hover{
           transform: scale(1.2);
         }
@@ -221,27 +201,22 @@
           color: $black;
           text-decoration: none;
         }
-
         &:hover {
           text-decoration: underline;
         }
       }
     }
-
     .dropdown:first-child, .heading, .list,.navigation-account {
       @include flex;
     }
-
     .page-settings {
       font-size: 0.6rem;
     }
   }
-
   .burger-menu {
     display: none;
   }
 }
-
 @media only screen and (min-width: 810px) {
   .header {
     .page-settings {
