@@ -7,9 +7,9 @@ const CheckBoxList = (props) => {
   const {
     itemsList, category, checkCheckbox
   } = props;
-  const renderCheckboxes = itemsList.map(({ item }, idx) => (
+  const renderCheckboxes = itemsList.map(({ item }) => (
     <CheckBox
-      key={idx}
+      key={item}
       itemName={item}
       category={category}
       checkCheckbox={checkCheckbox}

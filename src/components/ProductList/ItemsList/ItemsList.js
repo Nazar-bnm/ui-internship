@@ -103,14 +103,14 @@ class ItemsList extends React.Component {
   }
 }
 
-const FiltersShape = PropTypes.shape({
-  bottoms: PropTypes.array,
-  tops: PropTypes.array,
-  sizes: PropTypes.array,
-  price: PropTypes.array,
-  colors: PropTypes.array,
-  brands: PropTypes.array
-});
+// const FiltersShape = PropTypes.shape({
+//   bottoms: PropTypes.array,
+//   tops: PropTypes.array,
+//   sizes: PropTypes.array,
+//   price: PropTypes.array,
+//   colors: PropTypes.array,
+//   brands: PropTypes.array
+// });
 
 ItemsList.propTypes = {
   ascendingOrder: PropTypes.bool,
@@ -118,8 +118,8 @@ ItemsList.propTypes = {
   itemList: PropTypes.array,
   itemsOnPage: PropTypes.number,
   onGetProductsError: PropTypes.func,
-  onGetProductsSuccess: PropTypes.func,
-  filters: FiltersShape
+  onGetProductsSuccess: PropTypes.func
+  // filters: FiltersShape
 };
 
 ItemsList.defaultProps = {
@@ -129,6 +129,7 @@ ItemsList.defaultProps = {
   itemsOnPage: 6,
   onGetProductsError: null,
   onGetProductsSuccess: null
+  // filters: {}
 };
 
 export default ItemsList;

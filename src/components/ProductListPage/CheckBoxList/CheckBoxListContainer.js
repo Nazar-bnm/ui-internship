@@ -10,7 +10,7 @@ const mapStateToProps = ({ reducerFilter }) => ({
   sizes: reducerFilter.sizes,
   price: reducerFilter.price,
   colors: reducerFilter.colors,
-  brands: reducerFilter.brands,
+  brands: reducerFilter.brands
 });
 
 const mapDispatchToProps = (dispatch) => ({

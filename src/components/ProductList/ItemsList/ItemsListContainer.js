@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
   itemList: state.reducerProductList.itemList,
   orderType: state.reducerProductList.orderType,
   wishlist: state.reducerWishlist.wishlist,
-  filters: state.reducerFilter,
+  filters: state.reducerFilter
 });
 const mapDispatchToProps = (dispatch) => ({
   onGetProductsSuccess: bindActionCreators(getProductsSuccess, dispatch),
