@@ -1,3 +1,4 @@
+// @ts-check
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -27,8 +28,10 @@ class Modal extends Component {
   }
 
   componentWillUnmount() {
+    const { removeModal } = this.props;
+
     document.body.classList.remove('remove-scroll');
-    this.modalRef.current.removeEventListener('transitionEnd', this.removeModal);
+    this.modalRef.current.removeEventListener('transitionEnd', removeModal);
   }
 
   setTransition = () => {
@@ -65,7 +68,7 @@ class Modal extends Component {
 
     return (
       <div
-        tabIndex="-1"
+        tabIndex={-1}
         ref={this.modalRef}
         className={cx(CN, { [`${CN}--transition`]: isTransition })}
         onClick={this.hideModalOnBackdrop}
@@ -79,8 +82,7 @@ class Modal extends Component {
           <span
             className={`${CN}__close-button`}
             role="button"
-            label="closer"
-            tabIndex="0"
+            tabIndex={0}
             onClick={this.setTransition}
           >
             <i className={cx('close', 'icon')} />
