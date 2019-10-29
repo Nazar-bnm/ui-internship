@@ -25,9 +25,9 @@ const ProductOrder = (props) => {
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
       <div className={`${CN}__dropdowns-wrapper`}>
-        <Dropdown options={sizes} />
-        <Dropdown options={colors} />
-        <Dropdown options={quantity} />
+        <Dropdown menuOptions={sizes} placeholder="size:" />
+        <Dropdown menuOptions={colors} placeholder="color:" />
+        <Dropdown menuOptions={quantity} placeholder="qty:" />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
         <Link to="/not_found">

@@ -6,12 +6,26 @@ import {
   GET_PRODUCTS_ERROR
 } from '../constants/actionTypes';
 
+const mobileScreen = 480;
+const tabletScreen = 768;
+const onTablet = 3;
+const onMobile = 4;
+let numberOfItemsToRender = 6;
+
+if (window.innerWidth <= mobileScreen) {
+  numberOfItemsToRender = onMobile;
+} else if (window.innerWidth <= tabletScreen) {
+  numberOfItemsToRender = onTablet;
+}
+
 const initialState = {
   ascendingOrder: true,
   orderType: 'Position',
-  chosenItemsOnPage: 6,
+  chosenItemsOnPage: numberOfItemsToRender,
   itemList: [],
-  error: null
+  error: null,
+  dropdownSortingSelectedID: 0,
+  dropdownItemsNumberSelectedID: 0
 };
 
 export default function reducerProductList(state = initialState, action) {
