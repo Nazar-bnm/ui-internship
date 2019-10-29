@@ -1,7 +1,13 @@
+// Counter
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+// Wish list
 export const ADD_TO_WISHLIST = 'ADD_TO_WISHLIST';
 export const REMOVE_FROM_WISHLIST = 'REMOVE_FROM_WISHLIST';
+// Filters
+export const CHECK_CHECKBOX = 'CHECK_CHECKBOX';
+export const RESET_FILTERS = 'RESET_FILTERS';
+// Products pagination
 export const FETCH_PRODUCTS_PENDING = 'FETCH_PRODUCTS_PENDING';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR';

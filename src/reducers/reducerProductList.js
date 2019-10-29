@@ -6,12 +6,16 @@ import {
   GET_PRODUCTS_ERROR
 } from '../constants/actionTypes';
 
+const mobileScreen = 480;
+const tabletScreen = 768;
+const onTablet = 3;
+const onMobile = 4;
 let numberOfItemsToRender = 6;
 
-if (window.innerWidth <= 480) {
-  numberOfItemsToRender = 4;
-} else if (window.innerWidth <= 768) {
-  numberOfItemsToRender = 3;
+if (window.innerWidth <= mobileScreen) {
+  numberOfItemsToRender = onMobile;
+} else if (window.innerWidth <= tabletScreen) {
+  numberOfItemsToRender = onTablet;
 }
 
 const initialState = {
