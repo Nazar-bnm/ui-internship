@@ -24,7 +24,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
   >
     <Dropdown
       className=""
-      options={
+      menuOptions={
         Array [
           Object {
             "label": "size:",
@@ -48,12 +48,12 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
-      placeholder=""
+      placeholder="size:"
       value=""
     />
     <Dropdown
       className=""
-      options={
+      menuOptions={
         Array [
           Object {
             "label": "color:",
@@ -73,12 +73,12 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
-      placeholder=""
+      placeholder="color:"
       value=""
     />
     <Dropdown
       className=""
-      options={
+      menuOptions={
         Array [
           Object {
             "label": "qty:",
@@ -126,7 +126,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
-      placeholder=""
+      placeholder="qty:"
       value=""
     />
   </div>

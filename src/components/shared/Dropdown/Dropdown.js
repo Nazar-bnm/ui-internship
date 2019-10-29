@@ -36,7 +36,7 @@ export default class Dropdown extends Component {
     const { onDropdownChange } = this.props;
 
     this.setState({ selectedItem });
-    onDropdownChange(selectedItem);
+    onDropdownChange && onDropdownChange(selectedItem);
   }
 
   renderLabel() {
