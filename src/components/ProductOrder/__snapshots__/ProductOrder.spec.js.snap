@@ -48,6 +48,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
       placeholder="size:"
       value=""
     />
@@ -73,6 +74,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
       placeholder="color:"
       value=""
     />
@@ -126,6 +128,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
       placeholder="qty:"
       value=""
     />
@@ -138,7 +141,8 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     >
       <Button
         className="product-order__cart-btn"
-        icon={null}
+        icon=""
+        onClick={[Function]}
       >
         add to cart
       </Button>
@@ -150,6 +154,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
         className=""
         customClass="product-order__wishlist-btn"
         icon="heart"
+        onClick={[Function]}
       >
         wishlist
       </Button>

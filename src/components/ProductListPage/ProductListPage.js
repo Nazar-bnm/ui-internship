@@ -13,28 +13,13 @@ import './ProductListPage.scss';
 export const CN = 'productListPage';
 
 class ProductListPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      resetCheckboxes: false
-    };
-  }
-
   componentWillUnmount() {
-    const { resetState } = this.props;
-
-    resetState && resetState();
+    const { resetFilterState } = this.props;
+    resetFilterState && resetFilterState();
   }
-
-  resetFilters = (resetFunc) => {
-    this.setState({ resetCheckboxes: true });
-    resetFunc();
-  };
 
   render() {
-    const { match: { params: { category } }, resetState } = this.props;
-    const { resetCheckboxes } = this.state;
+    const { match: { params: { category } }, resetFilterState } = this.props;
 
     return (
       <div className={cx(CN, 'content')}>
@@ -44,8 +29,8 @@ class ProductListPage extends Component {
         </div>
         <div className={`${CN}__gridWrapper`}>
           <section className={`${CN}__filters`}>
-            <Button onClickFunction={() => this.resetFilters(resetState)}>Reset Filters</Button>
-            <Filter category={category} resetCheckboxes={resetCheckboxes} />
+            <Button onClick={resetFilterState}>Reset Filters</Button>
+            <Filter category={category} />
             <div
               className={`${cx(CN)}__brandAdvert`}
               style={{

@@ -126,7 +126,7 @@ const ProductItem = ({
 };
 
 const ItemShape = PropTypes.shape({
-  _id: PropTypes.number,
+  _id: PropTypes.string,
   images: PropTypes.array,
   label: PropTypes.string,
   title: PropTypes.string,

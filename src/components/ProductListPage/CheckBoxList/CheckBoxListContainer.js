@@ -11,7 +11,6 @@ const mapStateToProps = ({ reducerFilter }) => ({
   price: reducerFilter.price,
   colors: reducerFilter.colors,
   brands: reducerFilter.brands,
-  isReseted: reducerFilter.isReseted
 });
 
 const mapDispatchToProps = (dispatch) => ({

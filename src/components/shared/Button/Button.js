@@ -26,7 +26,7 @@ const Button = (props) => {
 Button.propTypes = {
   icon: PropTypes.string,
   className: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -34,9 +34,10 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  icon: null,
+  icon: '',
   className: '',
-  children: []
+  children: [],
+  onClick: () => {}
 };
 
 export default Button;

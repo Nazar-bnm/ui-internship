@@ -38,7 +38,7 @@ class ItemsList extends React.Component {
 
   getItems() {
     const {
-      itemsOnPage, ascendingOrder, orderType, itemList, error, addToWishList, removeFromWishList
+      itemsOnPage, ascendingOrder, orderType, itemList, error, wishlist, addToWishList, removeFromWishList
     } = this.props;
 
     if (error) {
@@ -71,6 +71,7 @@ class ItemsList extends React.Component {
       <ProductItem
         key={el.title}
         item={el}
+        wishlist={wishlist}
         addToWishList={addToWishList}
         removeFromWishList={removeFromWishList}
       />
@@ -102,13 +103,23 @@ class ItemsList extends React.Component {
   }
 }
 
+const FiltersShape = PropTypes.shape({
+  bottoms: PropTypes.array,
+  tops: PropTypes.array,
+  sizes: PropTypes.array,
+  price: PropTypes.array,
+  colors: PropTypes.array,
+  brands: PropTypes.array
+});
+
 ItemsList.propTypes = {
   ascendingOrder: PropTypes.bool,
   categoryName: PropTypes.string,
   itemList: PropTypes.array,
   itemsOnPage: PropTypes.number,
   onGetProductsError: PropTypes.func,
-  onGetProductsSuccess: PropTypes.func
+  onGetProductsSuccess: PropTypes.func,
+  filters: FiltersShape
 };
 
 ItemsList.defaultProps = {

@@ -10,7 +10,9 @@ const mapStateToProps = (state) => ({
   error: state.reducerProductList.error,
   itemsOnPage: Number(state.reducerProductList.chosenItemsOnPage),
   itemList: state.reducerProductList.itemList,
-  orderType: state.reducerProductList.orderType
+  orderType: state.reducerProductList.orderType,
+  wishlist: state.reducerWishlist.wishlist,
+  filters: state.reducerFilter,
 });
 const mapDispatchToProps = (dispatch) => ({
   onGetProductsSuccess: bindActionCreators(getProductsSuccess, dispatch),

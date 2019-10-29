@@ -1,3 +1,4 @@
+// @ts-check
 import React from 'react';
 
 import config from '../../../../config';
@@ -6,7 +7,7 @@ import Accordion from '../../Accordion';
 
 import './Filters.scss';
 
-const Filters = ({ category, resetCheckboxes }) => {
+const Filters = ({ category }) => {
   const TABLET_BREAKPOINT = 800;
   const gender = config[category];
   const screenWidth = document.body.clientWidth;
@@ -30,7 +31,6 @@ const Filters = ({ category, resetCheckboxes }) => {
             description: <CheckBoxList
               itemsList={gender[categoryName]}
               category={categoryName}
-              resetCheckboxes={resetCheckboxes}
             />
           }
         ]}

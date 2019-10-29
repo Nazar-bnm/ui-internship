@@ -16,7 +16,7 @@ exports[`<Slide /> should make a snapshot of Slide component 1`] = `
   </p>
   <Button
     className="slide-info__button"
-    icon={null}
+    icon=""
     onClick={[Function]}
   >
     discover the editorial

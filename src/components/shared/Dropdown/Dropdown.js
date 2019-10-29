@@ -109,10 +109,11 @@ Dropdown.propTypes = {
   })).isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  onDropdownChange: PropTypes.func.isRequired
+  onDropdownChange: PropTypes.func
 };
 Dropdown.defaultProps = {
   className: '',
   placeholder: '',
-  value: ''
+  value: '',
+  onDropdownChange: () => {}
 };
