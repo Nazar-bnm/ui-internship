@@ -10,6 +10,10 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
+import Notifications from '../Shared/Notifications';
+
+
+import './DefaultLayout.scss';
 
 const category = 'products';
 
@@ -53,6 +57,7 @@ class DefaultLayout extends Component {
             >
               <>
                 {!hideHeader && <Header />}
+                <Notifications type />
                 <Page {...matchProps} />
                 {!hideBrands && <Brands />}
                 {!hideShippingInfo && <ShippingInfo />}

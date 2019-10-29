@@ -35,6 +35,8 @@ const CartItem = (props) => {
     removeItemFromCart(userCartNew);
   };
 
+  const handleQuantity = () => ((quantity === 1) ? onRemoveFromCart : () => changeAmount(dec));
+
   const renderProductDescription = () => (
     <div className={`${CN}__description`}>
       <img className="col-3" src={image} alt={title} />
@@ -54,7 +56,7 @@ const CartItem = (props) => {
         <button
           className={`${CN}__button`}
           type="button"
-          onClick={() => onRemoveFromCart()}
+          onClick={onRemoveFromCart}
         >
           <i className="icon close small" />
         </button>
@@ -68,7 +70,7 @@ const CartItem = (props) => {
       <button
         className={`${CN}__button`}
         type="button"
-        onClick={(quantity === 1) ? () => onRemoveFromCart() : () => changeAmount(dec)}
+        onClick={handleQuantity()}
       >
         <i className="small minus icon" />
       </button>

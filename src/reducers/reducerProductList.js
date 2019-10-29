@@ -23,7 +23,9 @@ const initialState = {
   orderType: 'Position',
   chosenItemsOnPage: numberOfItemsToRender,
   itemList: [],
-  error: null
+  error: null,
+  dropdownSortingSelectedID: 0,
+  dropdownItemsNumberSelectedID: 0
 };
 
 export default function reducerProductList(state = initialState, action) {
