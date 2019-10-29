@@ -97,50 +97,22 @@ export default class Dropdown extends Component {
   }
 }
 Dropdown.propTypes = {
-  /**
-  * className - component's class name.
-  */
   className: PropTypes.string,
-  /**
-  * menuOptions - the array of dropdown options.
-  */
-  // menuOptions: PropTypes.arrayOf(PropTypes.shape({
-  //   label: PropTypes.oneOfType([
-  //     PropTypes.string,
-  //     PropTypes.node
-  //   ]).isRequired,
-  //   value: PropTypes.string.isRequired,
-  //   selected: PropTypes.bool,
-  //   disabled: PropTypes.bool
-  // })).isRequired,
-  /**
-  * placeholder - the placeholder of the dropdown
-  */
+  menuOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node
+    ]).isRequired,
+    value: PropTypes.string.isRequired,
+    selected: PropTypes.bool,
+    disabled: PropTypes.bool
+  })).isRequired,
   placeholder: PropTypes.string,
-  /**
-  * The value of the dropdown.
-  * A default value can be provided which corresponds to the value of an included pal-dropdown-item.
-  */
-  value: PropTypes.string
-  /**
-  * disabled - indicator if dropdown is disabled or not
-  */
-  // disabled: PropTypes.bool,
-  /**
-  * opened - indicator whether the dropdown is opened or closed.
-  * Can be used to open dropdown by default.
-  */
-  // opened: PropTypes.bool
-  /**
-  * onDropdownChange - emitted when a dropdown option has been selected.
-  * event.detail will contain the selected value
-  */
-  // onDropdownChange: PropTypes.func.isRequired
+  value: PropTypes.string,
+  onDropdownChange: PropTypes.func.isRequired
 };
 Dropdown.defaultProps = {
   className: '',
   placeholder: '',
   value: ''
-  // disabled: false,
-  // opened: false
 };
