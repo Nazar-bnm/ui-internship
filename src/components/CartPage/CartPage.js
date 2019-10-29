@@ -12,7 +12,7 @@ const CN = 'cart-page';
 
 const CartPage = (props) => {
   const {
-    className, changeQuantity, removeItemFromCart, userCart
+    className, changeQuantity, removeItemFromCart, userCart, showMessage
   } = props;
   const { cartTableHeadings } = config;
   const products = [
@@ -53,6 +53,7 @@ const CartPage = (props) => {
       changeQuantity={changeQuantity}
       userCart={userCart}
       removeItemFromCart={removeItemFromCart}
+      showMessage={showMessage}
     />
   );
 

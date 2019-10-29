@@ -17,6 +17,10 @@
   cursor: pointer;
   line-height: 1.2em;
 
+  &__title {
+    text-transform: uppercase;
+  }
+
   &.change {
     background-color: #444;
   }
