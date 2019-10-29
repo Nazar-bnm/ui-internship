@@ -42,8 +42,8 @@ class ProductListPage extends Component {
           <div>Home</div>
           <div>&#10094; Return to previous page</div>
         </div>
-        <div className={`${cx(CN)}__gridWrapper`}>
-          <div className={`${CN}__filter`}>
+        <div className={`${CN}__gridWrapper`}>
+          <section className={`${CN}__filters`}>
             <Button onClickFunction={() => this.resetFilters(resetState)}>Reset Filters</Button>
             <Filter category={category} resetCheckboxes={resetCheckboxes} />
             <div
@@ -57,17 +57,17 @@ class ProductListPage extends Component {
                 <div className={`${cx(CN)}__brandAdvert-collection`}>autumn collection</div>
               </div>
             </div>
-          </div>
-          <div className={`${CN}__poster`}>
-            <div className={`${CN}__heading`}>
-              <Heading title={category} />
-              <span className={`${CN}__heading-itemsLeft`}>557 items</span>
+          </section>
+          <section className={`${CN}__productList`}>
+            <div className={`${CN}__poster`}>
+              <div className={`${CN}__heading`}>
+                <Heading title={category} />
+                <span className={`${CN}__heading-itemsLeft`}>557 items</span>
+              </div>
+              <CollectionPoster category={category} />
             </div>
-            <CollectionPoster category={category} />
-          </div>
-          <div className={`${CN}__productList`}>
             <ProductList categoryName={category} />
-          </div>
+          </section>
         </div>
       </div>
     );

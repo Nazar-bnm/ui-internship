@@ -35,23 +35,24 @@
     width: 100%;
     height: 100%;
     grid-gap: 30px;
-    grid-template-areas: "filters poster"
-    "filters items"
-    "filters items";
+    grid-template-areas: "filters items";
     grid-template-columns: 247px 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 
-  &__filter {
+  &__filters {
     grid-area: filters;
   }
 
-  &__poster {
-    grid-area: poster;
-  }
 
   &__productList {
     grid-area: items;
+  }
+
+  &__poster {
+    display: block;
+    height: auto;
+    min-height: 600px;
   }
 
   &__brandAdvert {
@@ -108,16 +109,8 @@
       flex-direction: column;
     }
 
-    &__filter {
-      order: 2;
-    }
-
-    &__poster {
-      order: 1;
-    }
-
     &__productList {
-      order: 3
+      order: 2;
     }
 
     &__brandAdvert {
