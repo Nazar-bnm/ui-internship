@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import HttpService from '../../service/HttpService/httpService';
 import ItemInfo from './ItemInfo';
+import Heading from '../Heading';
 
 import './WhatIsNew.scss';
 
@@ -37,9 +38,9 @@ class WhatIsNew extends Component {
     ));
 
     return (
-      <div className="content">
-        <h3 className="title">whats new</h3>
-        <div className="container">
+      <div className="content whatIsNew">
+        <Heading className="whatIsNew__title" title="What is new?" position="center" />
+        <div className="container whatIsNew__wrapper">
           {block}
         </div>
       </div>

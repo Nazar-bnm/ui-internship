@@ -1,54 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import HttpService from '../../service/HttpService/httpService';
 import ProductItem from './ProductItem/ProductItem';
+import Carousel from '../Carousel';
 
 import './MostPopular.scss';
 
-const urlBase = 'http://localhost:4000/most-popular';
+const MostPopular = (props) => {
+  const {
+    products, addToWishlist, removeFromWishlist, wishlist
+  } = props;
 
-class MostPopular extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      products: []
-    };
-  }
+  const prodList = products.map((product) => (
+    <ProductItem
+      key={product.id}
+      item={product}
+      products={products}
+      addToWishlist={addToWishlist}
+      removeFromWishlist={removeFromWishlist}
+      wishlist={wishlist}
+    />
+  ));
 
-  componentDidMount() {
-    this.getProducts();
-  }
+  return prodList.length
+      && (
+        <Carousel items={products}>
+          {prodList}
+        </Carousel>
+      );
+};
 
-  async getProducts() {
-    const userApi = new HttpService();
-    try {
-      const response = await userApi.get(urlBase);
-      if (response && response.data) {
-        this.setState({ products: response.data });
-      }
-    } catch (error) {
-      throw (new Error());
-    }
-  }
-
-  renderProducts() {
-    const { products } = this.state;
-
-    return products.map((product) => (
-      <ProductItem key={product.id} product={product} />
-    ));
-  }
-
-  render() {
-    return (
-      <div className="wrapper">
-        <h1 className="wrapper__title">Most Popular</h1>
-        <div className="wrapper__container">
-          {this.renderProducts()}
-        </div>
-      </div>
-    );
-  }
-}
+MostPopular.propTypes = {
+  addToWishlist: PropTypes.func.isRequired,
+  removeFromWishlist: PropTypes.func.isRequired,
+  wishlist: PropTypes.array.isRequired,
+  products: PropTypes.array.isRequired
+};
 
 export default MostPopular;

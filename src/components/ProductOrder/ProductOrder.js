@@ -16,7 +16,8 @@ const ProductOrder = (props) => {
     price,
     sizes,
     colors,
-    quantity
+    quantity,
+    handleClick
   } = props;
 
   return (
@@ -31,7 +32,7 @@ const ProductOrder = (props) => {
       </div>
       <div className={`${CN}__buttons-wrapper`}>
         <Link to="/not_found">
-          <Button customClass={`${CN}__cart-btn`}>add to cart</Button>
+          <Button onClick={handleClick()} className={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
         <Link to="/not_found">
           <Button
@@ -52,7 +53,8 @@ ProductOrder.propTypes = {
   price: PropTypes.string,
   quantity: PropTypes.array,
   sizes: PropTypes.array,
-  colors: PropTypes.array
+  colors: PropTypes.array,
+  handleClick: PropTypes.func
 };
 
 ProductOrder.defaultProps = {
@@ -61,7 +63,8 @@ ProductOrder.defaultProps = {
   price: '',
   quantity: [],
   sizes: [],
-  colors: []
+  colors: [],
+  handleClick: () => {}
 };
 
 export default ProductOrder;
