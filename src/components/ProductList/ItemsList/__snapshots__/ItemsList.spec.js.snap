@@ -3,7 +3,7 @@
 exports[`<ItemsList /> should match snapshot 1`] = `
 <ItemsList
   ascendingOrder={true}
-  categoryName="product-list"
+  categoryName="products"
   itemList={
     Array [
       Object {
@@ -46,8 +46,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
     className="items-container"
   >
     <ProductItem
-      key="Awesome dress"
-      product={
+      item={
         Object {
           "category": "women",
           "collection": "spring collection 2016",
@@ -59,6 +58,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "title": "Awesome dress",
         }
       }
+      key="Awesome dress"
       wishlist={Array []}
     >
       <div
@@ -100,8 +100,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
       </div>
     </ProductItem>
     <ProductItem
-      key="Beautiful dress"
-      product={
+      item={
         Object {
           "category": "women",
           "collection": "spring collection 2016",
@@ -113,6 +112,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "title": "Beautiful dress",
         }
       }
+      key="Beautiful dress"
       wishlist={Array []}
     >
       <div
@@ -154,8 +154,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
       </div>
     </ProductItem>
     <ProductItem
-      key="Amazing dress"
-      product={
+      item={
         Object {
           "category": "women",
           "collection": "spring collection 2016",
@@ -167,6 +166,7 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "title": "Amazing dress",
         }
       }
+      key="Amazing dress"
       wishlist={Array []}
     >
       <div

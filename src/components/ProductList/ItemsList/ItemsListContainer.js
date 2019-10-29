@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 
 import ItemsList from './ItemsList';
 import { getProductsSuccess, getProductsError } from '../../../actions/actionsProductList';
+import { addToWishlist, removeFromWishlist } from '../../../actions/actionsWishlist';
 
 const mapStateToProps = (state) => ({
   ascendingOrder: state.reducerProductList.ascendingOrder,
@@ -13,7 +14,9 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   onGetProductsSuccess: bindActionCreators(getProductsSuccess, dispatch),
-  onGetProductsError: bindActionCreators(getProductsError, dispatch)
+  onGetProductsError: bindActionCreators(getProductsError, dispatch),
+  addToWishlist: bindActionCreators(addToWishlist, dispatch),
+  removeFromWishlist: bindActionCreators(removeFromWishlist, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemsList);

@@ -7,7 +7,7 @@ exports[`<ProductList /> should match snapshot 1`] = `
   <div
     className="product-list__filter-wrapper"
   >
-    <Connect(ProductListNavigation)
+    <React.Memo
       changeItemsNumberSelectedID={[Function]}
       changeSortingSelectedID={[Function]}
       dropdownItemsNumberSelectedID=""
@@ -17,12 +17,12 @@ exports[`<ProductList /> should match snapshot 1`] = `
   <div
     className="product-list__items-list-container"
   >
-    <Connect(ItemsList) />
+    <React.Memo />
   </div>
   <div
     className="product-list__filter-wrapper"
   >
-    <Connect(ProductListNavigation)
+    <React.Memo
       changeItemsNumberSelectedID={[Function]}
       changeSortingSelectedID={[Function]}
       dropdownItemsNumberSelectedID=""
