@@ -26,7 +26,7 @@ class ItemsList extends React.Component {
     const { onGetProductsSuccess, onGetProductsError, categoryName } = this.props;
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL}/${categoryName}`);
+      const response = await userAPI.get(`${process.env.BASE_URL1}/${categoryName}`);
       if (response.status === 404) {
         throw Error(response.statusText);
       }
@@ -38,7 +38,7 @@ class ItemsList extends React.Component {
 
   getItems() {
     const {
-      itemsOnPage, ascendingOrder, orderType, itemList, error
+      itemsOnPage, ascendingOrder, orderType, itemList, error, addToWishList, removeFromWishList
     } = this.props;
 
     if (error) {
@@ -68,7 +68,12 @@ class ItemsList extends React.Component {
     }
 
     return itemsToRender.slice(0, itemsOnPage).map((el) => (
-      <ProductItem product={el} key={el.title} />
+      <ProductItem
+        key={el.title}
+        item={el}
+        addToWishList={addToWishList}
+        removeFromWishList={removeFromWishList}
+      />
     ));
   }
 
@@ -108,7 +113,7 @@ ItemsList.propTypes = {
 
 ItemsList.defaultProps = {
   ascendingOrder: true,
-  categoryName: 'product-list',
+  categoryName: 'products',
   itemList: mockedProductList,
   itemsOnPage: 6,
   onGetProductsError: null,

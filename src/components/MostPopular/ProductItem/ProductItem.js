@@ -47,8 +47,8 @@ const ProductItem = ({
         <div className={`${CN}__img-wrapper__labels`}>{label}</div>
 
         <img
-          className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
           alt="product"
+          className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
           src={image}
         />
       </div>
@@ -88,15 +88,17 @@ const ProductItem = ({
   );
 };
 
+const ItemShape = PropTypes.shape({
+  id: PropTypes.number,
+  image: PropTypes.string,
+  label: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  sizes: PropTypes.array
+});
+
 ProductItem.propTypes = {
-  item: PropTypes.shape({
-    id: PropTypes.number,
-    image: PropTypes.string,
-    label: PropTypes.string,
-    title: PropTypes.string,
-    price: PropTypes.string,
-    sizes: PropTypes.string
-  }).isRequired,
+  item: ItemShape.isRequired,
   wishlist: PropTypes.array,
   addToWishlist: PropTypes.func.isRequired,
   removeFromWishlist: PropTypes.func.isRequired

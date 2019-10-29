@@ -66,7 +66,7 @@ class ProductListPage extends Component {
             <CollectionPoster category={category} />
           </div>
           <div className={`${CN}__productList`}>
-            <ProductList />
+            <ProductList categoryName={category} />
           </div>
         </div>
       </div>
