@@ -13,9 +13,8 @@ exports[`<ProductListNavigation /> should match snapshot 1`] = `
       sort by
     </span>
     <Dropdown
-      changeItemsOnPageNum={[MockFunction]}
-      changeOrderType={[MockFunction]}
-      options={
+      className=""
+      menuOptions={
         Array [
           Object {
             "label": "Position",
@@ -31,6 +30,9 @@ exports[`<ProductListNavigation /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
+      placeholder=""
+      value="Position"
     />
     <Button
       className=""
@@ -48,9 +50,8 @@ exports[`<ProductListNavigation /> should match snapshot 1`] = `
       items on page
     </span>
     <Dropdown
-      changeItemsOnPageNum={[MockFunction]}
-      changeOrderType={[MockFunction]}
-      options={
+      className=""
+      menuOptions={
         Array [
           Object {
             "label": "6",
@@ -66,6 +67,9 @@ exports[`<ProductListNavigation /> should match snapshot 1`] = `
           },
         ]
       }
+      onDropdownChange={[Function]}
+      placeholder=""
+      value="6"
     />
   </div>
 </div>

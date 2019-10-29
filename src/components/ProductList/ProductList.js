@@ -7,18 +7,58 @@ import './ProductList.scss';
 
 export const CN = 'product-list';
 
-const ProductList = () => (
-  <div className={`${CN} content`}>
-    <div className={`${CN}__filter-wrapper`}>
-      <ProductListNavigationContainer />
-    </div>
-    <div className={`${CN}__items-list-container`}>
-      <ItemsListContainer />
-    </div>
-    <div className={`${CN}__filter-wrapper`}>
-      <ProductListNavigationContainer />
-    </div>
-  </div>
-);
+class ProductList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dropdownSortingSelectedID: '',
+      dropdownItemsNumberSelectedID: ''
+    };
+  }
+
+  changeSortingSelectedID = (selectedID) => {
+    this.setState({
+      dropdownSortingSelectedID: selectedID
+    });
+  };
+
+  changeItemsNumberSelectedID = (selectedID) => {
+    this.setState({
+      dropdownItemsNumberSelectedID: selectedID
+    });
+  };
+
+  render() {
+    const {
+      dropdownSortingSelectedID,
+      dropdownItemsNumberSelectedID
+    } = this.state;
+
+    return (
+      <div className={`${CN} content`}>
+        <div className={`${CN}__filter-wrapper`}>
+          <ProductListNavigationContainer
+            dropdownSortingSelectedID={dropdownSortingSelectedID}
+            dropdownItemsNumberSelectedID={dropdownItemsNumberSelectedID}
+            changeSortingSelectedID={this.changeSortingSelectedID}
+            changeItemsNumberSelectedID={this.changeItemsNumberSelectedID}
+          />
+        </div>
+        <div className={`${CN}__items-list-container`}>
+          <ItemsListContainer />
+        </div>
+        <div className={`${CN}__filter-wrapper`}>
+          <ProductListNavigationContainer
+            dropdownItemsNumberSelectedID={dropdownItemsNumberSelectedID}
+            dropdownSortingSelectedID={dropdownSortingSelectedID}
+            changeSortingSelectedID={this.changeSortingSelectedID}
+            changeItemsNumberSelectedID={this.changeItemsNumberSelectedID}
+          />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default ProductList;
