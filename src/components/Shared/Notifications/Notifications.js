@@ -10,7 +10,6 @@ class Notifications extends Component {
   constructor(props) {
     super(props);
 
-    this.renderTitle = this.renderTitle.bind(this);
     this.hideMessage = this.hideMessage.bind(this);
   }
 
@@ -19,19 +18,11 @@ class Notifications extends Component {
     isHideNotification();
   }
 
-  renderTitle = () => {
-    const { title } = this.props;
-    const currentTitle = (title ? (
-      <h4 className="title">{title}</h4>
-    ) : null);
-
-    return currentTitle;
-  }
-
   render() {
     const {
       type,
       message,
+      title,
       isShowNotification
     } = this.props;
 
@@ -42,7 +33,7 @@ class Notifications extends Component {
         onClick={this.hideMessage}
       >
         <div onClick={this.onNotificationClick}>
-          {this.renderTitle()}
+          {title && <h4 className="title">{title}</h4>}
           <div className={`${CN}__notification-message-box`} role="alert">
             <div className={`${CN}__message`}>{message}</div>
           </div>
