@@ -88,6 +88,9 @@ export default {
     { number: 2, title: 'money back guarantee', description: 'on all orders' },
     { number: 3, title: 'worldwide delivery', description: 'to over 80 countries' }
   ],
+  cartTableHeadings: [
+    'product', 'price', 'quantity', 'amount'
+  ],
   women: {
     bottoms: [
       { item: 'jeans' },

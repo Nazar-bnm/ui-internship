@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 import PageSettings from './PageSettings';
 import PageNavigation from './PageNavigation';
@@ -13,7 +14,7 @@ import './Header.scss';
 const { burgerMenuItemsList, navConfig } = config;
 export const CN = 'header';
 
-const Header = () => (
+const Header = ({ userCart }) => (
   <header className={cx(CN)}>
     <div
       className="wrapper color-secondary"
@@ -27,10 +28,10 @@ const Header = () => (
       <div className={`${CN}__buttons-container`}>
         <BurgerMenu menuItemsList={burgerMenuItemsList} />
         <Input icon="search" placeholder="SEARCH" className={`${CN}__search-input`}>Search</Input>
-        <Link to="/404">
+        <Link to="/cart">
           <div className={`${CN}__cart-btn`}>
             <i className="icon cart" />
-            <p>Cart(0)</p>
+            <p>{`Cart (${userCart.length})`}</p>
           </div>
         </Link>
       </div>
@@ -38,5 +39,13 @@ const Header = () => (
     <PageNavigation options={navConfig} />
   </header>
 );
+
+Header.propTypes = {
+  userCart: PropTypes.array
+};
+
+Header.defaultProps = {
+  userCart: []
+};
 
 export default Header;

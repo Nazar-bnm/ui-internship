@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import reducerCart from './reducerCart';
 import reducerFilter from './reducerFilter';
 import { reducerWishlist } from './reducerWishlist';
 import { productsReducer } from './reducerAPIcall';
@@ -7,8 +8,9 @@ import reducerNotifications from './reducerNotifications';
 
 export default combineReducers({
   reducerWishlist,
+  reducerCart,
+  reducerFilter,
   reducerProductList,
   reducerNotifications,
-  productsReducer,
-  reducerFilter
+  productsReducer
 });
