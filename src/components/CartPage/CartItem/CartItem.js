@@ -95,6 +95,13 @@ const CartItem = (props) => {
 };
 
 CartItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    image: PropTypes.string,
+    price: PropTypes.number,
+    inventory: PropTypes.number
+  }).isRequired,
   className: PropTypes.string,
   changeQuantity: PropTypes.func.isRequired,
   removeItemFromCart: PropTypes.func.isRequired,

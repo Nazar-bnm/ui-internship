@@ -8,10 +8,11 @@ import Button from '../shared/Button';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
-import { burgerMenuItemsList, navConfig } from '../../config/headerMockups';
+import config from '../../../config';
 
 import './Header.scss';
 
+const { burgerMenuItemsList, navConfig } = config;
 export const CN = 'header';
 
 const Header = ({ userCart }) => (
