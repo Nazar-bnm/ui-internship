@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { NavLink } from 'react-router-dom';
+import Modal from '../../Modal';
+import ProductImage from '../../ProductImage';
+import ProductOrder from '../../ProductOrder';
+import Heading from '../../Heading';
+import { defaultImages } from '../../../constants';
+import { productOrderParameters } from '../../../config/ProductOrderMockups';
 
 import './ProductItem.scss';
 
@@ -10,9 +17,16 @@ const ProductItem = ({
   item, wishlist, addToWishlist, removeFromWishlist
 }) => {
   const [isHovered, setHovered] = useState(false);
+  const [isShowedModal, setShowModal] = useState(false);
   const {
     _id, images, label, title, price, sizes
   } = item;
+
+  const showModal = () => setShowModal(true);
+  const removeModal = () => {
+    setShowModal(false);
+    setHovered(false);
+  };
 
   if (!images[0]) {
     images[0] = 'wjeans-4-4';
@@ -41,7 +55,7 @@ const ProductItem = ({
         className="product__button"
         onClick={() => addToWishlist(_id)}
       >
-        <i className="icon heart outline large" />
+        <i className="icon heart outline large product__icon" />
       </button>
     );
   };
@@ -71,7 +85,24 @@ const ProductItem = ({
               {`Sizes: ${sizes}`}
             </span>
             <div className={`${CN}__title-wrapper icons`}>
-              <i className="eye icon" />
+              <i className="eye icon product__icon" onClick={showModal} />
+              {isShowedModal && (
+                <Modal className={`${CN}-quick-view`} removeModal={removeModal}>
+                  <Heading title="Quick view" />
+                  <div className={`${CN}-quick-view-content`}>
+                    <ProductImage images={defaultImages} />
+                    <div className={`${CN}-quick-view-content__wrapper`}>
+                      <ProductOrder {...productOrderParameters} />
+                      <NavLink
+                        to={`/product-page/${_id}`}
+                        className={`${CN}-quick-view-content__link`}
+                      >
+                  See more details
+                      </NavLink>
+                    </div>
+                  </div>
+                </Modal>
+              )}
               <div>{renderButton()}</div>
             </div>
           </>
@@ -95,7 +126,7 @@ const ProductItem = ({
 };
 
 const ItemShape = PropTypes.shape({
-  id: PropTypes.number,
+  _id: PropTypes.number,
   images: PropTypes.array,
   label: PropTypes.string,
   title: PropTypes.string,
