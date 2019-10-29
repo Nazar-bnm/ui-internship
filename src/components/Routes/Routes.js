@@ -12,6 +12,7 @@ import DefaultLayout from '../DefaultLayout';
 import WhatIsNew from '../WhatIsNew';
 import WishListPage from '../WishlistPage';
 import MostPopular from '../MostPopular';
+import ProductListPage from '../ProductListPage';
 
 import './Routes.scss';
 
@@ -30,6 +31,7 @@ const Routes = () => (
           <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
           <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
+          <DefaultLayout path="/:category" component={ProductListPage} />
           <DefaultLayout
             to="/not_found"
             component={NotFoundPage}
