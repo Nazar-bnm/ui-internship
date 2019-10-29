@@ -11,10 +11,8 @@ const ProductItem = ({
 }) => {
   const [isHovered, setHovered] = useState(false);
   const {
-    id, images, label, title, price, sizes
+    id, image, label, title, price, sizes
   } = item;
-
-  const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
 
   const renderButton = () => {
     const isInWishlist = wishlist && wishlist.find((wishedItemId) => id === wishedItemId);
@@ -51,7 +49,7 @@ const ProductItem = ({
         <img
           alt="product"
           className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
-          src={imageSrc}
+          src={image}
         />
       </div>
 

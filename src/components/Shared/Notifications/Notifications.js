@@ -33,7 +33,7 @@ class Notifications extends Component {
         onClick={this.hideMessage}
       >
         <div onClick={this.onNotificationClick}>
-          {title && <h4 className="title">{title}</h4>}
+          {title && <h4 className={`${CN}__title`}>{title}</h4>}
           <div className={`${CN}__notification-message-box`} role="alert">
             <div className={`${CN}__message`}>{message}</div>
           </div>
