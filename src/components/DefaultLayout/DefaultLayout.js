@@ -14,6 +14,8 @@ import Notifications from '../Shared/Notifications';
 
 
 import './DefaultLayout.scss';
+import HomePageSkeleton from '../HomePageSkeleton/HomePageSkeleton';
+import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
 
 const category = 'products';
 
@@ -26,12 +28,13 @@ class DefaultLayout extends Component {
 
   componentDidMount() {
     const { fetchProducts } = this.props;
-    fetchProducts && fetchProducts(category);
+    fetchProducts(category);
   }
 
   shouldComponentRender() {
     const { pending } = this.props;
-    return pending;
+    if (pending === false) return false;
+    return true;
   }
 
   render() {
@@ -42,34 +45,47 @@ class DefaultLayout extends Component {
       hideBrands,
       hideShippingInfo,
       location,
+      productsList,
       ...rest
     } = this.props;
 
     return (
       <Route
         {...rest}
-        render={(matchProps) => (
-          <TransitionGroup>
-            <CSSTransition
-              key={location.key}
-              timeout={300}
-              classNames="fade"
-            >
-              <>
-                {!hideHeader && <Header />}
-                <Notifications type />
-                <Page {...matchProps} />
-                {!hideBrands && <Brands category="brands" />}
-                {!hideShippingInfo && <ShippingInfo />}
-                {!hideFooter && <Footer />}
-              </>
-            </CSSTransition>
-          </TransitionGroup>
-        )}
+        render={(matchProps) => {
+          if ((matchProps.match.path === '/:category') && !productsList.length) {
+            return (
+              <PlpSkeleton />
+            );
+          }
+          if ((matchProps.match.path === '/home' || matchProps.match.path === '/') && !productsList.length) {
+            return (
+              <HomePageSkeleton />
+            );
+          } return (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={300}
+                classNames="fade"
+              >
+                <>
+                  {!hideHeader && <Header />}
+                  <Notifications type />
+                  <Page {...matchProps} />
+                  {!hideBrands && <Brands />}
+                  {!hideShippingInfo && <ShippingInfo />}
+                  {!hideFooter && <Footer />}
+                </>
+              </CSSTransition>
+            </TransitionGroup>
+          );
+        }}
       />
     );
   }
 }
+
 DefaultLayout.propTypes = {
   // Component which displayed as main content
   location: PropTypes.any.isRequired,
@@ -87,5 +103,4 @@ DefaultLayout.defaultProps = {
   hideBrands: false,
   hideShippingInfo: false
 };
-
 export default DefaultLayout;

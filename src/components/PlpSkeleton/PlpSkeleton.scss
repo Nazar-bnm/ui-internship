@@ -1,0 +1,62 @@
+@import '../../scss/global_styles';
+
+.plp-skeleton {
+    background-color: $alabaster;
+    height: 100vh;
+    overflow: hidden;
+
+    .plp-skeleton__item {
+        background-color: $alto;
+    }
+
+    &__line {
+    margin: 15px 0;
+    }
+
+    &__nav {
+        padding-bottom: 10px;
+
+        .plp-skeleton__item {
+            height: 10px;
+            width: 60px;
+            background-color: $alto;
+
+            &:nth-child(1) {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__content {
+        height: 100%;
+    }
+
+    &__filters {
+
+        height: 100%;
+
+        .plp-skeleton__item {
+            height: 10px;
+            width: 60px;
+            background-color: $alto;
+            margin: 20px 0 10px;
+        }
+    }
+
+    &__category {
+        border: 1px solid $alto;
+        height: 130px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+
+    &__subcategory {
+        border: 1px solid $alto;
+        height: 220px;
+        margin-bottom: 10px;
+    
+        &:nth-child(2) {
+            height: 150px;
+        }
+    }
+}
