@@ -19,7 +19,6 @@ class ProductDetailsPageWrapper extends Component {
 
   renderGoBackBtn = () => {
     const { history } = this.props;
-
     return (
       <Button
         customClass="go-back-btn"
