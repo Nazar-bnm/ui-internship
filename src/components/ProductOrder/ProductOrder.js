@@ -17,7 +17,8 @@ const ProductOrder = (props) => {
     sizes,
     colors,
     quantity,
-    handleClick
+    handleClick,
+    addToWishlist
   } = props;
 
   return (
@@ -38,6 +39,8 @@ const ProductOrder = (props) => {
           <Button
             customClass={`${CN}__wishlist-btn`}
             icon="heart"
+            // add needed ID HERE! //
+            // onClick={addToWishlist()}
           >
           wishlist
           </Button>

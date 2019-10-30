@@ -111,7 +111,7 @@ const ProductItem = (props) => {
           {title}
         </h2>
 
-        {!isHovered && <h3 className={`${CN}__title-wrapper__price`}>{price}</h3>}
+        {!isHovered && <h3 className={`${CN}__title-wrapper__price`}>{`$${price}`}</h3>}
         {isHovered && (
           <>
             <span className={`${CN}__title-wrapper`}>

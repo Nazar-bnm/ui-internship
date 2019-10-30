@@ -5,8 +5,9 @@
     height: 100vh;
     overflow: hidden;
 
-    .plp-skeleton__item {
+    &__item {
         background-color: $alto;
+        animation: pulse 1s infinite ease-in-out;
     }
 
     &__line {
@@ -40,14 +41,15 @@
             width: 60px;
             background-color: $alto;
             margin: 20px 0 10px;
+            
         }
     }
 
     &__category {
         border: 1px solid $alto;
-        height: 130px;
+        height: 190px;
         border-radius: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     &__subcategory {
@@ -58,5 +60,39 @@
         &:nth-child(2) {
             height: 150px;
         }
+    }
+
+    &__products {
+        .container {
+            @include flex($align: center, $justify: space-between);
+        }
+        .plp-skeleton {
+            &__item {
+                width: 100px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__poster {
+        height: 40vw;
+        width: 100%;
+        background-color: $alto;
+        margin-top: 10px;
+        animation: pulse 1s infinite ease-in-out;
+    }
+
+    &__title {
+        height: 16px;
+        background-color: $alto;
+        margin: 15px 5px;
+        animation: pulse 1s infinite ease-in-out;
+    }
+
+    &__paragraph {
+        height: 12px;
+        background-color: $alto;
+        margin: 10px 15px;
+        animation: pulse 1s infinite ease-in-out;
     }
 }
