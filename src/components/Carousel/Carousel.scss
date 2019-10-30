@@ -62,7 +62,7 @@
 
   &__child {
     display: inline-block;
-    width: auto;
+    width: 100%;
   }
 
   i.icon {
@@ -72,9 +72,35 @@
 
 @media (max-width: 768px) {
   .carousel {
+    max-height: 850px;
+    width: 80%;
+    align-items: center;
+    padding-left: 5%;
+    &__child {
+      padding: 0 !important;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      width: 100%;
+      padding: 5px;
+      white-space: normal;
+      max-height: 850px !important;
+
+      .product {
+        padding: 20px;
+        max-width: 100%;
+        height: auto;
+      }
+    }
 
     &__nav {
       display: none;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel{
+    height: 600px;
   }
 }
