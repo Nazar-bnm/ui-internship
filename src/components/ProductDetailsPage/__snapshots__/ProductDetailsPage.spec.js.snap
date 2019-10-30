@@ -44,6 +44,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
         ]
       }
       description="The best pink dress on the market, new collection!"
+      handleClick={[Function]}
       itemName="Detailed swing dress"
       price="$1,999.00"
       quantity={

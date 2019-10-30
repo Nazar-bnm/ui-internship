@@ -6,9 +6,13 @@ import './ProductItem.scss';
 
 const CN = 'product';
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({
+  product, wishlist, addToWishlist, removeFromWishlist
+}) => {
   const [isHovered, setHovered] = useState(false);
+
   const {
+    id,
     image,
     label,
     title,
@@ -16,20 +20,42 @@ const ProductItem = ({ product }) => {
     sizes
   } = product;
 
+  const renderButton = () => {
+    const isInWishlist = wishlist && wishlist.find((wishedItemId) => id === wishedItemId);
+
+    if (isInWishlist) {
+      return (
+        <button
+          type="button"
+          className="product__button"
+          onClick={() => removeFromWishlist(id)}
+        >
+          <i className="icon heart red large" />
+        </button>
+      );
+    }
+
+    return (
+      <button
+        type="button"
+        className="product__button"
+        onClick={() => addToWishlist(id)}
+      >
+        <i className="icon heart outline large" />
+      </button>
+    );
+  };
+
   const renderView = () => (
     <>
       <div className={cx(`${CN}__img-wrapper`, { [`${CN}__img-wrapper--hovered`]: isHovered })}>
-        {!isHovered && (
-          <>
-            <div className={cx(`${CN}__img-wrapper__flag`, label)} />
-            <div className={`${CN}__img-wrapper__labels`}>{label}</div>
-          </>
-        )}
+        <div className={cx(`${CN}__img-wrapper__flag`, label)} />
+        <div className={`${CN}__img-wrapper__labels`}>{label}</div>
 
         <img
           className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
-          src={image}
           alt="product"
+          src={image}
         />
       </div>
 
@@ -41,14 +67,12 @@ const ProductItem = ({ product }) => {
         {!isHovered && <h3 className={`${CN}__title-wrapper__price`}>{price}</h3>}
         {isHovered && (
           <>
-            <span className="sizes">
-              Sizes:
-              {sizes}
+            <span className={`${CN}__title-wrapper`}>
+              {`Sizes: ${sizes}`}
             </span>
-            <div className={`{${CN}__title-wrapper icons`}>
+            <div className={`${CN}__title-wrapper icons`}>
               <i className="eye icon" />
-              <i className="cart plus icon" />
-              <i className="heart outline icon" />
+              <div>{renderButton()}</div>
             </div>
           </>
         )}
@@ -61,7 +85,7 @@ const ProductItem = ({ product }) => {
 
   return (
     <div
-      className={`${CN} col-xs-12 col-sm-6 col-md-4`}
+      className={`${CN} slide`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -71,13 +95,21 @@ const ProductItem = ({ product }) => {
 };
 
 ProductItem.propTypes = {
-  product: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    sizes: PropTypes.string.isRequired
-  }).isRequired
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    image: PropTypes.string,
+    label: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.string,
+    sizes: PropTypes.string
+  }).isRequired,
+  wishlist: PropTypes.array,
+  addToWishlist: PropTypes.func.isRequired,
+  removeFromWishlist: PropTypes.func.isRequired
+};
+
+ProductItem.defaultProps = {
+  wishlist: []
 };
 
 export default ProductItem;

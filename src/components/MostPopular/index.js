@@ -1,1 +1,1 @@
-export { default } from './MostPopular';
+export { default } from './MostPopularContainer';

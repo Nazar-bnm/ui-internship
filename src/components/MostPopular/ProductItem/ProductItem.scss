@@ -2,15 +2,36 @@
 @import '../../../scss/styles';
 
 .product {
-  @include flex(column, center, center);
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  max-width: 12rem;
+  padding: 5px;
+  white-space: normal;
+  height: 400px;
+
+  &__button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-align: center;
+  }
 
   &__img-wrapper {
     position: relative;
+    width: 100%;
+    padding: 0px;
+    -webkit-transition: padding 1s;
 
     &--hovered {
-      height: 300px;
-      padding: 50px;
-      transition: 700ms;
+      width: 100%;
+      transition: all 700ms ease-out;
+      padding: 0px 20px 0 20px;
+    -webkit-transition: padding 1s;
     }
 
     &__flag {
@@ -28,62 +49,81 @@
       font-size: 0.8rem;
       position: absolute;
       z-index: 3;
-      top: 10px;
-      left: 3px;
-      color: white;
+      margin: 7px 5px;
+      color: $white;
       text-transform: uppercase;
     }
 
     &__img {
-      max-height: 400px;
-
-      &--hovered {
-        height: 200px;
-      }
+      width: 100%;
     }
   }
-  
+
+  &__title-wrapper.icons {
+    @include flex($direction: row, $justify: space-evenly);
+    width: 100%;
+  }
+
   &__title-wrapper {
-    @include flex(column, center, center);
-       
-    .sizes {
-      margin: 20px;
-    }
+    margin: 10px 0;
+    width: 100%;
 
     .icons {
-      border-top: 3px solid whitesmoke;
+      margin-top: 10px;
+      border-top: 3px solid $white;
+      width: 100%;
 
       .icon {
-        font-size: 1.5rem;
-        justify-content: center;
-        margin: 20px;
+        display: block;
+        font-size: 1.3rem;
+        @include flex($align: center, $justify: center);
+        margin-top: 10px;
       }
-      
+
       .icon:hover {
-        color: #ff692b;
+        color: $orange;
         transition: 0.3s;
       }
     }
 
     &__title {
       font-family: font(secondary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin: 10px 0;
 
       &--hovered {
-        color: #ff692b;
+        color: $orange;
       }
     }
 
     &__price {
-      font-family: font(secondary-italic);
+      font-family: font(primary);
       text-align: center;
+      font-size: 0.7rem;
+      font-weight: 300;
     }
   }
-  
-  .sale{
-    border-color: #c31326 transparent transparent transparent;
+
+  .sale {
+    border-color: $dark-red transparent transparent transparent;
   }
-  
+
   .new {
-    border-color: #000000 transparent transparent transparent;
+    border-color: $black transparent transparent transparent;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    display: inline-block;
+    padding: 50px;
+  }
+}
+
+@include media-for(mobile-landscape) {
+  .product {
+    display: inline-block;
+    padding: 30px;
   }
 }
