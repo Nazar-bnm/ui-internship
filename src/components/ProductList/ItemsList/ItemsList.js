@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import _ from 'lodash';
 import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
 import mockedData from '../../../mockedDataForTests';
@@ -22,11 +23,47 @@ class ItemsList extends React.Component {
     this.getListItems();
   }
 
+  componentDidUpdate(prevProps) {
+    const { filters } = this.props;
+
+    if (!_.isEqual(prevProps.filters, filters)) {
+      this.getListItems();
+    }
+  }
+
+  // TODO find better way to get gender, pass to props e.g.
+  getGenderFromLocation() {
+    const path = window.location.pathname;
+    switch (path) {
+      case '/women':
+        return 'woman';
+      case '/men':
+        return 'man';
+      case '/kids':
+        return 'kids';
+      default:
+        return '';
+    }
+  }
+
   async getListItems() {
-    const { onGetProductsSuccess, onGetProductsError, categoryName } = this.props;
+    const gender = this.getGenderFromLocation();
+
+    const {
+      onGetProductsSuccess, onGetProductsError, categoryName, filters
+    } = this.props;
+    const { bottoms, tops } = filters;
+    let categories = '';
+    bottoms.forEach((item) => {
+      categories += `&category=${item}`;
+    });
+    tops.forEach((item) => {
+      categories += `&category=${item}`;
+    });
+
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL1}/${categoryName}`);
+      const response = await userAPI.get(`${process.env.BASE_URL1}/${categoryName}?genders=${gender}${categories}`);
       if (response.status === 404) {
         throw Error(response.statusText);
       }
@@ -96,21 +133,13 @@ class ItemsList extends React.Component {
     return (ascendingOrder ? prevEl.price - nextEl.price : nextEl.price - prevEl.price);
   }
 
+
   render() {
     return (
       <div className={CN}>{this.getItems()}</div>
     );
   }
 }
-
-// const FiltersShape = PropTypes.shape({
-//   bottoms: PropTypes.array,
-//   tops: PropTypes.array,
-//   sizes: PropTypes.array,
-//   price: PropTypes.array,
-//   colors: PropTypes.array,
-//   brands: PropTypes.array
-// });
 
 ItemsList.propTypes = {
   ascendingOrder: PropTypes.bool,
@@ -119,7 +148,6 @@ ItemsList.propTypes = {
   itemsOnPage: PropTypes.number,
   onGetProductsError: PropTypes.func,
   onGetProductsSuccess: PropTypes.func
-  // filters: FiltersShape
 };
 
 ItemsList.defaultProps = {
@@ -129,7 +157,6 @@ ItemsList.defaultProps = {
   itemsOnPage: 6,
   onGetProductsError: null,
   onGetProductsSuccess: null
-  // filters: {}
 };
 
 export default ItemsList;
