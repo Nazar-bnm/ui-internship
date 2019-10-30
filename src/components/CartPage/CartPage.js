@@ -131,7 +131,8 @@ const CartPage = (props) => {
 };
 
 CartPage.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  showMessage: PropTypes.func.isRequired
 };
 
 CartPage.defaultProps = {

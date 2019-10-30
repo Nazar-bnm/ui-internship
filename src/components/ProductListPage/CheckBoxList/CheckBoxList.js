@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CheckBox from '../../Shared/CheckBox';
+import CheckBox from '../../shared/CheckBox';
 
 const CheckBoxList = (props) => {
   const {

@@ -8,7 +8,8 @@ import './MostPopular.scss';
 
 const MostPopular = (props) => {
   const {
-    products
+    products,
+    showMessage
   } = props;
 
   const prodList = products.map((product) => (
@@ -16,6 +17,7 @@ const MostPopular = (props) => {
       key={product.id}
       item={product}
       products={products}
+      showMessage={showMessage}
     />
   ));
 

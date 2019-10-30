@@ -17,17 +17,49 @@ const ProductItem = (props) => {
   const [isHovered, setHovered] = useState(false);
   const [isShowedModal, setShowModal] = useState(false);
   const {
-    item, wishlist, addToWishlist, removeFromWishlist
+    item, wishlist, addToWishlist, removeFromWishlist, showMessage
   } = props;
   const {
     _id, images, label, title, price, sizes
   } = item;
+
+  const notificationTypeEnum = {
+    removedFromWishlistNotif: {
+      title: 'info',
+      message: 'The item removed from the wishlist',
+      type: 'info'
+    },
+    addedItemNotif: {
+      title: 'success',
+      message: 'The item added to the wishlist',
+      type: 'success'
+    }
+  };
+
+  const audio = new Audio('src/assets/sounds/notification-sound.mp3');
+
+  const playAudio = () => {
+    audio.play();
+  };
 
   const showModal = () => setShowModal(true);
   const removeModal = () => {
     setShowModal(false);
     setHovered(false);
   };
+
+  const addToWishlistWithNotif = () => {
+    addToWishlist(_id);
+    showMessage(notificationTypeEnum.addedItemNotif);
+    playAudio();
+  };
+
+  const removeFromWishlistNotif = () => {
+    removeFromWishlist(_id);
+    showMessage(notificationTypeEnum.removedFromWishlistNotif);
+    playAudio();
+  };
+
 
   if (!images[0]) {
     images[0] = 'wjeans-4-4';
@@ -43,7 +75,7 @@ const ProductItem = (props) => {
         <button
           type="button"
           className="product__button"
-          onClick={() => removeFromWishlist(_id)}
+          onClick={() => removeFromWishlistNotif(_id)}
         >
           <i className="icon heart red large" />
         </button>
@@ -54,7 +86,7 @@ const ProductItem = (props) => {
       <button
         type="button"
         className="product__button"
-        onClick={() => addToWishlist(_id)}
+        onClick={() => addToWishlistWithNotif(_id)}
       >
         <i className="icon heart outline large product__icon" />
       </button>
@@ -140,7 +172,8 @@ ProductItem.propTypes = {
   wishlist: PropTypes.array,
   addToWishlist: PropTypes.func.isRequired,
   removeFromWishlist: PropTypes.func.isRequired,
-  images: PropTypes.array
+  images: PropTypes.array,
+  showMessage: PropTypes.func.isRequired
 };
 
 ProductItem.defaultProps = {

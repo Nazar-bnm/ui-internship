@@ -6,10 +6,40 @@ import './WishlistItem.scss';
 
 const CN = 'wishlist-item';
 
-const WishlistItem = ({ className, item, removeFromWishlist }) => {
+const WishlistItem = ({
+  className,
+  item,
+  removeFromWishlist,
+  showMessage
+}) => {
   const {
     _id, images, title, collection, category
   } = item;
+
+  const notificationTypeEnum = {
+    removedFromWishlistNotif: {
+      title: 'info',
+      message: 'The item removed from the wishlist',
+      type: 'info'
+    },
+    addedItemNotif: {
+      title: 'success',
+      message: 'The item added to the wishlist',
+      type: 'success'
+    }
+  };
+
+  const audio = new Audio('src/assets/sounds/notification-sound.mp3');
+
+  const playAudio = () => {
+    audio.play();
+  };
+
+  const removeFromWishlistWithNotif = () => {
+    removeFromWishlist(_id);
+    showMessage(notificationTypeEnum.removedFromWishlistNotif);
+    playAudio();
+  };
 
   const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
 
@@ -26,7 +56,7 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
       <button
         className={`${CN}__button ${CN}__button--remove`}
         type="button"
-        onClick={() => removeFromWishlist(_id)}
+        onClick={() => removeFromWishlistWithNotif(_id)}
       >
         <i className="icon trash alternate small col-2" />
         <h4 className="col-8 col-right">Remove from wishlist</h4>
