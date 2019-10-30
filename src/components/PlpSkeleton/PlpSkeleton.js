@@ -34,6 +34,24 @@ const PlpSkeleton = () => (
           <div className={`${CN}__paragraph col-6`} />
           <div className={`${CN}__paragraph col-6`} />
         </div>
+
+        <div className={`${CN}__category col-11`}>
+          <div className={`${CN}__title col-4`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+        </div>
+
+        <div className={`${CN}__category col-11`}>
+          <div className={`${CN}__title col-4`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+          <div className={`${CN}__paragraph col-6`} />
+        </div>
       </div>
       <div className={`${CN}__products col-9`}>
         <div className="container">

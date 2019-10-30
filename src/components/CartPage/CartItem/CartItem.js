@@ -88,11 +88,6 @@ const CartItem = (props) => {
         <h4>
           {`size: ${size}`}
         </h4>
-        <Link to={`${id}`} target="_blank">
-          <p className={`${CN}__edit`}>
-          Edit item
-          </p>
-        </Link>
         <button
           className={`${CN}__button`}
           type="button"
