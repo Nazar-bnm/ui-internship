@@ -13,11 +13,12 @@ import './ProductItem.scss';
 
 const CN = 'product';
 
-const ProductItem = ({
-  item, wishlist, addToWishlist, removeFromWishlist
-}) => {
+const ProductItem = (props) => {
   const [isHovered, setHovered] = useState(false);
   const [isShowedModal, setShowModal] = useState(false);
+  const {
+    item, wishlist, addToWishlist, removeFromWishlist
+  } = props;
   const {
     _id, images, label, title, price, sizes
   } = item;
