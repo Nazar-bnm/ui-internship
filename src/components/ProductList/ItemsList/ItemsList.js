@@ -104,15 +104,19 @@ class ItemsList extends React.Component {
         break;
     }
 
-    return itemsToRender.slice(0, itemsOnPage).map((el) => (
-      <ProductItem
-        key={el.title}
-        item={el}
-        wishlist={wishlist}
-        addToWishList={addToWishList}
-        removeFromWishList={removeFromWishList}
-      />
-    ));
+    return itemsToRender.slice(0, itemsOnPage).map((el) => {
+      const uniquekey = `${el.description} + ${el._id}`;
+
+      return (
+        <ProductItem
+          key={uniquekey}
+          item={el}
+          wishlist={wishlist}
+          addToWishList={addToWishList}
+          removeFromWishList={removeFromWishList}
+        />
+      );
+    });
   }
 
   sortByItemName = (prevEl, nextEl) => {
@@ -129,8 +133,10 @@ class ItemsList extends React.Component {
 
   sortByPrice = (prevEl, nextEl) => {
     const { ascendingOrder } = this.props;
+    const prevElPrice = Number(prevEl.price);
+    const nextElPrice = Number(nextEl.price);
 
-    return (ascendingOrder ? prevEl.price - nextEl.price : nextEl.price - prevEl.price);
+    return (ascendingOrder ? prevElPrice - nextElPrice : nextElPrice - prevElPrice);
   }
 
 
