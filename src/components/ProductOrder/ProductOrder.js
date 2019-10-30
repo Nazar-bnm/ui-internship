@@ -17,8 +17,8 @@ const ProductOrder = (props) => {
     sizes,
     colors,
     quantity,
-    handleClick,
-    addToWishlist
+    handleClick
+    // addToWishlist
   } = props;
 
   return (
