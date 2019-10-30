@@ -36,7 +36,7 @@ const ProductOrder = (props) => {
         </Link>
         <Link to="/not_found">
           <Button
-            customClass={`${CN}__wishlist-btn`}
+            className={`${CN}__wishlist-btn`}
             icon="heart"
           >
           wishlist
