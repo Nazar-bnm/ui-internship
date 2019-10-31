@@ -10,7 +10,9 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
-import Notifications from '../Shared/Notifications';
+import Notifications from '../shared/Notifications';
+import HomePageSkeleton from '../HomePageSkeleton/HomePageSkeleton';
+import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
 
 
 import './DefaultLayout.scss';
@@ -48,24 +50,35 @@ class DefaultLayout extends Component {
     return (
       <Route
         {...rest}
-        render={(matchProps) => (
-          <TransitionGroup>
-            <CSSTransition
-              key={location.key}
-              timeout={300}
-              classNames="fade"
-            >
-              <>
-                {!hideHeader && <Header />}
-                <Notifications type />
-                <Page {...matchProps} />
-                {!hideBrands && <Brands />}
-                {!hideShippingInfo && <ShippingInfo />}
-                {!hideFooter && <Footer />}
-              </>
-            </CSSTransition>
-          </TransitionGroup>
-        )}
+        render={(matchProps) => {
+          if ((matchProps.match.path === '/:category') && !productsList.length) {
+            return (
+              <PlpSkeleton />
+            );
+          }
+          if ((matchProps.match.path === '/home' || matchProps.match.path === '/') && !productsList.length) {
+            return (
+              <HomePageSkeleton />
+            );
+          } return (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={300}
+                classNames="fade"
+              >
+                <>
+                  {!hideHeader && <Header />}
+                  <Notifications type />
+                  <Page {...matchProps} />
+                  {!hideBrands && <Brands />}
+                  {!hideShippingInfo && <ShippingInfo />}
+                  {!hideFooter && <Footer />}
+                </>
+              </CSSTransition>
+            </TransitionGroup>
+          );
+        }}
       />
     );
   }
