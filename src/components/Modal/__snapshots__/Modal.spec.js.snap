@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> should match the snapshot 1`] = `
+<Modal
+  className=""
+  removeModal={[MockFunction]}
+>
+  <div
+    className="modal"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    tabIndex={-1}
+  >
+    <div
+      className="modal__window"
+    >
+      <div>
+        Children
+      </div>
+      <span
+        className="modal__close-button"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <i
+          className="close icon"
+        />
+      </span>
+    </div>
+  </div>
+</Modal>
+`;
