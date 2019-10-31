@@ -69,7 +69,7 @@ exports[`<Header /> should match snapshot 1`] = `
         Search
       </Input>
       <Link
-        to="/404"
+        to="/cart"
       >
         <Button
           customClass="header__cart-btn"
