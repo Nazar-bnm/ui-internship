@@ -29,6 +29,7 @@
 }
 
 @include media-for(tablet) {
+  // @media (max-width: 768px) {
   .mainPage {
 
     .heading__wrapper {
