@@ -10,7 +10,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
-import Notifications from '../shared/Notifications';
+import Notifications from '../Shared/Notifications';
 
 
 import './DefaultLayout.scss';
@@ -72,11 +72,11 @@ class DefaultLayout extends Component {
 }
 DefaultLayout.propTypes = {
   // Component which displayed as main content
+  location: PropTypes.any.isRequired,
   component: PropTypes.any,
   hideFooter: PropTypes.bool,
   hideHeader: PropTypes.bool,
   hideBrands: PropTypes.bool,
-  location: PropTypes.any.isRequired,
   hideShippingInfo: PropTypes.bool
 };
 
