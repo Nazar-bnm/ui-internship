@@ -7,7 +7,12 @@ exports[`<ProductList /> should match snapshot 1`] = `
   <div
     className="product-list__filter-wrapper"
   >
-    <Connect(ProductListNavigation) />
+    <Connect(ProductListNavigation)
+      changeItemsNumberSelectedID={[Function]}
+      changeSortingSelectedID={[Function]}
+      dropdownItemsNumberSelectedID=""
+      dropdownSortingSelectedID=""
+    />
   </div>
   <div
     className="product-list__items-list-container"
@@ -17,7 +22,12 @@ exports[`<ProductList /> should match snapshot 1`] = `
   <div
     className="product-list__filter-wrapper"
   >
-    <Connect(ProductListNavigation) />
+    <Connect(ProductListNavigation)
+      changeItemsNumberSelectedID={[Function]}
+      changeSortingSelectedID={[Function]}
+      dropdownItemsNumberSelectedID=""
+      dropdownSortingSelectedID=""
+    />
   </div>
 </div>
 `;

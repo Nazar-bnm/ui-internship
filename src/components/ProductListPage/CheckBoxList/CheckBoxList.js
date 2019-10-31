@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import CheckBox from '../../shared/CheckBox';
 
+import './CheckBoxList.scss';
+
 const CheckBoxList = (props) => {
   const {
     itemsList, category, checkCheckbox, resetCheckboxes, isReseted
