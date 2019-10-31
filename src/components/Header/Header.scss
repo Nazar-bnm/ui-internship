@@ -16,7 +16,7 @@
     font-size: 1rem;
   }
 
-  &__search-input, &__cart-btn {
+  &__search-input, &-cart-link {
     font-size: 1rem;
   }  
 
@@ -92,15 +92,22 @@
     display: none;
   }
 
-  &__cart-btn {
-    @include flex($align: center);
+  &-cart-link {
+    @include flex($align: center, $justify: center);
     position: absolute;
     top: 8px;
     right: 20px;
     color: $white;
     background-color: transparent;
     border-color: transparent;
-    font-size: 0.7rem;
+
+    &__icon {
+      font-size: 1rem !important;
+    }
+    
+    &__title {
+      font-size: 0.7rem;
+    }
 
     &:hover {
       transform: scale(1.1);
@@ -117,7 +124,6 @@
 
     & a {
       text-decoration: none;
-      width: 100%;
       font-size: 2rem;
       font-family: font(primary-light);
       text-align: center;
@@ -168,7 +174,7 @@
       @include flex($direction: column, $wrap: nowrap);
     }
 
-    &__search-input, &__cart-btn {
+    &__search-input, &-cart-link {
       font-size: 0.7rem;
     }  
 
@@ -176,7 +182,7 @@
       width: 55vw;
     }
 
-    &__cart-btn {
+    &-cart-link {
       position: relative;
       top: 0;
       right: 0;

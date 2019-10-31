@@ -94,15 +94,17 @@ const ProductItem = ({
   );
 };
 
+const itemPropsTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  label: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.string,
+  sizes: PropTypes.string
+};
+
 ProductItem.propTypes = {
-  item: PropTypes.shape({
-    id: PropTypes.number,
-    image: PropTypes.string,
-    label: PropTypes.string,
-    title: PropTypes.string,
-    price: PropTypes.string,
-    sizes: PropTypes.string
-  }).isRequired,
+  product: PropTypes.shape(itemPropsTypes).isRequired,
   wishlist: PropTypes.array,
   addToWishlist: PropTypes.func.isRequired,
   removeFromWishlist: PropTypes.func.isRequired

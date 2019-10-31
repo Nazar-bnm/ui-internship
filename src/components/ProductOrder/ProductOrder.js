@@ -32,7 +32,7 @@ const ProductOrder = (props) => {
       </div>
       <div className={`${CN}__buttons-wrapper`}>
         <Link to="/not_found">
-          <Button onClick={handleClick()} className={`${CN}__cart-btn`}>add to cart</Button>
+          <Button onClick={handleClick} className={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
         <Link to="/not_found">
           <Button

@@ -7,7 +7,6 @@ import PageSettings from './PageSettings';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
-import Button from '../shared/Button';
 import config from '../../../config';
 
 import './Header.scss';
@@ -29,10 +28,9 @@ const Header = ({ userCart }) => (
       <div className={`${CN}__buttons-container`}>
         <BurgerMenu menuItemsList={burgerMenuItemsList} />
         <Input icon="search" className={`${CN}__search-input`} />
-        <Link to="/cart">
-          <Button icon="cart" className={`${CN}__cart-btn`}>
-            {`Cart (${userCart.length})`}
-          </Button>
+        <Link to="/cart" className={`${CN}-cart-link`}>
+          <i className={`cart icon ${CN}-cart-link__icon`} />
+          <span className={` ${CN}-cart-link__title`}>{`Cart (${userCart.length})`}</span>
         </Link>
       </div>
     </div>

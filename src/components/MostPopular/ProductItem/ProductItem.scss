@@ -116,14 +116,12 @@
 
 @media screen and (max-width: 768px) {
   .product {
-    display: inline-block;
     padding: 50px;
   }
 }
 
 @include media-for(mobile-landscape) {
   .product {
-    display: inline-block;
     padding: 30px;
   }
 }

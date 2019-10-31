@@ -29,16 +29,14 @@ const HomePage = () => {
   return (
     <div className={CN}>
       <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
-      <div>
-        <WhatIsNew />
-        <div className="container content mainPage">
-          <div className="mainPage__popular">
-            <Heading title="most popular" position="center" />
-            <MostPopular />
-          </div>
-          <div className="mainPage__blog">
-            <BlogArticlePreview />
-          </div>
+      <WhatIsNew />
+      <div className="container content mainPage">
+        <div className="mainPage__popular">
+          <Heading title="most popular" position="center" />
+          <MostPopular />
+        </div>
+        <div className="mainPage__blog">
+          <BlogArticlePreview />
         </div>
       </div>
     </div>
