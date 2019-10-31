@@ -34,6 +34,7 @@ class ProductList extends React.Component {
       dropdownSortingSelectedID,
       dropdownItemsNumberSelectedID
     } = this.state;
+    const { gender } = this.props;
 
     return (
       <div className={`${CN}`}>
@@ -46,7 +47,7 @@ class ProductList extends React.Component {
           />
         </div>
         <div className={`${CN}__items-list-container`}>
-          <ItemsListContainer />
+          <ItemsListContainer gender={gender} />
         </div>
         <div className={`${CN}__filter-wrapper`}>
           <ProductListNavigationContainer

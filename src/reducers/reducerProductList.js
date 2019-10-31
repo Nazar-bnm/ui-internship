@@ -3,7 +3,8 @@ import {
   CHANGE_SORTING_ORDER,
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR
+  GET_PRODUCTS_ERROR,
+  GET_FETCHED_ITEMS_NUMBER
 } from '../constants/actionTypes';
 
 const mobileScreen = 480;
@@ -25,7 +26,8 @@ const initialState = {
   itemList: [],
   error: null,
   dropdownSortingSelectedID: 0,
-  dropdownItemsNumberSelectedID: 0
+  dropdownItemsNumberSelectedID: 0,
+  fetchedItemsNumber: 0
 };
 
 export default function reducerProductList(state = initialState, action) {
@@ -55,6 +57,11 @@ export default function reducerProductList(state = initialState, action) {
       return {
         ...state,
         error: action.error
+      };
+    case GET_FETCHED_ITEMS_NUMBER:
+      return {
+        ...state,
+        fetchedItemsNumber: action.payload.fetchedItemsNumber
       };
     default:
       return state;

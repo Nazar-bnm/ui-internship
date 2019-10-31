@@ -3,7 +3,8 @@ import {
   CHANGE_SORTING_ORDER,
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR
+  GET_PRODUCTS_ERROR,
+  GET_FETCHED_ITEMS_NUMBER
 } from '../constants/actionTypes';
 
 export function changeSortingOrder() {
@@ -37,5 +38,12 @@ export function getProductsError(error) {
   return {
     type: GET_PRODUCTS_ERROR,
     error
+  };
+}
+
+export function getFetchedItemsNumber(payload) {
+  return {
+    type: GET_FETCHED_ITEMS_NUMBER,
+    payload
   };
 }

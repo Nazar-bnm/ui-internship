@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import _ from 'lodash';
+
 import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
 import mockedData from '../../../mockedDataForTests';
@@ -15,7 +15,6 @@ const { mockedProductList } = mockedData;
 class ItemsList extends React.Component {
   constructor(props) {
     super(props);
-
     this.sortByItemName = this.sortByItemName.bind(this);
   }
 
@@ -31,15 +30,16 @@ class ItemsList extends React.Component {
     }
   }
 
-  // TODO find better way to get gender, pass to props e.g.
-  getGenderFromLocation() {
-    const path = window.location.pathname;
-    switch (path) {
-      case '/women':
+  // This function will be removed when we will rename woman>women and man>men on the server
+  getGender() {
+    const { gender } = this.props;
+
+    switch (gender) {
+      case 'women':
         return 'woman';
-      case '/men':
+      case 'men':
         return 'man';
-      case '/kids':
+      case 'kids':
         return 'kids';
       default:
         return '';
@@ -47,23 +47,17 @@ class ItemsList extends React.Component {
   }
 
   async getListItems() {
-    const gender = this.getGenderFromLocation();
-
     const {
-      onGetProductsSuccess, onGetProductsError, categoryName, filters
+      categoryName,
+      onGetProductsSuccess,
+      onGetProductsError
     } = this.props;
-    const { bottoms, tops } = filters;
-    let categories = '';
-    bottoms.forEach((item) => {
-      categories += `&category=${item}`;
-    });
-    tops.forEach((item) => {
-      categories += `&category=${item}`;
-    });
-
+    const categories = this.getCategoriesURL();
+    const selectedGender = this.getGender();
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL1}/${categoryName}?genders=${gender}${categories}`);
+      const response = await userAPI.get(`${process.env.SERVER_URL}/${categoryName}?genders=${selectedGender}${categories}`);
+
       if (response.status === 404) {
         throw Error(response.statusText);
       }
@@ -73,9 +67,13 @@ class ItemsList extends React.Component {
     }
   }
 
-  getItems() {
+  getItemsToRender() {
     const {
-      itemsOnPage, ascendingOrder, orderType, itemList, error, wishlist, addToWishList, removeFromWishList
+      itemsOnPage,
+      error,
+      wishlist,
+      addToWishList,
+      removeFromWishList
     } = this.props;
 
     if (error) {
@@ -86,6 +84,80 @@ class ItemsList extends React.Component {
       );
     }
 
+    const itemsToRender = this.sortItems();
+
+    return itemsToRender.slice(0, itemsOnPage).map((el) => {
+      const uniquekey = `${el.description} + ${el._id}`;
+
+      return (
+        <ProductItem
+          key={uniquekey}
+          item={el}
+          wishlist={wishlist}
+          addToWishList={addToWishList}
+          removeFromWishList={removeFromWishList}
+        />
+      );
+    });
+  }
+
+  getCategoriesURL() {
+    const {
+      filters
+    } = this.props;
+    const {
+      bottoms,
+      tops,
+      sizes,
+      colors,
+      brands
+    } = filters;
+    let categories = '';
+
+    bottoms.forEach((item) => {
+      categories += `&category=${item}`;
+    });
+    tops.forEach((item) => {
+      categories += `&category=${item}`;
+    });
+    sizes.forEach((item) => {
+      categories += `&sizes=${item}`;
+    });
+    colors.forEach((item) => {
+      categories += `&colors=${item}`;
+    });
+    brands.forEach((item) => {
+      categories += `&brands=${item}`;
+    });
+
+    return categories;
+  }
+
+  sortByItemName = (prevEl, nextEl) => {
+    const { ascendingOrder } = this.props;
+    const prevName = prevEl.title.toUpperCase();
+    const nextName = nextEl.title.toUpperCase();
+    const isPrevLetterBigger = (prevName > nextName) ? 1 : 0;
+
+    if (ascendingOrder) {
+      return (prevName < nextName) ? -1 : isPrevLetterBigger;
+    }
+    return (prevName < nextName) ? isPrevLetterBigger : -1;
+  }
+
+
+  sortByPrice = (prevEl, nextEl) => {
+    const { ascendingOrder } = this.props;
+
+    return (ascendingOrder ? prevEl.price - nextEl.price : nextEl.price - prevEl.price);
+  }
+
+  sortItems() {
+    const {
+      ascendingOrder,
+      orderType,
+      itemList
+    } = this.props;
     const itemsToRender = [...itemList];
 
     switch (orderType) {
@@ -104,45 +176,12 @@ class ItemsList extends React.Component {
         break;
     }
 
-    return itemsToRender.slice(0, itemsOnPage).map((el) => {
-      const uniquekey = `${el.description} + ${el._id}`;
-
-      return (
-        <ProductItem
-          key={uniquekey}
-          item={el}
-          wishlist={wishlist}
-          addToWishList={addToWishList}
-          removeFromWishList={removeFromWishList}
-        />
-      );
-    });
+    return itemsToRender;
   }
-
-  sortByItemName = (prevEl, nextEl) => {
-    const { ascendingOrder } = this.props;
-    const prevName = prevEl.title.toUpperCase();
-    const nextName = nextEl.title.toUpperCase();
-    const isPrevLetterBigger = (prevName > nextName) ? 1 : 0;
-
-    if (ascendingOrder) {
-      return (prevName < nextName) ? -1 : isPrevLetterBigger;
-    }
-    return (prevName < nextName) ? isPrevLetterBigger : -1;
-  }
-
-  sortByPrice = (prevEl, nextEl) => {
-    const { ascendingOrder } = this.props;
-    const prevElPrice = Number(prevEl.price);
-    const nextElPrice = Number(nextEl.price);
-
-    return (ascendingOrder ? prevElPrice - nextElPrice : nextElPrice - prevElPrice);
-  }
-
 
   render() {
     return (
-      <div className={CN}>{this.getItems()}</div>
+      <div className={CN}>{this.getItemsToRender()}</div>
     );
   }
 }
