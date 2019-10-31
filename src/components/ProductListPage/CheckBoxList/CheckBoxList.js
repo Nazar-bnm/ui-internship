@@ -7,7 +7,7 @@ import './CheckBoxList.scss';
 
 const CheckBoxList = (props) => {
   const {
-    itemsList, category, checkCheckbox, resetCheckboxes, isReseted
+    itemsList, category, checkCheckbox
   } = props;
   const renderCheckboxes = itemsList.map(({ item }) => (
     <CheckBox
@@ -15,8 +15,6 @@ const CheckBoxList = (props) => {
       itemName={item}
       checkCheckbox={checkCheckbox}
       category={category}
-      resetCheckboxes={resetCheckboxes}
-      isReseted={isReseted}
       isChecked={props[category].includes(item)}
     />
   ));

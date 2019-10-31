@@ -139,7 +139,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
       <Button
         customClass="product-order__cart-btn"
         icon={null}
-        onClickFunction={null}
+        onClick={[Function]}
       >
         add to cart
       </Button>
@@ -150,7 +150,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
       <Button
         customClass="product-order__wishlist-btn"
         icon="heart"
-        onClickFunction={null}
+        onClick={[Function]}
       >
         wishlist
       </Button>
