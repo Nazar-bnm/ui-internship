@@ -11,10 +11,9 @@ const MostPopular = (props) => {
     products,
     showMessage
   } = props;
-
   const prodList = products.map((product) => (
     <ProductItem
-      key={product.id}
+      key={product._id}
       item={product}
       products={products}
       showMessage={showMessage}
