@@ -5,16 +5,14 @@ import CheckBox from '../../shared/CheckBox';
 
 const CheckBoxList = (props) => {
   const {
-    itemsList, category, checkCheckbox, resetCheckboxes, isReseted
+    itemsList, category, checkCheckbox
   } = props;
   const renderCheckboxes = itemsList.map(({ item }) => (
     <CheckBox
       key={item}
       itemName={item}
-      checkCheckbox={checkCheckbox}
       category={category}
-      resetCheckboxes={resetCheckboxes}
-      isReseted={isReseted}
+      checkCheckbox={checkCheckbox}
       isChecked={props[category].includes(item)}
     />
   ));

@@ -15,7 +15,6 @@ const { mockedProductList } = mockedData;
 class ItemsList extends React.Component {
   constructor(props) {
     super(props);
-
     this.sortByItemName = this.sortByItemName.bind(this);
   }
 

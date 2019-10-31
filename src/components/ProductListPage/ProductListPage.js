@@ -13,28 +13,13 @@ import './ProductListPage.scss';
 export const CN = 'productListPage';
 
 class ProductListPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      resetCheckboxes: false
-    };
-  }
-
   componentWillUnmount() {
-    const { resetState } = this.props;
-
-    resetState && resetState();
+    const { resetFilterState } = this.props;
+    resetFilterState && resetFilterState();
   }
-
-  resetFilters = (resetFunc) => {
-    this.setState({ resetCheckboxes: true });
-    resetFunc();
-  };
 
   render() {
-    const { match: { params: { category } }, resetState } = this.props;
-    const { resetCheckboxes } = this.state;
+    const { match: { params: { category } }, resetFilterState, fetchedItemsNumber } = this.props;
 
     return (
       <div className={cx(CN, 'content')}>
@@ -42,10 +27,10 @@ class ProductListPage extends Component {
           <div>Home</div>
           <div>&#10094; Return to previous page</div>
         </div>
-        <div className={`${cx(CN)}__gridWrapper`}>
-          <div className={`${CN}__filter`}>
-            <Button onClickFunction={() => this.resetFilters(resetState)}>Reset Filters</Button>
-            <Filter category={category} resetCheckboxes={resetCheckboxes} />
+        <div className={`${CN}__gridWrapper`}>
+          <section className={`${CN}__filters`}>
+            <Button onClick={resetFilterState}>Reset Filters</Button>
+            <Filter category={category} />
             <div
               className={`${cx(CN)}__brandAdvert`}
               style={{
@@ -57,17 +42,17 @@ class ProductListPage extends Component {
                 <div className={`${cx(CN)}__brandAdvert-collection`}>autumn collection</div>
               </div>
             </div>
-          </div>
-          <div className={`${CN}__poster`}>
-            <div className={`${CN}__heading`}>
-              <Heading title={category} />
-              <span className={`${CN}__heading-itemsLeft`}>557 items</span>
+          </section>
+          <section className={`${CN}__productList`}>
+            <div className={`${CN}__poster`}>
+              <div className={`${CN}__heading`}>
+                <Heading title={category} />
+                <span className={`${CN}__heading-itemsLeft`}>{`${fetchedItemsNumber} items`}</span>
+              </div>
+              <CollectionPoster category={category} />
             </div>
-            <CollectionPoster category={category} />
-          </div>
-          <div className={`${CN}__productList`}>
-            <ProductList />
-          </div>
+            <ProductList gender={category} />
+          </section>
         </div>
       </div>
     );
