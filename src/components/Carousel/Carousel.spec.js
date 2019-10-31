@@ -8,13 +8,13 @@ describe('<Carousel />', () => {
   
   beforeEach( () => {
     items = [
-      <div id={1}><div key={1}>hello1 </div></div>,
-      <div id={2}><div key={2}>hello 2</div></div>,
-      <div id={3}><div key={3}>hello3 </div></div>,
-      <div id={4}><div key={4}>hello 4</div></div>,
-      <div id={5}><div key={5}>hello 5</div></div>,
-      <div id={6}><div key={6}>hello 6</div></div>,
-      <div id={7}><div key={7}>hello 7</div></div>,
+      <div key={1}><div key={1}>hello1 </div></div>,
+      <div key={2}><div key={2}>hello 2</div></div>,
+      <div key={3}><div key={3}>hello3 </div></div>,
+      <div key={4}><div key={4}>hello 4</div></div>,
+      <div key={5}><div key={5}>hello 5</div></div>,
+      <div key={6}><div key={6}>hello 6</div></div>,
+      <div key={7}><div key={7}>hello 7</div></div>,
     ];
     wrapper = mount(<Carousel>{items}</Carousel>);
   });

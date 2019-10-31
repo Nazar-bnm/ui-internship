@@ -10,7 +10,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
-import Notifications from '../Shared/Notifications';
+import Notifications from '../shared/Notifications';
 
 
 import './DefaultLayout.scss';
