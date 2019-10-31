@@ -3,8 +3,7 @@ import {
   CHANGE_SORTING_ORDER,
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR,
-  GET_FETCHED_ITEMS_NUMBER
+  GET_PRODUCTS_ERROR
 } from '../constants/actionTypes';
 
 const mobileScreen = 480;
@@ -57,11 +56,6 @@ export default function reducerProductList(state = initialState, action) {
       return {
         ...state,
         error: action.error
-      };
-    case GET_FETCHED_ITEMS_NUMBER:
-      return {
-        ...state,
-        fetchedItemsNumber: action.payload.fetchedItemsNumber
       };
     default:
       return state;
