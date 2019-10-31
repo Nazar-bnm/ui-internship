@@ -20,6 +20,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
     >
       <div
         className="carousel__child"
+        key="null"
         style={
           Object {
             "maxWidth": undefined,
@@ -38,6 +39,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
       </div>
       <div
         className="carousel__child"
+        key="null"
         style={
           Object {
             "maxWidth": undefined,
@@ -56,6 +58,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
       </div>
       <div
         className="carousel__child"
+        key="null"
         style={
           Object {
             "maxWidth": undefined,
@@ -74,6 +77,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
       </div>
       <div
         className="carousel__child"
+        key="null"
         style={
           Object {
             "maxWidth": undefined,
@@ -92,6 +96,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
       </div>
       <div
         className="carousel__child"
+        key="null"
         style={
           Object {
             "maxWidth": undefined,
@@ -110,6 +115,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
       </div>
       <div
         className="carousel__child"
+        key="null"
         style={
           Object {
             "maxWidth": undefined,
@@ -128,6 +134,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
       </div>
       <div
         className="carousel__child"
+        key="null"
         style={
           Object {
             "maxWidth": undefined,
