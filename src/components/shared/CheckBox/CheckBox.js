@@ -26,6 +26,7 @@ const CheckBox = (props) => {
 };
 
 CheckBox.propTypes = {
+  isChecked: PropTypes.bool.isRequired,
   category: PropTypes.string.isRequired,
   itemName: PropTypes.string.isRequired,
   checkCheckbox: PropTypes.func.isRequired

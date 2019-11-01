@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 
 import CheckBox from '../../shared/CheckBox';
 
+import './CheckBoxList.scss';
+
 const CheckBoxList = (props) => {
   const {
-    itemsList, category, checkCheckbox
+    itemsList, category
   } = props;
   const renderCheckboxes = itemsList.map(({ item }) => (
     <CheckBox
       key={item}
       itemName={item}
       category={category}
-      checkCheckbox={checkCheckbox}
       isChecked={props[category].includes(item)}
     />
   ));
@@ -26,8 +27,7 @@ const CheckBoxList = (props) => {
 
 CheckBoxList.propTypes = {
   itemsList: PropTypes.array.isRequired,
-  category: PropTypes.string.isRequired,
-  checkCheckbox: PropTypes.func.isRequired
+  category: PropTypes.string.isRequired
 };
 
 export default CheckBoxList;

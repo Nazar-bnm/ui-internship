@@ -19,7 +19,7 @@ class ProductListPage extends Component {
   }
 
   render() {
-    const { match: { params: { category } }, resetFilterState, fetchedItemsNumber } = this.props;
+    const { match: { params: { category } }, resetFilterState } = this.props;
 
     return (
       <div className={cx(CN, 'content')}>
@@ -27,8 +27,8 @@ class ProductListPage extends Component {
           <div>Home</div>
           <div>&#10094; Return to previous page</div>
         </div>
-        <div className={`${CN}__gridWrapper`}>
-          <section className={`${CN}__filters`}>
+        <div className={`${cx(CN)}__gridWrapper`}>
+          <section className={`${CN}__filter`}>
             <Button onClick={resetFilterState}>Reset Filters</Button>
             <Filter category={category} />
             <div
@@ -43,15 +43,15 @@ class ProductListPage extends Component {
               </div>
             </div>
           </section>
-          <section className={`${CN}__productList`}>
-            <div className={`${CN}__poster`}>
-              <div className={`${CN}__heading`}>
-                <Heading title={category} />
-                <span className={`${CN}__heading-itemsLeft`}>{`${fetchedItemsNumber} items`}</span>
-              </div>
-              <CollectionPoster category={category} />
+          <section className={`${CN}__poster`}>
+            <div className={`${CN}__heading`}>
+              <Heading title={category} />
+              <span className={`${CN}__heading-itemsLeft`}>557 items</span>
             </div>
-            <ProductList gender={category} />
+            <CollectionPoster category={category} />
+          </section>
+          <section className={`${CN}__productList`}>
+            <ProductList />
           </section>
         </div>
       </div>
@@ -64,7 +64,7 @@ ProductListPage.propTypes = {
 };
 
 ProductListPage.defaultProps = {
-  category: 'woman'
+  category: 'women'
 };
 
 export default ProductListPage;

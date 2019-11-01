@@ -107,12 +107,12 @@ export default {
       { item: 'sweats' }
     ],
     sizes: [
-      { item: 'xs' },
-      { item: 's' },
-      { item: 'm' },
-      { item: 'l' },
-      { item: 'xl' },
-      { item: 'xxl' }
+      { item: 'xs, (34)' },
+      { item: 's, (36)' },
+      { item: 'm, (38)' },
+      { item: 'l, (42)' },
+      { item: 'xl, (46)' },
+      { item: 'xxl, (52)' }
     ],
     colors: [
       { item: 'beige' },
@@ -152,12 +152,12 @@ export default {
       { item: 'sweats' }
     ],
     sizes: [
-      { item: 'xs' },
-      { item: 's' },
-      { item: 'm' },
-      { item: 'l' },
-      { item: 'xl' },
-      { item: 'xxl' }
+      { item: 'xs,  (34)' },
+      { item: 's,  (36)' },
+      { item: 'm,  (38)' },
+      { item: 'l,  (42)' },
+      { item: 'xl,  (46)' },
+      { item: 'xxl,  (52)' }
     ],
     colors: [
       { item: 'beige' },

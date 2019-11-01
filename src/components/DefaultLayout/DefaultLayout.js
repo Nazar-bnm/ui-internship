@@ -12,7 +12,6 @@ import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
 import Notifications from '../shared/Notifications';
 
-
 import './DefaultLayout.scss';
 
 const category = 'products';
