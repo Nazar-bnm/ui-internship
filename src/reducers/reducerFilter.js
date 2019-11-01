@@ -7,8 +7,7 @@ const initialState = {
   sizes: [],
   price: [],
   colors: [],
-  brands: [],
-  isReseted: false
+  brands: []
 };
 
 export default function reducerFilter(state = initialState, { type, payload }) {
