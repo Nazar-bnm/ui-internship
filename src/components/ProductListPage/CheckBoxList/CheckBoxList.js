@@ -7,12 +7,13 @@ import './CheckBoxList.scss';
 
 const CheckBoxList = (props) => {
   const {
-    itemsList, category
+    itemsList, category, checkCheckbox
   } = props;
   const renderCheckboxes = itemsList.map(({ item }) => (
     <CheckBox
       key={item}
       itemName={item}
+      checkCheckbox={checkCheckbox}
       category={category}
       isChecked={props[category].includes(item)}
     />
@@ -27,7 +28,8 @@ const CheckBoxList = (props) => {
 
 CheckBoxList.propTypes = {
   itemsList: PropTypes.array.isRequired,
-  category: PropTypes.string.isRequired
+  category: PropTypes.string.isRequired,
+  checkCheckbox: PropTypes.func.isRequired
 };
 
 export default CheckBoxList;
