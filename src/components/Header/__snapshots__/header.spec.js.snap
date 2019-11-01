@@ -29,11 +29,11 @@ exports[`<Header /> should match snapshot 1`] = `
           Array [
             Object {
               "itemName": "women",
-              "url": "women",
+              "url": "woman",
             },
             Object {
               "itemName": "man",
-              "url": "men",
+              "url": "man",
             },
             Object {
               "itemName": "kids",
@@ -86,12 +86,12 @@ exports[`<Header /> should match snapshot 1`] = `
       Array [
         Object {
           "label": "women",
-          "link": "/women",
+          "link": "/woman",
           "value": "women",
         },
         Object {
           "label": "men",
-          "link": "/men",
+          "link": "/man",
           "value": "men",
         },
         Object {

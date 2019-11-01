@@ -5,6 +5,7 @@ import _ from 'lodash';
 import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
 import mockedData from '../../../mockedDataForTests';
+import { brandIDEnum } from '../../../constants';
 
 import './ItemsList.scss';
 
@@ -15,6 +16,7 @@ const { mockedProductList } = mockedData;
 class ItemsList extends React.Component {
   constructor(props) {
     super(props);
+
     this.sortByItemName = this.sortByItemName.bind(this);
   }
 
@@ -30,33 +32,18 @@ class ItemsList extends React.Component {
     }
   }
 
-  // This function will be removed when we will rename woman>women and man>men on the server
-  getGender() {
-    const { gender } = this.props;
-
-    switch (gender) {
-      case 'women':
-        return 'woman';
-      case 'men':
-        return 'man';
-      case 'kids':
-        return 'kids';
-      default:
-        return '';
-    }
-  }
-
   async getListItems() {
     const {
       categoryName,
       onGetProductsSuccess,
-      onGetProductsError
+      onGetProductsError,
+      gender
     } = this.props;
     const categories = this.getCategoriesURL();
-    const selectedGender = this.getGender();
+    const productsURL = `${process.env.SERVER_URL}/${categoryName}?genders=${gender}${categories}`;
 
     try {
-      const response = await userAPI.get(`${process.env.SERVER_URL}/${categoryName}?genders=${selectedGender}${categories}`);
+      const response = await userAPI.get(productsURL);
 
       if (response.status === 404) {
         throw Error(response.statusText);
@@ -87,7 +74,7 @@ class ItemsList extends React.Component {
     const itemsToRender = this.sortItems();
 
     return itemsToRender.slice(0, itemsOnPage).map((el) => {
-      const uniquekey = `${el.description} + ${el._id}`;
+      const uniquekey = Symbol.keyFor(Symbol.for(el._id));
 
       return (
         <ProductItem
@@ -113,6 +100,7 @@ class ItemsList extends React.Component {
       brands
     } = filters;
     let categories = '';
+    const regexWhiteSpace = / /g;
 
     bottoms.forEach((item) => {
       categories += `&category=${item}`;
@@ -127,7 +115,8 @@ class ItemsList extends React.Component {
       categories += `&colors=${item}`;
     });
     brands.forEach((item) => {
-      categories += `&brands=${item}`;
+      item.replace(regexWhiteSpace, '');
+      categories += `&brandId=${brandIDEnum[item]}`;
     });
 
     return categories;

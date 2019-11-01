@@ -64,7 +64,7 @@ ProductListPage.propTypes = {
 };
 
 ProductListPage.defaultProps = {
-  category: 'women'
+  category: 'woman'
 };
 
 export default ProductListPage;
