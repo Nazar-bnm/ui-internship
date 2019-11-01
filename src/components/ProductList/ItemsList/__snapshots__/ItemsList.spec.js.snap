@@ -59,9 +59,10 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "title": "Awesome dress",
         }
       }
+      wishlist={Array []}
     >
       <div
-        className="product col-xs-12 col-sm-6 col-md-4"
+        className="product slide"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -112,9 +113,10 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "title": "Beautiful dress",
         }
       }
+      wishlist={Array []}
     >
       <div
-        className="product col-xs-12 col-sm-6 col-md-4"
+        className="product slide"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -165,9 +167,10 @@ exports[`<ItemsList /> should match snapshot 1`] = `
           "title": "Amazing dress",
         }
       }
+      wishlist={Array []}
     >
       <div
-        className="product col-xs-12 col-sm-6 col-md-4"
+        className="product slide"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
