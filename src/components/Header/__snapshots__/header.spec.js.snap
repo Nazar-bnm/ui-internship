@@ -72,9 +72,10 @@ exports[`<Header /> should match snapshot 1`] = `
         to="/cart"
       >
         <Button
+          className=""
           customClass="header__cart-btn"
           icon="cart"
-          onClickFunction={null}
+          onClick={[Function]}
         >
           Cart (0)
         </Button>
