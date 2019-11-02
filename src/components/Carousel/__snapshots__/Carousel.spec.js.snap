@@ -5,15 +5,6 @@ exports[`<Carousel /> should match snapshot 1`] = `
   <div
     className="carousel content"
   >
-    <button
-      className="carousel__nav carousel__left-nav carousel__nav-disabled"
-      onClick={[Function]}
-      type="button"
-    >
-      <i
-        className="carousel__arrow-button chevron left icon"
-      />
-    </button>
     <div
       className="carousel__viewport"
       onScroll={[Function]}
@@ -145,6 +136,15 @@ exports[`<Carousel /> should match snapshot 1`] = `
         </div>
       </div>
     </div>
+    <button
+      className="carousel__nav carousel__left-nav carousel__nav-disabled"
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="carousel__arrow-button chevron left icon"
+      />
+    </button>
     <button
       className="carousel__right-nav carousel__nav carousel__nav-disabled"
       onClick={[Function]}

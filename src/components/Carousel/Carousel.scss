@@ -7,7 +7,6 @@
   width: fit-content;
 
   &__viewport {
-    z-index: 1;
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: auto; 
@@ -22,7 +21,6 @@
   }
 
   &__nav {
-    z-index: 3;
     position: absolute;
     display: flex;
     width: 20px;
@@ -65,7 +63,8 @@
     width: 100%;
   }
 
-  i.icon {
+
+  i.carousel__arrow-button {
     font-size: 1.5rem;
   }
 }
