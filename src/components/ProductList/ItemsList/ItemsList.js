@@ -73,19 +73,15 @@ class ItemsList extends React.Component {
 
     const itemsToRender = this.sortItems();
 
-    return itemsToRender.slice(0, itemsOnPage).map((el) => {
-      const uniquekey = String(Symbol.for(el._id));
-
-      return (
-        <ProductItem
-          key={uniquekey}
-          item={el}
-          wishlist={wishlist}
-          addToWishList={addToWishList}
-          removeFromWishList={removeFromWishList}
-        />
-      );
-    });
+    return itemsToRender.slice(0, itemsOnPage).map((el) => (
+      <ProductItem
+        key={el._id}
+        item={el}
+        wishlist={wishlist}
+        addToWishList={addToWishList}
+        removeFromWishList={removeFromWishList}
+      />
+    ));
   }
 
   getCategoriesURL() {
