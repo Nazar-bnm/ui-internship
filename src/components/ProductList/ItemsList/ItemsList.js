@@ -74,7 +74,7 @@ class ItemsList extends React.Component {
     const itemsToRender = this.sortItems();
 
     return itemsToRender.slice(0, itemsOnPage).map((el) => {
-      const uniquekey = Symbol.keyFor(Symbol.for(el._id));
+      const uniquekey = String(Symbol.for(el._id));
 
       return (
         <ProductItem
