@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Button from '../../shared/Button';
+import Button from '~/Button';
 import './Slide.scss';
 
 const CN = 'slide-info';

@@ -1,5 +1,5 @@
 import xor from 'lodash/array/xor';
-import { CHECK_CHECKBOX, RESET_FILTERS } from '../constants/actionTypes';
+import { CHECK_CHECKBOX, RESET_FILTERS } from '@/constants/actionTypes';
 
 const initialState = {
   bottoms: [],

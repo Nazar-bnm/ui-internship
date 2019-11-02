@@ -1,12 +1,12 @@
 import React from 'react';
 
-import WhatIsNew from '../WhatIsNew';
-import BlogArticlePreview from '../BlogArticlePreview';
-import MostPopular from '../MostPopular';
+import WhatIsNew from '^/WhatIsNew';
+import BlogArticlePreview from '^/BlogArticlePreview';
+import MostPopular from '^/MostPopular';
 import Slideshow from './Slideshow';
 import Slide from './Slide';
-import Heading from '../Heading';
-import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
+import Heading from '^/Heading';
+import { ANIMATION_NAMES } from '@/constants/SlideshowConst';
 import { slideshowData } from './Slideshow/SlideshowDate';
 
 import './HomePage.scss';

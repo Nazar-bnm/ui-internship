@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import config from '../../../config';
+import config from '@/../config';
 
 import './ShippingInfo.scss';
 

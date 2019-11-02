@@ -5,15 +5,15 @@ import {
   TransitionGroup
 } from 'react-transition-group';
 
-import HomePage from '../HomePage';
-import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageWrapper';
-import NotFoundPage from '../NotFoundPage';
-import DefaultLayout from '../DefaultLayout';
-import WishListPage from '../WishlistPage';
-import MostPopular from '../MostPopular';
-import CartPage from '../CartPage';
-import ProductListPage from '../ProductListPage';
-import WhatIsNew from '../WhatIsNew';
+import HomePage from '^/HomePage';
+import ProductDetailsPageWrapper from '^/ProductDetailsPage/ProductDetailsPageWrapper';
+import NotFoundPage from '^/NotFoundPage';
+import DefaultLayout from '^/DefaultLayout';
+import WishListPage from '^/WishlistPage';
+import MostPopular from '^/MostPopular';
+import CartPage from '^/CartPage';
+import ProductListPage from '^/ProductListPage';
+import WhatIsNew from '^/WhatIsNew';
 
 import './Routes.scss';
 

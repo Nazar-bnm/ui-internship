@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { changeQuantity, removeItemFromCart } from '../../actions/actionsCart';
+import { changeQuantity, removeItemFromCart } from '@/actions/actionsCart';
 import CartPage from './CartPage';
 
 const mapStateToProps = ({ reducerCart }) => ({

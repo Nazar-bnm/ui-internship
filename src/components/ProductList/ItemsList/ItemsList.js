@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ProductItem from '../../MostPopular/ProductItem';
-import HttpService from '../../../service/HttpService/httpService';
-import mockedData from '../../../mockedDataForTests';
+import ProductItem from '@/components/MostPopular/ProductItem';
+import HttpService from '@/service/HttpService/httpService';
+import mockedData from '@/mockedDataForTests';
 
 import './ItemsList.scss';
 

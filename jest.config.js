@@ -8,5 +8,10 @@ module.exports = {
   'setupFiles': ['<rootDir>/.jest/enzyme.setup.js'],
   'collectCoverageFrom': ['<rootDir>/src/**/*.js'],
   'snapshotSerializers': ['enzyme-to-json/serializer'],
-  'moduleNameMapper': { '^.+\\.(css|less|scss)$': 'identity-obj-proxy' },
+  'moduleNameMapper': {
+    '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^\\^/(.*)$': '<rootDir>/src/components/$1',
+    '^~/(.*)$': '<rootDir>/src/shared/$1',
+  },
 };

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addToWishlist, removeFromWishlist } from '../../actions/actionsWishlist';
+import { addToWishlist, removeFromWishlist } from '@/actions/actionsWishlist';
 import WishlistPage from './WishlistPage';
 
 const mapStateToProps = ({ reducerWishlist, productsReducer }) => ({

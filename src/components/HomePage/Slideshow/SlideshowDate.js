@@ -1,7 +1,7 @@
-import girlInOveralls from '../../../assets/img/background/girl-in-overalls.jpg';
-import girlOnBoat from '../../../assets/img/background/girl-on-boat.jpg';
-import girls from '../../../assets/img/background/girls.jpg';
-import manInCoat from '../../../assets/img/background/men-in-coat.jpg';
+import girlInOveralls from '@/assets/img/background/girl-in-overalls.jpg';
+import girlOnBoat from '@/assets/img/background/girl-on-boat.jpg';
+import girls from '@/assets/img/background/girls.jpg';
+import manInCoat from '@/assets/img/background/men-in-coat.jpg';
 
 export const slideshowData = [
   {

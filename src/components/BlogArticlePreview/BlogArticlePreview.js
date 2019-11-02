@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import HttpService from '../../service/HttpService/httpService';
+import HttpService from '@/service/HttpService/httpService';
 
 import './BlogArticlePreview.scss';
 

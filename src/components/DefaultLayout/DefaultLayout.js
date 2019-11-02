@@ -6,11 +6,11 @@ import {
   TransitionGroup
 } from 'react-transition-group';
 
-import Header from '../Header';
-import Footer from '../Footer';
-import Brands from '../Brands';
-import ShippingInfo from '../ShippingInfo';
-import Notifications from '../shared/Notifications';
+import Header from '^/Header';
+import Footer from '^/Footer';
+import Brands from '^/Brands';
+import ShippingInfo from '^/ShippingInfo';
+import Notifications from '~/Notifications';
 
 import './DefaultLayout.scss';
 

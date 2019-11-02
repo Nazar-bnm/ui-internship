@@ -4,7 +4,7 @@ import axios from 'axios';
 import { mount } from 'enzyme';
 
 import Brands from './Brands';
-import mockedData from '../../mockedDataForTests';
+import mockedData from '@/mockedDataForTests';
 
 describe('<Brands />', () => {
   let wrapper;

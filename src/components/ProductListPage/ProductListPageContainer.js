@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { resetFilterState } from '../../actions/actionsFilter';
+import { resetFilterState } from '@/actions/actionsFilter';
 import ProductListPage from './ProductListPage';
 
 const mapDispatchToProps = (dispatch) => ({

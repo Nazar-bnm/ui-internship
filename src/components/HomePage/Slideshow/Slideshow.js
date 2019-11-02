@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import ArrowButton from './ArrowButton';
 import Slide from './SlideContainer';
-import { ANIMATION_NAMES, ARROW_BUTTON_TYPES } from '../../../constants/SlideshowConst';
+import { ANIMATION_NAMES, ARROW_BUTTON_TYPES } from '@/constants/SlideshowConst';
 
 import './Slideshow.scss';
 

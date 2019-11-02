@@ -3,8 +3,8 @@ import cx from 'classnames';
 
 import ContactDetails from './ContactDetails';
 import Linklist from './Linklist';
-import config from '../../../config';
-import JoinUs from '../JoinUs';
+import config from '@/../config';
+import JoinUs from '^/JoinUs';
 
 import './Footer.scss';
 

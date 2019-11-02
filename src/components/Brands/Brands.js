@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
-import HttpService from '../../service/HttpService/httpService';
-import Heading from '../Heading';
+import HttpService from '@/service/HttpService/httpService';
+import Heading from '^/Heading';
 
 import './Brands.scss';
 

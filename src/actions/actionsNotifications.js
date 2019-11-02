@@ -1,7 +1,7 @@
 import {
   NOTIFICATION_SHOW,
   NOTIFICATION_HIDE
-} from '../constants/actionTypes';
+} from '@/constants/actionTypes';
 
 export const isShowNotification = (payload) => ({
   type: NOTIFICATION_SHOW,

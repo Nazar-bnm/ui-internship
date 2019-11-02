@@ -4,7 +4,7 @@ import {
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_ERROR
-} from '../constants/actionTypes';
+} from '@/constants/actionTypes';
 
 const mobileScreen = 480;
 const tabletScreen = 768;

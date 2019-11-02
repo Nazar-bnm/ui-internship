@@ -1,8 +1,8 @@
 import React from 'react';
 
-import config from '../../../../config';
-import CheckBoxList from '../CheckBoxList';
-import Accordion from '../../Accordion';
+import config from '@/../config';
+import CheckBoxList from '^/ProductListPage/CheckBoxList';
+import Accordion from '^/Accordion';
 
 import './Filters.scss';
 
