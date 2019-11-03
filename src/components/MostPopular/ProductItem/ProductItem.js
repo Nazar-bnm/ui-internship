@@ -125,7 +125,7 @@ class ProductItem extends Component {
       }
     } = this.props;
 
-    const imagesForQuickView = images.slice(0, 3).map(({ claudinaryId }) => ({
+    const imagesForQuickView = images.map(({ claudinaryId }) => ({
       src: `${process.env.IMAGE_URL}/${claudinaryId}`
     }));
 

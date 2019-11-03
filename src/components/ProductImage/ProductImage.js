@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import Carousel from '../Carousel';
+
 import './ProductImage.scss';
 
 export const CN = 'product-image';
+
+const visibleNumOfSlides = {
+  desktop: 3,
+  tablet: 3,
+  mobile: 3
+};
 
 class ProductImage extends Component {
   constructor(props) {
@@ -36,7 +44,7 @@ class ProductImage extends Component {
   renderSmallImages(selectedImage) {
     const { images } = this.props;
 
-    return images.map((el) => {
+    const smallImages = images.map((el) => {
       const { src } = el;
       const isSelected = selectedImage === src;
 
@@ -60,6 +68,8 @@ class ProductImage extends Component {
         </div>
       );
     });
+
+    return <Carousel className="carousel-image" visibleNumOfSlides={visibleNumOfSlides} vertical>{smallImages}</Carousel>;
   }
 
   render() {
@@ -67,6 +77,7 @@ class ProductImage extends Component {
 
     return (
       <div className={cx(`${CN}__container`)}>
+        {this.renderSmallImages(selectedImage)}
         <div
           className={`${CN}__big-image-container`}
           type="submit"
@@ -76,9 +87,6 @@ class ProductImage extends Component {
             className={CN}
             src={this.getBigImageSrc()}
           />
-        </div>
-        <div className={`${CN}__small-images-container`}>
-          {this.renderSmallImages(selectedImage)}
         </div>
       </div>
     );

@@ -4,18 +4,16 @@ exports[`<ProductImage /> should match snapshot 1`] = `
 <div
   className="product-image__container"
 >
-  <div
-    className="product-image__big-image-container"
-    type="submit"
-  >
-    <img
-      alt="product"
-      className="product-image"
-      src="src/assets/img/content/new4.png"
-    />
-  </div>
-  <div
-    className="product-image__small-images-container"
+  <Carousel
+    className="carousel-image"
+    vertical={true}
+    visibleNumOfSlides={
+      Object {
+        "desktop": 3,
+        "mobile": 3,
+        "tablet": 3,
+      }
+    }
   >
     <div
       className="product-image__small-image"
@@ -68,6 +66,16 @@ exports[`<ProductImage /> should match snapshot 1`] = `
         type="submit"
       />
     </div>
+  </Carousel>
+  <div
+    className="product-image__big-image-container"
+    type="submit"
+  >
+    <img
+      alt="product"
+      className="product-image"
+      src="src/assets/img/content/new4.png"
+    />
   </div>
 </div>
 `;

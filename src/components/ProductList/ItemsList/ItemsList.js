@@ -26,7 +26,7 @@ class ItemsList extends React.Component {
     const { onGetProductsSuccess, onGetProductsError, categoryName } = this.props;
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL}/${categoryName}`);
+      const response = await userAPI.get(`${process.env.SERVER_URL}/${categoryName}`);
       if (response.status === 404) {
         throw Error(response.statusText);
       }
