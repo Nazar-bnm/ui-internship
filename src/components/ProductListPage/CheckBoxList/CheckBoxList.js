@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CheckBox from '~/CheckBox';
+import { CheckBox } from '@/shared';
 
 import './CheckBoxList.scss';
 

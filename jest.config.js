@@ -11,7 +11,6 @@ module.exports = {
   'moduleNameMapper': {
     '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^\\^/(.*)$': '<rootDir>/src/components/$1',
     '^~/(.*)$': '<rootDir>/src/shared/$1',
   },
 };

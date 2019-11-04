@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 import PageSettings from './PageSettings';
 import PageNavigation from './PageNavigation';
-import BurgerMenu from '^/BurgerMenu';
-import Input from '^/Input';
+import BurgerMenu from '../BurgerMenu';
+import Input from '../Input';
 import config from '@/../config';
 
 import './Header.scss';

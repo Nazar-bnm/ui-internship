@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Dropdown from '~/Dropdown';
-import Button from '~/Button';
+import { Button, Dropdown } from '@/shared';
 
 import './ProductOrder.scss';
 

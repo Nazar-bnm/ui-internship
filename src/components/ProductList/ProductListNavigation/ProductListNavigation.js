@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '~/Button';
-import Dropdown from '~/Dropdown';
+import { Button, Dropdown } from '@/shared';
 import { dropdownsForItemListPage } from '@/constants';
 
 export const CN = 'product-list';

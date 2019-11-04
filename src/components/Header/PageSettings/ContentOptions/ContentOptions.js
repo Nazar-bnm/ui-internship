@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Dropdown from '~/Dropdown';
+import { Dropdown } from '@/shared';
 import config from '@/../config';
 
 export const CN = 'dropdowns';

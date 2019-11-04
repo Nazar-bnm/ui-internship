@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProductItem from './ProductItem/ProductItem';
-import Carousel from '^/Carousel';
+import Carousel from '../Carousel';
 
 import './MostPopular.scss';
 

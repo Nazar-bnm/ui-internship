@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ProductImage from '^/ProductImage';
-import ProductOrder from '^/ProductOrder';
-import Accordion from '^/Accordion';
-import ContactDetails from '^/Footer/ContactDetails';
+import ProductImage from '../ProductImage';
+import ProductOrder from '../ProductOrder';
+import Accordion from '../Accordion';
+import ContactDetails from '../Footer/ContactDetails';
 import { defaultImages } from '@/constants';
 import { accordionItemsData } from '@/config/dataItemsAccordion';
 import { productOrderParameters } from '@/config/ProductOrderMockups';

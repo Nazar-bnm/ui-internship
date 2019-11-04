@@ -29,7 +29,6 @@
       "pre-push": "npm run lint && npm run test"
     }
   },
-
   "author": "",
   "license": "ISC",
   "devDependencies": {

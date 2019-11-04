@@ -6,11 +6,11 @@ import {
   TransitionGroup
 } from 'react-transition-group';
 
-import Header from '^/Header';
-import Footer from '^/Footer';
-import Brands from '^/Brands';
-import ShippingInfo from '^/ShippingInfo';
-import Notifications from '~/Notifications';
+import Header from '../Header';
+import Footer from '../Footer';
+import Brands from '../Brands';
+import ShippingInfo from '../ShippingInfo';
+import { NotificationsContainer } from '@/shared';
 
 import './DefaultLayout.scss';
 
@@ -56,7 +56,7 @@ class DefaultLayout extends Component {
             >
               <>
                 {!hideHeader && <Header />}
-                <Notifications type />
+                <NotificationsContainer type />
                 <Page {...matchProps} />
                 {!hideBrands && <Brands />}
                 {!hideShippingInfo && <ShippingInfo />}
