@@ -58,7 +58,7 @@ class Carousel extends Component {
 
     if (window.innerWidth >= 1024) {
       count = sizeValues.desktop;
-    } else if (window.innerWidth >= 768) {
+    } else if (window.innerWidth > 768) {
       count = sizeValues.tablet;
     } else if (window.innerWidth >= 320) {
       count = sizeValues.mobile;
@@ -144,7 +144,7 @@ class Carousel extends Component {
 
     return children.map((item) => (
       <div
-        key={item.id}
+        key={item.key}
         className={`${CN}__child`}
         style={style}
       >
