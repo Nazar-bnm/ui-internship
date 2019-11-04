@@ -13,6 +13,10 @@
   &__items-list-container {
     @include flex;
     width: 100%;
+    
+    .items-container {
+      @include flex($justify: space-evenly);
+    }
   }
 
   &__dropdowns-wrapper {

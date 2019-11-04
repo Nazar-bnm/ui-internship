@@ -25,7 +25,8 @@ const initialState = {
   itemList: [],
   error: null,
   dropdownSortingSelectedID: 0,
-  dropdownItemsNumberSelectedID: 0
+  dropdownItemsNumberSelectedID: 0,
+  fetchedItemsNumber: 0
 };
 
 export default function reducerProductList(state = initialState, action) {

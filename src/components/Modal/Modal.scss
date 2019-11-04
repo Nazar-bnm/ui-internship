@@ -1,10 +1,11 @@
-@import '@/scss/_global_styles';
+@import "../../scss/global_styles";
 
 .modal {
   @include flex($justify: center, $align: center);
   position: fixed;
   z-index: 100;
   top: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba($color: $black, $alpha: 0.5);
@@ -41,7 +42,7 @@
 
     &:hover {
       border-color: $dove-gray;
-  
+
       i.icon {
         color: $dove-gray;
       }
@@ -68,4 +69,3 @@
 .remove-scroll {
   overflow: hidden;
 }
-

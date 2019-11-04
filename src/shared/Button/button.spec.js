@@ -7,7 +7,7 @@ describe('<Button />', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <Button onClick={() => {}}/>
+      <Button />
     );
   });
   test('should match snapshot', () => {

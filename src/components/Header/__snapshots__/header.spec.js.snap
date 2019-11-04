@@ -13,7 +13,6 @@ exports[`<Header /> should match snapshot 1`] = `
     className="header__heading-search-cart-container content"
   >
     <Link
-      className="header__title-wrapper"
       to="/home"
     >
       <h2
@@ -30,11 +29,11 @@ exports[`<Header /> should match snapshot 1`] = `
           Array [
             Object {
               "itemName": "women",
-              "url": "women",
+              "url": "woman",
             },
             Object {
               "itemName": "man",
-              "url": "men",
+              "url": "man",
             },
             Object {
               "itemName": "kids",
@@ -64,22 +63,21 @@ exports[`<Header /> should match snapshot 1`] = `
         }
       />
       <Input
-        className="header__search-input"
+        customClass="header__search-input"
         icon="search"
-        placeholder=""
-      />
+      >
+        Search
+      </Input>
       <Link
-        className="header-cart-link"
         to="/cart"
       >
-        <i
-          className="cart icon header-cart-link__icon"
-        />
-        <span
-          className=" header-cart-link__title"
+        <Button
+          customClass="header__cart-btn"
+          icon="cart"
+          onClick={[Function]}
         >
           Cart (0)
-        </span>
+        </Button>
       </Link>
     </div>
   </div>
@@ -88,12 +86,12 @@ exports[`<Header /> should match snapshot 1`] = `
       Array [
         Object {
           "label": "women",
-          "link": "/women",
+          "link": "/woman",
           "value": "women",
         },
         Object {
           "label": "men",
-          "link": "/men",
+          "link": "/man",
           "value": "men",
         },
         Object {

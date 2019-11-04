@@ -4,6 +4,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import PageSettings from './PageSettings';
+import { Button } from '@/shared';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
@@ -22,15 +23,16 @@ const Header = ({ userCart }) => (
       <PageSettings />
     </div>
     <div className={`${CN}__heading-search-cart-container content`}>
-      <Link to="/home" className={`${CN}__title-wrapper`}>
+      <Link to="/home">
         <h2 className={`${CN}__title`}>The shop</h2>
       </Link>
       <div className={`${CN}__buttons-container`}>
         <BurgerMenu menuItemsList={burgerMenuItemsList} />
-        <Input icon="search" className={`${CN}__search-input`} />
-        <Link to="/cart" className={`${CN}-cart-link`}>
-          <i className={`cart icon ${CN}-cart-link__icon`} />
-          <span className={` ${CN}-cart-link__title`}>{`Cart (${userCart.length})`}</span>
+        <Input icon="search" customClass={`${CN}__search-input`}>Search</Input>
+        <Link to="/cart">
+          <Button icon="cart" customClass={`${CN}__cart-btn`}>
+            {`Cart (${userCart.length})`}
+          </Button>
         </Link>
       </div>
     </div>

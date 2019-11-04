@@ -1,7 +1,4 @@
 export const productOrderParameters = {
-  itemName: 'Detailed swing dress',
-  description: 'The best pink dress on the market, new collection!',
-  price: '$1,999.00',
   sizes: [
     { value: 'size:', label: 'size:' },
     { value: 's', label: 's' },

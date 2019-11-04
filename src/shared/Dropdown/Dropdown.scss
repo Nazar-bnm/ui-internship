@@ -1,4 +1,5 @@
-@import '@/scss/_global_styles';
+
+@import "../../../scss/global_styles";
 
 .dropdown {
   @include flex(row, center, center);
