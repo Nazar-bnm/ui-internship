@@ -8,7 +8,7 @@ import { Button } from '@/shared';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
-import config from '@/../config';
+import config from '../../../config';
 
 import './Header.scss';
 

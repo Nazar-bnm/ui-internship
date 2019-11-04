@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { ARROW_BUTTON_TYPES } from '@/constants/SlideshowConst';
+import { ARROW_BUTTON_TYPES } from '../../../../constants/SlideshowConst';
 
 import './ArrowButton.scss';
 

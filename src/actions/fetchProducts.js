@@ -1,4 +1,4 @@
-import HttpService from '@/service/HttpService/httpService';
+import HttpService from '../service/HttpService/httpService';
 import { fetchProductsPending, fetchProductsSuccess, fetchProductsError } from './actionsAPIcall';
 
 const fetchProducts = (category) => (

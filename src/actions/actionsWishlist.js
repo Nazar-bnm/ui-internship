@@ -1,4 +1,4 @@
-import { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } from '@/constants/actionTypes';
+import { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } from '../constants/actionTypes';
 
 export const addToWishlist = (productId) => ({
   type: ADD_TO_WISHLIST,

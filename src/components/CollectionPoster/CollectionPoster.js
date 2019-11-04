@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import HttpService from '@/service/HttpService/httpService';
+import HttpService from '../../service/HttpService/httpService';
 
 import './CollectionPoster.scss';
 

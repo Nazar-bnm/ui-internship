@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import { NOTIFICATION_TYPES } from '@/constants';
+import { NOTIFICATION_TYPES } from '../../constants';
 
 import './Notifications.scss';
 

@@ -1,4 +1,4 @@
-import { CHANGE_QUANTITY, REMOVE_ITEM_FROM_CART } from '@/constants/actionTypes';
+import { CHANGE_QUANTITY, REMOVE_ITEM_FROM_CART } from '../constants/actionTypes';
 
 const initialState = {
   userCart: [{

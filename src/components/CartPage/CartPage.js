@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import CartItem from './CartItem';
-import config from '@/../config';
+import config from '../../../config';
 
 import './CartPage.scss';
 

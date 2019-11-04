@@ -4,7 +4,7 @@ import axios from 'axios';
 import { mount } from 'enzyme';
 
 import ItemsList from './ItemsList';
-import mockedData from '@/mockedDataForTests';
+import mockedData from '../../../mockedDataForTests';
 
 xdescribe('<ItemsList />', () => {
   const { mockedProductList } = mockedData;

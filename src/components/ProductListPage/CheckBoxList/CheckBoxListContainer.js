@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { checkCheckbox } from '@/actions/actionsFilter';
+import { checkCheckbox } from '../../../actions/actionsFilter';
 import CheckBoxList from './CheckBoxList';
 
 const mapStateToProps = ({ reducerFilter }) => ({

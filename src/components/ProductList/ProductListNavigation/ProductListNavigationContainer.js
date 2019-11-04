@@ -5,7 +5,7 @@ import {
   changeSortingOrder,
   changeOrderType,
   changeitemsNumberOnPage
-} from '@/actions/actionsProductList';
+} from '../../../actions/actionsProductList';
 
 const mapStateToProps = (state) => ({
   ascendingOrder: state.reducerProductList.ascendingOrder

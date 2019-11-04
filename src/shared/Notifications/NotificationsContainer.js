@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Notifications from './Notifications';
-import { isHideNotification } from '@/actions/actionsNotifications';
+import { isHideNotification } from '../../actions/actionsNotifications';
 
 const mapStateToProps = (state) => ({
   isShowNotification: state.reducerNotifications.isShowNotification,

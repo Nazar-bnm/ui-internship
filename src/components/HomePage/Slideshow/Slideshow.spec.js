@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import Slideshow from './Slideshow';
 import Slide from '../Slide';
 import { slideshowData } from './SlideshowDate';
-import { ANIMATION_NAMES } from '@/constants/SlideshowConst';
+import { ANIMATION_NAMES } from '../../../constants/SlideshowConst';
 
 describe('<Slideshow />', () => {
   const CN = 'slideshow-slides';

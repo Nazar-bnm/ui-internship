@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Dropdown } from '@/shared';
-import config from '@/../config';
+import config from '../../../../../config';
 
 export const CN = 'dropdowns';
 

@@ -4,7 +4,7 @@ import {
   CHANGE_ORDER_TYPE,
   GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_ERROR
-} from '@/constants/actionTypes';
+} from '../constants/actionTypes';
 
 export function changeSortingOrder() {
   return {
