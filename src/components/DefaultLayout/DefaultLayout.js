@@ -63,7 +63,8 @@ class DefaultLayout extends Component {
             return (
               <HomePageSkeleton />
             );
-          } return (
+          }
+          return (
             <TransitionGroup>
               <CSSTransition
                 key={location.key}
