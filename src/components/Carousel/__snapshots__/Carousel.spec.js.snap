@@ -3,7 +3,7 @@
 exports[`<Carousel /> should match snapshot 1`] = `
 <Carousel>
   <div
-    className="carousel content content__mobile-width"
+    className="carousel content"
   >
     <div
       className="carousel__viewport"
