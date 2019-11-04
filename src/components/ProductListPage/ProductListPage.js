@@ -19,7 +19,7 @@ class ProductListPage extends Component {
   }
 
   render() {
-    const { match: { params: { category } }, resetFilterState } = this.props;
+    const { match: { params: { category } }, resetFilterState, fetchedItemsNumber } = this.props;
 
     return (
       <div className={cx(CN, 'content')}>
@@ -46,7 +46,7 @@ class ProductListPage extends Component {
           <section className={`${CN}__poster`}>
             <div className={`${CN}__heading`}>
               <Heading title={category} />
-              <span className={`${CN}__heading-itemsLeft`}>557 items</span>
+              <span className={`${CN}__heading-itemsLeft`}>{`${fetchedItemsNumber} items`}</span>
             </div>
             <CollectionPoster category={category} />
           </section>

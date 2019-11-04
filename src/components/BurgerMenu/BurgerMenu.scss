@@ -3,10 +3,10 @@
 .burger-menu {
   @keyframes open {
     from {
-        left: -100vw;
+      left: -100vw;
     }
     to {
-        left: 0;
+      left: 0;
     }
   }
 
@@ -14,8 +14,7 @@
     display: none;
 
     &:checked~.burger-menu__list {
-      display: flex;
-      flex-direction: column;
+      @include flex($direction: column, $wrap: nowrap);
       animation-name: open;
       animation-duration: 0.8s;
     }
@@ -32,7 +31,7 @@
 
   & {
     display: none;
-    display: flex;
+    @include flex($wrap: nowrap);
     width: 50px;
     padding-right: 10px;
 
@@ -58,7 +57,7 @@
   }
 
   &__navigation {
-    display: flex;
+    @include flex($wrap: nowrap);
     height: 30px;
     z-index: 100;
   }
@@ -71,7 +70,7 @@
   &__link {
     font-size: 0.9rem;
     text-decoration: none;
-    background-color: #ffffff;
+    background-color: $white;
     color: $black;
     display: block;
     padding: 15px;

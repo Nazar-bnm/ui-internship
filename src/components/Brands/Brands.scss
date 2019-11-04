@@ -1,6 +1,10 @@
 @import '../../scss/global_styles';
 
 .brand {
+  &__title {
+    @include title-font;
+  }
+
   &__list {
     display: flex;
     list-style: none;
@@ -26,7 +30,8 @@
     }
   }
 
-  .container {
+  &__container {
+    @extend .container;
     justify-content: center;
   }
 }

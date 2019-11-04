@@ -76,7 +76,7 @@ class ItemsList extends React.Component {
     return itemsToRender.slice(0, itemsOnPage).map((el) => (
       <ProductItem
         key={el._id}
-        item={el}
+        product={el}
         wishlist={wishlist}
         addToWishList={addToWishList}
         removeFromWishList={removeFromWishList}
@@ -85,9 +85,7 @@ class ItemsList extends React.Component {
   }
 
   getCategoriesURL() {
-    const {
-      filters
-    } = this.props;
+    const { filters } = this.props;
     const {
       bottoms,
       tops,
@@ -97,22 +95,19 @@ class ItemsList extends React.Component {
     } = filters;
     let categories = '';
     const regexWhiteSpace = / /g;
+    const allFilters = bottoms.concat(tops, sizes, colors, brands);
 
-    bottoms.forEach((item) => {
-      categories += `&category=${item}`;
-    });
-    tops.forEach((item) => {
-      categories += `&category=${item}`;
-    });
-    sizes.forEach((item) => {
-      categories += `&sizes=${item}`;
-    });
-    colors.forEach((item) => {
-      categories += `&colors=${item}`;
-    });
-    brands.forEach((item) => {
-      item.replace(regexWhiteSpace, '');
-      categories += `&brandId=${brandIDEnum[item]}`;
+    allFilters.forEach((item) => {
+      if (bottoms.includes(item) || tops.includes(item)) {
+        categories += `&category=${item}`;
+      } else if (sizes.includes(item)) {
+        categories += `&sizes=${item}`;
+      } else if (colors.includes(item)) {
+        categories += `&colors=${item}`;
+      } else {
+        item.replace(regexWhiteSpace, '');
+        categories += `&brandId=${brandIDEnum[item]}`;
+      }
     });
 
     return categories;
@@ -138,11 +133,7 @@ class ItemsList extends React.Component {
   }
 
   sortItems() {
-    const {
-      ascendingOrder,
-      orderType,
-      itemList
-    } = this.props;
+    const { ascendingOrder, orderType, itemList } = this.props;
     const itemsToRender = [...itemList];
 
     switch (orderType) {

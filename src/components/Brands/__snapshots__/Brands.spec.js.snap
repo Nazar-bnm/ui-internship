@@ -6,12 +6,12 @@ exports[`<Brands /> should match snapshot 1`] = `
     className="content"
   >
     <h3
-      className="title"
+      className="brand__title"
     >
       Top Brands
     </h3>
     <div
-      className="container brand"
+      className="brand__container"
     >
       <ul
         className="brand__list"
