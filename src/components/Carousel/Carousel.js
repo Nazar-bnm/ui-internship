@@ -141,7 +141,6 @@ class Carousel extends Component {
     const { children } = this.props;
     const { widthOfSlide } = this.state;
     const style = { maxWidth: widthOfSlide };
-    // console.log(children);
 
     return children.map((item) => (
       <div
