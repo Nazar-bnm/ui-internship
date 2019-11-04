@@ -1,0 +1,98 @@
+@import '../../scss/global_styles';
+
+.plp-skeleton {
+    background-color: $alabaster;
+    height: 100vh;
+    overflow: hidden;
+
+    &__item {
+        background-color: $alto;
+        animation: pulse 1s infinite ease-in-out;
+    }
+
+    &__line {
+    margin: 15px 0;
+    }
+
+    &__nav {
+        padding-bottom: 10px;
+
+        .plp-skeleton__item {
+            height: 10px;
+            width: 60px;
+            background-color: $alto;
+
+            &:nth-child(1) {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__content {
+        height: 100%;
+    }
+
+    &__filters {
+
+        height: 100%;
+
+        .plp-skeleton__item {
+            height: 10px;
+            width: 60px;
+            background-color: $alto;
+            margin: 20px 0 10px;
+            
+        }
+    }
+
+    &__category {
+        border: 1px solid $alto;
+        height: 190px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+
+    &__subcategory {
+        border: 1px solid $alto;
+        height: 220px;
+        margin-bottom: 10px;
+    
+        &:nth-child(2) {
+            height: 150px;
+        }
+    }
+
+    &__products {
+        .container {
+            @include flex($align: center, $justify: space-between);
+        }
+        .plp-skeleton {
+            &__item {
+                width: 100px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__poster {
+        height: 40vw;
+        width: 100%;
+        background-color: $alto;
+        margin-top: 10px;
+        animation: pulse 1s infinite ease-in-out;
+    }
+
+    &__title {
+        height: 16px;
+        background-color: $alto;
+        margin: 15px 5px;
+        animation: pulse 1s infinite ease-in-out;
+    }
+
+    &__paragraph {
+        height: 12px;
+        background-color: $alto;
+        margin: 10px 15px;
+        animation: pulse 1s infinite ease-in-out;
+    }
+}

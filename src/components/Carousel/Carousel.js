@@ -58,7 +58,7 @@ class Carousel extends Component {
 
     if (window.innerWidth >= 1024) {
       count = sizeValues.desktop;
-    } else if (window.innerWidth >= 768) {
+    } else if (window.innerWidth > 768) {
       count = sizeValues.tablet;
     } else if (window.innerWidth >= 320) {
       count = sizeValues.mobile;
@@ -144,7 +144,7 @@ class Carousel extends Component {
 
     return children.map((item) => (
       <div
-        key={item.id}
+        key={item.key}
         className={`${CN}__child`}
         style={style}
       >
@@ -173,13 +173,6 @@ class Carousel extends Component {
 
     return (
       <div className={`${CN} content`}>
-        <button
-          className={leftNavClasses}
-          type="button"
-          onClick={this.handleClick}
-        >
-          <i className={`${CN}__arrow-button chevron left icon`} />
-        </button>
         <div
           className={`${CN}__viewport`}
           ref={this.carouselViewport}
@@ -187,6 +180,13 @@ class Carousel extends Component {
         >
           {this.renderChildren()}
         </div>
+        <button
+          className={leftNavClasses}
+          type="button"
+          onClick={this.handleClick}
+        >
+          <i className={`${CN}__arrow-button chevron left icon`} />
+        </button>
         <button
           type="button"
           className={rightNavClasses}

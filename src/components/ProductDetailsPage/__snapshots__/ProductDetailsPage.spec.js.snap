@@ -43,9 +43,8 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
           },
         ]
       }
-      description="The best pink dress on the market, new collection!"
-      itemName="Detailed swing dress"
-      price="$1,999.00"
+      description=""
+      price=""
       quantity={
         Array [
           Object {
@@ -118,6 +117,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
           },
         ]
       }
+      title=""
     />
     <div
       className="product-details-right-aside-accordion"
