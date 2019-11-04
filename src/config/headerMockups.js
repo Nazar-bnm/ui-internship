@@ -1,7 +1,7 @@
 export const navConfig = [
-  { value: 'women', label: 'women', link: '/women' },
-  { value: 'men', label: 'men', link: '/not_found' },
-  { value: 'kids', label: 'kids', link: '/not_found' },
+  { value: 'women', label: 'women', link: '/woman' },
+  { value: 'men', label: 'men', link: 'man' },
+  { value: 'kids', label: 'kids', link: 'kids' },
   { value: 'accs', label: 'accessories', link: '/not_found' },
   { value: 'new', label: 'what\'s new', link: '/not_found' },
   { value: 'brands', label: 'brands', link: '/not_found' },
