@@ -172,14 +172,7 @@ class Carousel extends Component {
     );
 
     return (
-      <div className={`${CN} content content__mobile-width`}>
-        <button
-          className={leftNavClasses}
-          type="button"
-          onClick={this.handleClick}
-        >
-          <i className={`${CN}__arrow-button chevron left icon`} />
-        </button>
+      <div className={`${CN} content`}>
         <div
           className={`${CN}__viewport`}
           ref={this.carouselViewport}
@@ -187,6 +180,13 @@ class Carousel extends Component {
         >
           {this.renderChildren()}
         </div>
+        <button
+          className={leftNavClasses}
+          type="button"
+          onClick={this.handleClick}
+        >
+          <i className={`${CN}__arrow-button chevron left icon`} />
+        </button>
         <button
           type="button"
           className={rightNavClasses}
