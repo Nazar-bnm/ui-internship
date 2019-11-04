@@ -7,6 +7,8 @@ import ProductList from '../ProductList';
 import Heading from '../Heading/Heading';
 import Button from '../shared/Button';
 import CollectionPoster from '../CollectionPoster';
+import PriceRangeSlider from './PriceRangeSlider'
+import Accordion from '../Accordion';
 
 import './ProductListPage.scss';
 
@@ -19,7 +21,8 @@ class ProductListPage extends Component {
   }
 
   render() {
-    const { match: { params: { category } }, resetFilterState } = this.props;
+    const { match: { params: { category } }, resetFilterState, price, setPriceRange } = this.props;
+    console.log(this.props);
 
     return (
       <div className={cx(CN, 'content')}>
@@ -30,6 +33,19 @@ class ProductListPage extends Component {
         <div className={`${cx(CN)}__gridWrapper`}>
           <section className={`${CN}__filter`}>
             <Button onClick={resetFilterState}>Reset Filters</Button>
+            <Accordion
+              className={`${CN}__priceRange-wrapper`}
+              heightItem="auto"
+              open
+              data={[
+                {
+                  title: "Price Range",
+                  description: <div className={`${CN}__priceRange`}>
+                    <PriceRangeSlider priceRange={price} setPriceRange={setPriceRange}/>
+                  </div>
+                }
+              ]}
+            />
             <Filter category={category} />
             <div
               className={`${cx(CN)}__brandAdvert`}
