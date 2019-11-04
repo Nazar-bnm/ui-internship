@@ -74,9 +74,10 @@ class ProductImage extends Component {
 
   render() {
     const { selectedImage } = this.state;
+    const { className } = this.props;
 
     return (
-      <div className={cx(`${CN}__container`)}>
+      <div className={cx(`${CN}__container`, className)}>
         {this.renderSmallImages(selectedImage)}
         <div
           className={`${CN}__big-image-container`}
@@ -96,11 +97,13 @@ class ProductImage extends Component {
 ProductImage.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string
-  }))
+  })),
+  className: PropTypes.string
 };
 
 ProductImage.defaultProps = {
-  images: []
+  images: [],
+  className: ''
 };
 
 export default ProductImage;

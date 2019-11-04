@@ -10,6 +10,12 @@
   white-space: normal;
   height: 370px;
 
+  .carousel-image {
+    max-width: 75px;
+    height: 100%;
+    padding-right: 2px;
+  }
+
   &__button {
     background: none;
     color: inherit;
@@ -118,7 +124,7 @@
   &-quick-view {
     min-height: max-content;
     min-width: min-content;
-    height: 450px;
+    height: 470px;
     max-width: 80vw;
     padding: 1rem 3.5rem 1rem;
 
@@ -135,8 +141,14 @@
 
     &-content {
       display: flex;
-      height: 80%;
+      height: 90%;
       padding-top: 1rem;
+
+      &-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
       &__product-order {
         display: block;
@@ -175,8 +187,6 @@
 
         &__big-image-container {
 height: 100%;
-
-
         }
 
         &__small-image {
@@ -225,7 +235,6 @@ height: 100%;
 @media screen and (max-width: 768px) {
   .product {
     display: inline-block;
-    padding: 50px;
 
     &-quick-view {
       &-content {
@@ -245,8 +254,3 @@ height: 100%;
   }
 }
 
-@include media-for(mobile-landscape) {
-  .product {
-    padding: 30px;
-  }
-}

@@ -6,7 +6,7 @@ import {
 } from 'react-transition-group';
 
 import HomePage from '../HomePage';
-import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageWrapper';
+import ProductDetailsPage from '../ProductDetailsPage';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
 import WishListPage from '../WishlistPage';
@@ -29,7 +29,7 @@ const Routes = () => (
           <DefaultLayout path="/" exact component={HomePage} />
           <DefaultLayout path="/home" component={HomePage} />
           <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
-          <DefaultLayout path="/product-details" component={ProductDetailsPageWrapper} />
+          <DefaultLayout path="/product-details/:id" component={ProductDetailsPage} />
           <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
           <DefaultLayout path="/cart" component={CartPage} />

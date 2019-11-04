@@ -11,7 +11,7 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
     _id, images, title, collection, category
   } = item;
 
-  const imageSrc = `${process.env.IMAGE_URL}${images[0].claudinaryId}`;
+  const imageSrc = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
 
   return (
     <div className={cx(CN, className)}>

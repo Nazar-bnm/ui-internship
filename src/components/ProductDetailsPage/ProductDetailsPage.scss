@@ -5,9 +5,12 @@
   justify-content: space-between;
   padding: 20px 0;
 
-  .product-image__container {
-    max-width: 100%;
-    width: 55%;
+
+  &-images {
+    .carousel-image {
+      max-width: 130px;
+      height: 100%;
+    }
   }
 
   &-right-aside {
@@ -60,6 +63,17 @@
 
   .accordion-item__description {
     font-size: 0.9rem;
+  }
+
+  .product-image__container {
+    height: 550px;
+  }
+
+  .product-image__big-image-container {
+    height: 100%;
+  }
+  .product-image__small-image {
+    height: 100%;
   }
 }
 
