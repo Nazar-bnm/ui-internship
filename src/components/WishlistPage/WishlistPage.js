@@ -26,10 +26,10 @@ const WishlistPage = (props) => {
 
   const renderWishlistPage = () => (
     wishlist.length ? (products.map((item) => {
-      if (wishlist.includes(item.id)) {
+      if (wishlist.includes(item._id)) {
         return (
           <WishlistItem
-            key={item.id}
+            key={item._id}
             item={item}
             removeFromWishlist={removeFromWishlist}
           />

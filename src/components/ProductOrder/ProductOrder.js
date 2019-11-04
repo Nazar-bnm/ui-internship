@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import Dropdown from '../shared/Dropdown';
@@ -11,18 +12,20 @@ export const CN = 'product-order';
 
 const ProductOrder = (props) => {
   const {
-    itemName,
+    title,
     description,
     price,
     sizes,
     colors,
     quantity,
-    handleClick
+    onClickAddToWishlist,
+    onClickAddToCart,
+    className
   } = props;
 
   return (
-    <div className={`${CN}`}>
-      <h2 className={`${CN}__heading`}>{itemName}</h2>
+    <div className={cx(CN, className)}>
+      <h2 className={`${CN}__heading`}>{title}</h2>
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
       <div className={`${CN}__dropdowns-wrapper`}>
@@ -31,13 +34,14 @@ const ProductOrder = (props) => {
         <Dropdown menuOptions={quantity} placeholder="qty:" />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
-        <Link to="/not_found">
-          <Button onClick={handleClick} className={`${CN}__cart-btn`}>add to cart</Button>
+        <Link to="/cart">
+          <Button onClick={onClickAddToCart} className={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
-        <Link to="/not_found">
+        <Link to="/wishlist">
           <Button
             className={`${CN}__wishlist-btn`}
             icon="heart"
+            onClick={onClickAddToWishlist}
           >
           wishlist
           </Button>
@@ -48,23 +52,23 @@ const ProductOrder = (props) => {
 };
 
 ProductOrder.propTypes = {
-  itemName: PropTypes.string,
+  title: PropTypes.string,
   description: PropTypes.string,
   price: PropTypes.string,
   quantity: PropTypes.array,
   sizes: PropTypes.array,
   colors: PropTypes.array,
-  handleClick: PropTypes.func
+  onClickAddToWishlist: PropTypes.func.isRequired,
+  onClickAddToCart: PropTypes.func.isRequired
 };
 
 ProductOrder.defaultProps = {
-  itemName: '',
+  title: '',
   description: '',
   price: '',
   quantity: [],
   sizes: [],
-  colors: [],
-  handleClick: () => {}
+  colors: []
 };
 
 export default ProductOrder;
