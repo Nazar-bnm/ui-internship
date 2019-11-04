@@ -14,7 +14,6 @@ import Notifications from '../shared/Notifications';
 import HomePageSkeleton from '../HomePageSkeleton/HomePageSkeleton';
 import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
 
-
 import './DefaultLayout.scss';
 
 const category = 'products';
@@ -51,11 +50,15 @@ class DefaultLayout extends Component {
       <Route
         {...rest}
         render={(matchProps) => {
+          // will be removed after all demo pull request
+          // eslint-disable-next-line no-undef
           if ((matchProps.match.path === '/:category') && !productsList.length) {
             return (
               <PlpSkeleton />
             );
           }
+          // will be removed after all demo pull request
+          // eslint-disable-next-line no-undef
           if ((matchProps.match.path === '/home' || matchProps.match.path === '/') && !productsList.length) {
             return (
               <HomePageSkeleton />
