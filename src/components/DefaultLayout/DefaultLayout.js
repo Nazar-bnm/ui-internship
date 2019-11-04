@@ -11,6 +11,7 @@ import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
 import Notifications from '../shared/Notifications';
+import NotificationButtons from '../NotificationButtons';
 
 import './DefaultLayout.scss';
 
@@ -56,6 +57,7 @@ class DefaultLayout extends Component {
             >
               <>
                 {!hideHeader && <Header />}
+                <NotificationButtons />
                 <Notifications type />
                 <Page {...matchProps} />
                 {!hideBrands && <Brands />}

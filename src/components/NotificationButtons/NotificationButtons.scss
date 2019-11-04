@@ -1,0 +1,32 @@
+@import '../../scss/global_styles';
+
+.notification-buttons {
+  display: flex;
+  justify-content: space-around;
+  
+
+  &__change {
+    color: #444;
+   
+  }
+
+  &__info {
+    color: #3498db;
+  }
+
+  &__success {
+    color: #2ecc71;
+  }
+
+  &__warning {
+    color: #e67e22;
+  }
+
+  &__error {
+    color: #e74c3c;
+  }
+
+  &__custom {
+    color: purple;
+  }
+}
