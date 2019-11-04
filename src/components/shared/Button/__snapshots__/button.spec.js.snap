@@ -3,7 +3,7 @@
 exports[`<Button /> should match snapshot 1`] = `
 <button
   className="null button"
-  onClick={null}
+  onClick={[Function]}
   type="button"
 />
 `;

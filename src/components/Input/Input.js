@@ -1,24 +1,25 @@
 import React from 'react';
-import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 export const CN = 'input';
 
-const Input = ({ icon, customClass }) => (
-  <div className={cx(CN)}>
+const Input = ({ icon, className, placeholder }) => (
+  <div className={CN}>
     {icon && <i className={`${icon} icon`} />}
-    <input className={customClass} type="text" placeholder="SEARCH" />
+    <input className={className} type="text" placeholder={placeholder} />
   </div>
 );
 
 Input.propTypes = {
   icon: PropTypes.string,
-  customClass: PropTypes.string
+  placeholder: PropTypes.string,
+  className: PropTypes.string
 };
 
 Input.defaultProps = {
   icon: '',
-  customClass: ''
+  className: '',
+  placeholder: ''
 };
 
 export default Input;
