@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Button from '@/shared';
+import { Button } from '@/shared';
 import './LoginRegister.scss';
 
 const CN = 'login-register';
@@ -53,7 +53,6 @@ class LoginRegister extends React.Component {
           </form>
           <Button customClass={`${CN}__button`}>Continue</Button>
         </div>
-
       </div>
     );
   }

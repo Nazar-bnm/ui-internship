@@ -45,6 +45,7 @@ const data = [
   // }
 ];
 // console.log('data ', data);
+// console.log(data)
 
 const Checkout = () => (
   <div className={`${cx(CN)}-wrapper content`}>
