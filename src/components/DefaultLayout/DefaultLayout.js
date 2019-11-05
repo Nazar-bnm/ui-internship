@@ -10,7 +10,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
-import { NotificationsContainer } from '@/shared';
+import { Notifications } from '@/shared';
 import HomePageSkeleton from '../HomePageSkeleton/HomePageSkeleton';
 import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
 
@@ -72,7 +72,7 @@ class DefaultLayout extends Component {
               >
                 <>
                   {!hideHeader && <Header />}
-                  <NotificationsContainer type />
+                  <Notifications type />
                   <Page {...matchProps} />
                   {!hideBrands && <Brands />}
                   {!hideShippingInfo && <ShippingInfo />}
