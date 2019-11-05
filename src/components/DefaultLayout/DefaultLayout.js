@@ -43,27 +43,28 @@ class DefaultLayout extends Component {
       hideBrands,
       hideShippingInfo,
       location,
+      products,
       ...rest
     } = this.props;
-
+    
     return (
       <Route
         {...rest}
         render={(matchProps) => {
           // will be removed after all demo pull request
           // eslint-disable-next-line no-undef
-          if ((matchProps.match.path === '/:category') && !productsList.length) {
-            return (
-              <PlpSkeleton />
-            );
-          }
+          // if ((matchProps.match.path === '/:category') && !products.length) {
+          //   return (
+          //     <PlpSkeleton />
+          //   );
+          // }
           // will be removed after all demo pull request
           // eslint-disable-next-line no-undef
-          if ((matchProps.match.path === '/home' || matchProps.match.path === '/') && !productsList.length) {
-            return (
-              <HomePageSkeleton />
-            );
-          }
+          // if ((matchProps.match.path === '/home' || matchProps.match.path === '/') && !products.length) {
+          //   return (
+          //     <HomePageSkeleton />
+          //   );
+          // }
           return (
             <TransitionGroup>
               <CSSTransition

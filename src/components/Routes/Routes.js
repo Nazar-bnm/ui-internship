@@ -8,7 +8,7 @@ import {
 import HomePage from '../HomePage';
 import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageWrapper';
 import NotFoundPage from '../NotFoundPage';
-import DefaultLayout from '../DefaultLayout';
+import DefaultLayout from '../DefaultLayout/DefaultLayoutContainer';
 import WhatIsNew from '../WhatIsNew';
 import WishListPage from '../WishlistPage';
 import MostPopular from '../MostPopular';
