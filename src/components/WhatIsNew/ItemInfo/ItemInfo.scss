@@ -1,6 +1,6 @@
-@import '../../../scss/global_styles';
-@import '../../../scss/breakpoints';
-@import '../../../scss/styles';
+@import '../../../scss//global_styles';
+@import '../../../scss/_breakpoints';
+@import '../../../scss/_styles';
 
 .item {
   @include flex(column, center,center);
