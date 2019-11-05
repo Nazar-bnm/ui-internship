@@ -7,7 +7,7 @@ import ProductList from '../ProductList';
 import Heading from '../Heading/Heading';
 import Button from '../shared/Button';
 import CollectionPoster from '../CollectionPoster';
-import PriceRangeSlider from './PriceRangeSlider'
+import PriceRangeSlider from './PriceRangeSlider';
 import Accordion from '../Accordion';
 
 import './ProductListPage.scss';
@@ -15,14 +15,24 @@ import './ProductListPage.scss';
 export const CN = 'productListPage';
 
 class ProductListPage extends Component {
+  state = {
+    isAccordionOpen: true
+  };
+
   componentWillUnmount() {
     const { resetFilterState } = this.props;
     resetFilterState && resetFilterState();
   }
 
   render() {
-    const { match: { params: { category } }, resetFilterState, price, setPriceRange } = this.props;
-    console.log(this.props);
+    const {
+      match: {
+        params: { category }
+      },
+      resetFilterState,
+      price,
+      setPriceRange
+    } = this.props;
 
     return (
       <div className={cx(CN, 'content')}>
@@ -39,10 +49,18 @@ class ProductListPage extends Component {
               open
               data={[
                 {
-                  title: "Price Range",
-                  description: <div className={`${CN}__priceRange`}>
-                    <PriceRangeSlider priceRange={price} setPriceRange={setPriceRange}/>
-                  </div>
+                  title: 'Price Range',
+                  description: (
+                    <div className={`${CN}__priceRange`}>
+                      <PriceRangeSlider
+                        min={50}
+                        max={2000}
+                        step={10}
+                        priceRange={price}
+                        setPriceRange={setPriceRange}
+                      />
+                    </div>
+                  )
                 }
               ]}
             />
@@ -50,12 +68,17 @@ class ProductListPage extends Component {
             <div
               className={`${cx(CN)}__brandAdvert`}
               style={{
-                backgroundImage: 'url(src/assets/img/productListPage/collection_photo.jpg)'
+                backgroundImage:
+                  'url(src/assets/img/productListPage/collection_photo.jpg)'
               }}
             >
               <div className={`${cx(CN)}__brandAdvert-info`}>
-                <div className={`${cx(CN)}__brandAdvert-brandName`}>michael kors</div>
-                <div className={`${cx(CN)}__brandAdvert-collection`}>autumn collection</div>
+                <div className={`${cx(CN)}__brandAdvert-brandName`}>
+                  michael kors
+                </div>
+                <div className={`${cx(CN)}__brandAdvert-collection`}>
+                  autumn collection
+                </div>
               </div>
             </div>
           </section>
@@ -76,7 +99,11 @@ class ProductListPage extends Component {
 }
 
 ProductListPage.propTypes = {
-  category: PropTypes.string
+  category: PropTypes.string,
+  resetFilterState: PropTypes.func.isRequired,
+  price: PropTypes.object.isRequired,
+  setPriceRange: PropTypes.func.isRequired
+
 };
 
 ProductListPage.defaultProps = {

@@ -16,6 +16,18 @@ class Accordion extends Component {
     };
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // if(nextProps.open)
+    const dataMapper = (array) => {
+      const { open } = nextProps;
+      console.log(open, "OPEN")
+
+      return array.map((element) => ({ ...element, isHidden: !open }));
+    };
+
+    return { data: dataMapper(nextProps.data) };
+  }
+
   updateData = (dataItem, updatedIsHidden) => ({ ...dataItem, isHidden: updatedIsHidden })
 
   dataMapper(array) {

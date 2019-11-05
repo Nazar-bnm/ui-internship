@@ -4,9 +4,7 @@ import { bindActionCreators } from 'redux';
 import { resetFilterState, setPriceRange } from '../../actions/actionsFilter';
 import ProductListPage from './ProductListPage';
 
-const mapStateToProps = ({ reducerFilter }) => ({
-  price: reducerFilter.price,
-});
+const mapStateToProps = ({ reducerFilter: { price } }) => ({ price });
 
 const mapDispatchToProps = (dispatch) => ({
   resetFilterState: bindActionCreators(resetFilterState, dispatch),

@@ -5,7 +5,7 @@ const initialState = {
   bottoms: [],
   tops: [],
   sizes: [],
-  price: {from: 500, to: 1500},
+  price: { fromPrice: 500, toPrice: 1500 },
   colors: [],
   brands: []
 };
@@ -26,8 +26,8 @@ export default function reducerFilter(state = initialState, { type, payload }) {
     case SET_PRICE_RANGE: {
       return {
         ...state,
-        price: {from: payload.from, to: payload.to}
-      }
+        price: { ...state.price, [payload.label]: payload.value }
+      };
     }
     default:
       return state;

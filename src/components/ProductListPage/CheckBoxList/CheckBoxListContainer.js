@@ -8,7 +8,6 @@ const mapStateToProps = ({ reducerFilter }) => ({
   bottoms: reducerFilter.bottoms,
   tops: reducerFilter.tops,
   sizes: reducerFilter.sizes,
-  price: reducerFilter.price,
   colors: reducerFilter.colors,
   brands: reducerFilter.brands
 });

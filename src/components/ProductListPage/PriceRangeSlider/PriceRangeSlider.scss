@@ -1,8 +1,19 @@
 @import '../../../scss/global_styles';
 
-@mixin rangeSlider($width, $height, $input-top, $input-bg-color, $input-thumb-color, $float:none, $input-height:20px, $input-border-radius:14px) {
+.range-input {
   position: relative;
-  width: $width;
+  width: 100%;
+
+  &-progress {
+    height: 9px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    --track-background: linear-gradient(to right, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 100% / 100% 100%;
+    --range-color: #a8739d;
+    background: var(--track-background);
+  }
 
   input[type="range"] {
     pointer-events: none;
@@ -20,62 +31,7 @@
     pointer-events: all;
     position: relative;
     z-index: 1;
-    outline: 0;
-    -webkit-appearance: none;
-    width: $input-height;
-    height: $input-height;
-    border: none;
-    border-radius: $input-border-radius;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten($input-thumb-color,60%)), color-stop(100%, $input-thumb-color)); /* android <= 2.2 */
-    background-image: -webkit-linear-gradient(top , lighten($input-thumb-color,60%) 0, $input-thumb-color 100%); /* older mobile safari and android > 2.2 */;
-    background-image: linear-gradient(to bottom, lighten($input-thumb-color,60%) 0, $input-thumb-color 100%); /* W3C */
   }
-
-  input[type="range"]::-moz-range-thumb {
-    pointer-events: all;
-    position: relative;
-    z-index: 10;
-    -moz-appearance: none;
-    width: $input-height;
-    height: $input-height;
-    border: none;
-    border-radius: $input-border-radius;
-    background-image: linear-gradient(to bottom, lighten($input-thumb-color,60%) 0, $input-thumb-color 100%); /* W3C */
-  }
-
-  input[type="range"]::-ms-thumb {
-    pointer-events: all;
-    position: relative;
-    z-index: 10;
-    -ms-appearance: none;
-    width: $input-height;
-    height: $input-height;
-    border-radius: $input-border-radius;
-    border: 0;
-    background-image: linear-gradient(to bottom, lighten($input-thumb-color,60%) 0, $input-thumb-color 100%); /* W3C */
-  }
-
-  input[type=range]::-moz-range-track {
-    position: relative;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 1);
-    border: 0;
-  }
-
-  input[type=range]:last-of-type::-moz-range-track {
-    -moz-appearance: none;
-    background: none transparent;
-    border: 0;
-  }
-
-  input[type=range]::-moz-focus-outer {
-    border: 0;
-  }
-}
-
-section.rangeSlider {
-  @include rangeSlider(100%, 200px, 50px, #F1EFEF, #413F41, left);
-
 }
 
 .rangeSlider__prise {
