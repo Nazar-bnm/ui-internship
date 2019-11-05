@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Button from '../../shared/Button';
+import Button from '@/shared';
 import './LoginRegister.scss';
 
 const CN = 'login-register';

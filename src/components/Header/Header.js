@@ -4,7 +4,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import PageSettings from './PageSettings';
-import Button from '../shared/Button';
+import { Button } from '@/shared';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';

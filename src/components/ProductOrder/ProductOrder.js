@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-import Dropdown from '../shared/Dropdown';
-import Button from '../shared/Button';
+import { Button, Dropdown } from '@/shared';
 
 import './ProductOrder.scss';
 
