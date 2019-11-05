@@ -11,8 +11,8 @@ import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
 import Notifications from '../shared/Notifications';
-import HomePageSkeleton from '../HomePageSkeleton/HomePageSkeleton';
-import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
+// import HomePageSkeleton from '../HomePageSkeleton/HomePageSkeleton';
+// import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
 
 import './DefaultLayout.scss';
 
@@ -46,11 +46,11 @@ class DefaultLayout extends Component {
       products,
       ...rest
     } = this.props;
-    
+
     return (
       <Route
         {...rest}
-        render={(matchProps) => {
+        render={(matchProps) => (
           // will be removed after all demo pull request
           // eslint-disable-next-line no-undef
           // if ((matchProps.match.path === '/:category') && !products.length) {
@@ -65,25 +65,23 @@ class DefaultLayout extends Component {
           //     <HomePageSkeleton />
           //   );
           // }
-          return (
-            <TransitionGroup>
-              <CSSTransition
-                key={location.key}
-                timeout={300}
-                classNames="fade"
-              >
-                <>
-                  {!hideHeader && <Header />}
-                  <Notifications type />
-                  <Page {...matchProps} />
-                  {!hideBrands && <Brands />}
-                  {!hideShippingInfo && <ShippingInfo />}
-                  {!hideFooter && <Footer />}
-                </>
-              </CSSTransition>
-            </TransitionGroup>
-          );
-        }}
+          <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              timeout={300}
+              classNames="fade"
+            >
+              <>
+                {!hideHeader && <Header />}
+                <Notifications type />
+                <Page {...matchProps} />
+                {!hideBrands && <Brands />}
+                {!hideShippingInfo && <ShippingInfo />}
+                {!hideFooter && <Footer />}
+              </>
+            </CSSTransition>
+          </TransitionGroup>
+        )}
       />
     );
   }

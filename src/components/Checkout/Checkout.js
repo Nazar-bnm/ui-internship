@@ -4,10 +4,10 @@ import cx from 'classnames';
 import Accordion from '../Accordion';
 import LoginRegister from './LoginRegister';
 import BillingInfo from './BillingInfo';
-import ShippingInfo from './ShippingInfo';
-import ShippingMethod from './ShippingMethod';
-import Payment from './Payment';
-import OrderReview from './OrderReview';
+// import ShippingInfo from './ShippingInfo';
+// import ShippingMethod from './ShippingMethod';
+// import Payment from './Payment';
+// import OrderReview from './OrderReview';
 
 import './Checkout.scss';
 
@@ -22,7 +22,7 @@ const data = [
     title: '02. Billing Info',
     id: 2,
     description: <BillingInfo />
-  },
+  }
   // {
   //   title: '03. Shipping Info',
   //   id: 3,
@@ -44,7 +44,7 @@ const data = [
   //   description: <OrderReview />
   // }
 ];
-console.log('data ', data);
+// console.log('data ', data);
 
 const Checkout = () => (
   <div className={`${cx(CN)}-wrapper content`}>
