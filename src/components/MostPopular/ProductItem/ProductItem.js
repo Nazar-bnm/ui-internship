@@ -133,7 +133,7 @@ class ProductItem extends Component {
       <Modal className={`${CN}-quick-view`} removeModal={this.removeModal}>
         <Heading title="Quick view" />
         <div className={`${CN}-quick-view-content`}>
-          <ProductImage images={imagesForQuickView} />
+          <ProductImage images={imagesForQuickView} verticalCarousel />
           <div className={`${CN}-quick-view-content-wrapper`}>
             <ProductOrder
               className={`${CN}-quick-view-content__product-order`}

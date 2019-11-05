@@ -42,7 +42,7 @@ class ProductImage extends Component {
   }
 
   renderSmallImages(selectedImage) {
-    const { images } = this.props;
+    const { images, verticalCarousel } = this.props;
 
     const smallImages = images.map((el) => {
       const { src } = el;
@@ -69,7 +69,7 @@ class ProductImage extends Component {
       );
     });
 
-    return <Carousel className="carousel-image" visibleNumOfSlides={visibleNumOfSlides} vertical>{smallImages}</Carousel>;
+    return <Carousel className="carousel-image" visibleNumOfSlides={visibleNumOfSlides} vertical={verticalCarousel}>{smallImages}</Carousel>;
   }
 
   render() {

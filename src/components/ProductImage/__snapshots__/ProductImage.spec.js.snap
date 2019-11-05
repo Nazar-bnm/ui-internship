@@ -6,7 +6,6 @@ exports[`<ProductImage /> should match snapshot 1`] = `
 >
   <Carousel
     className="carousel-image"
-    vertical={true}
     visibleNumOfSlides={
       Object {
         "desktop": 3,
