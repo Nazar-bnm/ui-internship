@@ -43,6 +43,7 @@ class DefaultLayout extends Component {
       hideBrands,
       hideShippingInfo,
       location,
+      productsList,
       ...rest
     } = this.props;
 
@@ -63,7 +64,9 @@ class DefaultLayout extends Component {
             return (
               <HomePageSkeleton />
             );
-          } return (
+          }
+
+          return (
             <TransitionGroup>
               <CSSTransition
                 key={location.key}
