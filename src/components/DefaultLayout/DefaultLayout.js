@@ -63,7 +63,8 @@ class DefaultLayout extends Component {
             return (
               <HomePageSkeleton />
             );
-          } return (
+          }
+          return (
             <TransitionGroup>
               <CSSTransition
                 key={location.key}
@@ -72,7 +73,7 @@ class DefaultLayout extends Component {
               >
                 <>
                   {!hideHeader && <Header />}
-                  <Notifications type />
+                  <Notifications />
                   <Page {...matchProps} />
                   {!hideBrands && <Brands />}
                   {!hideShippingInfo && <ShippingInfo />}
