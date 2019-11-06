@@ -8,7 +8,8 @@ import DefaultLayout from './DefaultLayout';
 const mapStateToProps = (state) => ({
   error: getProductsError(state),
   products: getProducts(state),
-  pending: getProductsPending(state)
+  pending: getProductsPending(state),
+  productsList: state.productsReducer.products
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
