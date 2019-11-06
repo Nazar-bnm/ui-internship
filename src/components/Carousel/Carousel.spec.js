@@ -2,9 +2,14 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Carousel from './Carousel';
 
-xdescribe('<Carousel />', () => {
+describe('<Carousel />', () => {
   let items;
   let wrapper;
+  const visibleNumOfSlides = {
+    desktop: 3,
+    tablet: 3,
+    mobile: 3
+  };
   
   beforeEach( () => {
     items = [
@@ -16,7 +21,7 @@ xdescribe('<Carousel />', () => {
       <div id={6}><div key={6}>hello 6</div></div>,
       <div id={7}><div key={7}>hello 7</div></div>,
     ];
-    wrapper = mount(<Carousel>{items}</Carousel>);
+    wrapper = mount(<Carousel visibleNumOfSlides={visibleNumOfSlides}>{items}</Carousel>);
   });
 
   test('should match snapshot', () => {
@@ -49,14 +54,14 @@ xdescribe('<Carousel />', () => {
 
   test('should check `handleClick()`', () => {
     jest.spyOn(Carousel.prototype, 'handleClick');
-    wrapper = mount(<Carousel>{items}</Carousel>);
+    wrapper = mount(<Carousel visibleNumOfSlides={visibleNumOfSlides}>{items}</Carousel>);
 
     const carouselNavs = wrapper.find('.carousel__nav');
-    const leftNav = carouselNavs.at(0);
-    const rightNav = carouselNavs.at(1);
+    const fromNav = carouselNavs.at(0);
+    const toNav = carouselNavs.at(1);
 
-    leftNav.simulate('click');
-    rightNav.simulate('click');
+    fromNav.simulate('click');
+    toNav.simulate('click');
     expect(Carousel.prototype.handleClick).toHaveBeenCalledTimes(2);
   });
 });

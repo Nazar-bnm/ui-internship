@@ -158,7 +158,7 @@ class ProductItem extends Component {
   renderHoverView() {
     const {
       product: {
-        images, label, title, price, sizes
+        _id, images, label, title, price, sizes
       }
     } = this.props;
 
@@ -167,36 +167,38 @@ class ProductItem extends Component {
 
     return (
       <>
-        <div
-          className={cx(`${CN}__img-wrapper`, {
-            [`${CN}__img-wrapper--hovered`]: isHovered
-          })}
-        >
-          <div className={cx(`${CN}__img-wrapper__flag`, label)} />
-          <div className={`${CN}__img-wrapper__labels`}>{label}</div>
-
-          <img
-            alt="product"
-            className={cx(`${CN}__img-wrapper__img`, {
-              [`${CN}__img-wrapper__img--hovered`]: isHovered
+        <NavLink to={`/product-details/${_id}`}>
+          <div
+            className={cx(`${CN}__img-wrapper`, {
+              [`${CN}__img-wrapper--hovered`]: isHovered
             })}
-            src={imageSrc}
-          />
-        </div>
+          >
+            <div className={cx(`${CN}__img-wrapper__flag`, label)} />
+            <div className={`${CN}__img-wrapper__labels`}>{label}</div>
 
+            <img
+              alt="product"
+              className={cx(`${CN}__img-wrapper__img`, {
+                [`${CN}__img-wrapper__img--hovered`]: isHovered
+              })}
+              src={imageSrc}
+            />
+          </div>
+        </NavLink>
         <div
           className={cx(`${CN}__title-wrapper`, {
             [`${CN}__title-wrapper__title`]: isHovered
           })}
         >
-          <h2
-            className={cx(`${CN}__title-wrapper__title`, {
-              [`${CN}__title-wrapper__title--hovered`]: isHovered
-            })}
-          >
-            {title}
-          </h2>
-
+          <NavLink className={cx(`${CN}__title-wrapper-link`)} to={`/product-details/${_id}`}>
+            <h2
+              className={cx(`${CN}__title-wrapper-link__title`, {
+                [`${CN}__title-wrapper-link__title--hovered`]: isHovered
+              })}
+            >
+              {title}
+            </h2>
+          </NavLink>
           {!isHovered && (
             <h3 className={`${CN}__title-wrapper__price`}>{`$${price}`}</h3>
           )}

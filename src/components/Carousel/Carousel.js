@@ -72,9 +72,9 @@ class Carousel extends Component {
 
   countTheSlideLength() {
     const { vertical } = this.props;
-
-    let { clientWidth: scrollLength } = this.carouselContainer.current;
     const { slidesCount } = this.state;
+    let { clientWidth: scrollLength } = this.carouselContainer.current;
+
     vertical
       && ({ clientHeight: scrollLength } = this.carouselContainer.current);
 
@@ -96,14 +96,10 @@ class Carousel extends Component {
         clientHeight: clientLength
       } = this.carouselContainer.current);
 
-    // if scrollLeft == 0
-    // hide left button
     const allTHeWayStartValue = howMuchIsScrolled === 0;
-    // if scrollLeft + ContainerOffset.length === whole Container length
-    // 9 cards - each 120px: 9 * 210all === whole Container length
-    // hide the rightScrollButton
-    const allTheWayEndValue = howMuchIsScrolled + clientLength === scrollLength;
+    const allTheWayEndValue = howMuchIsScrolled + clientLength >= scrollLength;
     const { allTheWayStart, allTheWayEnd } = this.state;
+
     (allTheWayStart !== allTHeWayStartValue
       || allTheWayEnd !== allTheWayEndValue)
       && this.setState({
@@ -127,14 +123,17 @@ class Carousel extends Component {
     const { numOfSlidesToScroll, lengthOfSlide } = this.state;
     const { vertical } = this.props;
     let { scrollLeft: howMuchIsScrolled } = this.carouselContainer.current;
+
     vertical
       && ({ scrollTop: howMuchIsScrolled } = this.carouselContainer.current);
+
     const step = numOfSlidesToScroll * lengthOfSlide;
     const newPos = clickedBtn === 'from'
       ? howMuchIsScrolled - step
       : howMuchIsScrolled + step;
     const timeToMoveOneSlide = 200;
     const totalTimetoMove = numOfSlidesToScroll * timeToMoveOneSlide;
+
     scrollTo({
       element: this.carouselContainer,
       to: newPos,
@@ -146,9 +145,10 @@ class Carousel extends Component {
   renderChildren() {
     const { children, vertical } = this.props;
     const { lengthOfSlide } = this.state;
-    let style = { width: `${lengthOfSlide}px` };
-    vertical && (style = { height: `${lengthOfSlide}px` });
     const listOfChildren = [...children];
+    let style = { width: `${lengthOfSlide}px` };
+
+    vertical && (style = { height: `${lengthOfSlide}px` });
 
     return listOfChildren.map((item) => (
       <div key={item.id} className={`${CN}__child`} style={style}>
@@ -186,14 +186,14 @@ class Carousel extends Component {
           type="button"
           onClick={this.handleClick}
         >
-          <i className={cx(`${CN}__arrow-button`, 'chevron', 'icon', { left: !vertical, up: vertical })} />
+          <i className={cx(`${CN}__arrow-button`, 'angle', 'icon', { left: !vertical, up: vertical })} />
         </button>
         <button
           type="button"
           className={toNavClasses}
           onClick={this.handleClick}
         >
-          <i className={cx(`${CN}__arrow-button`, 'chevron', 'icon', { right: !vertical, down: vertical })} />
+          <i className={cx(`${CN}__arrow-button`, 'angle', 'icon', { right: !vertical, down: vertical })} />
         </button>
       </div>
     );

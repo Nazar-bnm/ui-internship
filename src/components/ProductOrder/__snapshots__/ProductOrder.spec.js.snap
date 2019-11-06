@@ -138,17 +138,13 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
         add to cart
       </Button>
     </Link>
-    <Link
-      to="/wishlist"
+    <Button
+      className="product-order__wishlist-btn"
+      icon="heart"
+      onClick={[Function]}
     >
-      <Button
-        className="product-order__wishlist-btn"
-        icon="heart"
-        onClick={[Function]}
-      >
-        wishlist
-      </Button>
-    </Link>
+      wishlist
+    </Button>
   </div>
 </div>
 `;

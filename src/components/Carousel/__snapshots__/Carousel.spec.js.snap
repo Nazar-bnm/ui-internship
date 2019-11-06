@@ -1,157 +1,170 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Carousel /> should match snapshot 1`] = `
-<Carousel>
+<Carousel
+  className=""
+  visibleNumOfSlides={
+    Object {
+      "desktop": 3,
+      "mobile": 3,
+      "tablet": 3,
+    }
+  }
+>
   <div
-    className="carousel content"
+    className="carousel"
   >
     <div
-      className="carousel__viewport"
+      className="carousel-container"
       onScroll={[Function]}
     >
       <div
-        className="carousel__child"
-        style={
-          Object {
-            "maxWidth": undefined,
-          }
-        }
+        className="carousel__viewport"
       >
         <div
-          id={1}
+          className="carousel__child"
+          style={
+            Object {
+              "width": "undefinedpx",
+            }
+          }
         >
           <div
-            key="1"
+            id={1}
           >
-            hello1 
+            <div
+              key="1"
+            >
+              hello1 
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="carousel__child"
-        style={
-          Object {
-            "maxWidth": undefined,
-          }
-        }
-      >
         <div
-          id={2}
+          className="carousel__child"
+          style={
+            Object {
+              "width": "undefinedpx",
+            }
+          }
         >
           <div
-            key="2"
+            id={2}
           >
-            hello 2
+            <div
+              key="2"
+            >
+              hello 2
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="carousel__child"
-        style={
-          Object {
-            "maxWidth": undefined,
-          }
-        }
-      >
         <div
-          id={3}
+          className="carousel__child"
+          style={
+            Object {
+              "width": "undefinedpx",
+            }
+          }
         >
           <div
-            key="3"
+            id={3}
           >
-            hello3 
+            <div
+              key="3"
+            >
+              hello3 
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="carousel__child"
-        style={
-          Object {
-            "maxWidth": undefined,
-          }
-        }
-      >
         <div
-          id={4}
+          className="carousel__child"
+          style={
+            Object {
+              "width": "undefinedpx",
+            }
+          }
         >
           <div
-            key="4"
+            id={4}
           >
-            hello 4
+            <div
+              key="4"
+            >
+              hello 4
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="carousel__child"
-        style={
-          Object {
-            "maxWidth": undefined,
-          }
-        }
-      >
         <div
-          id={5}
+          className="carousel__child"
+          style={
+            Object {
+              "width": "undefinedpx",
+            }
+          }
         >
           <div
-            key="5"
+            id={5}
           >
-            hello 5
+            <div
+              key="5"
+            >
+              hello 5
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="carousel__child"
-        style={
-          Object {
-            "maxWidth": undefined,
-          }
-        }
-      >
         <div
-          id={6}
+          className="carousel__child"
+          style={
+            Object {
+              "width": "undefinedpx",
+            }
+          }
         >
           <div
-            key="6"
+            id={6}
           >
-            hello 6
+            <div
+              key="6"
+            >
+              hello 6
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="carousel__child"
-        style={
-          Object {
-            "maxWidth": undefined,
-          }
-        }
-      >
         <div
-          id={7}
+          className="carousel__child"
+          style={
+            Object {
+              "width": "undefinedpx",
+            }
+          }
         >
           <div
-            key="7"
+            id={7}
           >
-            hello 7
+            <div
+              key="7"
+            >
+              hello 7
+            </div>
           </div>
         </div>
       </div>
     </div>
     <button
-      className="carousel__nav carousel__left-nav carousel__nav-disabled"
+      className="carousel__nav carousel__nav-from carousel__nav-disabled carousel__left-nav"
       onClick={[Function]}
       type="button"
     >
       <i
-        className="carousel__arrow-button chevron left icon"
+        className="carousel__arrow-button angle icon left"
       />
     </button>
     <button
-      className="carousel__right-nav carousel__nav carousel__nav-disabled"
+      className="carousel__nav carousel__nav-to carousel__nav-disabled carousel__right-nav"
       onClick={[Function]}
       type="button"
     >
       <i
-        className="carousel__arrow-button chevron right icon"
+        className="carousel__arrow-button angle icon right"
       />
     </button>
   </div>

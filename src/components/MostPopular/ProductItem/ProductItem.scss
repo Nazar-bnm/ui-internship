@@ -11,7 +11,7 @@
   height: 370px;
 
   .carousel-image {
-    max-width: 75px;
+    max-width: 90px;
     height: 100%;
     padding-right: 2px;
   }
@@ -94,7 +94,11 @@
       }
     }
 
-    &__title {
+    &-link {
+      text-decoration: none;
+      color: inherit;
+
+      &__title {
       font-family: font(secondary);
       font-size: 0.9rem;
       text-transform: uppercase;
@@ -104,6 +108,7 @@
         color: $orange;
       }
     }
+  }
 
     &__price {
       font-family: font(primary);
