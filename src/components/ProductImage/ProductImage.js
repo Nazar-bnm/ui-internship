@@ -39,7 +39,7 @@ class ProductImage extends Component {
     this.setState({
       selectedImage
     });
-  }
+  };
 
   renderSmallImages(selectedImage) {
     const { images, verticalCarousel } = this.props;
@@ -49,10 +49,7 @@ class ProductImage extends Component {
       const isSelected = selectedImage === src;
 
       return (
-        <div
-          className={`${CN}__small-image`}
-          key={src}
-        >
+        <div className={`${CN}__small-image`} key={src}>
           <img
             className={cx(CN, { 'product-image__selected-image': isSelected })}
             alt="product"
@@ -69,7 +66,15 @@ class ProductImage extends Component {
       );
     });
 
-    return <Carousel className="carousel-image" visibleNumOfSlides={visibleNumOfSlides} vertical={verticalCarousel}>{smallImages}</Carousel>;
+    return (
+      <Carousel
+        className="carousel-image"
+        visibleNumOfSlides={visibleNumOfSlides}
+        vertical={verticalCarousel}
+      >
+        {smallImages}
+      </Carousel>
+    );
   }
 
   render() {
@@ -79,15 +84,8 @@ class ProductImage extends Component {
     return (
       <div className={cx(`${CN}__container`, className)}>
         {this.renderSmallImages(selectedImage)}
-        <div
-          className={`${CN}__big-image-container`}
-          type="submit"
-        >
-          <img
-            alt="product"
-            className={CN}
-            src={this.getBigImageSrc()}
-          />
+        <div className={`${CN}__big-image-container`} type="submit">
+          <img alt="product" className={CN} src={this.getBigImageSrc()} />
         </div>
       </div>
     );
@@ -95,9 +93,11 @@ class ProductImage extends Component {
 }
 
 ProductImage.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
-    src: PropTypes.string
-  })),
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string
+    })
+  ),
   className: PropTypes.string
 };
 

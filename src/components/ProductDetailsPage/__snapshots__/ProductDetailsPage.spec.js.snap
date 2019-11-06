@@ -15,7 +15,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
     <ProductImage
       className="product-details-images"
       images={Array []}
-      verticalCarousel={true}
+      verticalCarousel={false}
     />
     <div
       className="product-details-description"
@@ -24,6 +24,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
         className="product-details-description__product-order"
         colors={Array []}
         description=""
+        onClickAddToWishlist={[Function]}
         price="$"
         quantity={Array []}
         sizes={Array []}

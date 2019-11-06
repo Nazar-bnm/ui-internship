@@ -121,7 +121,11 @@ class ProductItem extends Component {
   renderQuickView() {
     const {
       product: {
-        images, _id, title, price, description
+        images,
+        _id,
+        title,
+        price,
+        description
       }
     } = this.props;
 
@@ -133,7 +137,7 @@ class ProductItem extends Component {
       <Modal className={`${CN}-quick-view`} removeModal={this.removeModal}>
         <Heading title="Quick view" />
         <div className={`${CN}-quick-view-content`}>
-          <ProductImage images={imagesForQuickView} verticalCarousel />
+          <ProductImage className={`${CN}-quick-view-content-images`} images={imagesForQuickView} verticalCarousel />
           <div className={`${CN}-quick-view-content-wrapper`}>
             <ProductOrder
               className={`${CN}-quick-view-content__product-order`}
@@ -190,7 +194,10 @@ class ProductItem extends Component {
             [`${CN}__title-wrapper__title`]: isHovered
           })}
         >
-          <NavLink className={cx(`${CN}__title-wrapper-link`)} to={`/product-details/${_id}`}>
+          <NavLink
+            className={cx(`${CN}__title-wrapper-link`)}
+            to={`/product-details/${_id}`}
+          >
             <h2
               className={cx(`${CN}__title-wrapper-link__title`, {
                 [`${CN}__title-wrapper-link__title--hovered`]: isHovered
