@@ -47,8 +47,8 @@ export default {
     { title: 'Terms & Conditions', link: '#' }
   ],
   navConfig: [
-    { value: 'women', label: 'women', link: '/women' },
-    { value: 'men', label: 'men', link: '/men' },
+    { value: 'women', label: 'women', link: '/woman' },
+    { value: 'men', label: 'men', link: '/man' },
     { value: 'kids', label: 'kids', link: '/kids' },
     { value: 'accs', label: 'accessories', link: '/404' },
     { value: 'new', label: 'what\'s new', link: '/404' },
@@ -74,8 +74,8 @@ export default {
     ]
   },
   burgerMenuItemsList: [
-    { itemName: 'women', url: 'women' },
-    { itemName: 'man', url: 'men' },
+    { itemName: 'women', url: 'woman' },
+    { itemName: 'man', url: 'man' },
     { itemName: 'kids', url: 'kids' },
     { itemName: 'accessories', url: '404' },
     { itemName: 'what\'s new', url: '404' },
@@ -91,7 +91,7 @@ export default {
   cartTableHeadings: [
     'product', 'price', 'quantity', 'amount'
   ],
-  women: {
+  woman: {
     bottoms: [
       { item: 'jeans' },
       { item: 'pants' },
@@ -137,7 +137,7 @@ export default {
     ]
   },
 
-  men: {
+  man: {
     bottoms: [
       { item: 'jeans' },
       { item: 'pants' },

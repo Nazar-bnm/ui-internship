@@ -131,7 +131,7 @@ const DataItemProps = PropTypes.shape({
 });
 
 Accordion.propTypes = {
-  data: PropTypes.arrayOf(DataItemProps),
+  // data: PropTypes.arrayOf(DataItemProps),
   showAll: PropTypes.bool,
   open: PropTypes.bool,
   scroll: PropTypes.bool,
@@ -140,7 +140,7 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {
-  data: {},
+  // data: {},
   showAll: false,
   open: false,
   scroll: false,

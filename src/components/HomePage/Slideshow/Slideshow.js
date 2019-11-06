@@ -51,6 +51,10 @@ class Slideshow extends Component {
     }
   }
 
+  componentWillUnmount() {
+    clearInterval(this.sliderInterval);
+  }
+
   onMouseLeftHandler() {
     const { isClicked } = this.state;
 

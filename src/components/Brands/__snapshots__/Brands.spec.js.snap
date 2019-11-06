@@ -3,27 +3,15 @@
 exports[`<Brands /> should match snapshot 1`] = `
 <BrandsAndShippingInfo>
   <div
-    className="content brand"
+    className="content"
   >
-    <Heading
-      position="center"
-      title="Brands"
+    <h3
+      className="brand__title"
     >
-      <div
-        className="heading__wrapper"
-      >
-        <div
-          className="heading__line"
-        />
-        <div
-          className="heading__title center"
-        >
-          Brands
-        </div>
-      </div>
-    </Heading>
+      Top Brands
+    </h3>
     <div
-      className="container brand"
+      className="brand__container"
     >
       <ul
         className="brand__list"

@@ -9,11 +9,11 @@ import HomePage from '../HomePage';
 import ProductDetailsPageWrapper from '../ProductDetailsPage/ProductDetailsPageWrapper';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
+import WhatIsNew from '../WhatIsNew';
 import WishListPage from '../WishlistPage';
 import MostPopular from '../MostPopular';
 import CartPage from '../CartPage';
 import ProductListPage from '../ProductListPage';
-import WhatIsNew from '../WhatIsNew';
 
 import './Routes.scss';
 
@@ -29,10 +29,10 @@ const Routes = () => (
           <DefaultLayout path="/" exact component={HomePage} />
           <DefaultLayout path="/home" component={HomePage} />
           <DefaultLayout path="/WhatIsNew" component={WhatIsNew} />
-          <DefaultLayout path="/product-details" component={ProductDetailsPageWrapper} />
           <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
           <DefaultLayout path="/cart" component={CartPage} />
+          <DefaultLayout path="/products" exact component={ProductDetailsPageWrapper} />
           <DefaultLayout path="/:category" component={ProductListPage} />
           <DefaultLayout
             to="/not_found"

@@ -9,6 +9,7 @@ import './Filters.scss';
 const Filters = ({ category }) => {
   const TABLET_BREAKPOINT = 800;
   const gender = config[category];
+  
   const screenWidth = document.body.clientWidth;
   const listOfCategoriesNames = Object.keys(gender);
 

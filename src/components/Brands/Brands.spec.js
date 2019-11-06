@@ -1,8 +1,8 @@
 import React from 'react';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
-import { mount } from 'enzyme';
 
+import { mount } from 'enzyme';
 import Brands from './Brands';
 import mockedData from '../../mockedDataForTests';
 

@@ -5,7 +5,7 @@ import cx from 'classnames';
 import Filter from './Filters';
 import ProductList from '../ProductList';
 import Heading from '../Heading/Heading';
-import Button from '../shared/Button';
+import { Button } from '@/shared';
 import CollectionPoster from '../CollectionPoster';
 import PriceRangeSlider from './PriceRangeSlider';
 import Accordion from '../Accordion';
@@ -27,7 +27,8 @@ class ProductListPage extends Component {
       },
       resetFilterState,
       price,
-      setPriceRange
+      setPriceRange,
+      fetchedItemsNumber
     } = this.props;
 
     return (
@@ -75,12 +76,12 @@ class ProductListPage extends Component {
           <section className={`${CN}__poster`}>
             <div className={`${CN}__heading`}>
               <Heading title={category} />
-              <span className={`${CN}__heading-itemsLeft`}>557 items</span>
+              <span className={`${CN}__heading-itemsLeft`}>{`${fetchedItemsNumber} items`}</span>
             </div>
             <CollectionPoster category={category} />
           </section>
           <section className={`${CN}__productList`}>
-            <ProductList />
+            <ProductList gender={category} />
           </section>
         </div>
       </div>
