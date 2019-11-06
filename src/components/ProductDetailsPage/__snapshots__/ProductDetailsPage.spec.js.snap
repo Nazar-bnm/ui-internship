@@ -40,6 +40,8 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
               Object {
                 "description": " Architecto, earum temporibus quidem ex eaque unde harum sit, 
       deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
       quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!",
                 "id": 1,
                 "isHidden": false,
@@ -47,12 +49,18 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
               },
               Object {
                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!
       ",
                 "id": 2,
                 "title": "additional info",
               },
               Object {
                 "description": "Earum temporibus quidem ex eaque unde harum sit, 
+      Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!
       ",
                 "id": 3,
                 "title": "tags",
@@ -61,7 +69,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
           }
           heightItem="100px"
           open={false}
-          scroll={false}
+          scroll={true}
           showAll={false}
         />
         <ContactDetails

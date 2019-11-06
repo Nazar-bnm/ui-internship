@@ -4,6 +4,8 @@ export const accordionItemsData = [
     title: 'description',
     description: ` Architecto, earum temporibus quidem ex eaque unde harum sit, 
       deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
       quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!`,
       isHidden: false
   },
@@ -11,6 +13,9 @@ export const accordionItemsData = [
     id: 2,
     title: 'additional info',
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!
       `
   },
   {
@@ -18,6 +23,9 @@ export const accordionItemsData = [
     title: 'tags',
     description:
       `Earum temporibus quidem ex eaque unde harum sit, 
+      Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!
       `
   }
 ];

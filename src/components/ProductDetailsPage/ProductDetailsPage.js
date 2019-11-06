@@ -47,7 +47,7 @@ const ProductDetailsPage = (props) => {
           <div className={`${CN}-description`}>
             <ProductOrder className={`${CN}-description__product-order`} title={title} price={`$${price}`} description={description} onClickAddToWishlist={addToWishlistWithNotification} />
             <div className={`${CN}-description-accordion`}>
-              <Accordion data={accordionItemsData} heightItem="100px" className={`${CN}__accordion`} />
+              <Accordion scroll data={accordionItemsData} heightItem="100px" className={`${CN}__accordion`} />
               <ContactDetails title="share" />
             </div>
           </div>

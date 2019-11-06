@@ -18,7 +18,7 @@
     .carousel-image {
       margin-right: 6px;
       max-width: 160px;
-      height: 700px;
+      height: 70vh;
     }
   }
 
@@ -55,6 +55,10 @@
       .accordion-item__header,
       .contact-block {
         height: 50px;
+      }
+
+      .accordion-item__description {
+        padding-right: 5px;
       }
 
       .contact-block {
@@ -180,13 +184,17 @@
 
 @include media-for(laptop) {
   .carousel-container .product-image {
-    max-width: 115px !important;
+    max-width: 174px !important;
     width: 100%;
     height: auto;
   }
+
+  .product-details-description {
+    width: 45%;
+  }
 }
 
-@include media-for(mobile-landscape) {
+@media (max-width: 600px) {
   .product-details {
     flex-direction: column;
 
