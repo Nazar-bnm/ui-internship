@@ -2,24 +2,101 @@
 
 exports[`<Notifications /> should match snapshot 1`] = `
 <div
-  className="notifications info"
-  color="info"
-  onClick={[Function]}
+  className="notifications__wrapper"
 >
-  <div>
-    <h4
-      className="title"
-    >
-      Info
-    </h4>
+  <div
+    className="notifications warning"
+    color="warning"
+    id={7986713631788149}
+    key="7986713631788149"
+    onClick={[Function]}
+  >
     <div
-      className="notifications__notification-message-box"
-      role="alert"
+      className="notifications__ntf-box"
     >
+      <div>
+        <i
+          className="notifications__icon icon exclamation triangle"
+        />
+      </div>
       <div
-        className="notifications__message"
+        className="notifications__notification-message-box"
+        role="alert"
       >
-        Information is processing
+        <h4
+          className="notifications__title"
+        >
+          warning
+        </h4>
+        <div
+          className="notifications__message"
+        >
+          Hey, be careful
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="notifications warning"
+    color="warning"
+    id={7986713631788148}
+    key="7986713631788148"
+    onClick={[Function]}
+  >
+    <div
+      className="notifications__ntf-box"
+    >
+      <div>
+        <i
+          className="notifications__icon icon exclamation triangle"
+        />
+      </div>
+      <div
+        className="notifications__notification-message-box"
+        role="alert"
+      >
+        <h4
+          className="notifications__title"
+        >
+          warning
+        </h4>
+        <div
+          className="notifications__message"
+        >
+          Hey, be careful
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="notifications warning"
+    color="warning"
+    id={7986713631788147}
+    key="7986713631788147"
+    onClick={[Function]}
+  >
+    <div
+      className="notifications__ntf-box"
+    >
+      <div>
+        <i
+          className="notifications__icon icon exclamation triangle"
+        />
+      </div>
+      <div
+        className="notifications__notification-message-box"
+        role="alert"
+      >
+        <h4
+          className="notifications__title"
+        >
+          warning
+        </h4>
+        <div
+          className="notifications__message"
+        >
+          Hey, be careful
+        </div>
       </div>
     </div>
   </div>

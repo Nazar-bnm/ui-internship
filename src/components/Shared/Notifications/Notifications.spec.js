@@ -9,8 +9,12 @@ describe('<Notifications />', () => {
 
   beforeEach(() => {
     props = {
-      isHideNotification: jest.fn(),
-      isShowNotification: true
+      notifications: [
+        {title: "warning", message: "Hey, be careful", type: "warning", id: 7986713631788149},
+        {title: "warning", message: "Hey, be careful", type: "warning", id: 7986713631788148},
+        {title: "warning", message: "Hey, be careful", type: "warning", id: 7986713631788147}
+      ],
+      removeItemNotification: jest.fn()
     }
     wrapper = shallow(<Notifications {...props} />);
   });
@@ -19,10 +23,10 @@ describe('<Notifications />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('isHideNotification have beent called', () => {
+  it('removeItemNotification have beent called', () => {
     const inst = wrapper.instance();
-    const spy = jest.spyOn(inst, 'hideMessage');
-    inst.hideMessage();
+    const spy = jest.spyOn(inst, 'hideNotification');
+    inst.hideNotification();
     expect(spy).toBeCalled();
    })
 

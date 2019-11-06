@@ -1,23 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ProductItem from './ProductItem/ProductItem';
+import ProductItem from './ProductItem';
 import Carousel from '../Carousel';
 
 import './MostPopular.scss';
 
 const MostPopular = (props) => {
   const {
-    products, addToWishlist, removeFromWishlist, wishlist
+    products
   } = props;
 
   const prodList = products.map((product) => (
     <ProductItem
-      key={product.id}
+      key={product._id}
       product={product}
-      addToWishlist={addToWishlist}
-      removeFromWishlist={removeFromWishlist}
-      wishlist={wishlist}
     />
   ));
 
@@ -30,9 +27,6 @@ const MostPopular = (props) => {
 };
 
 MostPopular.propTypes = {
-  addToWishlist: PropTypes.func.isRequired,
-  removeFromWishlist: PropTypes.func.isRequired,
-  wishlist: PropTypes.array.isRequired,
   products: PropTypes.array.isRequired
 };
 

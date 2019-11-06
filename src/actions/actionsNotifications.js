@@ -17,10 +17,9 @@ export const isHideNotification = () => ({
 export const addItemNotification = (payload) => ({
   type: NOTIFICATION_ITEM_ADD_TO_LIST,
   payload: {
-    id: parseInt(Math.random().toString().split('.')[1], 10),
-    ...payload
+    ...payload,
+    id: payload.id
   }
-  // payload
 });
 
 export const removeItemNotification = (payload) => ({
@@ -29,9 +28,10 @@ export const removeItemNotification = (payload) => ({
 });
 
 const showMessage = (payload) => (dispatch) => {
-  dispatch(addItemNotification(payload));
+  const id = parseInt(Math.random().toString().split('.')[1], 10);
+  dispatch(addItemNotification({ ...payload, id }));
   setTimeout(() => {
-    dispatch(removeItemNotification(payload));
+    dispatch(removeItemNotification(id));
   }, 5000);
 };
 

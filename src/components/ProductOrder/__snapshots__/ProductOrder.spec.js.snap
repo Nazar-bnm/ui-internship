@@ -6,19 +6,13 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
 >
   <h2
     className="product-order__heading"
-  >
-    Detailed swing dress
-  </h2>
+  />
   <p
     className="product-order__description"
-  >
-    The best pink dress on the market, new collection!
-  </p>
+  />
   <span
     className="product-order__price"
-  >
-    $1,999.00
-  </span>
+  />
   <div
     className="product-order__dropdowns-wrapper"
   >
@@ -134,7 +128,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
     className="product-order__buttons-wrapper"
   >
     <Link
-      to="/not_found"
+      to="/cart"
     >
       <Button
         className="product-order__cart-btn"
@@ -146,7 +140,7 @@ exports[`<ProductOrder /> should match snapshot 1`] = `
       </Button>
     </Link>
     <Link
-      to="/not_found"
+      to="/wishlist"
     >
       <Button
         className="product-order__wishlist-btn"
