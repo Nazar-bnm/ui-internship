@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Notifications /> should match snapshot 1`] = `
+Array [
+  <div
+    className="notifications warning"
+    color="warning"
+    key="7986713631788149"
+    onClick={[Function]}
+  >
+    <div>
+      <h4
+        className="title"
+      >
+        warning
+      </h4>
+      <div
+        className="notifications__notification-message-box"
+        role="alert"
+      >
+        <div
+          className="notifications__message"
+        >
+          Hey, be careful
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="notifications warning"
+    color="warning"
+    key="7986713631788148"
+    onClick={[Function]}
+  >
+    <div>
+      <h4
+        className="title"
+      >
+        warning
+      </h4>
+      <div
+        className="notifications__notification-message-box"
+        role="alert"
+      >
+        <div
+          className="notifications__message"
+        >
+          Hey, be careful
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="notifications warning"
+    color="warning"
+    key="7986713631788147"
+    onClick={[Function]}
+  >
+    <div>
+      <h4
+        className="title"
+      >
+        warning
+      </h4>
+      <div
+        className="notifications__notification-message-box"
+        role="alert"
+      >
+        <div
+          className="notifications__message"
+        >
+          Hey, be careful
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './ItemInfo.scss';
 
 const ItemInfo = ({ item }) => {

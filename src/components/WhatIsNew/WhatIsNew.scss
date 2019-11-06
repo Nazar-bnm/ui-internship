@@ -1,18 +1,7 @@
 @import '../../scss/global_styles';
 
-.whatIsNew {
-  .heading__wrapper {
-    margin: 20px 0 15px;
-    font-size: 1.1rem;
-  }
-
-  &__title {
-    font-size: 2rem;
-  }
-
-  &__wrapper {
-    @include flex($justify: center);
-  }
+.title {
+  @include title-font;
 }
 
 @media screen and (max-width: 480px) {

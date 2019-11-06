@@ -1,43 +1,48 @@
 @import '../../scss/global_styles';
 
 .burger-menu {
-  display: flex;
-  width: 50px;
-  padding-right: 10px;
-
   @keyframes open {
     from {
-      left: -80vw;
+      left: -100vw;
     }
     to {
       left: 0;
     }
   }
 
-  .icon {
-    font-size: 1.7rem;
-  }
-
   #burger-menu__button {
     display: none;
 
     &:checked~.burger-menu__list {
-      @include flex();
+      @include flex($direction: column, $wrap: nowrap);
       animation-name: open;
       animation-duration: 0.8s;
     }
 
     &:checked~.burger-menu__image {
       position: absolute;
+      left: 10px;
+      font-size: 2rem;
       cursor: pointer;
-      transition: transform 0.8s ease-in; 
+      transition: transform 0.8s ease; 
       transform: rotate(360deg);
+    }
+  }
+
+  & {
+    display: none;
+    @include flex($wrap: nowrap);
+    width: 50px;
+    padding-right: 10px;
+
+    .icon {
+      font-size: 1.7em;
     }
   }
 
   &__image {
     margin-top: -10px;
-    margin-left: 15px;
+    margin-left: 10px;
     font-size: 1.7rem;
     cursor: pointer;
     transition: transform 0.8s ease; 
@@ -46,20 +51,20 @@
   &__list {
     display: none;
     position: relative;
-    top: 30px;
+    top: 35px;
     padding: 0;
     list-style: none;
   }
 
   &__navigation {
-    display: flex;
+    @include flex($wrap: nowrap);
     height: 30px;
     z-index: 100;
   }
 
   &__list-item {
     display: block;
-    width: 120px;
+    width: auto;
   }
 
   &__link {

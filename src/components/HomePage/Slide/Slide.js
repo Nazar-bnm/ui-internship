@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Button from '../../shared/Button';
+import { Button } from '@/shared';
 import './Slide.scss';
 
 const CN = 'slide-info';
@@ -19,10 +19,7 @@ const Slide = (props) => {
     <div className={cx(CN, className)}>
       <h1 className={`${CN}__title`}>{title}</h1>
       <p className={`${CN}__description`}>{description}</p>
-      <Button
-        className={`${CN}__button`}
-        onClick={() => {}}
-      >
+      <Button className={`${CN}__button`}>
         {buttonName}
       </Button>
     </div>

@@ -37,8 +37,7 @@ exports[`<ProductListNavigation /> should match snapshot 1`] = `
     <Button
       customClass="product-list__arrow-btn"
       icon="arrow down"
-      onClick={[Function]}
-      onClickFunction={[MockFunction]}
+      onClick={[MockFunction]}
     />
   </div>
   <div
