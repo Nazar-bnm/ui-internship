@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import { Dropdown, Button } from '@/shared';
+import dropdownOptions from '../../../../config';
 
 import './BillingInfo.scss';
 
@@ -38,15 +39,21 @@ class BillingInfo extends React.Component {
           </div>
           <div className={`${CN}__input-wrapper`}>
             <p>country</p>
-            <Dropdown />
+            <Dropdown
+              menuOptions={dropdownOptions.billingInfo.country}
+              value={dropdownOptions.billingInfo.country[0].label}
+            />
           </div>
           <div className={`${CN}__input-wrapper`}>
-            <label htmlFor="password">city</label>
-            <input type="password" name={CN} className={`${CN}__input`} />
+            <label htmlFor="city">city</label>
+            <input type="text" name={CN} className={`${CN}__input`} />
           </div>
           <div className={`${CN}__input-wrapper`}>
             <p>state</p>
-            <Dropdown />
+            <Dropdown
+              menuOptions={dropdownOptions.billingInfo.state}
+              value={dropdownOptions.billingInfo.state[0].label}
+            />
           </div>
           <div className={`${CN}__input-wrapper`}>
             <label htmlFor="zipcode">zip / postal code*</label>
@@ -65,8 +72,8 @@ class BillingInfo extends React.Component {
             <input type="password" name={CN} className={`${CN}__input`} />
           </div>
           <div className={`${CN}__input-wrapper`}>
-            <label htmlFor="confirm-password">confirm password*</label>
-            <input type="confirm-password" name={CN} className={`${CN}__input`} />
+            <label htmlFor="password">confirm password*</label>
+            <input type="password" name={CN} className={`${CN}__input`} />
           </div>
         </form>
         <form className={`${CN}__radiobtns-form`}>
@@ -80,7 +87,7 @@ class BillingInfo extends React.Component {
           </div>
         </form>
         <div className={`${CN}__checkbox-wrapper`}>
-          <input type="checkbox" />
+          <input className={`${CN}__radiobtn-input`} type="checkbox" />
           I want to subscribe to the newsletter
         </div>
         <Button customClass="login-register__button">continue</Button>
