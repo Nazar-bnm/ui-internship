@@ -31,7 +31,7 @@ class BlogArticlePreview extends Component {
       }
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.log(error);
+      throw new Error(error);
     }
   }
 
@@ -43,6 +43,7 @@ class BlogArticlePreview extends Component {
         title,
         description
       } = item;
+
       return (
         <div key={id} className={`${CN}`}>
           <img
