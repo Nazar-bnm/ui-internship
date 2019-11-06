@@ -1,22 +1,16 @@
-@import '../../../scss/global_styles';
-@import '../../../scss/breakpoints';
-@import '../../../scss/styles';
+@import '../../../scss//global_styles';
+@import '../../../scss/_breakpoints';
+@import '../../../scss/_styles';
 
 .item {
   @include flex(column, center,center);
   align-self: flex-start;
   cursor: pointer;
   padding: spacing(small);
-  transition: padding 500ms; 
-
-  &:hover {
-    padding: 10px;
-    transition: padding 500ms; 
-  }
 
   &__img {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
     max-width: 100%;
   }
@@ -29,13 +23,13 @@
     @include title-font;
     font-size: 1.1em;
     margin-top: 10px;
+    font-weight: 100;
     margin-bottom: 0;
   }
 
   &__collection {
     text-transform: uppercase;
     font-size: 0.7em;
-    font-weight: 700;
   }
 }
 
@@ -81,7 +75,7 @@
       }
     }
   }
-
+  
   .item.col-4 {
     flex-direction: row;
     flex-wrap: nowrap;

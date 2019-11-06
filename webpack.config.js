@@ -12,6 +12,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.json', '.scss'],
+    alias: {
+      '@': path.resolve('src'),
+      '^': path.resolve('src/components'),
+      '~': path.resolve('src/shared')
+    }
+  },
   module: {
     rules: [
       {

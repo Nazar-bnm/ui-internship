@@ -326,13 +326,13 @@
       "price": "1599"
     }
   ],
-  "women": {
+  "woman": {
     "id": 1,
     "category": "women",
     "title": "new collection 2019",
     "description": "sweater collection"
   },
-  "men": {
+  "man": {
     "id": 2,
     "category": "men",
     "title": "new collection 2019",

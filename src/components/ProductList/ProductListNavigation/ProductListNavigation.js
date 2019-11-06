@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../../shared/Button';
-import Dropdown from '../../shared/Dropdown';
+import { Button, Dropdown } from '@/shared';
 import { dropdownsForItemListPage } from '../../../constants';
 
 export const CN = 'product-list';
@@ -44,7 +43,7 @@ const ProductListNavigation = (props) => {
         <Button
           customClass={`${CN}__arrow-btn`}
           icon={ascendingOrder ? 'arrow down' : 'arrow up'}
-          onClickFunction={changeSortingOrder}
+          onClick={changeSortingOrder}
         />
       </div>
       <div className={`${CN}__dropdowns-labels-wrapper`}>

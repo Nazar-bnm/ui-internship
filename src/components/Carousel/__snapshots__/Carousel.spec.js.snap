@@ -30,10 +30,10 @@ exports[`<Carousel /> should match snapshot 1`] = `
           }
         >
           <div
-            id={1}
+            key="box1"
           >
             <div
-              key="1"
+              key="child1"
             >
               hello1 
             </div>
@@ -48,10 +48,10 @@ exports[`<Carousel /> should match snapshot 1`] = `
           }
         >
           <div
-            id={2}
+            key="box2"
           >
             <div
-              key="2"
+              key="child2"
             >
               hello 2
             </div>
@@ -66,10 +66,10 @@ exports[`<Carousel /> should match snapshot 1`] = `
           }
         >
           <div
-            id={3}
+            key="box3"
           >
             <div
-              key="3"
+              key="child3"
             >
               hello3 
             </div>
@@ -84,10 +84,10 @@ exports[`<Carousel /> should match snapshot 1`] = `
           }
         >
           <div
-            id={4}
+            key="box4"
           >
             <div
-              key="4"
+              key="child4"
             >
               hello 4
             </div>
@@ -102,10 +102,10 @@ exports[`<Carousel /> should match snapshot 1`] = `
           }
         >
           <div
-            id={5}
+            key="box5"
           >
             <div
-              key="5"
+              key="child5"
             >
               hello 5
             </div>
@@ -120,10 +120,10 @@ exports[`<Carousel /> should match snapshot 1`] = `
           }
         >
           <div
-            id={6}
+            key="box6"
           >
             <div
-              key="6"
+              key="child6"
             >
               hello 6
             </div>
@@ -138,10 +138,10 @@ exports[`<Carousel /> should match snapshot 1`] = `
           }
         >
           <div
-            id={7}
+            key="box7"
           >
             <div
-              key="7"
+              key="child7"
             >
               hello 7
             </div>

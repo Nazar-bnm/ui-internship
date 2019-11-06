@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Modal from './Modal';
 
 class TestModal extends Component {

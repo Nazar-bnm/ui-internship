@@ -2,7 +2,7 @@
 
 exports[`<ProductList /> should match snapshot 1`] = `
 <div
-  className="product-list content"
+  className="product-list"
 >
   <div
     className="product-list__filter-wrapper"

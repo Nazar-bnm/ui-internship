@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import JoinUs from './JoinUs';
 
 describe('Rendering without crushing', () => {

@@ -24,11 +24,7 @@ const PageNavigation = (props) => {
 };
 
 PageNavigation.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string,
-    label: PropTypes.string,
-    link: PropTypes.string
-  })).isRequired
+  options: PropTypes.array.isRequired
 };
 
 export default PageNavigation;

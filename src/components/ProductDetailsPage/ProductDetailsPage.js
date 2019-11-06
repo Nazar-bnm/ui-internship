@@ -5,7 +5,7 @@ import ProductOrder from '../ProductOrder';
 import Accordion from '../Accordion';
 import ContactDetails from '../Footer/ContactDetails';
 import { accordionItemsData } from '../../config/dataItemsAccordion';
-import Button from '../shared/Button';
+import { Button } from '@/shared';
 import { ADDED_TO_WISHLIST_NOTIFICATION } from '../../constants/notificationData';
 
 import './ProductDetailsPage.scss';

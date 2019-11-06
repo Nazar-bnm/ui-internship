@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
 import Carousel from './Carousel';
 
 describe('<Carousel />', () => {
@@ -13,13 +14,13 @@ describe('<Carousel />', () => {
   
   beforeEach( () => {
     items = [
-      <div id={1}><div key={1}>hello1 </div></div>,
-      <div id={2}><div key={2}>hello 2</div></div>,
-      <div id={3}><div key={3}>hello3 </div></div>,
-      <div id={4}><div key={4}>hello 4</div></div>,
-      <div id={5}><div key={5}>hello 5</div></div>,
-      <div id={6}><div key={6}>hello 6</div></div>,
-      <div id={7}><div key={7}>hello 7</div></div>,
+      <div key={`box1`}><div key={`child1`}>hello1 </div></div>,
+      <div key={`box2`}><div key={`child2`}>hello 2</div></div>,
+      <div key={`box3`}><div key={`child3`}>hello3 </div></div>,
+      <div key={`box4`}><div key={`child4`}>hello 4</div></div>,
+      <div key={`box5`}><div key={`child5`}>hello 5</div></div>,
+      <div key={`box6`}><div key={`child6`}>hello 6</div></div>,
+      <div key={`box7`}><div key={`child7`}>hello 7</div></div>,
     ];
     wrapper = mount(<Carousel visibleNumOfSlides={visibleNumOfSlides}>{items}</Carousel>);
   });

@@ -131,6 +131,12 @@
   }
 }
 
+@media(max-width: 1300px) {
+  .product-details-images .carousel-image {
+    height: 50vh;
+  }
+}
+
 @include media-for(laptop) {
   .product-details {
     .product-order__heading,

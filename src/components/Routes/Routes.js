@@ -9,11 +9,11 @@ import HomePage from '../HomePage';
 import ProductDetailsPage from '../ProductDetailsPage';
 import NotFoundPage from '../NotFoundPage';
 import DefaultLayout from '../DefaultLayout';
+import WhatIsNew from '../WhatIsNew';
 import WishListPage from '../WishlistPage';
 import MostPopular from '../MostPopular';
 import CartPage from '../CartPage';
 import ProductListPage from '../ProductListPage';
-import WhatIsNew from '../WhatIsNew';
 
 import './Routes.scss';
 
