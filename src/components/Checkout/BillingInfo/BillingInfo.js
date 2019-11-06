@@ -8,6 +8,9 @@ import './BillingInfo.scss';
 
 const CN = 'billing-info';
 
+// This function should be replaced when the proper functional for dropdowns is added.
+const onDropdownChange = () => true;
+
 class BillingInfo extends React.Component {
   render() {
     return (
@@ -42,6 +45,7 @@ class BillingInfo extends React.Component {
             <Dropdown
               menuOptions={dropdownOptions.billingInfo.country}
               value={dropdownOptions.billingInfo.country[0].label}
+              onDropdownChange={onDropdownChange}
             />
           </div>
           <div className={`${CN}__input-wrapper`}>
@@ -53,6 +57,7 @@ class BillingInfo extends React.Component {
             <Dropdown
               menuOptions={dropdownOptions.billingInfo.state}
               value={dropdownOptions.billingInfo.state[0].label}
+              onDropdownChange={onDropdownChange}
             />
           </div>
           <div className={`${CN}__input-wrapper`}>

@@ -1,0 +1,17 @@
+@import '../../../scss/global_styles';
+
+.shipping-method {
+  @include flex($direction: column, $justify: space-between);
+  padding: 20px;
+  height: 200px;
+  font-family: font(primary-light);
+  text-transform: uppercase;
+
+  &__radiobtn {
+    margin: 5px 0;
+
+    &-input {
+      margin-right: 5px;
+    }
+  }
+}

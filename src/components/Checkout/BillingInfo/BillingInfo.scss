@@ -2,8 +2,8 @@
 
 .billing-info {
   @include flex($direction: column);
-  padding: 10px;
-  font-size: 0.7rem;
+  padding: 20px;
+  font-family: font(primary-light);
   text-transform: uppercase;
 
   &__form {

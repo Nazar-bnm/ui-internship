@@ -2,8 +2,7 @@
 
 .login-register {
   @include flex;
-  padding: 10px;
-  font-size: 0.7rem;
+  padding: 20px;
   font-family: font(primary-light);
 
   &__registration-type-wrapper {
@@ -18,7 +17,7 @@
   &__input {
     padding: 5px;
     margin: 5px 0;
-    width: 265px;
+    width: 100%;
   }
 
   &__heading {

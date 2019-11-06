@@ -1,0 +1,15 @@
+@import '../../../scss/global_styles';
+@import '../../../shared/Button/Button.scss';
+
+.order-review {
+  @include flex($direction: column);
+  padding: 20px;
+  font-family: font(primary-light);
+  text-transform: uppercase;
+
+  &__button {
+    @extend .login-register__button;
+    margin: 10px 0;
+    width: 200px;
+  }
+}
