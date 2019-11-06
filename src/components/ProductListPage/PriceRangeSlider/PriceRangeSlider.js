@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import './PriceRangeSlider.scss';
 
 class PriceRangeSlider extends Component {
@@ -72,8 +72,6 @@ class PriceRangeSlider extends Component {
       min, max, step,
       priceRange: { fromPrice, toPrice }
     } = this.props;
-    // console.log(this.props, 'tut');
-    console.log('___price P range slider', this.props.priceRange);
 
     return (
       <>
@@ -104,57 +102,6 @@ class PriceRangeSlider extends Component {
             <div>{toPrice}</div>
           </div>
         </section>
-        {/* <div
-          className="wc-block-price-filter__range-input-wrapper"
-        >
-          <div className="wc-block-price-filter__range-input-progress" style={this.getProgressStyle()} />
-          <input
-            type="range"
-            className="wc-block-price-filter__range-input wc-block-price-filter__range-input--min"
-            onChange={this.handleChange}
-            value={currentMin || 0}
-            step={step}
-            min={min}
-            max={max}
-            data-label="currentMax"
-          />
-          <input
-            type="range"
-            className="wc-block-price-filter__range-input wc-block-price-filter__range-input--max"
-            onChange={this.handleChange}
-            value={currentMax || 0}
-            step={step}
-            min={min}
-            max={max}
-            data-label="currentMin"
-          />
-        </div> */}
-
-        {/* <div
-          className="wc-block-price-filter__range-input-wrapper"
-        >
-          <div className="wc-block-price-filter__range-input-progress" style={this.getProgressStyle()} />
-          <input
-            type="range"
-            className="range-input"
-            onChange={this.handleChange}
-            value={currentMin || 0}
-            step={step}
-            min={min}
-            max={max}
-            data-label="currentMax"
-          />
-          <input
-            type="range"
-            className="range-input"
-            onChange={this.handleChange}
-            value={currentMax || 0}
-            step={step}
-            min={min}
-            max={max}
-            data-label="currentMin"
-          />
-        </div> */}
       </>
     );
   }

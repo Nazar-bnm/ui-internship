@@ -15,10 +15,6 @@ import './ProductListPage.scss';
 export const CN = 'productListPage';
 
 class ProductListPage extends Component {
-  state = {
-    isAccordionOpen: true
-  };
-
   componentWillUnmount() {
     const { resetFilterState } = this.props;
     resetFilterState && resetFilterState();
@@ -47,23 +43,17 @@ class ProductListPage extends Component {
               className={`${CN}__priceRange-wrapper`}
               heightItem="auto"
               open
-              data={[
-                {
-                  title: 'Price Range',
-                  description: (
-                    <div className={`${CN}__priceRange`}>
-                      <PriceRangeSlider
-                        min={50}
-                        max={2000}
-                        step={10}
-                        priceRange={price}
-                        setPriceRange={setPriceRange}
-                      />
-                    </div>
-                  )
-                }
-              ]}
-            />
+            >
+              <div className={`${CN}__priceRange`} title="Price Range">
+                <PriceRangeSlider
+                  min={50}
+                  max={2000}
+                  step={10}
+                  priceRange={price}
+                  setPriceRange={setPriceRange}
+                />
+              </div>
+            </Accordion>
             <Filter category={category} />
             <div
               className={`${cx(CN)}__brandAdvert`}

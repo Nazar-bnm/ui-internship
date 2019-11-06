@@ -23,17 +23,13 @@ const Filters = ({ category }) => {
         key={categoryName}
         heightItem="auto"
         open={isFiltersShown}
-        data={[
-          {
-            title: categoryName,
-            id: categoryName,
-            description: <CheckBoxList
-              itemsList={gender[categoryName]}
-              category={categoryName}
-            />
-          }
-        ]}
-      />
+      >
+        <CheckBoxList
+          title={categoryName}
+          itemsList={gender[categoryName]}
+          category={categoryName}
+        />
+      </Accordion>
     );
   };
 
