@@ -4,10 +4,32 @@
   font-size: 1rem;
   text-transform: uppercase;
 
+  i.icon {
+    color: $black;
+  }
+
+  i.icon.caret.down:before, i.icon.caret.up:before {
+    color: $white;
+  }
+
+  .header__cart-btn i.icon.cart:before {
+    font-size: 1rem;
+  }
+
+  &__search-input, &-cart-link {
+    font-size: 1rem;
+  }  
+
   &__title {
     margin: 20px 10px;
     font-weight: normal;
     font-family: font(secondary);
+  }
+
+  &__title-wrapper {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .content {
@@ -32,7 +54,7 @@
   }
 
   .page-settings {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .navigation-account {
@@ -41,8 +63,14 @@
     width: 250px;
 
     & a {
+      font-family: font(primary-light);
       color: $silver-chalice;
       text-decoration: none;
+
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -64,15 +92,22 @@
     display: none;
   }
 
-  &__cart-btn {
-    @include flex($align: center);
+  &-cart-link {
+    @include flex($align: center, $justify: center);
     position: absolute;
-    top: 0;
+    top: 8px;
     right: 20px;
     color: $white;
     background-color: transparent;
     border-color: transparent;
-    font-size: 0.7rem;
+
+    &__icon {
+      font-size: 1rem !important;
+    }
+    
+    &__title {
+      font-size: 0.7rem;
+    }
 
     &:hover {
       transform: scale(1.1);
@@ -89,7 +124,6 @@
 
     & a {
       text-decoration: none;
-      width: 100%;
       font-size: 2rem;
       font-family: font(primary-light);
       text-align: center;
@@ -104,7 +138,7 @@
   &__search-input {
     height: 20px;
     width: 65vw;
-    margin: 0 10px;
+    margin: 0 8px;
     padding-left: 30px;
     border: none;
     font-size: 1rem;
@@ -126,6 +160,7 @@
     @include flex($justify: space-evenly, $wrap: nowrap);
     height: 30px;
     padding-bottom: 10px;
+    font-size: 0.7rem;
 
     .button {
       text-transform: uppercase;
@@ -139,32 +174,30 @@
       @include flex($direction: column, $wrap: nowrap);
     }
 
+    &__search-input, &-cart-link {
+      font-size: 0.7rem;
+    }  
+
     &__search-input {
       width: 55vw;
     }
 
-    &__cart-btn {
+    &-cart-link {
       position: relative;
       top: 0;
       right: 0;
-      margin: 0 20px;
-      width: 100px;
+      margin: 0 0px 0 20px;
+      width: 90px;
       border: none;
       color: $black;
-      font-size: 1rem;
     }
   }
 }
 
 @media only screen and (min-width: 768px) {
   .header {
-    &__title {
-      text-align: normal;
-      padding-left: 35%;
-    }
-
     &__search-input {
-      width: 15vw;
+      width: 90px;
     }
 
     &__buttons-container {
@@ -185,6 +218,10 @@
   
       .list__item {
         margin: 0 10px;
+
+        &:hover{
+          transform: scale(1.2);
+        }
   
         & > a {
           color: $black;
@@ -202,7 +239,7 @@
     }
 
     .page-settings {
-      font-size: 0.5rem;
+      font-size: 0.6rem;
     }
   }
 
@@ -214,7 +251,7 @@
 @media only screen and (min-width: 810px) {
   .header {
     .page-settings {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
   }
 }
