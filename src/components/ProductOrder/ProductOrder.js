@@ -22,15 +22,18 @@ const ProductOrder = (props) => {
     className
   } = props;
 
+  // The following function should be replaced when the proper functionality for dropdowns is added.
+  const onDropdownChangeFunc = () => (true);
+
   return (
     <div className={cx(CN, className)}>
       <h2 className={`${CN}__heading`}>{title}</h2>
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
       <div className={`${CN}__dropdowns-wrapper`}>
-        <Dropdown menuOptions={sizes} placeholder="size:" />
-        <Dropdown menuOptions={colors} placeholder="color:" />
-        <Dropdown menuOptions={quantity} placeholder="qty:" />
+        <Dropdown menuOptions={sizes} placeholder="size:" onDropdownChange={onDropdownChangeFunc} />
+        <Dropdown menuOptions={colors} placeholder="color:" onDropdownChange={onDropdownChangeFunc} />
+        <Dropdown menuOptions={quantity} placeholder="qty:" onDropdownChange={onDropdownChangeFunc} />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
         <Link to="/cart">

@@ -1,33 +1,98 @@
 @import '../../scss/global_styles';
+.heading {
+  @include title-font;
+}
 
-.article-preview {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  max-width: 450px;
-  height: 300px;
-  background-size: 60% 100%;
-  background-repeat: no-repeat;
-  font-family: font(primary-light);
-  text-transform: uppercase;
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    height: 50%;
-    width: 60%;
-    background-color: $white;
-  }
-
-  &__heading {
-    margin: 10px 0;
-    font-size: 1.3rem;
-  }
+.blog {
+  position: relative;
+  padding: 20px 0px;
 
   &__text {
-    font-size: 0.9rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color:$white;
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
   }
+
+  &__title {
+    @include title-font;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    font-family: font(primary-light);
+    font-size: 0.7rem;
+    color: $silver-chalice;
+  }
+
+   &__img {
+     width: 60%;
+     height: auto;
+     max-width: 100%;
+   }
+
+   .blogs__wrapper {
+    @include flex($direction: column, $justify: center);
+    height: 80%;
+  }
+
+  &__read-more {
+    display: block;
+    background: none;
+	  color: inherit;
+	  border: none;
+	  padding: 0;
+	  font: inherit;
+	  outline: inherit;
+    text-transform: uppercase;
+    text-align: end;
+    margin: 20px 0 0;
+    cursor: pointer;
+
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@include media-for(laptop) {
+  .blog {
+    &__title {
+      font-size: 0.8rem;
+    }
+  
+    &__description {
+      font-size: 0.6rem;
+    }
+  }
+}
+
+@include media-for(tablet) {
+  .blog {
+    width: 100%;
+
+    &__title {
+      font-size: 0.8rem;
+    }
+  
+    &__description {
+      font-size: 0.6rem;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+@include media-for(mobile-landscape) {
+    .blog__wrapper {
+      display: block;
+    }
 }
