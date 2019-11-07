@@ -19,16 +19,16 @@ class LoginRegister extends React.Component {
           <div className={`${CN}__inputs-wrapper`}>
             <span className={`${CN}__label`}>e-mail*</span>
             <br />
-            <input type="text" className={`${CN}__input`} />
+            <input type="email" className={`${CN}__input`} />
             <br />
             <span className={`${CN}__label`}>password*</span>
             <br />
-            <input type="email" className={`${CN}__input`} />
+            <input type="password" className={`${CN}__input`} />
             <br />
           </div>
           <div className={`${CN}__button-and-link-wrapper`}>
             <Button customClass={`${CN}__button`}>Log in &#38; Checkout</Button>
-            <a href="/">Password Help</a>
+            <a className={`${CN}__link`} href="/">Password Help</a>
           </div>
         </div>
         <div className={`${CN}__registration-type-wrapper`}>

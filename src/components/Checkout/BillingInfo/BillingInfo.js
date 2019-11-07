@@ -44,7 +44,7 @@ class BillingInfo extends React.Component {
             <p>country</p>
             <Dropdown
               menuOptions={dropdownOptions.billingInfo.country}
-              value={dropdownOptions.billingInfo.country[0].label}
+              value="Choose country..."
               onDropdownChange={onDropdownChange}
             />
           </div>
@@ -56,7 +56,7 @@ class BillingInfo extends React.Component {
             <p>state</p>
             <Dropdown
               menuOptions={dropdownOptions.billingInfo.state}
-              value={dropdownOptions.billingInfo.state[0].label}
+              value="Choose state..."
               onDropdownChange={onDropdownChange}
             />
           </div>

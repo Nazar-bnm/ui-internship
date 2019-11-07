@@ -1,9 +1,34 @@
 @import '../../scss/global_styles';
+@import '../Accordion/AccordionItem/AccordionItem.scss';
 
 .checkout {
   &-wrapper {
-    background-color: pink;
     font-size: 0.8rem;
     font-family: font(primary-light);
+  }
+
+  &__accordion {
+    .accordion-item {
+      border: 1px solid $silver-chalice;
+      border-top: none;
+
+      &__header {
+        padding: 20px;
+        margin-top: 10px;
+        border-bottom: 1px solid $silver-chalice;
+        font-family: font(primary-light);
+  
+        &:hover,
+        &:active,
+        &--active {
+          color: $black;
+          margin-top: 10px;
+        }
+      }
+    }
+    
+    .caret {
+      display: none;
+    }
   }
 }

@@ -44,8 +44,8 @@ const data = [
     description: <OrderReview />
   }
 ];
-// console.log('data ', data);
-// console.log(data)
+
+const labelsList = ['Required*', 'Required*', '', '', 'Required*', ''];
 
 const Checkout = () => (
   <div className={`${cx(CN)}-wrapper content`}>
@@ -53,7 +53,7 @@ const Checkout = () => (
       className={`${CN}__accordion`}
       heightItem="auto"
       data={data}
-      open
+      labels={labelsList}
     />
   </div>
 );

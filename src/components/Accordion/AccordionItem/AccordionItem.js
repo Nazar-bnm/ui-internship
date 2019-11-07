@@ -12,7 +12,8 @@ const AccordionItem = ({
   title,
   description,
   height,
-  scroll
+  scroll,
+  labels
 }) => {
   const heightStyle = {
     height
@@ -25,6 +26,7 @@ const AccordionItem = ({
         onClick={onClick}
       >
         <h4>{title}</h4>
+        {labels ? <div className={`${CN}__label`}>{labels}</div> : null}
         <i className={cx('caret', 'right', 'icon', { 'icon--down': !hide })} />
       </div>
 

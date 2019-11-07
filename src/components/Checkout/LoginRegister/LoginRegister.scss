@@ -21,6 +21,10 @@
     border: 1px solid $silver-chalice;
   }
 
+  &__link {
+    margin-top: 10px;
+  }
+
   &__heading {
     text-transform: uppercase;
     margin: 10px 0;
@@ -43,6 +47,10 @@
     &-input {
       margin-right: 5px;
     }
+  }
+
+  .dropdown {
+    margin: 5px 0;
   }
 }
 
