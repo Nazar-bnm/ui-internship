@@ -15,7 +15,6 @@
       &__header {
         padding: 20px;
         margin-top: 10px;
-        border-bottom: 1px solid $silver-chalice;
         font-family: font(primary-light);
   
         &:hover,
@@ -23,6 +22,10 @@
         &--active {
           color: $black;
           margin-top: 10px;
+        }
+
+        &--active {
+          border-bottom: 1px solid $silver-chalice;
         }
       }
     }

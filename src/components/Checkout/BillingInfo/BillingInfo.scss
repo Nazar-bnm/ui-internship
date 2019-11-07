@@ -37,7 +37,7 @@
     border: 1px solid $silver-chalice;
   }
 
-  .dropdown {
+  &__dropdown {
     display: block;
     position: relative;
     padding: 5px;
@@ -61,12 +61,13 @@
       }
     }
   }
+}
 
-  .dropdown[aria-expanded=true] .dropdown__items {
-    top: 105%;
-    border: 2px solid $silver-chalice;
-    background-color: $alabaster;
-  }
+.dropdown[aria-expanded=true] .dropdown__items {
+  top: 105%;
+  width: 100%;
+  border: 2px solid $silver-chalice;
+  background-color: $alabaster;
 }
 
 @media only screen and (min-width: 480px) {
