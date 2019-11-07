@@ -1,0 +1,39 @@
+@import '../../scss/global_styles';
+
+.pagination {
+  display: flex;
+  color: $white;
+  line-height: 1;
+  background-color: $silver-chalice;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px;
+  user-select: none;
+
+  &-nav {
+    &-number {
+        background-color: transparent;
+        transition: 0.2s ease background-color;
+        
+      &--active {
+        background-color: $emperor;
+      }
+    }
+
+    &-arrow {
+      &--disabled {
+        cursor: not-allowed;
+        color: black;
+      }
+    }
+  }
+
+  .arr-cover {
+    width: 1px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .arrow {
+    padding: 20px;
+  }
+}
