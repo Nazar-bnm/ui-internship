@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import BlogArticlePreview from './BlogArticlePreview';
 
 describe('<BlogArticlePreview />', () => {
@@ -9,9 +8,9 @@ describe('<BlogArticlePreview />', () => {
 
   beforeEach(() => {
     props = {
-      imageSrc: 'src/assets/img/content/new2.png',
-      heading: 'Raccoons are fun and fashionable',
-      text: 'Raccoons are fun and fashionable, they like to eat vinegrapes',
+      photo: 'src/assets/img/content/new2.png',
+      title: 'Raccoons are fun and fashionable',
+      description: 'Raccoons are fun and fashionable, they like to eat vinegrapes',
     };
 
     wrapper = shallow(

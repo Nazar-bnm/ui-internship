@@ -11,8 +11,8 @@ import Footer from '../Footer';
 import Brands from '../Brands';
 import ShippingInfo from '../ShippingInfo';
 import { Notifications } from '@/shared';
-// import HomePageSkexleton from '../HomePageSkeleton/HomePageSkeleton';
-// import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
+import HomePageSkeleton from '../HomePageSkeleton/HomePageSkeleton';
+import PlpSkeleton from '../PlpSkeleton/PlpSkeleton';
 
 import './DefaultLayout.scss';
 
@@ -43,45 +43,48 @@ class DefaultLayout extends Component {
       hideBrands,
       hideShippingInfo,
       location,
+      productsList,
       ...rest
     } = this.props;
 
     return (
       <Route
         {...rest}
-        render={(matchProps) => (
+        render={(matchProps) => {
           // will be removed after all demo pull request
           // eslint-disable-next-line no-undef
-          // if ((matchProps.match.path === '/:category') && !productsList.length) {
-          //   return (
-          //     <PlpSkeleton />
-          //   );
-          // }
-          // // will be removed after all demo pull request
-          // // eslint-disable-next-line no-undef
-          // if ((matchProps.match.path === '/home' || matchProps.match.path === '/') && !productsList.length) {
-          //   return (
-          //     <HomePageSkeleton />
-          //   );
-          // }
+          if ((matchProps.match.path === '/:category') && !productsList.length) {
+            return (
+              <PlpSkeleton />
+            );
+          }
+          // will be removed after all demo pull request
+          // eslint-disable-next-line no-undef
+          if ((matchProps.match.path === '/home' || matchProps.match.path === '/') && !productsList.length) {
+            return (
+              <HomePageSkeleton />
+            );
+          }
 
-          <TransitionGroup>
-            <CSSTransition
-              key={location.key}
-              timeout={300}
-              classNames="fade"
-            >
-              <>
-                {!hideHeader && <Header />}
-                <Notifications />
-                <Page {...matchProps} />
-                {!hideBrands && <Brands />}
-                {!hideShippingInfo && <ShippingInfo />}
-                {!hideFooter && <Footer />}
-              </>
-            </CSSTransition>
-          </TransitionGroup>
-        )}
+          return (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={300}
+                classNames="fade"
+              >
+                <>
+                  {!hideHeader && <Header />}
+                  <Notifications type />
+                  <Page {...matchProps} />
+                  {!hideBrands && <Brands />}
+                  {!hideShippingInfo && <ShippingInfo />}
+                  {!hideFooter && <Footer />}
+                </>
+              </CSSTransition>
+            </TransitionGroup>
+          );
+        }}
       />
     );
   }

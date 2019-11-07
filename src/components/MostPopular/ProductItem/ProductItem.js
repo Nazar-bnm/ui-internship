@@ -16,7 +16,6 @@ import {
 import './ProductItem.scss';
 
 const CN = 'product';
-const audioPathForNotification = 'src/assets/sounds/notification-sound.mp3';
 
 class ProductItem extends Component {
   constructor(props) {
@@ -29,7 +28,6 @@ class ProductItem extends Component {
 
     this.showModal = this.showModal.bind(this);
     this.removeModal = this.removeModal.bind(this);
-    this.showNotificationWithAudio = this.showNotificationWithAudio.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.addToWishlistWithNotification = this.addToWishlistWithNotification.bind(this);
@@ -37,14 +35,6 @@ class ProductItem extends Component {
     this.renderWishlistButton = this.renderWishlistButton.bind(this);
     this.renderQuickView = this.renderQuickView.bind(this);
     this.renderHoverView = this.renderHoverView.bind(this);
-  }
-
-  showNotificationWithAudio(message) {
-    const { showMessage } = this.props;
-    const audio = new Audio(audioPathForNotification);
-
-    audio.play();
-    showMessage(message);
   }
 
   showModal() {
@@ -78,21 +68,23 @@ class ProductItem extends Component {
   addToWishlistWithNotification() {
     const {
       product: { _id },
-      addToWishlist
+      addToWishlist,
+      showMessage
     } = this.props;
 
     addToWishlist(_id);
-    this.showNotificationWithAudio(ADDED_TO_WISHLIST_NOTIFICATION);
+    showMessage(ADDED_TO_WISHLIST_NOTIFICATION);
   }
 
   removeFromWishlistNotification() {
     const {
       product: { _id },
-      removeFromWishlist
+      removeFromWishlist,
+      showMessage
     } = this.props;
 
     removeFromWishlist(_id);
-    this.showNotificationWithAudio(REMOVED_FROM_WISHLIST_NOTIFICATION);
+    showMessage(REMOVED_FROM_WISHLIST_NOTIFICATION);
   }
 
   renderWishlistButton() {

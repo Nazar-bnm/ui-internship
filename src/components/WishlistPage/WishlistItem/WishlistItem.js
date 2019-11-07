@@ -1,17 +1,28 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import cx from 'classnames';
+import { REMOVED_FROM_WISHLIST_NOTIFICATION } from '../../../constants/notificationData';
 
 import './WishlistItem.scss';
 
 const CN = 'wishlist-item';
 
-const WishlistItem = ({ className, item, removeFromWishlist }) => {
+const WishlistItem = ({
+  className,
+  item,
+  removeFromWishlist,
+  showMessage
+}) => {
   const {
     _id, images, title, collection, category
   } = item;
 
   const imageSrc = `${process.env.IMAGE_URL}${images[0].claudinaryId}`;
+
+  const removeItemFromWishlist = () => {
+    removeFromWishlist(_id);
+    showMessage(REMOVED_FROM_WISHLIST_NOTIFICATION);
+  };
 
   return (
     <div className={cx(CN, className)}>
@@ -26,7 +37,7 @@ const WishlistItem = ({ className, item, removeFromWishlist }) => {
       <button
         className={`${CN}__button ${CN}__button--remove`}
         type="button"
-        onClick={() => removeFromWishlist(_id)}
+        onClick={() => removeItemFromWishlist(_id, REMOVED_FROM_WISHLIST_NOTIFICATION)}
       >
         <i className="icon trash alternate small col-2" />
         <h4 className="col-8 col-right">Remove from wishlist</h4>
@@ -43,7 +54,8 @@ WishlistItem.propTypes = {
     category: propTypes.string
   }).isRequired,
   removeFromWishlist: propTypes.func.isRequired,
-  className: propTypes.string
+  className: propTypes.string,
+  showMessage: propTypes.func.isRequired
 };
 
 WishlistItem.defaultProps = {
