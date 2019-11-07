@@ -7,7 +7,7 @@ import Accordion from '../../Accordion';
 
 import './Filters.scss';
 
-const Filters = ({ category }) => {
+const Filters = ({ category, filterProps, checkCheckbox }) => {
   const TABLET_BREAKPOINT = 800;
   const gender = config[category];
   const screenWidth = document.body.clientWidth;
@@ -26,9 +26,11 @@ const Filters = ({ category }) => {
         open={isFiltersShown}
       >
         <CheckBoxList
+          filterProps={filterProps}
           title={categoryName}
           itemsList={gender[categoryName]}
           category={categoryName}
+          checkCheckbox={checkCheckbox}
         />
       </Accordion>
     );
@@ -42,7 +44,9 @@ const Filters = ({ category }) => {
 };
 
 Filters.propTypes = {
-  category: PropTypes.string.isRequired
+  category: PropTypes.string.isRequired,
+  filterProps: PropTypes.object.isRequired,
+  checkCheckbox: PropTypes.func.isRequired
 };
 
 export default Filters;

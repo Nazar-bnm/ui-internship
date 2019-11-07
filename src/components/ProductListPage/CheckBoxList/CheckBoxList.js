@@ -7,7 +7,7 @@ import './CheckBoxList.scss';
 
 const CheckBoxList = (props) => {
   const {
-    itemsList, category, checkCheckbox
+    itemsList, category, checkCheckbox, filterProps
   } = props;
 
   const renderCheckboxes = itemsList.map(({ item }) => (
@@ -16,7 +16,7 @@ const CheckBoxList = (props) => {
       itemName={item}
       checkCheckbox={checkCheckbox}
       category={category}
-      isChecked={props[category].includes(item)}
+      isChecked={filterProps[category].includes(item)}
     />
   ));
 
@@ -30,7 +30,8 @@ const CheckBoxList = (props) => {
 CheckBoxList.propTypes = {
   itemsList: PropTypes.array.isRequired,
   category: PropTypes.string.isRequired,
-  checkCheckbox: PropTypes.func.isRequired
+  checkCheckbox: PropTypes.func.isRequired,
+  filterProps: PropTypes.object.isRequired
 };
 
 export default CheckBoxList;

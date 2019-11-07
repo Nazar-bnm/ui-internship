@@ -28,7 +28,9 @@ class ProductListPage extends Component {
       resetFilterState,
       price,
       setPriceRange,
-      fetchedItemsNumber
+      fetchedItemsNumber,
+      filterProps,
+      checkCheckbox
     } = this.props;
     const minPrice = 50;
     const maxPrice = 2000;
@@ -58,7 +60,11 @@ class ProductListPage extends Component {
                 />
               </div>
             </Accordion>
-            <Filter category={category} />
+            <Filter
+              category={category}
+              filterProps={filterProps}
+              checkCheckbox={checkCheckbox}
+            />
             <div
               className={`${cx(CN)}__brandAdvert`}
               style={{
@@ -97,7 +103,9 @@ ProductListPage.propTypes = {
   resetFilterState: PropTypes.func.isRequired,
   price: PropTypes.object.isRequired,
   setPriceRange: PropTypes.func.isRequired,
-  fetchedItemsNumber: PropTypes.number.isRequired
+  fetchedItemsNumber: PropTypes.number.isRequired,
+  filterProps: PropTypes.object.isRequired,
+  checkCheckbox: PropTypes.func.isRequired
 };
 
 ProductListPage.defaultProps = {
