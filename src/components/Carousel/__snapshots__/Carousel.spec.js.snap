@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Carousel /> should match snapshot 1`] = `
+<Carousel>
+  <div
+    className="carousel content"
+  >
+    <div
+      className="carousel__viewport"
+      onScroll={[Function]}
+    >
+      <div
+        className="carousel__child"
+        key="box1"
+        style={
+          Object {
+            "maxWidth": undefined,
+          }
+        }
+      >
+        <div
+          key="box1"
+        >
+          <div
+            key="child1"
+          >
+            hello1 
+          </div>
+        </div>
+      </div>
+      <div
+        className="carousel__child"
+        key="box2"
+        style={
+          Object {
+            "maxWidth": undefined,
+          }
+        }
+      >
+        <div
+          key="box2"
+        >
+          <div
+            key="child2"
+          >
+            hello 2
+          </div>
+        </div>
+      </div>
+      <div
+        className="carousel__child"
+        key="box3"
+        style={
+          Object {
+            "maxWidth": undefined,
+          }
+        }
+      >
+        <div
+          key="box3"
+        >
+          <div
+            key="child3"
+          >
+            hello3 
+          </div>
+        </div>
+      </div>
+      <div
+        className="carousel__child"
+        key="box4"
+        style={
+          Object {
+            "maxWidth": undefined,
+          }
+        }
+      >
+        <div
+          key="box4"
+        >
+          <div
+            key="child4"
+          >
+            hello 4
+          </div>
+        </div>
+      </div>
+      <div
+        className="carousel__child"
+        key="box5"
+        style={
+          Object {
+            "maxWidth": undefined,
+          }
+        }
+      >
+        <div
+          key="box5"
+        >
+          <div
+            key="child5"
+          >
+            hello 5
+          </div>
+        </div>
+      </div>
+      <div
+        className="carousel__child"
+        key="box6"
+        style={
+          Object {
+            "maxWidth": undefined,
+          }
+        }
+      >
+        <div
+          key="box6"
+        >
+          <div
+            key="child6"
+          >
+            hello 6
+          </div>
+        </div>
+      </div>
+      <div
+        className="carousel__child"
+        key="box7"
+        style={
+          Object {
+            "maxWidth": undefined,
+          }
+        }
+      >
+        <div
+          key="box7"
+        >
+          <div
+            key="child7"
+          >
+            hello 7
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      className="carousel__nav carousel__left-nav carousel__nav-disabled"
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="carousel__arrow-button chevron left icon"
+      />
+    </button>
+    <button
+      className="carousel__right-nav carousel__nav carousel__nav-disabled"
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="carousel__arrow-button chevron right icon"
+      />
+    </button>
+  </div>
+</Carousel>
+`;

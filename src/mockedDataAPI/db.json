@@ -1,22 +1,22 @@
 {
-  "what-is-new" : [
+  "what-is-new": [
     {
       "id": 1,
-      "photo": "https://www.next.ua/nxtcms/resource/image/1889302/portrait_ratio1x1/525/525/2fccc457347d46d0c506ee9ea0396ae8/of/emma-willis.jpg",
+      "photo": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5610/521/800/5610521800_2_1_16.jpg?t=1570213406452&impolicy=massimodutti-itxmediumhigh&imwidth=900",
       "title": "Black and White",
       "collection": "spring collection 2016",
       "category": "women"
     },
     {
       "id": 2,
-      "photo": "https://www.next.ua/nxtcms/resource/image/1233600/portrait_ratio1x1/525/525/69ca86774e073288bc792479650a14cc/Jn/all-baby-girl.jpg",
+      "photo": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5167/897/926/5167897926_2_1_16.jpg?t=1568310302834&impolicy=massimodutti-itxmediumhigh&imwidth=900",
       "title": "Color Summer",
       "collection": "spring collection 2016",
       "category": "kids"
     },
     {
       "id": 3,
-      "photo": "https://www.next.ua/nxtcms/resource/image/1915752/portrait_ratio1x1/525/525/1cf45576cf1de5e2bab187220d4ebeb0/ds/g83-mb-sh819338-lm-357.jpg",
+      "photo": "https://static.massimodutti.net/3/photos/2019/I/0/2/p/2722/122/801/2722122801_1_1_16.jpg?t=1566461768327&impolicy=massimodutti-itxmedium&imwidth=600",
       "title": "Vintage For Him",
       "collection": "spring collection 2016",
       "category": "men"
@@ -24,31 +24,86 @@
   ],
   "most-popular": [
     {
-      "id": 1,
-      "image": "https://i.dailymail.co.uk/1s/2018/12/15/12/7458890-6498875-image-a-2_1544876240893.jpg",
+      "id": 5,
+      "image": "https://i.pinimg.com/564x/7e/c2/5f/7ec25f88b9d2266d03426049701c8839.jpg",
       "label": "new",
       "title": "Black dress",
-      "price": "99,50$",
-      "sizes": "S - M - L"
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",
+      "category": "woman"
     },
     {
-      "id": 2,
-      "image": "https://i.pinimg.com/564x/99/5d/f3/995df3032c828381332af1dea4e5c590.jpg",
+      "id": 6,
+      "image": "https://i.pinimg.com/564x/6c/9d/80/6c9d80e6808bf7e2c74eed9e3f3b64a0.jpg",
       "label": "sale",
       "title": "Red evening dress",
-      "price": "179.00$",
-      "sizes": "S - M - L"
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",
+      "category" : "woman"
     },
     {
-      "id": 3,
-      "image": "https://i.redd.it/grla2qtpa5721.jpg",
+      "id": 7,
+      "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/6457/519/800/6457519800_2_6_16.jpg?t=1569855315641&impolicy=massimodutti-itxmediumhigh&imwidth=500",
       "label": "",
       "title": "Fit & flare dress",
-      "price": "99.00$",
-      "sizes": "S - M - L"
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",     
+      "category": "woman"
+    },
+    {
+      "id": 22,
+      "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/6448/781/800/6448781800_2_4_16.jpg?t=1570632329491&impolicy=massimodutti-itxmediumhigh&imwidth=600",
+      "label": "",
+      "title": "Fit & flare dress",
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",     
+      "category": "woman"
+    },
+    {
+      "id": 21,
+      "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/6409/610/712/6409610712_2_2_16.jpg?t=1570806889445&impolicy=massimodutti-itxmediumhigh&imwidth=600",
+      "label": "",
+      "title": "Fit & flare dress",
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",     
+      "category": "woman"
+    },
+    {
+      "id": 20,
+      "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/6449/782/500/6449782500_2_1_16.jpg?t=1570633129880&impolicy=massimodutti-itxmediumhigh&imwidth=600",
+      "label": "",
+      "title": "Fit & flare dress",
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",     
+      "category": "woman"
+    },
+    {
+      "id": 17,
+      "image": "https://i.pinimg.com/564x/08/44/dd/0844ddb3bbe712cb209b80830d85cf03.jpg",
+      "label": "",
+      "title": "Fit & flare dress",
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",     
+      "category": "woman"
+    },  {
+      "id": 11,
+      "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/6408/516/802/6408516802_1_1_16.jpg?t=1570124423647&impolicy=massimodutti-itxmediumhigh&imwidth=500",
+      "label": "",
+      "title": "Fit & flare dress",
+      "collection": "spring collection 2016",
+      "price": "$1.875",
+      "sizes": "S - M - L",     
+      "category": "woman"
     }
-    ],
-    "brands": [
+  ],
+  "brands": [
     {
       "id": "Boss",
       "image": "https://i.pinimg.com/originals/a6/c8/7b/a6c87bc1494906db8c9bafb3a4f4686b.png"
@@ -71,7 +126,222 @@
     },
     {
       "id": "Gucci2",
-      "image" : "https://myrealdomain.com/images/gucci-logo-png-1.png"
+      "image": "https://myrealdomain.com/images/gucci-logo-png-1.png"
     }
-  ]
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "summer trends",
+      "description": "we know what you want this summer. most fashion looks",
+      "photo": "https://www.kingsroadlondon.com/wp-content/uploads/2019/03/Massimo-Dutti-1-1380x1266.jpg"
+    },
+    {
+      "id": 2,
+      "title": "summer trends",
+      "description": "we know what you want this summer. most fashion looks",
+      "photo": "https://www.kingsroadlondon.com/wp-content/uploads/2019/10/AM3_3-1380x1380.jpg"
+    }
+  ],
+  "products": [
+    {
+    "id": 1,
+    "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5641/537/741/01/5641537741_1_1_16.jpg?t=1570214060653&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+    "label": "new",
+    "title": "Black dress",
+    "price": "99,50$",
+    "sizes": "S - M - L",
+    "collection": "Summer 2011",
+    "category": "women"
+    }, 
+    {
+    "id": 2,
+    "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5641/537/741/01/5641537741_2_3_16.jpg?t=1570214060653&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+    "label": "new",
+    "title": "Black dress",
+    "price": "99,50$",
+    "sizes": "S - M - L",
+    "collection": "Summer 2011",
+    "category": "women"
+    },
+    {
+    "id": 3,
+    "image": "https://static.massimodutti.net/3/photos/2019/I/0/1/p/5641/537/741/01/5641537741_6_1_16.jpg?t=1570214060653&impolicy=massimodutti-itxmediumhigh&imwidth=900",
+    "label": "new",
+    "title": "Black dress",
+    "price": "99,50$",
+    "sizes": "S - M - L",
+    "collection": "Summer 2011",
+    "category": "women"}
+  ],
+  "product-list": [
+    {
+      "id": "1",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2033080.jpg",
+      "title": "Awesome dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "199"
+    },
+    {
+      "id": "2",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033076.jpg",
+      "title": "Beautiful dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "new",
+      "sizes":" S - M - L",
+      "price": "299"
+    },
+    {
+      "id": "3",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033787.jpg",
+      "title": "Amazing dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" M - L",
+      "price": "399"
+    },
+    {
+      "id": "4",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060672.jpg",
+      "title": "Spring dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "499"
+    },
+    {
+      "id": "5",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2063582.jpg",
+      "title": "Autumn dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "new",
+      "sizes":" S - M - L",
+      "price": "599"
+    },
+    {
+      "id": "6",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060681.jpg",
+      "title": "Comfortable dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "699"
+    },
+    {
+      "id": "7",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2056801.jpg",
+      "title": "Soft dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "799"
+    },
+    {
+      "id": "8",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2060677.jpg",
+      "title": "Light dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "899"
+    },
+    {
+      "id": "9",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2054736.jpg",
+      "title": "Comfy dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "999"
+    },
+    {
+      "id": "10",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/full_img_2057906.jpg",
+      "title": "Ideal dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "1099"
+    },
+    {
+      "id": "11",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2033752.jpg",
+      "title": "Better dress than your sister has",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L",
+      "price": "1199"
+    },
+    {
+      "id": "12",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2052923.jpg",
+      "title": "New dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "1299"
+    },
+    {
+      "id": "13",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_2052929.jpg",
+      "title": "Old dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M - L",
+      "price": "1399"
+    },
+    {
+      "id": "14",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_1979902.jpg",
+      "title": "Fairy dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "sale",
+      "sizes":" S - M - L - XL",
+      "price": "1499"
+    },
+    {
+      "id": "15",
+      "image": "https://img.ans-media.com/files/sc_staging_images/product/large_img_1987665.jpg",
+      "title": "Nice dress",
+      "collection": "spring collection 2016",
+      "category": "women",
+      "label": "",
+      "sizes":" S - M",
+      "price": "1599"
+    }
+  ],
+  "woman": {
+    "id": 1,
+    "category": "women",
+    "title": "new collection 2019",
+    "description": "sweater collection"
+  },
+  "man": {
+    "id": 2,
+    "category": "men",
+    "title": "new collection 2019",
+    "description": "sweater collection"
+  },
+  "kids": {
+    "id": 3,
+    "category": "kids",
+    "title": "new collection 2019",
+    "description": "warm autumn"
+  }
 }

@@ -1,0 +1,48 @@
+@import '../../scss/global_styles';
+
+.poster {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 380px;
+
+  &__info {
+    position: absolute;
+    bottom: 10%;
+    width: 60%;
+    right: 5%;
+    padding: 1rem;
+    background-color: $pale-white;
+    text-align: center;
+    overflow: hidden;
+
+    &-title {
+      font: 0.8rem font(primary-light);
+      text-transform: uppercase;
+      overflow: hidden;
+    }
+
+    &-description {
+      margin: 0.5rem 0 1.5rem;
+      font: 2.4em font(secondary);
+      font-variant: small-caps;
+      line-height: 1;
+      text-transform: capitalize;
+    }
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .poster__info {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .poster {
+    height: 40vh;
+  }
+}

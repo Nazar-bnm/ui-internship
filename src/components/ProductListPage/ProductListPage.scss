@@ -1,0 +1,127 @@
+@import '../../scss/global_styles';
+
+.productListPage {
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid $mercury;
+    margin-bottom: 30px;
+    padding-top: 5px;
+
+    & > div {
+      color: $silver-chalice;
+      font-size: 0.8em;
+    }
+  }
+
+  &__heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .heading__wrapper {
+      width: 85%
+    }
+
+    &-itemsLeft {
+      width: 10%;
+      font-size: 0.8em;
+      color: $silver-chalice;
+    }
+  }
+
+  &__gridWrapper {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-gap: 30px;
+    grid-template-areas: "filters poster"
+    "filters items"
+    "filters items";
+    grid-template-columns: 247px 1fr;
+    grid-template-rows: 390px 1fr 1fr;
+  }
+
+  &__filter {
+    grid-area: filters;
+  }
+
+  &__poster {
+    grid-area: poster;
+  }
+
+  &__productList {
+    grid-area: items;
+  }
+
+  &__brandAdvert {
+    position: relative;
+    height: 50vh;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: 50px 0;
+
+    &-info{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70%;
+      background-color: $white;
+      text-transform: uppercase;
+      padding: 20px 5px 20px 15px;
+    }
+
+    &-brandName {
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+
+    &-collection {
+      color: $silver-chalice;
+      font-size: 0.8em;
+      margin-top: 3px;
+    }
+  }
+
+  .accordion-item__header {
+    border: none;
+  }
+
+  .button {
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    margin: 10px;
+    color: $silver-chalice;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .productListPage {
+    &__gridWrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__filter {
+      order: 2;
+    }
+
+    &__poster {
+      order: 1;
+    }
+
+    &__productList {
+      order: 3
+    }
+
+    &__brandAdvert {
+      display: none;
+    }
+  }
+}

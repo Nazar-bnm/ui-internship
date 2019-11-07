@@ -1,6 +1,6 @@
-@import '../../../scss/global_styles';
-@import '../../../scss/breakpoints';
-@import '../../../scss/styles';
+@import '../../../scss//global_styles';
+@import '../../../scss/_breakpoints';
+@import '../../../scss/_styles';
 
 .item {
   @include flex(column, center,center);
@@ -12,7 +12,6 @@
     display: block;
     width: auto;
     height: auto;
-    max-height: $topic-photo-height;
     max-width: 100%;
   }
 
@@ -84,4 +83,3 @@
     width: 90%;
   }
 }
-

@@ -1,0 +1,71 @@
+@import "../../scss/global_styles";
+
+.modal {
+  @include flex($justify: center, $align: center);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: $black, $alpha: 0.5);
+  outline: none;
+
+  &--transition {
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(0);
+    background-color: inherit;
+  }
+
+  &__window {
+    position: relative;
+    width: 700px;
+    height: 400px;
+    padding: 0 3rem;
+    background: $white;
+    animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+
+  &__close-button,
+  i.icon {
+    transition: all linear 200ms;
+  }
+
+  &__close-button {
+    @include flex($justify: center, $align: center);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: 1px solid $silver-chalice;
+    width: 2rem;
+    height: 2rem;
+
+    &:hover {
+      border-color: $dove-gray;
+
+      i.icon {
+        color: $dove-gray;
+      }
+    }
+  }
+
+  i.icon {
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: $silver-chalice;
+  }
+
+  @keyframes blowUpModal {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.remove-scroll {
+  overflow: hidden;
+}

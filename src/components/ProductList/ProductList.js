@@ -1,40 +1,62 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Slide from '../Carousel/Slide';
-import Carousel from '../Carousel';
-import products from '../Carousel/products.json';
+import ProductListNavigationContainer from './ProductListNavigation';
+import ItemsListContainer from './ItemsList';
 
-export const CN = 'ProductList';
+import './ProductList.scss';
 
-class ProductList extends Component {
+export const CN = 'product-list';
+
+class ProductList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { productList: [...products] };
+    this.state = {
+      dropdownSortingSelectedID: '',
+      dropdownItemsNumberSelectedID: ''
+    };
   }
 
-  render() {
-    const { productList } = this.state;
-
-    const listOfProducts = productList
-    && productList.map(({ productName, category, images }) => {
-      const mainProductImage = images[0].url[0];
-
-      return (
-        <Slide
-          key={productName}
-          image={mainProductImage}
-          name={productName}
-          category={category}
-        />
-      );
+  changeSortingSelectedID = (selectedID) => {
+    this.setState({
+      dropdownSortingSelectedID: selectedID
     });
+  };
+
+  changeItemsNumberSelectedID = (selectedID) => {
+    this.setState({
+      dropdownItemsNumberSelectedID: selectedID
+    });
+  };
+
+  render() {
+    const {
+      dropdownSortingSelectedID,
+      dropdownItemsNumberSelectedID
+    } = this.state;
+    const { gender } = this.props;
 
     return (
-      <div className={`${CN} content`}>
-        <Carousel items={productList}>
-          {listOfProducts}
-        </Carousel>
+      <div className={`${CN}`}>
+        <div className={`${CN}__filter-wrapper`}>
+          <ProductListNavigationContainer
+            dropdownSortingSelectedID={dropdownSortingSelectedID}
+            dropdownItemsNumberSelectedID={dropdownItemsNumberSelectedID}
+            changeSortingSelectedID={this.changeSortingSelectedID}
+            changeItemsNumberSelectedID={this.changeItemsNumberSelectedID}
+          />
+        </div>
+        <div className={`${CN}__items-list-container`}>
+          <ItemsListContainer gender={gender} />
+        </div>
+        <div className={`${CN}__filter-wrapper`}>
+          <ProductListNavigationContainer
+            dropdownItemsNumberSelectedID={dropdownItemsNumberSelectedID}
+            dropdownSortingSelectedID={dropdownSortingSelectedID}
+            changeSortingSelectedID={this.changeSortingSelectedID}
+            changeItemsNumberSelectedID={this.changeItemsNumberSelectedID}
+          />
+        </div>
       </div>
     );
   }

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-import Dropdown from '../Dropdown';
-import Button from '../Button';
+import { Button, Dropdown } from '@/shared';
 
 import './ProductOrder.scss';
 
@@ -11,32 +11,39 @@ export const CN = 'product-order';
 
 const ProductOrder = (props) => {
   const {
-    itemName,
+    title,
     description,
     price,
     sizes,
     colors,
-    quantity
+    quantity,
+    onClickAddToWishlist,
+    onClickAddToCart,
+    className
   } = props;
 
+  // The following function should be replaced when the proper functionality for dropdowns is added.
+  const onDropdownChangeFunc = () => (true);
+
   return (
-    <div className={`${CN} content`}>
-      <h2 className={`${CN}__heading`}>{itemName}</h2>
+    <div className={cx(CN, className)}>
+      <h2 className={`${CN}__heading`}>{title}</h2>
       <p className={`${CN}__description`}>{description}</p>
       <span className={`${CN}__price`}>{price}</span>
       <div className={`${CN}__dropdowns-wrapper`}>
-        <Dropdown options={sizes} />
-        <Dropdown options={colors} />
-        <Dropdown options={quantity} />
+        <Dropdown menuOptions={sizes} placeholder="size:" onDropdownChange={onDropdownChangeFunc} />
+        <Dropdown menuOptions={colors} placeholder="color:" onDropdownChange={onDropdownChangeFunc} />
+        <Dropdown menuOptions={quantity} placeholder="qty:" onDropdownChange={onDropdownChangeFunc} />
       </div>
       <div className={`${CN}__buttons-wrapper`}>
-        <Link to="/not_found">
-          <Button customClass={`${CN}__cart-btn`}>add to cart</Button>
+        <Link to="/cart">
+          <Button onClick={onClickAddToCart} className={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
-        <Link to="/not_found">
+        <Link to="/wishlist">
           <Button
-            customClass={`${CN}__wishlist-btn`}
+            className={`${CN}__wishlist-btn`}
             icon="heart"
+            onClick={onClickAddToWishlist}
           >
           wishlist
           </Button>
@@ -47,16 +54,18 @@ const ProductOrder = (props) => {
 };
 
 ProductOrder.propTypes = {
-  itemName: PropTypes.string,
+  title: PropTypes.string,
   description: PropTypes.string,
   price: PropTypes.string,
   quantity: PropTypes.array,
   sizes: PropTypes.array,
-  colors: PropTypes.array
+  colors: PropTypes.array,
+  onClickAddToWishlist: PropTypes.func.isRequired,
+  onClickAddToCart: PropTypes.func.isRequired
 };
 
 ProductOrder.defaultProps = {
-  itemName: '',
+  title: '',
   description: '',
   price: '',
   quantity: [],

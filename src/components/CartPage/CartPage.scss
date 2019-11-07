@@ -1,0 +1,133 @@
+@import '../../scss/global_styles';
+
+.cart-page {
+  box-shadow: 0 0 3px $mercury;
+  padding: 10px;
+  margin-bottom: 15px;
+
+  &__title {
+    font-family: font(secondary);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 10;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    @extend .cart-page__subtitle;
+    font-family: font(primary-light);
+    height: 50px;
+    text-align: left;
+
+    th {
+      padding: 15px 0px 15px 10px;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse; 
+  }
+
+  &__empty-page {
+    @include flex($direction: column, $align: center);
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  &__image {
+    margin-left: 40px;
+  }
+
+  &__checkout {
+    @include flex($justify: space-around);
+    box-shadow: 0 0 3px $mercury;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+  }
+
+  &__offer {
+    @include flex($direction: column, $justify: center);
+    background-image: url('/src/assets/img/background/offer.jpg');
+    background-size: cover;
+    font-size: 1.3rem;
+    padding: 170px 150px 10px;
+    width: 100%;
+    box-shadow: 0 0 3px $mercury;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-family: font(primary-light);
+    text-align: center;
+    color: $black;
+    
+    &:hover {
+      opacity: 0.9;
+    }
+    
+    h2 {
+      letter-spacing: 5px;
+    }
+  }
+
+  &__pseudo-button {
+    @include flex($justify: center, $align: center);
+    font-family: font(primary-light);
+    margin: 40px auto;
+    color: $white;
+    height: 40px;
+    background-color: $black;
+    border: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__receipt {
+    @include flex($justify: space-between);
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 3rem;
+
+    .col-2 {
+      text-align: right;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
+
+@include media-for(tablet) {
+  .cart-page {
+    &__heading {
+      font-size: 0.7rem;      
+  }
+
+  &__receipt,
+  &__pseudo-button {
+    width: 80%;
+  }
+
+  &__heading {
+    display: none;
+  }
+
+  &__offer {
+    margin: 0;
+    padding: 20px 0 0;
+    font-size: 1rem;
+
+    h2 {
+      display: none;
+    }
+  }
+}
+}

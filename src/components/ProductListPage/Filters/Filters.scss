@@ -1,0 +1,15 @@
+@import '../../../scss/global_styles';
+
+.filter {
+  &__box {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  .accordion-item__header {
+    border: none;
+  }
+}

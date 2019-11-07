@@ -1,83 +1,259 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { NavLink } from 'react-router-dom';
+
+import Modal from '../../Modal';
+import ProductImage from '../../ProductImage';
+import ProductOrder from '../../ProductOrder';
+import Heading from '../../Heading';
+import { productOrderParameters } from '../../../config/ProductOrderMockups';
+import {
+  REMOVED_FROM_WISHLIST_NOTIFICATION,
+  ADDED_TO_WISHLIST_NOTIFICATION
+} from '../../../constants/notificationData';
 
 import './ProductItem.scss';
 
 const CN = 'product';
+const audioPathForNotification = 'src/assets/sounds/notification-sound.mp3';
 
-const ProductItem = ({ product }) => {
-  const [isHovered, setHovered] = useState(false);
-  const {
-    image,
-    label,
-    title,
-    price,
-    sizes
-  } = product;
+class ProductItem extends Component {
+  constructor(props) {
+    super(props);
 
-  const renderView = () => (
-    <>
-      <div className={cx(`${CN}__img-wrapper`, { [`${CN}__img-wrapper--hovered`]: isHovered })}>
-        {!isHovered && (
-          <>
-            <div className={cx(`${CN}__img-wrapper__flag`, label)} />
-            <div className={`${CN}__img-wrapper__labels`}>{label}</div>
-          </>
-        )}
+    this.state = {
+      isHovered: false,
+      isShowedModal: false
+    };
 
-        <img
-          className={cx(`${CN}__img-wrapper__img`, { [`${CN}__img-wrapper__img--hovered`]: isHovered })}
-          src={image}
-          alt="product"
-        />
+    this.showModal = this.showModal.bind(this);
+    this.removeModal = this.removeModal.bind(this);
+    this.showNotificationWithAudio = this.showNotificationWithAudio.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.addToWishlistWithNotification = this.addToWishlistWithNotification.bind(this);
+    this.removeFromWishlistNotification = this.removeFromWishlistNotification.bind(this);
+    this.renderWishlistButton = this.renderWishlistButton.bind(this);
+    this.renderQuickView = this.renderQuickView.bind(this);
+    this.renderHoverView = this.renderHoverView.bind(this);
+  }
+
+  showNotificationWithAudio(message) {
+    const { showMessage } = this.props;
+    const audio = new Audio(audioPathForNotification);
+
+    audio.play();
+    showMessage(message);
+  }
+
+  showModal() {
+    this.setState({
+      isShowedModal: true
+    });
+  }
+
+  removeModal() {
+    this.setState({
+      isHovered: false,
+      isShowedModal: false
+    });
+  }
+
+  handleMouseEnter() {
+    this.setState({
+      isHovered: true
+    });
+  }
+
+  handleMouseLeave() {
+    const { isShowedModal } = this.state;
+
+    !isShowedModal
+      && this.setState({
+        isHovered: false
+      });
+  }
+
+  addToWishlistWithNotification() {
+    const {
+      product: { _id },
+      addToWishlist
+    } = this.props;
+
+    addToWishlist(_id);
+    this.showNotificationWithAudio(ADDED_TO_WISHLIST_NOTIFICATION);
+  }
+
+  removeFromWishlistNotification() {
+    const {
+      product: { _id },
+      removeFromWishlist
+    } = this.props;
+
+    removeFromWishlist(_id);
+    this.showNotificationWithAudio(REMOVED_FROM_WISHLIST_NOTIFICATION);
+  }
+
+  renderWishlistButton() {
+    const {
+      wishlist,
+      product: { _id }
+    } = this.props;
+
+    const isInWishlist = wishlist && wishlist.find((wishedItemId) => _id === wishedItemId);
+
+    const removeOrAddToWishlist = () => (isInWishlist
+      ? this.removeFromWishlistNotification(_id)
+      : this.addToWishlistWithNotification(_id));
+
+    return (
+      <i
+        className={cx('product__icon', 'icon', 'heart', 'large', {
+          red: isInWishlist,
+          outline: !isInWishlist
+        })}
+        onClick={removeOrAddToWishlist}
+      />
+    );
+  }
+
+  renderQuickView() {
+    const {
+      product: {
+        images, _id, title, price, description
+      }
+    } = this.props;
+
+    const imagesForQuickView = images.slice(0, 3).map(({ claudinaryId }) => ({
+      src: `${process.env.IMAGE_URL}/${claudinaryId}`
+    }));
+
+    return (
+      <Modal className={`${CN}-quick-view`} removeModal={this.removeModal}>
+        <Heading title="Quick view" />
+        <div className={`${CN}-quick-view-content`}>
+          <ProductImage images={imagesForQuickView} />
+          <div className={`${CN}-quick-view-content-wrapper`}>
+            <ProductOrder
+              className={`${CN}-quick-view-content__product-order`}
+              title={title}
+              price={`$${price}`}
+              description={description}
+              {...productOrderParameters}
+              onClickAddToWishlist={() => this.addToWishlistWithNotification(_id)}
+            />
+            <NavLink
+              to={`/product-details/${_id}`}
+              className={`${CN}-quick-view-content__link`}
+            >
+              See more details
+            </NavLink>
+          </div>
+        </div>
+      </Modal>
+    );
+  }
+
+  renderHoverView() {
+    const {
+      product: {
+        images, label, title, price, sizes
+      }
+    } = this.props;
+
+    const { isHovered, isShowedModal } = this.state;
+    const imageSrc = images.length && `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
+
+    return (
+      <>
+        <div
+          className={cx(`${CN}__img-wrapper`, {
+            [`${CN}__img-wrapper--hovered`]: isHovered
+          })}
+        >
+          <div className={cx(`${CN}__img-wrapper__flag`, label)} />
+          <div className={`${CN}__img-wrapper__labels`}>{label}</div>
+
+          <img
+            alt="product"
+            className={cx(`${CN}__img-wrapper__img`, {
+              [`${CN}__img-wrapper__img--hovered`]: isHovered
+            })}
+            src={imageSrc}
+          />
+        </div>
+
+        <div
+          className={cx(`${CN}__title-wrapper`, {
+            [`${CN}__title-wrapper__title`]: isHovered
+          })}
+        >
+          <h2
+            className={cx(`${CN}__title-wrapper__title`, {
+              [`${CN}__title-wrapper__title--hovered`]: isHovered
+            })}
+          >
+            {title}
+          </h2>
+
+          {!isHovered && (
+            <h3 className={`${CN}__title-wrapper__price`}>{`$${price}`}</h3>
+          )}
+          {isHovered && (
+            <>
+              <span className={`${CN}__title-wrapper`}>
+                {`Sizes: ${sizes}`}
+              </span>
+              <div className={`${CN}__title-wrapper icons`}>
+                {window.innerWidth > 720 && (
+                  <i
+                    className="eye icon product__icon"
+                    onClick={this.showModal}
+                  />
+                )}
+                {this.renderWishlistButton()}
+              </div>
+              {isShowedModal && this.renderQuickView()}
+            </>
+          )}
+        </div>
+      </>
+    );
+  }
+
+  render() {
+    return (
+      <div
+        className={`${CN} slide`}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+      >
+        {this.renderHoverView()}
       </div>
+    );
+  }
+}
 
-      <div className={cx(`${CN}__title-wrapper`, { [`${CN}__title-wrapper__title`]: isHovered })}>
-        <h2 className={cx(`${CN}__title-wrapper__title`, { [`${CN}__title-wrapper__title--hovered`]: isHovered })}>
-          {title}
-        </h2>
-
-        {!isHovered && <h3 className={`${CN}__title-wrapper__price`}>{price}</h3>}
-        {isHovered && (
-          <>
-            <span className="sizes">
-              Sizes:
-              {sizes}
-            </span>
-            <div className={`{${CN}__title-wrapper icons`}>
-              <i className="eye icon" />
-              <i className="cart plus icon" />
-              <i className="heart outline icon" />
-            </div>
-          </>
-        )}
-      </div>
-    </>
-  );
-
-  const handleMouseEnter = () => setHovered(true);
-  const handleMouseLeave = () => setHovered(false);
-
-  return (
-    <div
-      className={`${CN} col-xs-12 col-sm-6 col-md-4`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {renderView()}
-    </div>
-  );
-};
+const ItemShape = PropTypes.shape({
+  _id: PropTypes.string,
+  images: PropTypes.array,
+  label: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  sizes: PropTypes.array
+});
 
 ProductItem.propTypes = {
-  product: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    sizes: PropTypes.string.isRequired
-  }).isRequired
+  product: ItemShape.isRequired,
+  wishlist: PropTypes.array,
+  addToWishlist: PropTypes.func.isRequired,
+  removeFromWishlist: PropTypes.func.isRequired,
+  showMessage: PropTypes.func.isRequired
+};
+
+ProductItem.defaultProps = {
+  wishlist: []
 };
 
 export default ProductItem;
