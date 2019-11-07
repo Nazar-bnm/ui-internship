@@ -5,12 +5,11 @@ import { CheckBox } from '@/shared';
 
 import './CheckBoxList.scss';
 
-import './CheckBoxList.scss';
-
 const CheckBoxList = (props) => {
   const {
     itemsList, category, checkCheckbox
   } = props;
+
   const renderCheckboxes = itemsList.map(({ item }) => (
     <CheckBox
       key={item}

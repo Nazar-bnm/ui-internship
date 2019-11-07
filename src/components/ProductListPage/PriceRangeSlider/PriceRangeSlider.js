@@ -1,52 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import './PriceRangeSlider.scss';
 
 class PriceRangeSlider extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   const { priceRange } = props;
-
-  //   this.state = {
-  //     currentMin: priceRange.from,
-  //     currentMax: priceRange.to
-  //   };
-  // }
-
-  // static getDerivedStateFromProps(props, state) {
-  //   // console.log(props.priceRange.from, 'from props');
-  //   // console.log(props.priceRange.to, 'to props');
-  //   // console.log(state.currentMin, 'state.currentMin');
-  //   // console.log(state.currentMax, 'state.currentMax');
-  //   if (props.priceRange.from !== state.currentMin && props.priceRange.to !== state.currentMax) {
-  //     console.log(props.priceRange.from !== state.currentMin);
-
-  //     // console.log(state.currentMax, 'state');
-  //     return {
-  //       currentMin: props.priceRange.from,
-  //       currentMax: props.priceRange.to
-  //     };
-  //   }
-
-  //   // Return null if the state hasn't changed
-  //   return null;
-  // }
-
-  // getProgressStyle() {
-  //   const {
-  //     min, max, step,
-  //     priceRange: { fromPrice, toPrice }
-  //   } = this.props;
-
-  //   const low = Math.round(100 * ((currentMin - from) / (to - from))) - 0.5;
-  //   const high = Math.round(100 * ((currentMax - from) / (to - from))) + 0.5;
-
-  //   return {
-  //     '--low': `${low}%`,
-  //     '--high': `${high}%`
-  //   };
-  // }
-
   handleChange = (e) => {
     const { setPriceRange } = this.props;
     const {
@@ -55,16 +12,9 @@ class PriceRangeSlider extends Component {
         dataset: { label }
       }
     } = e;
-
-    // this.setState({ [label]: parseFloat(value) }, () => {
-    // const { currentMin, currentMax } = this.state;
-    // const { priceRange: { from: currentMin, to: currentMax } } = this.props;
-
-
-    // setPriceRange(currentMin, currentMax);
     const formattedVal = parseFloat(value);
+
     setPriceRange(formattedVal, label);
-    // });
   };
 
   render() {
@@ -76,7 +26,6 @@ class PriceRangeSlider extends Component {
     return (
       <>
         <section className="range-input">
-          {/* <div className="range-input-progress" style={this.getProgressStyle()} /> */}
           <input
             className="range-input"
             value={fromPrice}
@@ -107,5 +56,12 @@ class PriceRangeSlider extends Component {
   }
 }
 
+PriceRangeSlider.propTypes = {
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired,
+  setPriceRange: PropTypes.func.isRequired,
+  priceRange: PropTypes.object.isRequired
+};
+
 export default PriceRangeSlider;
-// export default connect(({ reducerFilter: { price } }) => ({ priceRange: price }))(PriceRangeSlider);

@@ -43,6 +43,7 @@ class DefaultLayout extends Component {
       hideBrands,
       hideShippingInfo,
       location,
+      productsList,
       ...rest
     } = this.props;
 
@@ -52,7 +53,7 @@ class DefaultLayout extends Component {
         render={(matchProps) => {
           // will be removed after all demo pull request
           // eslint-disable-next-line no-undef
-          {/* if ((matchProps.match.path === '/:category') && !productsList.length) {
+          if ((matchProps.match.path === '/:category') && !productsList.length) {
             return (
               <PlpSkeleton />
             );
@@ -63,7 +64,8 @@ class DefaultLayout extends Component {
             return (
               <HomePageSkeleton />
             );
-          }  */}
+          }
+
           return (
             <TransitionGroup>
               <CSSTransition

@@ -30,6 +30,9 @@ class ProductListPage extends Component {
       setPriceRange,
       fetchedItemsNumber
     } = this.props;
+    const minPrice = 50;
+    const maxPrice = 2000;
+    const step = 10;
 
     return (
       <div className={cx(CN, 'content')}>
@@ -47,9 +50,9 @@ class ProductListPage extends Component {
             >
               <div className={`${CN}__priceRange`} title="Price Range">
                 <PriceRangeSlider
-                  min={50}
-                  max={2000}
-                  step={10}
+                  min={minPrice}
+                  max={maxPrice}
+                  step={step}
                   priceRange={price}
                   setPriceRange={setPriceRange}
                 />
@@ -93,8 +96,8 @@ ProductListPage.propTypes = {
   category: PropTypes.string,
   resetFilterState: PropTypes.func.isRequired,
   price: PropTypes.object.isRequired,
-  setPriceRange: PropTypes.func.isRequired
-
+  setPriceRange: PropTypes.func.isRequired,
+  fetchedItemsNumber: PropTypes.number.isRequired
 };
 
 ProductListPage.defaultProps = {

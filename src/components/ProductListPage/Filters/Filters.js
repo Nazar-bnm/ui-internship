@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import config from '../../../../config';
 import CheckBoxList from '../CheckBoxList';
@@ -9,7 +10,6 @@ import './Filters.scss';
 const Filters = ({ category }) => {
   const TABLET_BREAKPOINT = 800;
   const gender = config[category];
-  
   const screenWidth = document.body.clientWidth;
   const listOfCategoriesNames = Object.keys(gender);
 
@@ -39,6 +39,10 @@ const Filters = ({ category }) => {
       {listOfCategoriesNames.map((categoryName, index) => renderAccordion(categoryName, index))}
     </div>
   );
+};
+
+Filters.propTypes = {
+  category: PropTypes.string.isRequired
 };
 
 export default Filters;

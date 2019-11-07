@@ -12,21 +12,9 @@ class Accordion extends Component {
 
     this.clickHandler = this.clickHandler.bind(this);
     this.state = {
-      // isHidden: !props.open,
       data: this.dataMapper(props.data || React.Children.toArray(props.children))
     };
   }
-
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   // if(nextProps.open)
-  //   const dataMapper = (array) => {
-  //     const { open } = nextProps;
-
-  //     return array.map((element) => ({ ...element, isHidden: !open }));
-  //   };
-
-  //   return { data: dataMapper(nextProps.data) };
-  // }
 
   updateData = (dataItem, updatedIsHidden) => ({ ...dataItem, isHidden: updatedIsHidden })
 
@@ -54,28 +42,19 @@ class Accordion extends Component {
     });
   }
 
-  // clickHandler1() {
-  //   const { isHidden } = this.state;
-
-  //   this.setState({
-  //     isHidden: !isHidden
-  //   });
-  // }
-
   render() {
-    // console.log(React.Children.toArray(this.props.children));
-    console.log('data', this.props.data);
-    
     const { data } = this.state;
-    const { heightItem, scroll, className } = this.props;
+    const {
+      heightItem, scroll, className, children
+    } = this.props;
 
     const accordionItems = data.map(({
       id, title, description, isHidden
     }, index) => (
       <AccordionItem
-        key={id || this.props.children}
-        title={title || this.props.children.props.title}
-        description={description || this.props.children}
+        key={id || children}
+        title={title || children.props.title}
+        description={description || children}
         hide={isHidden}
         onClick={() => this.clickHandler(index)}
         height={heightItem}
@@ -90,45 +69,6 @@ class Accordion extends Component {
     );
   }
 }
-
-//   render() {
-//     let accordionItems;
-
-//     const { heightItem, scroll, className } = this.props;
-//     const { isHidden } = this.state;
-//     const index = 1;
-//     accordionItems = (
-//       <AccordionItem
-//         key={id}
-//         title={this.props.children.props.title}
-//         description={this.props.children}
-//         onClick={() => this.clickHandler(index)}
-//         hide={isHidden}
-//         height={heightItem}
-//         scroll={scroll}
-//       />
-//     );
-//     const { data } = this.state;
-//     accordionItems = data.map(({
-//       id, title, description, isHidden
-//     }, index) => (
-//       <AccordionItem
-//         key={id}
-//         title={this.props.children.props.title}
-//         description={description}
-//         hide={isHidden}
-//         onClick={() => this.clickHandler(index)}
-//         height={heightItem}
-//         scroll={scroll}
-//       />
-//     ));
-//     return (
-//       <div className={cx(CN, className)}>
-//         {accordionItems}
-//       </div>
-//     );
-//   }
-// }
 
 const DataItemProps = PropTypes.shape({
   title: PropTypes.string,

@@ -1,1 +1,1 @@
-export { default } from './PriceRangeSlider'
+export { default } from './PriceRangeSlider';
