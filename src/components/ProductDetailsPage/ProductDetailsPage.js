@@ -14,8 +14,17 @@ export const CN = 'product-details';
 
 const ProductDetailsPage = (props) => {
   const laptopWidth = 1024;
-  const [isVerticalCarousel, setVerticalCarousel] = useState(window.innerWidth > laptopWidth);
-  const { match: { params: { id } }, history: { goBack }, products } = props;
+  const [isVerticalCarousel, setVerticalCarousel] = useState(
+    window.innerWidth > laptopWidth,
+  );
+  const {
+    match: {
+      params: { id }
+    },
+    history: { goBack },
+    products
+  } = props;
+
   const product = products.find(({ _id }) => _id === id);
 
   window.onresize = () => setVerticalCarousel(window.innerWidth > laptopWidth);
@@ -25,7 +34,9 @@ const ProductDetailsPage = (props) => {
       images, title, price, description
     } = product;
 
-    const productImageData = images.map(({ claudinaryId }) => ({ src: `${process.env.IMAGE_URL}/${claudinaryId}` }));
+    const productImageData = images.map(({ claudinaryId }) => ({
+      src: `${process.env.IMAGE_URL}/${claudinaryId}`
+    }));
 
     const addToWishlistWithNotification = () => {
       const { showMessage, addToWishlist } = props;
@@ -35,19 +46,30 @@ const ProductDetailsPage = (props) => {
 
     return (
       <>
-        <Button
-          className="go-back-btn"
-          icon="arrow left"
-          onClick={goBack}
-        >
-      Go Back
+        <Button className="go-back-btn" icon="arrow left" onClick={goBack}>
+          Go Back
         </Button>
         <div className={`${CN} content`}>
-          <ProductImage className={`${CN}-images`} images={productImageData} verticalCarousel={isVerticalCarousel} />
+          <ProductImage
+            className={`${CN}-images`}
+            images={productImageData}
+            verticalCarousel={isVerticalCarousel}
+          />
           <div className={`${CN}-description`}>
-            <ProductOrder className={`${CN}-description__product-order`} title={title} price={`$${price}`} description={description} onClickAddToWishlist={addToWishlistWithNotification} />
+            <ProductOrder
+              className={`${CN}-description__product-order`}
+              title={title}
+              price={`$${price}`}
+              description={description}
+              onClickAddToWishlist={addToWishlistWithNotification}
+            />
             <div className={`${CN}-description-accordion`}>
-              <Accordion scroll data={accordionItemsData} heightItem="100px" className={`${CN}__accordion`} />
+              <Accordion
+                scroll
+                data={accordionItemsData}
+                heightItem="100px"
+                className={`${CN}__accordion`}
+              />
               <ContactDetails title="share" />
             </div>
           </div>
