@@ -27,6 +27,7 @@ class Accordion extends Component {
   clickHandler(index) {
     const { data } = this.state;
     const { showAll } = this.props;
+
     const updatedData = data.map((dataOfItem, indexOfItem) => {
       const { isHidden } = dataOfItem;
 

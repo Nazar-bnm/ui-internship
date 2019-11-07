@@ -24,34 +24,30 @@ class PriceRangeSlider extends Component {
     } = this.props;
 
     return (
-      <>
-        <section className="range-input">
-          <input
-            className="range-input"
-            value={fromPrice}
-            data-label="fromPrice"
-            onChange={this.handleChange}
-            step={step}
-            min={min}
-            max={max}
-            type="range"
-          />
-          <input
-            className="range-input"
-            value={toPrice}
-            data-label="toPrice"
-            onChange={this.handleChange}
-            step={step}
-            min={min}
-            max={max}
-            type="range"
-          />
-          <div className="rangeSlider__prise">
-            <div>{fromPrice}</div>
-            <div>{toPrice}</div>
-          </div>
-        </section>
-      </>
+      <section className="rangeInput">
+        <input
+          value={fromPrice}
+          data-label="fromPrice"
+          onChange={this.handleChange}
+          step={step}
+          min={min}
+          max={max}
+          type="range"
+        />
+        <input
+          value={toPrice}
+          data-label="toPrice"
+          onChange={this.handleChange}
+          step={step}
+          min={min}
+          max={max}
+          type="range"
+        />
+        <div className="rangeInput__prise">
+          <div>{fromPrice}</div>
+          <div>{toPrice}</div>
+        </div>
+      </section>
     );
   }
 }

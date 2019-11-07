@@ -1,6 +1,6 @@
 @import '../../../scss/global_styles';
 
-.range-input {
+.rangeInput {
   position: relative;
   width: 100%;
 
@@ -21,15 +21,18 @@
     position: relative;
     z-index: 1;
   }
-}
 
-.rangeSlider__prise {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 0 20px;
-
-  & > div {
-    padding: 10px;
-    border: 2px solid $mercury;
+  &__prise {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 20px;
+  
+    & > div {
+      display: flex;
+      justify-content: center;
+      height: 35px;
+      width: 60px;
+      border: 2px solid $mercury;
+    }
   }
 }

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-
 import { resetFilterState, setPriceRange } from '../../actions/actionsFilter';
 import ProductListPage from './ProductListPage';
 
