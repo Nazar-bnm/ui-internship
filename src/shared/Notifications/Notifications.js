@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-// import { NOTIFICATION_TYPES } from '../../constants';
 
 import './Notifications.scss';
 
@@ -49,21 +48,23 @@ class Notifications extends Component {
   }
 
   renderIcon(type) {
-    if (type === notificationIcons.info.type) {
-      return notificationIcons.info.icon;
-    } if (type === notificationIcons.success.type) {
-      return notificationIcons.success.icon;
-    } if (type === notificationIcons.warning.type) {
-      return notificationIcons.warning.icon;
-    } if (type === notificationIcons.error.type) {
-      return notificationIcons.error.icon;
-    } if (type === notificationIcons.change.type) {
-      return notificationIcons.change.icon;
-    } if (type === notificationIcons.custom.type) {
-      return notificationIcons.custom.icon;
+    switch (type) {
+      case notificationIcons.info.type:
+        return notificationIcons.info.icon;
+      case notificationIcons.success.type:
+        return notificationIcons.success.icon;
+      case notificationIcons.warning.type:
+        return notificationIcons.warning.icon;
+      case notificationIcons.error.type:
+        return notificationIcons.error.icon;
+      case notificationIcons.change.type:
+        return notificationIcons.change.icon;
+      case notificationIcons.custom.type:
+        return notificationIcons.custom.icon;
+      default: return null;
     }
-    return null;
   }
+
 
   renderNotifications() {
     const { notifications } = this.props;

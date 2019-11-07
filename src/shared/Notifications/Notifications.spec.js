@@ -23,6 +23,15 @@ describe('<Notifications />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('renderIcon method', () => {
+    wrapper.instance().renderIcon = jest.fn();
+      const type = 'info';
+     
+   wrapper.update();
+   expect(wrapper.instance().renderIcon).toBeDefined();
+   expect(type).toEqual('info'); 
+  });
+
   it('removeItemNotification have beent called', () => {
     const inst = wrapper.instance();
     const spy = jest.spyOn(inst, 'hideNotification');
