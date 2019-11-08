@@ -74,8 +74,7 @@ exports[`<ShippingMethod /> should match snapshot 1`] = `
     </div>
   </form>
   <Button
-    className={null}
-    customClass="black-button"
+    className="black-button"
     icon={null}
     onClick={[Function]}
   >

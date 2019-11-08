@@ -41,7 +41,7 @@ const ProductListNavigation = (props) => {
           value={sortBy[0].value}
         />
         <Button
-          customClass={`${CN}__arrow-btn`}
+          className={`${CN}__arrow-btn`}
           icon={ascendingOrder ? 'arrow down' : 'arrow up'}
           onClick={changeSortingOrder}
         />

@@ -105,7 +105,7 @@ const BillingInfo = () => (
       <input className={`${CN}__radiobtn-input`} type="checkbox" />
       I want to subscribe to the newsletter
     </div>
-    <Button customClass="black-button">continue</Button>
+    <Button className="black-button">continue</Button>
   </div>
 );
 

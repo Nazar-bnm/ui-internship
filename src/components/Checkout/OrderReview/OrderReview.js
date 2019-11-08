@@ -12,7 +12,7 @@ const OrderReview = () => (
        Please review all the information on this page.
     <br />
        Press the order now button to confirm your purchase.
-    <Button customClass={`${CN}__button`}>order now</Button>
+    <Button className={`${CN}__button`}>order now</Button>
   </div>
 );
 

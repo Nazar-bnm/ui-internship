@@ -8,8 +8,7 @@ exports[`<OrderPreview /> should match snapshot 1`] = `
   <br />
   Press the order now button to confirm your purchase.
   <Button
-    className={null}
-    customClass="order-review__button"
+    className="order-review__button"
     icon={null}
     onClick={[Function]}
   >

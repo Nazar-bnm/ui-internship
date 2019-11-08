@@ -48,7 +48,7 @@ const ShippingMethod = () => (
         <label htmlFor="guest">UPS (second day air) $12.25</label>
       </div>
     </form>
-    <Button customClass="black-button">continue</Button>
+    <Button className="black-button">continue</Button>
   </div>
 );
 
