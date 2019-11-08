@@ -42,15 +42,8 @@
     position: relative;
     padding: 5px;
     margin: 5px 0;
-    color: $black;
-    border: 1px solid $silver-chalice;
     background-color: $white;
-
-    .caret {
-      position: absolute;
-      right: 0;
-      top: 50%;
-    }
+    color: $black;
 
     &__items {
       top: 105%;
@@ -61,13 +54,6 @@
       }
     }
   }
-}
-
-.dropdown[aria-expanded=true] .dropdown__items {
-  top: 105%;
-  width: 100%;
-  border: 2px solid $silver-chalice;
-  background-color: $alabaster;
 }
 
 @media only screen and (min-width: 480px) {

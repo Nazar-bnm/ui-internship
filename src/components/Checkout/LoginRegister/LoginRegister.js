@@ -25,7 +25,7 @@ const LoginRegister = () => (
         <br />
       </div>
       <div className={`${CN}__button-and-link-wrapper`}>
-        <Button customClass={`${CN}__button`}>Log in &#38; Checkout</Button>
+        <Button customClass="black-button">Log in &#38; Checkout</Button>
         <a className={`${CN}__link`} href="/">Password Help</a>
       </div>
     </div>
@@ -49,7 +49,7 @@ const LoginRegister = () => (
           <label htmlFor="guest">Checkout as guest</label>
         </div>
       </form>
-      <Button customClass={`${CN}__button`}>Continue</Button>
+      <Button customClass="black-button">Continue</Button>
     </div>
   </div>
 );

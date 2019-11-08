@@ -1,8 +1,7 @@
 @import '../../scss/global_styles';
-@import '../Accordion/AccordionItem/AccordionItem.scss';
 
 .checkout {
-  &-wrapper {
+  &__wrapper {
     font-size: 0.8rem;
     font-family: font(primary-light);
   }

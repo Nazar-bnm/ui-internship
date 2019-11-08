@@ -12,7 +12,7 @@ import OrderReview from './OrderReview';
 import './Checkout.scss';
 
 const CN = 'checkout';
-const data = [
+const components = [
   {
     title: '01. Checkout',
     id: 1,
@@ -44,16 +44,16 @@ const data = [
     description: <OrderReview />
   }
 ];
-
 const labelsList = ['Required*', 'Required*', '', '', 'Required*', ''];
 
 const Checkout = () => (
-  <div className={`${cx(CN)}-wrapper content`}>
+  <div className={`${cx(CN)}__wrapper content`}>
     <Accordion
       className={`${CN}__accordion`}
       heightItem="auto"
-      data={data}
+      data={components}
       labels={labelsList}
+      open
     />
   </div>
 );

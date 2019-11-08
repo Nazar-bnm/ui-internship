@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BillingInfo /> should match snapshot 1`] = `
+<div
+  className="billing-info"
+>
+  <form
+    className="billing-info__form"
+  >
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="first-name"
+      >
+        first name*
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="text"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="last-name"
+      >
+        last name*
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="text"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="company"
+      >
+        company
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="text"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="e-mail"
+      >
+        e-mail address*
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="email"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="address1"
+      >
+        address 1
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="text"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="address2"
+      >
+        address 2
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="text"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <p>
+        country
+      </p>
+      <Dropdown
+        className="billing-info__dropdown"
+        menuOptions={
+          Array [
+            Object {
+              "label": "Ukraine",
+              "value": "Ukraine",
+            },
+            Object {
+              "label": "Poland",
+              "value": "Poland",
+            },
+            Object {
+              "label": "USA",
+              "value": "USA",
+            },
+            Object {
+              "label": "China",
+              "value": "China",
+            },
+            Object {
+              "label": "France",
+              "value": "France",
+            },
+          ]
+        }
+        onDropdownChange={[Function]}
+        placeholder=""
+        value="Choose country..."
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="city"
+      >
+        city
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="text"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <p>
+        state
+      </p>
+      <Dropdown
+        className="billing-info__dropdown"
+        menuOptions={
+          Array [
+            Object {
+              "label": "--not applicable--",
+              "value": "--not applicable--",
+            },
+            Object {
+              "label": "Alabama",
+              "value": "Alabama",
+            },
+            Object {
+              "label": "Alaska",
+              "value": "Alaska",
+            },
+            Object {
+              "label": "Arizona",
+              "value": "Arizona",
+            },
+            Object {
+              "label": "Arkansas",
+              "value": "Arkansas",
+            },
+            Object {
+              "label": "California",
+              "value": "California",
+            },
+          ]
+        }
+        onDropdownChange={[Function]}
+        placeholder=""
+        value="Choose state..."
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="zipcode"
+      >
+        zip / postal code*
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="number"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="phone"
+      >
+        phone
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="number"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="fax"
+      >
+        fax
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="number"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="password"
+      >
+        password*
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="password"
+      />
+    </div>
+    <div
+      className="billing-info__input-wrapper"
+    >
+      <label
+        htmlFor="password"
+      >
+        confirm password*
+      </label>
+      <input
+        className="billing-info__input"
+        name="billing-info"
+        type="password"
+      />
+    </div>
+  </form>
+  <form
+    className="billing-info__radiobtns-form"
+  >
+    <div
+      className="billing-info__radiobtn"
+    >
+      <input
+        className="billing-info__radiobtn-input"
+        name="ship-to-this-address"
+        type="radio"
+        value="ship-to-this-address"
+      />
+      <label
+        htmlFor="ship-to-this-address"
+      >
+        Ship to this address
+      </label>
+    </div>
+    <div
+      className="billing-info__radiobtn"
+    >
+      <input
+        className="billing-info__radiobtn-input"
+        name="ship-to-this-address"
+        type="radio"
+        value="ship-to-different-address"
+      />
+      <label
+        htmlFor="guest"
+      >
+        Ship to a different address
+      </label>
+    </div>
+  </form>
+  <div
+    className="billing-info__checkbox-wrapper"
+  >
+    <input
+      className="billing-info__radiobtn-input"
+      type="checkbox"
+    />
+    I want to subscribe to the newsletter
+  </div>
+  <Button
+    customClass="black-button"
+    icon={null}
+    onClick={[Function]}
+  >
+    continue
+  </Button>
+</div>
+`;

@@ -8,7 +8,7 @@ import './BillingInfo.scss';
 
 const CN = 'billing-info';
 
-// This function should be replaced when the proper functional for dropdowns is added.
+// This function should be replaced when the proper functionality for dropdowns is added.
 const onDropdownChange = () => true;
 
 const BillingInfo = () => (
@@ -23,7 +23,7 @@ const BillingInfo = () => (
         <input type="text" name={CN} className={`${CN}__input`} />
       </div>
       <div className={`${CN}__input-wrapper`}>
-        <label htmlFor="company">Company</label>
+        <label htmlFor="company">company</label>
         <input type="text" name={CN} className={`${CN}__input`} />
       </div>
       <div className={`${CN}__input-wrapper`}>
@@ -83,19 +83,29 @@ const BillingInfo = () => (
     </form>
     <form className={`${CN}__radiobtns-form`}>
       <div className={`${CN}__radiobtn`}>
-        <input className={`${CN}__radiobtn-input`} type="radio" name="ship-to-this-address" value="ship-to-this-address" />
+        <input
+          className={`${CN}__radiobtn-input`}
+          type="radio"
+          name="ship-to-this-address"
+          value="ship-to-this-address"
+        />
         <label htmlFor="ship-to-this-address">Ship to this address</label>
       </div>
       <div className={`${CN}__radiobtn`}>
-        <input className={`${CN}__radiobtn-input`} type="radio" name="ship-to-this-address" value="ship-to-different-address" />
+        <input
+          className={`${CN}__radiobtn-input`}
+          type="radio"
+          name="ship-to-this-address"
+          value="ship-to-different-address"
+        />
         <label htmlFor="guest">Ship to a different address</label>
       </div>
     </form>
     <div className={`${CN}__checkbox-wrapper`}>
       <input className={`${CN}__radiobtn-input`} type="checkbox" />
-          I want to subscribe to the newsletter
+      I want to subscribe to the newsletter
     </div>
-    <Button customClass="login-register__button">continue</Button>
+    <Button customClass="black-button">continue</Button>
   </div>
 );
 

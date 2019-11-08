@@ -8,7 +8,7 @@
   text-transform: uppercase;
 
   &__button {
-    @extend .login-register__button;
+    @extend .black-button;
     margin: 10px 0;
     width: 200px;
   }

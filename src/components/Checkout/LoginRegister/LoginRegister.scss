@@ -26,8 +26,8 @@
   }
 
   &__heading {
-    text-transform: uppercase;
     margin: 10px 0;
+    text-transform: uppercase;
   }
 
   &__text {
@@ -47,10 +47,6 @@
     &-input {
       margin-right: 5px;
     }
-  }
-
-  .dropdown {
-    margin: 5px 0;
   }
 }
 

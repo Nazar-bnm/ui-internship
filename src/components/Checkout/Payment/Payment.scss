@@ -7,30 +7,43 @@
   font-family: font(primary-light);
   text-transform: uppercase;
 
-  &__input-wrapper {
-    @include flex($direction: column);
-    margin: 5px 0;
-
-    &:last-of-type {
-      align-content: space-between;
-      padding-top: 5px;
-      margin: 0;
-    }
-  }
-
   &__input {
     padding: 5px;
     border: 1px solid $silver-chalice;
+    
+    &-wrapper {
+      @include flex($direction: column);
+      margin: 5px 0;
+  
+      &:last-of-type {
+        align-content: space-between;
+        padding-top: 5px;
+        margin: 0;
+      }
+    }
   }
 
-  &__expiration-date-wrapper {
+  &__payment-input {
+    margin-right: 5px;
+    padding: 5px;
+    width: 60px;
+    border: 1px solid $silver-chalice;
+
+    &-wrapper {
+      @include flex($wrap: nowrap);
+    }
+  }
+
+  &__expiration-date {
+    &-wrapper {
     @include flex($justify: space-between);
     width: 120px;
-  }
+    }
 
-  &__expiration-date-label {
-    width: 100%;
-    margin: 5px 0;
+    &-label {
+      width: 100%;
+      margin: 5px 0;
+    }
   }
 
   &__cvv {
@@ -40,41 +53,5 @@
 
   &__date-cvv-wrapper {
     @include flex($justify: space-between);
-  }
-
-  .dropdown {
-    display: block;
-    position: relative;
-    padding: 5px;
-    color: $black;
-    border: 1px solid $silver-chalice;
-    background-color: $white;
-
-    &:nth-of-type(1) {
-      width: 45px;
-    }
-
-    &:nth-of-type(2) {
-      width: 60px;
-    }
-
-    .caret {
-      position: absolute;
-      right: 0;
-      top: 50%;
-    }
-
-    &__items {
-      top: 105%;
-      width: 100%;
-
-      &__element {
-        text-transform: uppercase;
-      }
-    }
-  }
-
-  .dropdown[aria-expanded=true] .dropdown__items {
-    top: 105%;
   }
 }
