@@ -5,12 +5,12 @@ import './Button.scss';
 
 const Button = (props) => {
   const {
-    customClass, icon, children, onClick
+    className, icon, children, onClick
   } = props;
 
   return (
     <button
-      className={`${customClass} button`}
+      className={`${className} button`}
       type="button"
       onClick={onClick}
     >
@@ -22,7 +22,7 @@ const Button = (props) => {
 
 Button.propTypes = {
   icon: PropTypes.string,
-  customClass: PropTypes.string,
+  className: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -32,7 +32,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   icon: null,
-  customClass: null,
+  className: null,
   onClick: () => {},
   children: []
 };

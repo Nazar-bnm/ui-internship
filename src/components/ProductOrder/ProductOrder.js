@@ -39,15 +39,13 @@ const ProductOrder = (props) => {
         <Link to="/cart">
           <Button onClick={onClickAddToCart} className={`${CN}__cart-btn`}>add to cart</Button>
         </Link>
-        <Link to="/wishlist">
-          <Button
-            className={`${CN}__wishlist-btn`}
-            icon="heart"
-            onClick={onClickAddToWishlist}
-          >
+        <Button
+          className={`${CN}__wishlist-btn`}
+          icon="heart"
+          onClick={onClickAddToWishlist}
+        >
           wishlist
-          </Button>
-        </Link>
+        </Button>
       </div>
     </div>
   );

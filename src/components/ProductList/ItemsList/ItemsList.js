@@ -44,7 +44,6 @@ class ItemsList extends React.Component {
 
     try {
       const response = await userAPI.get(productsURL);
-
       if (response.status === 404) {
         throw Error(response.statusText);
       }
