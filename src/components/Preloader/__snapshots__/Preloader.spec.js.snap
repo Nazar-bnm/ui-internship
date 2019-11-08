@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Preloader /> should match snapshot 1`] = `
+<div
+  className="preloader-wrapper"
+>
+  <div
+    className="preloader"
+  >
+    <img
+      alt="preloder"
+      src=""
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
