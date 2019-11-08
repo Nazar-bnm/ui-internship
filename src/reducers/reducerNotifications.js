@@ -1,31 +1,16 @@
 import {
-  NOTIFICATION_SHOW,
-  NOTIFICATION_HIDE
+  NOTIFICATION_ITEM_ADD_TO_LIST,
+  NOTIFICATION_ITEM_REMOVE_FROM_LIST
 } from '../constants/actionTypes';
 
-const initialState = {
-  isShowNotification: false,
-  type: null,
-  message: null,
-  title: null
-};
-
+const initialState = [];
 
 export default function reducerNotifications(state = initialState, { type, payload }) {
   switch (type) {
-    case NOTIFICATION_SHOW:
-      return {
-        ...state,
-        isShowNotification: true,
-        type: payload.type,
-        message: payload.message,
-        title: payload.title
-      };
-    case NOTIFICATION_HIDE:
-      return {
-        ...state,
-        isShowNotification: false
-      };
+    case NOTIFICATION_ITEM_ADD_TO_LIST:
+      return [...state, payload];
+    case NOTIFICATION_ITEM_REMOVE_FROM_LIST:
+      return state.filter((item) => item.id !== payload);
     default:
       return state;
   }
