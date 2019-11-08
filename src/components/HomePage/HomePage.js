@@ -8,10 +8,8 @@ import Slide from './Slide';
 import Heading from '../Heading';
 import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
 import { slideshowData } from './Slideshow/SlideshowDate';
-import Preloader from '../Preloader';
 
 import './HomePage.scss';
-import { relative } from 'path';
 
 const CN = 'homepage';
 
@@ -32,11 +30,10 @@ const HomePage = () => {
     <div className={CN}>
       <Slideshow animation={ANIMATION_NAMES.ZOOM_IN} slideData={slidesData} />
       <WhatIsNew />
-      <div className="container content mainPage" style={{ position: 'relative' }}>
+      <div className="container content mainPage">
         <div className="mainPage__popular">
           <Heading title="most popular" position="center" />
           <MostPopular />
-          {/* <Preloader overlay="overlay" timeout="2" /> */}
         </div>
         <div className="mainPage__blog">
           <BlogArticlePreview />
