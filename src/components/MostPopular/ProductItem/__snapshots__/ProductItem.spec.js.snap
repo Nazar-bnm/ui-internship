@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductItem /> should render component <ProductItem /> 1`] = `
+<div
+  className="product slide"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <NavLink
+    to="/product-details/5"
+  >
+    <div
+      className="product__img-wrapper"
+    >
+      <div
+        className="product__img-wrapper__flag new"
+      />
+      <div
+        className="product__img-wrapper__labels"
+      >
+        new
+      </div>
+      <img
+        alt="product"
+        className="product__img-wrapper__img"
+        src={0}
+      />
+    </div>
+  </NavLink>
+  <div
+    className="product__title-wrapper"
+  >
+    <NavLink
+      className="product__title-wrapper-link"
+      to="/product-details/5"
+    >
+      <h2
+        className="product__title-wrapper-link__title"
+      >
+        dress
+      </h2>
+    </NavLink>
+    <h3
+      className="product__title-wrapper__price"
+    >
+      $599
+    </h3>
+  </div>
+</div>
+`;

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import './Dropdown.scss';
 
-export const CN = 'dropdown';
+const CN = 'dropdown';
 
-export default class Dropdown extends Component {
+class Dropdown extends Component {
   constructor(props) {
     super(props);
 
@@ -96,6 +96,7 @@ export default class Dropdown extends Component {
     );
   }
 }
+
 Dropdown.propTypes = {
   className: PropTypes.string,
   menuOptions: PropTypes.arrayOf(PropTypes.shape({
@@ -116,3 +117,5 @@ Dropdown.defaultProps = {
   placeholder: '',
   value: ''
 };
+
+export default Dropdown;
