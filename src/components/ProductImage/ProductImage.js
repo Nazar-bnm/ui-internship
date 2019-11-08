@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import Carousel from '../Carousel';
+
 import './ProductImage.scss';
 
 export const CN = 'product-image';
+
+const visibleNumOfSlides = {
+  desktop: 3,
+  tablet: 3,
+  mobile: 3
+};
 
 class ProductImage extends Component {
   constructor(props) {
@@ -31,20 +39,17 @@ class ProductImage extends Component {
     this.setState({
       selectedImage
     });
-  }
+  };
 
   renderSmallImages(selectedImage) {
-    const { images } = this.props;
+    const { images, verticalCarousel } = this.props;
 
-    return images.map((el) => {
+    const smallImages = images.map((el) => {
       const { src } = el;
       const isSelected = selectedImage === src;
 
       return (
-        <div
-          className={`${CN}__small-image`}
-          key={src}
-        >
+        <div className={`${CN}__small-image`} key={src}>
           <img
             className={cx(CN, { 'product-image__selected-image': isSelected })}
             alt="product"
@@ -60,25 +65,27 @@ class ProductImage extends Component {
         </div>
       );
     });
+
+    return (
+      <Carousel
+        className="carousel-image"
+        visibleNumOfSlides={visibleNumOfSlides}
+        vertical={verticalCarousel}
+      >
+        {smallImages}
+      </Carousel>
+    );
   }
 
   render() {
     const { selectedImage } = this.state;
+    const { className } = this.props;
 
     return (
-      <div className={cx(`${CN}__container`)}>
-        <div
-          className={`${CN}__big-image-container`}
-          type="submit"
-        >
-          <img
-            alt="product"
-            className={CN}
-            src={this.getBigImageSrc()}
-          />
-        </div>
-        <div className={`${CN}__small-images-container`}>
-          {this.renderSmallImages(selectedImage)}
+      <div className={cx(`${CN}__container`, className)}>
+        {this.renderSmallImages(selectedImage)}
+        <div className={`${CN}__big-image-container`} type="submit">
+          <img alt="product" className={CN} src={this.getBigImageSrc()} />
         </div>
       </div>
     );
@@ -86,13 +93,17 @@ class ProductImage extends Component {
 }
 
 ProductImage.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
-    src: PropTypes.string
-  }))
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string
+    })
+  ),
+  className: PropTypes.string
 };
 
 ProductImage.defaultProps = {
-  images: []
+  images: [],
+  className: ''
 };
 
 export default ProductImage;

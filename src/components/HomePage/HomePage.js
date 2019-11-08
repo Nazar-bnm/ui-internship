@@ -36,7 +36,7 @@ const HomePage = () => {
         <div className="mainPage__popular">
           <Heading title="most popular" position="center" />
           <MostPopular />
-          <Preloader overlay="overlay" timeout="2" />
+          {/* <Preloader overlay="overlay" timeout="2" /> */}
         </div>
         <div className="mainPage__blog">
           <BlogArticlePreview />

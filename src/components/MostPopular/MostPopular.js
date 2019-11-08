@@ -11,6 +11,12 @@ const MostPopular = (props) => {
     products
   } = props;
 
+  const visibleNumOfSlides = {
+    desktop: 3,
+    tablet: 3,
+    mobile: 2
+  };
+
   const prodList = products.map((product) => (
     <ProductItem
       key={product._id}
@@ -20,7 +26,7 @@ const MostPopular = (props) => {
 
   return prodList.length
       && (
-        <Carousel items={products}>
+        <Carousel className="content" items={products} visibleNumOfSlides={visibleNumOfSlides}>
           {prodList}
         </Carousel>
       );
