@@ -21,7 +21,7 @@ class Accordion extends Component {
   dataMapper(array) {
     const { open } = this.props;
 
-    return array.map((element) => ({ ...element, isHidden: !open }));
+    return array.map((element) => ({ isHidden: !open, ...element }));
   }
 
   clickHandler(index) {

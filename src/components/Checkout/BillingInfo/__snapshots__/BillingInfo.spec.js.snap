@@ -298,6 +298,7 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
     I want to subscribe to the newsletter
   </div>
   <Button
+    className={null}
     customClass="black-button"
     icon={null}
     onClick={[Function]}

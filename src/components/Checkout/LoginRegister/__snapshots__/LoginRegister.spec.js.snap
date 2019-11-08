@@ -50,6 +50,7 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
       className="login-register__button-and-link-wrapper"
     >
       <Button
+        className={null}
         customClass="black-button"
         icon={null}
         onClick={[Function]}
@@ -121,6 +122,7 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
       </div>
     </form>
     <Button
+      className={null}
       customClass="black-button"
       icon={null}
       onClick={[Function]}
