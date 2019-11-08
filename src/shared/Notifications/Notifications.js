@@ -43,8 +43,10 @@ class Notifications extends Component {
   }
 
   hideNotification(id) {
-    const { removeItemNotification } = this.props;
-    removeItemNotification(id);
+    return () => {
+      const { removeItemNotification } = this.props;
+      removeItemNotification(id);
+    };
   }
 
   renderIcon(type) {
@@ -65,7 +67,6 @@ class Notifications extends Component {
     }
   }
 
-
   renderNotifications() {
     const { notifications } = this.props;
     return notifications.map(({
@@ -75,15 +76,16 @@ class Notifications extends Component {
       title
     }) => {
       const iconName = this.renderIcon(type);
+
       return (
         <div
           className={cx(CN, type)}
           id={id}
           key={id}
           color={type}
-          onClick={() => this.hideNotification(id)}
+          onClick={this.hideNotification(id)}
         >
-          <div className={`${CN}__ntf-box`}>
+          <div className={`${CN}__notification-box`}>
             <div>
               <i className={`${CN}__icon icon ${iconName}`} />
             </div>
