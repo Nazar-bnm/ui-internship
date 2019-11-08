@@ -20,7 +20,7 @@ const Slide = (props) => {
       <h1 className={`${CN}__title`}>{title}</h1>
       <p className={`${CN}__description`}>{description}</p>
       <Button
-        customClass={`${CN}__button`}
+        className={`${CN}__button`}
         onClick={() => {}}
       >
         {buttonName}
