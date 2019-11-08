@@ -68,6 +68,7 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
             ]
           }
           heightItem="100px"
+          labels={Array []}
           open={false}
           scroll={true}
           showAll={false}

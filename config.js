@@ -1,4 +1,21 @@
 export default {
+  billingInfo: {
+    country: [
+      { value: 'Ukraine', label: 'Ukraine' },
+      { value: 'Poland', label: 'Poland' },
+      { value: 'USA', label: 'USA' },
+      { value: 'China', label: 'China' },
+      { value: 'France', label: 'France' }
+    ],
+    state: [
+      { value: '--not applicable--', label: '--not applicable--' },
+      { value: 'Alabama', label: 'Alabama' },
+      { value: 'Alaska', label: 'Alaska' },
+      { value: 'Arizona', label: 'Arizona' },
+      { value: 'Arkansas', label: 'Arkansas' },
+      { value: 'California', label: 'California' }
+    ]
+  },
   linkListItems: {
     guide: {
       heading: 'Shopping guide',

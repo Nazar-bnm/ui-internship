@@ -5,6 +5,7 @@ exports[`<Accordion /> should match snapshot <Accordion /> 1`] = `
   className="accordion"
 >
   <AccordionItem
+    className=""
     description=" Architecto, earum temporibus quidem ex eaque unde harum sit, 
       deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
       quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!"
@@ -16,6 +17,7 @@ exports[`<Accordion /> should match snapshot <Accordion /> 1`] = `
     title="description"
   />
   <AccordionItem
+    className=""
     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       "
     height="100px"
@@ -26,6 +28,7 @@ exports[`<Accordion /> should match snapshot <Accordion /> 1`] = `
     title="additional info"
   />
   <AccordionItem
+    className=""
     description="Earum temporibus quidem ex eaque unde harum sit, 
       "
     height="100px"

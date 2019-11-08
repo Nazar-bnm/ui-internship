@@ -22,7 +22,7 @@ class ProductDetailsPageWrapper extends Component {
 
     return (
       <Button
-        customClass="go-back-btn"
+        className="go-back-btn"
         icon="arrow left"
         onClickFunction={history.goBack}
       >
