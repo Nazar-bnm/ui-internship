@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -12,7 +13,7 @@ class Pagination extends Component {
 
     this.state = {
       numberOfPages: props.numberOfPages,
-      currentPage: props.numberOfPages > 2 ? 2 : 1,
+      currentPage: props.numberOfPages > 2 ? Math.ceil(props.visibleNumbers / 2) : 1,
       isValidInput: true,
       isAnimation: false
     };
@@ -29,8 +30,10 @@ class Pagination extends Component {
   }
 
   componentDidMount() {
-    const { currentPage } = this.state;
+    const { setCurrentPage } = this.props;
 
+    const { currentPage } = this.state;
+    setCurrentPage(this.state.currentPage - 1);
     this.inputRef.current.value = currentPage;
   }
 
@@ -41,35 +44,41 @@ class Pagination extends Component {
   }
 
   changeCurrentNumber(e) {
+    const { setCurrentPage } = this.props;
+
     this.inputRef.current.value = +e.target.innerText;
     this.setState({
       currentPage: +e.target.innerText,
       isValidInput: true
-    });
+    }, () => setCurrentPage(this.state.currentPage - 1));
   }
 
   goToPrevCurrentNumber() {
+    const { setCurrentPage } = this.props;
+
     const { currentPage } = this.state;
     this.inputRef.current.value = currentPage - 1;
     currentPage !== 1
       && this.setState(({ currentPage: prevCurrentPage }) => ({
         currentPage: prevCurrentPage - 1
-      }));
+      }), () => setCurrentPage(this.state.currentPage - 1));
   }
 
   goToNextCurrentNumber() {
     const { currentPage, numberOfPages } = this.state;
+    const { setCurrentPage } = this.props;
 
     this.inputRef.current.value = currentPage + 1;
 
     currentPage !== numberOfPages
       && this.setState(({ currentPage: prevCurrentPage }) => ({
         currentPage: prevCurrentPage + 1
-      }));
+      }), () => setCurrentPage(this.state.currentPage - 1));
   }
 
   checkThenChangeCurrentNumber(e) {
-    const { currentPage, numberOfPages } = this.state;
+    const { numberOfPages } = this.state;
+    const { setCurrentPage } = this.props;
     const {
       target: { value: inputValue }
     } = e;
@@ -88,51 +97,39 @@ class Pagination extends Component {
       this.setState({
         isValidInput: true,
         currentPage: +inputValue
-      });
+      }, () => setCurrentPage(this.state.currentPage - 1));
     }
-  }
-
-  onAnimationEnd() {
-    this.setState({
-      isAnimation: false
-    });
   }
 
   renderNumbers() {
     const { numberOfPages, currentPage } = this.state;
-
-    if (numberOfPages >= 3) {
-      let arrayOfNum = [currentPage - 1, currentPage, currentPage + 1];
-      currentPage === 1
-        && (arrayOfNum = [currentPage, currentPage + 1, currentPage + 2]);
-      currentPage === numberOfPages
-        && (arrayOfNum = [currentPage - 2, currentPage - 1, currentPage]);
-
-      return arrayOfNum.map((num) => (
-        <span
-          className={cx(`${CN}-nav-number`, {
-            [`${CN}-nav-number--active`]: num === currentPage
-          })}
-          onClick={this.changeCurrentNumber}
-        >
-          {num}
-        </span>
-      ));
-    }
-
-    if (numberOfPages === 2) {
-      return [
-        <span onClick={this.changeCurrentNumber}>{1}</span>,
-        <span onClick={this.changeCurrentNumber}>{2}</span>
-      ];
-    }
+    const { visibleNumbers } = this.props;
+    const arrayOfPages = [...Array(numberOfPages)].map((e, i) => i + 1);
+    const numbersFromCurrentPage = Math.floor(visibleNumbers / 2);
+    let arrayOfVisibleNumOfPages = [...arrayOfPages];
 
     if (numberOfPages === 1) {
-      return [
-        <span>{currentPage}</span>,
-        <span onClick={this.changeCurrentNumber}>1</span>
-      ];
+      return;
     }
+
+    if (numberOfPages >= 3) {
+      arrayOfVisibleNumOfPages = arrayOfPages.slice(currentPage - numbersFromCurrentPage - 1, currentPage + numbersFromCurrentPage);
+      currentPage <= numbersFromCurrentPage
+        && (arrayOfVisibleNumOfPages = arrayOfPages.slice(0, visibleNumbers));
+      numberOfPages - currentPage < numbersFromCurrentPage
+        && (arrayOfVisibleNumOfPages = arrayOfPages.slice(-visibleNumbers));
+    }
+
+    return arrayOfVisibleNumOfPages.map((num) => (
+      <span
+        className={cx(`${CN}-nav-number`, {
+          [`${CN}-nav-number--active`]: num === currentPage
+        })}
+        onClick={this.changeCurrentNumber}
+      >
+        {num}
+      </span>
+    ));
   }
 
   render() {
@@ -147,8 +144,12 @@ class Pagination extends Component {
     return (
       <div className={cx(CN, className)}>
         <div className={`${CN}-nav-input-container`}>
+          <span className={`${CN}-nav-input-container__text`}>
+            go to page
+          </span>
           <input
             ref={this.inputRef}
+            disabled={numberOfPages === 1}
             onInput={this.checkThenChangeCurrentNumber}
             className={cx(`${CN}-nav-input-container__input`, {
               [`${CN}-nav-input-container__input--error`]: !isValidInput,

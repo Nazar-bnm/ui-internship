@@ -2,6 +2,7 @@ import React from 'react';
 
 import ProductListNavigationContainer from './ProductListNavigation';
 import ItemsListContainer from './ItemsList';
+import Pagination from '../Pagination';
 
 import './ProductList.scss';
 
@@ -13,8 +14,17 @@ class ProductList extends React.Component {
 
     this.state = {
       dropdownSortingSelectedID: '',
-      dropdownItemsNumberSelectedID: ''
+      dropdownItemsNumberSelectedID: '',
+      currentPage: 0
     };
+
+    this.setCurrentPage = this.setCurrentPage.bind(this);
+  }
+
+  setCurrentPage(currentPage) {
+    this.setState({
+      currentPage
+    });
   }
 
   changeSortingSelectedID = (selectedID) => {
@@ -32,13 +42,15 @@ class ProductList extends React.Component {
   render() {
     const {
       dropdownSortingSelectedID,
-      dropdownItemsNumberSelectedID
+      dropdownItemsNumberSelectedID,
+      currentPage
     } = this.state;
     const { gender } = this.props;
 
     return (
       <div className={`${CN}`}>
         <div className={`${CN}__filter-wrapper`}>
+          <Pagination numberOfPages={5} setCurrentPage={this.setCurrentPage} visibleNumbers={3} />
           <ProductListNavigationContainer
             dropdownSortingSelectedID={dropdownSortingSelectedID}
             dropdownItemsNumberSelectedID={dropdownItemsNumberSelectedID}
@@ -47,7 +59,7 @@ class ProductList extends React.Component {
           />
         </div>
         <div className={`${CN}__items-list-container`}>
-          <ItemsListContainer gender={gender} />
+          <ItemsListContainer gender={gender} currentPage={currentPage} />
         </div>
         <div className={`${CN}__filter-wrapper`}>
           <ProductListNavigationContainer

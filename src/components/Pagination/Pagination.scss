@@ -3,29 +3,25 @@
 .pagination {
   height: max-content;
   display: flex;
-  color: $white;
-  line-height: 1;
-  background-color: $silver-chalice;
-  border-radius: 1px;
-  box-shadow: 0 10px 20px;
-  user-select: none;
+  color: $dove-gray;
+
 
   &-nav {
     &-number {
-      text-align: center;
-      width: 20px;
+      font-family: font(primary-light);
+      font-size: 1rem;
+      padding: 3px 6px;
       background-color: transparent;
       transition: 0.2s ease background-color;
 
       &--active {
-        border-radius: 5px;
-        background-color: $emperor;
-        transform: scale(1.3);
+        border: 1px solid $silver-chalice;
       }
     }
 
     &-arrow {
       padding: 3px;
+      color: $silver-chalice;
 
       &:nth-child(1) {
         margin-right: 3px;
@@ -45,7 +41,28 @@
     }
 
     &-input-container {
+      &__text {
+        font-size: 0.7rem;
+        font-family: font(primary-bold);
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $dove-gray;
+
+        &:nth-child(1) {
+          margin-right: 10px;
+        }
+  
+        &:last-child {
+          margin-left: 6px;
+        }
+      }
+
       &__input {
+        padding: 5px;
+        border: 1px solid $silver-chalice;
+        font-family: font(primary-light);
+        font-size: 0.8rem;
+        color: $dove-gray;
         &--error {
           outline: 0;
           border-color: red;

@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -30,6 +31,10 @@ class ItemsList extends React.Component {
     if (!_.isEqual(prevProps.filters, filters)) {
       this.getListItems();
     }
+
+    if (prevProps.itemsOnPage !== this.props.itemsOnPage || prevProps.currentPage !== this.props.currentPage) {
+      this.getListItems();
+    }
   }
 
   async getListItems() {
@@ -37,10 +42,13 @@ class ItemsList extends React.Component {
       categoryName,
       onGetProductsSuccess,
       onGetProductsError,
-      gender
+      gender,
+      itemsOnPage,
+      currentPage
     } = this.props;
+
     const categories = this.getCategoriesURL();
-    const productsURL = `${process.env.SERVER_URL}/${categoryName}?genders=${gender}${categories}`;
+    const productsURL = `${process.env.SERVER_URL}/${categoryName}?genders=${gender}${categories}&limit=${itemsOnPage}&page=${currentPage}`;
 
     try {
       const response = await userAPI.get(productsURL);
@@ -56,7 +64,6 @@ class ItemsList extends React.Component {
 
   getItemsToRender() {
     const {
-      itemsOnPage,
       error,
       wishlist,
       addToWishList,
@@ -73,7 +80,7 @@ class ItemsList extends React.Component {
 
     const itemsToRender = this.sortItems();
 
-    return itemsToRender.slice(0, itemsOnPage).map((el) => (
+    return itemsToRender.map((el) => (
       <ProductItem
         key={el._id}
         product={el}
@@ -163,6 +170,7 @@ class ItemsList extends React.Component {
 }
 
 ItemsList.propTypes = {
+  currentPage: PropTypes.number,
   ascendingOrder: PropTypes.bool,
   categoryName: PropTypes.string,
   itemList: PropTypes.array,
@@ -172,6 +180,7 @@ ItemsList.propTypes = {
 };
 
 ItemsList.defaultProps = {
+  currentPage: 0,
   ascendingOrder: true,
   categoryName: 'products',
   itemList: mockedProductList,
