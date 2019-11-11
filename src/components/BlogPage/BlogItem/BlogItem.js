@@ -8,7 +8,8 @@ const BlogItem = ({
   title,
   date,
   photo,
-  text
+  text,
+  labels
 }) => (
   <div className={CN}>
     <h3 className={`${CN}__heading`}>{title}</h3>
@@ -19,6 +20,7 @@ const BlogItem = ({
         alt="Publication"
         src={photo}
       />
+      <div className="onHover">{labels.join(', ')}</div>
     </div>
     <p className={`${CN}__text`}>{text}</p>
   </div>

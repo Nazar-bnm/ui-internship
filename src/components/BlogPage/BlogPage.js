@@ -15,7 +15,8 @@ class BlogPage extends React.Component {
 
     this.state = {
       currentRangeStart: 0,
-      currentRangeEnd: 3
+      currentRangeEnd: 3,
+      isButtonDisabled: false
     };
 
     this.getOlderPosts = this.getOlderPosts.bind(this);
@@ -57,6 +58,7 @@ class BlogPage extends React.Component {
           date={el.date}
           photo={imageSrc}
           text={shortText}
+          labels={el.labels}
         />
         // add the black border!
       );
@@ -65,15 +67,27 @@ class BlogPage extends React.Component {
 
   getOlderPosts() {
     const { currentRangeStart, currentRangeEnd } = this.state;
-    // const { blogItems } = this.props;
+    const { blogItems } = this.props;
+    const itemsNumber = blogItems.length;
+    const nextRangeEnd = currentRangeEnd + 3;
 
     this.setState({
       currentRangeStart: currentRangeStart + 3,
       currentRangeEnd: currentRangeEnd + 3
     });
+
+    window.scrollTo(0, 0);
+
+    if (nextRangeEnd > itemsNumber) {
+      this.setState({
+        isButtonDisabled: true
+      });
+    }
   }
 
   render() {
+    const { isButtonDisabled } = this.state;
+
     return (
       <div className={`${CN} content`}>
         <div className="categories">
@@ -92,8 +106,13 @@ class BlogPage extends React.Component {
         </div>
         <div className={`${CN}__items-wrapper`}>
           {this.getItemsToRender()}
-          {/* add pagination on button click! */}
-          <Button className="transparent-button" onClick={this.getOlderPosts}>Older posts &gt;</Button>
+          <Button
+            disabled={isButtonDisabled}
+            className="transparent-button"
+            onClick={this.getOlderPosts}
+          >
+            Older posts &gt;
+          </Button>
         </div>
       </div>
     );

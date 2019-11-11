@@ -20,14 +20,19 @@
   .labels__wrapper {
     display: none;
   }
+
+  &__image-wrapper {
+    position: relative;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .blog-page {
     display: grid;
-    grid-template-rows: 25% 75%;
+    grid-template-rows: 15em 20em auto;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 20px;
+    grid-row-gap: 20px;
 
     .categories {
       grid-column: 2;
@@ -46,6 +51,7 @@
     &__items-wrapper {
       @include flex($direction: column, $wrap: nowrap);
       grid-column: 1;
+      grid-row: 1/4;
     }
   }
 }
