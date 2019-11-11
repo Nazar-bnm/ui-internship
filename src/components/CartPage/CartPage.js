@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import CartItem from './CartItem';
+import Checkout from '../Checkout';
 import config from '../../../config';
 
 import './CartPage.scss';
@@ -120,11 +121,7 @@ const CartPage = (props) => {
           </div>
         </div>
       </div>
-      <div className={`${CN} content container`}>
-        <Link className={`${CN}__pseudo-button col-6 col-center`} to="/checkout">
-          Checkout
-        </Link>
-      </div>
+      <Checkout />
     </div>
   );
 };

@@ -131,8 +131,10 @@
   }
 }
 
-@media(max-width: 1300px) {
-  .product-details-images .carousel-image {
+@media (max-width: 1300px) {
+  .product-details 
+  .product-details-images 
+  .carousel-image {
     height: 50vh;
   }
 }
@@ -189,14 +191,18 @@
 }
 
 @include media-for(laptop) {
-  .carousel-container .product-image {
-    max-width: 174px !important;
-    width: 100%;
-    height: auto;
-  }
+  .product-details {
+    .carousel-container {
+      .product-image {
+        max-width: 174px !important;
+        width: 100%;
+        height: auto;
+      }
+    }
 
-  .product-details-description {
-    width: 45%;
+    .product-details-description {
+      width: 45%;
+    }
   }
 }
 

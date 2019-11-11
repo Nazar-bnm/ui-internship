@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OrderPreview /> should match snapshot 1`] = `
+<div
+  className="payment"
+>
+  <div
+    className="payment__input-wrapper"
+  >
+    <label
+      htmlFor="card-holder"
+    >
+      card holder*
+    </label>
+    <input
+      className="payment__input"
+      name="payment"
+      type="text"
+    />
+  </div>
+  <div
+    className="payment__input-wrapper"
+  >
+    <label
+      htmlFor="card-number"
+    >
+      card number*
+    </label>
+    <input
+      className="payment__input"
+      name="payment"
+      type="number"
+    />
+  </div>
+  <div
+    className="payment__date-cvv-wrapper"
+  >
+    <div
+      className="payment__expiration-date-wrapper"
+    >
+      <label
+        className="payment__expiration-date-label"
+        htmlFor="expiration-date"
+      >
+        expiration date*
+      </label>
+      <div
+        className="payment__payment-input-wrapper"
+      >
+        <input
+          className="payment__payment-input"
+          name="expiration-date"
+          placeholder="Year"
+          type="number"
+        />
+        <input
+          className="payment__payment-input"
+          name="expiration-date"
+          placeholder="Month"
+          type="number"
+        />
+      </div>
+    </div>
+    <div
+      className="payment__input-wrapper"
+    >
+      <label
+        htmlFor="cvv"
+      >
+        cvv*
+      </label>
+      <input
+        className="payment__input payment__cvv"
+        name="payment"
+        type="password"
+      />
+    </div>
+  </div>
+</div>
+`;

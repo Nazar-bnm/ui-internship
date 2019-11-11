@@ -40,10 +40,41 @@
         left: 0;
         background-color: $white;
         color: $black;
+        z-index: 3;
       }
     }
   }
   .icon {
      margin-top: -5px;
+  }
+}
+
+.billing-info__dropdown {
+  display: block;
+  position: relative;
+  padding: 5px;
+  color: $black;
+  border: 1px solid $silver-chalice;
+  background-color: $white;
+
+  &[aria-expanded=true] {
+    .dropdown {
+      &__items {
+        @include flex($direction: column);
+        position: absolute;
+        top: 105%;
+        width: 100%;
+        left: 0;
+        background-color: $white;
+        color: $black;
+        z-index: 3;
+
+        &__element {
+          background: $mercury;
+          outline: 1px solid $mercury;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 }

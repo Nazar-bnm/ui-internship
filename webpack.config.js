@@ -62,7 +62,4 @@ module.exports = {
       path: './.env',
     }),
   ],
-  devServer: {
-    historyApiFallback: true,
-  },
 };

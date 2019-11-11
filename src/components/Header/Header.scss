@@ -28,8 +28,8 @@
 
   &__title-wrapper {
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    // left: 50%;
+    // transform: translateX(-50%);
   }
 
   .content {
@@ -196,6 +196,12 @@
 
 @media only screen and (min-width: 768px) {
   .header {
+    &__title-wrapper {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     &__search-input {
       width: 90px;
     }

@@ -13,10 +13,17 @@ $dove-gray: #666666;
 $red: #FF0000;
 $orange: #ff692b;
 $pale-white: rgba(255, 255, 255, 0.5);
+$pale-white-darker: rgba(255, 255, 255, 0.8);
 $dark-red: #c31326;
 $pale-grey: rgba(255, 255, 255, 0.4);
 $pale-white: rgba(255, 255, 255, 0.6);
 $pale-yellow: rgba(244, 162, 54, 0.7);
+$notification-change-grey:#444;
+$notification-info-blue:#3498db;
+$notification-success-green:#2ecc71;
+$notification-warning-orange:#e67e22;
+$notification-error-red:#e74c3c;
+$notification-custom-purple:purple;
 
 $bg-colors: (
   main-block: $white,

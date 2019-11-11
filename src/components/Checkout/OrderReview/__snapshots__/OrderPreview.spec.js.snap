@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OrderPreview /> should match snapshot 1`] = `
+<div
+  className="order-review"
+>
+  Please review all the information on this page.
+  <br />
+  Press the order now button to confirm your purchase.
+  <Button
+    className="order-review__button"
+    icon={null}
+    onClick={[Function]}
+  >
+    order now
+  </Button>
+</div>
+`;

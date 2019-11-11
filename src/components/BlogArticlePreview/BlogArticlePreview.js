@@ -30,7 +30,6 @@ class BlogArticlePreview extends Component {
         this.setState({ blogsList: response.data });
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
       throw new Error(error);
     }
   }

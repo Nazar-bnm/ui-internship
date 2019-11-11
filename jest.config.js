@@ -3,7 +3,7 @@ module.exports = {
   'testPathIgnorePatterns': ['node_modules'],
   'transform': {
     '^.+\\.js$': 'babel-jest',
-    '.+\\.(css|styl|less|sass|scss|png|jpg)$': 'jest-transform-stub',
+    '.+\\.(css|styl|less|sass|scss|png|jpg|svg)$': 'jest-transform-stub',
   },
   'setupFiles': ['<rootDir>/.jest/enzyme.setup.js'],
   'collectCoverageFrom': ['<rootDir>/src/**/*.js'],
