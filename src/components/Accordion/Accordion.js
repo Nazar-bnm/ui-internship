@@ -46,15 +46,15 @@ class Accordion extends Component {
   render() {
     const { data } = this.state;
     const {
-      heightItem, scroll, className, children
+      heightItem, scroll, className, children, childTitle
     } = this.props;
 
     const accordionItems = data.map(({
       id, title, description, isHidden
     }, index) => (
       <AccordionItem
-        key={id || children}
-        title={title || children.props.title}
+        key={id || childTitle}
+        title={title || childTitle}
         description={description || children}
         hide={isHidden}
         onClick={() => this.clickHandler(index)}

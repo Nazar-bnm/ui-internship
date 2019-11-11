@@ -49,7 +49,7 @@ class ProductListPage extends Component {
               className={`${CN}__priceRange-wrapper`}
               heightItem="auto"
               open
-              title="Price Range"
+              childTitle="Price Range"
             >
               <div className={`${CN}__priceRange`} title="Price Range">
                 <PriceRangeSlider
