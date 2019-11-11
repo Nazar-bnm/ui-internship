@@ -98,7 +98,7 @@ export default {
     { itemName: 'what\'s new', url: '404' },
     { itemName: 'brands', url: '404' },
     { itemName: 'sale', url: '404' },
-    { itemName: 'blog', url: '404' }
+    { itemName: 'blog', url: 'blog' }
   ],
   shippingData: [
     { number: 1, title: 'free shipping', description: 'on all orders over 50$' },

@@ -44,7 +44,7 @@
     }
 
     &__items-wrapper {
-      display: block;
+      @include flex($direction: column, $wrap: nowrap);
       grid-column: 1;
     }
   }

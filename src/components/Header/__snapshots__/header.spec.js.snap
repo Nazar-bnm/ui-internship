@@ -58,7 +58,7 @@ exports[`<Header /> should match snapshot 1`] = `
             },
             Object {
               "itemName": "blog",
-              "url": "404",
+              "url": "blog",
             },
           ]
         }

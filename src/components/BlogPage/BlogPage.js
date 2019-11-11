@@ -10,6 +10,17 @@ const userAPI = new HttpService();
 const CN = 'blog-page';
 
 class BlogPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentRangeStart: 0,
+      currentRangeEnd: 3
+    };
+
+    this.getOlderPosts = this.getOlderPosts.bind(this);
+  }
+
   componentDidMount() {
     this.getBlogItems();
   }
@@ -31,15 +42,17 @@ class BlogPage extends React.Component {
   }
 
   getItemsToRender() {
+    const { currentRangeStart, currentRangeEnd } = this.state;
     const { blogItems } = this.props;
-    const blogItemsToRender = blogItems.slice(0, 3);
+    const blogItemsToRender = blogItems.slice(currentRangeStart, currentRangeEnd);
 
     return blogItemsToRender.map((el) => {
-      const shortText = `${el.description.slice(0, 305)}...`;
+      const shortText = `${el.description.slice(0, 301)}...`;
       const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.id}.jpg`;
 
       return (
         <BlogItem
+          key={el.id}
           title={el.title}
           date={el.date}
           photo={imageSrc}
@@ -47,6 +60,16 @@ class BlogPage extends React.Component {
         />
         // add the black border!
       );
+    });
+  }
+
+  getOlderPosts() {
+    const { currentRangeStart, currentRangeEnd } = this.state;
+    // const { blogItems } = this.props;
+
+    this.setState({
+      currentRangeStart: currentRangeStart + 3,
+      currentRangeEnd: currentRangeEnd + 3
     });
   }
 
@@ -70,7 +93,7 @@ class BlogPage extends React.Component {
         <div className={`${CN}__items-wrapper`}>
           {this.getItemsToRender()}
           {/* add pagination on button click! */}
-          <Button className="transparent-button">Older posts &gt;</Button>
+          <Button className="transparent-button" onClick={this.getOlderPosts}>Older posts &gt;</Button>
         </div>
       </div>
     );
