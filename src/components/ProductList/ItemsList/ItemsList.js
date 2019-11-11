@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
+
 import mockedData from '../../../mockedDataForTests';
 import { brandIDEnum } from '../../../constants';
 
@@ -17,8 +18,12 @@ const { mockedProductList } = mockedData;
 class ItemsList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLoading: true
+    };
 
     this.sortByItemName = this.sortByItemName.bind(this);
+    this.getListItems = this.getListItems.bind(this);
   }
 
   componentDidMount() {
@@ -56,6 +61,13 @@ class ItemsList extends React.Component {
       if (response.status === 404) {
         throw Error(response.statusText);
       }
+
+      setTimeout(() => {
+        this.setState({
+          isLoading: false
+        });
+      }, 500);
+      
       onGetProductsSuccess(response.data);
     } catch (error) {
       onGetProductsError(error);
@@ -163,8 +175,9 @@ class ItemsList extends React.Component {
   }
 
   render() {
+    const { isLoading } = this.state;
     return (
-      <div className={CN}>{this.getItemsToRender()}</div>
+      !isLoading ? <div className={CN}>{this.getItemsToRender()}</div> : 'hello'
     );
   }
 }

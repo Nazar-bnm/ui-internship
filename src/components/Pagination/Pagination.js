@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -13,7 +12,7 @@ class Pagination extends Component {
 
     this.state = {
       numberOfPages: props.numberOfPages,
-      currentPage: props.numberOfPages > 2 ? Math.ceil(props.visibleNumbers / 2) : 1,
+      currentPage: 1,
       isValidInput: true,
       isAnimation: false
     };
@@ -35,6 +34,13 @@ class Pagination extends Component {
     const { currentPage } = this.state;
     setCurrentPage(this.state.currentPage - 1);
     this.inputRef.current.value = currentPage;
+  }
+
+  componentDidUpdate({ currentPage: prevCurrentPage }) {
+    const { currentPage } = this.props;
+    currentPage !== prevCurrentPage && this.setState({
+      currentPage
+    });
   }
 
   onAnimationEnd() {
@@ -164,22 +170,24 @@ class Pagination extends Component {
             {` / ${numberOfPages}`}
           </span>
         </div>
-        <div
-          onClick={this.goToPrevCurrentNumber}
-          className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-left`, {
-            [`${CN}-nav-arrow--disabled`]: currentPage === 1
-          })}
-        >
-          <i className={`icon chevron left ${CN}-nav-arrow__icon`} />
-        </div>
-        {this.renderNumbers()}
-        <div
-          onClick={this.goToNextCurrentNumber}
-          className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-right`, {
-            [`${CN}-nav-arrow--disabled`]: currentPage === numberOfPages
-          })}
-        >
-          <i className={`icon chevron right ${CN}-nav-arrow__icon`} />
+        <div className={`${CN}-nav-numbers`}>
+          <div
+            onClick={this.goToPrevCurrentNumber}
+            className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-left`, {
+              [`${CN}-nav-arrow--disabled`]: currentPage === 1
+            })}
+          >
+            <i className={`icon chevron left ${CN}-nav-arrow__icon`} />
+          </div>
+          {this.renderNumbers()}
+          <div
+            onClick={this.goToNextCurrentNumber}
+            className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-right`, {
+              [`${CN}-nav-arrow--disabled`]: currentPage === numberOfPages
+            })}
+          >
+            <i className={`icon chevron right ${CN}-nav-arrow__icon`} />
+          </div>
         </div>
       </div>
     );

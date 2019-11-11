@@ -45,12 +45,13 @@ class ProductList extends React.Component {
       dropdownItemsNumberSelectedID,
       currentPage
     } = this.state;
+
     const { gender } = this.props;
 
     return (
       <div className={`${CN}`}>
         <div className={`${CN}__filter-wrapper`}>
-          <Pagination numberOfPages={5} setCurrentPage={this.setCurrentPage} visibleNumbers={3} />
+          <Pagination currentPage={currentPage + 1} numberOfPages={5} setCurrentPage={this.setCurrentPage} visibleNumbers={5} />
           <ProductListNavigationContainer
             dropdownSortingSelectedID={dropdownSortingSelectedID}
             dropdownItemsNumberSelectedID={dropdownItemsNumberSelectedID}
@@ -62,6 +63,7 @@ class ProductList extends React.Component {
           <ItemsListContainer gender={gender} currentPage={currentPage} />
         </div>
         <div className={`${CN}__filter-wrapper`}>
+          <Pagination currentPage={currentPage + 1} numberOfPages={5} setCurrentPage={this.setCurrentPage} visibleNumbers={5} />
           <ProductListNavigationContainer
             dropdownItemsNumberSelectedID={dropdownItemsNumberSelectedID}
             dropdownSortingSelectedID={dropdownSortingSelectedID}
