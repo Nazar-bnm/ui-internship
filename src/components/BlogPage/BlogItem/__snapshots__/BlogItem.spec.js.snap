@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlogItem /> should match snapshot 1`] = `
+<div
+  className="blog-item bottom-border"
+>
+  <h3
+    className="blog-item__heading"
+  >
+    Title
+  </h3>
+  <span
+    className="blog-item__date"
+  >
+    11 August 2019
+  </span>
+  <div
+    className="blog-item__image-wrapper"
+  >
+    <img
+      alt="Publication"
+      className="blog-item__image"
+      src="https://res.cloudinary.com/dr8z1kafr/image/upload/v1573482788/Interns/blog/1.jpg"
+    />
+    <div
+      className="onHover"
+    >
+      summer, fun
+    </div>
+  </div>
+  <p
+    className="blog-item__text"
+  >
+    Text
+  </p>
+</div>
+`;

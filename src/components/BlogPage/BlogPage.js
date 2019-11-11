@@ -6,7 +6,6 @@ import { Button } from '@/shared';
 
 import './BlogPage.scss';
 
-const userAPI = new HttpService();
 const CN = 'blog-page';
 
 class BlogPage extends React.Component {
@@ -27,6 +26,7 @@ class BlogPage extends React.Component {
   }
 
   async getBlogItems() {
+    const userAPI = new HttpService();
     const blogsURL = `${process.env.BASE_URL}/blogsPage`;
     const { getBlogItemsSuccess, getBlogItemsError } = this.props;
 
@@ -47,7 +47,7 @@ class BlogPage extends React.Component {
     const { blogItems } = this.props;
     const blogItemsToRender = blogItems.slice(currentRangeStart, currentRangeEnd);
 
-    return blogItemsToRender.map((el) => {
+    return blogItemsToRender.map((el, index) => {
       const shortText = `${el.description.slice(0, 301)}...`;
       const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.id}.jpg`;
 
@@ -59,8 +59,8 @@ class BlogPage extends React.Component {
           photo={imageSrc}
           text={shortText}
           labels={el.labels}
+          className={index === 2 ? null : 'bottom-border'}
         />
-        // add the black border!
       );
     });
   }

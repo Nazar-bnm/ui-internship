@@ -9,9 +9,10 @@ const BlogItem = ({
   date,
   photo,
   text,
-  labels
+  labels,
+  className
 }) => (
-  <div className={CN}>
+  <div className={`${CN} ${className}`}>
     <h3 className={`${CN}__heading`}>{title}</h3>
     <span className={`${CN}__date`}>{date}</span>
     <div className={`${CN}__image-wrapper`}>

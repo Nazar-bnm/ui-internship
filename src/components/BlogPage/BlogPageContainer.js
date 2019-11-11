@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   blogItems: state.reducerBlogPage.blogItems,
   error: state.reducerBlogPage.error
 });
+
 const mapDispatchToProps = (dispatch) => ({
   getBlogItemsSuccess: bindActionCreators(getBlogItemsSuccess, dispatch),
   getBlogItemsError: bindActionCreators(getBlogItemsError, dispatch)

@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlogPage /> should match snapshot 1`] = `
+<BlogPage
+  blogItems={
+    Array [
+      Object {
+        "date": "12 october 2019",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
+        "id": 1,
+        "intro": "we know what you want this summer. most fashion looks",
+        "labels": Array [
+          "summer",
+          "swimsuit",
+          "bags",
+          "sunglasses",
+        ],
+        "photo": "1.jpg",
+        "title": "summer trends",
+      },
+      Object {
+        "date": "11 january 2018",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
+        "id": 2,
+        "intro": "new trends comming through",
+        "labels": Array [
+          "boho",
+          "summer",
+          "trend",
+          "style",
+        ],
+        "photo": "2.jpg",
+        "title": "Free-spirited style for boho-chic",
+      },
+      Object {
+        "date": "25 may 2019",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
+        "id": 3,
+        "intro": "military style boots",
+        "labels": Array [
+          "boots",
+          "autumn",
+          "trend",
+          "style",
+          "military",
+        ],
+        "photo": "3.jpg",
+        "title": "military style",
+      },
+    ]
+  }
+>
+  <div
+    className="blog-page content"
+  >
+    <div
+      className="categories"
+    >
+      Categories
+      <br />
+      Celebrity style (39)
+      <br />
+      Fashion shows (15)
+      <br />
+      Shopping (27)
+      <br />
+      Shopping (119)
+    </div>
+    <div
+      className="labels__wrapper"
+    >
+      labels, labels, labels
+    </div>
+    <div
+      className="blog-page__items-wrapper"
+    >
+      <BlogItem
+        className="bottom-border"
+        date="12 october 2019"
+        key="1"
+        labels={
+          Array [
+            "summer",
+            "swimsuit",
+            "bags",
+            "sunglasses",
+          ]
+        }
+        photo="undefined/1.jpg"
+        text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec p..."
+        title="summer trends"
+      >
+        <div
+          className="blog-item bottom-border"
+        >
+          <h3
+            className="blog-item__heading"
+          >
+            summer trends
+          </h3>
+          <span
+            className="blog-item__date"
+          >
+            12 october 2019
+          </span>
+          <div
+            className="blog-item__image-wrapper"
+          >
+            <img
+              alt="Publication"
+              className="blog-item__image"
+              src="undefined/1.jpg"
+            />
+            <div
+              className="onHover"
+            >
+              summer, swimsuit, bags, sunglasses
+            </div>
+          </div>
+          <p
+            className="blog-item__text"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec p...
+          </p>
+        </div>
+      </BlogItem>
+      <BlogItem
+        className="bottom-border"
+        date="11 january 2018"
+        key="2"
+        labels={
+          Array [
+            "boho",
+            "summer",
+            "trend",
+            "style",
+          ]
+        }
+        photo="undefined/2.jpg"
+        text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec p..."
+        title="Free-spirited style for boho-chic"
+      >
+        <div
+          className="blog-item bottom-border"
+        >
+          <h3
+            className="blog-item__heading"
+          >
+            Free-spirited style for boho-chic
+          </h3>
+          <span
+            className="blog-item__date"
+          >
+            11 january 2018
+          </span>
+          <div
+            className="blog-item__image-wrapper"
+          >
+            <img
+              alt="Publication"
+              className="blog-item__image"
+              src="undefined/2.jpg"
+            />
+            <div
+              className="onHover"
+            >
+              boho, summer, trend, style
+            </div>
+          </div>
+          <p
+            className="blog-item__text"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec p...
+          </p>
+        </div>
+      </BlogItem>
+      <BlogItem
+        className={null}
+        date="25 may 2019"
+        key="3"
+        labels={
+          Array [
+            "boots",
+            "autumn",
+            "trend",
+            "style",
+            "military",
+          ]
+        }
+        photo="undefined/3.jpg"
+        text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec p..."
+        title="military style"
+      >
+        <div
+          className="blog-item null"
+        >
+          <h3
+            className="blog-item__heading"
+          >
+            military style
+          </h3>
+          <span
+            className="blog-item__date"
+          >
+            25 may 2019
+          </span>
+          <div
+            className="blog-item__image-wrapper"
+          >
+            <img
+              alt="Publication"
+              className="blog-item__image"
+              src="undefined/3.jpg"
+            />
+            <div
+              className="onHover"
+            >
+              boots, autumn, trend, style, military
+            </div>
+          </div>
+          <p
+            className="blog-item__text"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec p...
+          </p>
+        </div>
+      </BlogItem>
+      <Button
+        className="transparent-button"
+        disabled={false}
+        icon={null}
+        onClick={[Function]}
+      >
+        <button
+          className="transparent-button button"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Older posts &gt;
+        </button>
+      </Button>
+    </div>
+  </div>
+</BlogPage>
+`;
