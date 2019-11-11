@@ -71,7 +71,7 @@ export default {
     { value: 'new', label: 'what\'s new', link: '/404' },
     { value: 'brands', label: 'brands', link: '/404' },
     { value: 'sale', label: 'sale', link: '/404' },
-    { value: 'blog', label: 'blog', link: '/404' }
+    { value: 'blog', label: 'blog', link: '/blog' }
   ],
   options: {
     currency: [

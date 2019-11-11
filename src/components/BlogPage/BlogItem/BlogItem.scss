@@ -1,0 +1,29 @@
+@import '../../../scss/global_styles';
+
+.blog-item {
+  margin: 10px 0;
+  padding: 10px;
+
+  &__heading, &__date {
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+
+  &__date, &__text {
+    font-size: 0.8rem;
+    font-family: font(primary-light);
+  }
+
+  &__text {
+    text-align: justify;
+    color: $dove-gray;
+  }
+
+  &__image {
+    width: 100%;
+
+    &-wrapper {
+      margin: 10px 0;
+    }
+  }
+}

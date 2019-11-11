@@ -1,0 +1,51 @@
+@import '../../scss/global_styles';
+
+.blog-page {
+  @include flex($direction: column);
+  padding: 10px 0;
+
+  .categories {
+    border: 1px solid grey;
+    padding: 10px;
+  }
+
+  .transparent-button {
+    align-self: flex-end;
+  }
+
+  &__items-wrapper {
+    @include flex($direction: column);
+  }
+
+  .labels__wrapper {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .blog-page {
+    display: grid;
+    grid-template-rows: 25% 75%;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 20px;
+
+    .categories {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 20px 0;
+    }
+
+    .labels__wrapper {
+      display: block;
+      grid-column: 2;
+      grid-row: 2;
+      padding: 10px;
+      background-color: yellowgreen;
+    }
+
+    &__items-wrapper {
+      display: block;
+      grid-column: 1;
+    }
+  }
+}
