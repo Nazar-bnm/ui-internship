@@ -21,8 +21,10 @@ function scrollTo(params) {
 
   const animatedScroll = (time) => {
     const elapsedTime = time + increment;
+
     const position = easeInOut(elapsedTime, start, change, duration);
     element.current[scrollDirection] = position;
+
 
     if (elapsedTime < duration) {
       window.requestAnimationFrame(animatedScroll.bind(null, elapsedTime));

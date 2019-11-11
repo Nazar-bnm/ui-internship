@@ -114,12 +114,15 @@ export default class ProductOrder extends Component {
           />
         </div>
         <div className={`${CN}__buttons-wrapper`}>
-          <button type="button" onClick={() => addToCart(this.state)} className={`${CN}__cart-btn`}>
+          <Button
+            onClick={() => addToCart(this.state)}
+            className={`${CN}__cart-btn`}
+          >
           add to cart
-          </button>
+          </Button>
           <Link to="/wishlist">
             <Button
-              customClass={`${CN}__wishlist-btn`}
+              className={`${CN}__wishlist-btn`}
               icon="heart"
             >
           wishlist

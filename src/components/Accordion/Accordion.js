@@ -21,7 +21,7 @@ class Accordion extends Component {
   dataMapper(array) {
     const { open } = this.props;
 
-    return array.map((element) => ({ ...element, isHidden: !open }));
+    return array.map((element) => ({ isHidden: !open, ...element }));
   }
 
   clickHandler(index) {
@@ -45,7 +45,12 @@ class Accordion extends Component {
 
   render() {
     const { data } = this.state;
-    const { heightItem, scroll, className } = this.props;
+    const {
+      heightItem,
+      scroll,
+      className,
+      labels
+    } = this.props;
 
     const accordionItems = data.map(({
       id, title, description, isHidden
@@ -58,6 +63,8 @@ class Accordion extends Component {
         onClick={() => this.clickHandler(index)}
         height={heightItem}
         scroll={scroll}
+        className={className}
+        labels={labels[index]}
       />
     ));
 
@@ -81,7 +88,8 @@ Accordion.propTypes = {
   open: PropTypes.bool,
   scroll: PropTypes.bool,
   heightItem: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  labels: PropTypes.array
 };
 
 Accordion.defaultProps = {
@@ -90,7 +98,8 @@ Accordion.defaultProps = {
   open: false,
   scroll: false,
   heightItem: '',
-  className: ''
+  className: '',
+  labels: []
 };
 
 export default Accordion;

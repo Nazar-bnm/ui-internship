@@ -5,3 +5,25 @@
   height: 30px;
   margin: 10px;
 }
+
+.black-button {
+  height: 30px;
+  width: 160px;
+  margin-right: 10px;
+  padding: 0 5px;
+  background-color: $black;
+  border: none;
+  color: $white;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .black-button {
+    width: 110px;
+  }
+}

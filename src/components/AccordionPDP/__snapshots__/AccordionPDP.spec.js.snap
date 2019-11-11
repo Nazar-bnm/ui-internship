@@ -30,6 +30,7 @@ exports[`<AccordionPDP /> should match snapshot 1`] = `
       ]
     }
     heightItem="100px"
+    labels={Array []}
     open={false}
     scroll={false}
     showAll={false}

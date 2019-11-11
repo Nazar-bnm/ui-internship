@@ -5,8 +5,8 @@ import { changeQuantity, removeItemFromCart } from '../../actions/actionsCart';
 import CartPage from './CartPage';
 
 const mapStateToProps = ({ reducerCart, productsReducer }) => {
-  console.log({reducerCart, productsReducer});
-  
+  console.log({ reducerCart, productsReducer });
+
   return ({
     userCart: reducerCart.userCart,
     products: productsReducer.products

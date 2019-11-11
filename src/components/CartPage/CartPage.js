@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import CartItem from './CartItem';
+import Checkout from '../Checkout';
 import config from '../../../config';
 
 import './CartPage.scss';
+import ItemInfo from '../WhatIsNew/ItemInfo';
 
 const CN = 'cart-page';
 
@@ -21,15 +23,15 @@ const CartPage = (props) => {
 
   const isItemInCart = (item) => userCart.find((cartItem) => item._id === cartItem.id);
   const itemPrice = (id) => products.find((item) => item._id === id).price;
-  // console.log this functions, they are working wrong
-  const countTotal = userCart.reduce((acc, nextValue) => (acc + itemPrice(nextValue.id) * nextValue.quantity), 0);
+
+  const countTotal = userCart.reduce((acc, nextValue) => (acc + itemPrice(nextValue.id) * nextValue.chosenQuantity), 0);
 
   const renderProduct = (item) => (
     <CartItem
       key={item.title}
       item={item}
       changeQuantity={changeQuantity}
-      // userCart={userCart}
+      userCart={userCart}
       removeItemFromCart={removeItemFromCart}
     />
   );
@@ -42,7 +44,7 @@ const CartPage = (props) => {
             <th key={heading}>{heading}</th>
           ))}
         </tr>
-        {products.map((item) => isItemInCart(item) && renderProduct(item))}
+        {products.filter((item) => isItemInCart(item)).map((item) => renderProduct(item))}
       </tbody>
     </table>
   );
@@ -98,11 +100,7 @@ const CartPage = (props) => {
           </div>
         </div>
       </div>
-      <div className={`${CN} content container`}>
-        <Link className={`${CN}__pseudo-button col-6 col-center`} to="/checkout">
-          Checkout
-        </Link>
-      </div>
+      <Checkout />
     </div>
   );
 };

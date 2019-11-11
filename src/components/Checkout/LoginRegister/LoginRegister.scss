@@ -1,0 +1,73 @@
+@import '../../../scss/global_styles';
+
+.login-register {
+  @include flex;
+  padding: 20px;
+  font-family: font(primary-light);
+
+  &__registration-type-wrapper {
+    @include flex($direction: column, $justify: space-between);
+    width: 280px;
+  }
+
+  &__label {
+    text-transform: uppercase;
+  }
+
+  &__input {
+    padding: 5px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid $silver-chalice;
+  }
+
+  &__link {
+    margin-top: 10px;
+  }
+
+  &__heading {
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__button-and-link-wrapper {
+    @include flex($justify: space-between, $align: center);
+    margin-top: 10px;
+  }
+
+  &__radiobtn {
+    @include flex($align: center);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    &-input {
+      margin-right: 5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .login-register {
+    @include flex($justify: space-between);
+
+    &__input, &__button-and-link-wrapper {
+      width: 200px;
+    }
+
+    &__registration-type-wrapper {
+      width: 45%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .login-register {
+    &__input, &__button-and-link-wrapper {
+      width: 300px;
+    }
+  }
+}

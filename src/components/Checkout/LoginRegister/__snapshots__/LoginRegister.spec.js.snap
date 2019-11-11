@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginRegister /> should match snapshot 1`] = `
+<div
+  className="login-register"
+>
+  <div
+    className="login-register__registration-type-wrapper"
+  >
+    <h3
+      className="login-register__heading"
+    >
+      Registered customers
+    </h3>
+    <p
+      className="login-register__text"
+    >
+      <strong>
+        Already registered? 
+      </strong>
+      Please login below:
+    </p>
+    <div
+      className="login-register__inputs-wrapper"
+    >
+      <span
+        className="login-register__label"
+      >
+        e-mail*
+      </span>
+      <br />
+      <input
+        className="login-register__input"
+        type="email"
+      />
+      <br />
+      <span
+        className="login-register__label"
+      >
+        password*
+      </span>
+      <br />
+      <input
+        className="login-register__input"
+        type="password"
+      />
+      <br />
+    </div>
+    <div
+      className="login-register__button-and-link-wrapper"
+    >
+      <Button
+        className="black-button"
+        icon={null}
+        onClick={[Function]}
+      >
+        Log in & Checkout
+      </Button>
+      <a
+        className="login-register__link"
+        href="/"
+      >
+        Password Help
+      </a>
+    </div>
+  </div>
+  <div
+    className="login-register__registration-type-wrapper"
+  >
+    <h3
+      className="login-register__heading"
+    >
+      New customers
+    </h3>
+    <p
+      className="login-register__text"
+    >
+      <strong>
+        Register and save time!
+      </strong>
+    </p>
+    <p
+      className="login-register__text"
+    >
+      Register with us for future convenience:
+      <br />
+      Fast and easy checkout
+      <br />
+      Easy access to your order history and status
+    </p>
+    <form>
+      <div
+        className="login-register__radiobtn"
+      >
+        <input
+          className="login-register__radiobtn-input"
+          name="register"
+          type="radio"
+          value="register"
+        />
+        <label
+          htmlFor="register"
+        >
+          Register
+        </label>
+      </div>
+      <div
+        className="login-register__radiobtn"
+      >
+        <input
+          className="login-register__radiobtn-input"
+          name="register"
+          type="radio"
+          value="guest"
+        />
+        <label
+          htmlFor="guest"
+        >
+          Checkout as guest
+        </label>
+      </div>
+    </form>
+    <Button
+      className="black-button"
+      icon={null}
+      onClick={[Function]}
+    >
+      Continue
+    </Button>
+  </div>
+</div>
+`;

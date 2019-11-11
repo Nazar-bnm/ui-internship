@@ -10,6 +10,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.json', '.scss'],
@@ -61,7 +62,4 @@ module.exports = {
       path: './.env',
     }),
   ],
-  devServer: {
-    historyApiFallback: true,
-  },
 };
