@@ -8,6 +8,7 @@ import Slide from './Slide';
 import Heading from '../Heading';
 import { ANIMATION_NAMES } from '../../constants/SlideshowConst';
 import { slideshowData } from './Slideshow/SlideshowDate';
+import Labels from '../Labels';
 
 import './HomePage.scss';
 
@@ -39,6 +40,7 @@ const HomePage = () => {
           <BlogArticlePreview />
         </div>
       </div>
+      <Labels />
     </div>
   );
 };
