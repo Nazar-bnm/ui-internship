@@ -8,7 +8,6 @@ import Checkout from '../Checkout';
 import config from '../../../config';
 
 import './CartPage.scss';
-import ItemInfo from '../WhatIsNew/ItemInfo';
 
 const CN = 'cart-page';
 

@@ -17,10 +17,6 @@ const CartItem = (props) => {
   const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
   const { chosenQuantity, color, size } = userCartItem;
 
-  console.log();
-  console.log();
-  console.log();
-
   const inc = 1;
   const dec = -1;
 
