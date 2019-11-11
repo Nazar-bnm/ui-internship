@@ -158,7 +158,7 @@ class ProductItem extends Component {
   renderHoverView() {
     const {
       product: {
-        images, label, title, price, sizes
+        images, label, title, price, sizes, _id
       }
     } = this.props;
 
@@ -174,14 +174,15 @@ class ProductItem extends Component {
         >
           <div className={cx(`${CN}__img-wrapper__flag`, label)} />
           <div className={`${CN}__img-wrapper__labels`}>{label}</div>
-
-          <img
-            alt="product"
-            className={cx(`${CN}__img-wrapper__img`, {
-              [`${CN}__img-wrapper__img--hovered`]: isHovered
-            })}
-            src={imageSrc}
-          />
+          <NavLink to={`/product-details/${_id}`}>
+            <img
+              alt="product"
+              className={cx(`${CN}__img-wrapper__img`, {
+                [`${CN}__img-wrapper__img--hovered`]: isHovered
+              })}
+              src={imageSrc}
+            />
+          </NavLink>
         </div>
 
         <div

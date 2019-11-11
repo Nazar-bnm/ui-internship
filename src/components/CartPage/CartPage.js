@@ -12,38 +12,16 @@ const CN = 'cart-page';
 
 const CartPage = (props) => {
   const {
-    className, changeQuantity, removeItemFromCart, userCart
+    className, changeQuantity, removeItemFromCart, userCart, products
   } = props;
+
   const { cartTableHeadings } = config;
-  const products = [
-    {
-      id: 10,
-      title: 'beautiful swing coat',
-      image: 'https://static.massimodutti.net/3/photos/2019/I/0/1/p/6406/512/800/6406512800_2_2_16.jpg?t=1571072186173&impolicy=massimodutti-itxmediumhigh&imwidth=900',
-      color: 'blue',
-      size: 12,
-      price: 40,
-      inventory: 10
-    },
-    {
-      id: 12,
-      title: 'nice swingy jacket',
-      image: 'https://static.massimodutti.net/3/photos/2019/I/0/1/p/6747/710/808/6747710808_1_1_16.jpg?t=1571170096577&impolicy=massimodutti-itxmediumhigh&imwidth=600',
-      color: 'green',
-      size: 12,
-      price: 60,
-      inventory: 7
-    }
-  ];
-
-  // these products are hard-coded here, as soon as wishlist is merged, products will come from the store. //
-
   const deliveryCost = 35;
   const voucher = 5;
 
-  const isItemInCart = (item) => userCart.find((cartItem) => item.id === cartItem.id);
-
-  const itemPrice = (id) => products.find((item) => item.id === id).price;
+  const isItemInCart = (item) => userCart.find((cartItem) => item._id === cartItem.id);
+  const itemPrice = (id) => products.find((item) => item._id === id).price;
+  // console.log this functions, they are working wrong
   const countTotal = userCart.reduce((acc, nextValue) => (acc + itemPrice(nextValue.id) * nextValue.quantity), 0);
 
   const renderProduct = (item) => (
@@ -51,7 +29,7 @@ const CartPage = (props) => {
       key={item.title}
       item={item}
       changeQuantity={changeQuantity}
-      userCart={userCart}
+      // userCart={userCart}
       removeItemFromCart={removeItemFromCart}
     />
   );

@@ -45,6 +45,7 @@ export default class Dropdown extends Component {
       value,
       placeholder
     } = this.props;
+
     const { selectedItem } = this.state;
     const labelTest = menuOptions && menuOptions.find((item) => item.value === selectedItem);
     const label = (labelTest && labelTest.label) || value || placeholder;
@@ -109,10 +110,11 @@ Dropdown.propTypes = {
   })).isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  onDropdownChange: PropTypes.func.isRequired
+  onDropdownChange: PropTypes.func
 };
 Dropdown.defaultProps = {
   className: '',
   placeholder: '',
-  value: ''
+  value: '',
+  onDropdownChange: () => {}
 };

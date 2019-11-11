@@ -1,21 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import './CartItem.scss';
 
 const CN = 'cart-item';
 
 const CartItem = (props) => {
+  console.log(props);
+  debugger
+
   const {
     item, changeQuantity, userCart, removeItemFromCart, className
   } = props;
   const {
-    id, title, image, price, inventory
+    _id, title, image, price, inventory
   } = item;
-  const userCartItem = userCart.find((cartItem) => cartItem.id === id);
+  const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
   const { quantity, color, size } = userCartItem;
+
+  
+
   const inc = 1;
   const dec = -1;
 
@@ -23,7 +29,7 @@ const CartItem = (props) => {
 
   const changeAmount = (gap) => {
     userCart.map((product, index) => {
-      if (product.id === id) {
+      if (product.id === _id) {
         userCartNew[index].quantity += gap;
       }
     });
@@ -31,7 +37,7 @@ const CartItem = (props) => {
   };
 
   const onRemoveFromCart = () => {
-    userCartNew = userCart.filter((product) => product.id !== id);
+    userCartNew = userCart.filter((product) => product.id !== _id);
     removeItemFromCart(userCartNew);
   };
 
@@ -48,11 +54,11 @@ const CartItem = (props) => {
         <h4>
           {`size: ${size}`}
         </h4>
-        <Link to={`${id}`} target="_blank">
+        {/* <Link to={`${_id}`} target="_blank">
           <p className={`${CN}__edit`}>
           Edit item
           </p>
-        </Link>
+        </Link> */}
         <button
           className={`${CN}__button`}
           type="button"
@@ -63,7 +69,6 @@ const CartItem = (props) => {
       </div>
     </div>
   );
-
 
   const renderCounter = () => (
     <div className={`${CN}__counter`}>

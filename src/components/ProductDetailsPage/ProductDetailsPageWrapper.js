@@ -39,9 +39,8 @@ class ProductDetailsPageWrapper extends Component {
     return (
       <div>
         {productName}
-        {productId}
-        {this.renderGoBackBtn()}
-        <ProductDetailsPage />
+        {/* {this.renderGoBackBtn()} */}
+        <ProductDetailsPage id={productId} />
       </div>
     );
   }

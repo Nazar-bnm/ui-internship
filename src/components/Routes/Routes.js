@@ -32,6 +32,7 @@ const Routes = () => (
           <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
           <DefaultLayout path="/cart" component={CartPage} />
+          <DefaultLayout path="/product-details/:id" component={ProductDetailsPageWrapper} />
           <DefaultLayout path="/products" exact component={ProductDetailsPageWrapper} />
           <DefaultLayout path="/:category" component={ProductListPage} />
           <DefaultLayout
