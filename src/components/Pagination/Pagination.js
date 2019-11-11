@@ -12,7 +12,6 @@ class Pagination extends Component {
 
     this.state = {
       numberOfPages: props.numberOfPages,
-      currentPage: 1,
       isValidInput: true,
       isAnimation: false
     };
@@ -21,26 +20,25 @@ class Pagination extends Component {
     this.renderNumbers = this.renderNumbers.bind(this);
     this.goToPrevCurrentNumber = this.goToPrevCurrentNumber.bind(this);
     this.goToNextCurrentNumber = this.goToNextCurrentNumber.bind(this);
-    this.checkThenChangeCurrentNumber = this.checkThenChangeCurrentNumber.bind(
-      this
-    );
+    this.checkThenChangeCurrentNumber = this.checkThenChangeCurrentNumber.bind(this);
     this.onAnimationEnd = this.onAnimationEnd.bind(this);
     this.inputRef = React.createRef();
   }
 
   componentDidMount() {
-    const { setCurrentPage } = this.props;
-
-    const { currentPage } = this.state;
-    setCurrentPage(this.state.currentPage - 1);
+    const { currentPage } = this.props;
     this.inputRef.current.value = currentPage;
   }
 
   componentDidUpdate({ currentPage: prevCurrentPage }) {
-    const { currentPage } = this.props;
-    currentPage !== prevCurrentPage && this.setState({
-      currentPage
-    });
+    const { currentPage, isValidInput } = this.props;
+
+    if (prevCurrentPage !== currentPage) {
+      this.inputRef.current.value = currentPage;
+      !isValidInput && this.setState({
+        isValidInput: true
+      });
+    }
   }
 
   onAnimationEnd() {
@@ -52,34 +50,25 @@ class Pagination extends Component {
   changeCurrentNumber(e) {
     const { setCurrentPage } = this.props;
 
-    this.inputRef.current.value = +e.target.innerText;
-    this.setState({
-      currentPage: +e.target.innerText,
-      isValidInput: true
-    }, () => setCurrentPage(this.state.currentPage - 1));
+    setCurrentPage(+e.target.innerText);
   }
 
   goToPrevCurrentNumber() {
     const { setCurrentPage } = this.props;
+    const { currentPage } = this.props;
 
-    const { currentPage } = this.state;
-    this.inputRef.current.value = currentPage - 1;
-    currentPage !== 1
-      && this.setState(({ currentPage: prevCurrentPage }) => ({
-        currentPage: prevCurrentPage - 1
-      }), () => setCurrentPage(this.state.currentPage - 1));
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
   }
 
   goToNextCurrentNumber() {
-    const { currentPage, numberOfPages } = this.state;
-    const { setCurrentPage } = this.props;
+    const { numberOfPages } = this.state;
+    const { setCurrentPage, currentPage } = this.props;
 
-    this.inputRef.current.value = currentPage + 1;
-
-    currentPage !== numberOfPages
-      && this.setState(({ currentPage: prevCurrentPage }) => ({
-        currentPage: prevCurrentPage + 1
-      }), () => setCurrentPage(this.state.currentPage - 1));
+    if (currentPage !== numberOfPages) {
+      setCurrentPage(currentPage + 1);
+    }
   }
 
   checkThenChangeCurrentNumber(e) {
@@ -94,22 +83,23 @@ class Pagination extends Component {
       });
       return;
     }
+
     if (inputValue > numberOfPages || inputValue < 1) {
       this.setState({
         isValidInput: false,
         isAnimation: true
       });
     } else {
+      setCurrentPage(+inputValue);
       this.setState({
-        isValidInput: true,
-        currentPage: +inputValue
-      }, () => setCurrentPage(this.state.currentPage - 1));
+        isValidInput: true
+      });
     }
   }
 
   renderNumbers() {
-    const { numberOfPages, currentPage } = this.state;
-    const { visibleNumbers } = this.props;
+    const { numberOfPages } = this.state;
+    const { visibleNumbers, currentPage } = this.props;
     const arrayOfPages = [...Array(numberOfPages)].map((e, i) => i + 1);
     const numbersFromCurrentPage = Math.floor(visibleNumbers / 2);
     let arrayOfVisibleNumOfPages = [...arrayOfPages];
@@ -139,9 +129,9 @@ class Pagination extends Component {
   }
 
   render() {
-    const { className } = this.props;
+    const { className, currentPage } = this.props;
+
     const {
-      currentPage,
       numberOfPages,
       isValidInput,
       isAnimation

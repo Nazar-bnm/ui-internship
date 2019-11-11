@@ -54,7 +54,9 @@ class ItemsList extends React.Component {
 
     const categories = this.getCategoriesURL();
     const productsURL = `${process.env.SERVER_URL}/${categoryName}?genders=${gender}${categories}&limit=${itemsOnPage}&page=${currentPage}`;
-
+    this.setState({
+      isLoading: true
+    });
     try {
       const response = await userAPI.get(productsURL);
 
