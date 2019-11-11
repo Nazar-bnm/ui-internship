@@ -19,8 +19,9 @@ const CheckBox = (props) => {
         className="checkbox"
         type="checkbox"
         onChange={handleCheckboxChange}
+        id="checkbox-elem"
       />
-      <label htmlFor={itemName}>{itemName}</label>
+      <label htmlFor="checkbox-elem">{itemName}</label>
     </li>
   );
 };

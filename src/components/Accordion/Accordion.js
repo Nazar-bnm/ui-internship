@@ -12,7 +12,7 @@ class Accordion extends Component {
 
     this.clickHandler = this.clickHandler.bind(this);
     this.state = {
-      data: this.dataMapper(props.data)
+      data: this.dataMapper(props.data || React.Children.toArray(props.children))
     };
   }
 
@@ -49,6 +49,8 @@ class Accordion extends Component {
       heightItem,
       scroll,
       className,
+      childTitle,
+      children,
       labels
     } = this.props;
 
@@ -56,9 +58,9 @@ class Accordion extends Component {
       id, title, description, isHidden
     }, index) => (
       <AccordionItem
-        key={id}
-        title={title}
-        description={description}
+        key={id || childTitle}
+        title={title || childTitle}
+        description={description || children}
         hide={isHidden}
         onClick={() => this.clickHandler(index)}
         height={heightItem}
@@ -93,7 +95,7 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {
-  data: {},
+  data: null,
   showAll: false,
   open: false,
   scroll: false,
