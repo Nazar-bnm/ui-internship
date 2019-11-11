@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import config from '../../../../config';
 import CheckBoxList from '../CheckBoxList';
@@ -6,7 +7,7 @@ import Accordion from '../../Accordion';
 
 import './Filters.scss';
 
-const Filters = ({ category }) => {
+const Filters = ({ category, filterProps, checkCheckbox }) => {
   const TABLET_BREAKPOINT = 800;
   const gender = config[category];
   const screenWidth = document.body.clientWidth;
@@ -23,17 +24,15 @@ const Filters = ({ category }) => {
         key={categoryName}
         heightItem="auto"
         open={isFiltersShown}
-        data={[
-          {
-            title: categoryName,
-            id: categoryName,
-            description: <CheckBoxList
-              itemsList={gender[categoryName]}
-              category={categoryName}
-            />
-          }
-        ]}
-      />
+      >
+        <CheckBoxList
+          filterProps={filterProps}
+          title={categoryName}
+          itemsList={gender[categoryName]}
+          category={categoryName}
+          checkCheckbox={checkCheckbox}
+        />
+      </Accordion>
     );
   };
 
@@ -42,6 +41,12 @@ const Filters = ({ category }) => {
       {listOfCategoriesNames.map((categoryName, index) => renderAccordion(categoryName, index))}
     </div>
   );
+};
+
+Filters.propTypes = {
+  category: PropTypes.string.isRequired,
+  filterProps: PropTypes.object.isRequired,
+  checkCheckbox: PropTypes.func.isRequired
 };
 
 export default Filters;
