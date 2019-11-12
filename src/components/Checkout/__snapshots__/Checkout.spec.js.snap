@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkout /> should match snapshot 1`] = `
+<div
+  className="checkout__wrapper content"
+>
+  <Accordion
+    className="checkout__accordion"
+    data={
+      Array [
+        Object {
+          "description": <LoginRegister />,
+          "id": 1,
+          "title": "01. Checkout",
+        },
+        Object {
+          "description": <BillingInfo />,
+          "id": 2,
+          "title": "02. Billing Info",
+        },
+        Object {
+          "description": <ShippingInfo />,
+          "id": 3,
+          "title": "03. Shipping Info",
+        },
+        Object {
+          "description": <ShippingMethod />,
+          "id": 4,
+          "title": "04. Shipping Method",
+        },
+        Object {
+          "description": <Payment />,
+          "id": 5,
+          "title": "05. Payment",
+        },
+        Object {
+          "description": <OrderReview />,
+          "id": 6,
+          "title": "06. Order review",
+        },
+      ]
+    }
+    heightItem="auto"
+    labels={
+      Array [
+        "Required*",
+        "Required*",
+        "",
+        "",
+        "Required*",
+        "",
+      ]
+    }
+    open={true}
+    scroll={false}
+    showAll={false}
+  />
+</div>
+`;

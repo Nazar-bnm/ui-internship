@@ -1,11 +1,11 @@
 import xor from 'lodash/array/xor';
-import { CHECK_CHECKBOX, RESET_FILTERS } from '../constants/actionTypes';
+import { CHECK_CHECKBOX, RESET_FILTERS, SET_PRICE_RANGE } from '../constants/actionTypes';
 
 const initialState = {
   bottoms: [],
   tops: [],
   sizes: [],
-  price: [],
+  price: { fromPrice: 500, toPrice: 1500 },
   colors: [],
   brands: []
 };
@@ -21,6 +21,12 @@ export default function reducerFilter(state = initialState, { type, payload }) {
     case RESET_FILTERS: {
       return {
         ...initialState
+      };
+    }
+    case SET_PRICE_RANGE: {
+      return {
+        ...state,
+        price: { ...state.price, [payload.label]: payload.value }
       };
     }
     default:

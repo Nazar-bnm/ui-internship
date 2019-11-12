@@ -10,7 +10,11 @@ const CN = 'wishlist';
 
 const WishlistPage = (props) => {
   const {
-    wishlist, products, removeFromWishlist, className
+    wishlist,
+    products,
+    removeFromWishlist,
+    className,
+    showMessage
   } = props;
 
   const renderNoWishlistItems = () => (
@@ -32,6 +36,7 @@ const WishlistPage = (props) => {
             key={item._id}
             item={item}
             removeFromWishlist={removeFromWishlist}
+            showMessage={showMessage}
           />
         );
       }

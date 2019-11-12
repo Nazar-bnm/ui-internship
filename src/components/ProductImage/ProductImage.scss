@@ -1,40 +1,14 @@
 @import '../../scss/global_styles';
-
 .product-image {
-    min-width: 50px;
-    max-width: 100%;
-    height: auto;
-
+  display: block;
+  height: 100%;
   &__container {
     @include flex;
-    flex-direction: column;
     padding: 0;
-    max-width: 350px;
-  }
-
-  &__big-image-container {
-    @include flex($justify: center);
-    position: relative;
-    width: 100%;
-
-    & img {
-      width: 100%;
-    }
-  }
-
-  &__small-images-container {
-    @include flex($wrap: nowrap);
-    padding: 10px 0;
-    width: 100%;
   }
 
   &__small-image {
-    @include flex;
     position: relative;
-
-    &:nth-child(2) {
-      margin: 0 5px;
-    }
   }
 
   &__image-on-hover {

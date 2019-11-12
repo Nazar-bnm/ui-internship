@@ -1,161 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProductDetailsPage /> should match snapshot 1`] = `
-<div
-  className="product-details content"
->
-  <ProductImage
-    images={
-      Array [
-        Object {
-          "src": "src/assets/img/content/new4.png",
-        },
-        Object {
-          "src": "src/assets/img/content/new2.png",
-        },
-        Object {
-          "src": "src/assets/img/content/new3.png",
-        },
-      ]
-    }
-  />
-  <div
-    className="product-details-right-aside"
+<Fragment>
+  <Button
+    className="go-back-btn"
+    icon="arrow left"
+    onClick={[Function]}
   >
-    <ProductOrder
-      colors={
-        Array [
-          Object {
-            "label": "color:",
-            "value": "color:",
-          },
-          Object {
-            "label": "white",
-            "value": "white",
-          },
-          Object {
-            "label": "pink",
-            "value": "pink",
-          },
-          Object {
-            "label": "black",
-            "value": "black",
-          },
-        ]
-      }
-      description=""
-      price=""
-      quantity={
-        Array [
-          Object {
-            "label": "qty:",
-            "value": "qty:",
-          },
-          Object {
-            "label": "1",
-            "value": "1",
-          },
-          Object {
-            "label": "2",
-            "value": "2",
-          },
-          Object {
-            "label": "3",
-            "value": "3",
-          },
-          Object {
-            "label": "4",
-            "value": "4",
-          },
-          Object {
-            "label": "5",
-            "value": "5",
-          },
-          Object {
-            "label": "6",
-            "value": "6",
-          },
-          Object {
-            "label": "7",
-            "value": "7",
-          },
-          Object {
-            "label": "8",
-            "value": "8",
-          },
-          Object {
-            "label": "9",
-            "value": "9",
-          },
-          Object {
-            "label": "10",
-            "value": "10",
-          },
-        ]
-      }
-      sizes={
-        Array [
-          Object {
-            "label": "size:",
-            "value": "size:",
-          },
-          Object {
-            "label": "s",
-            "value": "s",
-          },
-          Object {
-            "label": "m",
-            "value": "m",
-          },
-          Object {
-            "label": "l",
-            "value": "l",
-          },
-          Object {
-            "label": "xl",
-            "value": "xl",
-          },
-        ]
-      }
-      title=""
+    Go Back
+  </Button>
+  <div
+    className="product-details content"
+  >
+    <ProductImage
+      className="product-details-images"
+      images={Array []}
+      verticalCarousel={false}
     />
     <div
-      className="product-details-right-aside-accordion"
+      className="product-details-description"
     >
-      <Accordion
-        className="product-details__accordion"
-        data={
-          Array [
-            Object {
-              "description": " Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      <ProductOrder
+        className="product-details-description__product-order"
+        colors={Array []}
+        description=""
+        onClickAddToWishlist={[Function]}
+        price="$"
+        quantity={Array []}
+        sizes={Array []}
+        title=""
+      />
+      <div
+        className="product-details-description-accordion"
+      >
+        <Accordion
+          className="product-details__accordion"
+          data={
+            Array [
+              Object {
+                "description": " Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!Architecto, earum temporibus quidem ex eaque unde harum sit, 
       deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
       quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!",
-              "id": 1,
-              "title": "description",
-            },
-            Object {
-              "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                "id": 1,
+                "isHidden": false,
+                "title": "description",
+              },
+              Object {
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!
       ",
-              "id": 2,
-              "title": "additional info",
-            },
-            Object {
-              "description": "Earum temporibus quidem ex eaque unde harum sit, 
+                "id": 2,
+                "title": "additional info",
+              },
+              Object {
+                "description": "Earum temporibus quidem ex eaque unde harum sit, 
+      Architecto, earum temporibus quidem ex eaque unde harum sit, 
+      deleniti tempore laboriosam neque cumque!Architecto, earum temporibus 
+      quidem ex eaque unde harum sit, deleniti tempore laboriosam neque cumque!
       ",
-              "id": 3,
-              "title": "tags",
-            },
-          ]
-        }
-        heightItem="100px"
-        open={false}
-        scroll={false}
-        showAll={false}
-      />
-      <ContactDetails
-        title="share"
-      />
+                "id": 3,
+                "title": "tags",
+              },
+            ]
+          }
+          heightItem="100px"
+          labels={Array []}
+          open={false}
+          scroll={true}
+          showAll={false}
+        />
+        <ContactDetails
+          title="share"
+        />
+      </div>
     </div>
   </div>
-</div>
+</Fragment>
 `;

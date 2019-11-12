@@ -1,0 +1,57 @@
+@import '../../../scss/global_styles';
+
+.payment {
+  @include flex($direction: column);
+  padding: 20px;
+  width: 280px;
+  font-family: font(primary-light);
+  text-transform: uppercase;
+
+  &__input {
+    padding: 5px;
+    border: 1px solid $silver-chalice;
+    
+    &-wrapper {
+      @include flex($direction: column);
+      margin: 5px 0;
+  
+      &:last-of-type {
+        align-content: space-between;
+        padding-top: 5px;
+        margin: 0;
+      }
+    }
+  }
+
+  &__payment-input {
+    margin-right: 5px;
+    padding: 5px;
+    width: 60px;
+    border: 1px solid $silver-chalice;
+
+    &-wrapper {
+      @include flex($wrap: nowrap);
+    }
+  }
+
+  &__expiration-date {
+    &-wrapper {
+    @include flex($justify: space-between);
+    width: 120px;
+    }
+
+    &-label {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+
+  &__cvv {
+    width: 45px;
+    margin-top: 5px;
+  }
+
+  &__date-cvv-wrapper {
+    @include flex($justify: space-between);
+  }
+}

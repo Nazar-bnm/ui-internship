@@ -8,7 +8,13 @@
   max-width: 12rem;
   padding: 5px;
   white-space: normal;
-  height: 400px;
+  height: 370px;
+
+  .carousel-image {
+    max-width: 90px;
+    height: 100%;
+    padding-right: 2px;
+  }
 
   &__button {
     background: none;
@@ -26,6 +32,7 @@
     width: 100%;
     padding: 0px;
     transition: padding 1s;
+    transition: all 700ms ease-out;
 
     &--hovered {
       width: 100%;
@@ -86,14 +93,19 @@
       }
     }
 
-    &__title {
-      font-family: font(secondary);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      margin: 10px 0;
+    &-link {
+      text-decoration: none;
+      color: inherit;
 
-      &--hovered {
-        color: $orange;
+      &__title {
+        font-family: font(secondary);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin: 10px 0;
+
+        &--hovered {
+          color: $orange;
+        }
       }
     }
 
@@ -114,15 +126,15 @@
   }
 
   &-quick-view {
-    max-height: 60vh;
-    height: 450px;
+    min-height: max-content;
+    min-width: min-content;
+    height: 470px;
     max-width: 80vw;
-    padding: 1rem 3.5rem 1.5rem;
+    padding: 1rem 3.5rem 1rem;
 
     .heading {
       &__wrapper {
         margin: 0 !important;
-        margin-bottom: 1rem;
         height: 2rem;
       }
 
@@ -133,12 +145,17 @@
 
     &-content {
       display: flex;
-      justify-content: space-evenly;
       height: 90%;
+      padding-top: 1rem;
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
       &__product-order {
         display: block;
-        width: 100%;
 
         .product-order__heading {
           font-size: 1.5rem;
@@ -169,21 +186,11 @@
         &__container {
           flex-wrap: nowrap;
           margin-top: 8px;
-          max-width: 40%;
           padding-right: 1rem;
         }
 
         &__big-image-container {
-          width: fit-content !important;
-          max-height: 70%;
-
-          img {
-            max-width: 100%;
-          }
-        }
-
-        &__small-images-container {
-          max-height: 30%;
+          height: 100%;
         }
 
         &__small-image {
@@ -231,29 +238,20 @@
 
 @media screen and (max-width: 768px) {
   .product {
-    display: inline-block;
-    padding: 50px;
-
     &-quick-view {
       &-content {
         display: flex;
         height: 90%;
-  
+
         .heading__title {
           font-size: 5rem;
         }
-  
+
         .product-order__heading {
           font-size: 1rem;
           margin-top: 0;
         }
       }
     }
-  }
-}
-
-@include media-for(mobile-landscape) {
-  .product {
-    padding: 30px;
   }
 }
