@@ -59,8 +59,11 @@ class ItemsList extends React.Component {
       error,
       wishlist,
       addToWishList,
-      removeFromWishList
+      removeFromWishList,
+      price
     } = this.props;
+
+    const { fromPrice, toPrice } = price;
 
     if (error) {
       return (
@@ -70,7 +73,7 @@ class ItemsList extends React.Component {
       );
     }
 
-    const itemsToRender = this.sortItems();
+    const itemsToRender = this.sortItems().filter((item) => item.price > fromPrice && item.price < toPrice);
 
     return itemsToRender.slice(0, itemsOnPage).map((el) => (
       <ProductItem
