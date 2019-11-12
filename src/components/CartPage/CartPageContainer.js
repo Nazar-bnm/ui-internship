@@ -4,8 +4,9 @@ import { bindActionCreators } from 'redux';
 import { changeQuantity, removeItemFromCart } from '../../actions/actionsCart';
 import CartPage from './CartPage';
 
-const mapStateToProps = ({ reducerCart }) => ({
-  userCart: reducerCart.userCart
+const mapStateToProps = ({ reducerCart, productsReducer }) => ({
+  userCart: reducerCart.userCart,
+  products: productsReducer.products
 });
 
 const mapDispatchToProps = (dispatch) => ({
