@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import ProductOrder from './ProductOrder';
 import { productOrderParameters } from '../../config/ProductOrderMockups';
 
