@@ -24,8 +24,6 @@ class LoginRegister extends React.Component {
       showMessage(VALIDATION_FAILED);
       return isInputValid;
     }
-
-    return isInputValid;
   }
 
   render() {
