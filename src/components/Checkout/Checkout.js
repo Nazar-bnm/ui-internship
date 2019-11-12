@@ -53,7 +53,6 @@ const Checkout = () => (
       heightItem="auto"
       data={components}
       labels={labelsList}
-      open
     />
   </div>
 );

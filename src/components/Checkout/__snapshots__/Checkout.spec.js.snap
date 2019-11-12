@@ -51,7 +51,7 @@ exports[`<Checkout /> should match snapshot 1`] = `
         "",
       ]
     }
-    open={true}
+    open={false}
     scroll={false}
     showAll={false}
   />
