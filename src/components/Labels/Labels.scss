@@ -1,0 +1,12 @@
+@import '../../scss/global_styles';
+
+.label {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item{
+    padding: 5px;
+    text-transform: uppercase;
+    align-self: center;
+  }
+}

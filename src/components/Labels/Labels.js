@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Labels.scss';
+
 const Labels = (props) => {
   const blogsObj = [
     {
@@ -93,9 +95,9 @@ const Labels = (props) => {
       description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,'
     }
   ];
+
   const listOfLabels = blogsObj.map((el) => el.labels).flat().sort();
   const countedLabels = {};
-  
 
   listOfLabels.forEach((el) => {
     if (!countedLabels[el]) {
@@ -104,19 +106,32 @@ const Labels = (props) => {
       countedLabels[el] += 1;
     }
   });
-  const formLables = (list) => {
-    const maxLabelCount = Math.max(...Object.values(countedLabels));
-    console.log(maxLabelCount);
-    return Object.keys(list).map((el) => {
-      if(list[el] >= list[el] / 2)
+  const maxLabelCount = Math.max(...Object.values(countedLabels));
 
-      return (<span style={{ fontSize: `${list[el] * 0.7}rem` }}>{el}</span>)
-    });
-    // return (Object.keys(list).map((el) => <span style={{ fontSize: `${list[el] * 14}px` }}>{el}</span>));
-  };
+  const elementToRender = (elem, fontSize) => (<span className="label__item" style={{ fontSize: `${fontSize}rem` }}>{elem}</span>);
+
+  const divideInto = (num) => Math.round(maxLabelCount / num);
+
+  const formLables = (list) => Object.keys(list).map((el) => {
+    // There are 4 different types of styles therefore further I use numbers to dived on 2, 3, 4
+    const fontSizeforLargeEl = 3;
+    const fontSizeForMediumEl = 2;
+    const fontSizeForSmallEl = 1.5;
+    const fontSizeForExtraSmallEl = 0.7;
+
+    if (list[el] >= divideInto(2)) {
+      return elementToRender(el, fontSizeforLargeEl);
+    } if (list[el] >= divideInto(3) && list[el] <= divideInto(2)) {
+      return elementToRender(el, fontSizeForMediumEl);
+    } if (list[el] >= Math.round(maxLabelCount / 4) && list[el] <= divideInto(3)) {
+      return elementToRender(el, fontSizeForSmallEl);
+    }
+
+    return elementToRender(el, fontSizeForExtraSmallEl);
+  });
 
   return (
-    <div>{formLables(countedLabels)}</div>
+    <div className="label">{formLables(countedLabels)}</div>
   );
 };
 
