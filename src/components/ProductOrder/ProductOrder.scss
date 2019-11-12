@@ -51,6 +51,7 @@
   }
 
   &__cart-btn, &__wishlist-btn {
+    -webkit-appearance: none;
     height: 35px;
     padding: 0 10px;
     border: 1px solid $mercury;
