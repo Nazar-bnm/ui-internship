@@ -58,7 +58,7 @@ exports[`<Header /> should match snapshot 1`] = `
             },
             Object {
               "itemName": "blog",
-              "url": "404",
+              "url": "blog",
             },
           ]
         }
@@ -123,7 +123,7 @@ exports[`<Header /> should match snapshot 1`] = `
         },
         Object {
           "label": "blog",
-          "link": "/404",
+          "link": "/blog",
           "value": "blog",
         },
       ]

@@ -1,74 +1,153 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-import { Button, Dropdown } from '@/shared';
+import Dropdown from '@/shared/Dropdown/index';
+import Button from '@/shared/Button';
+import DynamicInput from '@/shared/DynamicInput';
+import HttpService from '../../service/HttpService/httpService';
 
 import './ProductOrder.scss';
 
 export const CN = 'product-order';
 
-const ProductOrder = (props) => {
-  const {
-    title,
-    description,
-    price,
-    sizes,
-    colors,
-    quantity,
-    onClickAddToWishlist,
-    onClickAddToCart,
-    className
-  } = props;
+export default class ProductOrder extends Component {
+  constructor(props) {
+    super(props);
+    const { id } = this.props;
 
-  // The following function should be replaced when the proper functionality for dropdowns is added.
-  const onDropdownChangeFunc = () => (true);
+    this.state = {
+      id,
+      data: {},
+      sizes: [],
+      quantity: 1,
+      colors: [],
+      description: '',
+      title: '',
+      price: null,
+      chosenQuantity: null,
+      dataLoaded: false
+    };
 
-  return (
-    <div className={cx(CN, className)}>
-      <h2 className={`${CN}__heading`}>{title}</h2>
-      <p className={`${CN}__description`}>{description}</p>
-      <span className={`${CN}__price`}>{price}</span>
-      <div className={`${CN}__dropdowns-wrapper`}>
-        <Dropdown menuOptions={sizes} placeholder="size:" onDropdownChange={onDropdownChangeFunc} />
-        <Dropdown menuOptions={colors} placeholder="color:" onDropdownChange={onDropdownChangeFunc} />
-        <Dropdown menuOptions={quantity} placeholder="qty:" onDropdownChange={onDropdownChangeFunc} />
-      </div>
-      <div className={`${CN}__buttons-wrapper`}>
-        <Link to="/cart">
-          <Button onClick={onClickAddToCart} className={`${CN}__cart-btn`}>add to cart</Button>
-        </Link>
-        <Button
-          className={`${CN}__wishlist-btn`}
-          icon="heart"
-          onClick={onClickAddToWishlist}
-        >
+    this.handleSizeChange = this.handleSizeChange.bind(this);
+    this.handleQuantityChange = this.handleQuantityChange.bind(this);
+    this.handleColorChange = this.handleColorChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+
+  async getData() {
+    const userAPI = new HttpService();
+    const { id } = this.state;
+
+    try {
+      const response = await userAPI.get(`https://b1-project.herokuapp.com/products/${id}`);
+
+      if (response && response.data) {
+        this.setState({
+          data: response.data,
+          sizes: response.data.sizes,
+          quantity: response.data.quantity,
+          colors: response.data.colors,
+          description: response.data.description,
+          title: response.data.title,
+          price: response.data.price,
+          dataLoaded: true
+        });
+      }
+    } catch (error) {
+      throw (new Error());
+    }
+  }
+
+  handleSizeChange(item) {
+    this.setState({ size: item });
+  }
+
+  handleColorChange(item) {
+    this.setState({ color: item });
+  }
+
+  handleQuantityChange(item) {
+    this.setState({ chosenQuantity: item });
+  }
+
+  content() {
+    const {
+      addToCart
+    } = this.props;
+
+    const {
+      colors, sizes, quantity, title, description, price
+    } = this.state;
+
+    const makeDataTemplated = (value) => ({ label: value, value });
+
+    const newSizes = sizes.map(makeDataTemplated);
+    const newColors = colors.map(makeDataTemplated);
+
+    return (
+      <div className={`${CN}`}>
+        <h2 className={`${CN}__heading`}>{title}</h2>
+        <p className={`${CN}__description`}>{description}</p>
+        <span className={`${CN}__price`}>{price}</span>
+        <div className={`${CN}__dropdowns-wrapper`}>
+          <Dropdown
+            key="1"
+            menuOptions={newSizes}
+            mainLabel="size:"
+            placeholder="Size :"
+            onDropdownChange={this.handleSizeChange}
+          />
+          <Dropdown
+            key="2"
+            menuOptions={newColors}
+            mainLabel="color:"
+            placeholder="Colors :"
+            onDropdownChange={this.handleColorChange}
+          />
+          <DynamicInput
+            quantity={quantity}
+            onInputChange={this.handleQuantityChange}
+          />
+        </div>
+        <div className={`${CN}__buttons-wrapper`}>
+          <Button
+            onClick={() => addToCart(this.state)}
+            className={`${CN}__cart-btn`}
+          >
+          add to cart
+          </Button>
+          <Link to="/wishlist">
+            <Button
+              className={`${CN}__wishlist-btn`}
+              icon="heart"
+            >
           wishlist
-        </Button>
+            </Button>
+          </Link>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+
+  render() {
+    const { dataLoaded } = this.state;
+
+    return (
+      <>
+        {dataLoaded && this.content()}
+      </>
+    );
+  }
+}
 
 ProductOrder.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  price: PropTypes.string,
-  quantity: PropTypes.array,
-  sizes: PropTypes.array,
-  colors: PropTypes.array,
-  onClickAddToWishlist: PropTypes.func.isRequired,
-  onClickAddToCart: PropTypes.func.isRequired
+  addToCart: PropTypes.func
 };
 
 ProductOrder.defaultProps = {
-  title: '',
-  description: '',
-  price: '',
-  quantity: [],
-  sizes: [],
-  colors: []
+  addToCart: PropTypes.func
 };
-
-export default ProductOrder;

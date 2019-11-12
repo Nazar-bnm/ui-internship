@@ -71,7 +71,7 @@ export default {
     { value: 'new', label: 'what\'s new', link: '/404' },
     { value: 'brands', label: 'brands', link: '/404' },
     { value: 'sale', label: 'sale', link: '/404' },
-    { value: 'blog', label: 'blog', link: '/404' }
+    { value: 'blog', label: 'blog', link: '/blog' }
   ],
   options: {
     currency: [
@@ -98,7 +98,7 @@ export default {
     { itemName: 'what\'s new', url: '404' },
     { itemName: 'brands', url: '404' },
     { itemName: 'sale', url: '404' },
-    { itemName: 'blog', url: '404' }
+    { itemName: 'blog', url: 'blog' }
   ],
   shippingData: [
     { number: 1, title: 'free shipping', description: 'on all orders over 50$' },

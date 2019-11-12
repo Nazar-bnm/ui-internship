@@ -5,7 +5,7 @@ import './Button.scss';
 
 const Button = (props) => {
   const {
-    className, icon, children, onClick
+    className, icon, children, onClick, disabled
   } = props;
 
   return (
@@ -13,6 +13,7 @@ const Button = (props) => {
       className={`${className} button`}
       type="button"
       onClick={onClick}
+      disabled={disabled}
     >
       {icon && <i className={`${icon} icon`} />}
       {children}
