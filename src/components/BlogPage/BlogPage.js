@@ -46,19 +46,26 @@ class BlogPage extends React.Component {
     const { currentRangeStart, currentRangeEnd } = this.state;
     const { blogItems } = this.props;
     const blogItemsToRender = blogItems.slice(currentRangeStart, currentRangeEnd);
+    const maxSymbolsNumber = 301;
 
     return blogItemsToRender.map((el, index) => {
-      const shortText = `${el.description.slice(0, 301)}...`;
+      const shortText = `${el.description.slice(0, maxSymbolsNumber)}...`;
       const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.id}.jpg`;
+      const {
+        id,
+        title,
+        date,
+        labels
+      } = el;
 
       return (
         <BlogItem
-          key={el.id}
-          title={el.title}
-          date={el.date}
+          key={id}
+          title={title}
+          date={date}
           photo={imageSrc}
           text={shortText}
-          labels={el.labels}
+          labels={labels}
           className={index === 2 ? null : 'bottom-border'}
         />
       );
@@ -66,14 +73,15 @@ class BlogPage extends React.Component {
   }
 
   getOlderPosts() {
+    const blogItemsPerStep = 3;
     const { currentRangeStart, currentRangeEnd } = this.state;
     const { blogItems } = this.props;
     const itemsNumber = blogItems.length;
-    const nextRangeEnd = currentRangeEnd + 3;
+    const nextRangeEnd = currentRangeEnd + blogItemsPerStep;
 
     this.setState({
-      currentRangeStart: currentRangeStart + 3,
-      currentRangeEnd: currentRangeEnd + 3
+      currentRangeStart: currentRangeStart + blogItemsPerStep,
+      currentRangeEnd: currentRangeEnd + blogItemsPerStep
     });
 
     window.scrollTo(0, 0);
@@ -91,15 +99,11 @@ class BlogPage extends React.Component {
     return (
       <div className={`${CN} content`}>
         <div className="categories">
-          Categories
-          <br />
-          Celebrity style (39)
-          <br />
-          Fashion shows (15)
-          <br />
-          Shopping (27)
-          <br />
-          Shopping (119)
+          <p>Categories</p>
+          <p>Celebrity style (39)</p>
+          <p>Fashion shows (15)</p>
+          <p>Shopping (27)</p>
+          <p>Shopping (119)</p>
         </div>
         <div className="labels__wrapper">
           labels, labels, labels

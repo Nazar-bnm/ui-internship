@@ -56,15 +56,21 @@ exports[`<BlogPage /> should match snapshot 1`] = `
     <div
       className="categories"
     >
-      Categories
-      <br />
-      Celebrity style (39)
-      <br />
-      Fashion shows (15)
-      <br />
-      Shopping (27)
-      <br />
-      Shopping (119)
+      <p>
+        Categories
+      </p>
+      <p>
+        Celebrity style (39)
+      </p>
+      <p>
+        Fashion shows (15)
+      </p>
+      <p>
+        Shopping (27)
+      </p>
+      <p>
+        Shopping (119)
+      </p>
     </div>
     <div
       className="labels__wrapper"
