@@ -18,13 +18,14 @@ class LoginRegister extends React.Component {
 
   validate() {
     const { showMessage } = this.props;
+    const isInputValid = this.form.current.reportValidity();
 
-    if (!this.form.current.reportValidity()) {
+    if (!isInputValid) {
       showMessage(VALIDATION_FAILED);
-      return this.form.current.reportValidity();
+      return isInputValid;
     }
 
-    return this.form.current.reportValidity();
+    return isInputValid;
   }
 
   render() {
