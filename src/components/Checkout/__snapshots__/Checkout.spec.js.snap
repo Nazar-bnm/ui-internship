@@ -9,12 +9,12 @@ exports[`<Checkout /> should match snapshot 1`] = `
     data={
       Array [
         Object {
-          "description": <LoginRegister />,
+          "description": <Memo(Connect(LoginRegister)) />,
           "id": 1,
           "title": "01. Checkout",
         },
         Object {
-          "description": <BillingInfo />,
+          "description": <Memo(Connect(BillingInfo)) />,
           "id": 2,
           "title": "02. Billing Info",
         },
@@ -51,7 +51,7 @@ exports[`<Checkout /> should match snapshot 1`] = `
         "",
       ]
     }
-    open={false}
+    open={true}
     scroll={false}
     showAll={false}
   />
