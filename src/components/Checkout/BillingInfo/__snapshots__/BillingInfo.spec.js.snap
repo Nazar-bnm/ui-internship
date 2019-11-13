@@ -303,7 +303,6 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
     className="billing-info__checkbox-wrapper"
   >
     <input
-      checked={true}
       className="billing-info__radiobtn-input"
       onChange={[Function]}
       type="checkbox"

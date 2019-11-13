@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import cx from 'classnames';
 
 import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
+import Preloader from '../../Preloader';
+
 import mockedData from '../../../mockedDataForTests';
 import { brandIDEnum } from '../../../constants';
 
@@ -16,9 +19,13 @@ const { mockedProductList } = mockedData;
 class ItemsList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLoading: true
+    };
 
     this.sortByItemName = this.sortByItemName.bind(this);
     this.renderNoItemsMessage = this.renderNoItemsMessage.bind(this);
+    this.getListItems = this.getListItems.bind(this);
   }
 
   componentDidMount() {
@@ -26,9 +33,13 @@ class ItemsList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { filters } = this.props;
+    const { filters, itemsOnPage, currentPage } = this.props;
 
     if (!_.isEqual(prevProps.filters, filters)) {
+      this.getListItems();
+    }
+
+    if (prevProps.itemsOnPage !== itemsOnPage || prevProps.currentPage !== currentPage) {
       this.getListItems();
     }
   }
@@ -38,11 +49,16 @@ class ItemsList extends React.Component {
       categoryName,
       onGetProductsSuccess,
       onGetProductsError,
-      gender
+      gender,
+      itemsOnPage,
+      currentPage
     } = this.props;
-    const categories = this.getCategoriesURL();
-    const productsURL = `${process.env.SERVER_URL}/${categoryName}?genders=${gender}${categories}`;
 
+    const categories = this.getCategoriesURL();
+    const productsURL = `${process.env.SERVER_URL}/${categoryName}?genders=${gender}${categories}&limit=${itemsOnPage}&page=${currentPage}`;
+    this.setState({
+      isLoading: true
+    });
     try {
       const response = await userAPI.get(productsURL);
 
@@ -52,6 +68,13 @@ class ItemsList extends React.Component {
       if (response.status === 500) {
         this.props.count = 0;
       }
+
+      setTimeout(() => {
+        this.setState({
+          isLoading: false
+        });
+      }, 500);
+
       onGetProductsSuccess(response.data);
     } catch (error) {
       onGetProductsError(error);
@@ -60,7 +83,6 @@ class ItemsList extends React.Component {
 
   getItemsToRender() {
     const {
-      itemsOnPage,
       error,
       wishlist,
       addToWishList,
@@ -80,7 +102,7 @@ class ItemsList extends React.Component {
 
     const itemsToRender = this.sortItems().filter((item) => item.price > fromPrice && item.price < toPrice);
 
-    return itemsToRender.slice(0, itemsOnPage).map((el) => (
+    return itemsToRender.map((el) => (
       <ProductItem
         key={el._id}
         product={el}
@@ -173,13 +195,16 @@ class ItemsList extends React.Component {
   }
 
   render() {
+    const { isLoading } = this.state;
+
     return (
-      <div className={CN}>{this.getItemsToRender()}</div>
+      <div className={cx(CN, { [`${CN}--loader`]: isLoading })}>{!isLoading ? this.getItemsToRender() : <Preloader />}</div>
     );
   }
 }
 
 ItemsList.propTypes = {
+  currentPage: PropTypes.number,
   ascendingOrder: PropTypes.bool,
   categoryName: PropTypes.string,
   itemList: PropTypes.array,
@@ -189,6 +214,7 @@ ItemsList.propTypes = {
 };
 
 ItemsList.defaultProps = {
+  currentPage: 0,
   ascendingOrder: true,
   categoryName: 'products',
   itemList: mockedProductList,

@@ -189,7 +189,6 @@ class BillingInfo extends React.Component {
             className={`${CN}__radiobtn-input`}
             type="checkbox"
             onChange={this.handleChange}
-            checked={isChecked}
           />
       I want to subscribe to the newsletter
         </div>

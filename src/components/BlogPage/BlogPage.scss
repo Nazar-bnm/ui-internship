@@ -5,8 +5,10 @@
   padding: 10px 0;
 
   .categories {
+    @include flex($direction: column, $justify: space-around);
     border: 1px solid $border-lightGrey;
     padding: 10px;
+    height: 200px;
   }
 
   .transparent-button {
@@ -36,9 +38,7 @@
     .categories {
       grid-column: 2;
       grid-row: 1;
-      @include flex($direction: column, $justify: space-around);
       margin: 20px 0;
-      height: 200px;
       text-transform: uppercase;
     }
 
