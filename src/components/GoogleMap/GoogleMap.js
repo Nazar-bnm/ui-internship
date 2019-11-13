@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import Modal from '../Modal';
 
 import './GoogleMap.scss';
+import { googleAPIKey } from '../../config/googleMapAPIkey';
 
 export const CN = 'google-map';
 
@@ -15,6 +17,9 @@ const locations = [
 class GoogleMap extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      show: false
+    };
 
     this.onPageLoad = this.onPageLoad.bind(this);
   }
@@ -22,7 +27,8 @@ class GoogleMap extends Component {
   componentDidMount() {
     if (!window.google) {
       const script = document.createElement('script');
-      script.src = 'https://maps.google.com/maps/api/js?key=AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo';
+
+      script.src = `https://maps.google.com/maps/api/js?key=${googleAPIKey}`;
       script.id = 'googleMaps';
       document.body.appendChild(script);
       script.addEventListener('load', () => this.onPageLoad());
@@ -41,29 +47,48 @@ class GoogleMap extends Component {
         position: new window.google.maps.LatLng(locations[i][1], locations[i][2]),
         map
       });
-      // const event = new window.google.maps.event.addListener(marker, 'click', (function renderMap() {
-        //   infowindow.setContent(locations[i][0]);
-        //   infowindow.open(map, marker);
-        // }(marker, i)));
-        // // event.addListener(marker, 'click', (function renderMap() {
-      // //     infowindow.setContent(locations[i][0]);
-      // //     infowindow.open(map, marker);
-      // // }(marker, i)));
-      // eslint-disable-next-line
-      const test = () => new window.google.maps.event.addListener(marker, 'click', (function renderMarker() {
+
+      window.google.maps.event.addListener(marker, 'click', (function renderMarker() {
         return function renderMap() {
           infowindow.setContent(locations[i][0]);
           infowindow.open(map, marker);
         };
       }(marker, i)));
-      test();
     }
   }
 
+  showModal = () => {
+    this.setState({
+      show: true
+    }, () => {
+      this.onPageLoad();
+    });
+  };
+
+  removeModal = () => {
+    this.setState({
+      show: false
+    }, () => {
+      this.onPageLoad();
+    });
+  };
 
   render() {
     const { id } = this.props;
-    return <div id={id} className={cx(CN)} />;
+    const { show } = this.state;
+
+    return (
+      <div>
+        { show && (
+          <Modal removeModal={this.removeModal}>
+            <div>
+              <div id={id} className={`${CN}__modal`} />
+            </div>
+          </Modal>
+        )}
+        {!show && <div id={id} className={cx(CN)} onClick={this.showModal} />}
+      </div>
+    );
   }
 }
 

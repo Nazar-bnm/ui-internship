@@ -6,7 +6,6 @@ import Linklist from './Linklist';
 import config from '../../../config';
 import JoinUs from '../JoinUs';
 import GoogleMap from '../GoogleMap';
-// import Marker from '../GoogleMap';
 
 import './Footer.scss';
 
