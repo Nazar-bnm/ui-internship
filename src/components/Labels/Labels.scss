@@ -1,9 +1,12 @@
 @import '../../scss/global_styles';
 
 .label {
-  display: flex;
-  flex-wrap: wrap;
-  cursor: pointer;
+
+  &__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
 
   &__item{
     padding: 5px;

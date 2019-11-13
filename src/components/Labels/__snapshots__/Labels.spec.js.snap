@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Labels /> should match snapshot 1`] = `
-<Fragment>
+<div
+  className="label"
+>
   <div
     className="label__sectionTitle"
   >
     Labels
   </div>
   <div
-    className="label"
+    className="label__wrapper"
     onClick={[Function]}
   />
-</Fragment>
+</div>
 `;

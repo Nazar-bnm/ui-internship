@@ -24,9 +24,8 @@ describe('<Labels />', () => {
   it('should invoke function handleClick when event on click occurs', () => {
     const event = { target: { innerText: 'TEST' } };
     wrapper
-      .find('.label')
+      .find('.label__wrapper')
       .simulate('click', event);
-    // expect(handleClick.mock.calls.length).toBe(1);
     expect(props.getLabel).toHaveBeenCalledWith('test');
   });
 });
