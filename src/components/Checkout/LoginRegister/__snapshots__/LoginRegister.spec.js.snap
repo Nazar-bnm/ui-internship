@@ -20,8 +20,9 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
       </strong>
       Please login below:
     </p>
-    <div
+    <form
       className="login-register__inputs-wrapper"
+      onSubmit={[Function]}
     >
       <span
         className="login-register__label"
@@ -31,6 +32,8 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
       <br />
       <input
         className="login-register__input"
+        name="email"
+        required={true}
         type="email"
       />
       <br />
@@ -42,10 +45,13 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
       <br />
       <input
         className="login-register__input"
+        name="password"
+        pattern="^(?=.*[A-Za-z])(?=.*\\\\d)[A-Za-z\\\\d]{8,}$"
+        required={true}
         type="password"
       />
       <br />
-    </div>
+    </form>
     <div
       className="login-register__button-and-link-wrapper"
     >
@@ -59,6 +65,7 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
       <a
         className="login-register__link"
         href="/"
+        onClick={[Function]}
       >
         Password Help
       </a>
@@ -108,6 +115,7 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
         className="login-register__radiobtn"
       >
         <input
+          checked={true}
           className="login-register__radiobtn-input"
           name="register"
           type="radio"
