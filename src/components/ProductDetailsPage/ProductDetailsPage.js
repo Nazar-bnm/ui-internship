@@ -15,7 +15,7 @@ export const CN = 'product-details';
 const ProductDetailsPage = (props) => {
   const laptopWidth = 1024;
   const [isVerticalCarousel, setVerticalCarousel] = useState(
-    window.innerWidth > laptopWidth,
+    window.innerWidth > laptopWidth
   );
   const {
     match: {
