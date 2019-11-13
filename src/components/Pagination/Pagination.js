@@ -17,6 +17,7 @@ class Pagination extends Component {
     };
 
     this.setPage = this.setPage.bind(this);
+    this.setCurrentPage = this.setCurrentPage.bind(this);
     this.renderNumbers = this.renderNumbers.bind(this);
     this.goToPrevPage = this.goToPrevPage.bind(this);
     this.goToNextPage = this.goToNextPage.bind(this);
@@ -67,17 +68,13 @@ class Pagination extends Component {
   goToPrevPage() {
     const { currentPage } = this.props;
 
-    if (currentPage !== 1) {
-      this.setCurrentPage(currentPage - 1);
-    }
+    this.setCurrentPage(currentPage - 1);
   }
 
   goToNextPage() {
-    const { currentPage, numberOfPages } = this.props;
+    const { currentPage } = this.props;
 
-    if (currentPage !== numberOfPages) {
-      this.setCurrentPage(currentPage + 1);
-    }
+    this.setCurrentPage(currentPage + 1);
   }
 
   checkThenChangePage(e) {
@@ -168,7 +165,7 @@ class Pagination extends Component {
         {numberOfPages > 1 && (
           <div className={`${CN}-nav-numbers`}>
             <div
-              onClick={this.goToPrevPage}
+              onClick={this.setCurrentPage}
               className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-left`, {
                 [`${CN}-nav-arrow--disabled`]: currentPage === 1
               })}
