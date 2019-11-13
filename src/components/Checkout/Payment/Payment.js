@@ -1,16 +1,32 @@
 import React from 'react';
 import cx from 'classnames';
 import StripeCheckout from 'react-stripe-checkout';
-// import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 import './Payment.scss';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure();
 
 const CN = 'payment';
 
-function Payment() {
-  const handleToken = () => {
-    // console.log({ token, addresses });
-  };
+const Payment = (props) => {
+  const { totalCount } = props;
+
+  async function handleToken(token) {
+    const response = await axios.post(
+      'https://hi3vv.sse.codesandbox.io/checkout',
+      { token }
+    );
+    const { status } = response.data;
+    console.log('Response:', response.data);
+    if (status === 'success') {
+      toast('Success! Check email for details', { type: 'success' });
+    } else {
+      toast('Something went wrong', { type: 'error' });
+    }
+  }
 
   return (
     <div className={cx(CN)}>
@@ -19,7 +35,7 @@ function Payment() {
         token={handleToken}
         billingAddress
         shippingAddress
-        amount
+        amount={totalCount}
       />
       {/* <div className={`${CN}__input-wrapper`}>
       <label htmlFor="card-holder">card holder*</label>
@@ -54,6 +70,6 @@ function Payment() {
     </div> */}
     </div>
   );
-}
+};
 
 export default Payment;

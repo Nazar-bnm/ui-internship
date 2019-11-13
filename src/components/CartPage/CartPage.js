@@ -15,6 +15,7 @@ const CartPage = (props) => {
   const {
     className, changeQuantity, removeItemFromCart, userCart, products
   } = props;
+  console.log(userCart);
 
   const { cartTableHeadings } = config;
   const deliveryCost = 35;
