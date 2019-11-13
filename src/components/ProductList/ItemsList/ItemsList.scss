@@ -1,8 +1,14 @@
-@import '../../../scss/global_styles';
+@import "../../../scss/global_styles";
 
 .items-container {
   @include flex;
+  position: relative;
   width: 100%;
+
+  &--loader {
+    height: 700px;
+    max-height: 100vh;
+  }
 
   &__error-container {
     width: 100%;

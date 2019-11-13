@@ -1,0 +1,147 @@
+@import "../../scss/global_styles";
+
+.pagination {
+  display: flex;
+  margin: 5px 10px;
+  color: $dove-gray;
+
+  &-nav {
+    &-numbers {
+      display: flex;
+    }
+
+    &-number {
+      transition: 0.2s ease background-color;
+      padding: 3px 6px;
+      font-family: font(primary-light);
+      font-size: 1rem;
+      background-color: transparent;
+
+      &--active {
+        border: 1px solid $silver-chalice;
+      }
+    }
+
+    &-arrow {
+      padding: 3px;
+      color: $silver-chalice;
+
+      &:nth-child(1) {
+        margin-right: 3px;
+      }
+
+      &:last-child {
+        margin-left: 3px;
+      }
+
+      &__icon {
+        margin: 0 !important;
+      }
+
+      &--disabled {
+        visibility: hidden;
+      }
+    }
+
+    &-input-container {
+      margin-right: 1rem;
+
+      &__text {
+        font: bold 0.7rem font(primary-bold);
+        text-transform: uppercase;
+        color: $dove-gray;
+
+        &:nth-child(1) {
+          margin-right: 10px;
+        }
+
+        &:last-child {
+          margin-left: 6px;
+        }
+      }
+
+      &__input {
+        padding: 5px;
+        border: 1px solid $silver-chalice;
+        font-family: font(primary-light);
+        font-size: 0.8rem;
+        color: $dove-gray;
+
+        &--error {
+          outline: 0;
+          border-color: red;
+        }
+
+        &--animation {
+          animation-name: bounce;
+          animation-duration: 0.5s;
+          animation-delay: 0.25s;
+        }
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .arr-cover {
+    width: 1px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .arrow {
+    padding: 20px;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+
+    37% {
+      transform: translateX(5px);
+      timing-function: ease-out;
+    }
+
+    55% {
+      transform: translateX(-5px);
+      timing-function: ease-in;
+    }
+
+    73% {
+      transform: translateX(4px);
+      timing-function: ease-out;
+    }
+
+    82% {
+      transform: translateX(-4px);
+      timing-function: ease-in;
+    }
+
+    91% {
+      transform: translateX(2px);
+      timing-function: ease-out;
+    }
+
+    96% {
+      transform: translateX(-2px);
+      timing-function: ease-in;
+    }
+
+    100% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+    }
+  }
+}
+
+@include media-for(tablet) {
+  .pagination {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

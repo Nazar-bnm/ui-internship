@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> should match snapshot <Pagination /> 1`] = `
+<Pagination
+  className=""
+  currentPage="10"
+  numberOfPages={10}
+  setCurrentPage={[Function]}
+  visibleNumbers={3}
+>
+  <div
+    className="pagination"
+  >
+    <div
+      className="pagination-nav-input-container"
+    >
+      <span
+        className="pagination-nav-input-container__text"
+      >
+        go to page
+      </span>
+      <input
+        className="pagination-nav-input-container__input"
+        disabled={false}
+        max={10}
+        min="1"
+        onAnimationEnd={[Function]}
+        onInput={[Function]}
+        type="number"
+      />
+      <span
+        className="pagination-nav-input-container__text"
+      >
+         / 10
+      </span>
+    </div>
+    <div
+      className="pagination-nav-numbers"
+    >
+      <div
+        className="pagination-nav-arrow pagination-nav-arrow-left"
+        onClick={[Function]}
+      >
+        <i
+          className="icon chevron left pagination-nav-arrow__icon"
+        />
+      </div>
+      <span
+        className="pagination-nav-number"
+        key="8"
+        onClick={[Function]}
+      >
+        8
+      </span>
+      <span
+        className="pagination-nav-number"
+        key="9"
+        onClick={[Function]}
+      >
+        9
+      </span>
+      <span
+        className="pagination-nav-number"
+        key="10"
+        onClick={[Function]}
+      >
+        10
+      </span>
+      <div
+        className="pagination-nav-arrow pagination-nav-arrow-right"
+        onClick={[Function]}
+      >
+        <i
+          className="icon chevron right pagination-nav-arrow__icon"
+        />
+      </div>
+    </div>
+  </div>
+</Pagination>
+`;
