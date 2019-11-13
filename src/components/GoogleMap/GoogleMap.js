@@ -79,14 +79,14 @@ class GoogleMap extends Component {
 
     return (
       <div>
-        { show && (
+        {(show) ? (
           <Modal removeModal={this.removeModal}>
             <div>
               <div id={id} className={`${CN}__modal`} />
             </div>
           </Modal>
-        )}
-        {!show && <div id={id} className={cx(CN)} onClick={this.showModal} />}
+        )
+          : (<div id={id} className={cx(CN)} onClick={this.showModal} />)}
       </div>
     );
   }
