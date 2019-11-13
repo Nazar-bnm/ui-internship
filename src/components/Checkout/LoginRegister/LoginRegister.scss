@@ -23,6 +23,22 @@
 
   &__link {
     margin-top: 10px;
+    position: relative;
+
+    &:hover:after{
+      content: 'Password should contain at least one lowercase, one uppercase letter and one number';
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      min-width: 200px;
+      border: 1px $dove-gray solid;
+      border-radius: 10px;
+      background-color: $mercury;
+      padding: 12px;
+      color: #000000;
+      font-size: 14px;
+      z-index: 1;
+    }
   }
 
   &__heading {

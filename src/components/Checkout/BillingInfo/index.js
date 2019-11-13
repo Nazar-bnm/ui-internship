@@ -1,1 +1,1 @@
-export { default } from './BillingInfo';
+export { default } from './BillingInfoContainer';
