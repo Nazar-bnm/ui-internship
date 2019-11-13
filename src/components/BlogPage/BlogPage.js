@@ -28,7 +28,7 @@ class BlogPage extends React.Component {
 
   async getBlogItems() {
     const userAPI = new HttpService();
-    const blogsURL = `${process.env.BASE_URL}/blogsPage`;
+    const blogsURL = `${process.env.SERVER_URL}/blogs`;
     const { getBlogItemsSuccess, getBlogItemsError } = this.props;
 
     try {
@@ -51,9 +51,9 @@ class BlogPage extends React.Component {
 
     return blogItemsToRender.map((el, index) => {
       const shortText = `${el.description.slice(0, maxSymbolsNumber)}...`;
-      const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.id}.jpg`;
+      const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.photo}`;
       const {
-        id,
+        _id,
         title,
         date,
         labels
@@ -61,7 +61,7 @@ class BlogPage extends React.Component {
 
       return (
         <BlogItem
-          key={id}
+          key={_id}
           title={title}
           date={date}
           photo={imageSrc}
@@ -102,6 +102,7 @@ class BlogPage extends React.Component {
       <div className={`${CN} content`}>
         <div className="categories">
           <p>Categories</p>
+          <hr />
           <p>Celebrity style (39)</p>
           <p>Fashion shows (15)</p>
           <p>Shopping (27)</p>

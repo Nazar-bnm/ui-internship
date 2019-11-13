@@ -9,6 +9,7 @@ exports[`<Labels /> should match snapshot 1`] = `
   >
     Labels
   </div>
+  <hr />
   <div
     className="label__wrapper"
     onClick={[Function]}

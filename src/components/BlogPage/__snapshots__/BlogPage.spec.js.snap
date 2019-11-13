@@ -10,6 +10,7 @@ exports[`<BlogPage /> should match snapshot 1`] = `
     <p>
       Categories
     </p>
+    <hr />
     <p>
       Celebrity style (39)
     </p>
@@ -83,7 +84,6 @@ exports[`<BlogPage /> should match snapshot 1`] = `
     <BlogItem
       className="bottom-border"
       date="12 october 2019"
-      key="1"
       labels={
         Array [
           "summer",
@@ -99,7 +99,6 @@ exports[`<BlogPage /> should match snapshot 1`] = `
     <BlogItem
       className="bottom-border"
       date="11 january 2018"
-      key="2"
       labels={
         Array [
           "boho",
@@ -115,7 +114,6 @@ exports[`<BlogPage /> should match snapshot 1`] = `
     <BlogItem
       className={null}
       date="25 may 2019"
-      key="3"
       labels={
         Array [
           "boots",
