@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Labels /> should match snapshot 1`] = `undefined`;
+exports[`<Labels /> should match snapshot 1`] = `
+<Fragment>
+  <div
+    className="label__sectionTitle"
+  >
+    Labels
+  </div>
+  <div
+    className="label"
+    onClick={[Function]}
+  />
+</Fragment>
+`;

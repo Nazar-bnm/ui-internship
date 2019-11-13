@@ -3,10 +3,16 @@
 .label {
   display: flex;
   flex-wrap: wrap;
+  cursor: pointer;
 
   &__item{
     padding: 5px;
     text-transform: uppercase;
-    align-self: center;
+    align-self: flex-end;
+  }
+
+  &__sectionTitle {
+    text-transform: uppercase;
+    margin-bottom: 15px;
   }
 }
