@@ -16,7 +16,6 @@ exports[`<ShippingMethod /> should match snapshot 1`] = `
       className="shipping-method__radiobtn"
     >
       <input
-        checked={true}
         className="shipping-method__radiobtn-input"
         name="ship-to-this-address"
         type="radio"
