@@ -5,6 +5,7 @@ import ContactDetails from './ContactDetails';
 import Linklist from './Linklist';
 import config from '../../../config';
 import JoinUs from '../JoinUs';
+import GoogleMap from '../GoogleMap';
 
 import './Footer.scss';
 
@@ -89,10 +90,10 @@ const Footer = () => {
             <div className={`${CN}__section col-6 col-right`}>
               <div className="container">
                 <div className="col-5">
-                  <img
-                    className={`${CN}__image`}
-                    src="src/assets/img/content/map.png"
-                    alt="google map"
+                  <GoogleMap
+                    id="myMap"
+                    options={{ center: { lat: 49.8397, lng: 24.0297 }, zoom: 10 }}
+                    onMapLoad
                   />
                 </div>
                 <div className="col-6 col-center">

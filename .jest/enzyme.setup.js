@@ -16,3 +16,18 @@ Object.defineProperty(window.document, 'cookie', {
     }
   }
 });
+
+Object.defineProperty(window, 'google', {
+  writable: true,
+  value: {
+    maps: new Object()
+  }
+});
+
+window.google.maps.Map = function() {};
+window.google.maps.InfoWindow = function() {};
+window.google.maps.Marker = function() {};
+window.google.maps.LatLng = function() {};
+window.google.maps.event = {
+  addListener: function() {}
+}
