@@ -34,8 +34,11 @@ class ProductList extends React.Component {
   };
 
   changeItemsNumberSelectedID = (selectedID) => {
-    this.setState({
-      dropdownItemsNumberSelectedID: selectedID
+    const { dropdownItemsNumberSelectedID } = this.state;
+
+    selectedID !== dropdownItemsNumberSelectedID && this.setState({
+      dropdownItemsNumberSelectedID: selectedID,
+      currentPage: 1
     });
   };
 

@@ -2,9 +2,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import cx from 'classnames';
 
 import ProductItem from '../../MostPopular/ProductItem';
 import HttpService from '../../../service/HttpService/httpService';
+import Preloader from '../../Preloader';
 
 import mockedData from '../../../mockedDataForTests';
 import { brandIDEnum } from '../../../constants';
@@ -68,7 +70,7 @@ class ItemsList extends React.Component {
           isLoading: false
         });
       }, 500);
-      
+
       onGetProductsSuccess(response.data);
     } catch (error) {
       onGetProductsError(error);
@@ -176,9 +178,10 @@ class ItemsList extends React.Component {
   }
 
   render() {
+    console.log(this.props.length, this.props.itemList);
     const { isLoading } = this.state;
     return (
-      !isLoading ? <div className={CN}>{this.getItemsToRender()}</div> : 'hello'
+      <div className={cx(CN, { [`${CN}--loader`]: isLoading })}>{!isLoading ? this.getItemsToRender() : <Preloader />}</div>
     );
   }
 }

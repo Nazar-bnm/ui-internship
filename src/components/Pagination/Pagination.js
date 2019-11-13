@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-update-set-state */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -11,33 +12,39 @@ class Pagination extends Component {
     super(props);
 
     this.state = {
-      numberOfPages: props.numberOfPages,
       isValidInput: true,
       isAnimation: false
     };
 
-    this.changeCurrentNumber = this.changeCurrentNumber.bind(this);
+    this.setPage = this.setPage.bind(this);
     this.renderNumbers = this.renderNumbers.bind(this);
-    this.goToPrevCurrentNumber = this.goToPrevCurrentNumber.bind(this);
-    this.goToNextCurrentNumber = this.goToNextCurrentNumber.bind(this);
-    this.checkThenChangeCurrentNumber = this.checkThenChangeCurrentNumber.bind(this);
+    this.goToPrevPage = this.goToPrevPage.bind(this);
+    this.goToNextPage = this.goToNextPage.bind(this);
+    this.checkThenChangePage = this.checkThenChangePage.bind(this);
     this.onAnimationEnd = this.onAnimationEnd.bind(this);
     this.inputRef = React.createRef();
   }
 
   componentDidMount() {
     const { currentPage } = this.props;
+
     this.inputRef.current.value = currentPage;
   }
 
   componentDidUpdate({ currentPage: prevCurrentPage }) {
-    const { currentPage, isValidInput } = this.props;
+    const { currentPage, isValidInput, numberOfPages } = this.props;
 
     if (prevCurrentPage !== currentPage) {
       this.inputRef.current.value = currentPage;
-      !isValidInput && this.setState({
-        isValidInput: true
-      });
+
+      !isValidInput
+        && this.setState({
+          isValidInput: true
+        });
+    }
+
+    if (numberOfPages === 1) {
+      this.inputRef.current.value = 1;
     }
   }
 
@@ -47,36 +54,39 @@ class Pagination extends Component {
     });
   }
 
-  changeCurrentNumber(e) {
+  setCurrentPage(value) {
     const { setCurrentPage } = this.props;
 
-    setCurrentPage(+e.target.innerText);
+    setCurrentPage(+value);
   }
 
-  goToPrevCurrentNumber() {
-    const { setCurrentPage } = this.props;
+  setPage(e) {
+    this.setCurrentPage(+e.target.innerText);
+  }
+
+  goToPrevPage() {
     const { currentPage } = this.props;
 
     if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1);
+      this.setCurrentPage(currentPage - 1);
     }
   }
 
-  goToNextCurrentNumber() {
-    const { numberOfPages } = this.state;
-    const { setCurrentPage, currentPage } = this.props;
+  goToNextPage() {
+    const { currentPage, numberOfPages } = this.props;
 
     if (currentPage !== numberOfPages) {
-      setCurrentPage(currentPage + 1);
+      this.setCurrentPage(currentPage + 1);
     }
   }
 
-  checkThenChangeCurrentNumber(e) {
-    const { numberOfPages } = this.state;
-    const { setCurrentPage } = this.props;
+  checkThenChangePage(e) {
+    const { numberOfPages } = this.props;
+
     const {
       target: { value: inputValue }
     } = e;
+
     if (inputValue === '') {
       this.setState({
         isValidInput: true
@@ -90,7 +100,8 @@ class Pagination extends Component {
         isAnimation: true
       });
     } else {
-      setCurrentPage(+inputValue);
+      this.setCurrentPage(+inputValue);
+
       this.setState({
         isValidInput: true
       });
@@ -98,30 +109,31 @@ class Pagination extends Component {
   }
 
   renderNumbers() {
-    const { numberOfPages } = this.state;
-    const { visibleNumbers, currentPage } = this.props;
+    const { visibleNumbers, currentPage, numberOfPages } = this.props;
     const arrayOfPages = [...Array(numberOfPages)].map((e, i) => i + 1);
     const numbersFromCurrentPage = Math.floor(visibleNumbers / 2);
     let arrayOfVisibleNumOfPages = [...arrayOfPages];
 
-    if (numberOfPages === 1) {
-      return;
-    }
-
     if (numberOfPages >= 3) {
-      arrayOfVisibleNumOfPages = arrayOfPages.slice(currentPage - numbersFromCurrentPage - 1, currentPage + numbersFromCurrentPage);
+      arrayOfVisibleNumOfPages = arrayOfPages.slice(
+        currentPage - numbersFromCurrentPage - 1,
+        currentPage + numbersFromCurrentPage
+      );
+
       currentPage <= numbersFromCurrentPage
         && (arrayOfVisibleNumOfPages = arrayOfPages.slice(0, visibleNumbers));
+
       numberOfPages - currentPage < numbersFromCurrentPage
         && (arrayOfVisibleNumOfPages = arrayOfPages.slice(-visibleNumbers));
     }
 
     return arrayOfVisibleNumOfPages.map((num) => (
       <span
+        key={num}
         className={cx(`${CN}-nav-number`, {
           [`${CN}-nav-number--active`]: num === currentPage
         })}
-        onClick={this.changeCurrentNumber}
+        onClick={this.setPage}
       >
         {num}
       </span>
@@ -129,24 +141,17 @@ class Pagination extends Component {
   }
 
   render() {
-    const { className, currentPage } = this.props;
-
-    const {
-      numberOfPages,
-      isValidInput,
-      isAnimation
-    } = this.state;
+    const { className, numberOfPages, currentPage } = this.props;
+    const { isValidInput, isAnimation } = this.state;
 
     return (
       <div className={cx(CN, className)}>
         <div className={`${CN}-nav-input-container`}>
-          <span className={`${CN}-nav-input-container__text`}>
-            go to page
-          </span>
+          <span className={`${CN}-nav-input-container__text`}>go to page</span>
           <input
             ref={this.inputRef}
             disabled={numberOfPages === 1}
-            onInput={this.checkThenChangeCurrentNumber}
+            onInput={this.checkThenChangePage}
             className={cx(`${CN}-nav-input-container__input`, {
               [`${CN}-nav-input-container__input--error`]: !isValidInput,
               [`${CN}-nav-input-container__input--animation`]: isAnimation
@@ -160,25 +165,27 @@ class Pagination extends Component {
             {` / ${numberOfPages}`}
           </span>
         </div>
-        <div className={`${CN}-nav-numbers`}>
-          <div
-            onClick={this.goToPrevCurrentNumber}
-            className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-left`, {
-              [`${CN}-nav-arrow--disabled`]: currentPage === 1
-            })}
-          >
-            <i className={`icon chevron left ${CN}-nav-arrow__icon`} />
+        {numberOfPages > 1 && (
+          <div className={`${CN}-nav-numbers`}>
+            <div
+              onClick={this.goToPrevPage}
+              className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-left`, {
+                [`${CN}-nav-arrow--disabled`]: currentPage === 1
+              })}
+            >
+              <i className={`icon chevron left ${CN}-nav-arrow__icon`} />
+            </div>
+            {this.renderNumbers()}
+            <div
+              onClick={this.goToNextPage}
+              className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-right`, {
+                [`${CN}-nav-arrow--disabled`]: currentPage === numberOfPages
+              })}
+            >
+              <i className={`icon chevron right ${CN}-nav-arrow__icon`} />
+            </div>
           </div>
-          {this.renderNumbers()}
-          <div
-            onClick={this.goToNextCurrentNumber}
-            className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-right`, {
-              [`${CN}-nav-arrow--disabled`]: currentPage === numberOfPages
-            })}
-          >
-            <i className={`icon chevron right ${CN}-nav-arrow__icon`} />
-          </div>
-        </div>
+        )}
       </div>
     );
   }
@@ -186,11 +193,14 @@ class Pagination extends Component {
 
 Pagination.propTypes = {
   className: PropTypes.string,
-  numberOfPages: PropTypes.number.isRequired
+  numberOfPages: PropTypes.number.isRequired,
+  currentPage: PropTypes.number,
+  setCurrentPage: PropTypes.func.isRequired
 };
 
 Pagination.defaultProps = {
-  className: ''
+  className: '',
+  currentPage: 1
 };
 
 export default Pagination;

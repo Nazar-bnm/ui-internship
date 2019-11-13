@@ -9,6 +9,7 @@ exports[`<ProductList /> should match snapshot 1`] = `
   >
     <Pagination
       className=""
+      currentPage={1}
       numberOfPages={5}
       setCurrentPage={[Function]}
       visibleNumbers={3}
@@ -30,6 +31,13 @@ exports[`<ProductList /> should match snapshot 1`] = `
   <div
     className="product-list__filter-wrapper"
   >
+    <Pagination
+      className=""
+      currentPage={1}
+      numberOfPages={5}
+      setCurrentPage={[Function]}
+      visibleNumbers={3}
+    />
     <Connect(ProductListNavigation)
       changeItemsNumberSelectedID={[Function]}
       changeSortingSelectedID={[Function]}
