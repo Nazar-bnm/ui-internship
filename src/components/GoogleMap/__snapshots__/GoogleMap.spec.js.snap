@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GoogleMap /> should match snapshot 1`] = `
+<div>
+  <div
+    className="google-map"
+    id="myMap"
+    onClick={[Function]}
+  />
+</div>
+`;
