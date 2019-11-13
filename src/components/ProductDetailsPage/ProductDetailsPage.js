@@ -57,6 +57,7 @@ const ProductDetailsPage = (props) => {
           />
           <div className={`${CN}-description`}>
             <ProductOrder
+              id={id}
               className={`${CN}-description__product-order`}
               title={title}
               price={`$${price}`}

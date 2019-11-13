@@ -18,3 +18,8 @@ export const ADDED_TO_CART_NOTIFICATION = {
   message: 'The item added to the cart',
   type: 'success'
 };
+export const VALIDATION_FAILED = {
+  title: 'error',
+  message: 'Please fill in all the fields properly',
+  type: 'error'
+};

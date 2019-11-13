@@ -12,7 +12,7 @@ const AccountNavigation = () => (
     <Link to="/wishlist">
       <span>wishlist</span>
     </Link>
-    <Link to="/not_found">
+    <Link to="/cart">
       <span>checkout</span>
     </Link>
     <Link to="/not_found">

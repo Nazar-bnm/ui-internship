@@ -20,14 +20,12 @@ exports[`<ProductDetailsPage /> should match snapshot 1`] = `
     <div
       className="product-details-description"
     >
-      <ProductOrder
+      <Connect(ProductOrder)
         className="product-details-description__product-order"
-        colors={Array []}
         description=""
+        id={5}
         onClickAddToWishlist={[Function]}
         price="$"
-        quantity={Array []}
-        sizes={Array []}
         title=""
       />
       <div

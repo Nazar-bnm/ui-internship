@@ -12,10 +12,11 @@ const CartItem = (props) => {
     item, changeQuantity, userCart, removeItemFromCart, className
   } = props;
   const {
-    id, title, image, price, inventory
+    _id, title, images, price, quantity
   } = item;
-  const userCartItem = userCart.find((cartItem) => cartItem.id === id);
-  const { quantity, color, size } = userCartItem;
+  const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
+  const { chosenQuantity, color, size } = userCartItem;
+
   const inc = 1;
   const dec = -1;
 
@@ -23,23 +24,23 @@ const CartItem = (props) => {
 
   const changeAmount = (gap) => {
     userCart.map((product, index) => {
-      if (product.id === id) {
-        userCartNew[index].quantity += gap;
+      if (product.id === _id) {
+        userCartNew[index].chosenQuantity += gap;
       }
     });
     changeQuantity(userCartNew);
   };
 
   const onRemoveFromCart = () => {
-    userCartNew = userCart.filter((product) => product.id !== id);
+    userCartNew = userCart.filter((product) => product.id !== _id);
     removeItemFromCart(userCartNew);
   };
 
-  const handleQuantity = () => ((quantity === 1) ? onRemoveFromCart : () => changeAmount(dec));
+  const handleQuantity = () => ((chosenQuantity === 1) ? onRemoveFromCart : () => changeAmount(dec));
 
   const renderProductDescription = () => (
     <div className={`${CN}__description`}>
-      <img className="col-3" src={image} alt={title} />
+      <img className="col-3" src={`${process.env.IMAGE_URL}/${images[0].claudinaryId}`} alt={title} />
       <div className={`${CN}__text col-8 col-right`}>
         <h4 className={`${CN}__title`}>{title}</h4>
         <h4>
@@ -48,7 +49,7 @@ const CartItem = (props) => {
         <h4>
           {`size: ${size}`}
         </h4>
-        <Link to={`${id}`} target="_blank">
+        <Link to={`/product-details/${_id}`} target="_blank">
           <p className={`${CN}__edit`}>
           Edit item
           </p>
@@ -64,7 +65,6 @@ const CartItem = (props) => {
     </div>
   );
 
-
   const renderCounter = () => (
     <div className={`${CN}__counter`}>
       <button
@@ -74,12 +74,12 @@ const CartItem = (props) => {
       >
         <i className="small minus icon" />
       </button>
-      <p className={`${CN}__quantity`}>{quantity}</p>
+      <p className={`${CN}__quantity`}>{chosenQuantity}</p>
       <button
         className={`${CN}__button`}
         type="button"
         onClick={() => changeAmount(inc)}
-        disabled={quantity === inventory}
+        disabled={chosenQuantity === quantity}
       >
         <i className="small plus icon" />
       </button>
@@ -91,7 +91,7 @@ const CartItem = (props) => {
       <td className={`${CN}__column`}>{renderProductDescription()}</td>
       <td className={`${CN}__column`}>{`$${price}`}</td>
       <td className={`${CN}__column`}>{renderCounter()}</td>
-      <td className={`${CN}__column`}>{`$${price * quantity}`}</td>
+      <td className={`${CN}__column`}>{`$${price * chosenQuantity}`}</td>
     </tr>
   );
 };
@@ -100,7 +100,7 @@ CartItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
-    image: PropTypes.string,
+    images: PropTypes.array,
     price: PropTypes.number,
     inventory: PropTypes.number
   }).isRequired,
