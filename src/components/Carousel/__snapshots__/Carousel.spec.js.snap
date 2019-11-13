@@ -23,6 +23,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
       >
         <div
           className="carousel__child"
+          key="box1"
           style={
             Object {
               "width": "undefinedpx",
@@ -41,6 +42,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
         </div>
         <div
           className="carousel__child"
+          key="box2"
           style={
             Object {
               "width": "undefinedpx",
@@ -59,6 +61,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
         </div>
         <div
           className="carousel__child"
+          key="box3"
           style={
             Object {
               "width": "undefinedpx",
@@ -77,6 +80,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
         </div>
         <div
           className="carousel__child"
+          key="box4"
           style={
             Object {
               "width": "undefinedpx",
@@ -95,6 +99,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
         </div>
         <div
           className="carousel__child"
+          key="box5"
           style={
             Object {
               "width": "undefinedpx",
@@ -113,6 +118,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
         </div>
         <div
           className="carousel__child"
+          key="box6"
           style={
             Object {
               "width": "undefinedpx",
@@ -131,6 +137,7 @@ exports[`<Carousel /> should match snapshot 1`] = `
         </div>
         <div
           className="carousel__child"
+          key="box7"
           style={
             Object {
               "width": "undefinedpx",
