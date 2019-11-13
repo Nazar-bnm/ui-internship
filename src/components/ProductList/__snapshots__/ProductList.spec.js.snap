@@ -10,7 +10,7 @@ exports[`<ProductList /> should match snapshot 1`] = `
     <Pagination
       className=""
       currentPage={1}
-      numberOfPages={5}
+      numberOfPages={NaN}
       setCurrentPage={[Function]}
       visibleNumbers={3}
     />
@@ -34,7 +34,7 @@ exports[`<ProductList /> should match snapshot 1`] = `
     <Pagination
       className=""
       currentPage={1}
-      numberOfPages={5}
+      numberOfPages={NaN}
       setCurrentPage={[Function]}
       visibleNumbers={3}
     />

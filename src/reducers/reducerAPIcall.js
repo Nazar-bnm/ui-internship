@@ -17,7 +17,7 @@ export const productsReducer = (state = initialState, { type, products, error })
       return {
         ...state,
         pending: false,
-        products
+        products: products.products
       };
     case FETCH_PRODUCTS_ERROR:
       return {

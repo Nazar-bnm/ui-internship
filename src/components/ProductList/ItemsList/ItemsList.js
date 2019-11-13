@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -33,13 +32,13 @@ class ItemsList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { filters } = this.props;
+    const { filters, itemsOnPage, currentPage } = this.props;
 
     if (!_.isEqual(prevProps.filters, filters)) {
       this.getListItems();
     }
 
-    if (prevProps.itemsOnPage !== this.props.itemsOnPage || prevProps.currentPage !== this.props.currentPage) {
+    if (prevProps.itemsOnPage !== itemsOnPage || prevProps.currentPage !== currentPage) {
       this.getListItems();
     }
   }
@@ -178,8 +177,8 @@ class ItemsList extends React.Component {
   }
 
   render() {
-    console.log(this.props.length, this.props.itemList);
     const { isLoading } = this.state;
+
     return (
       <div className={cx(CN, { [`${CN}--loader`]: isLoading })}>{!isLoading ? this.getItemsToRender() : <Preloader />}</div>
     );

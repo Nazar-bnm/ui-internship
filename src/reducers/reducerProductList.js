@@ -23,6 +23,7 @@ const initialState = {
   orderType: 'Position',
   chosenItemsOnPage: numberOfItemsToRender,
   itemList: [],
+  length: 0,
   error: null,
   dropdownSortingSelectedID: 0,
   dropdownItemsNumberSelectedID: 0,
@@ -49,7 +50,8 @@ export default function reducerProductList(state = initialState, action) {
     case GET_PRODUCTS_SUCCESS:
       return {
         ...state,
-        itemList: action.products,
+        itemList: action.products.products,
+        length: action.products.count,
         error: null
       };
     case GET_PRODUCTS_ERROR:
