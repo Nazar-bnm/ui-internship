@@ -3,6 +3,7 @@ import HttpService from '../../service/HttpService/httpService';
 
 import BlogItem from './BlogItem';
 import { Button } from '@/shared';
+import Labels from '../Labels';
 
 import './BlogPage.scss';
 
@@ -95,6 +96,7 @@ class BlogPage extends React.Component {
 
   render() {
     const { isButtonDisabled } = this.state;
+    const { blogItems, getLabel } = this.props;
 
     return (
       <div className={`${CN} content`}>
@@ -106,7 +108,7 @@ class BlogPage extends React.Component {
           <p>Shopping (119)</p>
         </div>
         <div className="labels__wrapper">
-          labels, labels, labels
+          <Labels blogItems={blogItems} getLabel={getLabel} />
         </div>
         <div className={`${CN}__items-wrapper`}>
           {this.getItemsToRender()}

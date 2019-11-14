@@ -1,16 +1,16 @@
 module.exports = {
-  'verbose': true,
-  'testPathIgnorePatterns': ['node_modules'],
-  'transform': {
+  verbose: true,
+  testPathIgnorePatterns: ['node_modules'],
+  transform: {
     '^.+\\.js$': 'babel-jest',
-    '.+\\.(css|styl|less|sass|scss|png|jpg|svg)$': 'jest-transform-stub',
+    '.+\\.(css|styl|less|sass|scss|png|jpg|svg)$': 'jest-transform-stub'
   },
-  'setupFiles': ['<rootDir>/.jest/enzyme.setup.js'],
-  'collectCoverageFrom': ['<rootDir>/src/**/*.js'],
-  'snapshotSerializers': ['enzyme-to-json/serializer'],
-  'moduleNameMapper': {
+  setupFiles: ['<rootDir>/.jest/enzyme.setup.js'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.js'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  moduleNameMapper: {
     '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^~/(.*)$': '<rootDir>/src/shared/$1',
-  },
+    '^~/(.*)$': '<rootDir>/src/shared/$1'
+  }
 };

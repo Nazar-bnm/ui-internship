@@ -5,7 +5,7 @@ const initialState = {
   bottoms: [],
   tops: [],
   sizes: [],
-  price: { fromPrice: 500, toPrice: 1500 },
+  price: { fromPrice: 50, toPrice: 2000 },
   colors: [],
   brands: []
 };

@@ -2,7 +2,7 @@
 
 .product-list {
   @include flex($direction: column, $justify: space-between);
-  padding: 20px 2vw;
+  margin-top: 1rem;
 
   &__filter-wrapper {
     @include flex($align: center, $justify: space-between);

@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
   error: state.reducerProductList.error,
   itemsOnPage: Number(state.reducerProductList.chosenItemsOnPage),
   itemList: state.reducerProductList.itemList,
+  length: state.reducerProductList.length,
   orderType: state.reducerProductList.orderType,
   wishlist: state.reducerWishlist.wishlist,
   filters: state.reducerFilter,
