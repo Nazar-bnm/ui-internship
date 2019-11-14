@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import CartItem from './CartItem';
 import Checkout from '../Checkout';
+import YouWillAlsoLove from '../YouWillAlsoLove';
 import config from '../../../config';
 
 import './CartPage.scss';
@@ -73,6 +74,7 @@ const CartPage = (props) => {
           </div>
         </div>
       </Link>
+      <YouWillAlsoLove />
 
       <div className={`${CN} content`}>
         <h1 className={`${CN}__title`}>Cart</h1>

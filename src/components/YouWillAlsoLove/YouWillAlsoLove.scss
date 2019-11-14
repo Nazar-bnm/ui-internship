@@ -1,0 +1,41 @@
+@import '../../scss/global_styles';
+
+.you-will-also-love {
+  @include flex($justify: space-between);
+  padding: 20px;
+  background-color: $alabaster;
+  box-shadow: 0 0 3px $mercury;
+
+  &__title {
+    width: 100%;
+    margin: 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    @include flex($justify: space-between);
+    width: 30%;
+    margin: 10px;
+
+    &__title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    &__description {
+      @include flex($direction: column);
+      width: 45%;
+    }
+
+    &__price {
+      margin: 10px 0;
+      font-size: 0.8rem;
+      font-family: font(primary-light);
+    }
+  }
+
+  &__image {
+    width: 45%;
+  }
+}
