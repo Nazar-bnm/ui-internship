@@ -49,6 +49,13 @@ class BlogPage extends React.Component {
     const blogItemsToRender = blogItems.slice(currentRangeStart, currentRangeEnd);
     const maxSymbolsNumber = 301;
 
+    const formatDate = (dateFromServer) => {
+      const formattedDate = new Date(dateFromServer);
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+      return (`${formattedDate.getDate()} ${months[formattedDate.getMonth()]} ${formattedDate.getFullYear()}`);
+    };
+
     return blogItemsToRender.map((el, index) => {
       const shortText = `${el.description.slice(0, maxSymbolsNumber)}...`;
       const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.photo}`;
@@ -59,11 +66,13 @@ class BlogPage extends React.Component {
         labels
       } = el;
 
+      const formattedDate = formatDate(date);
+
       return (
         <BlogItem
           key={_id}
           title={title}
-          date={date}
+          date={formattedDate}
           photo={imageSrc}
           text={shortText}
           labels={labels}

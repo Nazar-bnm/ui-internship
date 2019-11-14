@@ -24,7 +24,6 @@ class BillingInfo extends React.Component {
     this.form = React.createRef();
     this.validate = this.validate.bind(this);
     this.setPasswordToState = this.setPasswordToState.bind(this);
-    // this.validatePassword = this.validatePassword.bind(this);
   }
 
   setPasswordToState() {
@@ -49,7 +48,7 @@ class BillingInfo extends React.Component {
   }
 
   handleChange() {
-    // Here will be the proper functionality is added
+    // This function is going to be replaced when the proper functionality is added
     return true;
   }
 
@@ -157,7 +156,6 @@ class BillingInfo extends React.Component {
               name={CN}
               className={`${CN}__input`}
               required
-              // onBlur={this.validatePassword}
             />
           </div>
         </form>

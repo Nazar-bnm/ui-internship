@@ -123,7 +123,7 @@ class ItemsList extends React.Component {
       brands
     } = filters;
     let categories = '';
-    const regexWhiteSpace = / /g;
+    const regexWhiteSpace = /\s/g;
     const regexOnlyLetters = /[a-zA-Z]/g;
     const allFilters = bottoms.concat(tops, sizes, colors, brands);
 
