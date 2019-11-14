@@ -31,11 +31,6 @@ class LoginRegister extends React.Component {
     return isInputValid;
   }
 
-  handleChange() {
-    // Here will be a functionality for logging in and registering
-    return true;
-  }
-
   render() {
     const { isChecked } = this.state;
 
@@ -94,7 +89,7 @@ class LoginRegister extends React.Component {
                 name="register"
                 value="register"
                 className={`${CN}__radiobtn-input`}
-                onChange={this.handleChange}
+                onChange={() => {}}
                 checked={isChecked}
               />
               <label htmlFor="register">Register</label>

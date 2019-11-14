@@ -47,11 +47,6 @@ class BillingInfo extends React.Component {
     return isInputValid;
   }
 
-  handleChange() {
-    // This function is going to be replaced when the proper functionality is added
-    return true;
-  }
-
   render() {
     const { isChecked } = this.state;
 
@@ -166,7 +161,7 @@ class BillingInfo extends React.Component {
               type="radio"
               name="ship-to-this-address"
               value="ship-to-this-address"
-              onChange={this.handleChange}
+              onChange={() => {}}
               checked={isChecked}
             />
             <label htmlFor="ship-to-this-address">Ship to this address</label>
@@ -177,7 +172,7 @@ class BillingInfo extends React.Component {
               type="radio"
               name="ship-to-this-address"
               value="ship-to-different-address"
-              onChange={this.handleChange}
+              onChange={() => {}}
             />
             <label htmlFor="guest">Ship to a different address</label>
           </div>
@@ -186,7 +181,7 @@ class BillingInfo extends React.Component {
           <input
             className={`${CN}__radiobtn-input`}
             type="checkbox"
-            onChange={this.handleChange}
+            onChange={() => {}}
           />
       I want to subscribe to the newsletter
         </div>
