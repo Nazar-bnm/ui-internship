@@ -11,4 +11,4 @@ export const changeQuantity = (userCart) => ({ type: CHANGE_QUANTITY, payload: u
 
 export const removeItemFromCart = (userCart) => ({ type: REMOVE_ITEM_FROM_CART, payload: userCart });
 
-export const setTotalCount = (userCart) => ({ type: SET_TOTAL_COUNT, payload: userCart });
+export const setTotalCount = (price) => ({ type: SET_TOTAL_COUNT, payload: price });

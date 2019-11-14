@@ -12,7 +12,8 @@ const mapStateToProps = ({ reducerCart, productsReducer }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   changeQuantity: bindActionCreators(changeQuantity, dispatch),
-  removeItemFromCart: bindActionCreators(removeItemFromCart, dispatch)
+  removeItemFromCart: bindActionCreators(removeItemFromCart, dispatch),
+  setTotalCount: bindActionCreators(setTotalCount, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);

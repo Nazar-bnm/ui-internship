@@ -13,6 +13,7 @@ const CN = 'payment';
 
 const Payment = (props) => {
   const { totalCount } = props;
+  console.log('totalCount', totalCount);
 
   async function handleToken(token) {
     const response = await axios.post(

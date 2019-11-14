@@ -15,7 +15,7 @@ const CartPage = (props) => {
   const {
     className, changeQuantity, removeItemFromCart, userCart, products
   } = props;
-  console.log(userCart);
+  console.log('props', props);
 
   const { cartTableHeadings } = config;
   const deliveryCost = 35;
@@ -60,6 +60,11 @@ const CartPage = (props) => {
     </div>
   );
 
+  const getPrice = (value) => {
+    const { setTotalCount } = props;
+    setTotalCount(value);
+  };
+
   return (
     <div className={cx(CN, className)}>
       <Link className={`${CN}__link`} to="/products">
@@ -96,7 +101,7 @@ const CartPage = (props) => {
             <p>{`$${deliveryCost}`}</p>
             <p>{`$${voucher}`}</p>
             <hr />
-            <p>{`$${countTotal + deliveryCost - voucher}`}</p>
+            <p onChange={getPrice(`$${countTotal + deliveryCost - voucher}`)}>{`$${countTotal + deliveryCost - voucher}`}</p>
           </div>
         </div>
       </div>
