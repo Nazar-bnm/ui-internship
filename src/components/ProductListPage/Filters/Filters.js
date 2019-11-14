@@ -24,6 +24,7 @@ const Filters = ({ category, filterProps, checkCheckbox }) => {
         key={categoryName}
         heightItem="auto"
         open={isFiltersShown}
+        childTitle={categoryName}
       >
         <CheckBoxList
           filterProps={filterProps}

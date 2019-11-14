@@ -241,6 +241,7 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
       <input
         className="billing-info__input"
         name="billing-info"
+        onBlur={[Function]}
         required={true}
         type="password"
       />
@@ -271,6 +272,7 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
         checked={true}
         className="billing-info__radiobtn-input"
         name="ship-to-this-address"
+        onChange={[Function]}
         type="radio"
         value="ship-to-this-address"
       />
@@ -286,6 +288,7 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
       <input
         className="billing-info__radiobtn-input"
         name="ship-to-this-address"
+        onChange={[Function]}
         type="radio"
         value="ship-to-different-address"
       />
@@ -300,8 +303,8 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
     className="billing-info__checkbox-wrapper"
   >
     <input
-      checked={true}
       className="billing-info__radiobtn-input"
+      onChange={[Function]}
       type="checkbox"
     />
     I want to subscribe to the newsletter

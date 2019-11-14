@@ -12,6 +12,10 @@ class LoginRegister extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      isChecked: true
+    };
+
     this.form = React.createRef();
     this.validate = this.validate.bind(this);
   }
@@ -28,6 +32,8 @@ class LoginRegister extends React.Component {
   }
 
   render() {
+    const { isChecked } = this.state;
+
     return (
       <div className={cx(CN)}>
         <div className={`${CN}__registration-type-wrapper`}>
@@ -83,6 +89,8 @@ class LoginRegister extends React.Component {
                 name="register"
                 value="register"
                 className={`${CN}__radiobtn-input`}
+                onChange={() => {}}
+                checked={isChecked}
               />
               <label htmlFor="register">Register</label>
             </div>
@@ -92,7 +100,6 @@ class LoginRegister extends React.Component {
                 name="register"
                 value="guest"
                 className={`${CN}__radiobtn-input`}
-                checked
               />
               <label htmlFor="guest">Checkout as guest</label>
             </div>

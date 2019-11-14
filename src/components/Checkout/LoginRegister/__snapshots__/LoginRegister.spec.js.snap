@@ -100,8 +100,10 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
         className="login-register__radiobtn"
       >
         <input
+          checked={true}
           className="login-register__radiobtn-input"
           name="register"
+          onChange={[Function]}
           type="radio"
           value="register"
         />
@@ -115,7 +117,6 @@ exports[`<LoginRegister /> should match snapshot 1`] = `
         className="login-register__radiobtn"
       >
         <input
-          checked={true}
           className="login-register__radiobtn-input"
           name="register"
           type="radio"
