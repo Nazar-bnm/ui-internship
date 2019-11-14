@@ -132,6 +132,7 @@ class ProductItem extends Component {
           <ProductImage className={`${CN}-quick-view-content-images`} images={imagesForQuickView} verticalCarousel />
           <div className={`${CN}-quick-view-content-wrapper`}>
             <ProductOrder
+              id={_id}
               className={`${CN}-quick-view-content__product-order`}
               title={title}
               price={`$${price}`}

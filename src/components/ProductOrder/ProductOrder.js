@@ -76,7 +76,9 @@ export default class ProductOrder extends Component {
 
   content() {
     const {
-      addToCart
+      addToCart,
+      className,
+      onClickAddToWishlist
     } = this.props;
 
     const {
@@ -89,7 +91,7 @@ export default class ProductOrder extends Component {
     const newColors = colors.map(makeDataTemplated);
 
     return (
-      <div className={`${CN}`}>
+      <div className={`${CN} ${className}`}>
         <h2 className={`${CN}__heading`}>{title}</h2>
         <p className={`${CN}__description`}>{description}</p>
         <span className={`${CN}__price`}>{price}</span>
@@ -124,6 +126,8 @@ export default class ProductOrder extends Component {
             <Button
               className={`${CN}__wishlist-btn`}
               icon="heart"
+              onClick={onClickAddToWishlist}
+
             >
           wishlist
             </Button>
