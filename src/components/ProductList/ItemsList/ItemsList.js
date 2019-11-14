@@ -123,7 +123,6 @@ class ItemsList extends React.Component {
       brands
     } = filters;
     let categories = '';
-    const regexWhiteSpace = /\s/g;
     const regexOnlyLetters = /[a-zA-Z]/g;
     const allFilters = bottoms.concat(tops, sizes, colors, brands);
 
@@ -136,7 +135,7 @@ class ItemsList extends React.Component {
       } else if (colors.includes(item)) {
         categories += `&colors=${item}`;
       } else {
-        item.replace(regexWhiteSpace, '');
+        item.replace(' ', '');
         categories += `&brandId=${brandIDEnum[item]}`;
       }
     });
