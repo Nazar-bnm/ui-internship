@@ -7,6 +7,8 @@ import Button from '@/shared/Button';
 import DynamicInput from '@/shared/DynamicInput';
 import HttpService from '../../service/HttpService/httpService';
 
+import { ADDED_TO_CART_NOTIFICATION } from '../../constants/notificationData';
+
 import './ProductOrder.scss';
 
 export const CN = 'product-order';
@@ -74,9 +76,15 @@ export default class ProductOrder extends Component {
     this.setState({ chosenQuantity: item });
   }
 
+  addToCartWithNotification() {
+    const { addToCart } = this.props;
+    const { showMessage } = this.props;
+    addToCart(this.state);
+    showMessage(ADDED_TO_CART_NOTIFICATION);
+  }
+
   content() {
     const {
-      addToCart,
       className,
       onClickAddToWishlist
     } = this.props;
@@ -117,7 +125,7 @@ export default class ProductOrder extends Component {
         </div>
         <div className={`${CN}__buttons-wrapper`}>
           <Button
-            onClick={() => addToCart(this.state)}
+            onClick={() => this.addToCartWithNotification()}
             className={`${CN}__cart-btn`}
           >
           add to cart
