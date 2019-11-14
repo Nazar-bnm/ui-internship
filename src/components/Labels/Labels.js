@@ -20,7 +20,7 @@ const Labels = (props) => {
 
   const maxLabelCount = Math.max(...Object.values(countedLabels));
 
-  const labelElemToRender = (elem, fontSize) => (<span className={`${CN}__item`} style={{ fontSize: `${fontSize}rem` }}>{elem}</span>);
+  const labelElemToRender = (elem, fontSize) => (<span key={elem} className={`${CN}__item`} style={{ fontSize: `${fontSize}rem` }}>{elem}</span>);
 
   const divideInto = (num) => Math.round(maxLabelCount / num);
 
@@ -45,6 +45,7 @@ const Labels = (props) => {
   return (
     <div className={cx(CN)}>
       <div className={`${CN}__sectionTitle`}>Labels</div>
+      <hr />
       <div className={`${CN}__wrapper`} onClick={handleClick}>{formLableSize(countedLabels)}</div>
     </div>
   );

@@ -24,6 +24,7 @@ class ItemsList extends React.Component {
     };
 
     this.sortByItemName = this.sortByItemName.bind(this);
+    this.renderNoItemsMessage = this.renderNoItemsMessage.bind(this);
     this.getListItems = this.getListItems.bind(this);
   }
 
@@ -60,8 +61,12 @@ class ItemsList extends React.Component {
     });
     try {
       const response = await userAPI.get(productsURL);
+
       if (response.status === 404) {
         throw Error(response.statusText);
+      }
+      if (response.status === 500) {
+        this.props.count = 0;
       }
 
       setTimeout(() => {
@@ -90,7 +95,7 @@ class ItemsList extends React.Component {
     if (error) {
       return (
         <div className={`${CN}__error-container`}>
-          Please run npm run mock:api to start the server and reload the page, or check the URL of your request.
+          No items with selected parameters. Try running npm run mock:api to start the server and reload the page, or check the URL of your request.
         </div>
       );
     }
@@ -119,13 +124,15 @@ class ItemsList extends React.Component {
     } = filters;
     let categories = '';
     const regexWhiteSpace = / /g;
+    const regexOnlyLetters = /[a-zA-Z]/g;
     const allFilters = bottoms.concat(tops, sizes, colors, brands);
 
     allFilters.forEach((item) => {
       if (bottoms.includes(item) || tops.includes(item)) {
         categories += `&category=${item}`;
       } else if (sizes.includes(item)) {
-        categories += `&sizes=${item}`;
+        const croppedItem = item.match(regexOnlyLetters).join('');
+        categories += `&sizes=${croppedItem}`;
       } else if (colors.includes(item)) {
         categories += `&colors=${item}`;
       } else {
@@ -177,6 +184,14 @@ class ItemsList extends React.Component {
     }
 
     return itemsToRender;
+  }
+
+  renderNoItemsMessage() {
+    return (
+      <div className={`${CN}__error-container`}>
+        There are no products with selected parameters.
+      </div>
+    );
   }
 
   render() {

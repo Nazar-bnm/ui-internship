@@ -17,7 +17,6 @@ const ShippingMethod = () => (
           type="radio"
           name="ship-to-this-address"
           value="ship-to-this-address"
-          checked
         />
         <label htmlFor="ship-to-this-address">UPS (ground) $7.25</label>
       </div>

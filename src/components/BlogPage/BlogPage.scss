@@ -5,8 +5,10 @@
   padding: 10px 0;
 
   .categories {
+    @include flex($direction: column, $justify: space-around);
     border: 1px solid $border-lightGrey;
     padding: 10px;
+    height: 200px;
   }
 
   .transparent-button {
@@ -37,6 +39,11 @@
       grid-column: 2;
       grid-row: 1;
       margin: 20px 0;
+      text-transform: uppercase;
+    }
+
+    hr {
+      margin: 10px 0;
     }
 
     .labels__wrapper {
