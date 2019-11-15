@@ -1,1 +1,1 @@
-export { default } from './YouWillAlsoLove';
+export { default } from './YouWillAlsoLoveContainer';

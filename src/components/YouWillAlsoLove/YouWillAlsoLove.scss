@@ -24,8 +24,9 @@
     }
 
     &__description {
-      @include flex($direction: column);
-      width: 45%;
+      @include flex($direction: column, $justify: space-between);
+      width: 50%;
+      padding-bottom: 20px;
     }
 
     &__price {
@@ -37,5 +38,16 @@
 
   &__image {
     width: 45%;
+  }
+
+  &__quickview-button {
+    height: 30px;
+    border: none;
+    box-shadow: 0 0 3px $mercury;
+    text-transform: uppercase;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
