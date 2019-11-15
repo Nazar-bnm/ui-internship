@@ -151,7 +151,7 @@ class Carousel extends Component {
     vertical && (style = { height: `${lengthOfSlide}px` });
 
     return listOfChildren.map((item) => (
-      <div key={item.id} className={`${CN}__child`} style={style}>
+      <div key={item.key} className={`${CN}__child`} style={style}>
         {item}
       </div>
     ));

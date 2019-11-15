@@ -5,18 +5,18 @@ exports[`<BlogArticlePreview /> should match snapshot 1`] = `
   className="blog"
 >
   <h3
-    className="heading"
+    className="blog__heading"
   >
     from our blog
   </h3>
   <div
     className="blog__wrapper"
   />
-  <button
-    className="blog__read-more col-right"
-    type="button"
+  <Link
+    className="blog__read-more"
+    to="/blog"
   >
     read more
-  </button>
+  </Link>
 </div>
 `;

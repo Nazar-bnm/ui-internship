@@ -4,6 +4,7 @@ import HttpService from '../../service/HttpService/httpService';
 import BlogItem from './BlogItem';
 import { Button } from '@/shared';
 import Labels from '../Labels';
+import { formatDate } from '../../helpers';
 
 import './BlogPage.scss';
 
@@ -28,7 +29,7 @@ class BlogPage extends React.Component {
 
   async getBlogItems() {
     const userAPI = new HttpService();
-    const blogsURL = `${process.env.BASE_URL}/blogsPage`;
+    const blogsURL = `${process.env.SERVER_URL}/blogs`;
     const { getBlogItemsSuccess, getBlogItemsError } = this.props;
 
     try {
@@ -51,19 +52,21 @@ class BlogPage extends React.Component {
 
     return blogItemsToRender.map((el, index) => {
       const shortText = `${el.description.slice(0, maxSymbolsNumber)}...`;
-      const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.id}.jpg`;
+      const imageSrc = `${process.env.BLOG_IMAGE_URL}/${el.photo}`;
       const {
-        id,
+        _id,
         title,
         date,
         labels
       } = el;
 
+      const formattedDate = formatDate(date);
+
       return (
         <BlogItem
-          key={id}
+          key={_id}
           title={title}
-          date={date}
+          date={formattedDate}
           photo={imageSrc}
           text={shortText}
           labels={labels}
@@ -102,6 +105,7 @@ class BlogPage extends React.Component {
       <div className={`${CN} content`}>
         <div className="categories">
           <p>Categories</p>
+          <hr />
           <p>Celebrity style (39)</p>
           <p>Fashion shows (15)</p>
           <p>Shopping (27)</p>
