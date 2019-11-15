@@ -136,7 +136,7 @@ export default class ProductOrder extends Component {
         </div>
         <div className={`${CN}__buttons-wrapper`}>
           <Button
-            onClick={() => this.addToCartWithNotification()}
+            onClick={this.addToCartWithNotification}
             className={`${CN}__cart-btn`}
           >
           add to cart
