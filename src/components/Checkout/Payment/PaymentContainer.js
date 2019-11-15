@@ -7,8 +7,4 @@ const mapStateToProps = ({ reducerCart, productsReducer }) => ({
   totalCount: reducerCart.totalCount
 });
 
-// const mapDispatchToProps = (dispatch) => ({
-//   setTotalCount:
-// });
-
 export default connect(mapStateToProps)(Payment);

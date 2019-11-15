@@ -101,7 +101,7 @@ const CartPage = (props) => {
             <p>{`$${deliveryCost}`}</p>
             <p>{`$${voucher}`}</p>
             <hr />
-            <p onChange={getPrice(`$${countTotal + deliveryCost - voucher}`)}>{`$${countTotal + deliveryCost - voucher}`}</p>
+            <p onChange={getPrice(+`${countTotal + deliveryCost - voucher}`)}>{`$${countTotal + deliveryCost - voucher}`}</p>
           </div>
         </div>
       </div>

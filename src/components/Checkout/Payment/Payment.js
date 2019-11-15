@@ -13,12 +13,11 @@ const CN = 'payment';
 
 const Payment = (props) => {
   const { totalCount } = props;
-  console.log('totalCount', totalCount);
 
   async function handleToken(token) {
     const response = await axios.post(
       'https://hi3vv.sse.codesandbox.io/checkout',
-      { token }
+      { token, totalCount }
     );
     const { status } = response.data;
     // eslint-disable-next-line no-console
@@ -35,9 +34,9 @@ const Payment = (props) => {
       <StripeCheckout
         stripeKey="pk_test_q7q6RtscsNRaRZnaBHuoRC7x00fupiksw6"
         token={handleToken}
+        amount={totalCount * 100}
         billingAddress
         shippingAddress
-        amount={totalCount}
       />
     </div>
   );
