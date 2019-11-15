@@ -32,7 +32,7 @@ const HomePage = () => {
       <WhatIsNew />
       <div className="container content mainPage">
         <div className="mainPage__popular">
-          <Heading title="most popular" position="center" />
+          <Heading title="most popular" position="left" />
           <MostPopular />
         </div>
         <div className="mainPage__blog">

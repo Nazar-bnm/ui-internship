@@ -1,26 +1,37 @@
 @import '../../scss/global_styles';
-.heading {
-  @include title-font;
-}
 
 .blog {
   position: relative;
+  min-height: 200px;
   padding: 20px 0px;
+
+  &__heading {
+    @include title-font;
+  }
+
+  &__wrapper {
+    display: block;
+  }
+
+  &:nth-of-type(2) {
+    display: none;
+  }
 
   &__text {
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 70%;
+    padding: 10px;
     background-color:$white;
     text-transform: uppercase;
-    padding: 10px;
-    text-align: center;
   }
 
   &__title {
     @include title-font;
-    font-size: 1rem;
     margin-bottom: 5px;
+    font-size: 1rem;
+    text-align: left;
   }
 
   &__description {
@@ -30,29 +41,26 @@
   }
 
    &__img {
-     width: 60%;
-     height: auto;
-     max-width: 100%;
+     width: 100%;
    }
 
-   .blogs__wrapper {
+   &__wrapper {
     @include flex($direction: column, $justify: center);
     height: 80%;
   }
 
   &__read-more {
     display: block;
-    background: none;
-	  color: inherit;
-	  border: none;
 	  padding: 0;
-	  font: inherit;
-	  outline: inherit;
-    text-transform: uppercase;
-    text-align: end;
     margin: 20px 0 0;
+    background: none;
+	  border: none;
+	  font: inherit;
+    text-align: end;
+    text-transform: uppercase;
+	  color: inherit;
+	  outline: inherit;
     cursor: pointer;
-
   
     &:hover {
       text-decoration: underline;
@@ -60,21 +68,13 @@
   }
 }
 
-@include media-for(laptop) {
-  .blog {
-    &__title {
-      font-size: 0.8rem;
-    }
-  
-    &__description {
-      font-size: 0.6rem;
-    }
-  }
-}
-
-@include media-for(tablet) {
+@media only screen and (min-width: 480px) {
   .blog {
     width: 100%;
+
+    &:nth-of-type(2) {
+      display: block;
+    }
 
     &__title {
       font-size: 0.8rem;
@@ -85,14 +85,19 @@
     }
 
     &__wrapper {
-      display: flex;
-      flex-direction: row;
+      @include flex($wrap: nowrap);
     }
   }
 }
 
-@include media-for(mobile-landscape) {
-    .blog__wrapper {
-      display: block;
+@media only screen and (min-width: 768px) {
+  .blog {
+    &__title {
+      font-size: 0.8rem;
     }
+  
+    &__description {
+      font-size: 0.6rem;
+    }
+  }
 }
