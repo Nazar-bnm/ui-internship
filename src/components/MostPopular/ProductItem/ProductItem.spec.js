@@ -86,18 +86,4 @@ describe('<ProductItem />', () => {
     expect(removeFromWishlist).toHaveBeenCalledTimes(1);
     expect(showMessage).toHaveBeenCalledTimes(1);
   });
-
-  it('should call props addToWishlist and showMessage', () => {
-    const classNameSelector = '.product-quick-view-content__product-order';
-    
-    wrapper.setState({ isHovered: true, isShowedModal: true });
-    wrapper
-      .find(classNameSelector)
-      .first()
-      .props()
-      .onClickAddToWishlist();
-
-    expect(addToWishlist).toHaveBeenCalledTimes(1);
-    expect(showMessage).toHaveBeenCalledTimes(1);
-  });
 });

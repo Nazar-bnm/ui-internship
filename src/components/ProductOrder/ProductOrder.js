@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import cx from 'classnames';
 
 import Dropdown from '@/shared/Dropdown/index';
 import Button from '@/shared/Button';
 import DynamicInput from '@/shared/DynamicInput';
 import HttpService from '../../service/HttpService/httpService';
+
+import { ADDED_TO_CART_NOTIFICATION, ADDED_TO_WISHLIST_NOTIFICATION } from '../../constants/notificationData';
 
 import './ProductOrder.scss';
 
@@ -25,13 +28,14 @@ export default class ProductOrder extends Component {
       description: '',
       title: '',
       price: null,
-      chosenQuantity: null,
+      chosenQuantity: 1,
       dataLoaded: false
     };
 
     this.handleSizeChange = this.handleSizeChange.bind(this);
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
+    this.addToWishlistWithNotification = this.addToWishlistWithNotification.bind(this);
   }
 
   componentDidMount() {
@@ -62,6 +66,17 @@ export default class ProductOrder extends Component {
     }
   }
 
+  addToWishlistWithNotification() {
+    const {
+      id,
+      addToWishlist,
+      showMessage
+    } = this.props;
+
+    addToWishlist(id);
+    showMessage(ADDED_TO_WISHLIST_NOTIFICATION);
+  }
+
   handleSizeChange(item) {
     this.setState({ size: item });
   }
@@ -74,14 +89,20 @@ export default class ProductOrder extends Component {
     this.setState({ chosenQuantity: item });
   }
 
-  content() {
-    const {
-      addToCart
-    } = this.props;
+  addToCartWithNotification() {
+    const { addToCart } = this.props;
+    const { showMessage } = this.props;
 
+    addToCart(this.state);
+    showMessage(ADDED_TO_CART_NOTIFICATION);
+  }
+
+  content() {
     const {
       colors, sizes, quantity, title, description, price
     } = this.state;
+
+    const { className } = this.props;
 
     const makeDataTemplated = (value) => ({ label: value, value });
 
@@ -89,7 +110,7 @@ export default class ProductOrder extends Component {
     const newColors = colors.map(makeDataTemplated);
 
     return (
-      <div className={`${CN}`}>
+      <div className={cx(CN, className)}>
         <h2 className={`${CN}__heading`}>{title}</h2>
         <p className={`${CN}__description`}>{description}</p>
         <span className={`${CN}__price`}>{price}</span>
@@ -115,7 +136,7 @@ export default class ProductOrder extends Component {
         </div>
         <div className={`${CN}__buttons-wrapper`}>
           <Button
-            onClick={() => addToCart(this.state)}
+            onClick={this.addToCartWithNotification}
             className={`${CN}__cart-btn`}
           >
           add to cart
@@ -124,6 +145,7 @@ export default class ProductOrder extends Component {
             <Button
               className={`${CN}__wishlist-btn`}
               icon="heart"
+              onClick={this.addToWishlistWithNotification}
             >
           wishlist
             </Button>
@@ -145,9 +167,11 @@ export default class ProductOrder extends Component {
 }
 
 ProductOrder.propTypes = {
-  addToCart: PropTypes.func
+  addToCart: PropTypes.func,
+  className: PropTypes.string
 };
 
 ProductOrder.defaultProps = {
-  addToCart: PropTypes.func
+  addToCart: PropTypes.func,
+  className: ''
 };

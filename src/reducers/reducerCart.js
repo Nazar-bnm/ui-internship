@@ -15,7 +15,13 @@ export default function reducerCart(state = initialState, { type, payload }) {
     case ADD_TO_CART: {
       return {
         ...state,
-        userCart: [...state.userCart, payload]
+        userCart: state.userCart.some(
+          ({
+            id, color, chosenQuantity, size
+          }) => payload.id === id && payload.color === color
+            && payload.chosenQuantity === chosenQuantity
+            && payload.size === size
+        ) ? state.userCart : [...state.userCart, payload]
       };
     }
     case CHANGE_QUANTITY:
