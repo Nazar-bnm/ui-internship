@@ -38,35 +38,37 @@ class YouWillAlsoLove extends React.Component {
   }
 
   renderQuickView(item) {
-    const {
-      images,
-      _id
-    } = item;
+    if (item) {
+      const {
+        images,
+        _id
+      } = item;
 
-    const imagesForQuickView = images.map(({ claudinaryId }) => ({
-      src: `${process.env.IMAGE_URL}/${claudinaryId}`
-    }));
+      const imagesForQuickView = images.map(({ claudinaryId }) => ({
+        src: `${process.env.IMAGE_URL}/${claudinaryId}`
+      }));
 
-    return (
-      <Modal className={`${CN}-quick-view`} removeModal={this.removeModal}>
-        <Heading title="Quick view" />
-        <div className={`${CN}-quick-view-content`}>
-          <ProductImage className={`${CN}-quick-view-content-images`} images={imagesForQuickView} verticalCarousel />
-          <div className={`${CN}-quick-view-content-wrapper`}>
-            <ProductOrder
-              id={_id}
-              className={`${CN}-quick-view-content__product-order`}
-            />
-            <NavLink
-              to={`/product-details/${_id}`}
-              className={`${CN}-quick-view-content__link`}
-            >
-              See more details
-            </NavLink>
+      return (
+        <Modal className={`${CN}-quick-view`} removeModal={this.removeModal}>
+          <Heading title="Quick view" />
+          <div className={`${CN}-quick-view-content`}>
+            <ProductImage className={`${CN}-quick-view-content-images`} images={imagesForQuickView} verticalCarousel />
+            <div className={`${CN}-quick-view-content-wrapper`}>
+              <ProductOrder
+                id={_id}
+                className={`${CN}-quick-view-content__product-order`}
+              />
+              <NavLink
+                to={`/product-details/${_id}`}
+                className={`${CN}-quick-view-content__link`}
+              >
+                See more details
+              </NavLink>
+            </div>
           </div>
-        </div>
-      </Modal>
-    );
+        </Modal>
+      );
+    }
   }
 
   render() {
