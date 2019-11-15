@@ -34,7 +34,7 @@ export default class Input extends Component {
         <input
           name="quantity"
           type="number"
-          min={0}
+          min={1}
           max={quantity}
           defaultValue={1}
           onChange={this.handleInputChange}

@@ -165,7 +165,7 @@ class Pagination extends Component {
         {numberOfPages > 1 && (
           <div className={`${CN}-nav-numbers`}>
             <div
-              onClick={this.setCurrentPage}
+              onClick={this.goToPrevPage}
               className={cx(`${CN}-nav-arrow`, `${CN}-nav-arrow-left`, {
                 [`${CN}-nav-arrow--disabled`]: currentPage === 1
               })}

@@ -7,7 +7,6 @@ import Modal from '../../Modal';
 import ProductImage from '../../ProductImage';
 import ProductOrder from '../../ProductOrder';
 import Heading from '../../Heading';
-import { productOrderParameters } from '../../../config/ProductOrderMockups';
 import {
   REMOVED_FROM_WISHLIST_NOTIFICATION,
   ADDED_TO_WISHLIST_NOTIFICATION
@@ -114,10 +113,7 @@ class ProductItem extends Component {
     const {
       product: {
         images,
-        _id,
-        title,
-        price,
-        description
+        _id
       }
     } = this.props;
 
@@ -133,11 +129,7 @@ class ProductItem extends Component {
           <div className={`${CN}-quick-view-content-wrapper`}>
             <ProductOrder
               className={`${CN}-quick-view-content__product-order`}
-              title={title}
-              price={`$${price}`}
-              description={description}
-              {...productOrderParameters}
-              onClickAddToWishlist={() => this.addToWishlistWithNotification(_id)}
+              id={_id}
             />
             <NavLink
               to={`/product-details/${_id}`}
