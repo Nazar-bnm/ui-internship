@@ -11,13 +11,15 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.form = React.createRef();
+    this.formLogin = React.createRef();
+    this.formRegister = React.createRef();
+
     this.validate = this.validate.bind(this);
   }
 
   validate() {
     const { showMessage } = this.props;
-    const isInputValid = this.form.current.reportValidity();
+    const isInputValid = this.formLogin.current.reportValidity();
 
     if (!isInputValid) {
       showMessage(VALIDATION_FAILED);
@@ -39,7 +41,7 @@ class LoginPage extends React.Component {
             </p>
             <form
               className={`${CN}__inputs-wrapper`}
-              ref={this.form}
+              ref={this.formLogin}
               onSubmit={(e) => e.preventDefault()}
             >
               <span className={`${CN}__label`}>e-mail*</span>
@@ -80,7 +82,7 @@ class LoginPage extends React.Component {
                 Enter your email address to create an account:
               </strong>
             </p>
-            <form className={`${CN}__new-customer-input-wrapper`} ref={this.form}>
+            <form className={`${CN}__new-customer-input-wrapper`} ref={this.formRegister}>
               <span className={`${CN}__label`}>e-mail*</span>
               <br />
               <input
@@ -90,7 +92,7 @@ class LoginPage extends React.Component {
                 required
               />
             </form>
-            <Button className="black-button" onClick={this.validate}>create an account</Button>
+            <Button className="black-button">create an account</Button>
           </div>
         </div>
       </div>
