@@ -35,7 +35,7 @@ class LoginPage extends React.Component {
             <h3 className={`${CN}__heading`}>Registered customers</h3>
             <p className={`${CN}__text`}>
               <strong>Already registered? </strong>
-                Please login below:
+              Please login below:
             </p>
             <form
               className={`${CN}__inputs-wrapper`}
@@ -64,7 +64,13 @@ class LoginPage extends React.Component {
             </form>
             <div className={`${CN}__button-and-link-wrapper`}>
               <Button className="black-button" onClick={this.validate}>Login</Button>
-              <a className={`${CN}__link`} href="/" onClick={(e) => e.preventDefault()}>Forgor your password?</a>
+              <a
+                className={`${CN}__link`}
+                href="/"
+                onClick={(e) => e.preventDefault()}
+              >
+                Forgor your password?
+              </a>
             </div>
           </div>
           <div className={`${CN}__registration-type-wrapper`}>
@@ -74,7 +80,7 @@ class LoginPage extends React.Component {
                 Enter your email address to create an account:
               </strong>
             </p>
-            <form className={`${CN}__new-customer-input-wrapper`}>
+            <form className={`${CN}__new-customer-input-wrapper`} ref={this.form}>
               <span className={`${CN}__label`}>e-mail*</span>
               <br />
               <input
@@ -84,7 +90,7 @@ class LoginPage extends React.Component {
                 required
               />
             </form>
-            <Button className="black-button">create an account</Button>
+            <Button className="black-button" onClick={this.validate}>create an account</Button>
           </div>
         </div>
       </div>
