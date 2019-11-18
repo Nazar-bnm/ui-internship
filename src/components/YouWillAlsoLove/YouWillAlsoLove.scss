@@ -43,8 +43,8 @@
   &__quickview-button {
     height: 30px;
     border: none;
-    box-shadow: 0 0 3px $mercury;
     text-transform: uppercase;
+    box-shadow: 0 0 3px $mercury;
 
     &:hover {
       transform: scale(1.1);
@@ -54,8 +54,8 @@
   &-quick-view {
     min-height: max-content;
     min-width: min-content;
-    height: 470px;
     max-width: 80vw;
+    height: 470px;
     padding: 1rem 3.5rem 1rem;
 
     .heading {
@@ -70,22 +70,20 @@
     }
 
     &-content {
-      display: flex;
+      @include flex($wrap: nowrap);
       height: 90%;
       padding-top: 1rem;
 
       &-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        @include flex($wrap: nowrap, $direction: column, $justify: space-between);
       }
 
       &__product-order {
         display: block;
 
         .product-order__heading {
-          font-size: 1.5rem;
           margin-top: 0;
+          font-size: 1.5rem;
         }
 
         .product-order__dropdowns-wrapper {
@@ -129,8 +127,7 @@
       }
 
       &__link {
-        display: flex;
-        justify-content: flex-end;
+        @include flex($wrap: nowrap, $justify: flex-end);
         padding-top: 8px;
         margin-left: auto;
         color: $orange;
@@ -143,19 +140,19 @@
 
       .button {
         -webkit-appearance: none;
-        text-align: center;
-        cursor: pointer;
         width: 120px;
         height: 40px;
-        color: $white;
         background-color: $black;
         font-family: inherit;
         font-size: 0.8rem;
         text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        color: $white;
 
         &:hover {
-          color: $black;
           background-color: $white;
+          color: $black;
         }
       }
     }
@@ -193,23 +190,23 @@
     }
 
     &__flag {
+      position: absolute;
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 60px 60px 0 0;
       border-color: transparent;
-      position: absolute;
       z-index: 2;
     }
 
     &__labels {
+      position: absolute;
+      margin: 7px 5px;
       font-family: font(secondary);
       font-size: 0.8rem;
-      position: absolute;
-      z-index: 3;
-      margin: 7px 5px;
-      color: $white;
       text-transform: uppercase;
+      color: $white;
+      z-index: 3;
     }
 
     &__img {
@@ -232,10 +229,9 @@
       width: 100%;
 
       .product__icon {
-        display: block;
-        font-size: 1.3rem;
         @include flex($align: center, $justify: center);
         margin-top: 10px;
+        font-size: 1.3rem;
       }
 
       .product__icon:hover {
@@ -245,14 +241,14 @@
     }
 
     &-link {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
 
       &__title {
+        margin: 10px 0;
         font-family: font(secondary);
         font-size: 0.9rem;
         text-transform: uppercase;
-        margin: 10px 0;
 
         &--hovered {
           color: $orange;
@@ -269,11 +265,11 @@
   }
 
   &-quick-view {
+    padding: 1rem 3.5rem 1rem;
     min-height: max-content;
     min-width: min-content;
-    height: 470px;
     max-width: 80vw;
-    padding: 1rem 3.5rem 1rem;
+    height: 470px;
 
     .heading {
       &__wrapper {
@@ -287,14 +283,12 @@
     }
 
     &-content {
-      display: flex;
+      @include flex($wrap: nowrap);
       height: 90%;
       padding-top: 1rem;
 
       &-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        @include flex($wrap: nowrap, $direction: column, $justify: space-between);
       }
 
       &__product-order {
@@ -346,8 +340,7 @@
       }
 
       &__link {
-        display: flex;
-        justify-content: flex-end;
+        @include flex($justify: flex-end, $wrap: nowrap);
         padding-top: 8px;
         margin-left: auto;
         color: $orange;
@@ -360,19 +353,19 @@
 
       .button {
         -webkit-appearance: none;
-        text-align: center;
-        cursor: pointer;
         width: 120px;
         height: 40px;
-        color: $white;
         background-color: $black;
         font-family: inherit;
         font-size: 0.8rem;
+        text-align: center;
         text-transform: uppercase;
-
+        color: $white;
+        cursor: pointer;
+        
         &:hover {
-          color: $black;
           background-color: $white;
+          color: $black;
         }
       }
     }
