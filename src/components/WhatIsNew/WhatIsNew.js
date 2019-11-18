@@ -34,13 +34,13 @@ class WhatIsNew extends Component {
   render() {
     const { items } = this.state;
     const block = items.map((item) => (
-      <ItemInfo key={item.id} item={item} />
+      <ItemInfo className="whatIsNew-wrapper__item" key={item.id} item={item} />
     ));
 
     return (
       <div className="content whatIsNew">
         <Heading className="whatIsNew__title" title="What is new?" position="center" />
-        <div className="container whatIsNew__wrapper">
+        <div className="container whatIsNew-wrapper">
           {block}
         </div>
       </div>

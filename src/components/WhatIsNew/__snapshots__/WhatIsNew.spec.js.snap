@@ -10,7 +10,7 @@ exports[`<WhatIsNew /> should match snapshot 1`] = `
     title="What is new?"
   />
   <div
-    className="container whatIsNew__wrapper"
+    className="container whatIsNew-wrapper"
   />
 </div>
 `;

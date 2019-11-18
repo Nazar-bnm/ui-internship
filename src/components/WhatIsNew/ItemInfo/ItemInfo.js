@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './ItemInfo.scss';
 
-const ItemInfo = ({ item }) => {
+const ItemInfo = ({ item, className }) => {
   const {
     photo,
     title,
@@ -12,7 +12,7 @@ const ItemInfo = ({ item }) => {
   } = item;
 
   return (
-    <div className="col-4 item">
+    <div className={`col-4 item ${className}`}>
       <div className="item__img-wrapper">
         <img className="item__img" alt={title} src={photo} />
         <span className="item__category">
@@ -29,7 +29,12 @@ const ItemInfo = ({ item }) => {
 };
 
 ItemInfo.propTypes = {
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
+  className: PropTypes.string
+};
+
+ItemInfo.defaultProps = {
+  className: ''
 };
 
 export default ItemInfo;
