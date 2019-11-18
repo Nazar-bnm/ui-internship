@@ -50,4 +50,331 @@
       transform: scale(1.1);
     }
   }
+
+  &-quick-view {
+    min-height: max-content;
+    min-width: min-content;
+    height: 470px;
+    max-width: 80vw;
+    padding: 1rem 3.5rem 1rem;
+
+    .heading {
+      &__wrapper {
+        margin: 0 !important;
+        height: 2rem;
+      }
+
+      &__title {
+        font-size: 1.5rem;
+      }
+    }
+
+    &-content {
+      display: flex;
+      height: 90%;
+      padding-top: 1rem;
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &__product-order {
+        display: block;
+
+        .product-order__heading {
+          font-size: 1.5rem;
+          margin-top: 0;
+        }
+
+        .product-order__dropdowns-wrapper {
+          height: 7rem;
+        }
+
+        .dropdown {
+          height: 2rem;
+        }
+
+        .product-order__description {
+          display: -webkit-box;
+          line-height: 1.8;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow-y: scroll;
+          text-decoration: none;
+        }
+      }
+
+      .product-image {
+        height: 100%;
+
+        &__container {
+          flex-wrap: nowrap;
+          margin-top: 8px;
+          padding-right: 1rem;
+        }
+
+        &__big-image-container {
+          height: 100%;
+        }
+
+        &__small-image {
+          height: 100%;
+        }
+      }
+
+      &-wrapper {
+        height: 100%;
+      }
+
+      &__link {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 8px;
+        margin-left: auto;
+        color: $orange;
+
+        &:active,
+        &:hover {
+          color: $dove-gray;
+        }
+      }
+
+      .button {
+        -webkit-appearance: none;
+        text-align: center;
+        cursor: pointer;
+        width: 120px;
+        height: 40px;
+        color: $white;
+        background-color: $black;
+        font-family: inherit;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $black;
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  .carousel-image {
+    max-width: 90px;
+    height: 100%;
+    padding-right: 2px;
+  }
+
+  &__button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-align: center;
+  }
+
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    transition: padding 1s;
+    transition: all 700ms ease-out;
+
+    &--hovered {
+      width: 100%;
+      transition: all 700ms ease-out;
+      padding: 0px 20px 0 20px;
+      transition: padding 1s;
+    }
+
+    &__flag {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 60px 60px 0 0;
+      border-color: transparent;
+      position: absolute;
+      z-index: 2;
+    }
+
+    &__labels {
+      font-family: font(secondary);
+      font-size: 0.8rem;
+      position: absolute;
+      z-index: 3;
+      margin: 7px 5px;
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+
+  &__title-wrapper.icons {
+    @include flex($direction: row, $justify: space-evenly);
+    width: 100%;
+  }
+
+  &__title-wrapper {
+    margin: 10px 0;
+    width: 100%;
+
+    .icons {
+      margin-top: 10px;
+      border-top: 3px solid $white;
+      width: 100%;
+
+      .product__icon {
+        display: block;
+        font-size: 1.3rem;
+        @include flex($align: center, $justify: center);
+        margin-top: 10px;
+      }
+
+      .product__icon:hover {
+        color: $orange;
+        transition: 0.3s;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: inherit;
+
+      &__title {
+        font-family: font(secondary);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin: 10px 0;
+
+        &--hovered {
+          color: $orange;
+        }
+      }
+    }
+
+    &__price {
+      font-family: font(primary);
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 300;
+    }
+  }
+
+  &-quick-view {
+    min-height: max-content;
+    min-width: min-content;
+    height: 470px;
+    max-width: 80vw;
+    padding: 1rem 3.5rem 1rem;
+
+    .heading {
+      &__wrapper {
+        margin: 0 !important;
+        height: 2rem;
+      }
+
+      &__title {
+        font-size: 1.5rem;
+      }
+    }
+
+    &-content {
+      display: flex;
+      height: 90%;
+      padding-top: 1rem;
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &__product-order {
+        display: block;
+
+        .product-order__heading {
+          font-size: 1.5rem;
+          margin-top: 0;
+        }
+
+        .product-order__dropdowns-wrapper {
+          height: 7rem;
+        }
+
+        .dropdown {
+          height: 2rem;
+        }
+
+        .product-order__description {
+          display: -webkit-box;
+          line-height: 1.8;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow-y: scroll;
+          text-decoration: none;
+        }
+      }
+
+      .product-image {
+        height: 100%;
+
+        &__container {
+          flex-wrap: nowrap;
+          margin-top: 8px;
+          padding-right: 1rem;
+        }
+
+        &__big-image-container {
+          height: 100%;
+        }
+
+        &__small-image {
+          height: 100%;
+        }
+      }
+
+      &-wrapper {
+        height: 100%;
+      }
+
+      &__link {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 8px;
+        margin-left: auto;
+        color: $orange;
+
+        &:active,
+        &:hover {
+          color: $dove-gray;
+        }
+      }
+
+      .button {
+        -webkit-appearance: none;
+        text-align: center;
+        cursor: pointer;
+        width: 120px;
+        height: 40px;
+        color: $white;
+        background-color: $black;
+        font-family: inherit;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $black;
+          background-color: $white;
+        }
+      }
+    }
+  }
 }
