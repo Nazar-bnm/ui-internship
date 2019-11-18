@@ -1,16 +1,14 @@
 import React from 'react';
 import cx from 'classnames';
 
-import { Dropdown, Button } from '@/shared';
-import dropdownOptions from '../../../../config';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
+
+import { Button } from '@/shared';
 import { VALIDATION_FAILED } from '../../../constants/notificationData';
 
 import './BillingInfo.scss';
 
 const CN = 'billing-info';
-
-// This function should be replaced when the proper functionality for dropdowns is added.
-const onDropdownChange = () => true;
 
 class BillingInfo extends React.Component {
   constructor(props) {
@@ -18,12 +16,16 @@ class BillingInfo extends React.Component {
 
     this.state = {
       inputPassword: '',
-      isChecked: true
+      isChecked: true,
+      country: '',
+      region: ''
     };
 
     this.form = React.createRef();
     this.validate = this.validate.bind(this);
     this.setPasswordToState = this.setPasswordToState.bind(this);
+    this.selectCountry = this.selectCountry.bind(this);
+    this.selectRegion = this.selectRegion.bind(this);
   }
 
   setPasswordToState() {
@@ -47,8 +49,16 @@ class BillingInfo extends React.Component {
     return isInputValid;
   }
 
+  selectCountry(val) {
+    this.setState({ country: val });
+  }
+
+  selectRegion(val) {
+    this.setState({ region: val });
+  }
+
   render() {
-    const { isChecked } = this.state;
+    const { isChecked, country, region } = this.state;
 
     return (
       <div className={cx(CN)}>
@@ -95,27 +105,32 @@ class BillingInfo extends React.Component {
             <label htmlFor="address2">address 2</label>
             <input type="text" name={CN} className={`${CN}__input`} />
           </div>
-          <div className={`${CN}__input-wrapper`}>
+          <div className={`${CN}-selector-wrapper`}>
             <p>country</p>
-            <Dropdown
-              menuOptions={dropdownOptions.billingInfo.country}
-              value="Choose country..."
-              onDropdownChange={onDropdownChange}
-              className={`${CN}__dropdown`}
-            />
+            <div className={`${CN}-selector-container`}>
+              <CountryDropdown
+                class={`${CN}-selector-container__selector`}
+                value={country}
+                onChange={(val) => this.selectCountry(val)}
+              />
+              <i className={`sort icon ${CN}-selector-container__icon`} />
+            </div>
           </div>
           <div className={`${CN}__input-wrapper`}>
             <label htmlFor="city">city</label>
             <input type="text" name={CN} className={`${CN}__input`} />
           </div>
-          <div className={`${CN}__input-wrapper`}>
-            <p>state</p>
-            <Dropdown
-              menuOptions={dropdownOptions.billingInfo.state}
-              value="Choose state..."
-              onDropdownChange={onDropdownChange}
-              className={`${CN}__dropdown`}
-            />
+          <div className={`${CN}-selector-wrapper`}>
+            <p>region</p>
+            <div className={`${CN}-selector-container`}>
+              <RegionDropdown
+                class={`${CN}-selector-container__selector`}
+                country={country}
+                value={region}
+                onChange={(val) => this.selectRegion(val)}
+              />
+              <i className={`sort icon ${CN}-selector-container__icon`} />
+            </div>
           </div>
           <div className={`${CN}__input-wrapper`}>
             <label htmlFor="zipcode">zip / postal code*</label>

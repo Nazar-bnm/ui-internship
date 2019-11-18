@@ -30,11 +30,29 @@
     margin: 10px 0;
   }
 
-  &__input {
+  &-selector-container {
+    position: relative;
+    width: 100%;
+
+    &__icon {
+      z-index: -1;
+      position: absolute;
+      font-size: 0.7rem;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__input,
+  &-selector-container__selector {
+    -webkit-appearance: none;
     margin: 5px 0;
     padding: 5px;
     width: 100%;
     border: 1px solid $silver-chalice;
+    border-radius: 0;
+    background: inherit;
   }
 
   &__dropdown {
@@ -71,7 +89,8 @@
       margin: 0 10px 20px 0;
     }
     
-    &__input-wrapper {
+    &__input-wrapper,
+    &-selector-wrapper {
       width: 45%;
     }
   }
