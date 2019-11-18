@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductImage /> should match snapshot 1`] = `
+<div
+  className="you-will-also-love content"
+>
+  <h2
+    className="you-will-also-love__title"
+  >
+    you will also love
+  </h2>
+</div>
+`;
