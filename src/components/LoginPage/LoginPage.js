@@ -1,4 +1,5 @@
 import React from 'react';
+import ls from 'local-storage';
 
 import { Button } from '@/shared';
 import { VALIDATION_FAILED } from '../../constants/notificationData';
@@ -11,24 +12,57 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      emailToLogin: '',
+      passwordToLogin: '',
+      emailToRegister: ''
+    };
+
     this.formLogin = React.createRef();
     this.formRegister = React.createRef();
 
     this.validate = this.validate.bind(this);
   }
 
-  validate() {
+  componentDidMount() {
+    this.setState({
+      emailToLogin: ls.get('emailToLogin') || '',
+      passwordToLogin: ls.get('passwordToLogin') || '',
+      emailToRegister: ls.get('emailToRegister') || ''
+    });
+  }
+
+  saveToLocalStorage() {
+    const emailToLoginValue = this.emailToLogin.value;
+    const passwordToLoginValue = this.passwordToLogin.value;
+    const emailToRegisterValue = this.emailToRegister.value;
+    ls.set('emailToLogin', emailToLoginValue);
+    ls.set('passwordToLogin', passwordToLoginValue);
+    ls.set('emailToRegister', emailToRegisterValue);
+  }
+
+  validate(e) {
     const { showMessage } = this.props;
-    const isInputValid = this.formLogin.current.reportValidity();
+    const clickedButton = e.target.innerText.toUpperCase();
+    let isInputValid = true;
+    if (clickedButton === 'LOGIN') {
+      isInputValid = this.loginInputs.reportValidity();
+    } else {
+      isInputValid = this.formRegister.reportValidity();
+    }
 
     if (!isInputValid) {
       showMessage(VALIDATION_FAILED);
+    } else {
+      this.saveToLocalStorage();
     }
 
     return isInputValid;
   }
 
   render() {
+    const { emailToLogin, passwordToLogin, emailToRegister } = this.state;
+
     return (
       <div className={`${CN}__wrapper content`}>
         <h3 className={`${CN}__main-heading`}>user login</h3>
@@ -41,7 +75,7 @@ class LoginPage extends React.Component {
             </p>
             <form
               className={`${CN}__inputs-wrapper`}
-              ref={this.formLogin}
+              ref={(formLogin) => { this.loginInputs = formLogin; return (this.loginInputs); }}
               onSubmit={(e) => e.preventDefault()}
             >
               <span className={`${CN}__label`}>e-mail*</span>
@@ -50,6 +84,8 @@ class LoginPage extends React.Component {
                 type="email"
                 name="email"
                 className={`${CN}__input`}
+                ref={(formLogin) => { this.emailToLogin = formLogin; return (this.emailToLogin); }}
+                defaultValue={emailToLogin}
                 required
               />
               <br />
@@ -59,13 +95,20 @@ class LoginPage extends React.Component {
                 type="password"
                 name="password"
                 className={`${CN}__input`}
+                ref={(formLogin) => { this.passwordToLogin = formLogin; return (this.passwordToLogin); }}
+                defaultValue={passwordToLogin}
                 required
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
               />
               <br />
             </form>
             <div className={`${CN}__button-and-link-wrapper`}>
-              <Button className="black-button" onClick={this.validate}>Login</Button>
+              <Button
+                className="black-button"
+                onClick={this.validate}
+              >
+                Login
+              </Button>
               <a
                 className={`${CN}__link`}
                 href="/"
@@ -82,17 +125,27 @@ class LoginPage extends React.Component {
                 Enter your email address to create an account:
               </strong>
             </p>
-            <form className={`${CN}__new-customer-input-wrapper`} ref={this.formRegister}>
+            <form
+              className={`${CN}__new-customer-input-wrapper`}
+              ref={(registrationEmailForm) => { this.formRegister = registrationEmailForm; return (this.formRegister); }}
+            >
               <span className={`${CN}__label`}>e-mail*</span>
               <br />
               <input
                 type="email"
                 name="email"
                 className={`${CN}__input`}
+                ref={(registrationEmailInput) => { this.emailToRegister = registrationEmailInput; return (this.emailToRegister); }}
+                defaultValue={emailToRegister}
                 required
               />
             </form>
-            <Button className="black-button">create an account</Button>
+            <Button
+              className="black-button"
+              onClick={this.validate}
+            >
+            create an account
+            </Button>
           </div>
         </div>
       </div>
