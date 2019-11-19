@@ -1,0 +1,42 @@
+@import '../../../scss/global_styles';
+.product-image {
+  display: block;
+  height: 100%;
+  &__container {
+    @include flex;
+    padding: 0;
+  }
+
+  &__small-image {
+    position: relative;
+  }
+
+  &__image-on-hover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: $pale-yellow;
+    border: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s ease;
+    outline: none;
+  
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__selected-image {
+    border: 2px solid $pale-yellow;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .product-image__container {
+    margin-right: 20px;
+  }
+}
