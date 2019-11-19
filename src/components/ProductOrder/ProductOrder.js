@@ -36,6 +36,7 @@ export default class ProductOrder extends Component {
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
     this.addToWishlistWithNotification = this.addToWishlistWithNotification.bind(this);
+    this.addToCartWithNotification = this.addToCartWithNotification.bind(this);
   }
 
   componentDidMount() {
@@ -90,8 +91,7 @@ export default class ProductOrder extends Component {
   }
 
   addToCartWithNotification() {
-    const { addToCart } = this.props;
-    const { showMessage } = this.props;
+    const { addToCart, showMessage } = this.props;
 
     addToCart(this.state);
     showMessage(ADDED_TO_CART_NOTIFICATION);
