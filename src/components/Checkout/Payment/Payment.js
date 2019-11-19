@@ -1,6 +1,7 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+import stripeKey from '../../../config/stripeKey';
 import { PAYMENT_SUCCESSED, PAYMENT_FAILED } from '../../../constants/notificationData';
 import './Payment.scss';
 
@@ -28,7 +29,7 @@ const Payment = (props) => {
   return (
     <div className={(CN)}>
       <StripeCheckout
-        stripeKey="pk_test_q7q6RtscsNRaRZnaBHuoRC7x00fupiksw6"
+        stripeKey={stripeKey}
         token={handleToken}
         amount={totalCount * 100}
         billingAddress
