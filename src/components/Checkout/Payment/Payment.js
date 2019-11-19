@@ -1,13 +1,8 @@
 import React from 'react';
-import cx from 'classnames';
 import StripeCheckout from 'react-stripe-checkout';
-import { toast } from 'react-toastify';
 import axios from 'axios';
-
+import { PAYMENT_SUCCESSED, PAYMENT_FAILED } from '../../../constants/notificationData';
 import './Payment.scss';
-import 'react-toastify/dist/ReactToastify.css';
-
-toast.configure();
 
 const CN = 'payment';
 
@@ -19,18 +14,19 @@ const Payment = (props) => {
       'https://hi3vv.sse.codesandbox.io/checkout',
       { token, totalCount }
     );
+
     const { status } = response.data;
-    // eslint-disable-next-line no-console
-    console.log('Response:', response.data);
+    const { showMessage } = props;
+
     if (status === 'success') {
-      toast('Success! Check email for details', { type: 'success' });
+      showMessage(PAYMENT_SUCCESSED);
     } else {
-      toast('Something went wrong', { type: 'error' });
+      showMessage(PAYMENT_FAILED);
     }
   }
 
   return (
-    <div className={cx(CN)}>
+    <div className={(CN)}>
       <StripeCheckout
         stripeKey="pk_test_q7q6RtscsNRaRZnaBHuoRC7x00fupiksw6"
         token={handleToken}

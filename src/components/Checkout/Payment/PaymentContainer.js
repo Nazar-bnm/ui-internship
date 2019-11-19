@@ -1,4 +1,7 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import showMessage from '../../../actions/actionsNotifications';
 import Payment from './Payment';
 
 const mapStateToProps = ({ reducerCart, productsReducer }) => ({
@@ -7,4 +10,7 @@ const mapStateToProps = ({ reducerCart, productsReducer }) => ({
   totalCount: reducerCart.totalCount
 });
 
-export default connect(mapStateToProps)(Payment);
+const mapDispatchToProps = (dispatch) => ({
+  showMessage: bindActionCreators(showMessage, dispatch)
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Payment);

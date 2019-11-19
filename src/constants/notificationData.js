@@ -23,3 +23,13 @@ export const VALIDATION_FAILED = {
   message: 'Please fill in all the fields properly',
   type: 'error'
 };
+export const PAYMENT_SUCCESSED = {
+  title: 'success',
+  message: 'Success! Check email for details',
+  type: 'success'
+};
+export const PAYMENT_FAILED = {
+  title: 'error',
+  message: 'Something went wrong',
+  type: 'error'
+};
