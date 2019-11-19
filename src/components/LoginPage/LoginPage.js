@@ -20,7 +20,6 @@ class LoginPage extends React.Component {
 
     this.formLogin = React.createRef();
     this.formRegister = React.createRef();
-
     this.validate = this.validate.bind(this);
   }
 
@@ -33,22 +32,24 @@ class LoginPage extends React.Component {
   }
 
   saveToLocalStorage() {
-    const emailToLoginValue = this.emailToLogin.value;
-    const passwordToLoginValue = this.passwordToLogin.value;
-    const emailToRegisterValue = this.emailToRegister.value;
+    const emailToLoginValue = this.formLogin.current[0].value;
+    const passwordToLoginValue = this.formLogin.current[1].value;
+    const emailToRegisterValue = this.formRegister.current[0].value;
+
     ls.set('emailToLogin', emailToLoginValue);
     ls.set('passwordToLogin', passwordToLoginValue);
     ls.set('emailToRegister', emailToRegisterValue);
   }
 
-  validate(e) {
+  validate({ target }) {
     const { showMessage } = this.props;
-    const clickedButton = e.target.innerText.toUpperCase();
-    let isInputValid = true;
+    const clickedButton = target.innerText.toUpperCase();
+    let isInputValid = false;
+
     if (clickedButton === 'LOGIN') {
-      isInputValid = this.loginInputs.reportValidity();
+      isInputValid = this.formLogin.current.reportValidity();
     } else {
-      isInputValid = this.formRegister.reportValidity();
+      isInputValid = this.formRegister.current.reportValidity();
     }
 
     if (!isInputValid) {
@@ -75,7 +76,7 @@ class LoginPage extends React.Component {
             </p>
             <form
               className={`${CN}__inputs-wrapper`}
-              ref={(formLogin) => { this.loginInputs = formLogin; return (this.loginInputs); }}
+              ref={this.formLogin}
               onSubmit={(e) => e.preventDefault()}
             >
               <span className={`${CN}__label`}>e-mail*</span>
@@ -84,7 +85,6 @@ class LoginPage extends React.Component {
                 type="email"
                 name="email"
                 className={`${CN}__input`}
-                ref={(formLogin) => { this.emailToLogin = formLogin; return (this.emailToLogin); }}
                 defaultValue={emailToLogin}
                 required
               />
@@ -95,7 +95,6 @@ class LoginPage extends React.Component {
                 type="password"
                 name="password"
                 className={`${CN}__input`}
-                ref={(formLogin) => { this.passwordToLogin = formLogin; return (this.passwordToLogin); }}
                 defaultValue={passwordToLogin}
                 required
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
@@ -127,7 +126,7 @@ class LoginPage extends React.Component {
             </p>
             <form
               className={`${CN}__new-customer-input-wrapper`}
-              ref={(registrationEmailForm) => { this.formRegister = registrationEmailForm; return (this.formRegister); }}
+              ref={this.formRegister}
             >
               <span className={`${CN}__label`}>e-mail*</span>
               <br />
@@ -135,7 +134,6 @@ class LoginPage extends React.Component {
                 type="email"
                 name="email"
                 className={`${CN}__input`}
-                ref={(registrationEmailInput) => { this.emailToRegister = registrationEmailInput; return (this.emailToRegister); }}
                 defaultValue={emailToRegister}
                 required
               />
