@@ -1,0 +1,144 @@
+@import '../../scss/global_styles';
+
+.login-page {
+  &__wrapper {
+    margin-top: 20px;
+    border: 1px solid $silver-chalice;
+  }
+
+  &__main-heading {
+    padding: 10px;
+    border-bottom: 1px solid $silver-chalice;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+
+  &__login-register-wrapper {
+    @include flex;
+    padding: 4vw;
+    font-family: font(primary-light);
+  }
+  
+  &__registration-type-wrapper {
+    @include flex($direction: column, $justify: space-between);
+    width: 280px;
+
+    &:nth-of-type(2) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__new-customer-input-wrapper {
+      margin-bottom: 10px;
+      width: 100%;
+  }
+
+  &__label {
+    text-transform: uppercase;
+  }
+  
+  &__input {
+    padding: 5px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid $silver-chalice;
+  }
+
+  &__link {
+    margin-top: 10px;
+    position: relative;
+
+    &:hover:after {
+      content: 'Please contact our support team to restore your password.';
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      min-width: 200px;
+      border: 1px $dove-gray solid;
+      border-radius: 10px;
+      background-color: $mercury;
+      padding: 12px;
+      color: #000000;
+      font-size: 14px;
+      z-index: 1;
+    }
+  }
+
+  &__heading {
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__button-and-link-wrapper {
+    @include flex($justify: space-between, $align: center);
+    margin-top: 10px;
+  }
+}
+  
+@media only screen and (min-width: 480px) {
+  .login-page {
+    &__main-heading {
+      text-align: center;
+    }
+
+    &__login-register-wrapper {
+      @include flex($justify: space-between);
+
+      &__input, &__button-and-link-wrapper {
+        width: 200px;
+      }
+
+      &__new-customer-input-wrapper {
+        margin-bottom: 0;
+      }
+  
+      &__registration-type-wrapper {
+        width: 45%;
+
+        &:nth-of-type(2) {
+          .black-button {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .login-page {
+    &__registration-type-wrapper {
+      &:nth-of-type(2) {
+        .black-button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .login-page {
+    &__input, &__button-and-link-wrapper {
+      width: 300px;
+    }
+
+    &__registration-type-wrapper {
+      width: 35vw;
+
+      &:nth-of-type(2) {
+        .black-button {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
