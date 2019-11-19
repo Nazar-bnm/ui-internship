@@ -87,6 +87,7 @@
     "html-loader": "^0.5.5",
     "jest-transform-stub": "^2.0.0",
     "json-server": "^0.15.1",
+    "local-storage": "^2.0.0",
     "lodash": "3.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",

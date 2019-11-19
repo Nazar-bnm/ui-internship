@@ -15,6 +15,7 @@ import MostPopular from '../MostPopular';
 import CartPage from '../CartPage';
 import ProductListPage from '../ProductListPage';
 import BlogPage from '../BlogPage';
+import RegisterForm from '../RegisterForm/RegisterForm';
 
 import './Routes.scss';
 
@@ -33,6 +34,7 @@ const Routes = () => (
           <DefaultLayout path="/product-details/:id" component={ProductDetailsPage} />
           <DefaultLayout path="/wishlist" component={WishListPage} />
           <DefaultLayout path="/MostPopular" component={MostPopular} />
+          <DefaultLayout path="/RegisterForm" component={RegisterForm} />
           <DefaultLayout path="/cart" component={CartPage} />
           <DefaultLayout path="/blog" component={BlogPage} />
           <DefaultLayout path="/:category" component={ProductListPage} />
