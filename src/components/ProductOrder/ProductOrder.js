@@ -113,7 +113,7 @@ export default class ProductOrder extends Component {
       <div className={cx(CN, className)}>
         <h2 className={`${CN}__heading`}>{title}</h2>
         <p className={`${CN}__description`}>{description}</p>
-        <span className={`${CN}__price`}>{price}</span>
+        <span className={`${CN}__price`}>{`$${price}.00`}</span>
         <div className={`${CN}__dropdowns-wrapper`}>
           <Dropdown
             key="1"

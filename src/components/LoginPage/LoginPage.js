@@ -46,11 +46,7 @@ class LoginPage extends React.Component {
     const clickedButton = target.innerText.toUpperCase();
     let isInputValid = false;
 
-    if (clickedButton === 'LOGIN') {
-      isInputValid = this.formLogin.current.reportValidity();
-    } else {
-      isInputValid = this.formRegister.current.reportValidity();
-    }
+    isInputValid = (clickedButton === 'LOGIN' ? this.formLogin : this.formRegister).current.reportValidity();
 
     if (!isInputValid) {
       showMessage(VALIDATION_FAILED);
