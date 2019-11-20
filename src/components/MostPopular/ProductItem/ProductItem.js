@@ -149,6 +149,7 @@ class ProductItem extends Component {
         _id, images, label, title, price, sizes
       }
     } = this.props;
+    const sizesWithSpaces = sizes.join(', ');
 
     const { isHovered, isShowedModal } = this.state;
     const imageSrc = images.length && `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
@@ -196,7 +197,7 @@ class ProductItem extends Component {
           {isHovered && (
             <>
               <span className={`${CN}__title-wrapper`}>
-                {`Sizes: ${sizes}`}
+                {`Sizes: ${sizesWithSpaces}`}
               </span>
               <div className={`${CN}__title-wrapper icons`}>
                 {window.innerWidth > 720 && (

@@ -1,16 +1,15 @@
 @import '../../scss/global_styles';
 
 .dynamic-input {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    @include flex($justify: space-between, $wrap: nowrap);
     padding: 10px 20px;
+    height: 35px;
     border: 1px solid #e4e2e1;
     border-radius: 20px;
     background-color: #f9f9f9;
-    color: #000000;
     font-size: 0.7rem;
+    font-family: font(primary-light);
     text-transform: uppercase;
+    color: $dove-gray;
     outline: none;
-    height: 35px;
 }
