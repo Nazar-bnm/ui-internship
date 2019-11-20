@@ -1,0 +1,30 @@
+@import '../../scss/global_styles';
+
+.register-form {
+  margin-top: 20px;
+  border: 1px solid $silver-chalice;
+  width: 50%;
+  margin: auto;
+
+  &__label {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid $silver-chalice;
+  }
+
+  &__wrapper {
+    @include flex(row, space-between, null);
+    
+    width: 80%;
+    margin: auto;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__buttons-wrapper {
+    @include flex(column, center, center)
+  }
+}

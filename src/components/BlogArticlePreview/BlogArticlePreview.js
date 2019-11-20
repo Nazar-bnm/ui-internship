@@ -39,7 +39,6 @@ class BlogArticlePreview extends Component {
   renderBrands(blogsList) {
     return blogsList.map((item) => {
       const {
-        id,
         photo,
         title,
         description
@@ -49,7 +48,7 @@ class BlogArticlePreview extends Component {
       const imageSrc = `${process.env.BLOG_IMAGE_URL}/${photo}`;
 
       return (
-        <div key={id} className={`${CN}`}>
+        <div key={title} className={`${CN}`}>
           <img
             className={`${CN}__img`}
             alt={title}

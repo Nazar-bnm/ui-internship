@@ -15,7 +15,7 @@ const AccountNavigation = () => (
     <Link to="/cart">
       <span>checkout</span>
     </Link>
-    <Link to="/not_found">
+    <Link to="/login">
       <span>log in</span>
     </Link>
   </div>

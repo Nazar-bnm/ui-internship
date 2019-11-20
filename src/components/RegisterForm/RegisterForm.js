@@ -3,7 +3,8 @@ import ls from 'local-storage';
 import { Link } from 'react-router-dom';
 
 import { Button } from '@/shared';
-import { VALIDATION_FAILED } from '../../constants/notificationData';
+
+import './RegisterForm.scss';
 
 const CN = 'register-form';
 
@@ -11,9 +12,9 @@ class RegisterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
-      name: ''
+      email: ''
+      // password: '',
+      // name: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +22,7 @@ class RegisterForm extends Component {
 
   componentDidMount() {
     this.setState({
-      email: ls.get('emailToLogin') || ''
+      email: ls.get('emailToRegister') || ''
     });
   }
 
@@ -41,12 +42,12 @@ class RegisterForm extends Component {
   }
 
   render() {
-    const { email, password, name } = this.state;
+    const { email } = this.state;
 
     return (
       <div className={`${CN}`} onSubmit={this.handleSubmit}>
         <span className={`${CN}__label`}>create an account</span>
-        <div>
+        <div className={`${CN}__wrapper`}>
           <form className={`${CN}__personal-information`}>
 
             <h3>personal information</h3>
@@ -55,17 +56,17 @@ class RegisterForm extends Component {
               <input className={`${CN}__field__input`} type="text" required />
             </div>
 
-            <div>
+            <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>last name*</label>
               <input className={`${CN}__field__input`} type="text" required />
             </div>
 
-            <div>
+            <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>e-mail*</label>
               <input className={`${CN}__field__input`} type="email" value={email} required />
             </div>
 
-            <div>
+            <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>password*</label>
               <input className={`${CN}__field__input`} type="password" required />
             </div>
@@ -110,14 +111,16 @@ class RegisterForm extends Component {
               <input className={`${CN}__field__input`} type="text" />
             </div>
           </form>
-
         </div>
-        <Button className="black-button">
-          create an account
-        </Button>
-        <Link href="/">
-          Back to login
-        </Link>
+
+        <div className={`${CN}__buttons-wrapper`}>
+          <Button className="black-button">
+            create an account
+          </Button>
+          <Link to="/login">
+            Back to login
+          </Link>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginPage /> should match snapshot 1`] = `
+<div
+  className="login-page__wrapper content"
+>
+  <h3
+    className="login-page__main-heading"
+  >
+    user login
+  </h3>
+  <div
+    className="login-page__login-register-wrapper"
+  >
+    <div
+      className="login-page__registration-type-wrapper"
+    >
+      <h3
+        className="login-page__heading"
+      >
+        Registered customers
+      </h3>
+      <p
+        className="login-page__text"
+      >
+        <strong>
+          Already registered? 
+        </strong>
+        Please login below:
+      </p>
+      <form
+        className="login-page__inputs-wrapper"
+        onSubmit={[Function]}
+      >
+        <span
+          className="login-page__label"
+        >
+          e-mail*
+        </span>
+        <br />
+        <input
+          className="login-page__input"
+          defaultValue=""
+          name="email"
+          required={true}
+          type="email"
+        />
+        <br />
+        <span
+          className="login-page__label"
+        >
+          password*
+        </span>
+        <br />
+        <input
+          className="login-page__input"
+          defaultValue=""
+          name="password"
+          pattern="^(?=.*[A-Za-z])(?=.*\\\\d)[A-Za-z\\\\d]{8,}$"
+          required={true}
+          type="password"
+        />
+        <br />
+      </form>
+      <div
+        className="login-page__button-and-link-wrapper"
+      >
+        <Button
+          className="black-button"
+          icon={null}
+          onClick={[Function]}
+        >
+          Login
+        </Button>
+        <a
+          className="login-page__link"
+          href="/"
+          onClick={[Function]}
+        >
+          Forgor your password?
+        </a>
+      </div>
+    </div>
+    <div
+      className="login-page__registration-type-wrapper"
+    >
+      <h3
+        className="login-page__heading"
+      >
+        New customers
+      </h3>
+      <p
+        className="login-page__text"
+      >
+        <strong>
+          Enter your email address to create an account:
+        </strong>
+      </p>
+      <form
+        className="login-page__new-customer-input-wrapper"
+      >
+        <span
+          className="login-page__label"
+        >
+          e-mail*
+        </span>
+        <br />
+        <input
+          className="login-page__input"
+          defaultValue=""
+          name="email"
+          required={true}
+          type="email"
+        />
+      </form>
+      <Link
+        to="/RegisterForm"
+      >
+        <Button
+          className="black-button"
+          icon={null}
+          onClick={[Function]}
+        >
+          create an account
+        </Button>
+      </Link>
+    </div>
+  </div>
+</div>
+`;
