@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
-
 import { Button } from '@/shared';
 import { VALIDATION_FAILED } from '../../../constants/notificationData';
 
@@ -92,7 +91,7 @@ class BillingInfo extends React.Component {
             <input type="text" name={CN} className={`${CN}__input`} />
           </div>
           <div className={`${CN}-selector-wrapper`}>
-            <h5>country</h5>
+            <h5 className={`${CN}-selector__title`}>country</h5>
             <div className={`${CN}-selector-container`}>
               <CountryDropdown
                 class={`${CN}-selector-container__selector`}

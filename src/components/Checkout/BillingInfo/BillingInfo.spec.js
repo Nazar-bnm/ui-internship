@@ -11,16 +11,16 @@ describe('<BillingInfo />', () => {
   });
 
   test('should change region state when select a region', () => {
-    const event = 'hello';
+    const mockEvent = 'Ukraine';
     wrapper = shallow(<BillingInfo />);
-    wrapper.find('RegionDropdown').simulate('change', event);
-    expect(wrapper.state().region).toBe(event);
+    wrapper.find('RegionDropdown').simulate('change', mockEvent);
+    expect(wrapper.state().region).toBe(mockEvent);
   })
 
   test('should change country state when select a country', () => {
-    const event = 'hello';
+    const mockEvent = 'Lviv';
     wrapper = shallow(<BillingInfo />);
-    wrapper.find('CountryDropdown').simulate('change', event);
-    expect(wrapper.state().country).toBe(event);
+    wrapper.find('CountryDropdown').simulate('change', mockEvent);
+    expect(wrapper.state().country).toBe(mockEvent);
   })
 });
