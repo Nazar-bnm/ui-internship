@@ -1,4 +1,4 @@
-@import '../../../scss/global_styles';
+@import "../../../scss/global_styles";
 
 .billing-info {
   @include flex($direction: column);
@@ -30,17 +30,23 @@
     margin: 10px 0;
   }
 
-  &-selector-container {
-    position: relative;
-    width: 100%;
+  &-selector {
+    &__title {
+      font-size: 0.8rem;
+    }
 
-    &__icon {
-      z-index: -1;
-      position: absolute;
-      font-size: 0.7rem;
-      right: 0.5rem;
-      top: 50%;
-      transform: translateY(-50%);
+    &-container {
+      position: relative;
+      width: 100%;
+
+      &__icon {
+        z-index: -1;
+        position: absolute;
+        font-size: 0.7rem;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 
@@ -88,7 +94,7 @@
     &__checkbox-wrapper {
       margin: 0 10px 20px 0;
     }
-    
+
     &__input-wrapper,
     &-selector-wrapper {
       width: 45%;

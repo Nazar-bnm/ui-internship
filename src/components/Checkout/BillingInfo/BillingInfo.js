@@ -106,7 +106,7 @@ class BillingInfo extends React.Component {
             <input type="text" name={CN} className={`${CN}__input`} />
           </div>
           <div className={`${CN}-selector-wrapper`}>
-            <p>country</p>
+            <h5>country</h5>
             <div className={`${CN}-selector-container`}>
               <CountryDropdown
                 class={`${CN}-selector-container__selector`}
@@ -121,7 +121,7 @@ class BillingInfo extends React.Component {
             <input type="text" name={CN} className={`${CN}__input`} />
           </div>
           <div className={`${CN}-selector-wrapper`}>
-            <p>region</p>
+            <h5 className={`${CN}-selector__title`}>region</h5>
             <div className={`${CN}-selector-container`}>
               <RegionDropdown
                 class={`${CN}-selector-container__selector`}

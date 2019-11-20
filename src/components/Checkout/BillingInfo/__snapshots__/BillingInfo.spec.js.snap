@@ -98,9 +98,9 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
     <div
       className="billing-info-selector-wrapper"
     >
-      <p>
+      <h5>
         country
-      </p>
+      </h5>
       <div
         className="billing-info-selector-container"
       >
@@ -143,9 +143,11 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
     <div
       className="billing-info-selector-wrapper"
     >
-      <p>
+      <h5
+        className="billing-info-selector__title"
+      >
         region
-      </p>
+      </h5>
       <div
         className="billing-info-selector-container"
       >
