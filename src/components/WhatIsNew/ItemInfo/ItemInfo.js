@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import './ItemInfo.scss';
 
@@ -12,7 +13,7 @@ const ItemInfo = ({ item, className }) => {
   } = item;
 
   return (
-    <div className={`col-4 item ${className}`}>
+    <div className={cx('col-4', 'item', className)}>
       <div className="item__img-wrapper">
         <img className="item__img" alt={title} src={photo} />
         <span className="item__category">

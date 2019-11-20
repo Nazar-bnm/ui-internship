@@ -2,7 +2,7 @@
 
 exports[`<ItemInfo /> should match snapshot 1`] = `
 <div
-  className="col-4 item "
+  className="col-4 item"
 >
   <div
     className="item__img-wrapper"
