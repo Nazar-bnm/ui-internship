@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
 
 import ProductItem from '../../MostPopular/ProductItem';
@@ -35,7 +35,7 @@ class ItemsList extends React.Component {
   componentDidUpdate(prevProps) {
     const { filters, itemsOnPage, currentPage } = this.props;
 
-    if (!_.isEqual(prevProps.filters, filters)) {
+    if (!isEqual(prevProps.filters, filters)) {
       this.getListItems();
     }
 
