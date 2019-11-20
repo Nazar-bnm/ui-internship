@@ -42,7 +42,7 @@ class BillingInfo extends React.Component {
     const { inputPassword } = this.state;
     const confirmedPassword = this.form.current[22].value;
 
-    if (!isInputValid || (inputPassword !== confirmedPassword)) {
+    if (!isInputValid || inputPassword !== confirmedPassword) {
       showMessage(VALIDATION_FAILED);
     }
 
@@ -73,29 +73,15 @@ class BillingInfo extends React.Component {
           </div>
           <div className={`${CN}__input-wrapper`}>
             <label htmlFor="last-name">last name*</label>
-            <input
-              type="text"
-              name={CN}
-              className={`${CN}__input`}
-              required
-            />
+            <input type="text" name={CN} className={`${CN}__input`} required />
           </div>
           <div className={`${CN}__input-wrapper`}>
             <label htmlFor="company">company</label>
-            <input
-              type="text"
-              name={CN}
-              className={`${CN}__input`}
-            />
+            <input type="text" name={CN} className={`${CN}__input`} />
           </div>
           <div className={`${CN}__input-wrapper`}>
             <label htmlFor="e-mail">e-mail address*</label>
-            <input
-              type="email"
-              name={CN}
-              className={`${CN}__input`}
-              required
-            />
+            <input type="email" name={CN} className={`${CN}__input`} required />
           </div>
           <div className={`${CN}__input-wrapper`}>
             <label htmlFor="address1">address 1</label>
@@ -198,9 +184,11 @@ class BillingInfo extends React.Component {
             type="checkbox"
             onChange={() => {}}
           />
-      I want to subscribe to the newsletter
+          I want to subscribe to the newsletter
         </div>
-        <Button className="black-button" onClick={this.validate}>continue</Button>
+        <Button className="black-button" onClick={this.validate}>
+          continue
+        </Button>
       </div>
     );
   }
