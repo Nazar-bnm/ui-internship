@@ -5,6 +5,11 @@
   &__container {
     @include flex;
     padding: 0;
+
+    .carousel__right-nav, 
+    .carousel__left-nav {
+      top: 30%;
+    }
   }
 
   &__small-image {

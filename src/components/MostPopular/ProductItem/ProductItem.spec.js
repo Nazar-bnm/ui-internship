@@ -8,11 +8,12 @@ describe('<ProductItem />', () => {
   let addToWishlist;
   let showMessage;
   const removeFromWishlist = jest.fn();
+  const claudinaryId = '5db1aac034a29600172f6f53';
 
   const props = {
     product: {
       _id: '5',
-      images: [],
+      images: [claudinaryId],
       label: 'new',
       title: 'dress',
       price: '599',

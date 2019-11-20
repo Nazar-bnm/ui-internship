@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import './ProductImageItem.scss';
-
 export const CN = 'product-image';
 
 class ProductImageItem extends Component {
@@ -12,8 +10,7 @@ class ProductImageItem extends Component {
 
     this.state = {
       imgSrc: props.src,
-      errored: false,
-      isSelected: ''
+      errored: false
     };
 
     this.handleImageError = this.handleImageError.bind(this);
@@ -33,16 +30,8 @@ class ProductImageItem extends Component {
     const {
       keyForChild,
       clickHandler,
-      // isSelected,
-      selectedImage,
-      src
+      isSelected
     } = this.props;
-
-    // let { isSelected } = this.props;
-
-
-    const isSelected = selectedImage === src;
-
 
     const { imgSrc } = this.state;
     return (
@@ -69,7 +58,6 @@ class ProductImageItem extends Component {
 ProductImageItem.propTypes = {
   src: PropTypes.string.isRequired,
   keyForChild: PropTypes.string.isRequired,
-  // isSelected: PropTypes.bool.isRequired,
   clickHandler: PropTypes.func.isRequired
 };
 
