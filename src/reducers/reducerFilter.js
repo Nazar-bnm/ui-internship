@@ -1,4 +1,4 @@
-import xor from 'lodash/array/xor';
+import xor from 'lodash/xor';
 import { CHECK_CHECKBOX, RESET_FILTERS, SET_PRICE_RANGE } from '../constants/actionTypes';
 
 const initialState = {
