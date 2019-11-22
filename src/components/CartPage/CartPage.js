@@ -102,7 +102,13 @@ const CartPage = (props) => {
             <p>{`$${deliveryCost}`}</p>
             <p>{`$${voucher}`}</p>
             <hr />
-            <p onChange={getPrice(+`${countTotal + deliveryCost - voucher}`)}>{`$${countTotal + deliveryCost - voucher}`}</p>
+            <input
+              className="total-price"
+              value={`$${countTotal + deliveryCost - voucher}`}
+              type="text"
+              onChange={getPrice(+`${countTotal + deliveryCost - voucher}`)}
+              readOnly
+            />
           </div>
         </div>
       </div>

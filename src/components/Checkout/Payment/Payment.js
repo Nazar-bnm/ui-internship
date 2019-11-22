@@ -1,8 +1,9 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-import stripeKey from '../../../config/stripeKey';
+import { stripeKey } from '../../../config/stripeKey';
 import { PAYMENT_SUCCESSED, PAYMENT_FAILED } from '../../../constants/notificationData';
+
 import './Payment.scss';
 
 const CN = 'payment';
