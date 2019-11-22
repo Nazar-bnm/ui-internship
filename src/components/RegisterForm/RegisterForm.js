@@ -48,7 +48,7 @@ class RegisterForm extends Component {
       <div className={`${CN}`} onSubmit={this.handleSubmit}>
         <span className={`${CN}__label`}>create an account</span>
         <div className={`${CN}__wrapper`}>
-          <form className={`${CN}__personal-information`}>
+          <form className={`${CN}__personal-information ${CN}__wrapper__personal-information`}>
 
             <h3>personal information</h3>
             <div className={`${CN}__field`}>
@@ -63,7 +63,7 @@ class RegisterForm extends Component {
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>e-mail*</label>
-              <input className={`${CN}__field__input`} type="email" value={email} required />
+              <input className={`${CN}__field__input`} type="email" id="email" value={email} required />
             </div>
 
             <div className={`${CN}__field`}>
@@ -73,7 +73,7 @@ class RegisterForm extends Component {
 
           </form>
 
-          <form className={`${CN}__address-information`}>
+          <form className={`${CN}__address-information ${CN}__wrapper__address-information`}>
 
             <h3>address information</h3>
             <div className={`${CN}__field`}>
