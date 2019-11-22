@@ -65,6 +65,8 @@ const CartPage = (props) => {
     setTotalCount(value);
   };
 
+  const calculateTotal = countTotal + deliveryCost - voucher;
+
   return (
     <div className={cx(CN, className)}>
       <Link className={`${CN}__link`} to="/products">
@@ -104,9 +106,9 @@ const CartPage = (props) => {
             <hr />
             <input
               className="total-price"
-              value={`$${countTotal + deliveryCost - voucher}`}
+              value={`$${calculateTotal}`}
               type="text"
-              onChange={getPrice(+`${countTotal + deliveryCost - voucher}`)}
+              onChange={getPrice(calculateTotal)}
               readOnly
             />
           </div>

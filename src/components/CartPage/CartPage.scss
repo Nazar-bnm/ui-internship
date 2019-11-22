@@ -49,6 +49,12 @@
     box-shadow: 0 0 3px $mercury;
     padding: 20px 10px;
     margin-bottom: 10px;
+
+    input {
+      outline: none;
+      background-color: none;
+      border: none;
+    }
   }
 
   &__offer {

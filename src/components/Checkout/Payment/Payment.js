@@ -3,6 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import { stripeKey } from '../../../config/stripeKey';
 import { PAYMENT_SUCCESSED, PAYMENT_FAILED } from '../../../constants/notificationData';
+import HttpService from '../../../service/HttpService/httpService';
 
 import './Payment.scss';
 
@@ -12,18 +13,21 @@ const Payment = (props) => {
   const { totalCount } = props;
 
   async function handleToken(token) {
-    const response = await axios.post(
-      'https://hi3vv.sse.codesandbox.io/checkout',
-      { token, totalCount }
-    );
-
-    const { status } = response.data;
     const { showMessage } = props;
+    try {
+      const response = await new HttpService().post(
+        'https://hi3vv.sse.codesandbox.io/checkout',
+        { token, totalCount }
+      );
 
-    if (status === 'success') {
-      showMessage(PAYMENT_SUCCESSED);
-    } else {
+      const { status } = response.data;
+
+      if (status === 'success') {
+        showMessage(PAYMENT_SUCCESSED);
+      }
+    } catch (error) {
       showMessage(PAYMENT_FAILED);
+      return error.response;
     }
   }
 
