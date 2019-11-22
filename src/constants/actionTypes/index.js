@@ -30,3 +30,8 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const GET_BLOG_ITEMS_SUCCESS = 'GET_BLOG_ITEMS_SUCCESS';
 export const GET_BLOG_ITEMS_ERROR = 'GET_BLOG_ITEMS_ERROR';
 export const GET_LABEL = 'GET_LABEL';
+// currency
+export const GET_USD = 'GET_USD';
+export const GET_EURO = 'GET_EURO';
+export const GET_UAH = 'GET_UAH';
+export const GET_THE_CURRENCY = 'GET_THE_CURRENCY';

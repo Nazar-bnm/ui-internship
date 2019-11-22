@@ -1,1 +1,1 @@
-export { default } from './ContentOptions';
+export { default } from './ContentOptionsContainer';
