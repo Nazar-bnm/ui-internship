@@ -10,8 +10,4 @@ import {
 // export const resetFilterState = () => ({ type: RESET_FILTERS });
 // export const setPriceRange = (value, label) => ({ type: SET_PRICE_RANGE, payload: { value, label } });
 
-export const changeCurrency = (payload) => {
-  console.log({ payload });
-
-  return ({ type: GET_THE_CURRENCY, payload });
-};
+export const changeCurrency = (payload) => ({ type: GET_THE_CURRENCY, payload });

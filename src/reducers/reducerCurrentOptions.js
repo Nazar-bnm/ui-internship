@@ -15,7 +15,7 @@ const initialState = {
 export default function reducerCurrency(state = initialState, { type, payload }) {
   switch (type) {
     case GET_THE_CURRENCY: {
-      console.log(payload);
+      // console.log(payload);
       return {
         ...state,
         currency: payload
