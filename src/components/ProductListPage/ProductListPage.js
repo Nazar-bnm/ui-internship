@@ -38,10 +38,6 @@ class ProductListPage extends Component {
 
     return (
       <div className={cx(CN, 'content')}>
-        <div className={`${CN}__line`}>
-          <div>Home</div>
-          <div>&#10094; Return to previous page</div>
-        </div>
         <div className={`${cx(CN)}__gridWrapper`}>
           <section className={`${CN}__filter`}>
             <Button onClick={resetFilterState}>Reset Filters</Button>
