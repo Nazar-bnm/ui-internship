@@ -130,7 +130,7 @@ exports[`<Header /> should match snapshot 1`] = `
     }
   />
   <WebsiteNavigation
-    className="shown"
+    className="hidden"
   />
 </header>
 `;

@@ -36,7 +36,9 @@ const Header = ({ userCart }) => (
       </div>
     </div>
     <PageNavigation options={navConfig} />
-    <WebsiteNavigation className={window.location.pathname === '/home' ? 'hidden' : 'shown'} />
+    <WebsiteNavigation
+      className={(window.location.pathname === '/' || window.location.pathname === '/home') ? 'hidden' : 'shown'}
+    />
   </header>
 );
 
