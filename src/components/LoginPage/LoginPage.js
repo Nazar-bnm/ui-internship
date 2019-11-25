@@ -1,5 +1,6 @@
 import React from 'react';
 import ls from 'local-storage';
+import { Link } from 'react-router-dom';
 
 import { Button } from '@/shared';
 import { VALIDATION_FAILED } from '../../constants/notificationData';
@@ -134,12 +135,14 @@ class LoginPage extends React.Component {
                 required
               />
             </form>
-            <Button
-              className="black-button"
-              onClick={this.validate}
-            >
-            create an account
-            </Button>
+            <Link to="/RegisterForm">
+              <Button
+                className="black-button"
+                onClick={this.validate}
+              >
+              create an account
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
