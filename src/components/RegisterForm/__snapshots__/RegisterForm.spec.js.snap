@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<RegisterForm /> should match snapshot 1`] = `
-<div
+<form
   className="register-form"
   onSubmit={[Function]}
 >
@@ -13,7 +13,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
   <div
     className="register-form__wrapper"
   >
-    <form
+    <div
       className="register-form__personal-information register-form__wrapper__personal-information"
     >
       <h3>
@@ -77,8 +77,8 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
           type="password"
         />
       </div>
-    </form>
-    <form
+    </div>
+    <div
       className="register-form__address-information register-form__wrapper__address-information"
     >
       <h3>
@@ -87,6 +87,13 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
       <div
         className="register-form__field"
       >
+        <Button
+          className="grey-button"
+          icon={null}
+          onClick={[Function]}
+        >
+          Use data from GPS
+        </Button>
         <label
           className="register-form__field__label"
         >
@@ -107,6 +114,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           type="text"
         />
       </div>
@@ -133,6 +141,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           type="text"
         />
       </div>
@@ -146,6 +155,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           type="text"
         />
       </div>
@@ -159,6 +169,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           required={true}
           type="text"
         />
@@ -176,7 +187,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
           type="text"
         />
       </div>
-    </form>
+    </div>
   </div>
   <div
     className="register-form__buttons-wrapper"
@@ -194,5 +205,5 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
       Back to login
     </Link>
   </div>
-</div>
+</form>
 `;

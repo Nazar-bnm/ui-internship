@@ -23,3 +23,8 @@ export const VALIDATION_FAILED = {
   message: 'Please fill in all the fields properly',
   type: 'error'
 };
+export const GET_LOCATION_FAILED = {
+  title: 'error',
+  message: 'Defining the location is not possible.',
+  type: 'error'
+};

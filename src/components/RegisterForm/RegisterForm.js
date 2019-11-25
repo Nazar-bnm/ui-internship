@@ -3,6 +3,9 @@ import ls from 'local-storage';
 import { Link } from 'react-router-dom';
 
 import { Button } from '@/shared';
+import HttpService from '../../service/HttpService/httpService';
+import { googleMapAPIKeyUserLocation } from '../../config/googleMapAPIKeyUserLocation';
+import { GET_LOCATION_FAILED } from '../../constants/notificationData';
 
 import './RegisterForm.scss';
 
@@ -12,18 +15,69 @@ class RegisterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ''
-      // password: '',
-      // name: ''
+      email: '',
+      country: '',
+      city: '',
+      street: '',
+      zipCode: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getUserCoordinates = this.getUserCoordinates.bind(this);
+    this.getPosition = this.getPosition.bind(this);
+    this.onGetLocationSuccess = this.onGetLocationSuccess.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       email: ls.get('emailToRegister') || ''
     });
+  }
+
+  onGetLocationSuccess(data) {
+    const fullAddress = data.results[0].formatted_address.split(', ');
+    const street = `${fullAddress[0]} ${fullAddress[1]}`;
+    const city = fullAddress[2];
+    const country = fullAddress[4];
+    const zipCode = fullAddress[5];
+    this.setState({
+      street,
+      city,
+      country,
+      zipCode
+    });
+  }
+
+  async getPosition(position) {
+    const lat = position.coords.latitude.toFixed(2);
+    const lon = position.coords.longitude.toFixed(2);
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
+    const requestURL = `${proxy}https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}11`;
+    const userAPI = new HttpService();
+    const { showMessage } = this.props;
+    // console.log('showMessage >> ', showMessage);
+
+    try {
+      const response = await userAPI.get(requestURL);
+
+      if (response.status === 404) {
+        throw Error(response.statusText);
+      }
+
+      this.onGetLocationSuccess(response.data);
+    } catch (error) {
+      showMessage(GET_LOCATION_FAILED);
+    }
+  }
+
+  getUserCoordinates() {
+    const { showMessage } = this.props;
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.getPosition, this.showError);
+    } else {
+      showMessage(GET_LOCATION_FAILED);
+    }
   }
 
   saveToLocalStore() {
@@ -44,10 +98,16 @@ class RegisterForm extends Component {
   }
 
   render() {
-    const { email } = this.state;
+    const {
+      email,
+      street,
+      city,
+      country,
+      zipCode
+    } = this.state;
 
     return (
-      <form className={`${CN}`} onSubmit={this.handleSubmit}>
+      <form className={CN} onSubmit={this.handleSubmit}>
         <span className={`${CN}__label`}>create an account</span>
         <div className={`${CN}__wrapper`}>
           <div className={`${CN}__personal-information ${CN}__wrapper__personal-information`}>
@@ -85,13 +145,18 @@ class RegisterForm extends Component {
 
             <h3>address information</h3>
             <div className={`${CN}__field`}>
+              <Button className="grey-button" onClick={this.getUserCoordinates}>Use data from GPS</Button>
               <label className={`${CN}__field__label`}>company</label>
               <input className={`${CN}__field__input`} type="text" />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>address 1</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <input
+                className={`${CN}__field__input`}
+                type="text"
+                defaultValue={street !== '' ? street : null}
+              />
             </div>
 
             <div className={`${CN}__field`}>
@@ -101,17 +166,30 @@ class RegisterForm extends Component {
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>country</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <input
+                className={`${CN}__field__input`}
+                type="text"
+                defaultValue={country !== '' ? country : null}
+              />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>city</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <input
+                className={`${CN}__field__input`}
+                type="text"
+                defaultValue={city !== '' ? city : null}
+              />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>zip/postal code*</label>
-              <input className={`${CN}__field__input`} type="text" required />
+              <input
+                className={`${CN}__field__input`}
+                type="text"
+                defaultValue={zipCode !== '' ? zipCode : null}
+                required
+              />
             </div>
 
             <div className={`${CN}__field`}>
