@@ -96,7 +96,7 @@ class BillingInfo extends React.Component {
               <CountryDropdown
                 class={`${CN}-selector-container__selector`}
                 value={country}
-                onChange={(val) => this.selectCountry(val)}
+                onChange={this.selectCountry}
               />
               <i className={`sort icon ${CN}-selector-container__icon`} />
             </div>
@@ -112,7 +112,7 @@ class BillingInfo extends React.Component {
                 class={`${CN}-selector-container__selector`}
                 country={country}
                 value={region}
-                onChange={(val) => this.selectRegion(val)}
+                onChange={this.selectRegion}
               />
               <i className={`sort icon ${CN}-selector-container__icon`} />
             </div>
