@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ls from 'local-storage';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Button } from '@/shared';
 
@@ -35,7 +35,9 @@ class RegisterForm extends Component {
     const form = e.target;
     const data = new FormData(form);
 
-    fetch('/api/form-submit-url', {
+    const URL = '/api/form-submit-url';
+
+    fetch(URL, {
       method: 'POST',
       body: data
     });
@@ -45,10 +47,10 @@ class RegisterForm extends Component {
     const { email } = this.state;
 
     return (
-      <div className={`${CN}`} onSubmit={this.handleSubmit}>
+      <form className={`${CN}`} onSubmit={this.handleSubmit}>
         <span className={`${CN}__label`}>create an account</span>
         <div className={`${CN}__wrapper`}>
-          <form className={`${CN}__personal-information ${CN}__wrapper__personal-information`}>
+          <div className={`${CN}__personal-information ${CN}__wrapper__personal-information`}>
 
             <h3>personal information</h3>
             <div className={`${CN}__field`}>
@@ -63,7 +65,13 @@ class RegisterForm extends Component {
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>e-mail*</label>
-              <input className={`${CN}__field__input`} type="email" id="email" value={email} required />
+              <input
+                className={`${CN}__field__input`}
+                type="email"
+                id="email"
+                value={email}
+                required
+              />
             </div>
 
             <div className={`${CN}__field`}>
@@ -71,9 +79,9 @@ class RegisterForm extends Component {
               <input className={`${CN}__field__input`} type="password" required />
             </div>
 
-          </form>
+          </div>
 
-          <form className={`${CN}__address-information ${CN}__wrapper__address-information`}>
+          <div className={`${CN}__address-information ${CN}__wrapper__address-information`}>
 
             <h3>address information</h3>
             <div className={`${CN}__field`}>
@@ -110,18 +118,18 @@ class RegisterForm extends Component {
               <label className={`${CN}__field__label`}>phone</label>
               <input className={`${CN}__field__input`} type="text" />
             </div>
-          </form>
+          </div>
         </div>
 
         <div className={`${CN}__buttons-wrapper`}>
           <Button className="black-button">
             create an account
           </Button>
-          <NavLink to="/login">
+          <Link to="/login">
             Back to login
-          </NavLink>
+          </Link>
         </div>
-      </div>
+      </form>
     );
   }
 }
