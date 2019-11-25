@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ls from 'local-storage';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { Button } from '@/shared';
 
@@ -117,9 +117,9 @@ class RegisterForm extends Component {
           <Button className="black-button">
             create an account
           </Button>
-          <Link to="/login">
+          <NavLink to="/login">
             Back to login
-          </Link>
+          </NavLink>
         </div>
       </div>
     );
