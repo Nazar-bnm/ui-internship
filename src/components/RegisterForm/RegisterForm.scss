@@ -1,0 +1,53 @@
+@import '../../scss/global_styles';
+
+.register-form {
+  margin-top: 20px;
+  border: 1px solid $silver-chalice;
+  width: 60%;
+  margin: auto;
+
+  &__label {
+    display: block;
+    text-transform: uppercase;
+    font-family: font($type: secondary);
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid $silver-chalice;
+    padding: 10px;
+  }
+
+  &__wrapper {
+    @include flex(row, space-between, null);
+
+    &__personal-information,
+    &__address-information {
+      margin: 40px 0;
+      text-transform: uppercase;
+      font-family: font($type: primary-light);
+      font-size: 0.8rem;
+    }
+  
+    width: 90%;
+    margin: auto;
+    padding-left: 10px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-family: font($type: primary-light);
+    font-size: 0.6rem;
+
+    &__input {
+      margin-top: 3px;
+      height: 2rem;
+      width: 20vw;
+      padding-left: 10px;
+    }
+  }
+
+  &__buttons-wrapper {
+    @include flex(column, center, center)
+  }
+}
