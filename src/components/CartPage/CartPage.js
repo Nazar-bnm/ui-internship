@@ -60,12 +60,14 @@ const CartPage = (props) => {
     </div>
   );
 
-  const getPrice = (value) => {
+  const getTotalPrice = () => {
     const { setTotalCount } = props;
-    setTotalCount(value);
+
+    const totalPrice = countTotal + deliveryCost - voucher;
+    setTotalCount(totalPrice);
+    return `$${totalPrice}`;
   };
 
-  const totalPrice = countTotal + deliveryCost - voucher;
 
   return (
     <div className={cx(CN, className)}>
@@ -104,10 +106,7 @@ const CartPage = (props) => {
             <p>{`$${deliveryCost}`}</p>
             <p>{`$${voucher}`}</p>
             <hr />
-            <p>
-              {`$${totalPrice}`}
-              {getPrice(totalPrice)}
-            </p>
+            <p>{getTotalPrice()}</p>
           </div>
         </div>
       </div>
