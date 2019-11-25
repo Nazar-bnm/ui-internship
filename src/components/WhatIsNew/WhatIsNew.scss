@@ -1,6 +1,6 @@
 @import '../../scss/global_styles';
 
-.whatIsNew {
+.what-is-new {
   .heading__wrapper {
     margin: 20px 0 15px;
     font-size: 1.1rem;
@@ -10,8 +10,51 @@
     font-size: 2rem;
   }
 
-  &__wrapper {
+  &-wrapper {
     @include flex($justify: center);
+
+    &__item {
+      position: relative;
+      overflow: hidden;
+      transition: transform 300ms linear;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 100%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+
+      &:hover {
+        transform: scale(1.025);
+
+        &::before {
+          animation: circle 1s;
+        }
+      }
+    }
+  }
+
+  @keyframes circle {
+    0% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 1;
+    }
+    100% {
+      width: 200%;
+      height: 200%;
+      opacity: 0;
+    }
   }
 }
 
