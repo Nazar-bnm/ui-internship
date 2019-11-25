@@ -52,7 +52,7 @@ class RegisterForm extends Component {
     const lat = position.coords.latitude.toFixed(2);
     const lon = position.coords.longitude.toFixed(2);
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const requestURL = `${proxy}https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}11`;
+    const requestURL = `${proxy}https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}`;
     const userAPI = new HttpService();
     const { showMessage } = this.props;
 
