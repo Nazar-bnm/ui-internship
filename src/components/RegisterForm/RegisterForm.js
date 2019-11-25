@@ -55,14 +55,9 @@ class RegisterForm extends Component {
     const requestURL = `${proxy}https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}11`;
     const userAPI = new HttpService();
     const { showMessage } = this.props;
-    // console.log('showMessage >> ', showMessage);
 
     try {
       const response = await userAPI.get(requestURL);
-
-      if (response.status === 404) {
-        throw Error(response.statusText);
-      }
 
       this.onGetLocationSuccess(response.data);
     } catch (error) {
