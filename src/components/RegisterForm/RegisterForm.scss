@@ -26,10 +26,16 @@
       font-family: font($type: primary-light);
       font-size: 0.8rem;
     }
-  
+    
     width: 90%;
     margin: auto;
     padding-left: 10px;
+
+    .errorMessage {
+      color: red;
+      font-size: 0.75em;
+      display: relative;
+    }
   }
 
   &__field {
@@ -44,6 +50,16 @@
       height: 2rem;
       width: 20vw;
       padding-left: 10px;
+      border: 1px solid $silver-chalice;
+    }
+
+    &__country {
+      width: 20vw;
+      height: 30px;
+      font-size: inherit;
+      background-color: white;
+      border-radius: 0%;
+      
     }
   }
 

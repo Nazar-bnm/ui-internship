@@ -3,6 +3,7 @@
 exports[`<RegisterForm /> should match snapshot 1`] = `
 <form
   className="register-form"
+  noValidate={true}
   onSubmit={[Function]}
 >
   <span
@@ -24,12 +25,15 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
       >
         <label
           className="register-form__field__label"
+          htmlFor="firstName"
         >
           first name*
         </label>
         <input
           className="register-form__field__input"
-          required={true}
+          name="firstName"
+          noValidate={true}
+          onChange={[Function]}
           type="text"
         />
       </div>
@@ -43,7 +47,9 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
-          required={true}
+          name="lastName"
+          noValidate={true}
+          onChange={[Function]}
           type="text"
         />
       </div>
@@ -57,10 +63,12 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue=""
           id="email"
-          required={true}
+          name="email"
+          noValidate={true}
+          onChange={[Function]}
           type="email"
-          value=""
         />
       </div>
       <div
@@ -73,7 +81,9 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
-          required={true}
+          name="password"
+          noValidate={true}
+          onChange={[Function]}
           type="password"
         />
       </div>
@@ -155,11 +165,10 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <label
           className="register-form__field__label"
         >
-          zip/postal code*
+          zip/postal code
         </label>
         <input
           className="register-form__field__input"
-          required={true}
           type="text"
         />
       </div>
@@ -173,7 +182,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
-          type="text"
+          type="number"
         />
       </div>
     </div>
@@ -181,13 +190,12 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
   <div
     className="register-form__buttons-wrapper"
   >
-    <Button
+    <button
       className="black-button"
-      icon={null}
-      onClick={[Function]}
+      type="submit"
     >
       create an account
-    </Button>
+    </button>
     <Link
       to="/login"
     >

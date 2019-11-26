@@ -1,45 +1,40 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React, { Component } from 'react';
 import ls from 'local-storage';
+import cx from 'classnames';
+
 import { Link } from 'react-router-dom';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
+import { VALIDATION_FAILED, LOGIN_FAILED, LOGIN_SUCCESS } from '../../constants/notificationData';
 
 import './RegisterForm.scss';
+import HttpService from '@/service/HttpService/httpService';
 
 const CN = 'register-form';
-
-const emailRegex = RegExp(
-  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-);
-
-const formValid = ({ formErrors, ...rest }) => {
-  let valid = true;
-
-  Object.values(formErrors).forEach((val) => {
-    val.length > 0 && (valid = false);
-  });
-
-  Object.values(rest).forEach((val) => {
-    val === null && (valid = false);
-  });
-
-  return valid;
-};
 
 class RegisterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: null,
-      lastName: null,
-      email: null,
-      password: null,
-      formErrors: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: ''
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      address: {
+        company: '',
+        address: '',
+        country: '',
+        city: '',
+        zip: '',
+        phone: ''
       }
     };
+
+    this.formRegister = React.createRef();
+    this.validate = this.validate.bind(this);
+    this.selectCountry = this.selectCountry.bind(this);
+    this.selectRegion = this.selectRegion.bind(this);
   }
 
   componentDidMount() {
@@ -48,70 +43,118 @@ class RegisterForm extends Component {
     });
   }
 
-  handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    const { formErrors } = this.state;
+  setFirstName(val) {
+    this.setState({ firstName: val });
+  }
 
-    switch (name) {
-      case 'firstName':
-        formErrors.firstName = value.length < 3 ? 'minimum 3 characaters required' : '';
-        break;
-      case 'lastName':
-        formErrors.lastName = value.length < 3 ? 'minimum 3 characaters required' : '';
-        break;
-      case 'email':
-        formErrors.email = emailRegex.test(value)
-          ? ''
-          : 'invalid email address';
-        break;
-      case 'password':
-        formErrors.password = value.length < 6 ? 'minimum 6 characaters required' : '';
-        break;
-      default:
-        break;
+  setLastName(value) {
+    this.setState({ lastName: value });
+  }
+
+  setEmail(value) {
+    this.setState({ email: value });
+  }
+
+  setPassword(value) {
+    this.setState({ password: value });
+  }
+
+  setCompany(value) {
+    const { address } = this.state;
+    this.setState({ address: { ...address, company: value } });
+  }
+
+  setAddress(value) {
+    const { address } = this.state;
+    this.setState({ address: { ...address, address: value } });
+  }
+
+  setCity(value) {
+    const { address } = this.state;
+    this.setState({ address: { ...address, city: value } });
+  }
+
+  setZip(value) {
+    const { address } = this.state;
+    this.setState({ address: { ...address, zip: value } });
+  }
+
+  setPhone(val) {
+    const { address } = this.state;
+    this.setState({ address: { ...address, phone: val } });
+  }
+
+  selectCountry(val) {
+    const { address } = this.state;
+    this.setState({ address: { ...address, country: val } });
+  }
+
+  selectRegion(val) {
+    const { address } = this.state;
+    this.setState({ address: { ...address, region: val } });
+  }
+
+  validate({ target }) {
+    const { showMessage } = this.props;
+
+    const clickedButton = target.innerText.toUpperCase();
+    let isInputValid = false;
+
+    isInputValid = this.formRegister.current.reportValidity();
+
+    if (!isInputValid) {
+      showMessage(VALIDATION_FAILED);
+    } else {
+      this.sendData();
     }
 
-    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
-  };
+    return isInputValid;
+  }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    // const form = e.target;
-    // const data = new FormData(form);
 
-    // const URL = '/api/form-submit-url';
-
-    // fetch(URL, {
-    //   method: 'POST',
-    //   body: data
-    // });
-
+  async sendData() {
+    const { showMessage } = this.props;
+    const userAPI = new HttpService();
+    const signupURL = `${process.env.SERVER_URL}/signup`;
     const {
       firstName,
       lastName,
       email,
-      password
+      password,
+      address
     } = this.state;
+    const userData = {
+      firstName,
+      lastName,
+      email,
+      password,
+      address
+    };
 
-    if (formValid(this.state)) {
-      console.log(`
-        First Name: ${firstName}
-        Last Name: ${lastName}
-        Email: ${email}
-        Password: ${password}
-      `);
-    } else {
-      console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+    try {
+      const response = await userAPI.post(signupURL, userData);
+      const errorMessage = response.data.message;
+
+      if (errorMessage) {
+        showMessage(LOGIN_FAILED);
+      } else {
+        showMessage(LOGIN_SUCCESS);
+      }
+    } catch (error) {
+      showMessage(LOGIN_FAILED);
     }
   }
 
+
   render() {
-    const { email } = this.state;
-    const { formErrors } = this.state;
+    const { email, address: { country, region } } = this.state;
 
     return (
-      <form className={`${CN}`} onSubmit={this.handleSubmit} noValidate>
+      <form
+        className={cx(CN)}
+        onSubmit={(e) => e.preventDefault()}
+        ref={this.formLogin}
+      >
         <span className={`${CN}__label`}>create an account</span>
         <div className={`${CN}__wrapper`}>
           <div className={`${CN}__personal-information ${CN}__wrapper__personal-information`}>
@@ -123,13 +166,10 @@ class RegisterForm extends Component {
                 name="firstName"
                 className={`${CN}__field__input`}
                 type="text"
-                noValidate
-                onChange={this.handleChange}
+                required
+                onChange={(val) => this.setFirstName(val.target.value)}
               />
             </div>
-            {formErrors.firstName.length > 0 && (
-              <span className="errorMessage">{formErrors.firstName}</span>
-            )}
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>last name*</label>
@@ -137,13 +177,10 @@ class RegisterForm extends Component {
                 name="lastName"
                 className={`${CN}__field__input`}
                 type="text"
-                noValidate
-                onChange={this.handleChange}
+                required
+                onChange={(val) => this.setLastName(val.target.value)}
               />
             </div>
-            {formErrors.lastName.length > 0 && (
-              <span className="errorMessage">{formErrors.lastName}</span>
-            )}
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>e-mail*</label>
@@ -153,13 +190,10 @@ class RegisterForm extends Component {
                 type="email"
                 id="email"
                 defaultValue={email}
-                noValidate
-                onChange={this.handleChange}
+                required
+                onChange={(val) => this.setEmail(val.target.value)}
               />
             </div>
-            {formErrors.email.length > 0 && (
-              <span className="errorMessage">{formErrors.email}</span>
-            )}
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>password*</label>
@@ -167,13 +201,11 @@ class RegisterForm extends Component {
                 name="password"
                 className={`${CN}__field__input`}
                 type="password"
-                noValidate
-                onChange={this.handleChange}
+                required
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                onChange={(val) => this.setPassword(val.target.value)}
               />
             </div>
-            {formErrors.password.length > 0 && (
-              <span className="errorMessage">{formErrors.password}</span>
-            )}
           </div>
 
           <div className={`${CN}__address-information ${CN}__wrapper__address-information`}>
@@ -181,43 +213,56 @@ class RegisterForm extends Component {
             <h3>address information</h3>
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>company</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <input className={`${CN}__field__input`} type="text" onChange={(val) => this.setCompany(val.target.value)} />
             </div>
 
             <div className={`${CN}__field`}>
-              <label className={`${CN}__field__label`}>address 1</label>
-              <input className={`${CN}__field__input`} type="text" />
-            </div>
-
-            <div className={`${CN}__field`}>
-              <label className={`${CN}__field__label`}>address 2</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <label className={`${CN}__field__label`}>address</label>
+              <input className={`${CN}__field__input`} type="text" onChange={(val) => this.setAddress(val.target.value)} />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>country</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <CountryDropdown
+                className={`${CN}__field__country`}
+                value={country}
+                onChange={(val) => this.selectCountry(val)}
+              />
+            </div>
+
+            <div className={`${CN}__field`}>
+              <label className={`${CN}__field__label`}>region</label>
+              <RegionDropdown
+                className={`${CN}__field__country`}
+                country={country}
+                value={region}
+                onChange={(val) => this.selectRegion(val)}
+              />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>city</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <input className={`${CN}__field__input`} type="text" onChange={(val) => this.setCity(val.target.value)} />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>zip/postal code</label>
-              <input className={`${CN}__field__input`} type="text" />
+              <input className={`${CN}__field__input`} type="number" onChange={(val) => this.setZip(val.target.value)} />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>phone</label>
-              <input className={`${CN}__field__input`} type="number" />
+              <input className={`${CN}__field__input`} type="number" onChange={(val) => this.setPhone(val.target.value)} />
             </div>
           </div>
         </div>
 
         <div className={`${CN}__buttons-wrapper`}>
-          <button type="submit" className="black-button">
+          <button
+            type="submit"
+            className="black-button"
+            onClick={this.validate}
+          >
             create an account
           </button>
           <Link to="/login">
