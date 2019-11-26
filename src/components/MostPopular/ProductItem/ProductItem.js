@@ -36,6 +36,8 @@ class ProductItem extends Component {
     this.renderHoverView = this.renderHoverView.bind(this);
   }
 
+  com
+
   showModal() {
     this.setState({
       isShowedModal: true

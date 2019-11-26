@@ -35,3 +35,5 @@ export const GET_USD = 'GET_USD';
 export const GET_EURO = 'GET_EURO';
 export const GET_UAH = 'GET_UAH';
 export const GET_THE_CURRENCY = 'GET_THE_CURRENCY';
+export const CHANGE_THE_CURRENCY = 'CHANGE_THE_CURRENCY';
+export const GET_THE_CURRENCY_KEY = 'GET_THE_CURRENCY_KEY';

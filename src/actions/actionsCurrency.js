@@ -1,13 +1,16 @@
-// import { CHECK_CHECKBOX, RESET_FILTERS, SET_PRICE_RANGE } from '../constants/actionTypes';
-import {
-  GET_THE_CURRENCY
-  // GET_USD,
-  // GET_EURO,
-  // GET_UAH
-} from '../constants/actionTypes';
-
-// export const checkCheckbox = (category, id, clicked) => ({ type: CHECK_CHECKBOX, payload: { category, id, clicked } });
-// export const resetFilterState = () => ({ type: RESET_FILTERS });
-// export const setPriceRange = (value, label) => ({ type: SET_PRICE_RANGE, payload: { value, label } });
+import { GET_THE_CURRENCY } from '../constants/actionTypes';
 
 export const changeCurrency = (payload) => ({ type: GET_THE_CURRENCY, payload });
+
+export const fetchCurrency = (currency) => (
+  (dispatch) => {
+    const currKey = `USD_${currency}`;
+
+    fetch(`https://free.currencyconverterapi.com/api/v6/convert?q=${currKey}&compact=ultra&apiKey=d1b5218e0be93e157106`)
+      .then((response) => response.json())
+      .then((currencyObj) => {
+        console.log(currencyObj);
+        dispatch(changeCurrency({ currency, currencyKey: currencyObj[currKey] }));
+      });
+  }
+);

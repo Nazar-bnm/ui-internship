@@ -5,12 +5,13 @@ import config from '../../../../../config';
 
 export const CN = 'dropdowns';
 
-const ContentOptions = ({ actions: { changeCurrency } }) => {
+const ContentOptions = ({ changeCurrency, currency: carrencyProp, currencyKey }) => {
   const { options } = config;
   const { company, currency, language } = options;
   // The following function will be removed when the functionality for the three dropdowns
   // is be added (language versions, companies versions and currency change)
   const onDropdownChange = () => true;
+  console.log(changeCurrency, carrencyProp, currencyKey);
 
   return (
     <div className={`${CN} container`}>
@@ -18,7 +19,7 @@ const ContentOptions = ({ actions: { changeCurrency } }) => {
       <Dropdown
         menuOptions={currency}
         placeholder={currency[0].label}
-        onDropdownChange={changeCurrency}
+        onDropdownChange={(value) => changeCurrency(value)}
       />
       <Dropdown menuOptions={language} placeholder={language[0].label} onDropdownChange={onDropdownChange} />
     </div>
