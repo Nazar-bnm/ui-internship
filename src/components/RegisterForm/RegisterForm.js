@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ls from 'local-storage';
+import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import { Button } from '@/shared';
+import Preloader from '../Preloader';
 import HttpService from '../../service/HttpService/httpService';
 import { googleMapAPIKeyUserLocation } from '../../config/googleMapAPIKeyUserLocation';
 import { GET_LOCATION_FAILED } from '../../constants/notificationData';
@@ -19,13 +21,15 @@ class RegisterForm extends Component {
       country: '',
       city: '',
       street: '',
-      zipCode: ''
+      zipCode: '',
+      isLoading: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getUserCoordinates = this.getUserCoordinates.bind(this);
     this.getPosition = this.getPosition.bind(this);
     this.onGetLocationSuccess = this.onGetLocationSuccess.bind(this);
+    this.showPreloader = this.showPreloader.bind(this);
   }
 
   componentDidMount() {
@@ -63,10 +67,21 @@ class RegisterForm extends Component {
     } catch (error) {
       showMessage(GET_LOCATION_FAILED);
     }
+
+    setTimeout(() => {
+      this.setState({
+        isLoading: false
+      });
+    }, 500);
   }
 
   getUserCoordinates() {
     const { showMessage } = this.props;
+
+    this.setState({
+      isLoading: true
+    });
+    this.showPreloader();
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.getPosition, this.showError);
@@ -92,17 +107,26 @@ class RegisterForm extends Component {
     });
   }
 
+  showPreloader() {
+    const { isLoading } = this.state;
+
+    if (isLoading) {
+      return <Preloader />;
+    }
+  }
+
   render() {
     const {
       email,
       street,
       city,
       country,
-      zipCode
+      zipCode,
+      isLoading
     } = this.state;
 
     return (
-      <form className={CN} onSubmit={this.handleSubmit}>
+      <form className={cx(CN, { [`${CN}--loader`]: isLoading })} onSubmit={this.handleSubmit}>
         <span className={`${CN}__label`}>create an account</span>
         <div className={`${CN}__wrapper`}>
           <div className={`${CN}__personal-information ${CN}__wrapper__personal-information`}>
@@ -202,6 +226,7 @@ class RegisterForm extends Component {
             Back to login
           </Link>
         </div>
+        {this.showPreloader()}
       </form>
     );
   }
