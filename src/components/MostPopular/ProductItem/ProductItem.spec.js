@@ -16,7 +16,7 @@ describe('<ProductItem />', () => {
       images: [claudinaryId],
       label: 'new',
       title: 'dress',
-      price: '599',
+      price: 599,
       sizes: ['s', 'm', 'l']
     },
     wishlist: ['5', '4', '2'],

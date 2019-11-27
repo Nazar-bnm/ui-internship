@@ -18,6 +18,8 @@ class ProductDetailsPage extends React.Component {
     this.state = {
       isVerticalCarousel: window.innerWidth > laptopWidth
     };
+
+    this.addToWishlistWithNotification = this.addToWishlistWithNotification.bind(this);
   }
 
   setVerticalCarousel() {
@@ -26,11 +28,11 @@ class ProductDetailsPage extends React.Component {
     });
   }
 
-  addToWishlistWithNotification = () => {
+  addToWishlistWithNotification() {
     const { showMessage, addToWishlist, id } = this.props;
     addToWishlist(id);
     showMessage(ADDED_TO_WISHLIST_NOTIFICATION);
-  };
+  }
 
   render() {
     const {
@@ -41,7 +43,9 @@ class ProductDetailsPage extends React.Component {
       products
     } = this.props;
     const product = products.find(({ _id }) => _id === id);
-    if (products.length) {
+    const productsExist = products.length;
+
+    if (productsExist) {
       const {
         images, title, price, description
       } = product;

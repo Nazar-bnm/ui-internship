@@ -18,9 +18,10 @@ class ProductImageItem extends Component {
 
   handleImageError() {
     const { errored } = this.state;
+
     if (!errored) {
       this.setState({
-        imgSrc: 'src/assets/img/productListPage/no-image.jpeg',
+        imgSrc: 'src/assets/img/productListPage/placeholder-image.jpeg',
         errored: true
       });
     }
@@ -32,8 +33,8 @@ class ProductImageItem extends Component {
       clickHandler,
       isSelected
     } = this.props;
-
     const { imgSrc } = this.state;
+
     return (
       <div className={`${CN}__small-image`} key={keyForChild}>
         <img

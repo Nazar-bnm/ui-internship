@@ -93,7 +93,7 @@ class ProductItem extends Component {
     const { errored } = this.state;
     if (!errored) {
       this.setState({
-        productFirstImage: 'src/assets/img/productListPage/no-image.jpeg',
+        productFirstImage: 'src/assets/img/productListPage/placeholder-image.jpeg',
         errored: true
       });
     }

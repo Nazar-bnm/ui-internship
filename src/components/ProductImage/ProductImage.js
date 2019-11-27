@@ -49,7 +49,7 @@ class ProductImage extends Component {
     const { errored } = this.state;
     if (!errored) {
       this.setState({
-        selectedImage: 'src/assets/img/productListPage/no-image.jpeg',
+        selectedImage: 'src/assets/img/productListPage/placeholder-image.jpeg',
         errored: true
       });
     }
