@@ -6,7 +6,7 @@ exports[`<OrderPreview /> should match snapshot 1`] = `
 >
   <ReactStripeCheckout
     ComponentClass="span"
-    amount={NaN}
+    amount={1000}
     billingAddress={true}
     className="StripeCheckout"
     label="Pay With Card"
