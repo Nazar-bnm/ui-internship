@@ -1,12 +1,11 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
 import React, { Component } from 'react';
 import ls from 'local-storage';
 import cx from 'classnames';
 
 import { Link } from 'react-router-dom';
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
-import { VALIDATION_FAILED, LOGIN_FAILED, LOGIN_SUCCESS } from '../../constants/notificationData';
+import { Button } from '@/shared';
+import { VALIDATION_FAILED, REGISTER_FAILED, REGISTER_SUCCESS } from '../../constants/notificationData';
 
 import './RegisterForm.scss';
 import HttpService from '@/service/HttpService/httpService';
@@ -23,10 +22,10 @@ class RegisterForm extends Component {
       password: '',
       address: {
         company: '',
-        address: '',
+        addressOne: '',
         country: '',
         city: '',
-        zip: '',
+        postalCode: '',
         phone: ''
       }
     };
@@ -35,6 +34,7 @@ class RegisterForm extends Component {
     this.validate = this.validate.bind(this);
     this.selectCountry = this.selectCountry.bind(this);
     this.selectRegion = this.selectRegion.bind(this);
+    this.sendData = this.sendData.bind(this);
   }
 
   componentDidMount() {
@@ -47,41 +47,41 @@ class RegisterForm extends Component {
     this.setState({ firstName: val });
   }
 
-  setLastName(value) {
-    this.setState({ lastName: value });
+  setLastName(val) {
+    this.setState({ lastName: val });
   }
 
-  setEmail(value) {
-    this.setState({ email: value });
+  setEmail(val) {
+    this.setState({ email: val });
   }
 
-  setPassword(value) {
-    this.setState({ password: value });
+  setPassword(val) {
+    this.setState({ password: val });
   }
 
-  setCompany(value) {
+  setCompany(val) {
     const { address } = this.state;
-    this.setState({ address: { ...address, company: value } });
+    this.setState({ address: { ...address, company: val } });
   }
 
-  setAddress(value) {
+  setAddress(val) {
     const { address } = this.state;
-    this.setState({ address: { ...address, address: value } });
+    this.setState({ address: { ...address, addressOne: val } });
   }
 
-  setCity(value) {
+  setCity(val) {
     const { address } = this.state;
-    this.setState({ address: { ...address, city: value } });
+    this.setState({ address: { ...address, city: val } });
   }
 
-  setZip(value) {
+  setPostalCode(val) {
     const { address } = this.state;
-    this.setState({ address: { ...address, zip: value } });
+    this.setState({ address: { ...address, postalCode: +val } });
   }
 
   setPhone(val) {
     const { address } = this.state;
-    this.setState({ address: { ...address, phone: val } });
+    this.setState({ address: { ...address, phone: +val } });
   }
 
   selectCountry(val) {
@@ -94,10 +94,9 @@ class RegisterForm extends Component {
     this.setState({ address: { ...address, region: val } });
   }
 
-  validate({ target }) {
+  validate() {
     const { showMessage } = this.props;
 
-    const clickedButton = target.innerText.toUpperCase();
     let isInputValid = false;
 
     isInputValid = this.formRegister.current.reportValidity();
@@ -136,12 +135,12 @@ class RegisterForm extends Component {
       const errorMessage = response.data.message;
 
       if (errorMessage) {
-        showMessage(LOGIN_FAILED);
+        showMessage(REGISTER_FAILED);
       } else {
-        showMessage(LOGIN_SUCCESS);
+        showMessage(REGISTER_SUCCESS);
       }
     } catch (error) {
-      showMessage(LOGIN_FAILED);
+      showMessage(REGISTER_FAILED);
     }
   }
 
@@ -153,7 +152,7 @@ class RegisterForm extends Component {
       <form
         className={cx(CN)}
         onSubmit={(e) => e.preventDefault()}
-        ref={this.formLogin}
+        ref={this.formRegister}
       >
         <span className={`${CN}__label`}>create an account</span>
         <div className={`${CN}__wrapper`}>
@@ -247,7 +246,7 @@ class RegisterForm extends Component {
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>zip/postal code</label>
-              <input className={`${CN}__field__input`} type="number" onChange={(val) => this.setZip(val.target.value)} />
+              <input className={`${CN}__field__input`} type="number" onChange={(val) => this.setPostalCode(val.target.value)} />
             </div>
 
             <div className={`${CN}__field`}>
@@ -258,13 +257,13 @@ class RegisterForm extends Component {
         </div>
 
         <div className={`${CN}__buttons-wrapper`}>
-          <button
+          <Button
             type="submit"
             className="black-button"
             onClick={this.validate}
           >
             create an account
-          </button>
+          </Button>
           <Link to="/login">
             Back to login
           </Link>
