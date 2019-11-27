@@ -28,6 +28,7 @@ class BlogPage extends React.Component {
 
     this.getOlderPosts = this.getOlderPosts.bind(this);
     this.setCategory = this.setCategory.bind(this);
+    this.removeLoaderAfterSomeTime = this.removeLoaderAfterSomeTime.bind(this);
   }
 
   componentDidMount() {
@@ -54,7 +55,7 @@ class BlogPage extends React.Component {
     try {
       const response = await userAPI.get(blogsURL);
 
-      setTimeout(() => this.setState({ isLoading: false }), 500);
+      this.removeLoaderAfterSomeTime();
 
       if (response.status === 404) {
         throw Error(response.statusText);
@@ -125,6 +126,12 @@ class BlogPage extends React.Component {
     this.setState(({ category: prevCategory }) => ({
       category: prevCategory !== value ? value : ''
     }));
+  }
+
+  removeLoaderAfterSomeTime() {
+    const millisecondsBeforeRemovingLoader = 500;
+
+    setTimeout(() => this.setState({ isLoading: false }), millisecondsBeforeRemovingLoader);
   }
 
   render() {
