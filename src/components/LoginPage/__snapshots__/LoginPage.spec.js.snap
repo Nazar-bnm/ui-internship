@@ -113,13 +113,17 @@ exports[`<LoginPage /> should match snapshot 1`] = `
           type="email"
         />
       </form>
-      <Button
-        className="black-button"
-        icon={null}
-        onClick={[Function]}
+      <Link
+        to="/RegisterForm"
       >
-        create an account
-      </Button>
+        <Button
+          className="black-button"
+          icon={null}
+          onClick={[Function]}
+        >
+          create an account
+        </Button>
+      </Link>
     </div>
   </div>
 </div>
