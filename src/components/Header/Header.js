@@ -7,6 +7,7 @@ import PageSettings from './PageSettings';
 import PageNavigation from './PageNavigation';
 import BurgerMenu from '../BurgerMenu';
 import Input from '../Input';
+import WebsiteNavigation from '../WebsiteNavigation';
 import config from '../../../config';
 
 import './Header.scss';
@@ -35,6 +36,9 @@ const Header = ({ userCart }) => (
       </div>
     </div>
     <PageNavigation options={navConfig} />
+    <WebsiteNavigation
+      className={(window.location.pathname === '/' || window.location.pathname === '/home') ? 'hidden' : 'shown'}
+    />
   </header>
 );
 

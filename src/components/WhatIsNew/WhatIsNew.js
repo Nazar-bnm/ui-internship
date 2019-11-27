@@ -6,6 +6,8 @@ import Heading from '../Heading';
 
 import './WhatIsNew.scss';
 
+const CN = 'what-is-new';
+
 class WhatIsNew extends Component {
   constructor(props) {
     super(props);
@@ -34,13 +36,13 @@ class WhatIsNew extends Component {
   render() {
     const { items } = this.state;
     const block = items.map((item) => (
-      <ItemInfo key={item.id} item={item} />
+      <ItemInfo className={`${CN}-wrapper__item`} key={item.id} item={item} />
     ));
 
     return (
-      <div className="content whatIsNew">
-        <Heading className="whatIsNew__title" title="What is new?" position="center" />
-        <div className="container whatIsNew__wrapper">
+      <div className={`content ${CN}`}>
+        <Heading className={`${CN}__title}`} title="What is new?" position="center" />
+        <div className={`container ${CN}-wrapper`}>
           {block}
         </div>
       </div>
