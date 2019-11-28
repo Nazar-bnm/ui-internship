@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import ProductImage from '../ProductImage';
 import ProductOrder from '../ProductOrder';
 import Accordion from '../Accordion';
@@ -7,47 +6,59 @@ import ContactDetails from '../Footer/ContactDetails';
 import { accordionItemsData } from '../../config/dataItemsAccordion';
 import { Button } from '@/shared';
 import { ADDED_TO_WISHLIST_NOTIFICATION } from '../../constants/notificationData';
-
 import './ProductDetailsPage.scss';
 
 export const CN = 'product-details';
+class ProductDetailsPage extends React.Component {
+  constructor(props) {
+    super(props);
 
-const ProductDetailsPage = (props) => {
-  const laptopWidth = 1024;
-  const [isVerticalCarousel, setVerticalCarousel] = useState(
-    window.innerWidth > laptopWidth
-  );
-  const {
-    match: {
-      params: { id }
-    },
-    history: { goBack },
-    products
-  } = props;
+    this.laptopWidth = 1024;
 
-  const product = products.find(({ _id }) => _id === id);
+    this.state = {
+      isVerticalCarousel: window.innerWidth > this.laptopWidth
+    };
 
-  window.onresize = () => setVerticalCarousel(window.innerWidth > laptopWidth);
+    this.addToWishlistWithNotification = this.addToWishlistWithNotification.bind(this);
+  }
 
-  if (products.length) {
+  setVerticalCarousel() {
+    this.setState({
+      isVerticalCarousel: window.innerWidth > this.laptopWidth
+    });
+  }
+
+  addToWishlistWithNotification() {
+    const { showMessage, addToWishlist, id } = this.props;
+    addToWishlist(id);
+    showMessage(ADDED_TO_WISHLIST_NOTIFICATION);
+  }
+
+  render() {
+    const {
+      match: {
+        params: { id }
+      },
+      history: { goBack },
+      products
+    } = this.props;
+    const product = products.find(({ _id }) => _id === id);
+    const productsExist = products.length;
+
+    if (!productsExist) return null;
+
     const {
       images, title, price, description
     } = product;
-
     const productImageData = images.map(({ claudinaryId }) => ({
       src: `${process.env.IMAGE_URL}/${claudinaryId}`
     }));
-
-    const addToWishlistWithNotification = () => {
-      const { showMessage, addToWishlist } = props;
-      addToWishlist(id);
-      showMessage(ADDED_TO_WISHLIST_NOTIFICATION);
-    };
+    const { isVerticalCarousel } = this.state;
 
     return (
       <>
         <Button className="go-back-btn" icon="arrow left" onClick={goBack}>
-          Go Back
+            Go Back
         </Button>
         <div className={`${CN} content`}>
           <ProductImage
@@ -62,7 +73,7 @@ const ProductDetailsPage = (props) => {
               title={title}
               price={`$${price}`}
               description={description}
-              onClickAddToWishlist={addToWishlistWithNotification}
+              onClickAddToWishlist={this.addToWishlistWithNotification}
             />
             <div className={`${CN}-description-accordion`}>
               <Accordion
@@ -78,8 +89,6 @@ const ProductDetailsPage = (props) => {
       </>
     );
   }
-
-  return <></>;
-};
+}
 
 export default ProductDetailsPage;
