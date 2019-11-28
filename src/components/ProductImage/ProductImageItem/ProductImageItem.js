@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import defaultImage from '../../../assets/img/productListPage/placeholder-image.jpg';
 
 export const CN = 'product-image';
 
@@ -10,19 +11,19 @@ class ProductImageItem extends Component {
 
     this.state = {
       imgSrc: props.src,
-      errored: false
+      hasError: false
     };
 
     this.handleImageError = this.handleImageError.bind(this);
   }
 
   handleImageError() {
-    const { errored } = this.state;
+    const { hasError } = this.state;
 
-    if (!errored) {
+    if (!hasError) {
       this.setState({
-        imgSrc: 'src/assets/img/productListPage/placeholder-image.jpeg',
-        errored: true
+        imgSrc: defaultImage,
+        hasError: true
       });
     }
   }

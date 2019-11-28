@@ -24,7 +24,7 @@ class ProductItem extends Component {
       isHovered: false,
       isShowedModal: false,
       productFirstImage: `${process.env.IMAGE_URL}/${props.product.images[0].claudinaryId}`,
-      errored: false
+      hasError: false
     };
 
     this.showModal = this.showModal.bind(this);
@@ -90,11 +90,11 @@ class ProductItem extends Component {
   }
 
   handleImageError() {
-    const { errored } = this.state;
-    if (!errored) {
+    const { hasError } = this.state;
+    if (!hasError) {
       this.setState({
         productFirstImage: 'src/assets/img/productListPage/placeholder-image.jpeg',
-        errored: true
+        hasError: true
       });
     }
   }

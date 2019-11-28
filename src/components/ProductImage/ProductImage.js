@@ -21,7 +21,7 @@ class ProductImage extends Component {
 
     this.state = {
       selectedImage: '',
-      errored: false
+      hasError: false
     };
 
     this.handleImageError = this.handleImageError.bind(this);
@@ -46,11 +46,11 @@ class ProductImage extends Component {
   };
 
   handleImageError() {
-    const { errored } = this.state;
-    if (!errored) {
+    const { hasError } = this.state;
+    if (!hasError) {
       this.setState({
-        selectedImage: 'src/assets/img/productListPage/placeholder-image.jpeg',
-        errored: true
+        selectedImage: 'src/assets/img/productListPage/no-image.jpeg',
+        hasError: true
       });
     }
   }
