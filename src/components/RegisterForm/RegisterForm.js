@@ -8,6 +8,7 @@ import Preloader from '../Preloader';
 import HttpService from '../../service/HttpService/httpService';
 import { googleMapAPIKeyUserLocation } from '../../config/googleMapAPIKeyUserLocation';
 import { GET_LOCATION_FAILED } from '../../constants/notificationData';
+import { setTimeoutForPreloader } from '../../helpers';
 
 import './RegisterForm.scss';
 
@@ -67,12 +68,7 @@ class RegisterForm extends Component {
     } catch (error) {
       showMessage(GET_LOCATION_FAILED);
     }
-
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      });
-    }, 500);
+    setTimeoutForPreloader.bind(this)();
   }
 
   getUserCoordinates() {

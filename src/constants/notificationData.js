@@ -28,3 +28,13 @@ export const GET_LOCATION_FAILED = {
   message: 'Defining the location is not possible.',
   type: 'error'
 };
+export const LOGIN_FAILED = {
+  title: 'error',
+  message: 'Incorrect email or password.',
+  type: 'error'
+};
+export const LOGIN_SUCCESS = {
+  title: 'success',
+  message: 'You are now logged in!',
+  type: 'success'
+};
