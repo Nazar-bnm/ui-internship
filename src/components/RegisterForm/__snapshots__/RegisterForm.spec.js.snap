@@ -63,7 +63,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <input
           className="register-form__field__input"
           defaultValue=""
-          id="email"
+          id="emil"
           name="email"
           onChange={[Function]}
           required={true}
@@ -121,15 +121,12 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <label
           className="register-form__field__label"
         >
-          address
+          address 1
         </label>
         <input
           className="register-form__field__input"
-<<<<<<< HEAD
-          onChange={[Function]}
-=======
           defaultValue={null}
->>>>>>> a8e6426cb0264a3fbda0fccc9148a946ac378491
+          onChange={[Function]}
           type="text"
         />
       </div>
@@ -146,6 +143,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
           className="register-form__field__country"
           classes=""
           defaultOptionLabel="Select Country"
+          defaultValue={null}
           disabled={false}
           id=""
           labelType="full"
@@ -167,7 +165,6 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         >
           region
         </label>
-<<<<<<< HEAD
         <RegionDropdown
           blankOptionLabel="-"
           className="register-form__field__country"
@@ -186,12 +183,6 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
           showDefaultOption={true}
           value=""
           valueType="full"
-=======
-        <input
-          className="register-form__field__input"
-          defaultValue={null}
-          type="text"
->>>>>>> a8e6426cb0264a3fbda0fccc9148a946ac378491
         />
       </div>
       <div
@@ -204,11 +195,8 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
-<<<<<<< HEAD
-          onChange={[Function]}
-=======
           defaultValue={null}
->>>>>>> a8e6426cb0264a3fbda0fccc9148a946ac378491
+          onChange={[Function]}
           type="text"
         />
       </div>
@@ -218,18 +206,14 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <label
           className="register-form__field__label"
         >
-          zip/postal code
+          zip/postal code*
         </label>
         <input
           className="register-form__field__input"
-<<<<<<< HEAD
-          onChange={[Function]}
-          type="number"
-=======
           defaultValue={null}
+          onChange={[Function]}
           required={true}
-          type="text"
->>>>>>> a8e6426cb0264a3fbda0fccc9148a946ac378491
+          type="number"
         />
       </div>
       <div
@@ -260,6 +244,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
       create an account
     </Button>
     <Link
+      className="link-back"
       to="/login"
     >
       Back to login

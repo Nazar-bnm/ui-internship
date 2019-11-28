@@ -3,7 +3,7 @@ import ls from 'local-storage';
 import cx from 'classnames';
 
 import { Link } from 'react-router-dom';
-import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
+import { CountryDropdown } from 'react-country-region-selector';
 import { Button } from '@/shared';
 import Preloader from '../Preloader';
 import { googleMapAPIKeyUserLocation } from '../../config/googleMapAPIKeyUserLocation';
@@ -33,6 +33,7 @@ class RegisterForm extends Component {
         company: '',
         addressOne: '',
         country: '',
+        region: '',
         city: '',
         postalCode: '',
         phone: ''
@@ -58,23 +59,18 @@ class RegisterForm extends Component {
   onGetLocationSuccess(data) {
     const fullAddress = data.results[0].formatted_address.split(', ');
     const addressOne = `${fullAddress[0]} ${fullAddress[1]}`;
-    // const city = fullAddress[2];
-    // const country = fullAddress[4];
-    // const postalCode = fullAddress[5];
-    // this.setState({
-    //   addressTwo,
-    //   city,
-    //   country,
-    //   postalCode
-    // });
+    const city = fullAddress[2];
+    const country = fullAddress[4];
+    const postalCode = fullAddress[5];
     const { address } = this.state;
     this.setState({
-      address: (
-        { ...address, addressOne }
-        // { ...address, city },
-        // { ...address, country },
-        // { ...address, postalCode }
-      )
+      address: {
+        ...address,
+        addressOne,
+        country,
+        city,
+        postalCode
+      }
     });
   }
 
@@ -144,20 +140,19 @@ class RegisterForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const form = e.target;
-    // const data = new FormData(form);
+    const form = e.target;
+    const data = new FormData(form);
 
-    // const URL = '/api/form-submit-url';
+    const URL = '/api/form-submit-url';
 
-    // fetch(URL, {
-    //   method: 'POST',
-    //   body: data
-    // });
+    fetch(URL, {
+      method: 'POST',
+      body: data
+    });
   }
 
   validate() {
     const { showMessage } = this.props;
-
     let isInputValid = false;
 
     isInputValid = this.formRegister.current.reportValidity();
@@ -212,7 +207,6 @@ class RegisterForm extends Component {
       address: {
         addressOne,
         country,
-        region,
         city,
         postalCode
       },
@@ -223,7 +217,6 @@ class RegisterForm extends Component {
       <form
         className={cx(CN, { [`${CN}--loader`]: isLoading })}
         onSubmit={this.handleSubmit}
-        // onSubmit={(e) => e.preventDefault()}
         ref={this.formRegister}
       >
         <span className={`${CN}__label`}>create an account</span>
@@ -310,18 +303,9 @@ class RegisterForm extends Component {
             </div>
 
             <div className={`${CN}__field`}>
-              <label className={`${CN}__field__label`}>region</label>
-              <RegionDropdown
-                className={`${CN}__field__country`}
-                country={country}
-                value={region}
-                onChange={(evt) => this.setAddressValue(evt, 'region')}
-              />
-            </div>
-
-            <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>city</label>
               <input
+                value={city}
                 className={`${CN}__field__input`}
                 type="text"
                 defaultValue={city !== '' ? city : null}
