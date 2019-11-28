@@ -1,11 +1,13 @@
 import {
   CHANGE_QUANTITY,
   REMOVE_ITEM_FROM_CART,
-  ADD_TO_CART
+  ADD_TO_CART,
+  SET_TOTAL_COUNT
 } from '../constants/actionTypes';
 
 const initialState = {
-  userCart: []
+  userCart: [],
+  totalCount: 0
 };
 
 export default function reducerCart(state = initialState, { type, payload }) {
@@ -27,10 +29,15 @@ export default function reducerCart(state = initialState, { type, payload }) {
         ...state,
         userCart: payload
       };
-    case REMOVE_ITEM_FROM_CART: {
+    case REMOVE_ITEM_FROM_CART:
       return {
         ...state,
         userCart: payload
+      };
+    case SET_TOTAL_COUNT: {
+      return {
+        ...state,
+        totalCount: payload
       };
     }
     default:

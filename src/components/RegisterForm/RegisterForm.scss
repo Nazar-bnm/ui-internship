@@ -6,6 +6,11 @@
   width: 60%;
   margin: auto;
 
+  &--loader {
+    height: 700px;
+    max-height: 100vh;
+  }
+
   &__label {
     display: block;
     text-transform: uppercase;

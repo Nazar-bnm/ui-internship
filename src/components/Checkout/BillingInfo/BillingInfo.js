@@ -94,7 +94,7 @@ class BillingInfo extends React.Component {
             <h5 className={`${CN}-selector__title`}>country</h5>
             <div className={`${CN}-selector-container`}>
               <CountryDropdown
-                class={`${CN}-selector-container__selector`}
+                className={`${CN}-selector-container__selector`}
                 value={country}
                 onChange={this.selectCountry}
               />
@@ -109,7 +109,7 @@ class BillingInfo extends React.Component {
             <h5 className={`${CN}-selector__title`}>region</h5>
             <div className={`${CN}-selector-container`}>
               <RegionDropdown
-                class={`${CN}-selector-container__selector`}
+                className={`${CN}-selector-container__selector`}
                 country={country}
                 value={region}
                 onChange={this.selectRegion}

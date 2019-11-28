@@ -29,4 +29,7 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 // Blog page
 export const GET_BLOG_ITEMS_SUCCESS = 'GET_BLOG_ITEMS_SUCCESS';
 export const GET_BLOG_ITEMS_ERROR = 'GET_BLOG_ITEMS_ERROR';
+
+// Cart
+export const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 export const GET_LABEL = 'GET_LABEL';

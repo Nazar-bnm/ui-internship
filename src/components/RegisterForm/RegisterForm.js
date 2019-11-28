@@ -5,7 +5,16 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import { Button } from '@/shared';
-import { VALIDATION_FAILED, REGISTER_FAILED, REGISTER_SUCCESS } from '../../constants/notificationData';
+import Preloader from '../Preloader';
+import { googleMapAPIKeyUserLocation } from '../../config/googleMapAPIKeyUserLocation';
+import {
+  VALIDATION_FAILED,
+  REGISTER_FAILED,
+  REGISTER_SUCCESS,
+  GET_LOCATION_FAILED
+} from '../../constants/notificationData';
+import { setTimeoutForPreloader } from '../../helpers';
+import { proxy, googleMapsGeocodeURL } from '../../constants';
 
 import './RegisterForm.scss';
 import HttpService from '@/service/HttpService/httpService';
@@ -27,17 +36,45 @@ class RegisterForm extends Component {
         city: '',
         postalCode: '',
         phone: ''
-      }
+      },
+      isLoading: false
     };
 
     this.formRegister = React.createRef();
     this.validate = this.validate.bind(this);
     this.sendData = this.sendData.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.getUserCoordinates = this.getUserCoordinates.bind(this);
+    this.getPosition = this.getPosition.bind(this);
+    this.onGetLocationSuccess = this.onGetLocationSuccess.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       email: ls.get('emailToRegister') || ''
+    });
+  }
+
+  onGetLocationSuccess(data) {
+    const fullAddress = data.results[0].formatted_address.split(', ');
+    const addressOne = `${fullAddress[0]} ${fullAddress[1]}`;
+    // const city = fullAddress[2];
+    // const country = fullAddress[4];
+    // const postalCode = fullAddress[5];
+    // this.setState({
+    //   addressTwo,
+    //   city,
+    //   country,
+    //   postalCode
+    // });
+    const { address } = this.state;
+    this.setState({
+      address: (
+        { ...address, addressOne }
+        // { ...address, city },
+        // { ...address, country },
+        // { ...address, postalCode }
+      )
     });
   }
 
@@ -58,6 +95,37 @@ class RegisterForm extends Component {
     }
   }
 
+  async getPosition(position) {
+    const lat = position.coords.latitude.toFixed(2);
+    const lon = position.coords.longitude.toFixed(2);
+    const requestURL = `${proxy}${googleMapsGeocodeURL}/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}`;
+    const userAPI = new HttpService();
+    const { showMessage } = this.props;
+
+    try {
+      const response = await userAPI.get(requestURL);
+
+      this.onGetLocationSuccess(response.data);
+    } catch (error) {
+      showMessage(GET_LOCATION_FAILED);
+    }
+    setTimeoutForPreloader.bind(this)();
+  }
+
+  getUserCoordinates() {
+    const { showMessage } = this.props;
+
+    this.setState({
+      isLoading: true
+    });
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.getPosition, this.showError);
+    } else {
+      showMessage(GET_LOCATION_FAILED);
+    }
+  }
+
   setFirstName(val) {
     this.setState({ firstName: val });
   }
@@ -72,6 +140,19 @@ class RegisterForm extends Component {
 
   setPassword(val) {
     this.setState({ password: val });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    // const form = e.target;
+    // const data = new FormData(form);
+
+    // const URL = '/api/form-submit-url';
+
+    // fetch(URL, {
+    //   method: 'POST',
+    //   body: data
+    // });
   }
 
   validate() {
@@ -126,12 +207,23 @@ class RegisterForm extends Component {
 
 
   render() {
-    const { email, address: { country, region } } = this.state;
+    const {
+      email,
+      address: {
+        addressOne,
+        country,
+        region,
+        city,
+        postalCode
+      },
+      isLoading
+    } = this.state;
 
     return (
       <form
-        className={cx(CN)}
-        onSubmit={(e) => e.preventDefault()}
+        className={cx(CN, { [`${CN}--loader`]: isLoading })}
+        onSubmit={this.handleSubmit}
+        // onSubmit={(e) => e.preventDefault()}
         ref={this.formRegister}
       >
         <span className={`${CN}__label`}>create an account</span>
@@ -167,7 +259,7 @@ class RegisterForm extends Component {
                 name="email"
                 className={`${CN}__field__input`}
                 type="email"
-                id="email"
+                id="emil"
                 defaultValue={email}
                 required
                 onChange={(evt) => this.setEmail(evt.target.value)}
@@ -191,13 +283,20 @@ class RegisterForm extends Component {
 
             <h3>address information</h3>
             <div className={`${CN}__field`}>
+              <Button className="grey-button" onClick={this.getUserCoordinates}>Use data from GPS</Button>
               <label className={`${CN}__field__label`}>company</label>
               <input className={`${CN}__field__input`} type="text" onChange={(evt) => this.setAddressValue(evt.target.value, 'company')} />
             </div>
 
             <div className={`${CN}__field`}>
-              <label className={`${CN}__field__label`}>address</label>
-              <input className={`${CN}__field__input`} type="text" onChange={(evt) => this.setAddressValue(evt.target.value, 'addressOne')} />
+              <label className={`${CN}__field__label`}>address 1</label>
+              <input
+                className={`${CN}__field__input`}
+                type="text"
+                defaultValue={addressOne !== '' ? addressOne : null}
+                onChange={(evt) => this.setAddressValue(evt.target.value, 'addressOne')}
+              />
+
             </div>
 
             <div className={`${CN}__field`}>
@@ -205,6 +304,7 @@ class RegisterForm extends Component {
               <CountryDropdown
                 className={`${CN}__field__country`}
                 value={country}
+                defaultValue={country !== '' ? country : null}
                 onChange={(evt) => this.setAddressValue(evt, 'country')}
               />
             </div>
@@ -221,12 +321,23 @@ class RegisterForm extends Component {
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>city</label>
-              <input className={`${CN}__field__input`} type="text" onChange={(evt) => this.setAddressValue(evt.target.value, 'city')} />
+              <input
+                className={`${CN}__field__input`}
+                type="text"
+                defaultValue={city !== '' ? city : null}
+                onChange={(evt) => this.setAddressValue(evt.target.value, 'city')}
+              />
             </div>
 
             <div className={`${CN}__field`}>
-              <label className={`${CN}__field__label`}>zip/postal code</label>
-              <input className={`${CN}__field__input`} type="number" onChange={(evt) => this.setAddressValue(evt.target.value, 'postalCode')} />
+              <label className={`${CN}__field__label`}>zip/postal code*</label>
+              <input
+                className={`${CN}__field__input`}
+                type="number"
+                defaultValue={postalCode !== '' ? postalCode : null}
+                onChange={(evt) => this.setAddressValue(evt.target.value, 'postalCode')}
+                required
+              />
             </div>
 
             <div className={`${CN}__field`}>
@@ -248,6 +359,7 @@ class RegisterForm extends Component {
             Back to login
           </Link>
         </div>
+        {isLoading && <Preloader />}
       </form>
     );
   }
