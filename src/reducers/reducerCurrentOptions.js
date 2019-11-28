@@ -1,10 +1,4 @@
-import {
-  GET_THE_CURRENCY,
-  GET_THE_CURRENCY_KEY
-  // GET_USD,
-  // GET_EURO,
-  // GET_UAH
-} from '../constants/actionTypes';
+import { GET_THE_CURRENCY } from '../constants/actionTypes';
 import config from '../../config';
 
 const { currency } = config.options;
@@ -18,7 +12,6 @@ const initialState = {
 export default function reducerCurrency(state = initialState, { type, payload }) {
   switch (type) {
     case GET_THE_CURRENCY: {
-      console.log('1', payload);
       return {
         ...state,
         currency: payload.currency,
@@ -26,7 +19,6 @@ export default function reducerCurrency(state = initialState, { type, payload })
         symbol: payload.symbol
       };
     }
-
     default:
       return state;
   }

@@ -43,7 +43,7 @@ exports[`<ProductItem /> should render component <ProductItem /> 1`] = `
     <h3
       className="product__title-wrapper__price"
     >
-      $599
+      NaN
     </h3>
   </div>
 </div>

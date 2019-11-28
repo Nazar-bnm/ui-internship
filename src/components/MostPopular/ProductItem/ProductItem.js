@@ -52,9 +52,8 @@ class ProductItem extends Component {
     const {
       product: {
         price
-      }
+      }, currencyKey
     } = this.props;
-    const { currencyKey } = this.props;
     const currencyPrice = (price * currencyKey).toFixed(0);
     this.setState({
       convertedPrice: currencyPrice
@@ -171,7 +170,7 @@ class ProductItem extends Component {
   renderHoverView() {
     const {
       product: {
-        _id, images, label, title, price, sizes
+        _id, images, label, title, sizes
       }, symbol
     } = this.props;
     const { convertedPrice } = this.state;
@@ -275,7 +274,9 @@ ProductItem.propTypes = {
   wishlist: PropTypes.array,
   addToWishlist: PropTypes.func.isRequired,
   removeFromWishlist: PropTypes.func.isRequired,
-  showMessage: PropTypes.func.isRequired
+  showMessage: PropTypes.func.isRequired,
+  currencyKey: PropTypes.number.isRequired,
+  symbol: PropTypes.any.isRequired
 };
 
 ProductItem.defaultProps = {
