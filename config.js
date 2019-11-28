@@ -75,9 +75,9 @@ export default {
   ],
   options: {
     currency: [
-      { value: 'USD', label: 'USD', symbol: '&#8364' },
-      { value: 'EUR', label: 'EUR', symbol: '&#36' },
-      { value: 'UAH', label: 'UAH', symbol: '&#8372' }
+      { value: 'USD', label: 'USD', symbol: '\u0024' },
+      { value: 'EUR', label: 'EUR', symbol: '\u20AC' },
+      { value: 'UAH', label: 'UAH', symbol: '\u20B4' }
     ],
     language: [
       { value: 'EN', label: 'English' },

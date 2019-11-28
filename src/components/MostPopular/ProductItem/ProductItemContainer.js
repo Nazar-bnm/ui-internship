@@ -5,9 +5,12 @@ import { addToWishlist, removeFromWishlist } from '../../../actions/actionsWishl
 import showMessage from '../../../actions/actionsNotifications';
 import ProductItem from './ProductItem';
 
-const mapStateToProps = ({ reducerWishlist }, state) => ({
+const mapStateToProps = ({ reducerWishlist, reducerCurr }, state) => ({
   wishlist: reducerWishlist.wishlist,
-  cartItems: state.cart
+  cartItems: state.cart,
+  currency: reducerCurr.currency,
+  currencyKey: reducerCurr.currencyKey,
+  symbol: reducerCurr.symbol
 });
 
 const mapDispatchToProps = (dispatch) => ({

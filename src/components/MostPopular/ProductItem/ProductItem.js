@@ -22,7 +22,8 @@ class ProductItem extends Component {
 
     this.state = {
       isHovered: false,
-      isShowedModal: false
+      isShowedModal: false,
+      convertedPrice: 0
     };
 
     this.showModal = this.showModal.bind(this);
@@ -36,7 +37,29 @@ class ProductItem extends Component {
     this.renderHoverView = this.renderHoverView.bind(this);
   }
 
-  com
+  async componentDidMount() {
+    this.getConvertedPrice();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { currencyKey } = this.props;
+    if (currencyKey !== prevProps.currencyKey) {
+      this.getConvertedPrice();
+    }
+  }
+
+  getConvertedPrice() {
+    const {
+      product: {
+        price
+      }
+    } = this.props;
+    const { currencyKey } = this.props;
+    const currencyPrice = (price * currencyKey).toFixed(0);
+    this.setState({
+      convertedPrice: currencyPrice
+    });
+  }
 
   showModal() {
     this.setState({
@@ -149,8 +172,9 @@ class ProductItem extends Component {
     const {
       product: {
         _id, images, label, title, price, sizes
-      }
+      }, symbol
     } = this.props;
+    const { convertedPrice } = this.state;
     const sizesWithSpaces = sizes.join(', ');
 
     const { isHovered, isShowedModal } = this.state;
@@ -194,7 +218,13 @@ class ProductItem extends Component {
             </h2>
           </NavLink>
           {!isHovered && (
-            <h3 className={`${CN}__title-wrapper__price`}>{`$${price}`}</h3>
+            <h3 className={`${CN}__title-wrapper__price`}>
+              <>
+                {symbol}
+              </>
+              {`${convertedPrice}`}
+
+            </h3>
           )}
           {isHovered && (
             <>
