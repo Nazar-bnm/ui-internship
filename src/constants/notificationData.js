@@ -23,6 +23,16 @@ export const VALIDATION_FAILED = {
   message: 'Please fill in all the fields properly',
   type: 'error'
 };
+export const PAYMENT_SUCCESSED = {
+  title: 'success',
+  message: 'Success! Check email for details',
+  type: 'success'
+};
+export const PAYMENT_FAILED = {
+  title: 'error',
+  message: 'Something went wrong',
+  type: 'error'
+};
 export const GET_LOCATION_FAILED = {
   title: 'error',
   message: 'Defining the location is not possible.',
