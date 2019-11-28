@@ -11,6 +11,7 @@ import {
   REMOVED_FROM_WISHLIST_NOTIFICATION,
   ADDED_TO_WISHLIST_NOTIFICATION
 } from '../../../constants/notificationData';
+import defaultImage from '../../../assets/img/productListPage/placeholder-image.jpg';
 
 import './ProductItem.scss';
 
@@ -22,7 +23,9 @@ class ProductItem extends Component {
 
     this.state = {
       isHovered: false,
-      isShowedModal: false
+      isShowedModal: false,
+      productFirstImage: `${process.env.IMAGE_URL}/${props.product.images[0].claudinaryId}`,
+      hasError: false
     };
 
     this.showModal = this.showModal.bind(this);
@@ -34,6 +37,7 @@ class ProductItem extends Component {
     this.renderWishlistButton = this.renderWishlistButton.bind(this);
     this.renderQuickView = this.renderQuickView.bind(this);
     this.renderHoverView = this.renderHoverView.bind(this);
+    this.handleImageError = this.handleImageError.bind(this);
   }
 
   showModal() {
@@ -86,6 +90,16 @@ class ProductItem extends Component {
     showMessage(REMOVED_FROM_WISHLIST_NOTIFICATION);
   }
 
+  handleImageError() {
+    const { hasError } = this.state;
+    if (!hasError) {
+      this.setState({
+        productFirstImage: defaultImage,
+        hasError: true
+      });
+    }
+  }
+
   renderWishlistButton() {
     const {
       wishlist,
@@ -125,7 +139,12 @@ class ProductItem extends Component {
       <Modal className={`${CN}-quick-view`} removeModal={this.removeModal}>
         <Heading title="Quick view" />
         <div className={`${CN}-quick-view-content`}>
-          <ProductImage className={`${CN}-quick-view-content-images`} images={imagesForQuickView} verticalCarousel />
+          <ProductImage
+            className={`${CN}-quick-view-content-images`}
+            onError={this.handleImageError}
+            images={imagesForQuickView}
+            verticalCarousel
+          />
           <div className={`${CN}-quick-view-content-wrapper`}>
             <ProductOrder
               className={`${CN}-quick-view-content__product-order`}
@@ -144,15 +163,14 @@ class ProductItem extends Component {
   }
 
   renderHoverView() {
+    const { productFirstImage } = this.state;
     const {
       product: {
-        _id, images, label, title, price, sizes
+        _id, label, title, price, sizes
       }
     } = this.props;
     const sizesWithSpaces = sizes.join(', ');
-
     const { isHovered, isShowedModal } = this.state;
-    const imageSrc = images.length && `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
 
     return (
       <>
@@ -170,7 +188,8 @@ class ProductItem extends Component {
               className={cx(`${CN}__img-wrapper__img`, {
                 [`${CN}__img-wrapper__img--hovered`]: isHovered
               })}
-              src={imageSrc}
+              onError={this.handleImageError}
+              src={productFirstImage}
             />
           </div>
         </NavLink>
