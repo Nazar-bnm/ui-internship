@@ -23,6 +23,11 @@ export const VALIDATION_FAILED = {
   message: 'Please fill in all the fields properly',
   type: 'error'
 };
+export const GET_LOCATION_FAILED = {
+  title: 'error',
+  message: 'Defining the location is not possible.',
+  type: 'error'
+};
 export const LOGIN_FAILED = {
   title: 'error',
   message: 'Incorrect email or password.',
