@@ -32,8 +32,6 @@ class RegisterForm extends Component {
 
     this.formRegister = React.createRef();
     this.validate = this.validate.bind(this);
-    this.selectCountry = this.selectCountry.bind(this);
-    this.selectRegion = this.selectRegion.bind(this);
     this.sendData = this.sendData.bind(this);
   }
 
@@ -41,6 +39,23 @@ class RegisterForm extends Component {
     this.setState({
       email: ls.get('emailToRegister') || ''
     });
+  }
+
+  setAddressValue(value, fieldName) {
+    const { address } = this.state;
+    const copiedAddress = { ...address };
+
+    if (fieldName === 'postalCode') {
+      copiedAddress[fieldName] = +value;
+      this.setState({ address: { ...copiedAddress } });
+    } else
+    if (fieldName === 'phone') {
+      copiedAddress[fieldName] = +value;
+      this.setState({ address: { ...copiedAddress } });
+    } else {
+      copiedAddress[fieldName] = value;
+      this.setState({ address: { ...copiedAddress } });
+    }
   }
 
   setFirstName(val) {
@@ -57,41 +72,6 @@ class RegisterForm extends Component {
 
   setPassword(val) {
     this.setState({ password: val });
-  }
-
-  setCompany(val) {
-    const { address } = this.state;
-    this.setState({ address: { ...address, company: val } });
-  }
-
-  setAddress(val) {
-    const { address } = this.state;
-    this.setState({ address: { ...address, addressOne: val } });
-  }
-
-  setCity(val) {
-    const { address } = this.state;
-    this.setState({ address: { ...address, city: val } });
-  }
-
-  setPostalCode(val) {
-    const { address } = this.state;
-    this.setState({ address: { ...address, postalCode: +val } });
-  }
-
-  setPhone(val) {
-    const { address } = this.state;
-    this.setState({ address: { ...address, phone: +val } });
-  }
-
-  selectCountry(val) {
-    const { address } = this.state;
-    this.setState({ address: { ...address, country: val } });
-  }
-
-  selectRegion(val) {
-    const { address } = this.state;
-    this.setState({ address: { ...address, region: val } });
   }
 
   validate() {
@@ -166,7 +146,7 @@ class RegisterForm extends Component {
                 className={`${CN}__field__input`}
                 type="text"
                 required
-                onChange={(val) => this.setFirstName(val.target.value)}
+                onChange={(evt) => this.setFirstName(evt.target.value)}
               />
             </div>
 
@@ -177,7 +157,7 @@ class RegisterForm extends Component {
                 className={`${CN}__field__input`}
                 type="text"
                 required
-                onChange={(val) => this.setLastName(val.target.value)}
+                onChange={(evt) => this.setLastName(evt.target.value)}
               />
             </div>
 
@@ -190,7 +170,7 @@ class RegisterForm extends Component {
                 id="email"
                 defaultValue={email}
                 required
-                onChange={(val) => this.setEmail(val.target.value)}
+                onChange={(evt) => this.setEmail(evt.target.value)}
               />
             </div>
 
@@ -202,7 +182,7 @@ class RegisterForm extends Component {
                 type="password"
                 required
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-                onChange={(val) => this.setPassword(val.target.value)}
+                onChange={(evt) => this.setPassword(evt.target.value)}
               />
             </div>
           </div>
@@ -212,12 +192,12 @@ class RegisterForm extends Component {
             <h3>address information</h3>
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>company</label>
-              <input className={`${CN}__field__input`} type="text" onChange={(val) => this.setCompany(val.target.value)} />
+              <input className={`${CN}__field__input`} type="text" onChange={(evt) => this.setAddressValue(evt.target.value, 'company')} />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>address</label>
-              <input className={`${CN}__field__input`} type="text" onChange={(val) => this.setAddress(val.target.value)} />
+              <input className={`${CN}__field__input`} type="text" onChange={(evt) => this.setAddressValue(evt.target.value, 'addressOne')} />
             </div>
 
             <div className={`${CN}__field`}>
@@ -225,7 +205,7 @@ class RegisterForm extends Component {
               <CountryDropdown
                 className={`${CN}__field__country`}
                 value={country}
-                onChange={(val) => this.selectCountry(val)}
+                onChange={(evt) => this.setAddressValue(evt, 'country')}
               />
             </div>
 
@@ -235,23 +215,23 @@ class RegisterForm extends Component {
                 className={`${CN}__field__country`}
                 country={country}
                 value={region}
-                onChange={(val) => this.selectRegion(val)}
+                onChange={(evt) => this.setAddressValue(evt, 'region')}
               />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>city</label>
-              <input className={`${CN}__field__input`} type="text" onChange={(val) => this.setCity(val.target.value)} />
+              <input className={`${CN}__field__input`} type="text" onChange={(evt) => this.setAddressValue(evt.target.value, 'city')} />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>zip/postal code</label>
-              <input className={`${CN}__field__input`} type="number" onChange={(val) => this.setPostalCode(val.target.value)} />
+              <input className={`${CN}__field__input`} type="number" onChange={(evt) => this.setAddressValue(evt.target.value, 'postalCode')} />
             </div>
 
             <div className={`${CN}__field`}>
               <label className={`${CN}__field__label`}>phone</label>
-              <input className={`${CN}__field__input`} type="number" onChange={(val) => this.setPhone(val.target.value)} />
+              <input className={`${CN}__field__input`} type="number" onChange={(evt) => this.setAddressValue(evt.target.value, 'phone')} />
             </div>
           </div>
         </div>
