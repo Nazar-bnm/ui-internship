@@ -244,7 +244,7 @@ class RegisterForm extends Component {
           >
             create an account
           </Button>
-          <Link to="/login">
+          <Link className="link-back" to="/login">
             Back to login
           </Link>
         </div>

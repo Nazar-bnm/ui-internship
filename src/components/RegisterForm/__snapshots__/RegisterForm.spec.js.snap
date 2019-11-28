@@ -223,13 +223,14 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
   <div
     className="register-form__buttons-wrapper"
   >
-    <button
+    <Button
       className="black-button"
+      icon={null}
       onClick={[Function]}
       type="submit"
     >
       create an account
-    </button>
+    </Button>
     <Link
       to="/login"
     >

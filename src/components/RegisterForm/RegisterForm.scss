@@ -64,6 +64,18 @@
   }
 
   &__buttons-wrapper {
-    @include flex(column, center, center)
+    @include flex(column, center, center);
+
+    .black-button {
+      width: 20vh;
+      height: 40px;
+      padding: 10px;
+      margin-right: 0;
+    }
+    
+    .link-back {
+      margin: 10px 0;
+      color: black
+    }
   }
 }
