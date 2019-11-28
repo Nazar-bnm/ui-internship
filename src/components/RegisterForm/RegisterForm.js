@@ -86,10 +86,6 @@ class RegisterForm extends Component {
     }
   }
 
-  saveToLocalStore() {
-
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
