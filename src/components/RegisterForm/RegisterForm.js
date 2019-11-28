@@ -9,6 +9,7 @@ import HttpService from '../../service/HttpService/httpService';
 import { googleMapAPIKeyUserLocation } from '../../config/googleMapAPIKeyUserLocation';
 import { GET_LOCATION_FAILED } from '../../constants/notificationData';
 import { setTimeoutForPreloader } from '../../helpers';
+import { proxy } from '../../constants';
 
 import './RegisterForm.scss';
 
@@ -30,7 +31,6 @@ class RegisterForm extends Component {
     this.getUserCoordinates = this.getUserCoordinates.bind(this);
     this.getPosition = this.getPosition.bind(this);
     this.onGetLocationSuccess = this.onGetLocationSuccess.bind(this);
-    this.showPreloader = this.showPreloader.bind(this);
   }
 
   componentDidMount() {
@@ -56,7 +56,6 @@ class RegisterForm extends Component {
   async getPosition(position) {
     const lat = position.coords.latitude.toFixed(2);
     const lon = position.coords.longitude.toFixed(2);
-    const proxy = 'https://cors-anywhere.herokuapp.com/';
     const requestURL = `${proxy}https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}`;
     const userAPI = new HttpService();
     const { showMessage } = this.props;
@@ -77,7 +76,6 @@ class RegisterForm extends Component {
     this.setState({
       isLoading: true
     });
-    this.showPreloader();
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.getPosition, this.showError);
@@ -97,14 +95,6 @@ class RegisterForm extends Component {
       method: 'POST',
       body: data
     });
-  }
-
-  showPreloader() {
-    const { isLoading } = this.state;
-
-    if (isLoading) {
-      return <Preloader />;
-    }
   }
 
   render() {
@@ -218,7 +208,7 @@ class RegisterForm extends Component {
             Back to login
           </Link>
         </div>
-        {this.showPreloader()}
+        {isLoading && <Preloader />}
       </form>
     );
   }
