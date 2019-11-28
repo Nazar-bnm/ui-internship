@@ -1,0 +1,1 @@
+export const googleMapAPIKeyUserLocation = 'AIzaSyBAjVWlquT_qSKufJyzldhchRMOw46WA1I';

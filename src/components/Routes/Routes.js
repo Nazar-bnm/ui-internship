@@ -15,7 +15,7 @@ import MostPopular from '../MostPopular';
 import CartPage from '../CartPage';
 import ProductListPage from '../ProductListPage';
 import BlogPage from '../BlogPage';
-import RegisterForm from '../RegisterForm/RegisterForm';
+import RegisterForm from '../RegisterForm';
 import LoginPage from '../LoginPage';
 
 import './Routes.scss';
