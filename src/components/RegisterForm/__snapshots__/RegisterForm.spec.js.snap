@@ -87,6 +87,13 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
       <div
         className="register-form__field"
       >
+        <Button
+          className="grey-button"
+          icon={null}
+          onClick={[Function]}
+        >
+          Use data from GPS
+        </Button>
         <label
           className="register-form__field__label"
         >
@@ -107,6 +114,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           type="text"
         />
       </div>
@@ -133,6 +141,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           type="text"
         />
       </div>
@@ -146,6 +155,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           type="text"
         />
       </div>
@@ -159,6 +169,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          defaultValue={null}
           required={true}
           type="text"
         />

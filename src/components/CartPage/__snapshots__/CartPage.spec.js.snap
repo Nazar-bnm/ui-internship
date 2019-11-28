@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartPage /> should match snapshot 1`] = `
+<div
+  className="cart-page"
+>
+  <Link
+    className="cart-page__link"
+    to="/products"
+  >
+    <div
+      className="cart-page__offer"
+    >
+      <h2>
+        Scoring a good fashion deal is as exhilarating as winning the lottery! Try out your luck!
+      </h2>
+      <div
+        className="col-6 col-center cart-page__pseudo-button"
+      >
+        Continue shopping
+      </div>
+    </div>
+  </Link>
+  <Connect(YouWillAlsoLove) />
+  <div
+    className="cart-page content"
+  >
+    <h1
+      className="cart-page__title"
+    >
+      Cart
+    </h1>
+  </div>
+  <div
+    className="cart-page content"
+  >
+    <div
+      className="cart-page__empty-page"
+    >
+      <h2
+        className="cart-page__subtitle"
+      >
+        No items in your cart!
+      </h2>
+      <img
+        alt="no cart items"
+        className="cart-page__image col-6 col-center\\""
+        src="src/assets/img/content/img-no-cartitems.png"
+      />
+    </div>
+  </div>
+  <div
+    className="cart-page__checkout content"
+  >
+    <div
+      className="cart-page__receipt col-6 col-center"
+    >
+      <div
+        className="col-10"
+      >
+        <p>
+          Subtotal
+        </p>
+        <p>
+          Delivery costs
+        </p>
+        <p>
+          Gift voucher
+        </p>
+        <hr />
+        <p>
+          total price
+        </p>
+      </div>
+      <div
+        className="col-2"
+      >
+        <p>
+          $0
+        </p>
+        <p>
+          $35
+        </p>
+        <p>
+          $5
+        </p>
+        <hr />
+        <p>
+          $30
+        </p>
+      </div>
+    </div>
+  </div>
+  <Checkout />
+</div>
+`;

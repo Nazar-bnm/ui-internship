@@ -108,7 +108,7 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
       >
         <CountryDropdown
           blacklist={Array []}
-          class="billing-info-selector-container__selector"
+          className="billing-info-selector-container__selector"
           classes=""
           defaultOptionLabel="Select Country"
           disabled={false}
@@ -155,7 +155,7 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
       >
         <RegionDropdown
           blankOptionLabel="-"
-          class="billing-info-selector-container__selector"
+          className="billing-info-selector-container__selector"
           classes=""
           country=""
           countryValueType="full"

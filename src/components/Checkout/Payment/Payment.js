@@ -1,44 +1,46 @@
 import React from 'react';
-import cx from 'classnames';
+import StripeCheckout from 'react-stripe-checkout';
+import { stripeKey } from '../../../config/stripeKey';
+import { PAYMENT_SUCCESSED, PAYMENT_FAILED } from '../../../constants/notificationData';
+import HttpService from '../../../service/HttpService/httpService';
 
 import './Payment.scss';
 
 const CN = 'payment';
 
-const Payment = () => (
-  <div className={cx(CN)}>
-    <div className={`${CN}__input-wrapper`}>
-      <label htmlFor="card-holder">card holder*</label>
-      <input type="text" name={CN} className={`${CN}__input`} />
+const Payment = (props) => {
+  const { totalCount } = props;
+
+  async function handleToken(token) {
+    const { showMessage } = props;
+    try {
+      const response = await new HttpService().post(
+        'https://hi3vv.sse.codesandbox.io/checkout',
+        { token, totalCount }
+      );
+
+      const { status } = response.data;
+
+      if (status === 'success') {
+        showMessage(PAYMENT_SUCCESSED);
+      }
+    } catch (error) {
+      showMessage(PAYMENT_FAILED);
+      return error.response;
+    }
+  }
+
+  return (
+    <div className={(CN)}>
+      <StripeCheckout
+        stripeKey={stripeKey}
+        token={handleToken}
+        amount={totalCount * 100}
+        billingAddress
+        shippingAddress
+      />
     </div>
-    <div className={`${CN}__input-wrapper`}>
-      <label htmlFor="card-number">card number*</label>
-      <input type="number" name={CN} className={`${CN}__input`} />
-    </div>
-    <div className={`${CN}__date-cvv-wrapper`}>
-      <div className={`${CN}__expiration-date-wrapper`}>
-        <label htmlFor="expiration-date" className={`${CN}__expiration-date-label`}>expiration date*</label>
-        <div className={`${CN}__payment-input-wrapper`}>
-          <input
-            type="number"
-            name="expiration-date"
-            className={`${CN}__payment-input`}
-            placeholder="Year"
-          />
-          <input
-            type="number"
-            name="expiration-date"
-            className={`${CN}__payment-input`}
-            placeholder="Month"
-          />
-        </div>
-      </div>
-      <div className={`${CN}__input-wrapper`}>
-        <label htmlFor="cvv">cvv*</label>
-        <input type="password" name={CN} className={`${CN}__input ${CN}__cvv`} />
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 export default Payment;

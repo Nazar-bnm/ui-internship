@@ -35,12 +35,16 @@ class BrandsAndShippingInfo extends Component {
   }
 
   renderBrands(brands) {
-    return brands.map(({ id, logo }) => {
+    return brands.map(({ logo }) => {
       const imageSrc = `${process.env.BRANDS_IMAGE_URL}/${logo}.png`;
 
       return (
-        <li key={id} className={`col-2 ${CN}__list-item`}>
-          <img className={`${CN}__list-photo`} alt="brand logo" src={imageSrc} />
+        <li key={logo} className={`col-2 ${CN}__list-item`}>
+          <img
+            className={`${CN}__list-photo`}
+            alt="brand logo"
+            src={imageSrc}
+          />
         </li>
       );
     });
