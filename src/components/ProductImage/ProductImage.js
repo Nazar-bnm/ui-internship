@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import defaultImage from '../../assets/img/productListPage/placeholder-image.jpg';
 import Carousel from '../Carousel';
 import ProductImageItem from './ProductImageItem';
 
@@ -49,7 +50,7 @@ class ProductImage extends Component {
     const { hasError } = this.state;
     if (!hasError) {
       this.setState({
-        selectedImage: 'src/assets/img/productListPage/no-image.jpeg',
+        selectedImage: defaultImage,
         hasError: true
       });
     }

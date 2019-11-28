@@ -11,6 +11,7 @@ import {
   REMOVED_FROM_WISHLIST_NOTIFICATION,
   ADDED_TO_WISHLIST_NOTIFICATION
 } from '../../../constants/notificationData';
+import defaultImage from '../../../assets/img/productListPage/placeholder-image.jpg';
 
 import './ProductItem.scss';
 
@@ -93,7 +94,7 @@ class ProductItem extends Component {
     const { hasError } = this.state;
     if (!hasError) {
       this.setState({
-        productFirstImage: 'src/assets/img/productListPage/placeholder-image.jpeg',
+        productFirstImage: defaultImage,
         hasError: true
       });
     }
