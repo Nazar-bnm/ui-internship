@@ -23,3 +23,13 @@ export const VALIDATION_FAILED = {
   message: 'Please fill in all the fields properly',
   type: 'error'
 };
+export const LOGIN_FAILED = {
+  title: 'error',
+  message: 'Incorrect email or password.',
+  type: 'error'
+};
+export const LOGIN_SUCCESS = {
+  title: 'success',
+  message: 'You are now logged in!',
+  type: 'success'
+};
