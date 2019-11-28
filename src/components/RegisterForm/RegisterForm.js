@@ -9,7 +9,7 @@ import HttpService from '../../service/HttpService/httpService';
 import { googleMapAPIKeyUserLocation } from '../../config/googleMapAPIKeyUserLocation';
 import { GET_LOCATION_FAILED } from '../../constants/notificationData';
 import { setTimeoutForPreloader } from '../../helpers';
-import { proxy } from '../../constants';
+import { proxy, googleMapsGeocodeURL } from '../../constants';
 
 import './RegisterForm.scss';
 
@@ -56,7 +56,7 @@ class RegisterForm extends Component {
   async getPosition(position) {
     const lat = position.coords.latitude.toFixed(2);
     const lon = position.coords.longitude.toFixed(2);
-    const requestURL = `${proxy}https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}`;
+    const requestURL = `${proxy}${googleMapsGeocodeURL}/json?latlng=${lat},${lon}&key=${googleMapAPIKeyUserLocation}`;
     const userAPI = new HttpService();
     const { showMessage } = this.props;
 
