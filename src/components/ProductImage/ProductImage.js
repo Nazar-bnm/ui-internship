@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import defaultImage from '../../assets/img/productListPage/placeholder-image.jpg';
 import Carousel from '../Carousel';
+import ProductImageItem from './ProductImageItem';
 
 import './ProductImage.scss';
 
@@ -19,8 +21,11 @@ class ProductImage extends Component {
     super(props);
 
     this.state = {
-      selectedImage: ''
+      selectedImage: '',
+      hasError: false
     };
+
+    this.handleImageError = this.handleImageError.bind(this);
   }
 
   getBigImageSrc() {
@@ -41,28 +46,36 @@ class ProductImage extends Component {
     });
   };
 
-  renderSmallImages(selectedImage) {
-    const { images, verticalCarousel } = this.props;
+  handleImageError() {
+    const { hasError } = this.state;
+    if (!hasError) {
+      this.setState({
+        selectedImage: defaultImage,
+        hasError: true
+      });
+    }
+  }
+
+  renderSmallImages() {
+    const {
+      images,
+      verticalCarousel
+    } = this.props;
+    const { selectedImage } = this.state;
 
     const smallImages = images.map((el) => {
       const { src } = el;
       const isSelected = selectedImage === src;
 
       return (
-        <div className={`${CN}__small-image`} key={src}>
-          <img
-            className={cx(CN, { 'product-image__selected-image': isSelected })}
-            alt="product"
-            src={src}
-          />
-          <button
-            className={`${CN}__image-on-hover`}
-            data-src={src}
-            onClick={this.clickHandler}
-            type="submit"
-            label="clickable image"
-          />
-        </div>
+        <ProductImageItem
+          keyForChild={src}
+          key={src}
+          src={src}
+          selectedImage
+          isSelected={isSelected}
+          clickHandler={this.clickHandler}
+        />
       );
     });
 
@@ -85,7 +98,12 @@ class ProductImage extends Component {
       <div className={cx(`${CN}__container`, className)}>
         {this.renderSmallImages(selectedImage)}
         <div className={`${CN}__big-image-container`} type="submit">
-          <img alt="product" className={CN} src={this.getBigImageSrc()} />
+          <img
+            alt="product"
+            className={CN}
+            src={this.getBigImageSrc()}
+            onError={this.handleImageError}
+          />
         </div>
       </div>
     );

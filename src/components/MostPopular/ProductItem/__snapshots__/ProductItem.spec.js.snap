@@ -23,7 +23,8 @@ exports[`<ProductItem /> should render component <ProductItem /> 1`] = `
       <img
         alt="product"
         className="product__img-wrapper__img"
-        src={0}
+        onError={[Function]}
+        src="undefined/undefined"
       />
     </div>
   </NavLink>
@@ -43,7 +44,7 @@ exports[`<ProductItem /> should render component <ProductItem /> 1`] = `
     <h3
       className="product__title-wrapper__price"
     >
-      NaN
+      undefined NaN
     </h3>
   </div>
 </div>

@@ -96,41 +96,37 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
       />
     </div>
     <div
-      className="billing-info__input-wrapper"
+      className="billing-info-selector-wrapper"
     >
-      <p>
+      <h5
+        className="billing-info-selector__title"
+      >
         country
-      </p>
-      <Dropdown
-        className="billing-info__dropdown"
-        menuOptions={
-          Array [
-            Object {
-              "label": "Ukraine",
-              "value": "Ukraine",
-            },
-            Object {
-              "label": "Poland",
-              "value": "Poland",
-            },
-            Object {
-              "label": "USA",
-              "value": "USA",
-            },
-            Object {
-              "label": "China",
-              "value": "China",
-            },
-            Object {
-              "label": "France",
-              "value": "France",
-            },
-          ]
-        }
-        onDropdownChange={[Function]}
-        placeholder=""
-        value="Choose country..."
-      />
+      </h5>
+      <div
+        className="billing-info-selector-container"
+      >
+        <CountryDropdown
+          blacklist={Array []}
+          className="billing-info-selector-container__selector"
+          classes=""
+          defaultOptionLabel="Select Country"
+          disabled={false}
+          id=""
+          labelType="full"
+          name="rcrs-country"
+          onBlur={[Function]}
+          onChange={[Function]}
+          priorityOptions={Array []}
+          showDefaultOption={true}
+          value=""
+          valueType="full"
+          whitelist={Array []}
+        />
+        <i
+          className="sort icon billing-info-selector-container__icon"
+        />
+      </div>
     </div>
     <div
       className="billing-info__input-wrapper"
@@ -147,45 +143,39 @@ exports[`<BillingInfo /> should match snapshot 1`] = `
       />
     </div>
     <div
-      className="billing-info__input-wrapper"
+      className="billing-info-selector-wrapper"
     >
-      <p>
-        state
-      </p>
-      <Dropdown
-        className="billing-info__dropdown"
-        menuOptions={
-          Array [
-            Object {
-              "label": "--not applicable--",
-              "value": "--not applicable--",
-            },
-            Object {
-              "label": "Alabama",
-              "value": "Alabama",
-            },
-            Object {
-              "label": "Alaska",
-              "value": "Alaska",
-            },
-            Object {
-              "label": "Arizona",
-              "value": "Arizona",
-            },
-            Object {
-              "label": "Arkansas",
-              "value": "Arkansas",
-            },
-            Object {
-              "label": "California",
-              "value": "California",
-            },
-          ]
-        }
-        onDropdownChange={[Function]}
-        placeholder=""
-        value="Choose state..."
-      />
+      <h5
+        className="billing-info-selector__title"
+      >
+        region
+      </h5>
+      <div
+        className="billing-info-selector-container"
+      >
+        <RegionDropdown
+          blankOptionLabel="-"
+          className="billing-info-selector-container__selector"
+          classes=""
+          country=""
+          countryValueType="full"
+          customOptions={Array []}
+          defaultOptionLabel="Select Region"
+          disableWhenEmpty={false}
+          disabled={false}
+          id=""
+          labelType="full"
+          name="rcrs-region"
+          onBlur={[Function]}
+          onChange={[Function]}
+          showDefaultOption={true}
+          value=""
+          valueType="full"
+        />
+        <i
+          className="sort icon billing-info-selector-container__icon"
+        />
+      </div>
     </div>
     <div
       className="billing-info__input-wrapper"

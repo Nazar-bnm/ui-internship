@@ -9,6 +9,7 @@ import Preloader from '../../Preloader';
 
 import mockedData from '../../../mockedDataForTests';
 import { brandIDEnum } from '../../../constants';
+import { setTimeoutForPreloader } from '../../../helpers';
 
 import './ItemsList.scss';
 
@@ -69,11 +70,7 @@ class ItemsList extends React.Component {
         this.props.count = 0;
       }
 
-      setTimeout(() => {
-        this.setState({
-          isLoading: false
-        });
-      }, 500);
+      setTimeoutForPreloader.bind(this)();
 
       onGetProductsSuccess(response.data);
     } catch (error) {

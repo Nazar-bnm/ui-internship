@@ -3,6 +3,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import defaultCartItemImage from '../../assets/img/content/img-no-cartitems.png';
 import CartItem from './CartItem';
 import Checkout from '../Checkout';
 import YouWillAlsoLove from '../YouWillAlsoLove';
@@ -34,6 +35,7 @@ class CartPage extends Component {
 
   componentDidUpdate(prevProps) {
     const { currencyKey } = this.props;
+
     if (currencyKey !== prevProps.currencyKey) {
       this.getConvertedPrice();
     }
@@ -106,7 +108,7 @@ class CartPage extends Component {
         <img
           className={`${CN}__image col-6 col-center"`}
           alt="no cart items"
-          src="src/assets/img/content/img-no-cartitems.png"
+          src={defaultCartItemImage}
         />
       </div>
     );
@@ -154,23 +156,11 @@ class CartPage extends Component {
               <p>total price</p>
             </div>
             <div className="col-2">
-              <p>
-                <>{symbol}</>
-                {`${totalItemPrice}`}
-              </p>
-              <p>
-                <>{symbol}</>
-                {`${currencyDeliveryCost}`}
-              </p>
-              <p>
-                <>{symbol}</>
-                {`${currencyVoucher}`}
-              </p>
+              <p>{`${symbol} ${totalItemPrice}`}</p>
+              <p>{`${symbol} ${currencyDeliveryCost}`}</p>
+              <p>{`${symbol} ${currencyVoucher}`}</p>
               <hr />
-              <p>
-                <>{symbol}</>
-                {`${totalAmountToPay}`}
-              </p>
+              <p>{`${symbol} ${totalAmountToPay}`}</p>
             </div>
           </div>
         </div>
@@ -183,7 +173,7 @@ class CartPage extends Component {
 CartPage.propTypes = {
   className: PropTypes.string,
   currencyKey: PropTypes.number.isRequired,
-  symbol: PropTypes.any.isRequired
+  symbol: PropTypes.string.isRequired
 };
 
 CartPage.defaultProps = {

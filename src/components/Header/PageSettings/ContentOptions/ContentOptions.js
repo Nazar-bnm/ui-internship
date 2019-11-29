@@ -22,6 +22,7 @@ const ContentOptions = ({ changeCurrency }) => {
 
   if (currentCurrencyValue) {
     const targetObj = currency.find((el) => el.value === currentCurrencyValue);
+
     changeCurrency(targetObj);
   }
 

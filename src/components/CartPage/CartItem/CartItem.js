@@ -22,6 +22,7 @@ class CartItem extends Component {
     this.handleQuantity = this.handleQuantity.bind(this);
     this.renderProductDescription = this.renderProductDescription.bind(this);
     this.renderCounter = this.renderCounter.bind(this);
+    this.getUserCartItem = this.getUserCartItem.bind(this);
   }
 
   async componentDidMount() {
@@ -30,32 +31,37 @@ class CartItem extends Component {
 
   componentDidUpdate(prevProps) {
     const { currencyKey } = this.props;
+
     if (currencyKey !== prevProps.currencyKey) {
       this.getConvertedPrice();
     }
   }
 
   onRemoveFromCart() {
-    const { userCart, removeItemFromCart, item } = this.props;
-    const { _id } = item;
-    let userCartNew = [...userCart];
+    const { userCart, removeItemFromCart, item: { _id } } = this.props;
+    const userCartNew = userCart.filter((product) => product.id !== _id);
 
-    userCartNew = userCart.filter((product) => product.id !== _id);
     removeItemFromCart(userCartNew);
   }
 
   getConvertedPrice() {
-    const { item, currencyKey } = this.props;
-    const { price } = item;
+    const { item: { price }, currencyKey } = this.props;
     const currencyPrice = (price * currencyKey).toFixed(0);
+
     this.setState({
       convertedPrice: currencyPrice
     });
   }
 
+  getUserCartItem() {
+    const { item: { _id }, userCart } = this.props;
+    const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
+
+    return userCartItem;
+  }
+
   changeAmount(gap) {
-    const { changeQuantity, userCart, item } = this.props;
-    const { _id } = item;
+    const { changeQuantity, userCart, item: { _id } } = this.props;
     const userCartNew = [...userCart];
 
     userCart.map((product, index) => {
@@ -66,24 +72,24 @@ class CartItem extends Component {
     changeQuantity(userCartNew);
   }
 
+
   handleQuantity() {
-    const { item, userCart } = this.props;
-    const { _id } = item;
-    const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
+    const userCartItem = this.getUserCartItem();
     const { chosenQuantity } = userCartItem;
     const { dec } = this.state;
 
     return ((chosenQuantity === 1) ? this.onRemoveFromCart : () => this.changeAmount(dec));
   }
 
-  renderProductDescription = () => {
-    const { item, userCart } = this.props;
+  renderProductDescription() {
+    const { item } = this.props;
     const { _id, title, images } = item;
-    const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
+    const userCartItem = this.getUserCartItem();
     const { color, size } = userCartItem;
+    const imageUrl = `${process.env.IMAGE_URL}/${images[0].claudinaryId}`;
     return (
       <div className={`${CN}__description`}>
-        <img className="col-3" src={`${process.env.IMAGE_URL}/${images[0].claudinaryId}`} alt={title} />
+        <img className={`${CN}__item-image col-3`} src={imageUrl} alt={title} />
         <div className={`${CN}__text col-8 col-right`}>
           <h4 className={`${CN}__title`}>{title}</h4>
           <h4>
@@ -107,14 +113,14 @@ class CartItem extends Component {
         </div>
       </div>
     );
-  };
+  }
 
-  renderCounter = () => {
-    const { item, userCart } = this.props;
-    const { quantity, _id } = item;
-    const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
-    const { chosenQuantity } = userCartItem;
+  renderCounter() {
     const { inc } = this.state;
+    const { item: { quantity } } = this.props;
+    const userCartItem = this.getUserCartItem();
+    const { chosenQuantity } = userCartItem;
+
 
     return (
       <div className={`${CN}__counter`}>
@@ -136,18 +142,16 @@ class CartItem extends Component {
         </button>
       </div>
     );
-  };
+  }
 
   render() {
     const { convertedPrice } = this.state;
     const {
-      item,
-      userCart,
+      item: { title },
       className,
       symbol
     } = this.props;
-    const { _id, title } = item;
-    const userCartItem = userCart.find((cartItem) => cartItem.id === _id) || {};
+    const userCartItem = this.getUserCartItem();
     const { chosenQuantity } = userCartItem;
 
     return (
@@ -159,8 +163,7 @@ class CartItem extends Component {
         </td>
         <td className={`${CN}__column`}>{this.renderCounter()}</td>
         <td className={`${CN}__column`}>
-          <>{symbol}</>
-          {`${convertedPrice * chosenQuantity}`}
+          {`${symbol} ${convertedPrice * chosenQuantity}`}
         </td>
       </tr>
     );
@@ -180,7 +183,7 @@ CartItem.propTypes = {
   removeItemFromCart: PropTypes.func.isRequired,
   userCart: PropTypes.array,
   currencyKey: PropTypes.number.isRequired,
-  symbol: PropTypes.any.isRequired
+  symbol: PropTypes.string.isRequired
 };
 
 CartItem.defaultProps = {

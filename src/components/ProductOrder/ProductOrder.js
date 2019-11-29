@@ -70,7 +70,6 @@ export default class ProductOrder extends Component {
           colors: response.data.colors,
           description: response.data.description,
           title: response.data.title,
-          // price: priceConverted,
           price: response.data.price,
           dataLoaded: true
         });
@@ -85,6 +84,7 @@ export default class ProductOrder extends Component {
     const { price } = this.state;
     const { currencyKey } = this.props;
     const currencyPrice = (price * currencyKey).toFixed(0);
+
     this.setState({
       convertedPrice: currencyPrice
     });
@@ -137,10 +137,7 @@ export default class ProductOrder extends Component {
         <h2 className={`${CN}__heading`}>{title}</h2>
         <p className={`${CN}__description`}>{description}</p>
         <span className={`${CN}__price`}>
-          <>
-            {symbol}
-          </>
-          {` ${convertedPrice}.00`}
+          {`${symbol} ${convertedPrice}.00`}
         </span>
         <div className={`${CN}__dropdowns-wrapper`}>
           <Dropdown
@@ -198,11 +195,10 @@ ProductOrder.propTypes = {
   addToCart: PropTypes.func,
   className: PropTypes.string,
   currencyKey: PropTypes.number.isRequired,
-  symbol: PropTypes.string
+  symbol: PropTypes.string.isRequired
 };
 
 ProductOrder.defaultProps = {
   addToCart: PropTypes.func,
-  className: '',
-  symbol: '&#8364'
+  className: ''
 };

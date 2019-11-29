@@ -129,5 +129,8 @@ exports[`<Header /> should match snapshot 1`] = `
       ]
     }
   />
+  <WebsiteNavigation
+    className="hidden"
+  />
 </header>
 `;

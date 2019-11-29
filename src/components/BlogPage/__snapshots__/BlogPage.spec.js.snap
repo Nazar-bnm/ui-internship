@@ -11,18 +11,44 @@ exports[`<BlogPage /> should match snapshot 1`] = `
       Categories
     </p>
     <hr />
-    <p>
-      Celebrity style (39)
-    </p>
-    <p>
-      Fashion shows (15)
-    </p>
-    <p>
-      Shopping (27)
-    </p>
-    <p>
-      Shopping (119)
-    </p>
+    <ul>
+      <li
+        className="categories__item"
+        key="celebrity style"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        celebrity style
+      </li>
+      <li
+        className="categories__item"
+        key="fashion shows"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        fashion shows
+      </li>
+      <li
+        className="categories__item"
+        key="causal events"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        causal events
+      </li>
+      <li
+        className="categories__item"
+        key="shopping"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        shopping
+      </li>
+    </ul>
   </div>
   <div
     className="labels__wrapper"
@@ -81,6 +107,13 @@ exports[`<BlogPage /> should match snapshot 1`] = `
   <div
     className="blog-page__items-wrapper"
   >
+    <div
+      className="blog-page--preloader"
+    >
+      <Preloader
+        overlay={null}
+      />
+    </div>
     <BlogItem
       className="bottom-border"
       date="12 October 2019"

@@ -1,4 +1,4 @@
-@import '../../scss/global_styles';
+@import "../../scss/global_styles";
 
 .blog-page {
   @include flex($direction: column);
@@ -9,6 +9,22 @@
     border: 1px solid $border-lightGrey;
     padding: 10px;
     height: 200px;
+
+    &__item {
+      cursor: pointer;
+      list-style: none;
+      outline: none;
+      line-height: 2rem;
+
+      &--hovered {
+        font-family: font(secondary-bold);
+      }
+
+      &--hovered,
+      &:hover {
+        color: $dove-gray;
+      }
+    }
   }
 
   .transparent-button {
@@ -17,6 +33,7 @@
 
   &__items-wrapper {
     @include flex($direction: column);
+    position: relative;
   }
 
   .labels__wrapper {

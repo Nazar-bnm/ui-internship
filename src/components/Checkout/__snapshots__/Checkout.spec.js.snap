@@ -29,7 +29,7 @@ exports[`<Checkout /> should match snapshot 1`] = `
           "title": "04. Shipping Method",
         },
         Object {
-          "description": <Payment />,
+          "description": <Memo(Connect(Payment)) />,
           "id": 5,
           "title": "05. Payment",
         },

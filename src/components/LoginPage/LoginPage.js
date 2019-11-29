@@ -1,8 +1,10 @@
 import React from 'react';
 import ls from 'local-storage';
+import { Link } from 'react-router-dom';
 
 import { Button } from '@/shared';
-import { VALIDATION_FAILED } from '../../constants/notificationData';
+import HttpService from '../../service/HttpService/httpService';
+import { VALIDATION_FAILED, LOGIN_FAILED, LOGIN_SUCCESS } from '../../constants/notificationData';
 
 import './LoginPage.scss';
 
@@ -41,6 +43,33 @@ class LoginPage extends React.Component {
     ls.set('emailToRegister', emailToRegisterValue);
   }
 
+  async doesUserExist() {
+    const { showMessage } = this.props;
+    const userAPI = new HttpService();
+    const usersURL = `${process.env.SERVER_URL}/login`;
+    const emailToLoginValue = this.formLogin.current[0].value;
+    const passwordToLoginValue = this.formLogin.current[1].value;
+    const currentUser = {
+      email: emailToLoginValue,
+      password: passwordToLoginValue
+    };
+
+    try {
+      const response = await userAPI.post(usersURL, currentUser);
+      const errorMessage = response.data.message;
+
+      if (errorMessage) {
+        showMessage(LOGIN_FAILED);
+      } else {
+        ls.set('authToken', response.data.token);
+        showMessage(LOGIN_SUCCESS);
+        window.history.back();
+      }
+    } catch (error) {
+      showMessage(LOGIN_FAILED);
+    }
+  }
+
   validate({ target }) {
     const { showMessage } = this.props;
     const clickedButton = target.innerText.toUpperCase();
@@ -52,6 +81,7 @@ class LoginPage extends React.Component {
       showMessage(VALIDATION_FAILED);
     } else {
       this.saveToLocalStorage();
+      this.doesUserExist();
     }
 
     return isInputValid;
@@ -134,12 +164,14 @@ class LoginPage extends React.Component {
                 required
               />
             </form>
-            <Button
-              className="black-button"
-              onClick={this.validate}
-            >
-            create an account
-            </Button>
+            <Link to="/RegisterForm">
+              <Button
+                className="black-button"
+                onClick={this.validate}
+              >
+              create an account
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

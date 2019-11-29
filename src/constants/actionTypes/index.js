@@ -29,11 +29,9 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 // Blog page
 export const GET_BLOG_ITEMS_SUCCESS = 'GET_BLOG_ITEMS_SUCCESS';
 export const GET_BLOG_ITEMS_ERROR = 'GET_BLOG_ITEMS_ERROR';
+
+// Cart
+export const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 export const GET_LABEL = 'GET_LABEL';
 // currency
-export const GET_USD = 'GET_USD';
-export const GET_EURO = 'GET_EURO';
-export const GET_UAH = 'GET_UAH';
 export const GET_THE_CURRENCY = 'GET_THE_CURRENCY';
-export const CHANGE_THE_CURRENCY = 'CHANGE_THE_CURRENCY';
-export const GET_THE_CURRENCY_KEY = 'GET_THE_CURRENCY_KEY';

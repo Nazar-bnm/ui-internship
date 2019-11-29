@@ -1,0 +1,31 @@
+@import '../../scss/global_styles';
+
+.website-navigation {
+  &__wrapper {
+    @include flex;
+    padding: 10px 0;
+    border-top: 1px solid $silver-chalice;
+    color: $silver-chalice;
+    font-size: 0.7rem;
+  }
+
+  &__pathname {
+    text-transform: capitalize;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    font-size: 0.7rem;
+    font-family: font(secondary);
+    color: $silver-chalice;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

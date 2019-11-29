@@ -25,7 +25,7 @@ class BrandsAndShippingInfo extends Component {
     const userAPI = new HttpService();
 
     try {
-      const response = await userAPI.get(`${process.env.BASE_URL}/brands`);
+      const response = await userAPI.get(`${process.env.SERVER_URL}/brands`);
       if (response && response.data) {
         this.setState({ brandsList: response.data });
       }
@@ -35,11 +35,19 @@ class BrandsAndShippingInfo extends Component {
   }
 
   renderBrands(brands) {
-    return brands.map(({ id, image }) => (
-      <li key={id} className={`col-2 ${CN}__list-item`}>
-        <img className={`${CN}__list-photo`} alt="brand logo" src={image} />
-      </li>
-    ));
+    return brands.map(({ logo }) => {
+      const imageSrc = `${process.env.BRANDS_IMAGE_URL}/${logo}.png`;
+
+      return (
+        <li key={logo} className={`col-2 ${CN}__list-item`}>
+          <img
+            className={`${CN}__list-photo`}
+            alt="brand logo"
+            src={imageSrc}
+          />
+        </li>
+      );
+    });
   }
 
   render() {
