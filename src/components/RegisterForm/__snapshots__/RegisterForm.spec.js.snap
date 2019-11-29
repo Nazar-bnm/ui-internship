@@ -163,34 +163,6 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <label
           className="register-form__field__label"
         >
-          region
-        </label>
-        <RegionDropdown
-          blankOptionLabel="-"
-          className="register-form__field__country"
-          classes=""
-          country=""
-          countryValueType="full"
-          customOptions={Array []}
-          defaultOptionLabel="Select Region"
-          disableWhenEmpty={false}
-          disabled={false}
-          id=""
-          labelType="full"
-          name="rcrs-region"
-          onBlur={[Function]}
-          onChange={[Function]}
-          showDefaultOption={true}
-          value=""
-          valueType="full"
-        />
-      </div>
-      <div
-        className="register-form__field"
-      >
-        <label
-          className="register-form__field__label"
-        >
           city
         </label>
         <input
@@ -198,6 +170,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
           defaultValue={null}
           onChange={[Function]}
           type="text"
+          value=""
         />
       </div>
       <div

@@ -9,6 +9,10 @@ const CN = 'order-review';
 
 const OrderReview = () => (
   <div className={cx(CN)}>
+    <img
+      src="https://www.milanodavai.ru/wp-content/uploads/2017/11/Shopping-Milan.jpg.webp"
+      alt="sale!!!"
+    />
        Please review all the information on this page.
     <br />
        Press the order now button to confirm your purchase.
