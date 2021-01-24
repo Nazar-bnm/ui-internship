@@ -40,6 +40,7 @@
   },
   "settings": {
     "import/resolver": {
+      "node": {}, // fix for the node path
       "webpack": {
         "config": "webpack.config.js"
       }

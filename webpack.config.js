@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   entry: './src/index.js',
   output: {
@@ -26,40 +26,30 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.(scss|css)$/,
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
-          { loader: 'sass-loader' },
-        ],
+          { loader: 'sass-loader' }
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif|ttf)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-    ],
+        use: ['file-loader']
+      }
+    ]
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html',
+      filename: './index.html'
     }),
     new Dotenv({
-      path: './.env',
-    }),
-  ],
+      path: './.env'
+    })
+  ]
 };
