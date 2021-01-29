@@ -29,7 +29,8 @@ export default class ProductOrder extends Component {
       title: '',
       price: null,
       chosenQuantity: 1,
-      dataLoaded: false
+      dataLoaded: false,
+      convertedPrice: 0
     };
 
     this.handleSizeChange = this.handleSizeChange.bind(this);
@@ -37,11 +38,22 @@ export default class ProductOrder extends Component {
     this.handleColorChange = this.handleColorChange.bind(this);
     this.addToWishlistWithNotification = this.addToWishlistWithNotification.bind(this);
     this.addToCartWithNotification = this.addToCartWithNotification.bind(this);
+    this.getConvertedPrice = this.getConvertedPrice.bind(this);
   }
 
-  componentDidMount() {
-    this.getData();
+  async componentDidMount() {
+    await this.getData();
+    this.getConvertedPrice();
   }
+
+  componentDidUpdate(prevProps) {
+    const { currencyKey } = this.props;
+
+    if (currencyKey !== prevProps.currencyKey) {
+      this.getConvertedPrice();
+    }
+  }
+
 
   async getData() {
     const userAPI = new HttpService();
@@ -65,6 +77,17 @@ export default class ProductOrder extends Component {
     } catch (error) {
       throw (new Error());
     }
+  }
+
+
+  getConvertedPrice() {
+    const { price } = this.state;
+    const { currencyKey } = this.props;
+    const currencyPrice = (price * currencyKey).toFixed(0);
+
+    this.setState({
+      convertedPrice: currencyPrice
+    });
   }
 
   addToWishlistWithNotification() {
@@ -99,10 +122,10 @@ export default class ProductOrder extends Component {
 
   content() {
     const {
-      colors, sizes, quantity, title, description, price
+      colors, sizes, quantity, title, description, convertedPrice
     } = this.state;
 
-    const { className } = this.props;
+    const { className, symbol } = this.props;
 
     const makeDataTemplated = (value) => ({ label: value, value });
 
@@ -113,7 +136,9 @@ export default class ProductOrder extends Component {
       <div className={cx(CN, className)}>
         <h2 className={`${CN}__heading`}>{title}</h2>
         <p className={`${CN}__description`}>{description}</p>
-        <span className={`${CN}__price`}>{`$${price}.00`}</span>
+        <span className={`${CN}__price`}>
+          {`${symbol} ${convertedPrice}.00`}
+        </span>
         <div className={`${CN}__dropdowns-wrapper`}>
           <Dropdown
             key="1"
@@ -168,7 +193,9 @@ export default class ProductOrder extends Component {
 
 ProductOrder.propTypes = {
   addToCart: PropTypes.func,
-  className: PropTypes.string
+  className: PropTypes.string,
+  currencyKey: PropTypes.number.isRequired,
+  symbol: PropTypes.string.isRequired
 };
 
 ProductOrder.defaultProps = {

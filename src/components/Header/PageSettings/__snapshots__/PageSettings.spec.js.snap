@@ -4,7 +4,7 @@ exports[`<PageSettings /> should match snapshot 1`] = `
 <div
   className="page-settings content container"
 >
-  <ContentOptions />
+  <Connect(ContentOptions) />
   <h3
     className="page-settings__heading heading"
   >

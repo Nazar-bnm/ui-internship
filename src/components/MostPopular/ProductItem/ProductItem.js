@@ -24,6 +24,7 @@ class ProductItem extends Component {
     this.state = {
       isHovered: false,
       isShowedModal: false,
+      convertedPrice: 0,
       productFirstImage: `${process.env.IMAGE_URL}/${props.product.images[0].claudinaryId}`,
       hasError: false
     };
@@ -38,6 +39,31 @@ class ProductItem extends Component {
     this.renderQuickView = this.renderQuickView.bind(this);
     this.renderHoverView = this.renderHoverView.bind(this);
     this.handleImageError = this.handleImageError.bind(this);
+  }
+
+  async componentDidMount() {
+    this.getConvertedPrice();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { currencyKey } = this.props;
+
+    if (currencyKey !== prevProps.currencyKey) {
+      this.getConvertedPrice();
+    }
+  }
+
+  getConvertedPrice() {
+    const {
+      product: {
+        price
+      }, currencyKey
+    } = this.props;
+    const currencyPrice = (price * currencyKey).toFixed(0);
+
+    this.setState({
+      convertedPrice: currencyPrice
+    });
   }
 
   showModal() {
@@ -166,9 +192,10 @@ class ProductItem extends Component {
     const { productFirstImage } = this.state;
     const {
       product: {
-        _id, label, title, price, sizes
-      }
+        _id, label, title, sizes
+      }, symbol
     } = this.props;
+    const { convertedPrice } = this.state;
     const sizesWithSpaces = sizes.join(', ');
     const { isHovered, isShowedModal } = this.state;
 
@@ -211,7 +238,9 @@ class ProductItem extends Component {
             </h2>
           </NavLink>
           {!isHovered && (
-            <h3 className={`${CN}__title-wrapper__price`}>{`$${price}`}</h3>
+            <h3 className={`${CN}__title-wrapper__price`}>
+              {`${symbol} ${convertedPrice}`}
+            </h3>
           )}
           {isHovered && (
             <>
@@ -262,7 +291,9 @@ ProductItem.propTypes = {
   wishlist: PropTypes.array,
   addToWishlist: PropTypes.func.isRequired,
   removeFromWishlist: PropTypes.func.isRequired,
-  showMessage: PropTypes.func.isRequired
+  showMessage: PropTypes.func.isRequired,
+  currencyKey: PropTypes.number.isRequired,
+  symbol: PropTypes.string.isRequired
 };
 
 ProductItem.defaultProps = {

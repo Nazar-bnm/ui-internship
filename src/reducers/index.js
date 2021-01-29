@@ -6,6 +6,7 @@ import { productsReducer } from './reducerAPIcall';
 import reducerProductList from './reducerProductList';
 import reducerNotifications from './reducerNotifications';
 import reducerBlogPage from './reducerBlogPage';
+import reducerCurr from './reducerCurrentOptions';
 
 export default combineReducers({
   reducerWishlist,
@@ -14,5 +15,6 @@ export default combineReducers({
   reducerProductList,
   reducerNotifications,
   productsReducer,
-  reducerBlogPage
+  reducerBlogPage,
+  reducerCurr
 });

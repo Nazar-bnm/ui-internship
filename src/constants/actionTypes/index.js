@@ -33,3 +33,5 @@ export const GET_BLOG_ITEMS_ERROR = 'GET_BLOG_ITEMS_ERROR';
 // Cart
 export const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 export const GET_LABEL = 'GET_LABEL';
+// currency
+export const GET_THE_CURRENCY = 'GET_THE_CURRENCY';

@@ -45,7 +45,7 @@ exports[`<CartPage /> should match snapshot 1`] = `
       <img
         alt="no cart items"
         className="cart-page__image col-6 col-center\\""
-        src="src/assets/img/content/img-no-cartitems.png"
+        src=""
       />
     </div>
   </div>
@@ -76,17 +76,17 @@ exports[`<CartPage /> should match snapshot 1`] = `
         className="col-2"
       >
         <p>
-          $0
+          undefined NaN
         </p>
         <p>
-          $35
+          undefined NaN
         </p>
         <p>
-          $5
+          undefined NaN
         </p>
         <hr />
         <p>
-          $30
+          undefined NaN
         </p>
       </div>
     </div>
