@@ -48,3 +48,13 @@ export const LOGIN_SUCCESS = {
   message: 'You are now logged in!',
   type: 'success'
 };
+export const REGISTER_FAILED = {
+  title: 'error',
+  message: 'Error',
+  type: 'error'
+};
+export const REGISTER_SUCCESS = {
+  title: 'success',
+  message: 'You are registered. Congratulations!',
+  type: 'success'
+};

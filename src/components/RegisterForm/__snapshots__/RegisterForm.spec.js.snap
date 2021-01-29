@@ -24,11 +24,14 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
       >
         <label
           className="register-form__field__label"
+          htmlFor="firstName"
         >
           first name*
         </label>
         <input
           className="register-form__field__input"
+          name="firstName"
+          onChange={[Function]}
           required={true}
           type="text"
         />
@@ -43,6 +46,8 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          name="lastName"
+          onChange={[Function]}
           required={true}
           type="text"
         />
@@ -57,10 +62,12 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
-          id="email"
+          defaultValue=""
+          id="emil"
+          name="email"
+          onChange={[Function]}
           required={true}
           type="email"
-          value=""
         />
       </div>
       <div
@@ -73,6 +80,9 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          name="password"
+          onChange={[Function]}
+          pattern="^(?=.*[A-Za-z])(?=.*\\\\d)[A-Za-z\\\\d]{8,}$"
           required={true}
           type="password"
         />
@@ -101,6 +111,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
+          onChange={[Function]}
           type="text"
         />
       </div>
@@ -115,19 +126,7 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <input
           className="register-form__field__input"
           defaultValue={null}
-          type="text"
-        />
-      </div>
-      <div
-        className="register-form__field"
-      >
-        <label
-          className="register-form__field__label"
-        >
-          address 2
-        </label>
-        <input
-          className="register-form__field__input"
+          onChange={[Function]}
           type="text"
         />
       </div>
@@ -139,10 +138,23 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         >
           country
         </label>
-        <input
-          className="register-form__field__input"
+        <CountryDropdown
+          blacklist={Array []}
+          className="register-form__field__country"
+          classes=""
+          defaultOptionLabel="Select Country"
           defaultValue={null}
-          type="text"
+          disabled={false}
+          id=""
+          labelType="full"
+          name="rcrs-country"
+          onBlur={[Function]}
+          onChange={[Function]}
+          priorityOptions={Array []}
+          showDefaultOption={true}
+          value=""
+          valueType="full"
+          whitelist={Array []}
         />
       </div>
       <div
@@ -156,7 +168,9 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <input
           className="register-form__field__input"
           defaultValue={null}
+          onChange={[Function]}
           type="text"
+          value=""
         />
       </div>
       <div
@@ -170,8 +184,9 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         <input
           className="register-form__field__input"
           defaultValue={null}
+          onChange={[Function]}
           required={true}
-          type="text"
+          type="number"
         />
       </div>
       <div
@@ -184,7 +199,8 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
         </label>
         <input
           className="register-form__field__input"
-          type="text"
+          onChange={[Function]}
+          type="number"
         />
       </div>
     </div>
@@ -196,10 +212,12 @@ exports[`<RegisterForm /> should match snapshot 1`] = `
       className="black-button"
       icon={null}
       onClick={[Function]}
+      type="submit"
     >
       create an account
     </Button>
     <Link
+      className="link-back"
       to="/login"
     >
       Back to login
